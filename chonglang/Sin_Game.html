@@ -1,0 +1,1498 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Sin_Game</title>
+        <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+        <style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+                font-size: var(--vscode-markdown-font-size, 14px);
+                padding: 0 26px;
+                line-height: var(--vscode-markdown-line-height, 22px);
+            }
+            a {
+                color: blue; text-decoration: none;
+            }
+            a:hover {
+                color: red;
+            }
+            a:visited {
+                color: rgba(251, 215, 157);
+            }
+            p {
+                scroll-margin-top: 100px; /* Adjust this value based on your header height */
+            }
+            .flair {
+                padding: 2px 6px; border-radius: 20px; font-size: 10px; font-weight: bold;
+                margin-left: 5px; display: inline-block; vertical-align: middle; line-height: 1.2;
+            }
+            .post-listing {
+                margin-bottom: 0px;
+            }
+            .meta-val {
+                color: #888888;
+                font-size: 14px;
+            }
+            .upvote-icon {
+                width: 16px; 
+                height: 16px;
+                color: #888888;
+                vertical-align: middle;
+                display: inline-block;
+                margin-left: 4px;
+                margin-right: -2px;
+            }
+            .comment-icon {
+                width: 16px; 
+                height: 16px;
+                color: #888888;
+                vertical-align: middle;
+                display: inline-block;
+                margin-left: 4px;
+                margin-right: 2px;
+                position: relative;
+                top: 1px;
+            }
+            #note {
+                padding-left: 20px;
+                padding-right: 20px;
+                margin: auto;
+                border: 2px solid rgba(248, 108, 95);
+                background-color: #f3f3f3;
+                position: sticky;
+                top: 8px;
+            }
+            #topspace, #bottomspace {
+                position: fixed;
+                background-color: white;
+                padding: 4px;
+                width: 100%;
+            }
+            #topspace {
+                top: 0;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>r/Sin_Game</h1>
+        <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+            <symbol id="icon-upvote" viewBox="0 0 20 20">
+                <path d="M10 2l-7 7h4v9h6V9h4z" fill="currentColor"/>
+            </symbol>
+            <symbol id="icon-comment" viewBox="0 0 20 20">
+                <path d="M18 7c0-3-3.6-5-8-5s-8 2-8 5c0 1.8 1.3 3.4 3.2 4.3-.3 1.1-1.2 2.5-1.2 2.5s1.7 0 2.9-1.3c1 .3 2 .5 3.1.5 4.4 0 8-2.5 8-6z" fill="currentColor"/>
+            </symbol>
+        </svg>
+        <div id="sort-controls" style="margin-bottom: 20px; padding: 10px; background: #f9f9f9; border-radius: 8px; border: 1px solid #eee;">
+            <label for="sortOrder" style="font-weight: bold; font-size: 12px;">Sort Archive By: </label>
+            <select id="sortOrder" onchange="sortPosts()" style="padding: 5px; border-radius: 4px;">
+                <option value="time-asc">Date (Oldest)</option>
+                <option value="time">Date (Newest)</option>
+                <option value="score">Upvotes (Highest)</option>
+                <option value="comments">Comments (Most)</option>
+            </select>
+        </div>
+        <div id="posts-container">
+            <div class="post-listing" id="t3_1michlq" data-time="1754408144" data-score="1" data-comments="0">
+                <p>
+                    2025 Aug 05: <a target="_self" href="./Sin_Game/t3_1michlq.html">瓮友叠叠乐</a>  - /u/Ataraski  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1mjwt0i" data-time="1754563756" data-score="9" data-comments="2">
+                <p>
+                    2025 Aug 07: <a target="_self" href="./Sin_Game/t3_1mjwt0i.html">什么意思兄弟</a>  - /u/Ataraski  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+9</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">2</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1mjyd9j" data-time="1754568663" data-score="10" data-comments="5">
+                <p>
+                    2025 Aug 07: <a target="_self" href="./Sin_Game/t3_1mjyd9j.html">女性在游戏行业受到的打压的线上展览</a> <span class="flair" style="background-color: #e63519; color: #ffffff;">河图洛书</span> - /u/Ataraski  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+10</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">5</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1mjyp35" data-time="1754569608" data-score="16" data-comments="4">
+                <p>
+                    2025 Aug 07: <a target="_self" href="./Sin_Game/t3_1mjyp35.html">瓮友们往里进</a> <span class="flair" style="background-color: #01edfe; color: #1c1c1c;">请君入瓮</span> - /u/Ataraski  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+16</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">4</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1mjz2oy" data-time="1754570653" data-score="6" data-comments="0">
+                <p>
+                    2025 Aug 07: <a target="_self" href="./Sin_Game/t3_1mjz2oy.html">乡毋宁棍歹！</a> <span class="flair" style="background-color: #ffbf00; color: #1c1c1c;">龟兔赛跑</span> - /u/Ataraski  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+6</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1mjzig6" data-time="1754571790" data-score="1" data-comments="0">
+                <p>
+                    2025 Aug 07: <a target="_self" href="./Sin_Game/t3_1mjzig6.html">新家ですか？</a>  - /u/Nevetherless1929  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1mjzl40" data-time="1754571983" data-score="1" data-comments="0">
+                <p>
+                    2025 Aug 07: <a target="_self" href="./Sin_Game/t3_1mjzl40.html">这种的是好女孩？</a> <span class="flair" style="background-color: #4af20d; color: #1c1c1c;">瓮中捉鳖</span> - /u/Ataraski  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1mjzmqt" data-time="1754572098" data-score="6" data-comments="3">
+                <p>
+                    2025 Aug 07: <a target="_self" href="./Sin_Game/t3_1mjzmqt.html">这种的是好女孩？</a> <span class="flair" style="background-color: #01edfe; color: #1c1c1c;">请君入瓮</span> - /u/Ataraski  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+6</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">3</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1mjzzck" data-time="1754572976" data-score="14" data-comments="1">
+                <p>
+                    2025 Aug 07: <a target="_self" href="./Sin_Game/t3_1mjzzck.html">感觉中共国和纳粹德国越来越像。在纳粹德国，人们打招呼时时都要先说一句“希特勒万岁”</a> <span class="flair" style="background-color: #4af20d; color: #1c1c1c;">瓮中捉鳖</span> - /u/Ataraski  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+14</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">1</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1mk5ukm" data-time="1754586602" data-score="1" data-comments="2">
+                <p>
+                    2025 Aug 08: <a target="_self" href="./Sin_Game/t3_1mk5ukm.html">新家Saimaniang 速度进 你想看的都有 一直都在</a>  - /u/Honest-Practice-5386  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">2</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1mkh63q" data-time="1754613819" data-score="2" data-comments="1">
+                <p>
+                    2025 Aug 08: <a target="_self" href="./Sin_Game/t3_1mkh63q.html">是鳖友新家吗</a>  - /u/Ok-Engineer5393  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+2</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">1</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1mkrh9i" data-time="1754648520" data-score="5" data-comments="2">
+                <p>
+                    2025 Aug 08: <a target="_self" href="./Sin_Game/t3_1mkrh9i.html">瓮友们想想办法</a> <span class="flair" style="background-color: #ffbf00; color: #1c1c1c;">龟兔赛跑</span> - /u/Ataraski  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+5</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">2</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1mkrjbx" data-time="1754648734" data-score="9" data-comments="3">
+                <p>
+                    2025 Aug 08: <a target="_self" href="./Sin_Game/t3_1mkrjbx.html">思考中</a> <span class="flair" style="background-color: #ffbf00; color: #1c1c1c;">龟兔赛跑</span> - /u/Ataraski  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+9</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">3</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1mkzqtv" data-time="1754670222" data-score="2" data-comments="1">
+                <p>
+                    2025 Aug 09: <a target="_self" href="./Sin_Game/t3_1mkzqtv.html">哪位鳖友</a> <span class="flair" style="background-color: #000000; color: #ffffff;">神龟虽寿</span> - /u/Ok-Engineer5393  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+2</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">1</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1ml0l26" data-time="1754672127" data-score="1" data-comments="0">
+                <p>
+                    2025 Aug 09: <a target="_self" href="./Sin_Game/t3_1ml0l26.html">响狗：简单爱爱织女。</a> <span class="flair" style="background-color: #000000; color: #ffffff;">神龟虽寿</span> - /u/WakabaH1nata  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1ml5tpz" data-time="1754684169" data-score="1" data-comments="0">
+                <p>
+                    2025 Aug 09: <a target="_self" href="./Sin_Game/t3_1ml5tpz.html">这里是全🐢组吗</a>  - /u/neko_canyon  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1mlm8dz" data-time="1754735505" data-score="2" data-comments="0">
+                <p>
+                    2025 Aug 09: <a target="_self" href="./Sin_Game/t3_1mlm8dz.html">瓮友被踩头</a> <span class="flair" style="background-color: #4af20d; color: #1c1c1c;">瓮中捉鳖</span> - /u/Ataraski  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+2</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1mlopbu" data-time="1754743967" data-score="2" data-comments="1">
+                <p>
+                    2025 Aug 09: <a target="_self" href="./Sin_Game/t3_1mlopbu.html">虐待小动物的洼地人太坏了</a> <span class="flair" style="background-color: #000000; color: #ffffff;">神龟虽寿</span> - /u/Ataraski  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+2</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">1</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1mlqxs3" data-time="1754750139" data-score="3" data-comments="5">
+                <p>
+                    2025 Aug 09: <a target="_self" href="./Sin_Game/t3_1mlqxs3.html">父权社会对女性的规训，即可以看作是培养女性形成不同的“食性”</a> <span class="flair" style="background-color: #ffbf00; color: #1c1c1c;">龟兔赛跑</span> - /u/Ataraski  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+3</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">5</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1mlrric" data-time="1754752255" data-score="2" data-comments="0">
+                <p>
+                    2025 Aug 09: <a target="_self" href="./Sin_Game/t3_1mlrric.html">这种的是处女？</a> <span class="flair" style="background-color: #01edfe; color: #1c1c1c;">请君入瓮</span> - /u/Ataraski  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+2</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1mlsilc" data-time="1754754159" data-score="5" data-comments="3">
+                <p>
+                    2025 Aug 09: <a target="_self" href="./Sin_Game/t3_1mlsilc.html">四次元口袋</a> <span class="flair" style="background-color: #e63519; color: #ffffff;">河图洛书</span> - /u/Ataraski  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+5</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">3</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1mme24j" data-time="1754817728" data-score="11" data-comments="4">
+                <p>
+                    2025 Aug 10: <a target="_self" href="./Sin_Game/t3_1mme24j.html">大狗叫</a> <span class="flair" style="background-color: #ffbf00; color: #1c1c1c;">龟兔赛跑</span> - /u/Ataraski  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+11</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">4</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1mmfvix" data-time="1754824357" data-score="3" data-comments="1">
+                <p>
+                    2025 Aug 10: <a target="_self" href="./Sin_Game/t3_1mmfvix.html">是好魅魔吗</a> <span class="flair" style="background-color: #01edfe; color: #1c1c1c;">请君入瓮</span> - /u/Ataraski  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+3</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">1</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1mmg4wf" data-time="1754825252" data-score="17" data-comments="2">
+                <p>
+                    2025 Aug 10: <a target="_self" href="./Sin_Game/t3_1mmg4wf.html">哈哈，骗你的</a> <span class="flair" style="background-color: #e63519; color: #ffffff;">河图洛书</span> - /u/Ataraski  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+17</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">2</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1mmgce1" data-time="1754825958" data-score="8" data-comments="2">
+                <p>
+                    2025 Aug 10: <a target="_self" href="./Sin_Game/t3_1mmgce1.html">你们谁的老婆？</a> <span class="flair" style="background-color: #01edfe; color: #1c1c1c;">请君入瓮</span> - /u/Ataraski  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+8</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">2</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1mmgrig" data-time="1754827322" data-score="11" data-comments="1">
+                <p>
+                    2025 Aug 10: <a target="_self" href="./Sin_Game/t3_1mmgrig.html">瓮友们想想怎么办</a> <span class="flair" style="background-color: #ffbf00; color: #1c1c1c;">龟兔赛跑</span> - /u/Ataraski  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+11</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">1</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1mmhpvh" data-time="1754830129" data-score="2" data-comments="3">
+                <p>
+                    2025 Aug 10: <a target="_self" href="./Sin_Game/t3_1mmhpvh.html">谁去</a> <span class="flair" style="background-color: #4af20d; color: #1c1c1c;">瓮中捉鳖</span> - /u/Ataraski  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+2</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">3</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1mmkbja" data-time="1754836926" data-score="20" data-comments="14">
+                <p>
+                    2025 Aug 10: <a target="_self" href="./Sin_Game/t3_1mmkbja.html">谁在制造厌女狂欢</a> <span class="flair" style="background-color: #000000; color: #ffffff;">神龟虽寿</span> - /u/Ataraski  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+20</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">14</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1mmlvoe" data-time="1754840779" data-score="14" data-comments="3">
+                <p>
+                    2025 Aug 10: <a target="_self" href="./Sin_Game/t3_1mmlvoe.html">经典回顾 大海捞针</a> <span class="flair" style="background-color: #e63519; color: #ffffff;">河图洛书</span> - /u/Ataraski  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+14</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">3</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1mn6zc1" data-time="1754899077" data-score="1" data-comments="0">
+                <p>
+                    2025 Aug 11: <a target="_self" href="./Sin_Game/t3_1mn6zc1.html">🐵，做题</a>  - /u/Lost_Chemist_5615  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1mn7msp" data-time="1754901687" data-score="6" data-comments="1">
+                <p>
+                    2025 Aug 11: <a target="_self" href="./Sin_Game/t3_1mn7msp.html">哪里人</a> <span class="flair" style="background-color: #e63519; color: #ffffff;">河图洛书</span> - /u/Ataraski  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+6</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">1</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1mn86sx" data-time="1754903862" data-score="1" data-comments="0">
+                <p>
+                    2025 Aug 11: <a target="_self" href="./Sin_Game/t3_1mn86sx.html">菲舰娘被中华cock肏到潮水直喷，舰c老嗨进</a>  - /u/Lost_Chemist_5615  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1mn93wq" data-time="1754907322" data-score="11" data-comments="9">
+                <p>
+                    2025 Aug 11: <a target="_self" href="./Sin_Game/t3_1mn93wq.html">瓮友该选哪一个</a> <span class="flair" style="background-color: #01edfe; color: #1c1c1c;">请君入瓮</span> - /u/Ataraski  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+11</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">9</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1mn98oq" data-time="1754907796" data-score="1" data-comments="2">
+                <p>
+                    2025 Aug 11: <a target="_self" href="./Sin_Game/t3_1mn98oq.html">是瓮友的日常吗</a>  - /u/Lost_Chemist_5615  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">2</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1mo58ep" data-time="1754995237" data-score="2" data-comments="0">
+                <p>
+                    2025 Aug 12: <a target="_self" href="./Sin_Game/t3_1mo58ep.html">嘻嘻找到你了</a>  - /u/Feeling_Bid_6473  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+2</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1moo6ae" data-time="1755040357" data-score="2" data-comments="10">
+                <p>
+                    2025 Aug 13: <a target="_self" href="./Sin_Game/t3_1moo6ae.html">假如这种好裤裆喜欢你，你会接受这份感情吗</a>  - /u/SLucceksful-LAubike  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+2</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">10</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1mp0mgd" data-time="1755080479" data-score="5" data-comments="1">
+                <p>
+                    2025 Aug 13: <a target="_self" href="./Sin_Game/t3_1mp0mgd.html">是处女吗</a>  - /u/Cnanobuta  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+5</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">1</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1mptfyi" data-time="1755155161" data-score="2" data-comments="2">
+                <p>
+                    2025 Aug 14: <a target="_self" href="./Sin_Game/t3_1mptfyi.html">哎，无聊，给您们讲个故事吧</a>  - /u/SLucceksful-LAubike  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+2</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">2</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1mpx0xa" data-time="1755168019" data-score="1" data-comments="0">
+                <p>
+                    2025 Aug 14: <a target="_self" href="./Sin_Game/t3_1mpx0xa.html">响狗：简单爱爱织女。</a> <span class="flair" style="background-color: #4af20d; color: #1c1c1c;">瓮中捉鳖</span> - /u/WakabaH1nata  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1mt8aav" data-time="1755479578" data-score="3" data-comments="1">
+                <p>
+                    2025 Aug 18: <a target="_self" href="./Sin_Game/t3_1mt8aav.html">哪位鳖友</a>  - /u/Ok-Engineer5393  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+3</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">1</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1mtj3pz" data-time="1755515724" data-score="1" data-comments="0">
+                <p>
+                    2025 Aug 18: <a target="_self" href="./Sin_Game/t3_1mtj3pz.html">谁的女友</a> <span class="flair" style="background-color: #01edfe; color: #1c1c1c;">请君入瓮</span> - /u/Ataraski  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1mtj6ra" data-time="1755515986" data-score="1" data-comments="0">
+                <p>
+                    2025 Aug 18: <a target="_self" href="./Sin_Game/t3_1mtj6ra.html">谁的女友</a> <span class="flair" style="background-color: #01edfe; color: #1c1c1c;">请君入瓮</span> - /u/[deleted]  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1mtk1lv" data-time="1755518522" data-score="1" data-comments="0">
+                <p>
+                    2025 Aug 18: <a target="_self" href="./Sin_Game/t3_1mtk1lv.html">谁的女友</a> <span class="flair" style="background-color: #01edfe; color: #1c1c1c;">请君入瓮</span> - /u/Ataraski  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1mtkogi" data-time="1755520245" data-score="1" data-comments="0">
+                <p>
+                    2025 Aug 18: <a target="_self" href="./Sin_Game/t3_1mtkogi.html">谁的女友</a> <span class="flair" style="background-color: #01edfe; color: #1c1c1c;">请君入瓮</span> - /u/Ataraski  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1mtkymw" data-time="1755520987" data-score="1" data-comments="0">
+                <p>
+                    2025 Aug 18: <a target="_self" href="./Sin_Game/t3_1mtkymw.html">谁的女友</a> <span class="flair" style="background-color: #01edfe; color: #1c1c1c;">请君入瓮</span> - /u/Ataraski  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1mtl1hn" data-time="1755521193" data-score="12" data-comments="3">
+                <p>
+                    2025 Aug 18: <a target="_self" href="./Sin_Game/t3_1mtl1hn.html">谁的女友</a> <span class="flair" style="background-color: #01edfe; color: #1c1c1c;">请君入瓮</span> - /u/Ataraski  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+12</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">3</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1mtl3mn" data-time="1755521345" data-score="17" data-comments="8">
+                <p>
+                    2025 Aug 18: <a target="_self" href="./Sin_Game/t3_1mtl3mn.html">谁在制造厌女狂欢</a> <span class="flair" style="background-color: #ffbf00; color: #1c1c1c;">龟兔赛跑</span> - /u/Ataraski  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+17</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">8</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1mu4qzb" data-time="1755566580" data-score="1" data-comments="0">
+                <p>
+                    2025 Aug 19: <a target="_self" href="./Sin_Game/t3_1mu4qzb.html">家？</a>  - /u/ImpossibleJunket7344  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1mufrbo" data-time="1755602941" data-score="13" data-comments="9">
+                <p>
+                    2025 Aug 19: <a target="_self" href="./Sin_Game/t3_1mufrbo.html">希望各位男性发言前意识到自己生来就是父权社会的受益者</a> <span class="flair" style="background-color: #ffbf00; color: #1c1c1c;">龟兔赛跑</span> - /u/Ataraski  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+13</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">9</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1mujiab" data-time="1755612568" data-score="14" data-comments="4">
+                <p>
+                    2025 Aug 19: <a target="_self" href="./Sin_Game/t3_1mujiab.html">写出这种文章的是好女孩吗</a> <span class="flair" style="background-color: #01edfe; color: #1c1c1c;">请君入瓮</span> - /u/Ataraski  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+14</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">4</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1mul931" data-time="1755616403" data-score="13" data-comments="3">
+                <p>
+                    2025 Aug 19: <a target="_self" href="./Sin_Game/t3_1mul931.html">终于拿到护照了，瓮友们sian慕吗</a> <span class="flair" style="background-color: #4af20d; color: #1c1c1c;">瓮中捉鳖</span> - /u/Ataraski  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+13</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">3</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1mulwtt" data-time="1755617816" data-score="7" data-comments="0">
+                <p>
+                    2025 Aug 19: <a target="_self" href="./Sin_Game/t3_1mulwtt.html">又到了第6324喜欢的晒学生卡环节</a> <span class="flair" style="background-color: #e63519; color: #ffffff;">河图洛书</span> - /u/Ataraski  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+7</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1mumjvo" data-time="1755619190" data-score="1" data-comments="0">
+                <p>
+                    2025 Aug 19: <a target="_self" href="./Sin_Game/t3_1mumjvo.html">不是我说你们淫乱台巴</a> <span class="flair" style="background-color: #e63519; color: #ffffff;">河图洛书</span> - /u/Ok-Vermicelli1484  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1muri88" data-time="1755629788" data-score="20" data-comments="4">
+                <p>
+                    2025 Aug 20: <a target="_self" href="./Sin_Game/t3_1muri88.html">瓮友小时候</a>  - /u/xjp8963  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+20</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">4</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1mx1nk7" data-time="1755854287" data-score="11" data-comments="3">
+                <p>
+                    2025 Aug 22: <a target="_self" href="./Sin_Game/t3_1mx1nk7.html">这种的是</a> <span class="flair" style="background-color: #ffbf00; color: #1c1c1c;">龟兔赛跑</span> - /u/Ataraski  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+11</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">3</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1mx1vx9" data-time="1755855198" data-score="20" data-comments="5">
+                <p>
+                    2025 Aug 22: <a target="_self" href="./Sin_Game/t3_1mx1vx9.html">瓮友们来帮帮忙</a> <span class="flair" style="background-color: #4af20d; color: #1c1c1c;">瓮中捉鳖</span> - /u/Ataraski  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+20</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">5</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1mx5lkl" data-time="1755866933" data-score="17" data-comments="5">
+                <p>
+                    2025 Aug 22: <a target="_self" href="./Sin_Game/t3_1mx5lkl.html">谁家小棉袄</a> <span class="flair" style="background-color: #ffbf00; color: #1c1c1c;">龟兔赛跑</span> - /u/Ataraski  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+17</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">5</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1mxwodn" data-time="1755940393" data-score="70" data-comments="7">
+                <p>
+                    2025 Aug 23: <a target="_self" href="./Sin_Game/t3_1mxwodn.html">幽默</a> <span class="flair" style="background-color: #e63519; color: #ffffff;">河图洛书</span> - /u/Ataraski  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+70</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">7</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1mxxvfh" data-time="1755944790" data-score="14" data-comments="1">
+                <p>
+                    2025 Aug 23: <a target="_self" href="./Sin_Game/t3_1mxxvfh.html">嚯 这都有新生群臊皮看哦</a> <span class="flair" style="background-color: #4af20d; color: #1c1c1c;">瓮中捉鳖</span> - /u/Ataraski  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+14</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">1</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1mxymrp" data-time="1755947390" data-score="12" data-comments="4">
+                <p>
+                    2025 Aug 23: <a target="_self" href="./Sin_Game/t3_1mxymrp.html">这种的是处女？</a> <span class="flair" style="background-color: #01edfe; color: #1c1c1c;">请君入瓮</span> - /u/Ataraski  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+12</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">4</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1mxz78x" data-time="1755949258" data-score="1" data-comments="0">
+                <p>
+                    2025 Aug 23: <a target="_self" href="./Sin_Game/t3_1mxz78x.html">谁在制造厌nv狂欢</a> <span class="flair" style="background-color: #ffbf00; color: #1c1c1c;">龟兔赛跑</span> - /u/Ataraski  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1mxzagn" data-time="1755949542" data-score="18" data-comments="7">
+                <p>
+                    2025 Aug 23: <a target="_self" href="./Sin_Game/t3_1mxzagn.html">谁在制造厌nv狂欢</a> <span class="flair" style="background-color: #ffbf00; color: #1c1c1c;">龟兔赛跑</span> - /u/Ataraski  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+18</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">7</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1my20g4" data-time="1755957069" data-score="27" data-comments="9">
+                <p>
+                    2025 Aug 23: <a target="_self" href="./Sin_Game/t3_1my20g4.html">在女权思潮的影响下，女性占据话语权的环境真的舒适太多</a> <span class="flair" style="background-color: #ffbf00; color: #1c1c1c;">龟兔赛跑</span> - /u/Ataraski  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+27</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">9</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1myxr0n" data-time="1756047402" data-score="1" data-comments="0">
+                <p>
+                    2025 Aug 24: <a target="_self" href="./Sin_Game/t3_1myxr0n.html">“这样那样的条件”</a> <span class="flair" style="background-color: #000000; color: #ffffff;">神龟虽寿</span> - /u/Ataraski  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1myxrzo" data-time="1756047468" data-score="8" data-comments="3">
+                <p>
+                    2025 Aug 24: <a target="_self" href="./Sin_Game/t3_1myxrzo.html">“这样那样的条件”</a> <span class="flair" style="background-color: #000000; color: #ffffff;">神龟虽寿</span> - /u/Ataraski  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+8</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">3</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1mzmtb6" data-time="1756117700" data-score="25" data-comments="14">
+                <p>
+                    2025 Aug 25: <a target="_self" href="./Sin_Game/t3_1mzmtb6.html">谁去过节了</a> <span class="flair" style="background-color: #4af20d; color: #1c1c1c;">瓮中捉鳖</span> - /u/Ataraski  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+25</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">14</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1mzo03z" data-time="1756121627" data-score="1" data-comments="0">
+                <p>
+                    2025 Aug 25: <a target="_self" href="./Sin_Game/t3_1mzo03z.html">谁在制造厌女狂欢</a> <span class="flair" style="background-color: #ffbf00; color: #1c1c1c;">龟兔赛跑</span> - /u/Ataraski  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1mzo3eu" data-time="1756121914" data-score="17" data-comments="0">
+                <p>
+                    2025 Aug 25: <a target="_self" href="./Sin_Game/t3_1mzo3eu.html">谁在制造厌女狂欢</a> <span class="flair" style="background-color: #ffbf00; color: #1c1c1c;">龟兔赛跑</span> - /u/Ataraski  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+17</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1mzr23i" data-time="1756129876" data-score="11" data-comments="0">
+                <p>
+                    2025 Aug 25: <a target="_self" href="./Sin_Game/t3_1mzr23i.html">谁的初恋</a> <span class="flair" style="background-color: #01edfe; color: #1c1c1c;">请君入瓮</span> - /u/Ataraski  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+11</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1mzt8uo" data-time="1756134922" data-score="1" data-comments="0">
+                <p>
+                    2025 Aug 25: <a target="_self" href="./Sin_Game/t3_1mzt8uo.html">其实刀蝻宝失败这件事，反而说明了jimei群体的战力极其低下</a> <span class="flair" style="background-color: #ffbf00; color: #1c1c1c;">龟兔赛跑</span> - /u/WakabaH1nata  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1mztgc4" data-time="1756135376" data-score="1" data-comments="0">
+                <p>
+                    2025 Aug 25: <a target="_self" href="./Sin_Game/t3_1mztgc4.html">关于今天的爱人tv</a> <span class="flair" style="background-color: #ffbf00; color: #1c1c1c;">龟兔赛跑</span> - /u/WakabaH1nata  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1mzx4vb" data-time="1756143453" data-score="14" data-comments="2">
+                <p>
+                    2025 Aug 26: <a target="_self" href="./Sin_Game/t3_1mzx4vb.html">我的家呢，我的家在哪</a> <span class="flair" style="background-color: #4af20d; color: #1c1c1c;">瓮中捉鳖</span> - /u/Lost_Chemist_5615  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+14</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">2</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1mzz9sw" data-time="1756148201" data-score="17" data-comments="4">
+                <p>
+                    2025 Aug 26: <a target="_self" href="./Sin_Game/t3_1mzz9sw.html">男朋友给我分享这个论坛的帖子是不是可以和他分手了</a> <span class="flair" style="background-color: #01edfe; color: #1c1c1c;">请君入瓮</span> - /u/Eureka132  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+17</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">4</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1n08htn" data-time="1756170733" data-score="13" data-comments="1">
+                <p>
+                    2025 Aug 26: <a target="_self" href="./Sin_Game/t3_1n08htn.html">麻了，锁私密也给你橄榄，从chonglangtv到最后的WeeklyYoungJumpMag，冥冥之中权蛆就是想说汁迪就是不欢迎贵圈</a>  - /u/Farmerprestigious731  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+13</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">1</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1n0hxxj" data-time="1756203375" data-score="4" data-comments="0">
+                <p>
+                    2025 Aug 26: <a target="_self" href="./Sin_Game/t3_1n0hxxj.html">今天在高铁上看到了一个长得像李知恩的集美，不过估计比李知恩重五十斤</a> <span class="flair" style="background-color: #4af20d; color: #1c1c1c;">瓮中捉鳖</span> - /u/Sea_Wear_3404  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+4</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1n0j9mj" data-time="1756207786" data-score="14" data-comments="0">
+                <p>
+                    2025 Aug 26: <a target="_self" href="./Sin_Game/t3_1n0j9mj.html">人面不知何处去 桃花依旧笑春风</a> <span class="flair" style="background-color: #000000; color: #ffffff;">神龟虽寿</span> - /u/Ataraski  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+14</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1n0jemx" data-time="1756208222" data-score="6" data-comments="0">
+                <p>
+                    2025 Aug 26: <a target="_self" href="./Sin_Game/t3_1n0jemx.html">这种的有感觉？</a> <span class="flair" style="background-color: #01edfe; color: #1c1c1c;">请君入瓮</span> - /u/Ataraski  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+6</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1n0o3ws" data-time="1756220239" data-score="15" data-comments="2">
+                <p>
+                    2025 Aug 26: <a target="_self" href="./Sin_Game/t3_1n0o3ws.html">处女书院，你在哪</a> <span class="flair" style="background-color: #4af20d; color: #1c1c1c;">瓮中捉鳖</span> - /u/Ataraski  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+15</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">2</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1n0yyv7" data-time="1756244881" data-score="14" data-comments="4">
+                <p>
+                    2025 Aug 27: <a target="_self" href="./Sin_Game/t3_1n0yyv7.html">你们看到女人发过让你最嗯的东西是什么？我先来</a>  - /u/SLucceksful-LAubike  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+14</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">4</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1n11fba" data-time="1756251097" data-score="0" data-comments="2">
+                <p>
+                    2025 Aug 27: <a target="_self" href="./Sin_Game/t3_1n11fba.html">你们喜欢被别人叫爸爸吗？</a> <span class="flair" style="background-color: #e63519; color: #ffffff;">河图洛书</span> - /u/Own-Strength-7479  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+0</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">2</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1n11oqj" data-time="1756251782" data-score="2" data-comments="2">
+                <p>
+                    2025 Aug 27: <a target="_self" href="./Sin_Game/t3_1n11oqj.html">这种的和竹竿选哪个</a> <span class="flair" style="background-color: #000000; color: #ffffff;">神龟虽寿</span> - /u/QuantityMysterious46  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+2</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">2</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1n19249" data-time="1756274125" data-score="8" data-comments="6">
+                <p>
+                    2025 Aug 27: <a target="_self" href="./Sin_Game/t3_1n19249.html">这种的怎么办</a>  - /u/Cnanobuta  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+8</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">6</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1n1b0xn" data-time="1756281691" data-score="6" data-comments="1">
+                <p>
+                    2025 Aug 27: <a target="_self" href="./Sin_Game/t3_1n1b0xn.html">宝箱怪的金币爆率这么高吗</a> <span class="flair" style="background-color: #4af20d; color: #1c1c1c;">瓮中捉鳖</span> - /u/Ataraski  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+6</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">1</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1n1mgg8" data-time="1756313602" data-score="9" data-comments="2">
+                <p>
+                    2025 Aug 28: <a target="_self" href="./Sin_Game/t3_1n1mgg8.html">这种的是好女孩吗</a> <span class="flair" style="background-color: #e63519; color: #ffffff;">河图洛书</span> - /u/Acceptable_Ad7280  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+9</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">2</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1n1mogl" data-time="1756314095" data-score="1" data-comments="0">
+                <p>
+                    2025 Aug 28: <a target="_self" href="./Sin_Game/t3_1n1mogl.html">上帝你炸了台多瑪吧</a> <span class="flair" style="background-color: #000000; color: #ffffff;">神龟虽寿</span> - /u/Ill-Organization3505  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1n1ycq9" data-time="1756342012" data-score="0" data-comments="1">
+                <p>
+                    2025 Aug 28: <a target="_self" href="./Sin_Game/t3_1n1ycq9.html">kobayashi！hentai！majiyabakune~！bababa！</a> <span class="flair" style="background-color: #e63519; color: #ffffff;">河图洛书</span> - /u/Own-Strength-7479  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+0</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">1</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1n26ank" data-time="1756368183" data-score="3" data-comments="0">
+                <p>
+                    2025 Aug 28: <a target="_self" href="./Sin_Game/t3_1n26ank.html">瓮友看到了会怎么做</a> <span class="flair" style="background-color: #01edfe; color: #1c1c1c;">请君入瓮</span> - /u/Ataraski  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+3</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1n27e11" data-time="1756372509" data-score="0" data-comments="2">
+                <p>
+                    2025 Aug 28: <a target="_self" href="./Sin_Game/t3_1n27e11.html">爸爸爸！爸爸爸！</a> <span class="flair" style="background-color: #000000; color: #ffffff;">神龟虽寿</span> - /u/Own-Strength-7479  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+0</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">2</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1n2a2w6" data-time="1756381791" data-score="2" data-comments="0">
+                <p>
+                    2025 Aug 28: <a target="_self" href="./Sin_Game/t3_1n2a2w6.html">谁的未婚妻？</a> <span class="flair" style="background-color: #ffbf00; color: #1c1c1c;">龟兔赛跑</span> - /u/Ataraski  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+2</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1n2a5xf" data-time="1756382040" data-score="1" data-comments="0">
+                <p>
+                    2025 Aug 28: <a target="_self" href="./Sin_Game/t3_1n2a5xf.html">谁的未婚妻？</a> <span class="flair" style="background-color: #ffbf00; color: #1c1c1c;">龟兔赛跑</span> - /u/Ataraski  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1n2b6w0" data-time="1756384945" data-score="1" data-comments="0">
+                <p>
+                    2025 Aug 28: <a target="_self" href="./Sin_Game/t3_1n2b6w0.html">点草下刘慈欣这条狗</a>  - /u/WakabaH1nata  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1n2bzwz" data-time="1756387096" data-score="23" data-comments="5">
+                <p>
+                    2025 Aug 28: <a target="_self" href="./Sin_Game/t3_1n2bzwz.html">谁的未婚妻？</a> <span class="flair" style="background-color: #ffbf00; color: #1c1c1c;">龟兔赛跑</span> - /u/Ataraski  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+23</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">5</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1n2ftb1" data-time="1756395882" data-score="1" data-comments="3">
+                <p>
+                    2025 Aug 28: <a target="_self" href="./Sin_Game/t3_1n2ftb1.html">封建是君臣母子 君视臣如子 臣视君如母 无君无母 是孤儿也 王是领地子民和侯之母 侯是领地子民之母 天山是神话中的昆仑山 大地中央的天柱 女娲的下都 华夏人的起源地 全球华夏人听命 集结天山 华夏复国</a>  - /u/Aromatic-Chipmunk-80  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">3</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1n3nvvs" data-time="1756513729" data-score="14" data-comments="4">
+                <p>
+                    2025 Aug 30: <a target="_self" href="./Sin_Game/t3_1n3nvvs.html">哪位</a>  - /u/Cnanobuta  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+14</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">4</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1n4izak" data-time="1756606178" data-score="19" data-comments="4">
+                <p>
+                    2025 Aug 31: <a target="_self" href="./Sin_Game/t3_1n4izak.html">哪位鳖友😭</a> <span class="flair" style="background-color: #01edfe; color: #1c1c1c;">请君入瓮</span> - /u/neko_canyon  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+19</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">4</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1n5fswo" data-time="1756702770" data-score="12" data-comments="0">
+                <p>
+                    2025 Sep 01: <a target="_self" href="./Sin_Game/t3_1n5fswo.html">什么体位</a>  - /u/Cnanobuta  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+12</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1n5gz4c" data-time="1756706877" data-score="2" data-comments="1">
+                <p>
+                    2025 Sep 01: <a target="_self" href="./Sin_Game/t3_1n5gz4c.html">库巴亚西！哈基米！</a> <span class="flair" style="background-color: #ffbf00; color: #1c1c1c;">龟兔赛跑</span> - /u/Own-Strength-7479  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+2</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">1</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1n84vt6" data-time="1756975839" data-score="26" data-comments="5">
+                <p>
+                    2025 Sep 04: <a target="_self" href="./Sin_Game/t3_1n84vt6.html">一百年前的留学生锐评织女，幽默得批爆</a> <span class="flair" style="background-color: #e63519; color: #1c1c1c;">河图洛书</span> - /u/DistributionBig4870  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+26</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">5</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1n8synh" data-time="1757037864" data-score="9" data-comments="2">
+                <p>
+                    2025 Sep 05: <a target="_self" href="./Sin_Game/t3_1n8synh.html">何意味</a> <span class="flair" style="background-color: #ffbf00; color: #1c1c1c;">龟兔赛跑</span> - /u/neko_canyon  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+9</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">2</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1n8uqya" data-time="1757043185" data-score="7" data-comments="1">
+                <p>
+                    2025 Sep 05: <a target="_self" href="./Sin_Game/t3_1n8uqya.html">这种的韩妈妈穴友们喜欢吗</a> <span class="flair" style="background-color: #4af20d; color: #1c1c1c;">瓮中捉鳖</span> - /u/Sea_Wear_3404  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+7</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">1</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1n8w3g7" data-time="1757047521" data-score="9" data-comments="0">
+                <p>
+                    2025 Sep 05: <a target="_self" href="./Sin_Game/t3_1n8w3g7.html">栓</a>  - /u/Cnanobuta  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+9</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1n8zjg8" data-time="1757060441" data-score="5" data-comments="3">
+                <p>
+                    2025 Sep 05: <a target="_self" href="./Sin_Game/t3_1n8zjg8.html">哪两位绿友家的小棉袄觉醒了？</a>  - /u/St-Bao  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+5</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">3</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1n9535d" data-time="1757078389" data-score="11" data-comments="10">
+                <p>
+                    2025 Sep 05: <a target="_self" href="./Sin_Game/t3_1n9535d.html">盘点龟友被灌输的十大洼地谎言</a>  - /u/SLucceksful-LAubike  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+11</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">10</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1n97n49" data-time="1757084494" data-score="8" data-comments="7">
+                <p>
+                    2025 Sep 05: <a target="_self" href="./Sin_Game/t3_1n97n49.html">为什么本蛆虽然觉得白妈大方美丽优雅，但是却没办法引起，反而小黄女那副表里不一，慕强淫荡的德行给我狠狠引起了</a> <span class="flair" style="background-color: #ffbf00; color: #1c1c1c;">龟兔赛跑</span> - /u/Sea_Wear_3404  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+8</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">7</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1n9qeud" data-time="1757133055" data-score="0" data-comments="0">
+                <p>
+                    2025 Sep 06: <a target="_self" href="./Sin_Game/t3_1n9qeud.html">叫爸爸~！</a> <span class="flair" style="background-color: #e63519; color: #ffffff;">河图洛书</span> - /u/Own-Strength-7479  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+0</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1n9sh3u" data-time="1757140249" data-score="16" data-comments="3">
+                <p>
+                    2025 Sep 06: <a target="_self" href="./Sin_Game/t3_1n9sh3u.html">源动力</a> <span class="flair" style="background-color: #01edfe; color: #1c1c1c;">请君入瓮</span> - /u/Stoned-Zheng-Li-73i  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+16</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">3</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1naeamx" data-time="1757201986" data-score="6" data-comments="0">
+                <p>
+                    2025 Sep 07: <a target="_self" href="./Sin_Game/t3_1naeamx.html">何意味</a> <span class="flair" style="background-color: #4af20d; color: #1c1c1c;">瓮中捉鳖</span> - /u/QuantityMysterious46  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+6</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1nc6tne" data-time="1757383739" data-score="7" data-comments="9">
+                <p>
+                    2025 Sep 09: <a target="_self" href="./Sin_Game/t3_1nc6tne.html">盘点习主席对硅油们形成的十大贡献</a>  - /u/SLucceksful-LAubike  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+7</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">9</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1ncir11" data-time="1757424040" data-score="1" data-comments="0">
+                <p>
+                    2025 Sep 09: <a target="_self" href="./Sin_Game/t3_1ncir11.html">教师节特辑之母校往事</a>  - /u/Straight_Reporter_40  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1ncirne" data-time="1757424084" data-score="1" data-comments="0">
+                <p>
+                    2025 Sep 09: <a target="_self" href="./Sin_Game/t3_1ncirne.html">是新家吗</a>  - /u/New-Tie-2669  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1ndet88" data-time="1757512359" data-score="1" data-comments="0">
+                <p>
+                    2025 Sep 10: <a target="_self" href="./Sin_Game/t3_1ndet88.html">家没了</a>  - /u/New-Tie-2669  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1ndk232" data-time="1757524019" data-score="2" data-comments="0">
+                <p>
+                    2025 Sep 11: <a target="_self" href="./Sin_Game/t3_1ndk232.html">新家圈我</a>  - /u/Alarmed_Apricot_603  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+2</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1ndtg9a" data-time="1757546504" data-score="10" data-comments="1">
+                <p>
+                    2025 Sep 11: <a target="_self" href="./Sin_Game/t3_1ndtg9a.html">是新家吗？</a>  - /u/PhilosophyQuirky465  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+10</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">1</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1ndv6aw" data-time="1757551452" data-score="3" data-comments="1">
+                <p>
+                    2025 Sep 11: <a target="_self" href="./Sin_Game/t3_1ndv6aw.html">你想拥有爹味吗？</a> <span class="flair" style="background-color: #000000; color: #ffffff;">神龟虽寿</span> - /u/Own-Strength-7479  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+3</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">1</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1ne0cnv" data-time="1757567750" data-score="1" data-comments="0">
+                <p>
+                    2025 Sep 11: <a target="_self" href="./Sin_Game/t3_1ne0cnv.html">是好mod吗</a>  - /u/Embarrassed_Fox_2476  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1neg6eh" data-time="1757614456" data-score="7" data-comments="4">
+                <p>
+                    2025 Sep 12: <a target="_self" href="./Sin_Game/t3_1neg6eh.html">集美锐评集美，鳖友们学到了吗？</a>  - /u/DistributionBig4870  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+7</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">4</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1newif9" data-time="1757661002" data-score="1" data-comments="0">
+                <p>
+                    2025 Sep 12: <a target="_self" href="./Sin_Game/t3_1newif9.html">是鳖友吗</a> <span class="flair" style="background-color: #ffbf00; color: #1c1c1c;">龟兔赛跑</span> - /u/QuantityMysterious46  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1newj21" data-time="1757661071" data-score="22" data-comments="1">
+                <p>
+                    2025 Sep 12: <a target="_self" href="./Sin_Game/t3_1newj21.html">是鳖友吗</a> <span class="flair" style="background-color: #ffbf00; color: #1c1c1c;">龟兔赛跑</span> - /u/QuantityMysterious46  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+22</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">1</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1nfgzi1" data-time="1757716293" data-score="8" data-comments="3">
+                <p>
+                    2025 Sep 13: <a target="_self" href="./Sin_Game/t3_1nfgzi1.html">这种的</a>  - /u/Sea_Wear_3404  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+8</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">3</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1nfofjc" data-time="1757738323" data-score="1" data-comments="1">
+                <p>
+                    2025 Sep 13: <a target="_self" href="./Sin_Game/t3_1nfofjc.html">鳖友们，墙国龟男搭讪集美被拒绝后恼羞成怒怒刀两人，鹅组集美明知道大多数中国人德行，所以在这种情况下你要自己想办法自保，然而评论区全是什么若是仁义礼智信的人就不会这样，在支国有几个？当然，我也很疑惑到底是怎么拒绝的</a>  - /u/QuantityMysterious46  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">1</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1nftvmt" data-time="1757758460" data-score="23" data-comments="8">
+                <p>
+                    2025 Sep 13: <a target="_self" href="./Sin_Game/t3_1nftvmt.html">家人们手机里有这种图片的男生怎么追？</a> <span class="flair" style="background-color: #ffbf00; color: #1c1c1c;">龟兔赛跑</span> - /u/QuantityMysterious46  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+23</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">8</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1ng1b66" data-time="1757779550" data-score="1" data-comments="2">
+                <p>
+                    2025 Sep 14: <a target="_self" href="./Sin_Game/t3_1ng1b66.html">天火哥已经神隐超过两个礼拜了</a>  - /u/DistributionBig4870  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">2</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1ng2ijd" data-time="1757782449" data-score="1" data-comments="0">
+                <p>
+                    2025 Sep 14: <a target="_self" href="./Sin_Game/t3_1ng2ijd.html">lx</a>  - /u/Yyjjjjj  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1ngfpbp" data-time="1757817186" data-score="18" data-comments="3">
+                <p>
+                    2025 Sep 14: <a target="_self" href="./Sin_Game/t3_1ngfpbp.html">这种的</a> <span class="flair" style="background-color: #01edfe; color: #1c1c1c;">请君入瓮</span> - /u/Sea_Wear_3404  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+18</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">3</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1ngsne6" data-time="1757859936" data-score="13" data-comments="0">
+                <p>
+                    2025 Sep 14: <a target="_self" href="./Sin_Game/t3_1ngsne6.html">想入行了</a>  - /u/Stoned-Zheng-Li-73i  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+13</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1njwied" data-time="1758162431" data-score="8" data-comments="1">
+                <p>
+                    2025 Sep 18: <a target="_self" href="./Sin_Game/t3_1njwied.html">批话</a>  - /u/SLucceksful-LAubike  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+8</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">1</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1nkmu24" data-time="1758235579" data-score="11" data-comments="4">
+                <p>
+                    2025 Sep 19: <a target="_self" href="./Sin_Game/t3_1nkmu24.html">新家圈老子！</a> <span class="flair" style="background-color: #e63519; color: #ffffff;">河图洛书</span> - /u/Own-Strength-7479  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+11</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">4</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1nknf8e" data-time="1758237116" data-score="0" data-comments="0">
+                <p>
+                    2025 Sep 19: <a target="_self" href="./Sin_Game/t3_1nknf8e.html">Lady 掐！Lady 掐！--<Never back down>空耳</a> <span class="flair" style="background-color: #e63519; color: #ffffff;">河图洛书</span> - /u/Own-Strength-7479  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+0</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1nkrmus" data-time="1758248901" data-score="0" data-comments="0">
+                <p>
+                    2025 Sep 19: <a target="_self" href="./Sin_Game/t3_1nkrmus.html">Chinese reading practice- 7；做人：少管少说就是福</a> <span class="flair" style="background-color: #ffbf00; color: #1c1c1c;">龟兔赛跑</span> - /u/iiiiiiiiib  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+0</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1nkrnuf" data-time="1758248979" data-score="1" data-comments="1">
+                <p>
+                    2025 Sep 19: <a target="_self" href="./Sin_Game/t3_1nkrnuf.html">义人出现了</a> <span class="flair" style="background-color: #ffbf00; color: #1c1c1c;">龟兔赛跑</span> - /u/iiiiiiiiib  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">1</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1nkrqh3" data-time="1758249178" data-score="2" data-comments="0">
+                <p>
+                    2025 Sep 19: <a target="_self" href="./Sin_Game/t3_1nkrqh3.html">集美，玉玉</a>  - /u/iiiiiiiiib  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+2</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1nmaemg" data-time="1758404463" data-score="15" data-comments="0">
+                <p>
+                    2025 Sep 21: <a target="_self" href="./Sin_Game/t3_1nmaemg.html">这届迪能儿到底什么时期引流的，都给它们迪能完了</a>  - /u/Cha_Da_B  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+15</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1nmk210" data-time="1758433935" data-score="13" data-comments="3">
+                <p>
+                    2025 Sep 21: <a target="_self" href="./Sin_Game/t3_1nmk210.html">是洞友吗</a>  - /u/Psychological-Ad5647  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+13</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">3</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1nmrhfu" data-time="1758460011" data-score="7" data-comments="0">
+                <p>
+                    2025 Sep 21: <a target="_self" href="./Sin_Game/t3_1nmrhfu.html">可爱哦</a>  - /u/yuqqweslut  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+7</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1nn0yvr" data-time="1758482428" data-score="2" data-comments="1">
+                <p>
+                    2025 Sep 22: <a target="_self" href="./Sin_Game/t3_1nn0yvr.html">今日读书会之《为人民服务》</a>  - /u/qixindabirenrencha  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+2</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">1</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1nn7m2t" data-time="1758499089" data-score="1" data-comments="2">
+                <p>
+                    2025 Sep 22: <a target="_self" href="./Sin_Game/t3_1nn7m2t.html">这种苹果小妞真实羡慕了</a>  - /u/SLucceksful-LAubike  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">2</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1no68ka" data-time="1758596019" data-score="9" data-comments="1">
+                <p>
+                    2025 Sep 23: <a target="_self" href="./Sin_Game/t3_1no68ka.html">硅友们注意了</a> <span class="flair" style="background-color: #e63519; color: #ffffff;">河图洛书</span> - /u/QuantityMysterious46  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+9</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">1</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1np7dyl" data-time="1758705173" data-score="9" data-comments="5">
+                <p>
+                    2025 Sep 24: <a target="_self" href="./Sin_Game/t3_1np7dyl.html">渴批鼠人去哪里了</a>  - /u/DistributionBig4870  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+9</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">5</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1npxou1" data-time="1758775202" data-score="5" data-comments="1">
+                <p>
+                    2025 Sep 25: <a target="_self" href="./Sin_Game/t3_1npxou1.html">你想</a>  - /u/Psychological-Ad5647  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+5</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">1</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1nq1ugc" data-time="1758791174" data-score="0" data-comments="1">
+                <p>
+                    2025 Sep 25: <a target="_self" href="./Sin_Game/t3_1nq1ugc.html">是硅友理想的母人吗</a> <span class="flair" style="background-color: #ffbf00; color: #1c1c1c;">龟兔赛跑</span> - /u/QuantityMysterious46  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+0</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">1</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1nq8f7v" data-time="1758810854" data-score="0" data-comments="1">
+                <p>
+                    2025 Sep 25: <a target="_self" href="./Sin_Game/t3_1nq8f7v.html">灵感来了</a> <span class="flair" style="background-color: #01edfe; color: #1c1c1c;">请君入瓮</span> - /u/Psychological-Ad5647  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+0</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">1</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1nqscop" data-time="1758861989" data-score="1" data-comments="0">
+                <p>
+                    2025 Sep 26: <a target="_self" href="./Sin_Game/t3_1nqscop.html">这种的怎么样，最近对大胸大屁股的没感觉，这种的小香皮想从脸舔到脚，衣服全部撕烂，最后抱起来草</a>  - /u/SLucceksful-LAubike  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1nr36zd" data-time="1758897789" data-score="15" data-comments="8">
+                <p>
+                    2025 Sep 26: <a target="_self" href="./Sin_Game/t3_1nr36zd.html">这种的是好女孩吗</a>  - /u/Psychological-Ad5647  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+15</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">8</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1nreakv" data-time="1758924065" data-score="17" data-comments="17">
+                <p>
+                    2025 Sep 27: <a target="_self" href="./Sin_Game/t3_1nreakv.html">远离法国白女，不然会变得不幸</a>  - /u/St-Bao  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+17</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">17</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1nro2j1" data-time="1758954465" data-score="1" data-comments="0">
+                <p>
+                    2025 Sep 27: <a target="_self" href="./Sin_Game/t3_1nro2j1.html">自我从南疆回来，一直坚决的反伊斯兰。很多时候，我常常夜里惊醒，梦到她抱怨，为什么不带她走。难道她不值两只羊吗?可我终究是个汉人。我也没有本事，把她藏到一个别人看不到的地方。我的父母或者妻子，也无法容忍我包养一个18岁的雏女。</a>  - /u/SLucceksful-LAubike  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1nrohe9" data-time="1758956035" data-score="3" data-comments="1">
+                <p>
+                    2025 Sep 27: <a target="_self" href="./Sin_Game/t3_1nrohe9.html">自我从南疆回来，一直坚决地反伊斯兰，写信给人大常委要求宗教世俗化。很多时候，我常常梦到她抱怨，“为什么不带她走。难道她不值两只羊吗?”我只能躲避她的眼神，裸着身大汗淋漓打开案灯，去抱我的四川爱人，从背后遐想她是那个每寸肌肤都在我手上游走的小羊犊，我呵斥着它、怜悯着它，训导着它，最后一个趔趄骑在它身上...可我终究是个汉人，我也没有本事，没有能力把她藏到一个别人看不到的地方。我的父母或者妻子，也无法容忍我包养一个17.5岁的少女。</a>  - /u/SLucceksful-LAubike  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+3</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">1</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1nrz9pd" data-time="1758989855" data-score="9" data-comments="4">
+                <p>
+                    2025 Sep 28: <a target="_self" href="./Sin_Game/t3_1nrz9pd.html">瓮友们sianmu了吗</a> <span class="flair" style="background-color: #4af20d; color: #1c1c1c;">瓮中捉鳖</span> - /u/Psychological-Ad5647  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+9</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">4</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1ns1jr1" data-time="1758995341" data-score="16" data-comments="4">
+                <p>
+                    2025 Sep 28: <a target="_self" href="./Sin_Game/t3_1ns1jr1.html">渴批鼠人是国男里的先锋队</a> <span class="flair" style="background-color: #e63519; color: #ffffff;">河图洛书</span> - /u/Dry_Cartoonist4792  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+16</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">4</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1nsliq5" data-time="1759057411" data-score="5" data-comments="8">
+                <p>
+                    2025 Sep 28: <a target="_self" href="./Sin_Game/t3_1nsliq5.html">安卓小黄蝻苦，给苹果女进贡了两千多欧终于哄开心了</a>  - /u/St-Bao  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+5</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">8</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1nugvu3" data-time="1759247486" data-score="3" data-comments="3">
+                <p>
+                    2025 Sep 30: <a target="_self" href="./Sin_Game/t3_1nugvu3.html">能杀到101个吗</a> <span class="flair" style="background-color: #4af20d; color: #1c1c1c;">瓮中捉鳖</span> - /u/Psychological-Ad5647  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+3</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">3</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1nyh3j5" data-time="1759646621" data-score="12" data-comments="7">
+                <p>
+                    2025 Oct 05: <a target="_self" href="./Sin_Game/t3_1nyh3j5.html">嗯。你的高中我的高中好像不一样</a>  - /u/SLucceksful-LAubike  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+12</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">7</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1nzk887" data-time="1759760067" data-score="12" data-comments="16">
+                <p>
+                    2025 Oct 06: <a target="_self" href="./Sin_Game/t3_1nzk887.html">盘点硅油最讨厌的十类中国人，第一名即使最善良的硅油也会痛斥下辈子永世轮回阿中仔</a>  - /u/SLucceksful-LAubike  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+12</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">16</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1o036ce" data-time="1759805083" data-score="5" data-comments="3">
+                <p>
+                    2025 Oct 07: <a target="_self" href="./Sin_Game/t3_1o036ce.html">Show up with that dope fancy masion and a fire luxury whip on Tiktok, and the chicks gonna flock to you, no cap.</a>  - /u/SLucceksful-LAubike  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+5</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">3</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1o24qpa" data-time="1760013366" data-score="9" data-comments="5">
+                <p>
+                    2025 Oct 09: <a target="_self" href="./Sin_Game/t3_1o24qpa.html">Princess Kako</a>  - /u/yuqqweslut  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+9</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">5</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1o8wgtx" data-time="1760692359" data-score="2" data-comments="5">
+                <p>
+                    2025 Oct 17: <a target="_self" href="./Sin_Game/t3_1o8wgtx.html">想要，想要住进一套高级小区，电梯间里贵太太们穿着旗袍扭着腰肢向我问好：卢先生早！保安敬礼拦下外卖小哥：你好同志！请步行送餐！想要，想要开上一台特斯拉，后排车座底下是散落的丝质内裤和廉价丝袜，女人们颤抖地不为钱财在高速下路口给卢先生献身。想要，想要一个老婆，22岁刚刚大学毕业，主动爱我是她的穴业工作：你终于回家啦，今天工作辛不辛苦，我给你准备了……</a>  - /u/SLucceksful-LAubike  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+2</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">5</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1o8wsqy" data-time="1760693622" data-score="9" data-comments="4">
+                <p>
+                    2025 Oct 17: <a target="_self" href="./Sin_Game/t3_1o8wsqy.html">谁的女朋友</a>  - /u/Thunder_Buta  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+9</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">4</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1o8xhuo" data-time="1760696224" data-score="11" data-comments="1">
+                <p>
+                    2025 Oct 17: <a target="_self" href="./Sin_Game/t3_1o8xhuo.html">老登品味有点低哦</a> <span class="flair" style="background-color: #000000; color: #ffffff;">神龟虽寿</span> - /u/Thunder_Buta  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+11</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">1</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1o8zt2w" data-time="1760703714" data-score="2" data-comments="3">
+                <p>
+                    2025 Oct 17: <a target="_self" href="./Sin_Game/t3_1o8zt2w.html">织女优势尽显</a>  - /u/Stoned-Zheng-Li-73i  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+2</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">3</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1oc6imr" data-time="1761031662" data-score="9" data-comments="0">
+                <p>
+                    2025 Oct 21: <a target="_self" href="./Sin_Game/t3_1oc6imr.html">为什么我在网上遇到的女的要我请吃饭问了句：猪脚饭行吗？就拉黑了，哎，现在都要吃漂亮饭嘛，好女孩在哪里</a>  - /u/SLucceksful-LAubike  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+9</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1odv4my" data-time="1761197710" data-score="3" data-comments="2">
+                <p>
+                    2025 Oct 23: <a target="_self" href="./Sin_Game/t3_1odv4my.html">我到底为什么性压抑</a>  - /u/AzumaAtago  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+3</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">2</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1ofop9d" data-time="1761389963" data-score="1" data-comments="6">
+                <p>
+                    2025 Oct 25: <a target="_self" href="./Sin_Game/t3_1ofop9d.html">谁去</a> <span class="flair" style="background-color: #01edfe; color: #1c1c1c;">请君入瓮</span> - /u/Thunder_Buta  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">6</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1ofoqzi" data-time="1761390111" data-score="18" data-comments="4">
+                <p>
+                    2025 Oct 25: <a target="_self" href="./Sin_Game/t3_1ofoqzi.html">不推妹妹的下场</a> <span class="flair" style="background-color: #4af20d; color: #1c1c1c;">瓮中捉鳖</span> - /u/Thunder_Buta  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+18</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">4</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1ogcbrw" data-time="1761455681" data-score="11" data-comments="1">
+                <p>
+                    2025 Oct 26: <a target="_self" href="./Sin_Game/t3_1ogcbrw.html">这样弄你😭</a> <span class="flair" style="background-color: #ffbf00; color: #1c1c1c;">龟兔赛跑</span> - /u/neko_canyon  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+11</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">1</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1ogf6yh" data-time="1761466676" data-score="1" data-comments="1">
+                <p>
+                    2025 Oct 26: <a target="_self" href="./Sin_Game/t3_1ogf6yh.html">是龟友吗？</a>  - /u/Farmerunprestigious  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">1</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1ogmezm" data-time="1761489929" data-score="13" data-comments="3">
+                <p>
+                    2025 Oct 26: <a target="_self" href="./Sin_Game/t3_1ogmezm.html">一次1500是什么价位</a>  - /u/Thunder_Buta  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+13</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">3</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1ohw48j" data-time="1761613253" data-score="0" data-comments="7">
+                <p>
+                    2025 Oct 28: <a target="_self" href="./Sin_Game/t3_1ohw48j.html">这种的是处女吗</a> <span class="flair" style="background-color: #01edfe; color: #1c1c1c;">请君入瓮</span> - /u/neko_canyon  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+0</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">7</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1oirrai" data-time="1761701466" data-score="1" data-comments="0">
+                <p>
+                    2025 Oct 29: <a target="_self" href="./Sin_Game/t3_1oirrai.html">说来惭愧，我也曾经诋毁过共产主义</a>  - /u/Thunder_Buta  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1oj0gpz" data-time="1761732230" data-score="9" data-comments="11">
+                <p>
+                    2025 Oct 29: <a target="_self" href="./Sin_Game/t3_1oj0gpz.html">如何评价红迪已经彻底没人了</a>  - /u/DistributionBig4870  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+9</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">11</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1ojmy5x" data-time="1761788110" data-score="20" data-comments="4">
+                <p>
+                    2025 Oct 30: <a target="_self" href="./Sin_Game/t3_1ojmy5x.html">你好，请礼貌一点，本人是985硕士。</a> <span class="flair" style="background-color: #ffbf00; color: #1c1c1c;">龟兔赛跑</span> - /u/Thunder_Buta  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+20</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">4</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1ojnaes" data-time="1761789029" data-score="10" data-comments="5">
+                <p>
+                    2025 Oct 30: <a target="_self" href="./Sin_Game/t3_1ojnaes.html">这种的是好女孩吗</a> <span class="flair" style="background-color: #e63519; color: #ffffff;">河图洛书</span> - /u/neko_canyon  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+10</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">5</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1ojrghy" data-time="1761802156" data-score="10" data-comments="2">
+                <p>
+                    2025 Oct 30: <a target="_self" href="./Sin_Game/t3_1ojrghy.html">国男怕了吗</a>  - /u/Thunder_Buta  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+10</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">2</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1ol04dv" data-time="1761930160" data-score="9" data-comments="2">
+                <p>
+                    2025 Nov 01: <a target="_self" href="./Sin_Game/t3_1ol04dv.html">是天火吗</a> <span class="flair" style="background-color: #01edfe; color: #1c1c1c;">请君入瓮</span> - /u/Dry_Cartoonist4792  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+9</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">2</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1olcffe" data-time="1761962445" data-score="22" data-comments="3">
+                <p>
+                    2025 Nov 01: <a target="_self" href="./Sin_Game/t3_1olcffe.html">先润了🏃</a> <span class="flair" style="background-color: #ffbf00; color: #1c1c1c;">龟兔赛跑</span> - /u/neko_canyon  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+22</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">3</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1oljl7q" data-time="1761989479" data-score="1" data-comments="0">
+                <p>
+                    2025 Nov 01: <a target="_self" href="./Sin_Game/t3_1oljl7q.html">鸡巴套子求操被拒</a>  - /u/Farmerunprestigious  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1oloag8" data-time="1762004931" data-score="16" data-comments="0">
+                <p>
+                    2025 Nov 01: <a target="_self" href="./Sin_Game/t3_1oloag8.html">男人不坏女人不爱</a> <span class="flair" style="background-color: #01edfe; color: #1c1c1c;">请君入瓮</span> - /u/Thunder_Buta  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+16</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1olr5e5" data-time="1762012066" data-score="1" data-comments="1">
+                <p>
+                    2025 Nov 01: <a target="_self" href="./Sin_Game/t3_1olr5e5.html">超管表示账号有异常行为直接给封了，得从头开始养号了</a>  - /u/Ayurbarwada  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">1</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1om2pzs" data-time="1762040762" data-score="13" data-comments="1">
+                <p>
+                    2025 Nov 02: <a target="_self" href="./Sin_Game/t3_1om2pzs.html">谁的女朋友</a>  - /u/Thunder_Buta  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+13</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">1</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1one7gf" data-time="1762182477" data-score="1" data-comments="0">
+                <p>
+                    2025 Nov 03: <a target="_self" href="./Sin_Game/t3_1one7gf.html">我承认有段时间我完全被织女迷住了</a>  - /u/Turbulent_Shop_1987  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1ony3ws" data-time="1762230288" data-score="1" data-comments="0">
+                <p>
+                    2025 Nov 04: <a target="_self" href="./Sin_Game/t3_1ony3ws.html">集美们开亲</a> <span class="flair" style="background-color: #4af20d; color: #1c1c1c;">瓮中捉鳖</span> - /u/Thunder_Buta  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1oo8dta" data-time="1762266035" data-score="9" data-comments="1">
+                <p>
+                    2025 Nov 04: <a target="_self" href="./Sin_Game/t3_1oo8dta.html">好女孩</a>  - /u/Stoned-Zheng-Li-73i  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+9</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">1</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1oowa54" data-time="1762326584" data-score="1" data-comments="0">
+                <p>
+                    2025 Nov 05: <a target="_self" href="./Sin_Game/t3_1oowa54.html">我有个朋友21结的婚 现在她公公每个月给她三万 给她找了个清闲的工作 孩子有人带 她愿意干嘛就干嘛</a>  - /u/SLucceksful-LAubike  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1orujp1" data-time="1762621380" data-score="8" data-comments="8">
+                <p>
+                    2025 Nov 09: <a target="_self" href="./Sin_Game/t3_1orujp1.html">这种的是好女孩吗</a> <span class="flair" style="background-color: #01edfe; color: #1c1c1c;">请君入瓮</span> - /u/neko_canyon  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+8</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">8</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1os7tuu" data-time="1762655821" data-score="1" data-comments="1">
+                <p>
+                    2025 Nov 09: <a target="_self" href="./Sin_Game/t3_1os7tuu.html">好女孩</a> <span class="flair" style="background-color: #01edfe; color: #1c1c1c;">请君入瓮</span> - /u/EatDogNPussy  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">1</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1ovzoo3" data-time="1763036636" data-score="9" data-comments="3">
+                <p>
+                    2025 Nov 13: <a target="_self" href="./Sin_Game/t3_1ovzoo3.html">瓮友快来帮帮忙</a> <span class="flair" style="background-color: #01edfe; color: #1c1c1c;">请君入瓮</span> - /u/VirCantus  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+9</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">3</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1ow0gyn" data-time="1763038919" data-score="1" data-comments="2">
+                <p>
+                    2025 Nov 13: <a target="_self" href="./Sin_Game/t3_1ow0gyn.html">这种的还是处女吗</a> <span class="flair" style="background-color: #e63519; color: #ffffff;">河图洛书</span> - /u/VirCantus  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">2</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1ow5v0j" data-time="1763051919" data-score="1" data-comments="0">
+                <p>
+                    2025 Nov 14: <a target="_self" href="./Sin_Game/t3_1ow5v0j.html">全过程民主中，少话</a>  - /u/Turbulent_Shop_1987  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1ow5v39" data-time="1763051923" data-score="7" data-comments="1">
+                <p>
+                    2025 Nov 14: <a target="_self" href="./Sin_Game/t3_1ow5v39.html">全过程民主中，少话</a>  - /u/Turbulent_Shop_1987  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+7</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">1</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1ow9ls1" data-time="1763060213" data-score="5" data-comments="0">
+                <p>
+                    2025 Nov 14: <a target="_self" href="./Sin_Game/t3_1ow9ls1.html">大大方方往里进</a> <span class="flair" style="background-color: #4af20d; color: #1c1c1c;">瓮中捉鳖</span> - /u/neko_canyon  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+5</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1ownz8v" data-time="1763097654" data-score="14" data-comments="4">
+                <p>
+                    2025 Nov 14: <a target="_self" href="./Sin_Game/t3_1ownz8v.html">哪里人</a> <span class="flair" style="background-color: #e63519; color: #ffffff;">河图洛书</span> - /u/neko_canyon  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+14</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">4</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1owzwg2" data-time="1763134937" data-score="5" data-comments="6">
+                <p>
+                    2025 Nov 14: <a target="_self" href="./Sin_Game/t3_1owzwg2.html">哎，生活在你汁真的好痛苦</a>  - /u/SLucceksful-LAubike  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+5</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">6</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1oxthm2" data-time="1763218005" data-score="11" data-comments="9">
+                <p>
+                    2025 Nov 15: <a target="_self" href="./Sin_Game/t3_1oxthm2.html">盘点在中国过得好必备的十大属性，震惊！第十种居然让硅油下辈子还做中国人！</a>  - /u/SLucceksful-LAubike  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+11</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">9</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1pl9tf4" data-time="1765591565" data-score="1" data-comments="0">
+                <p>
+                    2025 Dec 13: <a target="_self" href="./Sin_Game/t3_1pl9tf4.html">test</a> <span class="flair" style="background-color: #000000; color: #ffffff;">神龟虽寿</span> - /u/neko_canyon  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1pmp18d" data-time="1765746475" data-score="2" data-comments="0">
+                <p>
+                    2025 Dec 15: <a target="_self" href="./Sin_Game/t3_1pmp18d.html">经典回顾之幸好我有个批</a> <span class="flair" style="background-color: #e63519; color: #ffffff;">河图洛书</span> - /u/DistributionBig4870  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+2</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1pn1ybn" data-time="1765785552" data-score="1" data-comments="0">
+                <p>
+                    2025 Dec 15: <a target="_self" href="./Sin_Game/t3_1pn1ybn.html">哇哇哇 是好女孩吗</a> <span class="flair" style="background-color: #ffbf00; color: #1c1c1c;">龟兔赛跑</span> - /u/Mickxes  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1pn5bcy" data-time="1765798947" data-score="0" data-comments="2">
+                <p>
+                    2025 Dec 15: <a target="_self" href="./Sin_Game/t3_1pn5bcy.html">天火哥还能回来吗</a>  - /u/DistributionBig4870  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+0</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">2</span>
+                </p>
+            </div>
+        </div>
+        <script>
+            function sortPosts() {{
+                const container = document.getElementById('posts-container');
+                const posts = Array.from(container.getElementsByClassName('post-listing'));
+                const sortBy = document.getElementById('sortOrder').value;
+
+                // remember user choice
+                sessionStorage.setItem("reddit_archive_sort", sortBy);
+
+                // Check if we need ascending or descending
+                const isAsc = sortBy.endsWith('-asc');
+                const key = isAsc ? sortBy.replace('-asc', '') : sortBy;
+
+                posts.sort((a, b) => {{
+                    let valA = parseInt(a.getAttribute('data-' + key));
+                    let valB = parseInt(b.getAttribute('data-' + key));
+                    
+                    // If Ascending: valA - valB (1, 2, 3...)
+                    // If Descending: valB - valA (9, 8, 7...)
+                    return isAsc ? valA - valB : valB - valA;
+                }});
+
+                // Re-insert posts in the new order
+                posts.forEach(post => container.appendChild(post));
+            }}
+            document.addEventListener("DOMContentLoaded", function () {{
+                const savedSort = sessionStorage.getItem("reddit_archive_sort");
+
+                if (savedSort) {{
+                    document.getElementById("sortOrder").value = savedSort;
+                }}
+
+                sortPosts(); // apply sorting immediately
+            }});
+        </script>
+    </body>
+</html>

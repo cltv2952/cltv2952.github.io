@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>guiwushenyouhui</title>
+        <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+        <style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+                font-size: var(--vscode-markdown-font-size, 14px);
+                padding: 0 26px;
+                line-height: var(--vscode-markdown-line-height, 22px);
+            }
+            a {
+                color: blue; text-decoration: none;
+            }
+            a:hover {
+                color: red;
+            }
+            a:visited {
+                color: rgba(251, 215, 157);
+            }
+            p {
+                scroll-margin-top: 100px; /* Adjust this value based on your header height */
+            }
+            .flair {
+                padding: 2px 6px; border-radius: 20px; font-size: 10px; font-weight: bold;
+                margin-left: 5px; display: inline-block; vertical-align: middle; line-height: 1.2;
+            }
+            .post-listing {
+                margin-bottom: 0px;
+            }
+            .meta-val {
+                color: #888888;
+                font-size: 14px;
+            }
+            .upvote-icon {
+                width: 16px; 
+                height: 16px;
+                color: #888888;
+                vertical-align: middle;
+                display: inline-block;
+                margin-left: 4px;
+                margin-right: -2px;
+            }
+            .comment-icon {
+                width: 16px; 
+                height: 16px;
+                color: #888888;
+                vertical-align: middle;
+                display: inline-block;
+                margin-left: 4px;
+                margin-right: 2px;
+                position: relative;
+                top: 1px;
+            }
+            #note {
+                padding-left: 20px;
+                padding-right: 20px;
+                margin: auto;
+                border: 2px solid rgba(248, 108, 95);
+                background-color: #f3f3f3;
+                position: sticky;
+                top: 8px;
+            }
+            #topspace, #bottomspace {
+                position: fixed;
+                background-color: white;
+                padding: 4px;
+                width: 100%;
+            }
+            #topspace {
+                top: 0;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>r/guiwushenyouhui</h1>
+        <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+            <symbol id="icon-upvote" viewBox="0 0 20 20">
+                <path d="M10 2l-7 7h4v9h6V9h4z" fill="currentColor"/>
+            </symbol>
+            <symbol id="icon-comment" viewBox="0 0 20 20">
+                <path d="M18 7c0-3-3.6-5-8-5s-8 2-8 5c0 1.8 1.3 3.4 3.2 4.3-.3 1.1-1.2 2.5-1.2 2.5s1.7 0 2.9-1.3c1 .3 2 .5 3.1.5 4.4 0 8-2.5 8-6z" fill="currentColor"/>
+            </symbol>
+        </svg>
+        <div id="sort-controls" style="margin-bottom: 20px; padding: 10px; background: #f9f9f9; border-radius: 8px; border: 1px solid #eee;">
+            <label for="sortOrder" style="font-weight: bold; font-size: 12px;">Sort Archive By: </label>
+            <select id="sortOrder" onchange="sortPosts()" style="padding: 5px; border-radius: 4px;">
+                <option value="time-asc">Date (Oldest)</option>
+                <option value="time">Date (Newest)</option>
+                <option value="score">Upvotes (Highest)</option>
+                <option value="comments">Comments (Most)</option>
+            </select>
+        </div>
+        <div id="posts-container">
+            <div class="post-listing" id="t3_t4m88x" data-time="1646179113" data-score="1" data-comments="0">
+                <p>
+                    2022 Mar 02: <a target="_self" href="./guiwushenyouhui/t3_t4m88x.html">[deleted by user]</a>  - /u/[deleted]  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1ap41yj" data-time="1707755446" data-score="1" data-comments="0">
+                <p>
+                    2024 Feb 13: <a target="_self" href="./guiwushenyouhui/t3_1ap41yj.html">基础建设之test</a>  - /u/guiwushenyouhui8964  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1ap5pb7" data-time="1707759405" data-score="1" data-comments="1">
+                <p>
+                    2024 Feb 13: <a target="_self" href="./guiwushenyouhui/t3_1ap5pb7.html">基础建设之贵物神友会</a>  - /u/guiwushenyouhui8964  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">1</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1as2jhe" data-time="1708067128" data-score="1" data-comments="0">
+                <p>
+                    2024 Feb 16: <a target="_self" href="./guiwushenyouhui/t3_1as2jhe.html">什么是蜘蛛</a>  - /u/guiwushenyouhui8964  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1cyj8ar" data-time="1716434908" data-score="1" data-comments="2">
+                <p>
+                    2024 May 23: <a target="_self" href="./guiwushenyouhui/t3_1cyj8ar.html">经典回顾之天津大烟花</a>  - /u/guiwushenyouhui8964  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">2</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1cykrmw" data-time="1716440301" data-score="2" data-comments="0">
+                <p>
+                    2024 May 23: <a target="_self" href="./guiwushenyouhui/t3_1cykrmw.html">你们抽刀向弱者去吧，我单杀里根去了</a>  - /u/Nervous_Egg_3393  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+2</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1cyl585" data-time="1716441677" data-score="1" data-comments="3">
+                <p>
+                    2024 May 23: <a target="_self" href="./guiwushenyouhui/t3_1cyl585.html">引流狗or 老资历</a>  - /u/No-Intention-9416  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">3</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1cyn02n" data-time="1716449138" data-score="7" data-comments="0">
+                <p>
+                    2024 May 23: <a target="_self" href="./guiwushenyouhui/t3_1cyn02n.html">经典回顾之超管结算</a>  - /u/LDT77777  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+7</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1cyquiv" data-time="1716464952" data-score="0" data-comments="2">
+                <p>
+                    2024 May 23: <a target="_self" href="./guiwushenyouhui/t3_1cyquiv.html">你永远不会成为一个真正的女人。你没有子宫，没有卵巢，没有卵子。你是男同，被药物和手术扭曲成了对自然完美到粗俗嘲弄。你得到的肯定都是虚伪和半心半意的。在你背后，人们嘲笑你。你的父母对你感到恶心和羞愧。你的朋友关上门后对你的阴森外貌笑个不停，男人对你感到厌恶，几千年的进化使男人对识破伪装的能力非常高，即使很pass的跨子看起来也不自然和怪异，你的骨骼结构就是最大的破绽。即使你设法带一个喝醉的男人回家，他一闻到你那疤痕假屄散发的恶臭立刻就会转身逃走。你永远都不会快乐，你每天早上都挤出一个假笑，告诉自己一切都会好的，但在内心深处，你感到抑郁像杂草一样逐渐蔓延。准备好被难以忍受的重量压垮吧。最终，这种压</a>  - /u/guiwushenyouhui8964  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+0</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">2</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1cyrzvx" data-time="1716468622" data-score="1" data-comments="9">
+                <p>
+                    2024 May 23: <a target="_self" href="./guiwushenyouhui/t3_1cyrzvx.html">胶托邦的mod能看到不，请拉我一下</a>  - /u/Glad_Past_9838  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">9</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1cyvk9s" data-time="1716478122" data-score="1" data-comments="0">
+                <p>
+                    2024 May 23: <a target="_self" href="./guiwushenyouhui/t3_1cyvk9s.html">经典回顾之精神病院</a>  - /u/[deleted]  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1cyy58k" data-time="1716484501" data-score="9" data-comments="3">
+                <p>
+                    2024 May 24: <a target="_self" href="./guiwushenyouhui/t3_1cyy58k.html">经典回顾之里根讲民主。</a>  - /u/guiwushenyouhui8964  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+9</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">3</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1cyybhd" data-time="1716484924" data-score="6" data-comments="0">
+                <p>
+                    2024 May 24: <a target="_self" href="./guiwushenyouhui/t3_1cyybhd.html">经典回顾之维尼熊</a>  - /u/guiwushenyouhui8964  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+6</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1cyyd79" data-time="1716485046" data-score="4" data-comments="1">
+                <p>
+                    2024 May 24: <a target="_self" href="./guiwushenyouhui/t3_1cyyd79.html">经典回顾之神蛆造梗大会</a>  - /u/guiwushenyouhui8964  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+4</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">1</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1cyyhjv" data-time="1716485350" data-score="6" data-comments="4">
+                <p>
+                    2024 May 24: <a target="_self" href="./guiwushenyouhui/t3_1cyyhjv.html">经典回顾之躺平起源</a>  - /u/guiwushenyouhui8964  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+6</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">4</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1cyyoi0" data-time="1716485842" data-score="3" data-comments="1">
+                <p>
+                    2024 May 24: <a target="_self" href="./guiwushenyouhui/t3_1cyyoi0.html">经典回顾之比马克吃得好</a>  - /u/guiwushenyouhui8964  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+3</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">1</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1czau41" data-time="1716519315" data-score="6" data-comments="3">
+                <p>
+                    2024 May 24: <a target="_self" href="./guiwushenyouhui/t3_1czau41.html">有一种偶像，叫做古德莉莉安</a>  - /u/guiwushenyouhui8964  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+6</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">3</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1czmsdq" data-time="1716562798" data-score="1" data-comments="0">
+                <p>
+                    2024 May 24: <a target="_self" href="./guiwushenyouhui/t3_1czmsdq.html">中国青年报英雄</a>  - /u/SayaMemoryZT-XR  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1czn0ob" data-time="1716563375" data-score="3" data-comments="0">
+                <p>
+                    2024 May 24: <a target="_self" href="./guiwushenyouhui/t3_1czn0ob.html">中国青年报英雄</a>  - /u/SayaMemoryZT-XR  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+3</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1d1qarh" data-time="1716812649" data-score="2" data-comments="0">
+                <p>
+                    2024 May 27: <a target="_self" href="./guiwushenyouhui/t3_1d1qarh.html">卖沟子记录</a>  - /u/DrawFar1312  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+2</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1d38d1s" data-time="1716976277" data-score="6" data-comments="3">
+                <p>
+                    2024 May 29: <a target="_self" href="./guiwushenyouhui/t3_1d38d1s.html">董先生</a>  - /u/Ok_Anything_1163  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+6</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">3</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1d3gjah" data-time="1717000585" data-score="4" data-comments="2">
+                <p>
+                    2024 May 30: <a target="_self" href="./guiwushenyouhui/t3_1d3gjah.html">我亲自指挥，亲自部署，命令你们去练语言，练颠勺，练卡车，练刮大白</a>  - /u/FrostingNeat5262  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+4</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">2</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1d3zjwo" data-time="1717059593" data-score="1" data-comments="3">
+                <p>
+                    2024 May 30: <a target="_self" href="./guiwushenyouhui/t3_1d3zjwo.html">你们打了新冠疫苗后弟弟也变小了吗？</a>  - /u/cyperxianzhong  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">3</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1d5cwnz" data-time="1717209508" data-score="0" data-comments="2">
+                <p>
+                    2024 Jun 01: <a target="_self" href="./guiwushenyouhui/t3_1d5cwnz.html">目前我构建的信息方仓够我玩10年了</a>  - /u/YongShiLunHui  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+0</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">2</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1dad6mu" data-time="1717773159" data-score="3" data-comments="1">
+                <p>
+                    2024 Jun 07: <a target="_self" href="./guiwushenyouhui/t3_1dad6mu.html">草泥马之歌</a>  - /u/Ok_Anything_1163  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+3</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">1</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1daztjw" data-time="1717842203" data-score="2" data-comments="0">
+                <p>
+                    2024 Jun 08: <a target="_self" href="./guiwushenyouhui/t3_1daztjw.html"> （🖕 ◕‿◕ ༽つ（🖕 ◕‿◕ ༽つ（🖕 ◕‿◕ ༽つ（🖕 ◕‿◕ ༽つ</a>  - /u/Ok_Anything_1163  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+2</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1db19hg" data-time="1717847752" data-score="2" data-comments="1">
+                <p>
+                    2024 Jun 08: <a target="_self" href="./guiwushenyouhui/t3_1db19hg.html">我是一条东北狗呀！</a>  - /u/Ok_Anything_1163  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+2</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">1</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1db47es" data-time="1717856959" data-score="10" data-comments="1">
+                <p>
+                    2024 Jun 08: <a target="_self" href="./guiwushenyouhui/t3_1db47es.html">共产党我操你妈</a>  - /u/Ok_Anything_1163  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+10</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">1</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1dcjjsz" data-time="1718020072" data-score="3" data-comments="1">
+                <p>
+                    2024 Jun 10: <a target="_self" href="./guiwushenyouhui/t3_1dcjjsz.html">我河北人先生看见麻烦拉一下，原来的账号被超管shadowban了</a>  - /u/ResponsibleScene3663  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+3</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">1</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1diohx0" data-time="1718710593" data-score="7" data-comments="1">
+                <p>
+                    2024 Jun 18: <a target="_self" href="./guiwushenyouhui/t3_1diohx0.html">老鼠</a>  - /u/Ok_Anything_1163  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+7</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">1</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1dioie8" data-time="1718710644" data-score="7" data-comments="0">
+                <p>
+                    2024 Jun 18: <a target="_self" href="./guiwushenyouhui/t3_1dioie8.html">这几天我因为姜萍彻夜难眠</a>  - /u/Ok_Anything_1163  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+7</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1diopna" data-time="1718711318" data-score="5" data-comments="0">
+                <p>
+                    2024 Jun 18: <a target="_self" href="./guiwushenyouhui/t3_1diopna.html">eju已经查到分了750</a>  - /u/Ok_Anything_1163  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+5</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1dj8yhh" data-time="1718765928" data-score="5" data-comments="3">
+                <p>
+                    2024 Jun 19: <a target="_self" href="./guiwushenyouhui/t3_1dj8yhh.html">好難受，陽痿了</a>  - /u/Timebottle13  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+5</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">3</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1dk7cev" data-time="1718875210" data-score="3" data-comments="0">
+                <p>
+                    2024 Jun 20: <a target="_self" href="./guiwushenyouhui/t3_1dk7cev.html">基础建设之宿翼琴赠《贵物神友吧》 春风又绿江南岸，夏风再起雷雨翻！秋季你我依然见：冬季雪飘情义见！ 史上什么最尊贵？情义无价！我们相约一起走过无数个春夏秋冬呀！宿翼琴恭敬上呈，公元2020年7月15日夜23点18分</a>  - /u/Ok_Anything_1163  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+3</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1dke81a" data-time="1718896765" data-score="2" data-comments="2">
+                <p>
+                    2024 Jun 20: <a target="_self" href="./guiwushenyouhui/t3_1dke81a.html">這種的....</a>  - /u/rebutv  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+2</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">2</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1dltmuz" data-time="1719055919" data-score="3" data-comments="0">
+                <p>
+                    2024 Jun 22: <a target="_self" href="./guiwushenyouhui/t3_1dltmuz.html">這下不得不玩了</a>  - /u/rebutv  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+3</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1do02he" data-time="1719299925" data-score="2" data-comments="0">
+                <p>
+                    2024 Jun 25: <a target="_self" href="./guiwushenyouhui/t3_1do02he.html">大戰紅迪超管！</a>  - /u/rebutv  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+2</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1e0p73w" data-time="1720705183" data-score="13" data-comments="6">
+                <p>
+                    2024 Jul 11: <a target="_self" href="./guiwushenyouhui/t3_1e0p73w.html">新家在哪</a>  - /u/New-Entrance7841  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+13</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">6</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1e4vox8" data-time="1721153728" data-score="8" data-comments="3">
+                <p>
+                    2024 Jul 17: <a target="_self" href="./guiwushenyouhui/t3_1e4vox8.html">吃点</a>  - /u/chengguotv  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+8</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">3</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1e71ywz" data-time="1721390358" data-score="5" data-comments="1">
+                <p>
+                    2024 Jul 19: <a target="_self" href="./guiwushenyouhui/t3_1e71ywz.html">张妈TV</a>  - /u/chengguotv  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+5</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">1</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1fdwaap" data-time="1726011486" data-score="8" data-comments="4">
+                <p>
+                    2024 Sep 11: <a target="_self" href="./guiwushenyouhui/t3_1fdwaap.html">还有人吗</a>  - /u/Strict-Music-3969  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+8</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">4</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1fg9hg0" data-time="1726272639" data-score="1" data-comments="0">
+                <p>
+                    2024 Sep 14: <a target="_self" href="./guiwushenyouhui/t3_1fg9hg0.html">回眸一笑</a>  - /u/Dramatic_Top_9739  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1fitg87" data-time="1726560513" data-score="3" data-comments="2">
+                <p>
+                    2024 Sep 17: <a target="_self" href="./guiwushenyouhui/t3_1fitg87.html">還能說話嗎？</a>  - /u/Timebottle13  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+3</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">2</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1fjj6rn" data-time="1726629420" data-score="1" data-comments="2">
+                <p>
+                    2024 Sep 18: <a target="_self" href="./guiwushenyouhui/t3_1fjj6rn.html">你好</a>  - /u/Timebottle13  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">2</span>
+                </p>
+            </div>
+        </div>
+        <script>
+            function sortPosts() {{
+                const container = document.getElementById('posts-container');
+                const posts = Array.from(container.getElementsByClassName('post-listing'));
+                const sortBy = document.getElementById('sortOrder').value;
+
+                // remember user choice
+                sessionStorage.setItem("reddit_archive_sort", sortBy);
+
+                // Check if we need ascending or descending
+                const isAsc = sortBy.endsWith('-asc');
+                const key = isAsc ? sortBy.replace('-asc', '') : sortBy;
+
+                posts.sort((a, b) => {{
+                    let valA = parseInt(a.getAttribute('data-' + key));
+                    let valB = parseInt(b.getAttribute('data-' + key));
+                    
+                    // If Ascending: valA - valB (1, 2, 3...)
+                    // If Descending: valB - valA (9, 8, 7...)
+                    return isAsc ? valA - valB : valB - valA;
+                }});
+
+                // Re-insert posts in the new order
+                posts.forEach(post => container.appendChild(post));
+            }}
+            document.addEventListener("DOMContentLoaded", function () {{
+                const savedSort = sessionStorage.getItem("reddit_archive_sort");
+
+                if (savedSort) {{
+                    document.getElementById("sortOrder").value = savedSort;
+                }}
+
+                sortPosts(); // apply sorting immediately
+            }});
+        </script>
+    </body>
+</html>

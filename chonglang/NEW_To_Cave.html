@@ -1,0 +1,1869 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>NEW_To_Cave</title>
+        <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+        <style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+                font-size: var(--vscode-markdown-font-size, 14px);
+                padding: 0 26px;
+                line-height: var(--vscode-markdown-line-height, 22px);
+            }
+            a {
+                color: blue; text-decoration: none;
+            }
+            a:hover {
+                color: red;
+            }
+            a:visited {
+                color: rgba(251, 215, 157);
+            }
+            p {
+                scroll-margin-top: 100px; /* Adjust this value based on your header height */
+            }
+            .flair {
+                padding: 2px 6px; border-radius: 20px; font-size: 10px; font-weight: bold;
+                margin-left: 5px; display: inline-block; vertical-align: middle; line-height: 1.2;
+            }
+            .post-listing {
+                margin-bottom: 0px;
+            }
+            .meta-val {
+                color: #888888;
+                font-size: 14px;
+            }
+            .upvote-icon {
+                width: 16px; 
+                height: 16px;
+                color: #888888;
+                vertical-align: middle;
+                display: inline-block;
+                margin-left: 4px;
+                margin-right: -2px;
+            }
+            .comment-icon {
+                width: 16px; 
+                height: 16px;
+                color: #888888;
+                vertical-align: middle;
+                display: inline-block;
+                margin-left: 4px;
+                margin-right: 2px;
+                position: relative;
+                top: 1px;
+            }
+            #note {
+                padding-left: 20px;
+                padding-right: 20px;
+                margin: auto;
+                border: 2px solid rgba(248, 108, 95);
+                background-color: #f3f3f3;
+                position: sticky;
+                top: 8px;
+            }
+            #topspace, #bottomspace {
+                position: fixed;
+                background-color: white;
+                padding: 4px;
+                width: 100%;
+            }
+            #topspace {
+                top: 0;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>r/NEW_To_Cave</h1>
+        <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+            <symbol id="icon-upvote" viewBox="0 0 20 20">
+                <path d="M10 2l-7 7h4v9h6V9h4z" fill="currentColor"/>
+            </symbol>
+            <symbol id="icon-comment" viewBox="0 0 20 20">
+                <path d="M18 7c0-3-3.6-5-8-5s-8 2-8 5c0 1.8 1.3 3.4 3.2 4.3-.3 1.1-1.2 2.5-1.2 2.5s1.7 0 2.9-1.3c1 .3 2 .5 3.1.5 4.4 0 8-2.5 8-6z" fill="currentColor"/>
+            </symbol>
+        </svg>
+        <div id="sort-controls" style="margin-bottom: 20px; padding: 10px; background: #f9f9f9; border-radius: 8px; border: 1px solid #eee;">
+            <label for="sortOrder" style="font-weight: bold; font-size: 12px;">Sort Archive By: </label>
+            <select id="sortOrder" onchange="sortPosts()" style="padding: 5px; border-radius: 4px;">
+                <option value="time-asc">Date (Oldest)</option>
+                <option value="time">Date (Newest)</option>
+                <option value="score">Upvotes (Highest)</option>
+                <option value="comments">Comments (Most)</option>
+            </select>
+        </div>
+        <div id="posts-container">
+            <div class="post-listing" id="t3_1d5i9k4" data-time="1717229903" data-score="2" data-comments="4">
+                <p>
+                    2024 Jun 01: <a target="_self" href="./NEW_To_Cave/t3_1d5i9k4.html">新家</a>  - /u/Unlikely-Stress-1902  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+2</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">4</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1d627rm" data-time="1717291979" data-score="0" data-comments="7">
+                <p>
+                    2024 Jun 02: <a target="_self" href="./NEW_To_Cave/t3_1d627rm.html">mod招募</a>  - /u/Unlikely-Stress-1902  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+0</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">7</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1d6b4bh" data-time="1717327319" data-score="0" data-comments="0">
+                <p>
+                    2024 Jun 02: <a target="_self" href="./NEW_To_Cave/t3_1d6b4bh.html">驱邪符</a>  - /u/Unlikely-Stress-1902  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+0</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1d6szz6" data-time="1717378572" data-score="1" data-comments="1">
+                <p>
+                    2024 Jun 03: <a target="_self" href="./NEW_To_Cave/t3_1d6szz6.html">给老干部安逸完了</a>  - /u/Salty-Quiet302  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">1</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1d6t3ji" data-time="1717378893" data-score="1" data-comments="0">
+                <p>
+                    2024 Jun 03: <a target="_self" href="./NEW_To_Cave/t3_1d6t3ji.html">这种的是处女吗</a>  - /u/Salty-Quiet302  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1d6tk9d" data-time="1717380367" data-score="2" data-comments="0">
+                <p>
+                    2024 Jun 03: <a target="_self" href="./NEW_To_Cave/t3_1d6tk9d.html">拜登同志对广大mtf同胞发表重要讲话</a>  - /u/Salty-Quiet302  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+2</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1d6tls4" data-time="1717380506" data-score="2" data-comments="1">
+                <p>
+                    2024 Jun 03: <a target="_self" href="./NEW_To_Cave/t3_1d6tls4.html">汉族，隐忍</a>  - /u/Salty-Quiet302  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+2</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">1</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1d6to1j" data-time="1717380703" data-score="1" data-comments="0">
+                <p>
+                    2024 Jun 03: <a target="_self" href="./NEW_To_Cave/t3_1d6to1j.html">想他了</a>  - /u/Salty-Quiet302  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1d6tqx1" data-time="1717380966" data-score="1" data-comments="0">
+                <p>
+                    2024 Jun 03: <a target="_self" href="./NEW_To_Cave/t3_1d6tqx1.html">什么派对</a>  - /u/Salty-Quiet302  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1d6tw34" data-time="1717381439" data-score="1" data-comments="0">
+                <p>
+                    2024 Jun 03: <a target="_self" href="./NEW_To_Cave/t3_1d6tw34.html">你的逼很臭</a>  - /u/Salty-Quiet302  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1d6u2pk" data-time="1717382052" data-score="1" data-comments="0">
+                <p>
+                    2024 Jun 03: <a target="_self" href="./NEW_To_Cave/t3_1d6u2pk.html">你们谁的妈妈</a>  - /u/Salty-Quiet302  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1d6xft7" data-time="1717394119" data-score="1" data-comments="1">
+                <p>
+                    2024 Jun 03: <a target="_self" href="./NEW_To_Cave/t3_1d6xft7.html">蝾螈穴还可以克隆的？</a>  - /u/PerSinoLife  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">1</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1d6z6qf" data-time="1717401664" data-score="2" data-comments="1">
+                <p>
+                    2024 Jun 03: <a target="_self" href="./NEW_To_Cave/t3_1d6z6qf.html">你们做题蛆这么饥渴哦</a>  - /u/PerSinoLife  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+2</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">1</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1d756xw" data-time="1717423360" data-score="1" data-comments="1">
+                <p>
+                    2024 Jun 03: <a target="_self" href="./NEW_To_Cave/t3_1d756xw.html">熊猫吃短信</a>  - /u/Unlikely-Stress-1902  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">1</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1d75cmb" data-time="1717423760" data-score="3" data-comments="2">
+                <p>
+                    2024 Jun 03: <a target="_self" href="./NEW_To_Cave/t3_1d75cmb.html">一穴各表，互不隶属</a>  - /u/PerSinoLife  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+3</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">2</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1d78gd9" data-time="1717431593" data-score="2" data-comments="3">
+                <p>
+                    2024 Jun 04: <a target="_self" href="./NEW_To_Cave/t3_1d78gd9.html">只有26 memeber New_To_Cave该如何破局</a>  - /u/Remarkable-Milk-7562  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+2</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">3</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1d7mykm" data-time="1717469791" data-score="2" data-comments="0">
+                <p>
+                    2024 Jun 04: <a target="_self" href="./NEW_To_Cave/t3_1d7mykm.html">属鼠我阿</a>  - /u/Unlikely-Stress-1902  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+2</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1d7pra3" data-time="1717479569" data-score="1" data-comments="0">
+                <p>
+                    2024 Jun 04: <a target="_self" href="./NEW_To_Cave/t3_1d7pra3.html">谁的妈妈，谁的女儿，谁的老婆</a>  - /u/Remarkable-Milk-7562  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1d7tzse" data-time="1717497451" data-score="1" data-comments="0">
+                <p>
+                    2024 Jun 04: <a target="_self" href="./NEW_To_Cave/t3_1d7tzse.html">新家往里进</a>  - /u/Unlikely-Stress-1902  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1d852dc" data-time="1717527551" data-score="1" data-comments="0">
+                <p>
+                    2024 Jun 05: <a target="_self" href="./NEW_To_Cave/t3_1d852dc.html">不擅长说人话的穴友可以试着自己在家练练</a>  - /u/Unlikely-Stress-1902  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1d8e8a5" data-time="1717551600" data-score="0" data-comments="4">
+                <p>
+                    2024 Jun 05: <a target="_self" href="./NEW_To_Cave/t3_1d8e8a5.html">本人玉玉的原因</a>  - /u/Unlikely-Stress-1902  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+0</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">4</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1d8oo8v" data-time="1717590422" data-score="0" data-comments="1">
+                <p>
+                    2024 Jun 05: <a target="_self" href="./NEW_To_Cave/t3_1d8oo8v.html">Unlikely-Stress-1902是网警你们还不知道？</a>  - /u/Tiny_Word_7798  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+0</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">1</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1detgyk" data-time="1718264868" data-score="0" data-comments="0">
+                <p>
+                    2024 Jun 13: <a target="_self" href="./NEW_To_Cave/t3_1detgyk.html">治好了我的强迫症</a>  - /u/VanDakeHolme  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+0</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1deu1m0" data-time="1718267344" data-score="1" data-comments="4">
+                <p>
+                    2024 Jun 13: <a target="_self" href="./NEW_To_Cave/t3_1deu1m0.html">搞定</a>  - /u/Unlikely-Stress-1902  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">4</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1dfm0hu" data-time="1718353886" data-score="1" data-comments="0">
+                <p>
+                    2024 Jun 14: <a target="_self" href="./NEW_To_Cave/t3_1dfm0hu.html">无题</a>  - /u/Unlikely-Stress-1902  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1dgcmwi" data-time="1718436915" data-score="1" data-comments="3">
+                <p>
+                    2024 Jun 15: <a target="_self" href="./NEW_To_Cave/t3_1dgcmwi.html">不如建立全穴组，在太监真太监发过帖子的账号都ban掉，允许有过留言但不得超过10条</a>  - /u/Unlikely-Stress-1902  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">3</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1dghcgm" data-time="1718456075" data-score="1" data-comments="2">
+                <p>
+                    2024 Jun 15: <a target="_self" href="./NEW_To_Cave/t3_1dghcgm.html">有没有人说说他想要什么</a>  - /u/VanDakeHolme  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">2</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1dgi8x6" data-time="1718458899" data-score="1" data-comments="3">
+                <p>
+                    2024 Jun 15: <a target="_self" href="./NEW_To_Cave/t3_1dgi8x6.html">有没有人觉得潮汕猪才是世界上最恶心的屎</a>  - /u/National_Engineer269  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">3</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1dhbafz" data-time="1718555223" data-score="1" data-comments="0">
+                <p>
+                    2024 Jun 17: <a target="_self" href="./NEW_To_Cave/t3_1dhbafz.html">洋马臭脚</a>  - /u/Comfortable_Win_8946  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1dji43e" data-time="1718800615" data-score="1" data-comments="1">
+                <p>
+                    2024 Jun 19: <a target="_self" href="./NEW_To_Cave/t3_1dji43e.html">纪念64</a>  - /u/Comfortable_Win_8946  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">1</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1dk1jhw" data-time="1718852537" data-score="2" data-comments="0">
+                <p>
+                    2024 Jun 20: <a target="_self" href="./NEW_To_Cave/t3_1dk1jhw.html">哪位穴友</a>  - /u/Comfortable_Win_8946  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+2</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1dk859v" data-time="1718878571" data-score="2" data-comments="0">
+                <p>
+                    2024 Jun 20: <a target="_self" href="./NEW_To_Cave/t3_1dk859v.html">CHIGGER ~ Rucka Rucka Ali</a>  - /u/Comfortable_Win_8946  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+2</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1dkw4a3" data-time="1718946583" data-score="3" data-comments="4">
+                <p>
+                    2024 Jun 21: <a target="_self" href="./NEW_To_Cave/t3_1dkw4a3.html">这种是好女孩吗？</a>  - /u/Brave_Command_7507  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+3</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">4</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1dkyhbh" data-time="1718955984" data-score="0" data-comments="2">
+                <p>
+                    2024 Jun 21: <a target="_self" href="./NEW_To_Cave/t3_1dkyhbh.html">幽默</a>  - /u/VanDakeHolme  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+0</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">2</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1dmturr" data-time="1719170301" data-score="2" data-comments="3">
+                <p>
+                    2024 Jun 24: <a target="_self" href="./NEW_To_Cave/t3_1dmturr.html">疑似白妈妈喜欢上了沪男 穴友们出出主意</a>  - /u/juntli  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+2</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">3</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1dok3tr" data-time="1719358101" data-score="2" data-comments="1">
+                <p>
+                    2024 Jun 26: <a target="_self" href="./NEW_To_Cave/t3_1dok3tr.html">哪位蝾螈穴友</a>  - /u/Comfortable_Win_8946  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+2</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">1</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1don2ln" data-time="1719366878" data-score="1" data-comments="0">
+                <p>
+                    2024 Jun 26: <a target="_self" href="./NEW_To_Cave/t3_1don2ln.html">一猫多用</a>  - /u/Comfortable_Win_8946  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1doochp" data-time="1719370721" data-score="1" data-comments="0">
+                <p>
+                    2024 Jun 26: <a target="_self" href="./NEW_To_Cave/t3_1doochp.html">Gboard 有点暗示了</a>  - /u/VanDakeHolme  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1dpsp95" data-time="1719498687" data-score="2" data-comments="0">
+                <p>
+                    2024 Jun 27: <a target="_self" href="./NEW_To_Cave/t3_1dpsp95.html">? </a>  - /u/Comfortable_Win_8946  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+2</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1dqecz5" data-time="1719561600" data-score="0" data-comments="1">
+                <p>
+                    2024 Jun 28: <a target="_self" href="./NEW_To_Cave/t3_1dqecz5.html">新号被shadow ban怎么办？</a>  - /u/InterestingBat3824  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+0</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">1</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1ds4bxm" data-time="1719762077" data-score="1" data-comments="0">
+                <p>
+                    2024 Jun 30: <a target="_self" href="./NEW_To_Cave/t3_1ds4bxm.html">2000软妹币叫了个鸡</a>  - /u/SouthernEchidna6140  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1dspker" data-time="1719829249" data-score="2" data-comments="3">
+                <p>
+                    2024 Jul 01: <a target="_self" href="./NEW_To_Cave/t3_1dspker.html">哪位蝾螈</a>  - /u/Comfortable_Win_8946  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+2</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">3</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1dtbh70" data-time="1719888749" data-score="1" data-comments="0">
+                <p>
+                    2024 Jul 02: <a target="_self" href="./NEW_To_Cave/t3_1dtbh70.html">幽默太监</a>  - /u/VanDakeHolme  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1dxij1j" data-time="1720364540" data-score="1" data-comments="0">
+                <p>
+                    2024 Jul 07: <a target="_self" href="./NEW_To_Cave/t3_1dxij1j.html">哎，国内都是怎么找鸭、做鸭的，一般包养鸭的金主都在哪里出没</a>  - /u/hopeful-why1995  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1dyy8k6" data-time="1720517721" data-score="3" data-comments="6">
+                <p>
+                    2024 Jul 09: <a target="_self" href="./NEW_To_Cave/t3_1dyy8k6.html">操你妈，怎么送中了</a>  - /u/MentalDot566  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+3</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">6</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1dz427s" data-time="1720535987" data-score="0" data-comments="0">
+                <p>
+                    2024 Jul 09: <a target="_self" href="./NEW_To_Cave/t3_1dz427s.html">诡谲的学历质疑</a>  - /u/Ok-Masterpiece98  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+0</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1e0om3w" data-time="1720703502" data-score="11" data-comments="16">
+                <p>
+                    2024 Jul 11: <a target="_self" href="./NEW_To_Cave/t3_1e0om3w.html">穴吧被ban了？</a>  - /u/Original-Ocelot-3560  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+11</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">16</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1e0po8t" data-time="1720706474" data-score="1" data-comments="0">
+                <p>
+                    2024 Jul 11: <a target="_self" href="./NEW_To_Cave/t3_1e0po8t.html">我好像发不了帖子，不过我不会屈服</a>  - /u/Ok_Web556677  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1e1eqi3" data-time="1720781683" data-score="5" data-comments="3">
+                <p>
+                    2024 Jul 12: <a target="_self" href="./NEW_To_Cave/t3_1e1eqi3.html">按理说穴吧被橄榄这边应该疯狂引流才对吧？</a>  - /u/ZMWGQDS  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+5</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">3</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1e1hrif" data-time="1720791079" data-score="1" data-comments="0">
+                <p>
+                    2024 Jul 12: <a target="_self" href="./NEW_To_Cave/t3_1e1hrif.html">SHOCK VIDEO: Philadelphia man flees the scene after BLOWING HIS NUTS all over a woman's leg at DOLLAR TREE</a>  - /u/programhink  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1e25jry" data-time="1720859634" data-score="3" data-comments="0">
+                <p>
+                    2024 Jul 13: <a target="_self" href="./NEW_To_Cave/t3_1e25jry.html">虽然很搞笑，但是你们白脾株嗨拐洋黜们也没有好到哪里去</a>  - /u/Muted_Objective2914  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+3</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1e2ag6v" data-time="1720877327" data-score="8" data-comments="1">
+                <p>
+                    2024 Jul 13: <a target="_self" href="./NEW_To_Cave/t3_1e2ag6v.html">基础建设之炸弹汽车</a>  - /u/Ordinary-Account3974  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+8</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">1</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1e2c3l1" data-time="1720881967" data-score="5" data-comments="1">
+                <p>
+                    2024 Jul 13: <a target="_self" href="./NEW_To_Cave/t3_1e2c3l1.html">昆虫世界</a>  - /u/xenopus707  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+5</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">1</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1e2lnta" data-time="1720907076" data-score="3" data-comments="2">
+                <p>
+                    2024 Jul 14: <a target="_self" href="./NEW_To_Cave/t3_1e2lnta.html">大家好 我来了</a>  - /u/WillowMountain66  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+3</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">2</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1e3jfaw" data-time="1721009365" data-score="4" data-comments="0">
+                <p>
+                    2024 Jul 15: <a target="_self" href="./NEW_To_Cave/t3_1e3jfaw.html">洼地人和斯拉夫白马</a>  - /u/gdgsh  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+4</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1e4426z" data-time="1721072476" data-score="1" data-comments="0">
+                <p>
+                    2024 Jul 16: <a target="_self" href="./NEW_To_Cave/t3_1e4426z.html">前总统川普和哈佛博士陈琳</a>  - /u/Remote_Pudding_4014  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1e4i2uv" data-time="1721112942" data-score="0" data-comments="0">
+                <p>
+                    2024 Jul 16: <a target="_self" href="./NEW_To_Cave/t3_1e4i2uv.html">兄弟们我回来了,想我了么?</a>  - /u/shudazuo333  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+0</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1e4ir9p" data-time="1721115665" data-score="5" data-comments="8">
+                <p>
+                    2024 Jul 16: <a target="_self" href="./NEW_To_Cave/t3_1e4ir9p.html">是不是这么键政的哦</a>  - /u/VanDakeHolme  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+5</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">8</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1e4iscp" data-time="1721115787" data-score="2" data-comments="2">
+                <p>
+                    2024 Jul 16: <a target="_self" href="./NEW_To_Cave/t3_1e4iscp.html">权瘾烦了 来点mod</a>  - /u/VanDakeHolme  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+2</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">2</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1e5954q" data-time="1721190071" data-score="2" data-comments="1">
+                <p>
+                    2024 Jul 17: <a target="_self" href="./NEW_To_Cave/t3_1e5954q.html">刚转生完就发现穴被爆破了</a>  - /u/SaSaKing8964  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+2</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">1</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1e5d2t0" data-time="1721205153" data-score="5" data-comments="1">
+                <p>
+                    2024 Jul 17: <a target="_self" href="./NEW_To_Cave/t3_1e5d2t0.html">蚯蚓文炫蛆太监</a>  - /u/VanDakeHolme  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+5</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">1</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1e65fl2" data-time="1721287317" data-score="0" data-comments="2">
+                <p>
+                    2024 Jul 18: <a target="_self" href="./NEW_To_Cave/t3_1e65fl2.html">穴吧活了？！</a>  - /u/NoPractice1449  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+0</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">2</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1e6a69j" data-time="1721305650" data-score="1" data-comments="0">
+                <p>
+                    2024 Jul 18: <a target="_self" href="./NEW_To_Cave/t3_1e6a69j.html">引个流</a>  - /u/Longjumping-Cycle-81  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1e6g7rc" data-time="1721321679" data-score="10" data-comments="3">
+                <p>
+                    2024 Jul 19: <a target="_self" href="./NEW_To_Cave/t3_1e6g7rc.html">盘点快速找到新家的十大方法</a>  - /u/Time-Acanthisitta270  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+10</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">3</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1e6wl5p" data-time="1721368726" data-score="5" data-comments="0">
+                <p>
+                    2024 Jul 19: <a target="_self" href="./NEW_To_Cave/t3_1e6wl5p.html">这种的是太监吗</a>  - /u/VanDakeHolme  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+5</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1e7xodc" data-time="1721487848" data-score="0" data-comments="1">
+                <p>
+                    2024 Jul 20: <a target="_self" href="./NEW_To_Cave/t3_1e7xodc.html">艾屁卢舔，鼠栋覆苟锚，杠咸丛白笙瓷？漾铆吊带柜讥 ...</a>  - /u/Additional_Ride6393  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+0</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">1</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1e8at55" data-time="1721524719" data-score="2" data-comments="1">
+                <p>
+                    2024 Jul 21: <a target="_self" href="./NEW_To_Cave/t3_1e8at55.html">辉</a>  - /u/OriginalWinner8070  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+2</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">1</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1e96gwf" data-time="1721626105" data-score="6" data-comments="0">
+                <p>
+                    2024 Jul 22: <a target="_self" href="./NEW_To_Cave/t3_1e96gwf.html">哪位穴友</a>  - /u/Additional_Ride6393  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+6</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1e99mgw" data-time="1721639036" data-score="10" data-comments="1">
+                <p>
+                    2024 Jul 22: <a target="_self" href="./NEW_To_Cave/t3_1e99mgw.html">是不是这么直白的哦</a>  - /u/VanDakeHolme  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+10</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">1</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1e9b0xf" data-time="1721644581" data-score="1" data-comments="0">
+                <p>
+                    2024 Jul 22: <a target="_self" href="./NEW_To_Cave/t3_1e9b0xf.html">如何看待織女退休年齡和郭楠看齊</a>  - /u/xjp19532053  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1e9tp5p" data-time="1721693180" data-score="1" data-comments="5">
+                <p>
+                    2024 Jul 23: <a target="_self" href="./NEW_To_Cave/t3_1e9tp5p.html">贴吧这些人是不是有点太狂了</a>  - /u/Yuc3326  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">5</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1en61zx" data-time="1723123892" data-score="11" data-comments="7">
+                <p>
+                    2024 Aug 08: <a target="_self" href="./NEW_To_Cave/t3_1en61zx.html">这里为什么没人啊</a>  - /u/GlobalCollection648  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+11</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">7</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1eo8x8h" data-time="1723232413" data-score="6" data-comments="1">
+                <p>
+                    2024 Aug 10: <a target="_self" href="./NEW_To_Cave/t3_1eo8x8h.html">经常玩红迪的人…</a>  - /u/TranslatorForeign661  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+6</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">1</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1eopzbd" data-time="1723286250" data-score="2" data-comments="1">
+                <p>
+                    2024 Aug 10: <a target="_self" href="./NEW_To_Cave/t3_1eopzbd.html">家乡鼠人</a>  - /u/TranslatorForeign661  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+2</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">1</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1eq9d4g" data-time="1723455365" data-score="3" data-comments="3">
+                <p>
+                    2024 Aug 12: <a target="_self" href="./NEW_To_Cave/t3_1eq9d4g.html">上班日均一万步，回去还有锻炼的必要吗，我怕我会累死</a>  - /u/GlobalCollection648  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+3</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">3</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1er9hqc" data-time="1723559798" data-score="6" data-comments="2">
+                <p>
+                    2024 Aug 13: <a target="_self" href="./NEW_To_Cave/t3_1er9hqc.html">经典回顾之织女尻打国男</a>  - /u/dogetoonebtc  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+6</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">2</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1ez2683" data-time="1724381718" data-score="3" data-comments="4">
+                <p>
+                    2024 Aug 23: <a target="_self" href="./NEW_To_Cave/t3_1ez2683.html">唉，到底是为什么没能成为普通一点的正常一点的人</a>  - /u/Distinct_Finish_2115  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+3</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">4</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1f5ig93" data-time="1725092505" data-score="7" data-comments="3">
+                <p>
+                    2024 Aug 31: <a target="_self" href="./NEW_To_Cave/t3_1f5ig93.html">好想念默友，好想念穴友，好想念卢克</a>  - /u/Longjumping-Cycle-81  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+7</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">3</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1fj5nkv" data-time="1726594972" data-score="4" data-comments="2">
+                <p>
+                    2024 Sep 18: <a target="_self" href="./NEW_To_Cave/t3_1fj5nkv.html">我百欧小镇呢？</a>  - /u/DeshengLi  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+4</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">2</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1fkzgxa" data-time="1726792197" data-score="0" data-comments="1">
+                <p>
+                    2024 Sep 20: <a target="_self" href="./NEW_To_Cave/t3_1fkzgxa.html">F/20/5’4” [196lbs>182lbs= 14 pounds] 90kg 白媽，神選基因</a>  - /u/programhink  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+0</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">1</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1flt7zb" data-time="1726886637" data-score="2" data-comments="0">
+                <p>
+                    2024 Sep 21: <a target="_self" href="./NEW_To_Cave/t3_1flt7zb.html">新家在哪?</a>  - /u/shudazuoguilai  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+2</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1flu4b5" data-time="1726889760" data-score="6" data-comments="2">
+                <p>
+                    2024 Sep 21: <a target="_self" href="./NEW_To_Cave/t3_1flu4b5.html">爆了</a>  - /u/AffectionateStill681  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+6</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">2</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1flx35c" data-time="1726901535" data-score="1" data-comments="0">
+                <p>
+                    2024 Sep 21: <a target="_self" href="./NEW_To_Cave/t3_1flx35c.html">这里当新家好了</a>  - /u/shudazuoguilai  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1fm1v3x" data-time="1726921640" data-score="2" data-comments="0">
+                <p>
+                    2024 Sep 21: <a target="_self" href="./NEW_To_Cave/t3_1fm1v3x.html">小黃人羨慕嗎？Find someone who looks at you the way she looks at him</a>  - /u/programhink  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+2</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1fmgvl5" data-time="1726964604" data-score="1" data-comments="1">
+                <p>
+                    2024 Sep 22: <a target="_self" href="./NEW_To_Cave/t3_1fmgvl5.html">白媽基因，恐怖如斯 F/24/5’8” [260lbs > 185lbs] (8 months) </a>  - /u/programhink  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">1</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1fqns9x" data-time="1727443877" data-score="1" data-comments="0">
+                <p>
+                    2024 Sep 27: <a target="_self" href="./NEW_To_Cave/t3_1fqns9x.html">不喜欢我们广🐒的就滚～</a>  - /u/Motor-Schedule2542  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1fqx57e" data-time="1727468479" data-score="11" data-comments="10">
+                <p>
+                    2024 Sep 28: <a target="_self" href="./NEW_To_Cave/t3_1fqx57e.html">新家还没建好吗？</a>  - /u/Dear_Protection6002  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+11</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">10</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1fragtx" data-time="1727515259" data-score="0" data-comments="0">
+                <p>
+                    2024 Sep 28: <a target="_self" href="./NEW_To_Cave/t3_1fragtx.html">kobayashi！hentai！中国不能没皇帝！</a>  - /u/Straight_Pay_7235  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+0</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1frgajv" data-time="1727535945" data-score="0" data-comments="0">
+                <p>
+                    2024 Sep 28: <a target="_self" href="./NEW_To_Cave/t3_1frgajv.html">kobayashi！bababa！</a>  - /u/Straight_Pay_7235  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+0</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1frgc05" data-time="1727536058" data-score="0" data-comments="1">
+                <p>
+                    2024 Sep 28: <a target="_self" href="./NEW_To_Cave/t3_1frgc05.html">kobayashi！爸爸爸！</a>  - /u/Straight_Pay_7235  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+0</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">1</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1frukgi" data-time="1727577665" data-score="0" data-comments="0">
+                <p>
+                    2024 Sep 29: <a target="_self" href="./NEW_To_Cave/t3_1frukgi.html">kobayashi！在野的帝王将相们！！</a>  - /u/Straight_Pay_7235  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+0</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1fs1ffr" data-time="1727606036" data-score="6" data-comments="7">
+                <p>
+                    2024 Sep 29: <a target="_self" href="./NEW_To_Cave/t3_1fs1ffr.html">完了，让这个复读蛆找到老家了</a>  - /u/AffectionateStill681  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+6</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">7</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1ftjj0i" data-time="1727772918" data-score="0" data-comments="1">
+                <p>
+                    2024 Oct 01: <a target="_self" href="./NEW_To_Cave/t3_1ftjj0i.html">kobayashi！喵喵喵喵~</a>  - /u/Straight_Pay_7235  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+0</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">1</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1fus8af" data-time="1727906156" data-score="0" data-comments="3">
+                <p>
+                    2024 Oct 03: <a target="_self" href="./NEW_To_Cave/t3_1fus8af.html">kobayashi！hentai！</a>  - /u/Straight_Pay_7235  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+0</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">3</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1fvykgg" data-time="1728046853" data-score="0" data-comments="0">
+                <p>
+                    2024 Oct 04: <a target="_self" href="./NEW_To_Cave/t3_1fvykgg.html">kobayashi！majiyabakune！</a>  - /u/Straight_Pay_7235  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+0</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1fw8wz7" data-time="1728073576" data-score="13" data-comments="5">
+                <p>
+                    2024 Oct 05: <a target="_self" href="./NEW_To_Cave/t3_1fw8wz7.html">我抽象花园呢？</a>  - /u/DeshengLi  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+13</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">5</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1fwdz9o" data-time="1728087740" data-score="5" data-comments="2">
+                <p>
+                    2024 Oct 05: <a target="_self" href="./NEW_To_Cave/t3_1fwdz9o.html">新家在哪</a>  - /u/Aggravating-Beach801  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+5</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">2</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1fwgqx0" data-time="1728096743" data-score="0" data-comments="0">
+                <p>
+                    2024 Oct 05: <a target="_self" href="./NEW_To_Cave/t3_1fwgqx0.html">普天同庆！🎊</a>  - /u/Straight_Pay_7235  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+0</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1g0cs3n" data-time="1728542630" data-score="1" data-comments="0">
+                <p>
+                    2024 Oct 10: <a target="_self" href="./NEW_To_Cave/t3_1g0cs3n.html">kobayashi！hentai！majiyabakune！</a>  - /u/Straight_Pay_7235  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1g4v684" data-time="1729070280" data-score="12" data-comments="4">
+                <p>
+                    2024 Oct 16: <a target="_self" href="./NEW_To_Cave/t3_1g4v684.html">新家在哪之没鸡巴乱窜</a>  - /u/heli_for_tankies  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+12</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">4</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1g4y674" data-time="1729081720" data-score="1" data-comments="0">
+                <p>
+                    2024 Oct 16: <a target="_self" href="./NEW_To_Cave/t3_1g4y674.html">reddit已经删掉的帖子的下面的评论会保存多久？</a>  - /u/AffectionateStill681  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1gh9z8z" data-time="1730479715" data-score="5" data-comments="3">
+                <p>
+                    2024 Nov 02: <a target="_self" href="./NEW_To_Cave/t3_1gh9z8z.html">本人冲浪5年从来没被ban过的老资历迪友被傻狗mod给ban了</a>  - /u/AffectionateStill681  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+5</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">3</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1gkwfhn" data-time="1730892857" data-score="2" data-comments="4">
+                <p>
+                    2024 Nov 06: <a target="_self" href="./NEW_To_Cave/t3_1gkwfhn.html">新家在哪</a>  - /u/lockkrlock  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+2</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">4</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1glrsq1" data-time="1730989993" data-score="1" data-comments="0">
+                <p>
+                    2024 Nov 07: <a target="_self" href="./NEW_To_Cave/t3_1glrsq1.html">是新家吗</a>  - /u/FaithlessnessIcmei  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1gltfx6" data-time="1730994317" data-score="11" data-comments="5">
+                <p>
+                    2024 Nov 07: <a target="_self" href="./NEW_To_Cave/t3_1gltfx6.html">新的缴兔窟也是不再会有当初蝾螈穴的鲁蛇抱团取暖的氛围了</a>  - /u/Hot_Atmosphere_3546  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+11</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">5</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1gs8xmk" data-time="1731710701" data-score="1" data-comments="0">
+                <p>
+                    2024 Nov 16: <a target="_self" href="./NEW_To_Cave/t3_1gs8xmk.html">是新家吗？</a>  - /u/Electronic-Still-4  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1h5w8lb" data-time="1733255260" data-score="1" data-comments="0">
+                <p>
+                    2024 Dec 04: <a target="_self" href="./NEW_To_Cave/t3_1h5w8lb.html">求助兄弟们</a>  - /u/Economy_Housing5287  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1hfki3k" data-time="1734359905" data-score="0" data-comments="0">
+                <p>
+                    2024 Dec 16: <a target="_self" href="./NEW_To_Cave/t3_1hfki3k.html">当我不追求回声室的“好成分”之后</a>  - /u/Zhidihuimieba  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+0</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1hg8oo8" data-time="1734435130" data-score="2" data-comments="2">
+                <p>
+                    2024 Dec 17: <a target="_self" href="./NEW_To_Cave/t3_1hg8oo8.html">是新家吗</a>  - /u/Undocumented_1649  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+2</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">2</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1hi2qm6" data-time="1734641411" data-score="1" data-comments="0">
+                <p>
+                    2024 Dec 20: <a target="_self" href="./NEW_To_Cave/t3_1hi2qm6.html">宙斯睡织女 当希腊之神碰上中国仙女</a>  - /u/Undocumented_1649  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1inalla" data-time="1739310900" data-score="1" data-comments="0">
+                <p>
+                    2025 Feb 12: <a target="_self" href="./NEW_To_Cave/t3_1inalla.html">家呢，我的家在哪里</a>  - /u/lockkrlock  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1j094pj" data-time="1740753514" data-score="3" data-comments="0">
+                <p>
+                    2025 Feb 28: <a target="_self" href="./NEW_To_Cave/t3_1j094pj.html">地雷女系列之，我在推特上认识了连麦OD嗑药的国内地雷女小团体，所以我是唯一的一个加入他们一起OD嗑药的男的，结果最终被国内精神小妹们当成ATM了</a>  - /u/NeitherSoil2013  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+3</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1j09k4f" data-time="1740754684" data-score="1" data-comments="1">
+                <p>
+                    2025 Feb 28: <a target="_self" href="./NEW_To_Cave/t3_1j09k4f.html">地雷女系列之，与小弥的聊天</a>  - /u/NeitherSoil2013  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">1</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1j09rpm" data-time="1740755228" data-score="3" data-comments="11">
+                <p>
+                    2025 Feb 28: <a target="_self" href="./NEW_To_Cave/t3_1j09rpm.html">地雷女系列之，最终恩断义绝，被精神小妹建群拷打</a>  - /u/NeitherSoil2013  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+3</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">11</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1j0a1yy" data-time="1740755958" data-score="1" data-comments="0">
+                <p>
+                    2025 Feb 28: <a target="_self" href="./NEW_To_Cave/t3_1j0a1yy.html">地雷女系列之，和小米的跟我一样人在日本的金主男友的聊天，听语音就是油腻中年老登</a>  - /u/NeitherSoil2013  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1j0atjx" data-time="1740757921" data-score="0" data-comments="1">
+                <p>
+                    2025 Feb 28: <a target="_self" href="./NEW_To_Cave/t3_1j0atjx.html">地雷女系列之，小弥的在日本的金主男友的聊天记录，听语音就是油腻老登</a>  - /u/NeitherSoil2013  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+0</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">1</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1j0bt0v" data-time="1740760301" data-score="9" data-comments="3">
+                <p>
+                    2025 Mar 01: <a target="_self" href="./NEW_To_Cave/t3_1j0bt0v.html">花友是不是这么耍的</a>  - /u/Savings_Credit_5778  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+9</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">3</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1j0bue7" data-time="1740760393" data-score="1" data-comments="2">
+                <p>
+                    2025 Mar 01: <a target="_self" href="./NEW_To_Cave/t3_1j0bue7.html">地雷女系列之弱者男性不要去招惹地雷女，地雷女只会被那些把女人当沐芶的阿法男的拿下栓住，我这种弱男哪怕有钱有颜哪怕她们一开始都会喜欢我，但是最终都搞不定的</a>  - /u/NeitherSoil2013  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">2</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1j0e3dt" data-time="1740765946" data-score="1" data-comments="0">
+                <p>
+                    2025 Mar 01: <a target="_self" href="./NEW_To_Cave/t3_1j0e3dt.html">浪狙、搬家</a>  - /u/Liangjiahe_dumb_ass  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1j0ehcz" data-time="1740766918" data-score="5" data-comments="5">
+                <p>
+                    2025 Mar 01: <a target="_self" href="./NEW_To_Cave/t3_1j0ehcz.html">新家</a>  - /u/PurrFurr055  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+5</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">5</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1j0ojwj" data-time="1740794448" data-score="1" data-comments="0">
+                <p>
+                    2025 Mar 01: <a target="_self" href="./NEW_To_Cave/t3_1j0ojwj.html">是新家吗</a>  - /u/Duke-bell  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1j0srli" data-time="1740808827" data-score="5" data-comments="1">
+                <p>
+                    2025 Mar 01: <a target="_self" href="./NEW_To_Cave/t3_1j0srli.html">经典回顾之冲浪公寓</a>  - /u/Chieh-Shih  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+5</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">1</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1j0wskn" data-time="1740825717" data-score="5" data-comments="4">
+                <p>
+                    2025 Mar 01: <a target="_self" href="./NEW_To_Cave/t3_1j0wskn.html">诶？ 这下兔友该来这里么？</a>  - /u/GuizhoumadmanGen5  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+5</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">4</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1j0x96w" data-time="1740827650" data-score="1" data-comments="0">
+                <p>
+                    2025 Mar 01: <a target="_self" href="./NEW_To_Cave/t3_1j0x96w.html">唔咦啊咦唔啊啊，家乡no曲太嗯了</a>  - /u/RoutineClass9107  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1j0xbwl" data-time="1740827963" data-score="2" data-comments="0">
+                <p>
+                    2025 Mar 01: <a target="_self" href="./NEW_To_Cave/t3_1j0xbwl.html">是种花家吗</a>  - /u/Extension_Canary_386  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+2</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1j116ht" data-time="1740840829" data-score="7" data-comments="4">
+                <p>
+                    2025 Mar 01: <a target="_self" href="./NEW_To_Cave/t3_1j116ht.html">Shandong.exe</a>  - /u/GuizhoumadmanGen5  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+7</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">4</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1j1j7sb" data-time="1740891819" data-score="1" data-comments="0">
+                <p>
+                    2025 Mar 02: <a target="_self" href="./NEW_To_Cave/t3_1j1j7sb.html">这次花吧被炸谁该负首要责任？</a>  - /u/linhunshengchu  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1j1rz1u" data-time="1740925516" data-score="1" data-comments="0">
+                <p>
+                    2025 Mar 02: <a target="_self" href="./NEW_To_Cave/t3_1j1rz1u.html">戏子无情——自媒体为了流量不惜煽动感情愚弄网民，直到这群学生毕业经历巨大的反差过后是不是提前埋个张献忠的祸根</a>  - /u/RoutineClass9107  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1j1yzp5" data-time="1740943388" data-score="1" data-comments="0">
+                <p>
+                    2025 Mar 03: <a target="_self" href="./NEW_To_Cave/t3_1j1yzp5.html">万斯这种做题舔川人在遥远的东方有几百万且充斥着社会中间层且有舆论作用，几百万靠做题翻身的农逼用他们卑劣的品性污染整个洼地</a>  - /u/RoutineClass9107  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1j2j0f0" data-time="1741009631" data-score="1" data-comments="0">
+                <p>
+                    2025 Mar 03: <a target="_self" href="./NEW_To_Cave/t3_1j2j0f0.html">还有10天就省考，这次我一定要考上。考上我就开始鱼肉百姓✌️</a>  - /u/Zhidihuimieba  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1j38o45" data-time="1741087606" data-score="6" data-comments="4">
+                <p>
+                    2025 Mar 04: <a target="_self" href="./NEW_To_Cave/t3_1j38o45.html">高华炫蛆不图能行吗</a>  - /u/NoHomeForRats  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+6</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">4</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1m8gaxb" data-time="1753391124" data-score="4" data-comments="0">
+                <p>
+                    2025 Jul 25: <a target="_self" href="./NEW_To_Cave/t3_1m8gaxb.html">test</a>  - /u/Consistent-Ant-3115  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+4</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1m8gb5e" data-time="1753391139" data-score="8" data-comments="3">
+                <p>
+                    2025 Jul 25: <a target="_self" href="./NEW_To_Cave/t3_1m8gb5e.html">test</a>  - /u/Consistent-Ant-3115  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+8</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">3</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1m8ul3i" data-time="1753435457" data-score="12" data-comments="5">
+                <p>
+                    2025 Jul 25: <a target="_self" href="./NEW_To_Cave/t3_1m8ul3i.html">这里有举报蛆吗</a>  - /u/Turbulent_Shop_1987  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+12</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">5</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1m91r0f" data-time="1753456252" data-score="14" data-comments="8">
+                <p>
+                    2025 Jul 25: <a target="_self" href="./NEW_To_Cave/t3_1m91r0f.html">是新洞吗</a>  - /u/YoumoDashi  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+14</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">8</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1m94sgv" data-time="1753463148" data-score="3" data-comments="2">
+                <p>
+                    2025 Jul 26: <a target="_self" href="./NEW_To_Cave/t3_1m94sgv.html">这里有处女吗</a>  - /u/Emerald-michael  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+3</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">2</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1m9bqhi" data-time="1753479564" data-score="22" data-comments="7">
+                <p>
+                    2025 Jul 26: <a target="_self" href="./NEW_To_Cave/t3_1m9bqhi.html">旧家打赢复活赛了？</a>  - /u/Acceptable_Ad7280  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+22</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">7</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1m9cvps" data-time="1753482435" data-score="12" data-comments="1">
+                <p>
+                    2025 Jul 26: <a target="_self" href="./NEW_To_Cave/t3_1m9cvps.html">往里进</a>  - /u/Any_Interview_2031  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+12</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">1</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1m9iyxs" data-time="1753499923" data-score="25" data-comments="11">
+                <p>
+                    2025 Jul 26: <a target="_self" href="./NEW_To_Cave/t3_1m9iyxs.html">大家好，我是伤心鼠9999，这是我第一次当mod，有处理不对的地方还望大家海涵。</a>  - /u/Saddle-rat-9999  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+25</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">11</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1m9j3gx" data-time="1753500327" data-score="8" data-comments="1">
+                <p>
+                    2025 Jul 26: <a target="_self" href="./NEW_To_Cave/t3_1m9j3gx.html">能复活？</a>  - /u/iiiiiiiiib  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+8</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">1</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1m9jn6y" data-time="1753502106" data-score="19" data-comments="2">
+                <p>
+                    2025 Jul 26: <a target="_self" href="./NEW_To_Cave/t3_1m9jn6y.html">兔友们，听到家的呼唤了吗</a>  - /u/Outrageous_Change_86  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+19</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">2</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1m9knra" data-time="1753505413" data-score="0" data-comments="5">
+                <p>
+                    2025 Jul 26: <a target="_self" href="./NEW_To_Cave/t3_1m9knra.html">新家r/Saimaniang速度进 你想看的这里都有</a>  - /u/Honest-Practice-5386  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+0</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">5</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1m9l2zy" data-time="1753506883" data-score="0" data-comments="4">
+                <p>
+                    2025 Jul 26: <a target="_self" href="./NEW_To_Cave/t3_1m9l2zy.html">这里是全男组吗？</a>  - /u/neko_canyon  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+0</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">4</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1m9m6zz" data-time="1753510814" data-score="14" data-comments="3">
+                <p>
+                    2025 Jul 26: <a target="_self" href="./NEW_To_Cave/t3_1m9m6zz.html">【补档】在法黑妹白妈见闻录</a>  - /u/St-Bao  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+14</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">3</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1m9n1q3" data-time="1753513972" data-score="0" data-comments="1">
+                <p>
+                    2025 Jul 26: <a target="_self" href="./NEW_To_Cave/t3_1m9n1q3.html">我mod呢</a>  - /u/VanDakeHolme  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+0</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">1</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1m9o4t2" data-time="1753518227" data-score="4" data-comments="0">
+                <p>
+                    2025 Jul 26: <a target="_self" href="./NEW_To_Cave/t3_1m9o4t2.html">引个流</a>  - /u/Nevetherless1929  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+4</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1m9qb7b" data-time="1753526854" data-score="13" data-comments="1">
+                <p>
+                    2025 Jul 26: <a target="_self" href="./NEW_To_Cave/t3_1m9qb7b.html">耍瘋就是了</a>  - /u/DogBot76  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+13</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">1</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1m9qv8h" data-time="1753528854" data-score="2" data-comments="2">
+                <p>
+                    2025 Jul 26: <a target="_self" href="./NEW_To_Cave/t3_1m9qv8h.html">如何评价？渴批穴友示爱集美，却被当众羞辱</a>  - /u/One-Mongoose-8138  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+2</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">2</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1m9r1yn" data-time="1753529514" data-score="6" data-comments="4">
+                <p>
+                    2025 Jul 26: <a target="_self" href="./NEW_To_Cave/t3_1m9r1yn.html">mod知道怎么接入鸭鸭吗？能不能把鸭鸭接进来，想鸭畜的锐评了</a>  - /u/Outrageous_Change_86  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+6</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">4</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1m9r32y" data-time="1753529621" data-score="1" data-comments="1">
+                <p>
+                    2025 Jul 26: <a target="_self" href="./NEW_To_Cave/t3_1m9r32y.html">为什么留言发不了图片？</a>  - /u/One-Mongoose-8138  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">1</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1m9r8mi" data-time="1753530133" data-score="6" data-comments="1">
+                <p>
+                    2025 Jul 26: <a target="_self" href="./NEW_To_Cave/t3_1m9r8mi.html">这个sub楼下发不了图片怎么回事</a>  - /u/One-Mongoose-8138  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+6</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">1</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1m9rvl2" data-time="1753532194" data-score="13" data-comments="0">
+                <p>
+                    2025 Jul 26: <a target="_self" href="./NEW_To_Cave/t3_1m9rvl2.html">千呼萬喚 喚鴨鴨回來</a>  - /u/Final_Spark_2019  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+13</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1m9uibl" data-time="1753539598" data-score="10" data-comments="7">
+                <p>
+                    2025 Jul 26: <a target="_self" href="./NEW_To_Cave/t3_1m9uibl.html">炮打时间瓶——我的一张大字报</a>  - /u/HuaiLuooo  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+10</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">7</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1m9uphs" data-time="1753540137" data-score="9" data-comments="4">
+                <p>
+                    2025 Jul 26: <a target="_self" href="./NEW_To_Cave/t3_1m9uphs.html">现在你们试试可以不可以图片回复，有其他的问题艾特我</a>  - /u/Saddle-rat-9999  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+9</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">4</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1m9uwz5" data-time="1753540663" data-score="11" data-comments="3">
+                <p>
+                    2025 Jul 26: <a target="_self" href="./NEW_To_Cave/t3_1m9uwz5.html">这不是？</a>  - /u/Any_Interview_2031  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+11</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">3</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1m9w6yx" data-time="1753543808" data-score="25" data-comments="20">
+                <p>
+                    2025 Jul 26: <a target="_self" href="./NEW_To_Cave/t3_1m9w6yx.html">魔怔渴批穴友，被集美挂群里公开拷打</a>  - /u/One-Mongoose-8138  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+25</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">20</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1m9wxkg" data-time="1753545612" data-score="0" data-comments="4">
+                <p>
+                    2025 Jul 27: <a target="_self" href="./NEW_To_Cave/t3_1m9wxkg.html">之前认识很久的地雷妹嗑了300多t🌽片尝试紫砂</a>  - /u/Catlinslayer  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+0</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">4</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1m9zefz" data-time="1753551597" data-score="3" data-comments="3">
+                <p>
+                    2025 Jul 27: <a target="_self" href="./NEW_To_Cave/t3_1m9zefz.html">谁来了</a>  - /u/SuboButterfly  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+3</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">3</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1ma6iut" data-time="1753569764" data-score="4" data-comments="2">
+                <p>
+                    2025 Jul 27: <a target="_self" href="./NEW_To_Cave/t3_1ma6iut.html">强奸是否是女性的应激表现</a>  - /u/UnluckyAd5394  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+4</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">2</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1ma81d9" data-time="1753574071" data-score="0" data-comments="4">
+                <p>
+                    2025 Jul 27: <a target="_self" href="./NEW_To_Cave/t3_1ma81d9.html">你被另一個mod ban掉的 我昨天都不知道發生啥了</a>  - /u/Shinanobuta87  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+0</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">4</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1ma8yxz" data-time="1753576866" data-score="1" data-comments="0">
+                <p>
+                    2025 Jul 27: <a target="_self" href="./NEW_To_Cave/t3_1ma8yxz.html">你sub一天吃多少檢舉？</a>  - /u/Shinanobuta87  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1maa0k8" data-time="1753580070" data-score="12" data-comments="3">
+                <p>
+                    2025 Jul 27: <a target="_self" href="./NEW_To_Cave/t3_1maa0k8.html">野生穴友</a>  - /u/Cnanobuta  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+12</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">3</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1maa91q" data-time="1753580798" data-score="5" data-comments="5">
+                <p>
+                    2025 Jul 27: <a target="_self" href="./NEW_To_Cave/t3_1maa91q.html">u/Shinanobuta87台湾小朋友这么急呀，偷偷举报我十几条回复</a>  - /u/No-Pitch8412  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+5</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">5</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1maac0z" data-time="1753581053" data-score="2" data-comments="2">
+                <p>
+                    2025 Jul 27: <a target="_self" href="./NEW_To_Cave/t3_1maac0z.html">卢克哥的小作文有没有备份的</a>  - /u/BodybuilderTrue4922  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+2</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">2</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1mabnbv" data-time="1753585143" data-score="0" data-comments="3">
+                <p>
+                    2025 Jul 27: <a target="_self" href="./NEW_To_Cave/t3_1mabnbv.html">集美：柬埔寨还是太农村化了</a>  - /u/Catlinslayer  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+0</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">3</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1maemsp" data-time="1753595289" data-score="1" data-comments="1">
+                <p>
+                    2025 Jul 27: <a target="_self" href="./NEW_To_Cave/t3_1maemsp.html">你sub正式倒計時</a>  - /u/DogBot76  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">1</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1mafu6f" data-time="1753599766" data-score="1" data-comments="3">
+                <p>
+                    2025 Jul 27: <a target="_self" href="./NEW_To_Cave/t3_1mafu6f.html">新来的不懂</a>  - /u/UnluckyAd5394  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">3</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1maha6w" data-time="1753605392" data-score="0" data-comments="10">
+                <p>
+                    2025 Jul 27: <a target="_self" href="./NEW_To_Cave/t3_1maha6w.html">现在很难受，昨天尝试自杀的小地雷妹的前夫告诉我她其实结过婚有过孩子而且确实已经死了</a>  - /u/Catlinslayer  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+0</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">10</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1mahoph" data-time="1753607003" data-score="8" data-comments="1">
+                <p>
+                    2025 Jul 27: <a target="_self" href="./NEW_To_Cave/t3_1mahoph.html">麻中麻</a>  - /u/LivingNeat4537  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+8</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">1</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1mail31" data-time="1753610588" data-score="13" data-comments="2">
+                <p>
+                    2025 Jul 27: <a target="_self" href="./NEW_To_Cave/t3_1mail31.html">提醒大家铭记一段历史</a>  - /u/TrainingTotal989  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+13</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">2</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1mak888" data-time="1753616617" data-score="3" data-comments="1">
+                <p>
+                    2025 Jul 27: <a target="_self" href="./NEW_To_Cave/t3_1mak888.html">這是最後的烏托邦嗎</a>  - /u/One_Satisfaction1308  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+3</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">1</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1mamb17" data-time="1753622933" data-score="2" data-comments="6">
+                <p>
+                    2025 Jul 27: <a target="_self" href="./NEW_To_Cave/t3_1mamb17.html">Student Introduction: Mika (Swimsuit)</a>  - /u/RaT-Oven7787  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+2</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">6</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1mamt0k" data-time="1753624274" data-score="10" data-comments="3">
+                <p>
+                    2025 Jul 27: <a target="_self" href="./NEW_To_Cave/t3_1mamt0k.html">说好的白皮老的快呢?</a>  - /u/Remarkable_Score227  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+10</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">3</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1manwh2" data-time="1753627063" data-score="12" data-comments="0">
+                <p>
+                    2025 Jul 27: <a target="_self" href="./NEW_To_Cave/t3_1manwh2.html">山東風土人情</a>  - /u/Final_Spark_2019  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+12</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1mao928" data-time="1753627948" data-score="11" data-comments="3">
+                <p>
+                    2025 Jul 27: <a target="_self" href="./NEW_To_Cave/t3_1mao928.html">何味道</a>  - /u/xjp8963  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+11</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">3</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1mapq69" data-time="1753631529" data-score="21" data-comments="8">
+                <p>
+                    2025 Jul 27: <a target="_self" href="./NEW_To_Cave/t3_1mapq69.html">你们不要举报sub了，我求求你们了，大家只是想有个说话的地方</a>  - /u/Saddle-rat-9999  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+21</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">8</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1mar2c0" data-time="1753634696" data-score="34" data-comments="7">
+                <p>
+                    2025 Jul 28: <a target="_self" href="./NEW_To_Cave/t3_1mar2c0.html">没青春的鼠人</a>  - /u/dogetoonebtc  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+34</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">7</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1marv6l" data-time="1753636561" data-score="9" data-comments="2">
+                <p>
+                    2025 Jul 28: <a target="_self" href="./NEW_To_Cave/t3_1marv6l.html">是穴友么</a>  - /u/youmo-ebike  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+9</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">2</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1mas33t" data-time="1753637077" data-score="7" data-comments="0">
+                <p>
+                    2025 Jul 28: <a target="_self" href="./NEW_To_Cave/t3_1mas33t.html">太监，融不进</a>  - /u/youmo-ebike  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+7</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1mavnio" data-time="1753645628" data-score="6" data-comments="3">
+                <p>
+                    2025 Jul 28: <a target="_self" href="./NEW_To_Cave/t3_1mavnio.html">沪爷惨遭耍了六年男女朋友的织女送进看守所，还有兔友不信我说的在大支检察院关系重要性？</a>  - /u/St-Bao  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+6</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">3</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1mavsbn" data-time="1753645959" data-score="10" data-comments="2">
+                <p>
+                    2025 Jul 28: <a target="_self" href="./NEW_To_Cave/t3_1mavsbn.html">【兔友大学习】现在大支整天魔怔男女裤裆事情其实是我厚米无意间搞出来的副产品，真不是故意搞什么腐化欧美白皮或者图纸的大棋。</a>  - /u/St-Bao  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+10</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">2</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1mb4jok" data-time="1753669712" data-score="7" data-comments="1">
+                <p>
+                    2025 Jul 28: <a target="_self" href="./NEW_To_Cave/t3_1mb4jok.html">焦虑和痛苦是我创作欲的源泉</a>  - /u/Emerald-michael  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+7</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">1</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1mb57f0" data-time="1753671750" data-score="13" data-comments="2">
+                <p>
+                    2025 Jul 28: <a target="_self" href="./NEW_To_Cave/t3_1mb57f0.html">為什麼男人一定要娶妓女？</a>  - /u/Final_Spark_2019  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+13</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">2</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1mb57n9" data-time="1753671768" data-score="3" data-comments="6">
+                <p>
+                    2025 Jul 28: <a target="_self" href="./NEW_To_Cave/t3_1mb57n9.html">能不能加一下tag</a>  - /u/Final_Spark_2019  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+3</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">6</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1mb5j6g" data-time="1753672754" data-score="14" data-comments="3">
+                <p>
+                    2025 Jul 28: <a target="_self" href="./NEW_To_Cave/t3_1mb5j6g.html">老英雄</a>  - /u/rice007  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+14</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">3</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1mb9syu" data-time="1753687800" data-score="9" data-comments="3">
+                <p>
+                    2025 Jul 28: <a target="_self" href="./NEW_To_Cave/t3_1mb9syu.html">女朋友的嘴味道特别重，我跟她接吻就像受刑一样，后来再也不接吻了。</a>  - /u/Reddit-FatAdmin  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+9</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">3</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1mbarkz" data-time="1753691632" data-score="1" data-comments="1">
+                <p>
+                    2025 Jul 28: <a target="_self" href="./NEW_To_Cave/t3_1mbarkz.html">福袋歪了呜呜</a>  - /u/Saddle-rat-9999  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">1</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1mbbbdf" data-time="1753693825" data-score="6" data-comments="1">
+                <p>
+                    2025 Jul 28: <a target="_self" href="./NEW_To_Cave/t3_1mbbbdf.html">怕了吗</a>  - /u/Cnanobuta  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+6</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">1</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1mbbf5x" data-time="1753694223" data-score="14" data-comments="12">
+                <p>
+                    2025 Jul 28: <a target="_self" href="./NEW_To_Cave/t3_1mbbf5x.html">谁用</a>  - /u/Cnanobuta  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+14</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">12</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1mbez3r" data-time="1753706119" data-score="9" data-comments="1">
+                <p>
+                    2025 Jul 28: <a target="_self" href="./NEW_To_Cave/t3_1mbez3r.html">我和你舅舅谁几把更大</a>  - /u/xjp8963  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+9</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">1</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1mbldi9" data-time="1753721168" data-score="11" data-comments="3">
+                <p>
+                    2025 Jul 29: <a target="_self" href="./NEW_To_Cave/t3_1mbldi9.html">穴友小时候</a>  - /u/youmo-ebike  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+11</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">3</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1mbm4qp" data-time="1753722772" data-score="3" data-comments="0">
+                <p>
+                    2025 Jul 29: <a target="_self" href="./NEW_To_Cave/t3_1mbm4qp.html">最近阅读了点绿经，感觉确实有启示</a>  - /u/St-Bao  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+3</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1mbuutt" data-time="1753742729" data-score="2" data-comments="1">
+                <p>
+                    2025 Jul 29: <a target="_self" href="./NEW_To_Cave/t3_1mbuutt.html">用穴友作为原型写的AI小黄文</a>  - /u/Catlinslayer  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+2</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">1</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1mbwpju" data-time="1753747564" data-score="23" data-comments="4">
+                <p>
+                    2025 Jul 29: <a target="_self" href="./NEW_To_Cave/t3_1mbwpju.html">马脸哥，往里进</a>  - /u/neko_canyon  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+23</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">4</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1mc08ie" data-time="1753757597" data-score="7" data-comments="5">
+                <p>
+                    2025 Jul 29: <a target="_self" href="./NEW_To_Cave/t3_1mc08ie.html">这种的是处女吗？</a>  - /u/Acceptable_Ad7280  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+7</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">5</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1mc1q0y" data-time="1753762149" data-score="2" data-comments="0">
+                <p>
+                    2025 Jul 29: <a target="_self" href="./NEW_To_Cave/t3_1mc1q0y.html">这种的有感觉吗？</a>  - /u/SezakiAiri  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+2</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1mc3cvp" data-time="1753767666" data-score="17" data-comments="7">
+                <p>
+                    2025 Jul 29: <a target="_self" href="./NEW_To_Cave/t3_1mc3cvp.html">这种的是处女吗？</a>  - /u/Acceptable_Ad7280  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+17</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">7</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1mc5fqi" data-time="1753775610" data-score="25" data-comments="2">
+                <p>
+                    2025 Jul 29: <a target="_self" href="./NEW_To_Cave/t3_1mc5fqi.html">我的处女型人民币在哪里？</a>  - /u/xjp8963  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+25</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">2</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1mc7vsz" data-time="1753785095" data-score="20" data-comments="2">
+                <p>
+                    2025 Jul 29: <a target="_self" href="./NEW_To_Cave/t3_1mc7vsz.html">我们注意到最近一些穴友反馈新sub内容质量下降</a>  - /u/cloudbar-666  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+20</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">2</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1mc9e4z" data-time="1753790112" data-score="2" data-comments="0">
+                <p>
+                    2025 Jul 29: <a target="_self" href="./NEW_To_Cave/t3_1mc9e4z.html">所以说，不化妆真的不能看呀</a>  - /u/youmo-ebike  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+2</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1mcf7sn" data-time="1753804569" data-score="7" data-comments="5">
+                <p>
+                    2025 Jul 29: <a target="_self" href="./NEW_To_Cave/t3_1mcf7sn.html">不知不觉已经一千人了，然而只有我一个视奸蛆，所以说是聚了还是散了？</a>  - /u/Farmerprestigious731  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+7</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">5</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1mcm6nl" data-time="1753820031" data-score="1" data-comments="1">
+                <p>
+                    2025 Jul 30: <a target="_self" href="./NEW_To_Cave/t3_1mcm6nl.html">哎，法支怎么这么坏的，要拉全世界下水。今天在街上参观了个绿友文化摊，没想到又是个缝合女权。</a>  - /u/St-Bao  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">1</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1mcmzuw" data-time="1753821869" data-score="11" data-comments="2">
+                <p>
+                    2025 Jul 30: <a target="_self" href="./NEW_To_Cave/t3_1mcmzuw.html">哎，法支怎么这么坏的，要拉全世界下水。今天在街上参观了个绿友文化摊，没想到又是个缝合女权。</a>  - /u/St-Bao  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+11</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">2</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1mcwxi7" data-time="1753848823" data-score="8" data-comments="0">
+                <p>
+                    2025 Jul 30: <a target="_self" href="./NEW_To_Cave/t3_1mcwxi7.html">Dance of the virgins</a>  - /u/Cnanobuta  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+8</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1mcymk3" data-time="1753854645" data-score="18" data-comments="7">
+                <p>
+                    2025 Jul 30: <a target="_self" href="./NEW_To_Cave/t3_1mcymk3.html">地雷系互爱tv</a>  - /u/Catlinslayer  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+18</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">7</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1md2lsg" data-time="1753869915" data-score="22" data-comments="1">
+                <p>
+                    2025 Jul 30: <a target="_self" href="./NEW_To_Cave/t3_1md2lsg.html">誰</a>  - /u/Cnanobuta  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+22</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">1</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1md327s" data-time="1753871564" data-score="4" data-comments="4">
+                <p>
+                    2025 Jul 30: <a target="_self" href="./NEW_To_Cave/t3_1md327s.html">你发现没有？</a>  - /u/Ok-Vermicelli1484  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+4</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">4</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1mdvfkm" data-time="1753948101" data-score="29" data-comments="5">
+                <p>
+                    2025 Jul 31: <a target="_self" href="./NEW_To_Cave/t3_1mdvfkm.html">玩了<这是我的战争>之后发现白皮还是太心善</a>  - /u/Catlinslayer  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+29</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">5</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1me06po" data-time="1753964814" data-score="13" data-comments="3">
+                <p>
+                    2025 Jul 31: <a target="_self" href="./NEW_To_Cave/t3_1me06po.html">［补档］写在2020的最后一天</a>  - /u/One-Mongoose-8138  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+13</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">3</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1me1zjk" data-time="1753969502" data-score="3" data-comments="0">
+                <p>
+                    2025 Jul 31: <a target="_self" href="./NEW_To_Cave/t3_1me1zjk.html">爱不爱妈妈？</a>  - /u/Remarkable_Score227  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+3</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1me267y" data-time="1753969950" data-score="14" data-comments="3">
+                <p>
+                    2025 Jul 31: <a target="_self" href="./NEW_To_Cave/t3_1me267y.html">你们谁？</a>  - /u/Anxious-Impress8266  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+14</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">3</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1me799w" data-time="1753981650" data-score="5" data-comments="0">
+                <p>
+                    2025 Aug 01: <a target="_self" href="./NEW_To_Cave/t3_1me799w.html">Maskpark到底在哪啊？tg翻烂了都没找到</a>  - /u/Ok-Vermicelli1484  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+5</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1mef04z" data-time="1753999571" data-score="9" data-comments="4">
+                <p>
+                    2025 Aug 01: <a target="_self" href="./NEW_To_Cave/t3_1mef04z.html">这种</a>  - /u/Remarkable_Score227  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+9</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">4</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1meiuo3" data-time="1754009840" data-score="12" data-comments="3">
+                <p>
+                    2025 Aug 01: <a target="_self" href="./NEW_To_Cave/t3_1meiuo3.html">pov：地雷女上吊第一视角</a>  - /u/Significant_Win_1899  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+12</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">3</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1mevfnz" data-time="1754052061" data-score="5" data-comments="2">
+                <p>
+                    2025 Aug 01: <a target="_self" href="./NEW_To_Cave/t3_1mevfnz.html">螳臂当车的歹徒化的地雷妹</a>  - /u/Catlinslayer  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+5</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">2</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1mevq0b" data-time="1754052857" data-score="1" data-comments="0">
+                <p>
+                    2025 Aug 01: <a target="_self" href="./NEW_To_Cave/t3_1mevq0b.html">翻墙老嗨进，机场屏蔽Tor怎么办？</a>  - /u/Ok-Vermicelli1484  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1mevwuh" data-time="1754053366" data-score="11" data-comments="2">
+                <p>
+                    2025 Aug 01: <a target="_self" href="./NEW_To_Cave/t3_1mevwuh.html">小燕妮我们来燥你了</a>  - /u/xjp8963  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+11</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">2</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1mewn55" data-time="1754055260" data-score="4" data-comments="6">
+                <p>
+                    2025 Aug 01: <a target="_self" href="./NEW_To_Cave/t3_1mewn55.html">做题老嗨往里面进</a>  - /u/Bitter_Drummer9937  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+4</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">6</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1meyf1w" data-time="1754059578" data-score="1" data-comments="0">
+                <p>
+                    2025 Aug 01: <a target="_self" href="./NEW_To_Cave/t3_1meyf1w.html">支的三条性质</a>  - /u/Bitter_Drummer9937  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1mf3ogs" data-time="1754071562" data-score="13" data-comments="0">
+                <p>
+                    2025 Aug 02: <a target="_self" href="./NEW_To_Cave/t3_1mf3ogs.html">哪位繁殖癌犯了</a>  - /u/Remarkable_Score227  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+13</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1mf9qmp" data-time="1754086020" data-score="1" data-comments="1">
+                <p>
+                    2025 Aug 02: <a target="_self" href="./NEW_To_Cave/t3_1mf9qmp.html">这种</a>  - /u/Remarkable_Score227  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">1</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1mfeqz0" data-time="1754100191" data-score="14" data-comments="4">
+                <p>
+                    2025 Aug 02: <a target="_self" href="./NEW_To_Cave/t3_1mfeqz0.html">我还能吃多久廉价外卖？</a>  - /u/One-Mongoose-8138  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+14</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">4</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1mflqj6" data-time="1754124372" data-score="17" data-comments="7">
+                <p>
+                    2025 Aug 02: <a target="_self" href="./NEW_To_Cave/t3_1mflqj6.html">盘点集美的十大优点</a>  - /u/PaperHappy133  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+17</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">7</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1mft4eh" data-time="1754147998" data-score="5" data-comments="3">
+                <p>
+                    2025 Aug 02: <a target="_self" href="./NEW_To_Cave/t3_1mft4eh.html">敢不敢来胡佛大坝碰碰</a>  - /u/Catlinslayer  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+5</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">3</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1mftqn7" data-time="1754149527" data-score="5" data-comments="1">
+                <p>
+                    2025 Aug 02: <a target="_self" href="./NEW_To_Cave/t3_1mftqn7.html">刷到个法国董志民的新闻</a>  - /u/St-Bao  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+5</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">1</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1mfvuss" data-time="1754154841" data-score="2" data-comments="2">
+                <p>
+                    2025 Aug 03: <a target="_self" href="./NEW_To_Cave/t3_1mfvuss.html">有bpd 怎么活</a>  - /u/iiiiiiiiib  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+2</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">2</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1mgagrj" data-time="1754196009" data-score="0" data-comments="3">
+                <p>
+                    2025 Aug 03: <a target="_self" href="./NEW_To_Cave/t3_1mgagrj.html">太阳升起，我已归来</a>  - /u/Zhidihuimieba  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+0</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">3</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1mgapyn" data-time="1754196884" data-score="6" data-comments="1">
+                <p>
+                    2025 Aug 03: <a target="_self" href="./NEW_To_Cave/t3_1mgapyn.html">何意味</a>  - /u/Ok-Engineer5393  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+6</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">1</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1mgbzam" data-time="1754201398" data-score="8" data-comments="3">
+                <p>
+                    2025 Aug 03: <a target="_self" href="./NEW_To_Cave/t3_1mgbzam.html">爱猫tv之我要拿你的头盖骨当碗使</a>  - /u/Catlinslayer  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+8</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">3</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1mgfquo" data-time="1754216138" data-score="5" data-comments="1">
+                <p>
+                    2025 Aug 03: <a target="_self" href="./NEW_To_Cave/t3_1mgfquo.html">幽默厨房</a>  - /u/youmo-ebike  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+5</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">1</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1mggqkq" data-time="1754219820" data-score="1" data-comments="0">
+                <p>
+                    2025 Aug 03: <a target="_self" href="./NEW_To_Cave/t3_1mggqkq.html">经典回顾之响狗coser</a>  - /u/Catlinslayer  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1mgic8e" data-time="1754225074" data-score="19" data-comments="3">
+                <p>
+                    2025 Aug 03: <a target="_self" href="./NEW_To_Cave/t3_1mgic8e.html">是家吗</a>  - /u/licenceplease  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+19</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">3</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1mhbrw0" data-time="1754309703" data-score="1" data-comments="0">
+                <p>
+                    2025 Aug 04: <a target="_self" href="./NEW_To_Cave/t3_1mhbrw0.html">庆祝穴吧复活</a>  - /u/ImpossibleJunket7344  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1mhczag" data-time="1754312912" data-score="0" data-comments="0">
+                <p>
+                    2025 Aug 04: <a target="_self" href="./NEW_To_Cave/t3_1mhczag.html">好可爱的耳朵！</a>  - /u/Honest-Practice-5386  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+0</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1mhdshy" data-time="1754314928" data-score="1" data-comments="0">
+                <p>
+                    2025 Aug 04: <a target="_self" href="./NEW_To_Cave/t3_1mhdshy.html">Is this community alive?</a>  - /u/JamesHMilner88  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1mhf7xe" data-time="1754318299" data-score="14" data-comments="9">
+                <p>
+                    2025 Aug 04: <a target="_self" href="./NEW_To_Cave/t3_1mhf7xe.html">这次是真的散了</a>  - /u/Ok-Engineer5393  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+14</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">9</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1mhi9uh" data-time="1754325100" data-score="1" data-comments="1">
+                <p>
+                    2025 Aug 05: <a target="_self" href="./NEW_To_Cave/t3_1mhi9uh.html">你游刚出水一花，就觉得很有感觉自组了一套</a>  - /u/WakabaH1nata  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">1</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1mhyqci" data-time="1754365150" data-score="1" data-comments="0">
+                <p>
+                    2025 Aug 05: <a target="_self" href="./NEW_To_Cave/t3_1mhyqci.html">为什么织女养动物弃养率这么高</a>  - /u/WakabaH1nata  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1mi1ubn" data-time="1754375694" data-score="1" data-comments="5">
+                <p>
+                    2025 Aug 05: <a target="_self" href="./NEW_To_Cave/t3_1mi1ubn.html">我好猴米马脸跨畜怎么号没了？</a>  - /u/neko_canyon  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">5</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1mi6352" data-time="1754391674" data-score="1" data-comments="0">
+                <p>
+                    2025 Aug 05: <a target="_self" href="./NEW_To_Cave/t3_1mi6352.html">黄种人的多样性</a>  - /u/No-Pitch8412  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1mi6ud7" data-time="1754394059" data-score="1" data-comments="0">
+                <p>
+                    2025 Aug 05: <a target="_self" href="./NEW_To_Cave/t3_1mi6ud7.html">和响狗coser在一起</a>  - /u/WakabaH1nata  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1mi9kdo" data-time="1754401385" data-score="1" data-comments="12">
+                <p>
+                    2025 Aug 05: <a target="_self" href="./NEW_To_Cave/t3_1mi9kdo.html">盘点码蛆不能处的几大理由，狡兔窟版本再版</a>  - /u/PaperHappy133  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">12</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1micju5" data-time="1754408292" data-score="1" data-comments="0">
+                <p>
+                    2025 Aug 05: <a target="_self" href="./NEW_To_Cave/t3_1micju5.html">不是我说，豆瓣生活组织女都比兔友有节目效果。先是到处灌水发武大做题傻狗亲姨是区委书记的谣言。引来我党赵弹清场了，开始互相恐慌是真惹到天龙人了，一堆人去顶一个学小语种教程打算润。</a>  - /u/St-Bao  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1miegx1" data-time="1754412659" data-score="1" data-comments="0">
+                <p>
+                    2025 Aug 06: <a target="_self" href="./NEW_To_Cave/t3_1miegx1.html">如果和老外介绍东baby男盗女娼？</a>  - /u/youmo-ebike  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1mip2qk" data-time="1754436986" data-score="1" data-comments="1">
+                <p>
+                    2025 Aug 06: <a target="_self" href="./NEW_To_Cave/t3_1mip2qk.html">快叫爸爸！</a>  - /u/Own-Strength-7479  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">1</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1miqftr" data-time="1754440610" data-score="1" data-comments="0">
+                <p>
+                    2025 Aug 06: <a target="_self" href="./NEW_To_Cave/t3_1miqftr.html">你们喜欢被别人叫爸爸吗~？</a>  - /u/Own-Strength-7479  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1miswvv" data-time="1754447560" data-score="1" data-comments="1">
+                <p>
+                    2025 Aug 06: <a target="_self" href="./NEW_To_Cave/t3_1miswvv.html">19-20年的神吧深吧自由你*了</a>  - /u/Ok-Vermicelli1484  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">1</span>
+                </p>
+            </div>
+            <div class="post-listing" id="t3_1mj3ino" data-time="1754483860" data-score="1" data-comments="2">
+                <p>
+                    2025 Aug 06: <a target="_self" href="./NEW_To_Cave/t3_1mj3ino.html">誰懂？想變成碧藍檔案裡的學生後搞百合</a>  - /u/hinata_yuki_chan  
+                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
+                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">2</span>
+                </p>
+            </div>
+        </div>
+        <script>
+            function sortPosts() {{
+                const container = document.getElementById('posts-container');
+                const posts = Array.from(container.getElementsByClassName('post-listing'));
+                const sortBy = document.getElementById('sortOrder').value;
+
+                // remember user choice
+                sessionStorage.setItem("reddit_archive_sort", sortBy);
+
+                // Check if we need ascending or descending
+                const isAsc = sortBy.endsWith('-asc');
+                const key = isAsc ? sortBy.replace('-asc', '') : sortBy;
+
+                posts.sort((a, b) => {{
+                    let valA = parseInt(a.getAttribute('data-' + key));
+                    let valB = parseInt(b.getAttribute('data-' + key));
+                    
+                    // If Ascending: valA - valB (1, 2, 3...)
+                    // If Descending: valB - valA (9, 8, 7...)
+                    return isAsc ? valA - valB : valB - valA;
+                }});
+
+                // Re-insert posts in the new order
+                posts.forEach(post => container.appendChild(post));
+            }}
+            document.addEventListener("DOMContentLoaded", function () {{
+                const savedSort = sessionStorage.getItem("reddit_archive_sort");
+
+                if (savedSort) {{
+                    document.getElementById("sortOrder").value = savedSort;
+                }}
+
+                sortPosts(); // apply sorting immediately
+            }});
+        </script>
+    </body>
+</html>
