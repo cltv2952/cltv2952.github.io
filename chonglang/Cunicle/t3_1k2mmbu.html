@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>智猪博弈</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <style>
+            .crosspost {
+                border: 1px solid #888;
+                margin-top: 10px;
+                padding: 10px;
+                background-color: #f6f7f8;
+            }
+            .crosspost-header {
+                font-size: 12px;
+                color: #555;
+                margin-bottom: 6px;
+            }
+            .crosspost-content {
+                padding-left: 5px;
+            }
+            .submission, .comment { padding-left: 20px; padding-right: 4px; font-family: verdana, arial, helvetica, sans-serif; }
+            .comment { margin-top: 4px; margin-bottom: 4px; border: 1px solid black; }
+            .submission { border: 2px solid blue; padding-bottom: 10px; }
+            .hidden { display: none; }
+            .userinfo { font-size: 12px; color: #555; }
+            .flair {
+                padding: 2px 6px; border-radius: 20px; font-size: 10px; font-weight: bold;
+                margin-left: 5px; display: inline-block; vertical-align: middle; line-height: 1.2;
+            }
+        </style>
+    </head>
+    <body>
+        <a href="../Cunicle.html#t3_1k2mmbu" class="back-link">← Back to Index</a>
+            <div class="submission" id="t3_1k2mmbu">
+                <p class="userinfo">
+                    <a href="https://old.reddit.com/u/pppp312">pppp312</a>
+                    | <span class="score">5 points</span>
+                    | <a class="timestamp" href="https://old.reddit.com/r/Cunicle/comments/1k2mmbu/智猪博弈/">Apr 19 2025 10:58:34</a>
+                </p>
+                <strong>智猪博弈</strong>
+                <p><p>张维迎</p>
+<p>有些博弈可能是一方有占优战略，另一方没有占优战略，即什么是自己的最优行动依赖于他预测对方会选择什么行动，对方的选择不同，自己的最优行动就不同。此时博弈结果又会怎样呢？下面我们就用“智猪博弈”（boxed pigs game）来分析这个问题。</p>
+<p>设想猪圈里有两头猪，一头大猪和一头小猪。在猪圈的一头装有一个按钮，另一头装有食槽。在这头按一下按钮，那头的食槽会有8单位的食物出现。但不管是大猪还是小猪，按动按钮都需要花2个单位食物的成本。如果两头猪一起按，各付2单位食物成本，然后大猪吃到6份食物，小猪可以吃到2份食物，扣除成本后，双方的净收益分别为4和0。如果大猪按、小猪不按，则小猪不付出任何代价就可以吃到3份，大猪按完之后跑回来可以吃到5份，扣除其按按钮的2个单位的成本，大猪的净收益也是3。反过来，如果大猪不按、小猪按的话，大猪可以不付出任何代价就可以吃到7份，小猪则只可以吃到1份，扣除其2单位的成本，则小猪的净收益为-1。如果两头猪都不按，则不付出成本，但也不会有食物吃，净收益都为0。如图2-5所示。</p>
+<p>https://preview.redd.it/4enftgmlipve1.jpg?width=482&amp;format=pjpg&amp;auto=webp&amp;s=27a1ad09440cbb34e0b5dfb9b5a45a75772d1850</p>
+<p>图2-5 智猪博弈</p>
+<p>现在的问题是，谁来按这个按钮？先考虑大猪的情况：如果小猪按的话，大猪的最优选择是“等待”（7&gt;4）；但如果小猪等待的话，大猪的最优选择是“按”(3&gt;0)。这就和前面所讲的囚徒困境博弈不一样了。在囚徒困境博弈中，每一个参与人都有一个占优战略——不论对方是否坦白，你最好是坦白。但在智猪博弈中，大猪没有占优战略，大猪的最优选择依赖于小猪的选择。所以大猪在做出选择前必须猜测小猪的选择。</p>
+<p>那么，小猪会如何选择呢？对于小猪来说，如果大猪按，自己的最优选择是“不按”（3&gt;0）；如果大猪不按，自己的最优选择仍然“不按”(0&gt;-1)。这表明小猪选择“不按”是一个占优战略。</p>
+<p>那大猪应该怎么办呢？我们前边假定的每一个博弈参与人（大猪或小猪）都是理性的，但并没有假定一方知道另一方也是理性的。显然，小猪在做决策时并不需要假定大猪是理性的，因为无论大猪是否理性，小猪的最优决策都是不按；但大猪的情况不同，即使小猪是理性的，如果大猪不知道小猪是否理性，大猪就没有办法做出选择。</p>
+<p>为了预测这个博弈的结果，我们必须对大猪的理性程度做出进一步的假设。假定大猪不仅自己是理性的，也知道小猪是理性的。作为理性的参与人，小猪不会按。由于大猪知道小猪是理性的，就会知道小猪不会按，因此，大猪的最优选择只能是按。博弈的结局就是：大猪按，小猪不按，各得3单位的净报酬。</p></p>
+                
+            </div>
+    </body>
+    <script>
+        function toggle_collapse(comment_div) {{
+            var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+            var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+            if (collapsible.classList.contains("hidden")) {{
+                collapsible.classList.remove("hidden");
+                button.innerText = "[-]";
+            }} else {{
+                collapsible.classList.add("hidden");
+                button.innerText = "[+]";
+            }}
+        }}
+    </script>
+</html>

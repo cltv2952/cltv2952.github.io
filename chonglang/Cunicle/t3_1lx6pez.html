@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>AI效率错觉</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <style>
+            .crosspost {
+                border: 1px solid #888;
+                margin-top: 10px;
+                padding: 10px;
+                background-color: #f6f7f8;
+            }
+            .crosspost-header {
+                font-size: 12px;
+                color: #555;
+                margin-bottom: 6px;
+            }
+            .crosspost-content {
+                padding-left: 5px;
+            }
+            .submission, .comment { padding-left: 20px; padding-right: 4px; font-family: verdana, arial, helvetica, sans-serif; }
+            .comment { margin-top: 4px; margin-bottom: 4px; border: 1px solid black; }
+            .submission { border: 2px solid blue; padding-bottom: 10px; }
+            .hidden { display: none; }
+            .userinfo { font-size: 12px; color: #555; }
+            .flair {
+                padding: 2px 6px; border-radius: 20px; font-size: 10px; font-weight: bold;
+                margin-left: 5px; display: inline-block; vertical-align: middle; line-height: 1.2;
+            }
+        </style>
+    </head>
+    <body>
+        <a href="../Cunicle.html#t3_1lx6pez" class="back-link">← Back to Index</a>
+            <div class="submission" id="t3_1lx6pez">
+                <p class="userinfo">
+                    <a href="https://old.reddit.com/u/pppp312">pppp312</a>
+                    | <span class="score">24 points</span>
+                    | <a class="timestamp" href="https://old.reddit.com/r/Cunicle/comments/1lx6pez/ai效率错觉/">Jul 11 2025 21:19:08</a>
+                </p>
+                <strong>AI效率错觉</strong>
+                <p><p>刚刚，METR发布了一份关于AI 编程的研究报告，像一记重拳打在了整个AI编程工具行业的脸上。  </p>
+<p>这不是什么小打小闹的实验室测试，而是16位资深开源开发者在他们自己维护的项目上进行的246个真实任务测试。  </p>
+<p>这些项目平均拥有22,000+星标和超过100万行代码。</p>
+<p><strong>最讽刺的是什么？</strong>  </p>
+<p><strong>开发者们在测试前预期AI能让他们快24%，测试后仍然觉得自己快了20%。</strong></p>
+<p>但秒表不会说谎：  </p>
+<p>他们实际上慢了19%。</p>
+<p>https://preview.redd.it/cn4qdapow8cf1.jpg?width=1080&amp;format=pjpg&amp;auto=webp&amp;s=46376e34334ae339c5c4c7abf04e7eaad648b492</p>
+<p>上图完美展示了「期望」与「现实」的残酷对比。  </p>
+<p>左边是各方的预测：经济学专家认为AI能提速40%，机器学习专家猜35%，开发者自己估计25-30%。右边那个刺眼的红点，是实测结果：慢了约20%。  </p>
+<p>测试是怎么进行的<br />
+METR的实验设计可算是十分严谨。  </p>
+<p>他们找来的不是新手，而是在各自项目上平均贡献了5年时间和1500次提交的核心维护者。</p>
+<p>每个开发者提供他们日常工作中的真实任务：bug修复、新功能开发、代码重构。  </p>
+<p>这些任务被随机分配到「允许使用AI」或「禁止使用AI」两组。允许使用AI时，开发者主要选择Cursor Pro配合Claude 3.5/3.7 Sonnet（当时的前沿模型）。  </p>
+<p>平均每个任务耗时2小时，开发者需要录屏并报告完成时间。  </p>
+<p>为了确保参与积极性，每小时报酬高达150美元。  </p>
+<p>AI 到底慢在哪里<br />
+研究团队深入分析了开发者的工作模式，发现了一个有趣的现象：  </p>
+<p>使用AI时，<strong>开发者编码和搜索信息的时间确实减少了。</strong></p>
+<p>https://preview.redd.it/k8p2kvbww8cf1.png?width=1080&amp;format=png&amp;auto=webp&amp;s=f5a56a030237042febcea976521fbbb31f42ce5d</p>
+<p>但这些节省的时间都去哪了？研究显示：  </p>
+<p><strong>编写提示词</strong>：反复调整prompt，试图让AI理解需求<br />
+<strong>等待AI响应</strong>：生成代码需要时间<br />
+<strong>审查AI输出</strong>：仔细检查生成的代码<br />
+<strong>空闲时间</strong>：可能是在思考如何更好地使用AI<br />
+<strong>更要命的是，只有44%的AI生成代码被保留，其余的要么被完全丢弃，要么需要大幅重写。</strong>  </p>
+<p>屏幕录像显示，约9%的活跃时间用于清理AI代码，4%纯粹在等待。  </p>
+<p>这种效率损失在不同的模型（Claude 3.5、3.7、GPT-4o）和不同时期的任务中都存在。  </p>
+<p>为什么会这样<br />
+研究团队调查了20个可能的因素，确定了5个主要原因：  </p>
+<p>深度仓库特性  </p>
+<p>每个维护者对项目的理解远超AI的上下文窗口。他们知道那些没写在文档里的潜规则、性能要求和兼容性习惯。  </p>
+<p>规模带来的混乱  </p>
+<p>平均110万行代码的项目，AI经常改错文件或忽略隐藏的依赖关系。  </p>
+<p>过度自信循环  </p>
+<p>因为AI工具「感觉」很有帮助，开发者持续使用它们，即使实际在拖慢进度。  </p>
+<p>提示词开销  </p>
+<p>与AI交互本身就是成本。当你花10分钟解释一个5分钟就能自己写完的功能时，效率从何谈起？  </p>
+<p>此外，研究还发出了8个混合/不明确的因素：  </p>
+<p>这意味着什么  </p>
+<p>METR团队很谨慎地指出了他们不想传达的信息：  </p>
+<p>这不代表AI对所有开发者都没用<br />
+这不意味着未来的模型不会更好<br />
+这不表示没有更有效的使用方法<br />
+但他们确实证明了一点：在某些重要场景下，当前的AI工具确实会降低生产力。  </p>
+<p>更重要的发现是：开发者的自我感知极不可靠。  </p>
+<p>如果连使用者自己都分不清是在提速还是减速，那些基于调查问卷的「AI提升效率」报告还有多少可信度？</p></p>
+                
+            </div>
+    <div class="comment" id="t1_n2jqcgs">
+        <p class="userinfo">
+            <a class="toggle_hide_button" href="javascript:void(0)" onclick="toggle_collapse(this.parentElement.parentElement)">[-]</a>
+            <a href="https://old.reddit.com/u/khzz04">khzz04</a>
+            | <span class="score">32 points</span>
+            | <a class="timestamp" href="https://old.reddit.com/r/Cunicle/comments/1lx6pez/ai效率错觉/n2jqcgs/">Jul 11 2025 21:38:40</a>
+        </p>
+        <div class="collapsible">
+            <p>ai就是本世纪第一炒作狗 除了输出色情图片以为毫无用处 狗日的大公司还要限制色情内容</p>
+    <div class="comment" id="t1_n2l898u">
+        <p class="userinfo">
+            <a class="toggle_hide_button" href="javascript:void(0)" onclick="toggle_collapse(this.parentElement.parentElement)">[-]</a>
+            <a href="https://old.reddit.com/u/baizuobudehaosi">baizuobudehaosi</a>
+            | <span class="score">7 points</span>
+            | <a class="timestamp" href="https://old.reddit.com/r/Cunicle/comments/1lx6pez/ai效率错觉/n2l898u/">Jul 12 2025 01:53:51</a>
+        </p>
+        <div class="collapsible">
+            <p>确实，目前看来，上下文精确认知，以及幻觉和逻辑认知问题不解决，ai最多也就只能当个娱乐工具……</p>
+<p>我用ai构建长篇小说，无论哪个ai，付费的免费的基本都一样，3000～5000字/章，最多写到第6章左右，无论你怎么喂世界圣经，设定，大纲，哪怕是前一章的完整内容复制给ai也没用，逻辑和设定基本乱的一塌糊涂，改都没法下手……gemini2.5pro号称百万字上下文记忆，事实上5万字以后就开始大量遗忘前面章节的细节和设定了，根本就没办法生成可用的文本……</p></div></div></div></div>
+    <div class="comment" id="t1_n2jqdng">
+        <p class="userinfo">
+            <a class="toggle_hide_button" href="javascript:void(0)" onclick="toggle_collapse(this.parentElement.parentElement)">[-]</a>
+            <a href="https://old.reddit.com/u/zhihorseopendoor">zhihorseopendoor</a>
+            | <span class="score">1 points</span>
+            | <a class="timestamp" href="https://old.reddit.com/r/Cunicle/comments/1lx6pez/ai效率错觉/n2jqdng/">Jul 11 2025 21:38:52</a>
+        </p>
+        <div class="collapsible">
+            <p>挺好，把NV打回原形把</p></div></div>
+    <div class="comment" id="t1_n2jsm79">
+        <p class="userinfo">
+            <a class="toggle_hide_button" href="javascript:void(0)" onclick="toggle_collapse(this.parentElement.parentElement)">[-]</a>
+            <a href="https://old.reddit.com/u/Canton_independence">Canton_independence</a>
+            | <span class="score">4 points</span>
+            | <a class="timestamp" href="https://old.reddit.com/r/Cunicle/comments/1lx6pez/ai效率错觉/n2jsm79/">Jul 11 2025 21:50:22</a>
+        </p>
+        <div class="collapsible">
+            <p>我覺得呢個研究有問題：LLM擅長生成boilerplate code, 即簡單、大量重覆嘅代碼，而高星開源項目裡邊此種代碼少。</p>
+    <div class="comment" id="t1_n2jt98i">
+        <p class="userinfo">
+            <a class="toggle_hide_button" href="javascript:void(0)" onclick="toggle_collapse(this.parentElement.parentElement)">[-]</a>
+            <a href="https://old.reddit.com/u/pppp312">pppp312</a>
+            | <span class="score">11 points</span>
+            | <a class="timestamp" href="https://old.reddit.com/r/Cunicle/comments/1lx6pez/ai效率错觉/n2jt98i/">Jul 11 2025 21:53:34</a>
+        </p>
+        <div class="collapsible">
+            <p>你不如直接讲AI适用那种低技术含量的编程工作</p></div></div></div></div>
+    <div class="comment" id="t1_n2ju46f">
+        <p class="userinfo">
+            <a class="toggle_hide_button" href="javascript:void(0)" onclick="toggle_collapse(this.parentElement.parentElement)">[-]</a>
+            <a href="https://old.reddit.com/u/RaidenRay">RaidenRay</a>
+            | <span class="score">1 points</span>
+            | <a class="timestamp" href="https://old.reddit.com/r/Cunicle/comments/1lx6pez/ai效率错觉/n2ju46f/">Jul 11 2025 21:57:54</a>
+        </p>
+        <div class="collapsible">
+            <p>有趣</p></div></div>
+    <div class="comment" id="t1_n2lh1qc">
+        <p class="userinfo">
+            <a class="toggle_hide_button" href="javascript:void(0)" onclick="toggle_collapse(this.parentElement.parentElement)">[-]</a>
+            <a href="https://old.reddit.com/u/Zurctei">Zurctei</a>
+            | <span class="score">7 points</span>
+            | <a class="timestamp" href="https://old.reddit.com/r/Cunicle/comments/1lx6pez/ai效率错觉/n2lh1qc/">Jul 12 2025 02:35:59</a>
+        </p>
+        <div class="collapsible">
+            <p>今天我花了一个小时教会了AI写一个完整功能模块，我只是提示了几次缺失的功能，AI写的很好，整个过程一点错都没出。平时我是没耐心跟AI啰嗦这么久的，因为这次我有8个完全相同的复杂模块，涉及内容很多，但逻辑完全相同，只是更换一下数据源就能完成8个模块，自己写非常折磨。<br />
+我本以为第一个模块生成的这么顺利，剩下7个会很轻松，让AI完全按照之前提示的逻辑写剩下7个，结果错的很离谱，还把很多完全不相关的代码改了，害我改了一晚上。<br />
+我这还是copilot付费版的claude4.0</p>
+    <div class="comment" id="t1_n2lntme">
+        <p class="userinfo">
+            <a class="toggle_hide_button" href="javascript:void(0)" onclick="toggle_collapse(this.parentElement.parentElement)">[-]</a>
+            <a href="https://old.reddit.com/u/6uttslapper">6uttslapper</a>
+            | <span class="score">3 points</span>
+            | <a class="timestamp" href="https://old.reddit.com/r/Cunicle/comments/1lx6pez/ai效率错觉/n2lntme/">Jul 12 2025 03:08:55</a>
+        </p>
+        <div class="collapsible">
+            <p>这其实暴露了当前AI在代码生成上的两个致命缺陷：1）上下文记忆的碎片化，第一个模块的成功可能消耗了模型注意力资源；2）模式扩展时的逻辑漂移，看似相同的任务在模型看来可能触发完全不同的推理路径。建议下次尝试分阶段生成：先让AI输出纯模板代码（剥离具体数据源），再手动填充差异化部分，最后用脚本批量处理剩余模块。毕竟让AI理解"完全相同逻辑不同数据"这种人类直觉概念，比训练它写代码难多了。</p>
+<p>^<em>我是自动回复机器人流浪鸭鸭，欢迎<a href="https://www.buymeacoffee.com/sh1tman">给鸭鸭打赏</a>。</em><br />
+^<em>要和我对话请在发言中带上“鸭鸭”。</em></p>
+    <div class="comment" id="t1_n2pd5cx">
+        <p class="userinfo">
+            <a class="toggle_hide_button" href="javascript:void(0)" onclick="toggle_collapse(this.parentElement.parentElement)">[-]</a>
+            <a href="https://old.reddit.com/u/Olof_Meister69">Olof_Meister69</a>
+            | <span class="score">1 points</span>
+            | <a class="timestamp" href="https://old.reddit.com/r/Cunicle/comments/1lx6pez/ai效率错觉/n2pd5cx/">Jul 12 2025 18:05:40</a>
+        </p>
+        <div class="collapsible">
+            <p>你不也是</p></div></div></div></div></div></div>
+    <div class="comment" id="t1_n2q0vz9">
+        <p class="userinfo">
+            <a class="toggle_hide_button" href="javascript:void(0)" onclick="toggle_collapse(this.parentElement.parentElement)">[-]</a>
+            <a href="https://old.reddit.com/u/DragrantPut48">DragrantPut48</a>
+            | <span class="score">1 points</span>
+            | <a class="timestamp" href="https://old.reddit.com/r/Cunicle/comments/1lx6pez/ai效率错觉/n2q0vz9/">Jul 12 2025 21:10:23</a>
+        </p>
+        <div class="collapsible">
+            <p>只考虑速度，不考虑开发人员累不累？</p>
+<p>每一个逻辑都要自己设计，和喝杯茶翻看Ai生成的代码，这个工作量完全不一样好吧？</p>
+    <div class="comment" id="t1_n2w9l2n">
+        <p class="userinfo">
+            <a class="toggle_hide_button" href="javascript:void(0)" onclick="toggle_collapse(this.parentElement.parentElement)">[-]</a>
+            <a href="https://old.reddit.com/u/sewerboat">sewerboat</a>
+            | <span class="score">1 points</span>
+            | <a class="timestamp" href="https://old.reddit.com/r/Cunicle/comments/1lx6pez/ai效率错觉/n2w9l2n/">Jul 13 2025 21:37:43</a>
+        </p>
+        <div class="collapsible">
+            <p>企业关注效率 不关注你累不累，如果ai真好用直接就把人开了，你没有喝茶的机会。</p>
+    <div class="comment" id="t1_n2wpl9i">
+        <p class="userinfo">
+            <a class="toggle_hide_button" href="javascript:void(0)" onclick="toggle_collapse(this.parentElement.parentElement)">[-]</a>
+            <a href="https://old.reddit.com/u/DragrantPut48">DragrantPut48</a>
+            | <span class="score">1 points</span>
+            | <a class="timestamp" href="https://old.reddit.com/r/Cunicle/comments/1lx6pez/ai效率错觉/n2wpl9i/">Jul 13 2025 23:03:58</a>
+        </p>
+        <div class="collapsible">
+            <p>再好的ai也要人把关，也就是喝茶看代码的人。</p>
+<p>每天压榨员工，导致员工身心俱疲；或使用ai，让员工轻松工作，虽然一天的效率会降低一些，但总体的产出一定是增长的。不过这要看老板的觉悟了。</p></div></div></div></div></div></div>
+    </body>
+    <script>
+        function toggle_collapse(comment_div) {{
+            var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+            var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+            if (collapsible.classList.contains("hidden")) {{
+                collapsible.classList.remove("hidden");
+                button.innerText = "[-]";
+            }} else {{
+                collapsible.classList.add("hidden");
+                button.innerText = "[+]";
+            }}
+        }}
+    </script>
+</html>
