@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> 冲浪小本本儿 (七) --- 如何处理dns污染；低延迟但被污染的dns、高延迟但正确的dns怎么选？域名分流；doh本身被封了怎么办</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <style>
+            .crosspost {
+                border: 1px solid #888;
+                margin-top: 10px;
+                padding: 10px;
+                background-color: #f6f7f8;
+            }
+            .crosspost-header {
+                font-size: 12px;
+                color: #555;
+                margin-bottom: 6px;
+            }
+            .crosspost-content {
+                padding-left: 5px;
+            }
+            .submission, .comment { padding-left: 20px; padding-right: 4px; font-family: verdana, arial, helvetica, sans-serif; }
+            .comment { margin-top: 4px; margin-bottom: 4px; border: 1px solid black; }
+            .submission { border: 2px solid blue; padding-bottom: 10px; }
+            .hidden { display: none; }
+            .userinfo { font-size: 12px; color: #555; }
+            .flair {
+                padding: 2px 6px; border-radius: 20px; font-size: 10px; font-weight: bold;
+                margin-left: 5px; display: inline-block; vertical-align: middle; line-height: 1.2;
+            }
+        </style>
+    </head>
+    <body>
+        <a href="../abstract_garden.html#t3_1fp5o8f" class="back-link">← Back to Index</a>
+            <div class="submission" id="t3_1fp5o8f">
+                <p class="userinfo">
+                    <a href="https://old.reddit.com/u/replaceOrgansKingXjp">replaceOrgansKingXjp</a>
+                    | <span class="score">5 points</span>
+                    | <a class="timestamp" href="https://old.reddit.com/r/abstract_garden/comments/1fp5o8f/冲浪小本本儿_七/">Sep 25 2024 22:22:48</a>
+                </p>
+                <strong> 冲浪小本本儿 (七) --- 如何处理dns污染；低延迟但被污染的dns、高延迟但正确的dns怎么选？域名分流；doh本身被封了怎么办</strong>
+                <p><p><strong>什么是dns</strong></p>
+<p>通俗来讲就是把域名转换成ip。</p>
+<p>为了给后面DOH、ECH内容做铺垫，特地把DNS在数据包中的构成解读一遍，只想实操可跳过，<strong>直达“如何处理dns污染”</strong>。</p>
+<p>本环节我会结合https://cloud.tencent.com/developer/article/2018599  <a href="https://hpd.gasmi.net">https://hpd.gasmi.net</a> 和wireshark 来解释完整数据包里每一个字段的意思</p>
+<p>linux有dig，win有nslookup</p>
+<p>在cmd中输入 nslookup <a href="http://nginx.org">nginx.org</a></p>
+<p>用wireshark 抓包后，得到如下完整数据包，我修改了部分隐私内容</p>
+<pre><code>12 34 56 78 90 AB BA 09 87 65 43 21 08 00 45 00 00 37 20 52 00 00 80 11 00 00 C0 A8 00 01 C0 A8 00 02 E0 B6 00 35 00 23 C0 55 22 E9 01 00 00 01 00 00 00 00 00 00 05 6E 67 69 6E 78 03 6F 72 67 00 00 01 00 01
+</code></pre>
+<p>这一段就是一个完整的dns查询请求数据包</p>
+<p>我们把这一段dns数据包放入https://hpd.gasmi.net ，这个网站可以帮助用户学习每一字段数据的含义，这些都是Hex十六进制数据，在没有特殊说明下，这些十六进制数据在解读时都要转换成10进制数据，有部分需要转换成ascii，请自行google: Hex to ascii 寻找转换网站</p>
+<pre><code>Ethernet   12 34 56 78 90 AB BA 09 87 65 43 21 08 00
+IP         45 00 00 37 20 52 00 00 80 11 00 00 C0 A8 00 01 C0 A8 00 02
+UDP        E0 B6 00 35 00 23 C0 55
+DNS        22 E9 01 00 00 01 00 00 00 00 00 00 05 6E 67 69 6E 78 03 6F 72 67 00 00 01 00 01
+</code></pre>
+<p>这里涉及到OSI 七层/四层模型，更详细基本概念我不延申，请移步https://program-think.blogspot.com/2021/03/Computer-Networks-Overview.html 编程随想博客，更详细的数据包字段可更换项，例如Ethernet 层08 00替换86 DD代表该帧有一个 IPv6 数据包，校验码如何计算，一个数据包在网络中ip mac如何变化本文不做延申</p>
+<pre><code>Ethernet数据链路层  帧头frame       Destination MAC地址 12:34:56:78:90:ab  Source MAC地址 ba:09:87:65:43:21    08 00 表示该帧有一个 IPv4 数据包
+
+IP网络层                  包头 packet     45 表示该包为IPv4 ， 00 区分服务 ，00 37 代表包头+报文头+data数据加起来（0037转10进制）55个字节， 20 52 标识， 00 00 标志位和偏移量 ，80（十六进制转10进制为128） 表示生存时间TTL，单位为跳数，即128跳 ， 11 表示传输层为UDP，00 00 首部校验， C0 A8 00 01 表示源IP为192.168.0.1 ，C0 A8 00 02表示目标IP为192.168.0.2  通过十六进制转十进制 C0-&gt;192 A8-&gt;168 00-&gt;0
+
+UDP传输层              报文头segment   E0 B6 源端口57526 ， 00 35 目标端口53 ，00 23 代表报文头+data长度 35，C0 55校验码
+
+
+
+应用层                     数据 data          
+22 E9 事务标识 
+01 00 Flag
+00 01 表示包含查询请求
+00 00 表示响应请求为0
+00 00 认证
+00 00 附加
+05 6E 67 69 6E 78 03 6F 72 67 00 
+05表示后面有5位，6E 67 69 6E 78 十六进制转ascii =&gt;nginx，03 代表后面有3位，6F 72 67 十六进制转ascii =&gt;org，00表示结束
+00 01   00 01=十六进制转十进制=&gt; 1 ，表示请求类型为1，也就是IPv4 address record，查询请求类型id与查询类型对应关系https://en.wikipedia.org/wiki/List_of_DNS_record_types
+00 01 表示class in (internet)
+</code></pre>
+<p>题外话，当我们把上述内容简化后，我们就可以得到这样的一个数据包表达格式，方便我们展示一个tcp、udp、ICMP任意类型的数据包在网络中的变化</p>
+<p>目的mac            源mac              目的IP         源IP 目标端口 源端口</p>
+<p>|12:34:56:78:90:ab|ba:09:87:65:43:21|192.168.0.2|192.168.0.1|53|61829|dns查询请求   </p>
+<p>响应请求</p>
+<p>发起查询请求，在得到响应请求后，剥离帧头、包头、报文头后，只留下dns查询响应数据</p>
+<pre><code>22 E9 81 80 00 01 00 02 00 00 00 00 05 6E 67 69 6E 78 03 6F 72 67 00 00 01 00 01 C0 0C 00 01 00 01 00 00 01 E4 00 04 03 7D C5 AC C0 0C 00 01 00 01 00 00 01 E4 00 04 34 3A C7 16
+
+
+
+22 E9 事务标识 
+81 80 flags
+00 01 查询请求标志
+00 02 响应内容数量为4
+00 00 认证
+00 00 附加
+05 6E 67 69 6E 78 03 6F 72 67 00  nginx.org
+00 01 类型字段，表示A记录（IPv4地址）
+00 01 class in
+C0 0C 域名指针
+00 01  返回请求类型ipv4
+00 01 class in
+00 00 01 E4   dns解析结果生存时间484秒
+00 04 数据长度字段，表示接下来的数据长度为4个字节
+03 7D C5 AC 响应的ip地址  3.125.197.172
+C0 0C 
+00 01 
+00 01 
+00 00 01 E4   
+00 04
+34 3A C7 16  响应的ip地址   52.58.199.22
+</code></pre>
+<p>本部分我想要得到的就是 如何把对一个域名的请求编译成一个十六进制的dns查询请求包部分的方法</p>
+<p>如把对nginx.org的域名查询请求 编译成  22 E9 01 00 00 01 00 00 00 00 00 00 05 6E 67 69 6E 78 03 6F 72 67 00 00 01 00 01</p>
+<p>22 E9 01 00 00 01 00 00 00 00 00 00 不用动，05 6E 67 69 6E 78 03 6F 72 67 00 改成需要查询的域名，00 01改成要查询的类型，00 01不用动</p>
+<p>方便手搓doh查询</p>
+<pre><code>www.google.com  ?
+client ------------------------------------ GFW  -------------------&gt;国外DNS服务器 8.8.8.8
+         &lt;-------------www.google.com  8.9.6.4
+         |时间差|&lt;---------------------------www.google.com  142.250.81.227
+</code></pre>
+<p>由于上述是明文dns，当明文dns查询请求经过GFW，例如指定8.8.8.8或别的国外dns服务器去解析一个域名，"当你的电脑向域名服务器发送了“域名查询”的请求，然后域名服务器把回应发送给你的电脑，这里存在一个【时间差】。如果某个攻击者能够在域名服务器的“DNS 应答”还没有到达你的电脑之前，先伪造一个错误的“DNS 应答”发给你电脑。那么你的电脑收到的就是错误的信息，并得到一个错误的 IP 地址。", 这也是编程随想说的"GFW 的直接污染"(https://program-think.blogspot.com/2014/01/dns.html)</p>
+<p>一个设想，按如上流程，如果可以扔掉这个来自GFW的错误响应，并接收后来的正确响应，似乎就可以正确获得dns了</p>
+<p><a href="http://www.google.com">www.google.com</a> ?<br />
+client---------------------&gt;国内DNS服务器-------------GFW------------&gt;权威DNS服务器<br />
+|&lt;-------www.google.com 8.9.6.4<br />
+|                    &lt;-------------www.google.com  142.250.81.227       <br />
+&lt;----------------www.google.com 8.9.6.4 并缓存<br />
+www.google.com ?<br />
+client2------------------&gt;<br />
+&lt;-----------------www.google.com 8.9.6.4 </p>
+<p>当然还有一种间接污染</p>
+<p><strong>doh的使用</strong></p>
+<p>这部分去年写ECH的时候就写过了，那篇文章遗失了，今年拆开来重新再写一遍</p>
+<p>doh就是dns通过https来进行传送，由于有了tls加密，有了安全性</p>
+<p>我们从google家的doh文档入手</p>
+<p><a href="https://developers.google.com/speed/public-dns/docs/doh">https://developers.google.com/speed/public-dns/docs/doh</a></p>
+<p>google家提供了两种doh api</p>
+<ol>
+<li>通用性最广，麻烦的，doh都支持的base64url</li>
+</ol>
+<p>https://dns.google/dns-query?dns=BASE64URL_OF_QUERY</p>
+<p>这里的BASE64URL_OF_QUERY  就是我们花了大量篇幅解读的dns查询请求的hex（十六进制）转base64url格式结果</p>
+<p>我们把上文中对nginx的A记录的查询请求，也就是 22 E9 01 00 00 01 00 00 00 00 00 00 05 6E 67 69 6E 78 03 6F 72 67 00 00 01 00 01 转换成base64url格式（google:hex to base64url 搜索）：</p>
+<p>IukBAAABAAAAAAAABW5naW54A29yZwAAAQAB</p>
+<p>拼接后 https://dns.google/dns-query?dns=IukBAAABAAAAAAAABW5naW54A29yZwAAAQAB </p>
+<p>输入浏览器会下载一个文件</p>
+<p>也可以使用 curl https://dns.google/dns-query?dns=IukBAAABAAAAAAAABW5naW54A29yZwAAAQAB  --output  dns-query </p>
+<p>当然由于国内把dns.google墙了，记得加上代理 curl -x socks5://x.x.x.x:8964  https://dns.google/dns-query?dns=IukBAAABAAAAAAAABW5naW54A29yZwAAAQAB  --output  dns-query</p>
+<p>两种方式都可以得到一个HEX（十六进制）文件</p>
+<p>HEX文件如何打开</p>
+<p><a href="https://hexed.it">https://hexed.it</a> 方便的在线编辑 或者 用notepad++ 安装插件HEX-Editor 或者用 vscode 或者Hxd Hex Editor 或者ImHex（新星项目）</p>
+<p>打开后得到</p>
+<pre><code>22 E9 81 80 00 01 00 02 00 00 00 00 05 6E 67 69 6E 78 03 6F 72 67 00 00 01 00 01 C0 0C 00 01 00 01 00 00 00 26 00 04-&gt;34 3A C7 16&lt;- C0 0C 00 01 00 01 00 00 00 26 00 04 -&gt; 03 7D C5 AC&lt;-
+</code></pre>
+<p>与上文明文dns的响应相同，转换得到nginx的ip 34 3A C7 16=&gt;34.58.199.22   03 7D C5 AC=&gt;3.125.197.172</p>
+<hr />
+<p>cloudflare家的doh api 使用方法不太一样 <a href="https://developers.cloudflare.com/1.1.1.1/encryption/dns-over-https/make-api-requests/dns-wireformat/">https://developers.cloudflare.com/1.1.1.1/encryption/dns-over-https/make-api-requests/dns-wireformat/</a> </p>
+<p>它要求header 里携带 accept :application/dns-message 键值对</p>
+<p>这就导致同样的base64url: IukBAAABAAAAAAAABW5naW54A29yZwAAAQAB</p>
+<p>拼接后  https://cloudflare-dns.com/dns-query?dns=IukBAAABAAAAAAAABW5naW54A29yZwAAAQAB</p>
+<p>输入浏览器中，有时会失效，无法把包含dns响应请求的文件下载下来</p>
+<p>chrome系浏览器可以安装一个ModHeader插件，Name设置accpet value设置application/dns-message 后就能顺利下载</p>
+<p>用curl直接使用文档</p>
+<p>curl --header "accept: application/dns-message" --verbose "https://cloudflare-dns.com/dns-query?dns=IukBAAABAAAAAAAABW5naW54A29yZwAAAQAB" --output nginx-cloudflare-dns</p>
+<p>得到HEX的dns响应请求文件并打开</p>
+<pre><code>22 E9 81 80 00 01 00 02 00 00 00 00 05 6E 67 69 6E 78 03 6F 72 67 00 00 01 00 01 C0 0C 00 01 00 01 00 00 00 6B 00 04 34 3A C7 16 C0 0C 00 01 00 01 00 00 00 6B 00 04 03 7D C5 AC
+</code></pre>
+<p>00 00 00 6B 生存时间100秒，与google设定不同，别的都一样</p>
+<p>cloudflare-dns.com 一直处于墙与没被墙之间摇摆，记得加上代理</p>
+<hr />
+<p>这次我们活学活用，把对nginx.org的A记录（ipv4）换成对 tls-ech.dev的https记录来查询，使用360的doh来解析</p>
+<pre><code>22 E9 01 00 00 01 00 00 00 00 00 00 不用动
+07 后面7位 tls-ech    =ascii转Hex=&gt; 07 74 6C 73 2D 65 63 68
+03 后面3位 dev         =ascii转Hex=&gt; 03 64 65 76
+00 表示域名结束
+00 01改成要查询的类型=&gt; 00 65 https记录type id为65 =十进制转十六进制=&gt; 00 41
+00 01 不用动
+</code></pre>
+<p>拼接后: 22 E9 01 00 00 01 00 00 00 00 00 00 07 74 6C 73 2D 65 63 68 03 64 65 76 00 00 41 00 01</p>
+<p>转base64url:  IukBAAABAAAAAAAAB3Rscy1lY2gDZGV2AABBAAE</p>
+<p>再拼接360的doh: https://doh.360.cn/dns-query?dns=IukBAAABAAAAAAAAB3Rscy1lY2gDZGV2AABBAAE</p>
+<p>输入浏览器得到hex文件</p>
+<p>22 E9 81 80 00 01 00 01 00 00 00 00 07 74 6C 73 2D 65 63 68 03 64 65 76 00 00 41 00 01 C0 0C 00 41 00 01 00 00 00 3C 00 52 00 01 00 00 05 00 4B 00 49 FE 0D 00 45 2B 00 20 00 20 01 58 81 D4 1A 3E 2E F8 F2 20 81 85 DC 47 92 45 D2 06 24 DD D0 91 8A 80 56 F2 E2 6A F4 7E 26 28 00 08 00 01 00 01 00 01 00 03 40 12 70 75 62 6C 69 63 2E 74 6C 73 2D 65 63 68 2E 64 65 76 00 00</p>
+<p>至于这串Hex文件要如何解读，因为它响应的不是IPv4，而是HTTPS记录，里面包含了ECHconfig，俺将在ECH那一篇再讲解</p>
+<hr />
+<p>doh服务器都支持这种https://domain/dns-query?dns=BASE64URL_OF_QUERY格式的查询请求.</p>
+<p>例如 https://dns.alidns.com/dns-query</p>
+<p>https://dns.google/dns-query</p>
+<p>https://dns.cloudflare.com/dns-query</p>
+<p>这种格式也是可以直接填入浏览器"安全DNS"的标准用法</p>
+<ol>
+<li>小白都会的地址拼接，一眼就明的JSON api</li>
+</ol>
+<p>google家还有第二种doh api， https://dns.google/resolve{?name}{&amp;type,cd,do,…}</p>
+<p>name后面写域名，type 后面写要查询的类型，可以是A AAAA HTTPS这样的type(请注意要大写)，也可以是type对应的1 28 65这样的type id</p>
+<p>直接输入浏览器</p>
+<p><a href="https://dns.google/resolve?name=www.xuexi.cn&amp;type=A">https://dns.google/resolve?name=www.xuexi.cn&amp;type=A</a></p>
+<p>{"Status":0,"TC":false,"RD":true,"RA":true,"AD":false,"CD":false,"Question":[{"name":"www.xuexi.cn.","type":1}],"Answer":[{"name":"www.xuexi.cn.","type":5,"TTL":600,"data":"www.xuexi.cn.w.alikunlun.com."},{"name":"www.xuexi.cn.w.alikunlun.com.","type":1,"TTL":60,"data":"49.7.23.123"},{"name":"www.xuexi.cn.w.alikunlun.com.","type":1,"TTL":60,"data":"49.7.23.122"}]}</p>
+<p><a href="https://dns.google/resolve?name=tls-ech.dev&amp;type=65">https://dns.google/resolve?name=tls-ech.dev&amp;type=65</a></p>
+<p>{"Status":0,"TC":false,"RD":true,"RA":true,"AD":false,"CD":false,"Question":[{"name":"tls-ech.dev.","type":65}],"Answer":[{"name":"tls-ech.dev.","type":65,"TTL":44,"data":"1 . ech=AEn+DQBFKwAgACABWIHUGj4u+PIggYXcR5JF0gYk3dCRioBW8uJq9H4mKAAIAAEAAQABAANAEnB1YmxpYy50bHMtZWNoLmRldgAA"}]}</p>
+<p>使用起来十分舒适，可惜支持JSON api的dns服务商并不多，cloudflare的使用方法更是别扭，以下是我收集的支持json api的doh服务器提供商，可直接在浏览器使用</p>
+<p><a href="https://dns.nextdns.io/dns-query?name=tls-ech.dev&amp;type=HTTPS">https://dns.nextdns.io/dns-query?name=tls-ech.dev&amp;type=HTTPS</a></p>
+<p><a href="https://dns.twnic.tw/dns-query?name=tls-ech.dev&amp;type=HTTPS">https://dns.twnic.tw/dns-query?name=tls-ech.dev&amp;type=HTTPS</a></p>
+<p><a href="https://dns.adguard-dns.com/resolve?name=tls-ech.dev&amp;type=HTTPS">https://dns.adguard-dns.com/resolve?name=tls-ech.dev&amp;type=HTTPS</a></p>
+<p><a href="https://dns.quad9.net:5053/dns-query?name=tls-ech.dev&amp;type=65">https://dns.quad9.net:5053/dns-query?name=tls-ech.dev&amp;type=65</a></p>
+<p><a href="https://doh.dns.sb/dns-query?name=tls-ech.dev&amp;type=HTTPS">https://doh.dns.sb/dns-query?name=tls-ech.dev&amp;type=HTTPS</a></p>
+<p>而cloudflare</p>
+<p><a href="https://cloudflare-dns.com/dns-query?name=example.com&amp;type=AAAA">https://cloudflare-dns.com/dns-query?name=example.com&amp;type=AAAA</a> 直接在浏览器打开 显示HTTP ERROR 400，只有在启用ModHeader插件，添加了accept: application/dns-json的header之后，才会下载一个文件，文件里是</p>
+<p>{"Status":0,"TC":false,"RD":true,"RA":true,"AD":true,"CD":false,"Question":[{"name":"example.com","type":28}],"Answer":[{"name":"example.com","type":28,"TTL":59,"data":"2606:2800:21f:cb07:6820:80da:af6b:8b2c"}]}</p>
+<p>在curl下面，cloudflare doh的 json api才能良好的使用</p>
+<p>curl --header "accept: application/dns-json" "https://cloudflare-dns.com/dns-query?name=example.com&amp;type=AAAA"</p>
+<p>国内支持json api的doh服务器提供商</p>
+<p><a href="https://doh.360.cn/resolve?name=tls-ech.dev&amp;type=HTTPS">https://doh.360.cn/resolve?name=tls-ech.dev&amp;type=HTTPS</a></p>
+<p><a href="https://dns.alidns.com/resolve?name=tls-ech.dev&amp;type=HTTPS">https://dns.alidns.com/resolve?name=tls-ech.dev&amp;type=HTTPS</a> （阿里家不支持HTTPS记录)</p>
+<p><strong>如何处理dns污染</strong></p>
+<p>在章节（一）俺就写过，“只要处理了DNS并获得正确的IP地址，就能解锁许多网站”,清理dns污染即便不用于desync直连、代理翻墙时的路由处理，只用于直连一些只被域名污染，没有被sni阻断的网站也是有意义的。</p>
+<p>处理dns污染最好的方式是本地架设一个dns服务器，在尝试过若干流行的dns服务器后，俺推荐adguard来搭建本地dns服务器，方便的web设置界面，开箱即用，多端支持</p>
+<p><em>adguard的安装</em></p>
+<p>项目地址https://github.com/AdguardTeam/AdGuardHome</p>
+<p>安卓端 https://github.com/AdguardTeam/AdguardForAndroid</p>
+<p>首次启动后在浏览器输入，127.0.0.1:3000</p>
+<p>设置网页管理界面端口，DNS监听端口默认53</p>
+<p>设置账号密码</p>
+<p>一路下一步后，登录</p>
+<p>进入"设置"-&gt;"DNS设置"，来到"上游DNS服务器"页面</p>
+<p>在设置"上游DNS服务器"之前，先设置bootstrap dns，bootstrap dns是用来解析doh域名的，例如当要使用上游一个doh服务器https://dns.alidns.com/dns-query时，需要先解析dns.alidns.com的ip地址是什么，于是就产生了"引导dns"这样的设定，bootstrap dns 一般使用明文dns，推荐用距离自己最快的dns。</p>
+<p>www.xuexi.cn  ?</p>
+<p>↓  </p>
+<p>dns.alidns.com ?</p>
+<p>client---------------------------------------------------------------&gt;运营商dns服务器 </p>
+<p>&lt;---------------------- dns.alidns.com 223.5.5.5</p>
+<p>dns.alidns.com  tls|/dns-query=www.xuexi.cn|</p>
+<p>---------------------------------------------------------------&gt;阿里doh服务器 223.5.5.5         </p>
+<p>&lt;-------------------------------tls |www.xuexi.cn 49.7.23.123|</p>
+<p>www.xuexi.cn</p>
+<p>-----------------------------------------------------------------&gt; 🐷 <a href="http://49.7.23.123">49.7.23.123</a></p>
+<p>在doh的设计下，外部就只能看见发向bootstrap dns的对doh域名的明文dns查询请求，以及访问doh服务器时的sni，虽然多了一个来回以及加密解密的开销，但我们的互联网隐私更完善了，这是继tls加密http以来又一次隐私推进，可惜访问网站时sni的暴露把这一美好设想打破了，由此引出了ECH。</p>
+<p>adguard 配置的重点就是 “上游 DNS 服务器”，adguard自建服务器支持上游的协议类型有doh/dot/doq/h3，正是因为这么多支持的协议，只要上游提供的协议、地址足够多，总有一些能成为GFW下的漏网之鱼，这里其实也已经回答了本章的第三个问题，doh本身被封了怎么办：尽可能多的搜集冷门、变化的doh/dot/doq/h3地址。</p>
+<p>冷门即字面意思。变化指的是例如cloudflare不光有https://dns.cloudflare.com/dns-query 还有子域名变化的地址https://security.cloudflare-dns.com/dns-query，也许前者被sni阻断，后者没有</p>
+<p>顺便说一下，smartdns容易dns泄露，俺对dnsServer 本身是否会有泄露dns风险的判断标准之一是：在上游server列表里只设置doh/dot/doq 且都不通(被墙)的情况下，dnsServer依旧会通过一个(甚至默认的没显性设置的)明文dns查询方式出去，我就认定这个dnsSever容易泄露dns。</p>
+<p>smartdns 在设置bootstrap-dns 时，这个bootstrap-dns会默认成为upstream server，无法将upstream server设置成只包含doh/dot/doq 列表，也没有检测并标识上游连通性(是否被墙)功能。</p>
+<p>adguard 在上游列表里只设置doh且全都被墙的情况下，直接无法使用，这样不会漏明文dns，也能提醒用户要更换doh了，同时还有一个测试上游的按钮来灵活地检测部分doh/dot/doq的连通性，缺点就是这样去配置不能保证这个adguard服务器在国内环境下能一直work</p>
+<p><strong>doh服务商的搜集、挑选</strong></p>
+<p>adguard的"上游 DNS 服务器"配置页面本身就提供了一个链接 https://adguard-dns.io/kb/zh-CN/general/dns-providers/ </p>
+<p>来让用户挑选dns服务商，我们在选择时遵循首先是没有被sni阻断，能连的上，如果能满足后两点连不上也可以先放着，gfw的sni阻断名单是动态的，可以等解禁，其次是无污染，最后是 No Logging 无日志，DNSSEC validation DNSSEC 验证， 以及有利有弊的ECS（也叫EDNS）</p>
+<p>EDNS通俗来说使用用户的IP地址在DNS查询中用于确定其地理位置。DNS服务商根据用户的IP地址选择离用户最近的网站服务器或内容分发网络（CDN）节点，从而提供更快的响应时间和更低的延迟。</p>
+<p>正是由于 ECS 需要基于用户 IP 查询，和 Cloudflare DNS 保护隐私相违背，所以Cloudflare 不支持EDNS。</p>
+<p>基于上述，我们降低国内的doh的选择优先级，只考虑在域名分流时用于解析国内域名，OneDNS 114DNS  DNSPod（腾讯家） Ali DNS（阿里家） 360 Secure DNS </p>
+<p>国内的doh提供商提供的解析结果基本已经是污染过的结果，跟裸跑upd53得到的结果相差不大，唯一的好处就是加密传送，只有doh服务商知道查询的是什么域名，路径上的isp、路由看不到内容。</p>
+<p>另一份帮助挑选、可供选择的doh列表  <a href="https://dnscrypt.info/public-servers/">https://dnscrypt.info/public-servers/</a></p>
+<p>可以看到浏览器里默认的四大doh提供商之一opendns， 因为匿名问题，选择优先级在一众国外DOH里也并不高</p>
+<p>Warning: This server is incompatible with anonymization. Warning: modifies your queries to include a copy of your network address when forwarding them to a selection of companies and organizations.</p>
+<p>用adguard 在本地建立dns服务器后就会在53端口开启服务，可以使用netstat 查看</p>
+<p>TCP    0.0.0.0:53</p>
+<p>TCP    [::]:53</p>
+<p>UDP    0.0.0.0:53</p>
+<p>UDP    [::]:53</p>
+<p>在cmd用nslookup www.xuexi.cn 127.0.0.1 后来到adguard的"查询日志"页面 查看是否有查询记录，来验证自建dns服务器已经完成，同时还能查看查询使用了哪个上游DNS服务器、耗时、查询域名响应的IP</p>
+<p>如果准备让adguard接管整个操作系统的dns查询</p>
+<p>在win端把 以太网-&gt;属性-&gt;tcp/ip4-&gt; dns服务器地址 设置到dns服务器的ip，本机建立的话填127.0.0.1 tcp/ip6 -&gt;dns服务器地址-&gt; ::1  就完成了 </p>
+<p>linux端 </p>
+<p>$ vim /etc/sysconfig/network-scripts/ifcfg-eth0</p>
+<p>DNS1="127.0.0.1"</p>
+<p>有些项目可以手动指定dns，例如冲浪(1-1)提到的spoofdpi 可以通过spoofdpi.exe   -window-size 10 -dns-addr 127.0.0.1来指定dns，那么也可以选择不让adguard接管整个操作系统的dns查询，自行灵活设置</p>
+<p><strong>低延迟但被污染的dns、高延迟但正确的dns怎么选？域名分流</strong></p>
+<p>很多域名分流方案都采用自建多个dns服务器来分流，事实上许多dnsServer本身就能完成域名分流</p>
+<p>究其原因还是因为各家dnsServer 配置文件里的格式不同，以及通配符支持导致的格式差别</p>
+<p>coredns                               www.xuexi.cn</p>
+<p>adguard                         [/www.xuexi.cn/]114.114.114.114</p>
+<p>dnsmasq                     server=/www.xuexi.cn/114.114.114.114</p>
+<p>smartdns                   nameserver /*.xuexi.cn/114DNSgroup</p>
+<p>同时有些list一直在维护，例如 dnsmasq格式的中国国内域名指定上游配置表（https://github.com/felixonmars/dnsmasq-china-list/blob/master/accelerated-domains.china.conf），有些没有，互相转又十分麻烦，导致要用某张list就要直接更换dnsServer，造成了如今的多dns服务器组合使用分流方案的情况。</p>
+<p>因为域名分流方案的教程非常多了，本文不讨论具体方案，只总结域名分流规则就是国内域名使用国内明文dns、doh，国外域名使用无污染的国外doh，兜底规则使用国外doh，目的就是让国内域名更快的获得解析，非国内域名获得正确的解析结果</p>
+<p>满足了无污染dns解析的先决条件，就可以回到冲浪小本本儿(一)开始使用desync工具了</p>
+<p>[1] 冲浪小本本儿(一)</p>
+<p>[2] 冲浪小本本儿(一)(1-1) byedpi/zapret/spoofdpi</p>
+<p>[3] 冲浪小本本儿（二）---- 在(一)之前，什么是ECH，如何检测、使用等等</p>
+<p>[4]冲浪小本本儿 (三) --- 什么是desync类工具，还有哪些直连类型工具；什么是正代反代，如何完成反代；steam++这类工具是怎么完成不连接第三方服务器直连的；简易反代制作；当你直连一个网站时外部能看到什么</p>
+<p>[5]冲浪小本本儿 (三)(3-1)  什么是tun模式，为什么clash的tun模式叫tun模式，而不叫tunnel</p>
+<p>[6] 冲浪小本本儿 (四) --- 当你通过proxy翻墙时，会在日志里、服务器上留下什么，通过代理连接有哪些风险</p>
+<p>[7] 冲浪小本本儿 (五) --- 被墙的网站有哪些分级，一些简单的dns污染名单，sni阻断名单，直连有哪些风险</p>
+<p>[8] 冲浪小本本儿 (六) --- 如何对网站方隐藏自身，什么是浏览器指纹，怎么改变；分析怎么逃过宏迪追杀</p>
+<p>[9] 冲浪小本本儿 (七) --- 如何处理dns污染；低延迟但被污染的dns、高延迟但正确的dns怎么选？域名分流；doh本身被封了怎么办</p></p>
+                
+            </div>
+    <div class="comment" id="t1_lovbpea">
+        <p class="userinfo">
+            <a class="toggle_hide_button" href="javascript:void(0)" onclick="toggle_collapse(this.parentElement.parentElement)">[-]</a>
+            <a href="https://old.reddit.com/u/LongBorder2750">LongBorder2750</a><span class="flair" style="background-color: #dadada; color: #1c1c1c;">没有一个是无辜的</span>
+            | <span class="score">2 points</span>
+            | <a class="timestamp" href="https://old.reddit.com/r/abstract_garden/comments/1fp5o8f/冲浪小本本儿_七/lovbpea/">Sep 25 2024 23:36:24</a>
+        </p>
+        <div class="collapsible">
+            <p>好家伙，本sub需要更多的技术贴👍</p>
+    <div class="comment" id="t1_lovqml2">
+        <p class="userinfo">
+            <a class="toggle_hide_button" href="javascript:void(0)" onclick="toggle_collapse(this.parentElement.parentElement)">[-]</a>
+            <a href="https://old.reddit.com/u/replaceOrgansKingXjp">replaceOrgansKingXjp</a>
+            | <span class="score">2 points</span>
+            | <a class="timestamp" href="https://old.reddit.com/r/abstract_garden/comments/1fp5o8f/冲浪小本本儿_七/lovqml2/">Sep 26 2024 00:54:01</a>
+        </p>
+        <div class="collapsible">
+            <p>嚯嚯嚯，这不是我好兄弟LongBorder2750吗，好久不见</p></div></div></div></div>
+    <div class="comment" id="t1_lovli59">
+        <p class="userinfo">
+            <a class="toggle_hide_button" href="javascript:void(0)" onclick="toggle_collapse(this.parentElement.parentElement)">[-]</a>
+            <a href="https://old.reddit.com/u/Chi_na_pig">Chi_na_pig</a><span class="flair" style="background-color: #878a8c; color: #1c1c1c;">支那猪</span>
+            | <span class="score">2 points</span>
+            | <a class="timestamp" href="https://old.reddit.com/r/abstract_garden/comments/1fp5o8f/冲浪小本本儿_七/lovli59/">Sep 26 2024 00:27:28</a>
+        </p>
+        <div class="collapsible">
+            <p>不知道，我用老王一键全局冲浪</p>
+    <div class="comment" id="t1_lovrni1">
+        <p class="userinfo">
+            <a class="toggle_hide_button" href="javascript:void(0)" onclick="toggle_collapse(this.parentElement.parentElement)">[-]</a>
+            <a href="https://old.reddit.com/u/replaceOrgansKingXjp">replaceOrgansKingXjp</a>
+            | <span class="score">1 points</span>
+            | <a class="timestamp" href="https://old.reddit.com/r/abstract_garden/comments/1fp5o8f/冲浪小本本儿_七/lovrni1/">Sep 26 2024 00:59:10</a>
+        </p>
+        <div class="collapsible">
+            <p>那你必被晶姐皮鞭抽打</p></div></div></div></div>
+    <div class="comment" id="t1_loy22z7">
+        <p class="userinfo">
+            <a class="toggle_hide_button" href="javascript:void(0)" onclick="toggle_collapse(this.parentElement.parentElement)">[-]</a>
+            <a href="https://old.reddit.com/u/Status-Tell-2096">Status-Tell-2096</a>
+            | <span class="score">1 points</span>
+            | <a class="timestamp" href="https://old.reddit.com/r/abstract_garden/comments/1fp5o8f/冲浪小本本儿_七/loy22z7/">Sep 26 2024 08:30:12</a>
+        </p>
+        <div class="collapsible">
+            <p>既然都能翻为什么还要doh，dns一起过代理不可行吗</p>
+    <div class="comment" id="t1_lp8jqn0">
+        <p class="userinfo">
+            <a class="toggle_hide_button" href="javascript:void(0)" onclick="toggle_collapse(this.parentElement.parentElement)">[-]</a>
+            <a href="https://old.reddit.com/u/replaceOrgansKingXjp">replaceOrgansKingXjp</a>
+            | <span class="score">1 points</span>
+            | <a class="timestamp" href="https://old.reddit.com/r/abstract_garden/comments/1fp5o8f/冲浪小本本儿_七/lp8jqn0/">Sep 28 2024 04:01:43</a>
+        </p>
+        <div class="collapsible">
+            <p>是不能翻的情况下用的。</p></div></div></div></div>
+    <div class="comment" id="t1_loy8r8j">
+        <p class="userinfo">
+            <a class="toggle_hide_button" href="javascript:void(0)" onclick="toggle_collapse(this.parentElement.parentElement)">[-]</a>
+            <a href="https://old.reddit.com/u/CautiousWillow4448">CautiousWillow4448</a>
+            | <span class="score">1 points</span>
+            | <a class="timestamp" href="https://old.reddit.com/r/abstract_garden/comments/1fp5o8f/冲浪小本本儿_七/loy8r8j/">Sep 26 2024 09:11:37</a>
+        </p>
+        <div class="collapsible">
+            <p>别的地方有发么。你被shadowban点不进你头像看之前的</p>
+    <div class="comment" id="t1_lp8mc1h">
+        <p class="userinfo">
+            <a class="toggle_hide_button" href="javascript:void(0)" onclick="toggle_collapse(this.parentElement.parentElement)">[-]</a>
+            <a href="https://old.reddit.com/u/replaceOrgansKingXjp">replaceOrgansKingXjp</a>
+            | <span class="score">2 points</span>
+            | <a class="timestamp" href="https://old.reddit.com/r/abstract_garden/comments/1fp5o8f/冲浪小本本儿_七/lp8mc1h/">Sep 28 2024 04:16:05</a>
+        </p>
+        <div class="collapsible">
+            <p>哈哈，谢谢你的追更，创建了一个post作为索引，我会在每篇文章结尾添加索引地址</p>
+<p><a href="https://www.reddit.com/r/abstract_garden/comments/1fqx0gu/%E5%86%B2%E6%B5%AA%E5%B0%8F%E6%9C%AC%E6%9C%AC%E5%84%BF%E7%B3%BB%E5%88%97%E7%B4%A2%E5%BC%95/">https://www.reddit.com/r/abstract_garden/comments/1fqx0gu/%E5%86%B2%E6%B5%AA%E5%B0%8F%E6%9C%AC%E6%9C%AC%E5%84%BF%E7%B3%BB%E5%88%97%E7%B4%A2%E5%BC%95/</a></p></div></div></div></div>
+    </body>
+    <script>
+        function toggle_collapse(comment_div) {{
+            var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+            var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+            if (collapsible.classList.contains("hidden")) {{
+                collapsible.classList.remove("hidden");
+                button.innerText = "[-]";
+            }} else {{
+                collapsible.classList.add("hidden");
+                button.innerText = "[+]";
+            }}
+        }}
+    </script>
+</html>

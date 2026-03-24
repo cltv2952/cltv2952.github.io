@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>冲浪小本本儿(一)(1-1) byedpi/zapret/spoofdpi教程</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <style>
+            .crosspost {
+                border: 1px solid #888;
+                margin-top: 10px;
+                padding: 10px;
+                background-color: #f6f7f8;
+            }
+            .crosspost-header {
+                font-size: 12px;
+                color: #555;
+                margin-bottom: 6px;
+            }
+            .crosspost-content {
+                padding-left: 5px;
+            }
+            .submission, .comment { padding-left: 20px; padding-right: 4px; font-family: verdana, arial, helvetica, sans-serif; }
+            .comment { margin-top: 4px; margin-bottom: 4px; border: 1px solid black; }
+            .submission { border: 2px solid blue; padding-bottom: 10px; }
+            .hidden { display: none; }
+            .userinfo { font-size: 12px; color: #555; }
+            .flair {
+                padding: 2px 6px; border-radius: 20px; font-size: 10px; font-weight: bold;
+                margin-left: 5px; display: inline-block; vertical-align: middle; line-height: 1.2;
+            }
+        </style>
+    </head>
+    <body>
+        <a href="../abstract_garden.html#t3_1fp59ql" class="back-link">← Back to Index</a>
+            <div class="submission" id="t3_1fp59ql">
+                <p class="userinfo">
+                    <a href="https://old.reddit.com/u/replaceOrgansKingXjp">replaceOrgansKingXjp</a>
+                    | <span class="score">5 points</span>
+                    | <a class="timestamp" href="https://old.reddit.com/r/abstract_garden/comments/1fp59ql/冲浪小本本儿一11_byedpizapretspoofdpi教程/">Sep 25 2024 22:05:20</a>
+                </p>
+                <strong>冲浪小本本儿(一)(1-1) byedpi/zapret/spoofdpi教程</strong>
+                <p><p>惊闻深圳一日本儿童遇袭，想起上月小池塘飘来的一股中国味儿，大抵凶手就是长着中国脸，红红中国心，满溢中国情，浓浓中国味的社会主义建设者和接班人吧</p>
+<ol>
+<li>byedpi项目地址 <a href="https://github.com/hufrea/byedpi">https://github.com/hufrea/byedpi</a></li>
+</ol>
+<p>byedpi 提供的参数比goodbyedpi更丰富、智能</p>
+<p>这是byedpi.bat给出的默认参数</p>
+<p>ciadpi.exe --split 1 --disorder 3+s --mod-http=h,d --auto=torst --tlsrec 1+s</p>
+<p>它包含了三部分</p>
+<p>第一部分 --split 1 --disorder 3+s --mod-http=h,d</p>
+<p>第二部分 --auto=torst   如果发生auto内设置的阻塞或故障的事件，将应用该选项后面的绕过参数</p>
+<p>第三部分  --tlsrec 1+s   </p>
+<p>实际使用中，可以放弃第二、第三部分，只用第一部分。</p>
+<p>byedpi 对数据包有5种处理方式，实际是3种，split disorder简单对数据进行分割，fake发送伪造数据包，oob disoob 发送带外数据</p>
+<p>同时还支持混合使用例如 --split 1 --disorder 3+s </p>
+<p>当启用--tlsrec时会分片clientHello中的sni</p>
+<p>https://preview.redd.it/mwmfgngcpyqd1.jpg?width=1330&amp;format=pjpg&amp;auto=webp&amp;s=4dcbbf599813e8567bc15902f2ac69a2fc2f7a08</p>
+<p>可以看到tlsrec会按照设置的数值来分割sni</p>
+<p>与goodbyedpi一样，会暴露完整或部分sni，goodbyedpi的真实sni在另一个包里。这两工具都会暴露sni，和destination ip，建议只访问一些审查分级程度低的被墙的网站，俄友可以放心用，是因为普丁不会按“翻墙罪”抓人，心眼确实比他大多了。俺会在别的章节提供一些方法在使用这种工具情况下来安全访问审查分级程度高的网站</p>
+<p>推荐一些参数模板，也可以尝试用--auto=torst  将它们拼接起来智能的切换模式</p>
+<p>ciadpi.exe --split 3 --split  6 --disorder 9+s  --tlsrec 3+s --mod-http=h,d --debug 2</p>
+<p>ciadpi.exe --fake 3+s  --fake-offset 3  --fake-data=":GET /110101195306153019"  --tlsrec 3+s  --mod-http=h,d --debug 2</p>
+<p>ciadpi.exe --oob 3+s --oob-data x  --tlsrec 3+s  --mod-http=h,d --debug 2</p>
+<p>这个工具默认在本地ip 0.0.0.0开启socks5协议的1080端口，可以通过--ip 修改绑定ip --port修改监听端口</p>
+<p>此外还有安卓版本 <a href="https://github.com/dovecoteescapee/ByeDPIAndroid">https://github.com/dovecoteescapee/ByeDPIAndroid</a> </p>
+<ol>
+<li>zapret项目地址 <a href="https://github.com/bol-van/zapret">https://github.com/bol-van/zapret</a></li>
+</ol>
+<p>这个项目编译完成的文件不在releases，在binaries文件夹下，请下载整个项目</p>
+<p>zapret 项目的参数配置十分复杂，依然以默认配置入手</p>
+<p>WINWS1=--wf-l3=ipv4,ipv6 --wf-tcp=80,443 --dpi-desync=fake,split --dpi-desync-ttl=7 --dpi-desync-fooling=md5sig</p>
+<p>--wf-l3=ipv4,ipv6 过滤 ipv4，ipv6  </p>
+<p>--wf-tcp=80,443 过滤端口80,443</p>
+<p>--dpi-desync=fake,split   DPI desync模式：synack syndata fake fakeknown rst rstack hopbyhop destopt ipfrag1 disorder disorder2 split split2 ipfrag2 udplen tamper  </p>
+<p>--dpi-desync-ttl=7  设置数据包 TTL</p>
+<p>--dpi-desync-fooling=md5sig   额外的方法使伪造的数据包无法到达服务器。选项包括：none、md5sig、badseq、badsum、datanoack、hopbyhop、hopbyhop2</p>
+<p>dpi-deysnc模式中包含split，那么在项目readme中寻找split下有哪些可配置参数</p>
+<p>--dpi-desync-split-pos=&lt;1..1500&gt;        ; （仅适用于 split* 和 disorder*）在指定位置分割数据包。</p>
+<p>--dpi-desync-split-http-req=method|host        ; 在指定的逻辑位置分割 HTTP 请求。</p>
+<p>--dpi-desync-split-tls=sni|sniext              ; 在指定的逻辑位置分割 TLS ClientHello。</p>
+<p>--dpi-desync-split-seqovl=<int>                ; 在发送的第一个原始 TCP 段之前使用序列重叠。</p>
+<p>--dpi-desync-split-seqovl-pattern=<filename>|0xHEX ; 用于填充重叠的伪造部分的内容。</p>
+<p>然后可以依据提示添加相关参数，例如 </p>
+<p>--dpi-desync-split-pos=89 --dpi-desync-split-http-req=method --dpi-desync-split-tls=sni --dpi-desync-split-seqovl=64 --dpi-desync-split-seqovl-pattern=0x11010195306153019A</p>
+<p>拼接后运行</p>
+<p>winws.exe WINWS1=--filter-l3=ipv4,ipv6 --wf-tcp=80,443 --dpi-desync=fake,split --dpi-desync-ttl=7 --dpi-desync-fooling=md5sig -debug 1 --dpi-desync-split-pos=89 --dpi-desync-split-http-req=method --dpi-desync-split-tls=sni --dpi-desync-split-seqovl=64 --dpi-desync-split-seqovl-pattern=0x11010195306153019A</p>
+<p>这个工具与goodbyedpi一样为透明代理，不需要设置ip和端口</p>
+<p>其他参数请自行翻译使用</p>
+<p>win端可以直接运行service_create.cmd 来运行，task_stop.cmd 停止运行</p>
+<ol>
+<li>spoofdpi项目地址https://github.com/xvzc/SpoofDPI</li>
+</ol>
+<p>这个工具是目前为止原理最简单、参数最简洁的一个工具</p>
+<p>-window-size  用于分片的客户端 Hello 的块大小，以字节为单位；如果默认值无法绕过 DPI，请尝试较小的值；</p>
+<p>只需要修改一个参数，它影响的是分片的 client hello 的块大小，可以先设置10，如果访问不了被sni阻断的网站逐渐减小chunk块大小值直到为1，不推荐上来直接设为1，因为会卡</p>
+<p>https://preview.redd.it/8ebsrqzmpyqd1.jpg?width=1907&amp;format=pjpg&amp;auto=webp&amp;s=fa8f2d1ff0355d578edaebfb17d0fe688ea42322</p>
+<p>这个工具默认在本地ip 127.0.0.1开启http协议的8080端口，可以通过 -addr 修改绑定ip   -port修改监听端</p>
+<p>上述工具都必须在已经处理好dns污染的情况下使用</p>
+<p>spoofdpi可以设置dns，如果在本地有设dns服务器可以这样去设置</p>
+<p>spoofdpi.exe   -window-size 10 -dns-addr <a href="http://127.0.0.1">127.0.0.1</a></p>
+<p>为什么不设置-dns-addr 8.8.8.8呢？还省的本地搭dns服务器了，因为明文的"域名服务器的'DNS 应答'必定也会经过国际出口"，源头干净也是没用的，详见https://program-think.blogspot.com/2014/01/dns.html</p>
+<p>spoofdpi也许考虑到这一点，甚至允许设置doh</p>
+<p>spoofdpi.exe    -window-size 10 -dns-addr <a href="https://dns.google/dns-query">https://dns.google/dns-query</a>  -enable-doh</p>
+<p>不过冲浪小本本儿(一)就说过如果doh地址被墙，doh不会起效</p>
+<p>dns如此重要，俺会尽快把处理dns污染章节更新</p>
+<p>由于sub倒闭，冲浪(一) 俺将会想办法重新发</p>
+<p>[1] 冲浪小本本儿(一)</p>
+<p>[2] 冲浪小本本儿(一)(1-1) byedpi/zapret/spoofdpi</p>
+<p>[3] 冲浪小本本儿（二）---- 在(一)之前，什么是ECH，如何检测、使用等等</p>
+<p>[4]冲浪小本本儿 (三) --- 什么是desync类工具，还有哪些直连类型工具；什么是正代反代，如何完成反代；steam++这类工具是怎么完成不连接第三方服务器直连的；简易反代制作；当你直连一个网站时外部能看到什么</p>
+<p>[5]冲浪小本本儿 (三)(3-1)  什么是tun模式，为什么clash的tun模式叫tun模式，而不叫tunnel</p>
+<p>[6] 冲浪小本本儿 (四) --- 当你通过proxy翻墙时，会在日志里、服务器上留下什么，通过代理连接有哪些风险</p>
+<p>[7] 冲浪小本本儿 (五) --- 被墙的网站有哪些分级，一些简单的dns污染名单，sni阻断名单，直连有哪些风险</p>
+<p>[8] 冲浪小本本儿 (六) --- 如何对网站方隐藏自身，什么是浏览器指纹，怎么改变；分析怎么逃过宏迪追杀</p>
+<p>[9] 冲浪小本本儿 (七) --- 如何处理dns污染；低延迟但被污染的dns、高延迟但正确的dns怎么选？域名分流；doh本身被封了怎么办</p></p>
+                
+            </div>
+    <div class="comment" id="t1_lovl1q7">
+        <p class="userinfo">
+            <a class="toggle_hide_button" href="javascript:void(0)" onclick="toggle_collapse(this.parentElement.parentElement)">[-]</a>
+            <a href="https://old.reddit.com/u/AdvancedPolicy-404">AdvancedPolicy-404</a><span class="flair" style="background-color: #94e044; color: #1c1c1c;">花园园丁</span>
+            | <span class="score">1 points</span>
+            | <a class="timestamp" href="https://old.reddit.com/r/abstract_garden/comments/1fp59ql/冲浪小本本儿一11_byedpizapretspoofdpi教程/lovl1q7/">Sep 26 2024 00:25:06</a>
+        </p>
+        <div class="collapsible">
+            <p>建议搬到真太监区或者手冲tv，post活的能长些</p>
+    <div class="comment" id="t1_lovx1ee">
+        <p class="userinfo">
+            <a class="toggle_hide_button" href="javascript:void(0)" onclick="toggle_collapse(this.parentElement.parentElement)">[-]</a>
+            <a href="https://old.reddit.com/u/replaceOrgansKingXjp">replaceOrgansKingXjp</a>
+            | <span class="score">1 points</span>
+            | <a class="timestamp" href="https://old.reddit.com/r/abstract_garden/comments/1fp59ql/冲浪小本本儿一11_byedpizapretspoofdpi教程/lovx1ee/">Sep 26 2024 01:26:53</a>
+        </p>
+        <div class="collapsible">
+            <p>新号karma值太低，被红迪 50karma大过滤器过滤了</p></div></div></div></div>
+    </body>
+    <script>
+        function toggle_collapse(comment_div) {{
+            var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+            var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+            if (collapsible.classList.contains("hidden")) {{
+                collapsible.classList.remove("hidden");
+                button.innerText = "[-]";
+            }} else {{
+                collapsible.classList.add("hidden");
+                button.innerText = "[+]";
+            }}
+        }}
+    </script>
+</html>
