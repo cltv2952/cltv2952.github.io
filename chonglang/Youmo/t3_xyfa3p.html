@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Novelai李克下載磁鏈+使用指南</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <style>
+            .crosspost {
+                border: 1px solid #888;
+                margin-top: 10px;
+                padding: 10px;
+                background-color: #f6f7f8;
+            }
+            .crosspost-header {
+                font-size: 12px;
+                color: #555;
+                margin-bottom: 6px;
+            }
+            .crosspost-content {
+                padding-left: 5px;
+            }
+            .submission, .comment { padding-left: 20px; padding-right: 4px; font-family: verdana, arial, helvetica, sans-serif; }
+            .comment { margin-top: 4px; margin-bottom: 4px; border: 1px solid black; }
+            .submission { border: 2px solid blue; padding-bottom: 10px; }
+            .hidden { display: none; }
+            .userinfo { font-size: 12px; color: #555; }
+            .flair {
+                padding: 2px 6px; border-radius: 20px; font-size: 10px; font-weight: bold;
+                margin-left: 5px; display: inline-block; vertical-align: middle; line-height: 1.2;
+            }
+        </style>
+    </head>
+    <body>
+        <a href="../Youmo.html#t3_xyfa3p" class="back-link">← Back to Index</a>
+            <div class="submission" id="t3_xyfa3p">
+                <p class="userinfo">
+                    <a href="https://old.reddit.com/u/[deleted]">[deleted]</a>
+                    | <span class="score">35 points</span>
+                    | <a class="timestamp" href="https://old.reddit.com/r/Youmo/comments/xyfa3p/novelai李克下載磁鏈使用指南/">Oct 08 2022 08:57:15</a>
+                </p>
+                <strong>Novelai李克下載磁鏈+使用指南</strong><span class="flair" style="background-color: #0dd3bb; color: #1c1c1c;">生活:TV:</span>
+                <p><p>打膠tv差不多得了，來點技術性的東西</p>
+<p>分享+翻譯一下隔壁被紅迪核了的novelai李克磁鏈+使用指南</p>
+<p>磁鏈下載下來的只是模型，需要下載其他程序打開</p>
+<p>SFW&amp;NSFW圖片皆可生成</p>
+<p>&#x200B;</p>
+<p><a href="https://preview.redd.it/wwhg5f0obhs91.png?width=991&amp;format=png&amp;auto=webp&amp;s=42aeaa28a50b23cdbcf9e057b088bc9f1aea6e47">誰用迅雷下，今晚瓶子去他家，快換p2p</a></p>
+<p>模型下載:  magnet:?xt=urn:btih:5bde442da86265b670a3e5ea3163afad2c6f8ecc</p>
+<p>推荐下载器：qBittorrent，BitComet等</p>
+<p>&#x200B;</p>
+<p>必要下载项如图：</p>
+<p><a href="https://cdn.discordapp.com/attachments/1027551135613071380/1027888351757471765/unknown.png">https://cdn.discordapp.com/attachments/1027551135613071380/1027888351757471765/unknown.png</a></p>
+<p>（收集黨可以全下）</p>
+<p>&#x200B;</p>
+<p>NovelAI的裝載教程：</p>
+<p>沿著 Stable diffusion 教程走：<a href="https://rentry.org/voldy">https://rentry.org/voldy</a></p>
+<ul>
+<li>1.教程的第一步：安装Git，安装时勾选Git Bash选项</li>
+<li>2.教程的第二步：在你想安裝Stable Diffusion WebUI的文件夾空白處單擊右鍵，選擇“Git Bush Here”</li>
+<li>輸入指令 git clone <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui">https://github.com/AUTOMATIC1111/stable-diffusion-webui</a></li>
+<li>想要更新UI時輸入指令 git pull</li>
+<li>這會讓你獲得用來啟動NovelAI的UI。Git從Github上clone的文件夾名默認為<em>stable-diffusion-webui</em></li>
+<li>3.跳過教程的第三步</li>
+<li>4.跳過教程的第四步</li>
+<li>5.教程的第五步：安裝python 3.10.6</li>
+<li>6.教程的第六步：這是一個可選項，我跳過了</li>
+<li>7.教程的第七步：啟動  webui-user.bat，並等待一段時間</li>
+<li>有時會遇到 exit code: 9009 問題。將 webui-user.bat 用 notepad++ 等程序打開，在 set PYTHON= 一行中黏貼你的python安裝地址，後保存即可</li>
+<li>python安裝地址：shift+右鍵單擊你的 python.exe，選擇“複製為路徑”</li>
+<li>8.嚴格來說沒有第八步。但為了防止有些人不知道，把WebUI生成的的URl複製進瀏覽器就可以打開了</li>
+</ul>
+<p>https://preview.redd.it/cdz3jnvvghs91.png?width=497&amp;format=png&amp;auto=webp&amp;s=80ce06ab562455ec8d37d3bace6473f61ed153ca</p>
+<p>對於下載的 NovelAI 文件須作如下更改調整:</p>
+<ol>
+<li>將 <em>animefull-final-pruned</em> 文件夾下的 <em>model.ckpt</em> 重命名為 <em>final-pruned.ckpt</em></li>
+<li>將重命名後的 <em>final-pruned.ckpt</em> 和 <em>stableckpt</em> 文件夾下的 <em>animevae.pt</em> 剪切至 <em>stable-diffusion-webui\models\Stable-diffusion</em></li>
+<li>將 <em>animevae.pt</em> 重命名為 <em>final-pruned.vae.pt</em></li>
+<li>新建一個 <em>stable-diffusion-webui\models\hypernetworks</em> 文件夾，將 <em>stableckpt\modules\modules</em> 下的全部 .pts 文件放入 <em>stable-diffusion-webui\models\hypernetworks</em></li>
+</ol>
+<p>&#x200B;</p>
+<p>在Settings 的 Stable Diffusion 格下，checkpoint 與 hypernetwork 中選擇你所導入的模型。</p>
+<p>點擊 Apply Settings 來生效</p>
+<p>&#x200B;</p>
+<p>Negative Prompt: lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry</p>
+<p>&#x200B;</p>
+<p>可能用得上的Embedding: <a href="https://rentry.org/embeddings">https://rentry.org/embeddings</a></p></p>
+                
+            </div>
+    <div class="comment" id="t1_irgwqjt">
+        <p class="userinfo">
+            <a class="toggle_hide_button" href="javascript:void(0)" onclick="toggle_collapse(this.parentElement.parentElement)">[-]</a>
+            <a href="https://old.reddit.com/u/Accomplished-Fly-506">Accomplished-Fly-506</a><span class="flair" style="background-color: #edeff1; color: #1c1c1c;">IP属地：北京</span>
+            | <span class="score">3 points</span>
+            | <a class="timestamp" href="https://old.reddit.com/r/Youmo/comments/xyfa3p/novelai李克下載磁鏈使用指南/irgwqjt/">Oct 08 2022 09:08:47</a>
+        </p>
+        <div class="collapsible">
+            <p>穷蛆不懂，这是用来干啥子的</p>
+    <div class="comment" id="t1_irgxtls">
+        <p class="userinfo">
+            <a class="toggle_hide_button" href="javascript:void(0)" onclick="toggle_collapse(this.parentElement.parentElement)">[-]</a>
+            <a href="https://old.reddit.com/u/[deleted]">[deleted]</a>
+            | <span class="score">11 points</span>
+            | <a class="timestamp" href="https://old.reddit.com/r/Youmo/comments/xyfa3p/novelai李克下載磁鏈使用指南/irgxtls/">Oct 08 2022 09:18:58</a>
+        </p>
+        <div class="collapsible">
+            <p>用AI幫你畫自定義圖片</p></div></div></div></div>
+    <div class="comment" id="t1_irgxzhk">
+        <p class="userinfo">
+            <a class="toggle_hide_button" href="javascript:void(0)" onclick="toggle_collapse(this.parentElement.parentElement)">[-]</a>
+            <a href="https://old.reddit.com/u/[deleted]">[deleted]</a>
+            | <span class="score">5 points</span>
+            | <a class="timestamp" href="https://old.reddit.com/r/Youmo/comments/xyfa3p/novelai李克下載磁鏈使用指南/irgxzhk/">Oct 08 2022 09:20:30</a>
+        </p>
+        <div class="collapsible">
+            <p>默友們有沒有節目效果，成敗就在此一舉了</p>
+<p>哎，可惜苞米tv被紅迪爆破了，不然唯一指定女主角就定了</p></div></div>
+    <div class="comment" id="t1_irgy438">
+        <p class="userinfo">
+            <a class="toggle_hide_button" href="javascript:void(0)" onclick="toggle_collapse(this.parentElement.parentElement)">[-]</a>
+            <a href="https://old.reddit.com/u/[deleted]">[deleted]</a>
+            | <span class="score">0 points</span>
+            | <a class="timestamp" href="https://old.reddit.com/r/Youmo/comments/xyfa3p/novelai李克下載磁鏈使用指南/irgy438/">Oct 08 2022 09:21:41</a>
+        </p>
+        <div class="collapsible">
+            <p>太复杂了</p>
+    <div class="comment" id="t1_irgywft">
+        <p class="userinfo">
+            <a class="toggle_hide_button" href="javascript:void(0)" onclick="toggle_collapse(this.parentElement.parentElement)">[-]</a>
+            <a href="https://old.reddit.com/u/[deleted]">[deleted]</a>
+            | <span class="score">1 points</span>
+            | <a class="timestamp" href="https://old.reddit.com/r/Youmo/comments/xyfa3p/novelai李克下載磁鏈使用指南/irgywft/">Oct 08 2022 09:29:12</a>
+        </p>
+        <div class="collapsible">
+            <p>[deleted]</p></div></div></div></div>
+    <div class="comment" id="t1_irhcz27">
+        <p class="userinfo">
+            <a class="toggle_hide_button" href="javascript:void(0)" onclick="toggle_collapse(this.parentElement.parentElement)">[-]</a>
+            <a href="https://old.reddit.com/u/Background_Smell_845">Background_Smell_845</a><span class="flair" style="background-color: #edeff1; color: #1c1c1c;">IP属地：河南</span>
+            | <span class="score">1 points</span>
+            | <a class="timestamp" href="https://old.reddit.com/r/Youmo/comments/xyfa3p/novelai李克下載磁鏈使用指南/irhcz27/">Oct 08 2022 11:49:19</a>
+        </p>
+        <div class="collapsible">
+            <p>m系列芯片可行吗</p></div></div>
+    <div class="comment" id="t1_irhfm7l">
+        <p class="userinfo">
+            <a class="toggle_hide_button" href="javascript:void(0)" onclick="toggle_collapse(this.parentElement.parentElement)">[-]</a>
+            <a href="https://old.reddit.com/u/CrazyUniverse_QF">CrazyUniverse_QF</a><span class="flair" style="background-color: #edeff1; color: #1c1c1c;">IP属地：台湾</span>
+            | <span class="score">1 points</span>
+            | <a class="timestamp" href="https://old.reddit.com/r/Youmo/comments/xyfa3p/novelai李克下載磁鏈使用指南/irhfm7l/">Oct 08 2022 12:20:12</a>
+        </p>
+        <div class="collapsible">
+            <p>可惜了，我是AMD</p></div></div>
+    <div class="comment" id="t1_irhre3n">
+        <p class="userinfo">
+            <a class="toggle_hide_button" href="javascript:void(0)" onclick="toggle_collapse(this.parentElement.parentElement)">[-]</a>
+            <a href="https://old.reddit.com/u/_diogenes_club_">_diogenes_club_</a><span class="flair" style="background-color: #edeff1; color: #1c1c1c;">IP属地：上海</span>
+            | <span class="score">1 points</span>
+            | <a class="timestamp" href="https://old.reddit.com/r/Youmo/comments/xyfa3p/novelai李克下載磁鏈使用指南/irhre3n/">Oct 08 2022 15:02:42</a>
+        </p>
+        <div class="collapsible">
+            <p>好人一生平安</p></div></div>
+    <div class="comment" id="t1_is2e9fo">
+        <p class="userinfo">
+            <a class="toggle_hide_button" href="javascript:void(0)" onclick="toggle_collapse(this.parentElement.parentElement)">[-]</a>
+            <a href="https://old.reddit.com/u/[deleted]">[deleted]</a>
+            | <span class="score">1 points</span>
+            | <a class="timestamp" href="https://old.reddit.com/r/Youmo/comments/xyfa3p/novelai李克下載磁鏈使用指南/is2e9fo/">Oct 13 2022 04:19:59</a>
+        </p>
+        <div class="collapsible">
+            <p>[deleted]</p></div></div>
+    <div class="comment" id="t1_ivt7nz7">
+        <p class="userinfo">
+            <a class="toggle_hide_button" href="javascript:void(0)" onclick="toggle_collapse(this.parentElement.parentElement)">[-]</a>
+            <a href="https://old.reddit.com/u/Strider_503">Strider_503</a><span class="flair" style="background-color: #edeff1; color: #1c1c1c;">IP属地：河南</span>
+            | <span class="score">1 points</span>
+            | <a class="timestamp" href="https://old.reddit.com/r/Youmo/comments/xyfa3p/novelai李克下載磁鏈使用指南/ivt7nz7/">Nov 10 2022 21:05:55</a>
+        </p>
+        <div class="collapsible">
+            <p>剛好這東西被公開前一兩天換了一台裝了RTX 3060的電腦</p>
+<p>這貨不玩還好、一玩不得了！想要什麼尺度的圖都生得出來！</p></div></div>
+    </body>
+    <script>
+        function toggle_collapse(comment_div) {{
+            var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+            var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+            if (collapsible.classList.contains("hidden")) {{
+                collapsible.classList.remove("hidden");
+                button.innerText = "[-]";
+            }} else {{
+                collapsible.classList.add("hidden");
+                button.innerText = "[+]";
+            }}
+        }}
+    </script>
+</html>

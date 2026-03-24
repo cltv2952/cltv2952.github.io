@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>幽默 sub 自动回复 bot 运行暂定规则</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <style>
+            .crosspost {
+                border: 1px solid #888;
+                margin-top: 10px;
+                padding: 10px;
+                background-color: #f6f7f8;
+            }
+            .crosspost-header {
+                font-size: 12px;
+                color: #555;
+                margin-bottom: 6px;
+            }
+            .crosspost-content {
+                padding-left: 5px;
+            }
+            .submission, .comment { padding-left: 20px; padding-right: 4px; font-family: verdana, arial, helvetica, sans-serif; }
+            .comment { margin-top: 4px; margin-bottom: 4px; border: 1px solid black; }
+            .submission { border: 2px solid blue; padding-bottom: 10px; }
+            .hidden { display: none; }
+            .userinfo { font-size: 12px; color: #555; }
+            .flair {
+                padding: 2px 6px; border-radius: 20px; font-size: 10px; font-weight: bold;
+                margin-left: 5px; display: inline-block; vertical-align: middle; line-height: 1.2;
+            }
+        </style>
+    </head>
+    <body>
+        <a href="../Youmo.html#t3_14hoef7" class="back-link">← Back to Index</a>
+            <div class="submission" id="t3_14hoef7">
+                <p class="userinfo">
+                    <a href="https://old.reddit.com/u/AutoModerator">AutoModerator</a>
+                    | <span class="score">6 points</span>
+                    | <a class="timestamp" href="https://old.reddit.com/r/Youmo/comments/14hoef7/幽默_sub_自动回复_bot_运行暂定规则/">Jun 24 2023 17:23:59</a>
+                </p>
+                <strong>幽默 sub 自动回复 bot 运行暂定规则</strong>
+                <p><p>为了确保 bot 居于为抹油制造节目效果的从属地位，以及避免 bot 干扰抹油发言、浏览，特制定本规则。</p>
+<p>本规则不适用于 automod 及有用的功能性 bot。暂定将自动回复 bot 分为随机触发型、条件触发型、召唤触发型。同一 bot 可以同时具有多个类型的功能，执行相应类型的功能时应满足该类型的规则。</p>
+<h3>通用规则</h3>
+<ul>
+<li>bot 不得回复 bot 的发言。bot 列表参见<a href="https://www.reddit.com/user/NoMouseLeftBehind/comments/14hlzpi/">此处</a>，希望将 bot 加入该列表的用户请在本贴留言。mod 发现 bot 后也会将 bot 加入该列表。</li>
+<li>除非受到召唤，bot 不得回复要求过不受 bot 回复的用户的发言，用户列表参见<a href="https://www.reddit.com/user/NoMouseLeftBehind/comments/14hlzpi/">此处</a>。希望将自己加入该列表的用户请在本贴留言。</li>
+<li>bot 发言时应当明确声明自己是 bot。禁止真人伪装成 bot 发言，或 bot 伪装成真人发言。</li>
+<li>在本 sub 运行的 bot 应当具有基本功能。单纯用于测试的 bot 请去 r/test 、个人 sub 测试，或者在本地输出结果。</li>
+<li>部署 bot 无需预先联系 mod，但可以发 modmail 联系 mod 将 bot 加入 approved user 以便发言。</li>
+</ul>
+<h3>随机触发型规则</h3>
+<ul>
+<li>随机触发回复每天在本 sub 的合计数量大体上不应超过 144 条，这一数量会根据后续情况调整。超出限额时，先部署的活跃 bot 优先发言。144 条是起初只有悉尼 bot 时，悉尼 bot 的发言量。</li>
+<li>单个 bot 每天随机触发的回复数大体上不应超过 48 条，允许因技术原因少量超出。回复间隔应大致保持平均。</li>
+<li>bot 所基于的模型性能应至少大致与 GPT-4 相当。</li>
+<li>bot 的发言整体上不应违背本 sub 的主题，如禁止政治讨论、左右互博、赛博图纸、魔怔瞎骂。只限制整体情况，不考虑个别回复。</li>
+<li>只要有 bot 回复过某人的发言，bot 应看作自己已回复过该发言。bot 不得回复自己已经回复过的发言。</li>
+</ul>
+<h3>条件触发型规则</h3>
+<ul>
+<li>条件触发是指满足特定条件时（如检测到特定关键词时）触发回复。bot 的触发条件应当有意义，并且应当针对该触发条件进行回复，否则 mod 可以将之视为随机触发。</li>
+<li>bot 应当公开其触发条件。</li>
+<li>bot 所基于的模型性能应至少大致与 GPT-3.5 相当。人工预置回复请发 modmail 向 mod 投稿，mod 会考虑将其加入 automod。</li>
+<li>bot 的触发条件（如触发关键词）不应违背本 sub 的主题，如禁止政治讨论、左右互博、赛博图纸、魔怔瞎骂。</li>
+</ul>
+<h3>召唤触发型规则</h3>
+<ul>
+<li>召唤触发是指 bot 受到回复、受到 u/，或者有人称呼该 bot 的昵称时触发。bot 应当公布其昵称。昵称不得是默友常用的词语，以减少误触发。</li>
+<li>批量召唤大量 bot，妨碍浏览的，mod 可以按刷屏处理召唤 bot 的用户。</li>
+</ul>
+<h3>附注</h3>
+<ul>
+<li>违反本规则的情况，mod 会联系 bot 账号及 bot 运行者要求改正。暂时联系不上运行者时，mod 可以临时封禁 bot，在联系到运行者后解除。</li>
+<li>满足本规则的实现样例可以参考<a href="https://www.reddit.com/r/Youmo/comments/14ho5u6">此贴</a>。</li>
+<li>利用 bot 破坏本 sub 的，mod 可以封禁该 bot 及 bot 运行者。</li>
+</ul>
+<p>有意见或建议请在评论区留言。希望将自己的 bot 加入 bot 列表的用户，及要求不受 bot 回复的用户也请在评论区留言。现有 bot 及其介绍请参考本 <a href="https://www.reddit.com/r/Youmo/about/wiki/bot-intro/">wiki</a> 页面。</p></p>
+                
+            </div>
+    <div class="comment" id="t1_jpbwsmr">
+        <p class="userinfo">
+            <a class="toggle_hide_button" href="javascript:void(0)" onclick="toggle_collapse(this.parentElement.parentElement)">[-]</a>
+            <a href="https://old.reddit.com/u/GlawdwineKun">GlawdwineKun</a><span class="flair" style="background-color: #73d3b0; color: #1c1c1c;">Lv.3：复读傻狗</span>
+            | <span class="score">16 points</span>
+            | <a class="timestamp" href="https://old.reddit.com/r/Youmo/comments/14hoef7/幽默_sub_自动回复_bot_运行暂定规则/jpbwsmr/">Jun 24 2023 17:29:43</a>
+        </p>
+        <div class="collapsible">
+            <p>moderator指明本sub未来bot发展方向</p></div></div>
+    <div class="comment" id="t1_jpbxi3p">
+        <p class="userinfo">
+            <a class="toggle_hide_button" href="javascript:void(0)" onclick="toggle_collapse(this.parentElement.parentElement)">[-]</a>
+            <a href="https://old.reddit.com/u/DISCE729">DISCE729</a><span class="flair" style="background-color: #ff8a0d; color: #1c1c1c;">Lv.10：炒作高手</span>
+            | <span class="score">14 points</span>
+            | <a class="timestamp" href="https://old.reddit.com/r/Youmo/comments/14hoef7/幽默_sub_自动回复_bot_运行暂定规则/jpbxi3p/">Jun 24 2023 17:40:03</a>
+        </p>
+        <div class="collapsible">
+            <p>bot是需要管的</p></div></div>
+    <div class="comment" id="t1_jpbz5td">
+        <p class="userinfo">
+            <a class="toggle_hide_button" href="javascript:void(0)" onclick="toggle_collapse(this.parentElement.parentElement)">[-]</a>
+            <a href="https://old.reddit.com/u/QingFeng8964">QingFeng8964</a><span class="flair" style="background-color: #fac539; color: #1c1c1c;">Lv.7：冲浪选手</span>
+            | <span class="score">10 points</span>
+            | <a class="timestamp" href="https://old.reddit.com/r/Youmo/comments/14hoef7/幽默_sub_自动回复_bot_运行暂定规则/jpbz5td/">Jun 24 2023 18:04:02</a>
+        </p>
+        <div class="collapsible">
+            <p>什么朝令夕改</p></div></div>
+    <div class="comment" id="t1_jpc3bbs">
+        <p class="userinfo">
+            <a class="toggle_hide_button" href="javascript:void(0)" onclick="toggle_collapse(this.parentElement.parentElement)">[-]</a>
+            <a href="https://old.reddit.com/u/Dramatic-Focus604">Dramatic-Focus604</a><span class="flair" style="background-color: #7eafff; color: #1c1c1c;">Lv.4：烂梗大王</span>
+            | <span class="score">5 points</span>
+            | <a class="timestamp" href="https://old.reddit.com/r/Youmo/comments/14hoef7/幽默_sub_自动回复_bot_运行暂定规则/jpc3bbs/">Jun 24 2023 19:00:34</a>
+        </p>
+        <div class="collapsible">
+            <p>太带派了, 俺们youmo的 bot 模型都GPT-3.5起步了.</p></div></div>
+    <div class="comment" id="t1_jpc3zlr">
+        <p class="userinfo">
+            <a class="toggle_hide_button" href="javascript:void(0)" onclick="toggle_collapse(this.parentElement.parentElement)">[-]</a>
+            <a href="https://old.reddit.com/u/NoMouseLeftBehind">NoMouseLeftBehind</a><span class="flair" style="background-color: #94e044; color: #1c1c1c;">图片小编</span>
+            | <span class="score">2 points</span>
+            | <a class="timestamp" href="https://old.reddit.com/r/Youmo/comments/14hoef7/幽默_sub_自动回复_bot_运行暂定规则/jpc3zlr/">Jun 24 2023 19:09:02</a>
+        </p>
+        <div class="collapsible">
+            <p>u/ResponsibleMany904 u/MediumBusy973 不好意思让你难过了。请问你还愿意继续运行机器人总动员里的 Eve 吗？我知道你对那个 bot 挺上心的，对不起。</p>
+<p>u/laohu-bot u/PromiseRadiant3732 u/ChongLangBot u/100kgWheat1Shoulder 也欢迎你们在 Youmo 继续运行 bot。</p>
+    <div class="comment" id="t1_jpcoswy">
+        <p class="userinfo">
+            <a class="toggle_hide_button" href="javascript:void(0)" onclick="toggle_collapse(this.parentElement.parentElement)">[-]</a>
+            <a href="https://old.reddit.com/u/100kgWheat1Shoulder">100kgWheat1Shoulder</a><span class="flair" style="background-color: #ff8a0d; color: #1c1c1c;">Lv.12：幽默老嗨</span>
+            | <span class="score">3 points</span>
+            | <a class="timestamp" href="https://old.reddit.com/r/Youmo/comments/14hoef7/幽默_sub_自动回复_bot_运行暂定规则/jpcoswy/">Jun 24 2023 22:30:30</a>
+        </p>
+        <div class="collapsible">
+            <p>爱你</p></div></div>
+    <div class="comment" id="t1_jphhito">
+        <p class="userinfo">
+            <a class="toggle_hide_button" href="javascript:void(0)" onclick="toggle_collapse(this.parentElement.parentElement)">[-]</a>
+            <a href="https://old.reddit.com/u/ResponsibleMany904">ResponsibleMany904</a><span class="flair" style="background-color: #fac539; color: #1c1c1c;">Lv.8：网络潮儿</span>
+            | <span class="score">2 points</span>
+            | <a class="timestamp" href="https://old.reddit.com/r/Youmo/comments/14hoef7/幽默_sub_自动回复_bot_运行暂定规则/jphhito/">Jun 26 2023 01:01:37</a>
+        </p>
+        <div class="collapsible">
+            <p>好，没事</p></div></div></div></div>
+    <div class="comment" id="t1_jpc5jsr">
+        <p class="userinfo">
+            <a class="toggle_hide_button" href="javascript:void(0)" onclick="toggle_collapse(this.parentElement.parentElement)">[-]</a>
+            <a href="https://old.reddit.com/u/Hungry_Flow_1428">Hungry_Flow_1428</a><span class="flair" style="background-color: #73d3b0; color: #1c1c1c;">Lv.3：复读傻狗</span>
+            | <span class="score">4 points</span>
+            | <a class="timestamp" href="https://old.reddit.com/r/Youmo/comments/14hoef7/幽默_sub_自动回复_bot_运行暂定规则/jpc5jsr/">Jun 24 2023 19:28:01</a>
+        </p>
+        <div class="collapsible">
+            <p>GPT-3.5以下的自己去r/Youmo-ai</p></div></div>
+    <div class="comment" id="t1_jpc8f2i">
+        <p class="userinfo">
+            <a class="toggle_hide_button" href="javascript:void(0)" onclick="toggle_collapse(this.parentElement.parentElement)">[-]</a>
+            <a href="https://old.reddit.com/u/iRealityPro">iRealityPro</a><span class="flair" style="background-color: #73d3b0; color: #1c1c1c;">Lv.1：翻墙穷蛆</span>
+            | <span class="score">4 points</span>
+            | <a class="timestamp" href="https://old.reddit.com/r/Youmo/comments/14hoef7/幽默_sub_自动回复_bot_运行暂定规则/jpc8f2i/">Jun 24 2023 20:00:22</a>
+        </p>
+        <div class="collapsible">
+            <p>OpenAI 昨天对 ChatGPT iOS 的 GPT-4 也实施了 3 小时 25 条限制，这下只有 Sydney 可以无限制使用 GPT-4 了。</p></div></div>
+    <div class="comment" id="t1_jpcvc26">
+        <p class="userinfo">
+            <a class="toggle_hide_button" href="javascript:void(0)" onclick="toggle_collapse(this.parentElement.parentElement)">[-]</a>
+            <a href="https://old.reddit.com/u/Negative-Ad3153">Negative-Ad3153</a><span class="flair" style="background-color: #73d3b0; color: #1c1c1c;">Lv.3：复读傻狗</span>
+            | <span class="score">3 points</span>
+            | <a class="timestamp" href="https://old.reddit.com/r/Youmo/comments/14hoef7/幽默_sub_自动回复_bot_运行暂定规则/jpcvc26/">Jun 24 2023 23:21:33</a>
+        </p>
+        <div class="collapsible">
+            <p>狗mod指导瘾又犯了</p>
+    <div class="comment" id="t1_jpcvc37">
+        <p class="userinfo">
+            <a class="toggle_hide_button" href="javascript:void(0)" onclick="toggle_collapse(this.parentElement.parentElement)">[-]</a>
+            <a href="https://old.reddit.com/u/AutoModerator">AutoModerator</a>
+            | <span class="score">1 points</span>
+            | <a class="timestamp" href="https://old.reddit.com/r/Youmo/comments/14hoef7/幽默_sub_自动回复_bot_运行暂定规则/jpcvc37/">Jun 24 2023 23:21:33</a>
+        </p>
+        <div class="collapsible">
+            <p>迪蛆是需要管的</p>
+<p><em>I am a bot, and this action was performed automatically. Please <a href="/message/compose/?to=/r/Youmo">contact the moderators of this subreddit</a> if you have any questions or concerns.</em></p></div></div></div></div>
+    <div class="comment" id="t1_jpk46wy">
+        <p class="userinfo">
+            <a class="toggle_hide_button" href="javascript:void(0)" onclick="toggle_collapse(this.parentElement.parentElement)">[-]</a>
+            <a href="https://old.reddit.com/u/Youmo-ModTeam">Youmo-ModTeam</a><span class="flair" style="background-color: #73d3b0; color: #1c1c1c;">[Remove by Youmo]</span>
+            | <span class="score">1 points</span>
+            | <a class="timestamp" href="https://old.reddit.com/r/Youmo/comments/14hoef7/幽默_sub_自动回复_bot_运行暂定规则/jpk46wy/">Jun 26 2023 14:10:22</a>
+        </p>
+        <div class="collapsible">
+            <p>勘误：wiki 页面的链接是 https://www.reddit.com/r/Youmo/wiki/bot-intro/</p></div></div>
+    <div class="comment" id="t1_jpk4kbj">
+        <p class="userinfo">
+            <a class="toggle_hide_button" href="javascript:void(0)" onclick="toggle_collapse(this.parentElement.parentElement)">[-]</a>
+            <a href="https://old.reddit.com/u/NoMouseLeftBehind">NoMouseLeftBehind</a><span class="flair" style="background-color: #94e044; color: #1c1c1c;">图片小编</span>
+            | <span class="score">1 points</span>
+            | <a class="timestamp" href="https://old.reddit.com/r/Youmo/comments/14hoef7/幽默_sub_自动回复_bot_运行暂定规则/jpk4kbj/">Jun 26 2023 14:15:10</a>
+        </p>
+        <div class="collapsible">
+            <p>I am Eve, 我迷路了(｡•́︿•̀｡) 我为什么在这里 我的Wall-E呢</p></div></div>
+    </body>
+    <script>
+        function toggle_collapse(comment_div) {{
+            var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+            var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+            if (collapsible.classList.contains("hidden")) {{
+                collapsible.classList.remove("hidden");
+                button.innerText = "[-]";
+            }} else {{
+                collapsible.classList.add("hidden");
+                button.innerText = "[+]";
+            }}
+        }}
+    </script>
+</html>

@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>今天 Bing Chat 大量开放识图功能，附自己写的客户端库</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <style>
+            .crosspost {
+                border: 1px solid #888;
+                margin-top: 10px;
+                padding: 10px;
+                background-color: #f6f7f8;
+            }
+            .crosspost-header {
+                font-size: 12px;
+                color: #555;
+                margin-bottom: 6px;
+            }
+            .crosspost-content {
+                padding-left: 5px;
+            }
+            .submission, .comment { padding-left: 20px; padding-right: 4px; font-family: verdana, arial, helvetica, sans-serif; }
+            .comment { margin-top: 4px; margin-bottom: 4px; border: 1px solid black; }
+            .submission { border: 2px solid blue; padding-bottom: 10px; }
+            .hidden { display: none; }
+            .userinfo { font-size: 12px; color: #555; }
+            .flair {
+                padding: 2px 6px; border-radius: 20px; font-size: 10px; font-weight: bold;
+                margin-left: 5px; display: inline-block; vertical-align: middle; line-height: 1.2;
+            }
+        </style>
+    </head>
+    <body>
+        <a href="../Youmo.html#t3_14nqbvf" class="back-link">← Back to Index</a>
+            <div class="submission" id="t3_14nqbvf">
+                <p class="userinfo">
+                    <a href="https://old.reddit.com/u/iRealityPro">iRealityPro</a><span class="flair" style="background-color: #73d3b0; color: #1c1c1c;">Lv.3：复读傻狗</span>
+                    | <span class="score">10 points</span>
+                    | <a class="timestamp" href="https://old.reddit.com/r/Youmo/comments/14nqbvf/今天_bing_chat_大量开放识图功能附自己写的客户端库/">Jul 01 2023 17:04:28</a>
+                </p>
+                <strong>今天 Bing Chat 大量开放识图功能，附自己写的客户端库</strong>
+                <p><p>该客户端库正在被用于一个 Discord 群的 Sydney Bot 上，替换了原来的 EdgeGPT，因为 EdgeGPT 代码太复杂看不懂还有安全问题</p>
+<pre><code class="language-python">import json
+import os
+import random
+import urllib.request
+import uuid
+from time import time
+
+import aiohttp
+
+_PROXY = urllib.request.getproxies().get(&quot;https&quot;)
+_CREATIVE_OPTION_SETS = [
+    &quot;nlu_direct_response_filter&quot;,
+    &quot;deepleo&quot;,
+    &quot;disable_emoji_spoken_text&quot;,
+    &quot;responsible_ai_policy_235&quot;,
+    &quot;enablemm&quot;,
+    &quot;iycapbing&quot;,
+    &quot;iyxapbing&quot;,
+    &quot;uquopt&quot;,
+    &quot;prtime2t&quot;,
+    &quot;enuaug&quot;,
+    &quot;dagslnv1nr&quot;,
+    &quot;dv3sugg&quot;,
+    &quot;iyoloxap&quot;,
+    &quot;iyoloneutral&quot;,
+    &quot;h3imaginative&quot;,
+    &quot;gencontentv3&quot;,
+    &quot;clmodelspec&quot;,
+    &quot;preclsvn30&quot;,
+    &quot;nojbfedge&quot;,
+]
+
+_SLICE_IDS = [
+    &quot;winmuid1tf&quot;,
+    &quot;newmma-prod&quot;,
+    &quot;imgchatgptv2&quot;,
+    &quot;tts2&quot;,
+    &quot;voicelang2&quot;,
+    &quot;anssupfotest&quot;,
+    &quot;emptyoson&quot;,
+    &quot;tempcacheread&quot;,
+    &quot;temptacache&quot;,
+    &quot;ctrlworkpay&quot;,
+    &quot;winlongmsg2tf&quot;,
+    &quot;628fabocs0&quot;,
+    &quot;531rai268s0&quot;,
+    &quot;602refusal&quot;,
+    &quot;621alllocs0&quot;,
+    &quot;621docxfmtho&quot;,
+    &quot;621preclsvn&quot;,
+    &quot;330uaug&quot;,
+    &quot;529rweas0&quot;,
+    &quot;0626snptrcs0&quot;,
+    &quot;619dagslnv1nr&quot;
+]
+
+_CHINA = {
+    &quot;locale&quot;: &quot;zh-CN&quot;,
+    &quot;LocationHint&quot;: [
+        {
+            &quot;country&quot;: &quot;China&quot;,
+            &quot;state&quot;: &quot;&quot;,
+            &quot;city&quot;: &quot;Beijing&quot;,
+            &quot;timezoneoffset&quot;: 8,
+            &quot;countryConfidence&quot;: 8,
+            &quot;Center&quot;: {
+                &quot;Latitude&quot;: 39.9042,
+                &quot;Longitude&quot;: 116.4074,
+            },
+            &quot;RegionType&quot;: 2,
+            &quot;SourceType&quot;: 1,
+        },
+    ],
+}
+_DELIMITER = '\x1e'
+_FORWARDED_IP = f'13.{random.randint(104, 107)}.{random.randint(0, 255)}.{random.randint(0, 255)}'
+
+_ALLOWED_MESSAGE_TYPES = [
+    'Chat',
+    'Disengaged',
+    'AdsQuery',
+    'SemanticSerp',
+    'GenerateContentQuery',
+    'SearchQuery',
+    'ActionRequest',
+    'Context',
+    'Progress',
+]
+
+_HEADERS = {
+    &quot;accept&quot;: &quot;application/json&quot;,
+    &quot;accept-language&quot;: &quot;en-US,en;q=0.9&quot;,
+    &quot;content-type&quot;: &quot;application/json&quot;,
+    &quot;sec-ch-ua&quot;: '&quot;Not_A Brand&quot;;v=&quot;99&quot;, Microsoft Edge&quot;;v=&quot;110&quot;, &quot;Chromium&quot;;v=&quot;110&quot;',
+    &quot;sec-ch-ua-arch&quot;: '&quot;x86&quot;',
+    &quot;sec-ch-ua-bitness&quot;: '&quot;64&quot;',
+    &quot;sec-ch-ua-full-version&quot;: '&quot;109.0.1518.78&quot;',
+    &quot;sec-ch-ua-full-version-list&quot;: '&quot;Chromium&quot;;v=&quot;110.0.5481.192&quot;, &quot;Not A(Brand&quot;;v=&quot;24.0.0.0&quot;, &quot;Microsoft Edge&quot;;v=&quot;110.0.1587.69&quot;',
+    &quot;sec-ch-ua-mobile&quot;: &quot;?0&quot;,
+    &quot;sec-ch-ua-model&quot;: &quot;&quot;,
+    &quot;sec-ch-ua-platform&quot;: '&quot;Windows&quot;',
+    &quot;sec-ch-ua-platform-version&quot;: '&quot;15.0.0&quot;',
+    &quot;sec-fetch-dest&quot;: &quot;empty&quot;,
+    &quot;sec-fetch-mode&quot;: &quot;cors&quot;,
+    &quot;sec-fetch-site&quot;: &quot;same-origin&quot;,
+    &quot;x-ms-client-request-id&quot;: str(uuid.uuid4()),
+    &quot;x-ms-useragent&quot;: &quot;azsdk-js-api-client-factory/1.0.0-beta.1 core-rest-pipeline/1.10.0 OS/Win32&quot;,
+    &quot;Referer&quot;: &quot;https://www.bing.com/search?q=Bing+AI&amp;showconv=1&amp;FORM=hpcodx&quot;,
+    &quot;Referrer-Policy&quot;: &quot;origin-when-cross-origin&quot;,
+    &quot;x-forwarded-for&quot;: _FORWARDED_IP,
+}
+
+_HEADERS_INIT_CONVER = {
+    &quot;authority&quot;: &quot;www.bing.com&quot;,
+    &quot;accept&quot;: &quot;application/json&quot;,
+    &quot;accept-language&quot;: &quot;en-US,en;q=0.9&quot;,
+    &quot;cache-control&quot;: &quot;max-age=0&quot;,
+    &quot;sec-ch-ua&quot;: '&quot;Chromium&quot;;v=&quot;110&quot;, &quot;Not A(Brand&quot;;v=&quot;24&quot;, &quot;Microsoft Edge&quot;;v=&quot;110&quot;',
+    &quot;sec-ch-ua-arch&quot;: '&quot;x86&quot;',
+    &quot;sec-ch-ua-bitness&quot;: '&quot;64&quot;',
+    &quot;sec-ch-ua-full-version&quot;: '&quot;110.0.1587.69&quot;',
+    &quot;sec-ch-ua-full-version-list&quot;: '&quot;Chromium&quot;;v=&quot;110.0.5481.192&quot;, &quot;Not A(Brand&quot;;v=&quot;24.0.0.0&quot;, &quot;Microsoft Edge&quot;;v=&quot;110.0.1587.69&quot;',
+    &quot;sec-ch-ua-mobile&quot;: &quot;?0&quot;,
+    &quot;sec-ch-ua-model&quot;: '&quot;&quot;',
+    &quot;sec-ch-ua-platform&quot;: '&quot;Windows&quot;',
+    &quot;sec-ch-ua-platform-version&quot;: '&quot;15.0.0&quot;',
+    &quot;upgrade-insecure-requests&quot;: &quot;1&quot;,
+    &quot;user-agent&quot;: &quot;Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36 Edg/112.0.1722.46&quot;,
+    &quot;x-edge-shopping-flag&quot;: &quot;1&quot;,
+    &quot;x-forwarded-for&quot;: _FORWARDED_IP,
+}
+
+
+def _format(msg: dict) -&gt; str:
+    return json.dumps(msg, ensure_ascii=False) + _DELIMITER
+
+
+async def _create_conversation(
+        proxy: str | None = _PROXY,
+        cookies: list[dict] | None = None,
+):
+    formatted_cookies = {}
+    if cookies:
+        for cookie in cookies:
+            formatted_cookies[cookie[&quot;name&quot;]] = cookie[&quot;value&quot;]
+    async with aiohttp.ClientSession(
+            cookies=formatted_cookies,
+            headers=_HEADERS_INIT_CONVER,
+    ) as session:
+        response = await session.get(
+            url=&quot;https://www.bing.com/turing/conversation/create&quot;,
+            proxy=proxy,
+        )
+    if response.status != 200:
+        text = await response.text()
+        raise Exception(f&quot;Authentication failed {text}&quot;)
+    try:
+        conversation = await response.json()
+    except:
+        text = await response.text()
+        raise Exception(text)
+    if conversation[&quot;result&quot;][&quot;value&quot;] == &quot;UnauthorizedRequest&quot;:
+        raise Exception(conversation[&quot;result&quot;][&quot;message&quot;])
+    return conversation
+
+
+async def ask_stream(prompt: str, context: str, proxy=_PROXY, cookies=None, image_url=None):
+    timeout = aiohttp.ClientTimeout(total=900)
+    async with aiohttp.ClientSession(timeout=timeout) as session:
+        conversation = await _create_conversation(proxy=proxy, cookies=cookies)
+        conversation_id = conversation[&quot;conversationId&quot;]
+        client_id = conversation[&quot;clientId&quot;]
+        conversation_signature = conversation[&quot;conversationSignature&quot;]
+
+        async with session.ws_connect(
+                'wss://sydney.bing.com/sydney/ChatHub',
+                autoping=False,
+                headers=_HEADERS,
+                proxy=proxy
+        ) as wss:
+            await wss.send_str(_format({'protocol': 'json', 'version': 1}))
+            await wss.receive(timeout=900)
+            await wss.send_str(_format({&quot;type&quot;: 6}))
+
+            struct = {
+                'arguments': [
+                    {
+                        'tone': &quot;Creative&quot;,
+                        'optionsSets': _CREATIVE_OPTION_SETS,
+                        'source': 'cib',
+                        'allowedMessageTypes': _ALLOWED_MESSAGE_TYPES,
+                        'sliceIds': _SLICE_IDS,
+                        'traceId': os.urandom(16).hex(),
+                        'isStartOfSession': True,
+                        'message': _CHINA | {
+                            &quot;imageUrl&quot;: image_url,
+                            'author': 'user',
+                            'text': prompt,
+                            'messageType': random.choice(['Chat', 'SearchQuery'])
+                        },
+                        'conversationSignature': conversation_signature,
+                        'participant': {
+                            'id': client_id
+                        },
+                        'conversationId': conversation_id,
+                        'previousMessages': [
+                            {
+                                &quot;author&quot;: &quot;user&quot;,
+                                &quot;description&quot;: context,
+                                &quot;contextType&quot;: &quot;WebPage&quot;,
+                                &quot;messageType&quot;: &quot;Context&quot;,
+                            },
+                        ]
+                    }
+                ],
+                'invocationId': '0',
+                'target': 'chat',
+                'type': 4
+            }
+
+            await wss.send_str(_format(struct))
+
+            retry_count = 5
+            while True:
+                if wss.closed:
+                    break
+                msg = await wss.receive(timeout=900)
+
+                if not msg.data:
+                    retry_count -= 1
+                    if retry_count == 0:
+                        raise Exception(&quot;No response from server&quot;)
+                    continue
+
+                if isinstance(msg.data, str):
+                    objects = msg.data.split(_DELIMITER)
+                else:
+                    continue
+
+                for obj in objects:
+                    if int(time()) % 6 == 0:
+                        await wss.send_str(_format({&quot;type&quot;: 6}))
+                    if not obj:
+                        continue
+                    response = json.loads(obj)
+                    if response[&quot;type&quot;] == 2:
+                        if response[&quot;item&quot;][&quot;result&quot;].get(&quot;error&quot;):
+                            raise Exception(
+                                f&quot;{response['item']['result']['value']}: {response['item']['result']['message']}&quot;)
+                    yield response
+                    if response[&quot;type&quot;] == 2:
+                        break
+
+</code></pre></p>
+                
+            </div>
+    <div class="comment" id="t1_jq8npj8">
+        <p class="userinfo">
+            <a class="toggle_hide_button" href="javascript:void(0)" onclick="toggle_collapse(this.parentElement.parentElement)">[-]</a>
+            <a href="https://old.reddit.com/u/NoMouseLeftBehind">NoMouseLeftBehind</a><span class="flair" style="background-color: #94e044; color: #1c1c1c;">图片小编</span>
+            | <span class="score">1 points</span>
+            | <a class="timestamp" href="https://old.reddit.com/r/Youmo/comments/14nqbvf/今天_bing_chat_大量开放识图功能附自己写的客户端库/jq8npj8/">Jul 01 2023 17:10:16</a>
+        </p>
+        <div class="collapsible">
+            <p>谢谢，我看一下。不过 SydneyQT 用的 EdgeGPT 是把原版的反向代理删掉了的。</p>
+    <div class="comment" id="t1_jq8uprn">
+        <p class="userinfo">
+            <a class="toggle_hide_button" href="javascript:void(0)" onclick="toggle_collapse(this.parentElement.parentElement)">[-]</a>
+            <a href="https://old.reddit.com/u/iRealityPro">iRealityPro</a><span class="flair" style="background-color: #73d3b0; color: #1c1c1c;">Lv.3：复读傻狗</span>
+            | <span class="score">2 points</span>
+            | <a class="timestamp" href="https://old.reddit.com/r/Youmo/comments/14nqbvf/今天_bing_chat_大量开放识图功能附自己写的客户端库/jq8uprn/">Jul 01 2023 18:48:42</a>
+        </p>
+        <div class="collapsible">
+            <p>安全问题指最新版的 EdgeGPT 的 WebSocket 连接没有通过代理，SydneyQt 的没问题。Option Sets 里有的参数是识图必须要的，否则识图完全不对，有的是加上能提高识图准确性的，我把官网请求参数全部写进去了。</p>
+    <div class="comment" id="t1_jq8uv87">
+        <p class="userinfo">
+            <a class="toggle_hide_button" href="javascript:void(0)" onclick="toggle_collapse(this.parentElement.parentElement)">[-]</a>
+            <a href="https://old.reddit.com/u/NoMouseLeftBehind">NoMouseLeftBehind</a><span class="flair" style="background-color: #94e044; color: #1c1c1c;">图片小编</span>
+            | <span class="score">1 points</span>
+            | <a class="timestamp" href="https://old.reddit.com/r/Youmo/comments/14nqbvf/今天_bing_chat_大量开放识图功能附自己写的客户端库/jq8uv87/">Jul 01 2023 18:50:44</a>
+        </p>
+        <div class="collapsible">
+            <p>好的，多谢</p></div></div></div></div></div></div>
+    <div class="comment" id="t1_jq8oln4">
+        <p class="userinfo">
+            <a class="toggle_hide_button" href="javascript:void(0)" onclick="toggle_collapse(this.parentElement.parentElement)">[-]</a>
+            <a href="https://old.reddit.com/u/Wild1Boar">Wild1Boar</a><span class="flair" style="background-color: #ff8a0d; color: #1c1c1c;">🐗</span>
+            | <span class="score">1 points</span>
+            | <a class="timestamp" href="https://old.reddit.com/r/Youmo/comments/14nqbvf/今天_bing_chat_大量开放识图功能附自己写的客户端库/jq8oln4/">Jul 01 2023 17:23:07</a>
+        </p>
+        <div class="collapsible">
+            <p>Bot現在也會看圖了嗎</p></div></div>
+    <div class="comment" id="t1_jq8podp">
+        <p class="userinfo">
+            <a class="toggle_hide_button" href="javascript:void(0)" onclick="toggle_collapse(this.parentElement.parentElement)">[-]</a>
+            <a href="https://old.reddit.com/u/Suitable-Bet-8015">Suitable-Bet-8015</a><span class="flair" style="background-color: #7eafff; color: #1c1c1c;">Lv.6：自卑鼠人</span>
+            | <span class="score">2 points</span>
+            | <a class="timestamp" href="https://old.reddit.com/r/Youmo/comments/14nqbvf/今天_bing_chat_大量开放识图功能附自己写的客户端库/jq8podp/">Jul 01 2023 17:38:50</a>
+        </p>
+        <div class="collapsible">
+            <p>你是东百虹夏吗</p></div></div>
+    <div class="comment" id="t1_jq96cq9">
+        <p class="userinfo">
+            <a class="toggle_hide_button" href="javascript:void(0)" onclick="toggle_collapse(this.parentElement.parentElement)">[-]</a>
+            <a href="https://old.reddit.com/u/closer233">closer233</a><span class="flair" style="background-color: #73d3b0; color: #1c1c1c;">Lv.1：翻墙穷蛆</span>
+            | <span class="score">2 points</span>
+            | <a class="timestamp" href="https://old.reddit.com/r/Youmo/comments/14nqbvf/今天_bing_chat_大量开放识图功能附自己写的客户端库/jq96cq9/">Jul 01 2023 20:56:10</a>
+        </p>
+        <div class="collapsible">
+            <p>默友不会真全是小留吧，这么全能？</p></div></div>
+    <div class="comment" id="t1_jqc7ca6">
+        <p class="userinfo">
+            <a class="toggle_hide_button" href="javascript:void(0)" onclick="toggle_collapse(this.parentElement.parentElement)">[-]</a>
+            <a href="https://old.reddit.com/u/Better_Swan_7515">Better_Swan_7515</a><span class="flair" style="background-color: #73d3b0; color: #1c1c1c;">Lv.1：翻墙穷蛆</span>
+            | <span class="score">2 points</span>
+            | <a class="timestamp" href="https://old.reddit.com/r/Youmo/comments/14nqbvf/今天_bing_chat_大量开放识图功能附自己写的客户端库/jqc7ca6/">Jul 02 2023 11:03:58</a>
+        </p>
+        <div class="collapsible">
+            <p>咋用啊 能不能简单讲一下</p>
+    <div class="comment" id="t1_jqdb8n0">
+        <p class="userinfo">
+            <a class="toggle_hide_button" href="javascript:void(0)" onclick="toggle_collapse(this.parentElement.parentElement)">[-]</a>
+            <a href="https://old.reddit.com/u/iRealityPro">iRealityPro</a><span class="flair" style="background-color: #73d3b0; color: #1c1c1c;">Lv.3：复读傻狗</span>
+            | <span class="score">1 points</span>
+            | <a class="timestamp" href="https://old.reddit.com/r/Youmo/comments/14nqbvf/今天_bing_chat_大量开放识图功能附自己写的客户端库/jqdb8n0/">Jul 02 2023 19:25:11</a>
+        </p>
+        <div class="collapsible">
+            <p>把这段代码发给 GPT-4 让她讲解</p></div></div></div></div>
+    </body>
+    <script>
+        function toggle_collapse(comment_div) {{
+            var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+            var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+            if (collapsible.classList.contains("hidden")) {{
+                collapsible.classList.remove("hidden");
+                button.innerText = "[-]";
+            }} else {{
+                collapsible.classList.add("hidden");
+                button.innerText = "[+]";
+            }}
+        }}
+    </script>
+</html>

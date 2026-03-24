@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>【教程】如何通过 AI cover 让包包翻唱任意一首歌</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <style>
+            .crosspost {
+                border: 1px solid #888;
+                margin-top: 10px;
+                padding: 10px;
+                background-color: #f6f7f8;
+            }
+            .crosspost-header {
+                font-size: 12px;
+                color: #555;
+                margin-bottom: 6px;
+            }
+            .crosspost-content {
+                padding-left: 5px;
+            }
+            .submission, .comment { padding-left: 20px; padding-right: 4px; font-family: verdana, arial, helvetica, sans-serif; }
+            .comment { margin-top: 4px; margin-bottom: 4px; border: 1px solid black; }
+            .submission { border: 2px solid blue; padding-bottom: 10px; }
+            .hidden { display: none; }
+            .userinfo { font-size: 12px; color: #555; }
+            .flair {
+                padding: 2px 6px; border-radius: 20px; font-size: 10px; font-weight: bold;
+                margin-left: 5px; display: inline-block; vertical-align: middle; line-height: 1.2;
+            }
+        </style>
+    </head>
+    <body>
+        <a href="../Youmo.html#t3_15xekqa" class="back-link">← Back to Index</a>
+            <div class="submission" id="t3_15xekqa">
+                <p class="userinfo">
+                    <a href="https://old.reddit.com/u/Combine_Basla1234">Combine_Basla1234</a><span class="flair" style="background-color: #ff8a0d; color: #1c1c1c;">Lv.10：炒作高手</span>
+                    | <span class="score">1 points</span>
+                    | <a class="timestamp" href="https://old.reddit.com/r/Youmo/comments/15xekqa/教程如何通过_ai_cover_让包包翻唱任意一首歌/">Aug 22 2023 01:45:09</a>
+                </p>
+                <strong>【教程】如何通过 AI cover 让包包翻唱任意一首歌</strong>
+                <p><h1>Requirements</h1>
+<ol>
+<li>一个谷歌账号</li>
+<li>一首你想让包包翻唱的歌曲的音频文件，或 Youtube 链接</li>
+</ol>
+<h1>Steps</h1>
+<p>从 Colab 打开 AICoverGen 的 Notebook</p>
+<p><a href="https://colab.research.google.com/github/SociallyIneptWeeb/AICoverGen/blob/main/AICoverGen_colab.ipynb">Open In Colab</a></p>
+<p>收起“AICoverGen WebUI”下的 4 个子单元</p>
+<p><a href="https://preview.redd.it/us24py0pvhjb1.png?width=1033&amp;format=png&amp;auto=webp&amp;s=ec44647d02f4c528621281506c3eafc5f799db13">点击箭头收起</a></p>
+<p>执行所有代码块，阅读警告并继续</p>
+<p><a href="https://preview.redd.it/4d19kqr2whjb1.png?width=1093&amp;format=png&amp;auto=webp&amp;s=b842871233e0bed14321099076fdd50c48b58dd6">点击执行</a></p>
+<p>展开子单元</p>
+<p><a href="https://preview.redd.it/9g0yjx57xhjb1.png?width=323&amp;format=png&amp;auto=webp&amp;s=2634f622deea1933e79113a1c96b0d90f6f50e42">再次点击展开</a></p>
+<p>耐心等待所有单元的命令的依次执行，当最后一个单元 Run WebUI 启动完成时，执行不会中断，而是会输出以下类似文字，点击 Running on Pubilc URL 后面的链接进入创建好的 Gradio WebUI</p>
+<p>&#x200B;</p>
+<p><a href="https://preview.redd.it/zr1tv14xxhjb1.png?width=1057&amp;format=png&amp;auto=webp&amp;s=2408a7cf3fda6286ac1ab73fddcca4124bebb271">点击该链接</a></p>
+<p>点击 Download model 选项卡，将包包的 RVC 模型的下载链接复制进 Download link to model ，在 Name your model 中随便给模型取个名字，然后点击 Download 下载，包包的 RVC 模型的 HuggingFace 下载链接如下：</p>
+<p><a href="https://huggingface.co/QuickWick/Music-AI-Voices/resolve/main/Xi%20Jingpin%20(Chinese%20President)%20(RVC)%20700%20Epoch/Xi%20Jingpin%20(Chinese%20President)%20(RVC)%20700%20Epoch.zip"><code>https://huggingface.co/QuickWick/Music-AI-Voices/resolve/main/Xi%20Jingpin%20(Chinese%20President)%20(RVC)%20700%20Epoch/Xi%20Jingpin%20(Chinese%20President)%20(RVC)%20700%20Epoch.zip</code></a></p>
+<p><a href="https://preview.redd.it/h4y40yhxyhjb1.png?width=1570&amp;format=png&amp;auto=webp&amp;s=ffbe846cfbe2e554dd26ad8cf38c2477d089e069">下载包包的 RVC 模型</a></p>
+<p>&#x200B;</p>
+<p><a href="https://preview.redd.it/wm0z2f1nzhjb1.png?width=1090&amp;format=png&amp;auto=webp&amp;s=370c051acc243b348318f8fadab900345f6100ee">下载完成</a></p>
+<p>下载完成后切回 Generate 选项卡，点击 Refresh models 刷新模型列表，即可选择刚才下载的模型</p>
+<p>&#x200B;</p>
+<p><a href="https://preview.redd.it/1sgph9ezzhjb1.png?width=517&amp;format=png&amp;auto=webp&amp;s=2682c19fe2d8e694fb89f350f89af8f626882cf6">选择歌手模型</a></p>
+<p>在 Song input 单元中上传原曲，可以直接粘贴原曲的 Youtube URL 或点击 Upload file instead 从本地上传音频文件，如果是从本地上传需点击 Upload 等待文件上传完成才可继续下一步</p>
+<p>&#x200B;</p>
+<p><a href="https://preview.redd.it/g4s4k7hh0ijb1.png?width=489&amp;format=png&amp;auto=webp&amp;s=646e95b95999d3b16492ff45ed8a07224cf1df06">方法一：粘贴 Youtube 链接</a></p>
+<p>&#x200B;</p>
+<p><a href="https://preview.redd.it/cn9q6xip0ijb1.png?width=496&amp;format=png&amp;auto=webp&amp;s=cd0da66f51299490e6efd83f833a487ca6a38106">方法二：上传本地音频</a></p>
+<p>可选：调整各类参数，包包的声音很低沉，直接让他模仿各种音调偏高的歌曲感觉不像他的声音，建议将 Pitch Change 设置为 -12 （将输出的人声降一个八度），其余选项可以不动，也可以酌情调整</p>
+<p>&#x200B;</p>
+<p><a href="https://preview.redd.it/q37golkz1ijb1.png?width=492&amp;format=png&amp;auto=webp&amp;s=a7c0332e8ed0ee588697dc4de10eb98692f41a15">调整音高</a></p>
+<p>点击 Generate 开始录制包包的尽情演唱，并耐心等待</p>
+<p><a href="https://preview.redd.it/xnnof1mx1ijb1.png?width=1507&amp;format=png&amp;auto=webp&amp;s=35728b97a82bc2fbbb341735c7ef20975db85813">点击生成</a></p>
+<p>最后在生成按钮的右边，AI cover 单元中就会输出包包翻唱的歌曲，可以在线播放也可以下载到本地</p>
+<p>&#x200B;</p>
+<p>成品展示：<a href="https://voca.ro/1j3pc1sjKWfH">包包翻唱 Coldplay - Viva la Vida</a></p></p>
+                
+            </div>
+    <div class="comment" id="t1_jx5t1bs">
+        <p class="userinfo">
+            <a class="toggle_hide_button" href="javascript:void(0)" onclick="toggle_collapse(this.parentElement.parentElement)">[-]</a>
+            <a href="https://old.reddit.com/u/Combine_Basla1234">Combine_Basla1234</a><span class="flair" style="background-color: #ff8a0d; color: #1c1c1c;">Lv.10：炒作高手</span>
+            | <span class="score">1 points</span>
+            | <a class="timestamp" href="https://old.reddit.com/r/Youmo/comments/15xekqa/教程如何通过_ai_cover_让包包翻唱任意一首歌/jx5t1bs/">Aug 22 2023 01:53:43</a>
+        </p>
+        <div class="collapsible">
+            <p>欢迎加入 <a href="https://discord.gg/aihub">discord</a> 探索更多，比如训练更多语音模型或更逼真的包包模型、欣赏大家的作品、尝试在本地运行 RVC 和 UVR 等</p>
+<p>&#x200B;</p>
+<h3>RVC AI COVER GUIDE:</h3>
+<p><a href="https://colab.research.google.com/corgiredirector?site=https%3A%2F%2Fdocs.google.com%2Fdocument%2Fd%2F13_l1bd1Osgz7qlAZn-zhklCbHpVRk6bYOuAuB78qmsE%2Fedit%3Fusp%3Dsharing">https://docs.google.com/document/d/13_l1bd1Osgz7qlAZn-zhklCbHpVRk6bYOuAuB78qmsE/edit?usp=sharing</a></p>
+<h3>RVC VOICE TRAINING GUIDE:</h3>
+<p><a href="https://colab.research.google.com/corgiredirector?site=https%3A%2F%2Fdocs.google.com%2Fdocument%2Fd%2F13ebnzmeEBc6uzYCMt-QVFQk-whVrK4zw8k7_Lw3Bv_A%2Fedit%3Fusp%3Dsharing">https://docs.google.com/document/d/13ebnzmeEBc6uzYCMt-QVFQk-whVrK4zw8k7_Lw3Bv_A/edit?usp=sharing</a></p></div></div>
+    <div class="comment" id="t1_jx5u6us">
+        <p class="userinfo">
+            <a class="toggle_hide_button" href="javascript:void(0)" onclick="toggle_collapse(this.parentElement.parentElement)">[-]</a>
+            <a href="https://old.reddit.com/u/Top_Power_4752">Top_Power_4752</a><span class="flair" style="background-color: #fac539; color: #1c1c1c;">Lv.7：冲浪选手</span>
+            | <span class="score">1 points</span>
+            | <a class="timestamp" href="https://old.reddit.com/r/Youmo/comments/15xekqa/教程如何通过_ai_cover_让包包翻唱任意一首歌/jx5u6us/">Aug 22 2023 02:00:39</a>
+        </p>
+        <div class="collapsible">
+            <p>看上去不错，有空试试。🫀-1、🫁-1</p>
+    <div class="comment" id="t1_jx5uql2">
+        <p class="userinfo">
+            <a class="toggle_hide_button" href="javascript:void(0)" onclick="toggle_collapse(this.parentElement.parentElement)">[-]</a>
+            <a href="https://old.reddit.com/u/Combine_Basla1234">Combine_Basla1234</a><span class="flair" style="background-color: #ff8a0d; color: #1c1c1c;">Lv.10：炒作高手</span>
+            | <span class="score">1 points</span>
+            | <a class="timestamp" href="https://old.reddit.com/r/Youmo/comments/15xekqa/教程如何通过_ai_cover_让包包翻唱任意一首歌/jx5uql2/">Aug 22 2023 02:04:01</a>
+        </p>
+        <div class="collapsible">
+            <p>说给晶哥的话：我不是为了辱包，纯粹是为了个人刑赏玉音演唱，望晶摇</p></div></div></div></div>
+    <div class="comment" id="t1_jx5uf6j">
+        <p class="userinfo">
+            <a class="toggle_hide_button" href="javascript:void(0)" onclick="toggle_collapse(this.parentElement.parentElement)">[-]</a>
+            <a href="https://old.reddit.com/u/Combine_Basla1234">Combine_Basla1234</a><span class="flair" style="background-color: #ff8a0d; color: #1c1c1c;">Lv.10：炒作高手</span>
+            | <span class="score">1 points</span>
+            | <a class="timestamp" href="https://old.reddit.com/r/Youmo/comments/15xekqa/教程如何通过_ai_cover_让包包翻唱任意一首歌/jx5uf6j/">Aug 22 2023 02:02:04</a>
+        </p>
+        <div class="collapsible">
+            <p>Another way:</p>
+<p><a href="https://huggingface.co/spaces/WitchHuntTV/XiJinPing-Singer_sovits4">https://huggingface.co/spaces/WitchHuntTV/XiJinPing-Singer_sovits4</a></p>
+<p>需要自行分离 Acapella 和 Instrumental，而且不自行部署的化，只能转换一个小于 90s 的 demo</p>
+<p>so-vits-svc 的语言模型和 rvc 的不通用</p></div></div>
+    <div class="comment" id="t1_jx5x7rp">
+        <p class="userinfo">
+            <a class="toggle_hide_button" href="javascript:void(0)" onclick="toggle_collapse(this.parentElement.parentElement)">[-]</a>
+            <a href="https://old.reddit.com/u/NotoYakumo">NotoYakumo</a><span class="flair" style="background-color: #7eafff; color: #1c1c1c;">Lv.6：自卑鼠人</span>
+            | <span class="score">1 points</span>
+            | <a class="timestamp" href="https://old.reddit.com/r/Youmo/comments/15xekqa/教程如何通过_ai_cover_让包包翻唱任意一首歌/jx5x7rp/">Aug 22 2023 02:19:01</a>
+        </p>
+        <div class="collapsible">
+            <p>什么赛博刘克清</p></div></div>
+    <div class="comment" id="t1_jx6ocku">
+        <p class="userinfo">
+            <a class="toggle_hide_button" href="javascript:void(0)" onclick="toggle_collapse(this.parentElement.parentElement)">[-]</a>
+            <a href="https://old.reddit.com/u/Responsible-Tap6906">Responsible-Tap6906</a><span class="flair" style="background-color: #7eafff; color: #1c1c1c;">Lv.6：自卑鼠人</span>
+            | <span class="score">1 points</span>
+            | <a class="timestamp" href="https://old.reddit.com/r/Youmo/comments/15xekqa/教程如何通过_ai_cover_让包包翻唱任意一首歌/jx6ocku/">Aug 22 2023 05:02:48</a>
+        </p>
+        <div class="collapsible">
+            <p>huggingface是不是已经被gfw墙了？</p>
+    <div class="comment" id="t1_jx6p4z7">
+        <p class="userinfo">
+            <a class="toggle_hide_button" href="javascript:void(0)" onclick="toggle_collapse(this.parentElement.parentElement)">[-]</a>
+            <a href="https://old.reddit.com/u/Combine_Basla1234">Combine_Basla1234</a><span class="flair" style="background-color: #ff8a0d; color: #1c1c1c;">Lv.10：炒作高手</span>
+            | <span class="score">1 points</span>
+            | <a class="timestamp" href="https://old.reddit.com/r/Youmo/comments/15xekqa/教程如何通过_ai_cover_让包包翻唱任意一首歌/jx6p4z7/">Aug 22 2023 05:07:40</a>
+        </p>
+        <div class="collapsible">
+            <p><a href="https://blocky.greatfire.org/detail/546339/https%3A%2F%2Fhuggingface.co">https://blocky.greatfire.org/detail/546339/https%3A%2F%2Fhuggingface.co</a></p>
+<p>应该是吧</p></div></div></div></div>
+    <div class="comment" id="t1_jx71i0r">
+        <p class="userinfo">
+            <a class="toggle_hide_button" href="javascript:void(0)" onclick="toggle_collapse(this.parentElement.parentElement)">[-]</a>
+            <a href="https://old.reddit.com/u/WittyRepublic3152">WittyRepublic3152</a><span class="flair" style="background-color: #7eafff; color: #1c1c1c;">Lv.4：烂梗大王</span>
+            | <span class="score">1 points</span>
+            | <a class="timestamp" href="https://old.reddit.com/r/Youmo/comments/15xekqa/教程如何通过_ai_cover_让包包翻唱任意一首歌/jx71i0r/">Aug 22 2023 06:28:20</a>
+        </p>
+        <div class="collapsible">
+            <p>还是早期原声鬼畜好，比如早期的小反旗作品。自从改成了电子音没那味儿了，就几乎不看了。</p>
+    <div class="comment" id="t1_jx73mfe">
+        <p class="userinfo">
+            <a class="toggle_hide_button" href="javascript:void(0)" onclick="toggle_collapse(this.parentElement.parentElement)">[-]</a>
+            <a href="https://old.reddit.com/u/Combine_Basla1234">Combine_Basla1234</a><span class="flair" style="background-color: #ff8a0d; color: #1c1c1c;">Lv.10：炒作高手</span>
+            | <span class="score">1 points</span>
+            | <a class="timestamp" href="https://old.reddit.com/r/Youmo/comments/15xekqa/教程如何通过_ai_cover_让包包翻唱任意一首歌/jx73mfe/">Aug 22 2023 06:43:14</a>
+        </p>
+        <div class="collapsible">
+            <p>早期的鬼畜作品都是一个音一个音调出来的，鬼畜一首歌和编一首曲工程差不多了。我估计现在的辱透社、小反旗等大V级别的精甚级作品还是有用到人工调音。</p>
+<p>现在的 AI cover 就是实现了平民化，谁都可以做了，可以量产了。我就是发现这玩意挺简单，然后效果还行（一开始不动参数的时候不太行，试着调了音高发现整挺好了），我才写了个教程发上来的。</p></div></div></div></div>
+    <div class="comment" id="t1_jx7nov8">
+        <p class="userinfo">
+            <a class="toggle_hide_button" href="javascript:void(0)" onclick="toggle_collapse(this.parentElement.parentElement)">[-]</a>
+            <a href="https://old.reddit.com/u/QingFeng8964">QingFeng8964</a><span class="flair" style="background-color: #ff8a0d; color: #1c1c1c;">Lv.10：炒作高手</span>
+            | <span class="score">1 points</span>
+            | <a class="timestamp" href="https://old.reddit.com/r/Youmo/comments/15xekqa/教程如何通过_ai_cover_让包包翻唱任意一首歌/jx7nov8/">Aug 22 2023 09:05:29</a>
+        </p>
+        <div class="collapsible">
+            <p>好贴，先收藏了。</p></div></div>
+    </body>
+    <script>
+        function toggle_collapse(comment_div) {{
+            var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+            var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+            if (collapsible.classList.contains("hidden")) {{
+                collapsible.classList.remove("hidden");
+                button.innerText = "[-]";
+            }} else {{
+                collapsible.classList.add("hidden");
+                button.innerText = "[+]";
+            }}
+        }}
+    </script>
+</html>
