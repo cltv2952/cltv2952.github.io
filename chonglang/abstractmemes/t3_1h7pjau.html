@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>冲浪小本本儿(二)---- http-https-ECH 最广泛、最真实、最管用的互联网隐私保护[1]--- 简单说两句http；查看http报文；HTTP的TCP握手;OSI模型下的HTTP</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <style>
+            .crosspost {
+                border: 1px solid #888;
+                margin-top: 10px;
+                padding: 10px;
+                background-color: #f6f7f8;
+            }
+            .crosspost-header {
+                font-size: 12px;
+                color: #555;
+                margin-bottom: 6px;
+            }
+            .crosspost-content {
+                padding-left: 5px;
+            }
+            .submission, .comment { padding-left: 20px; padding-right: 4px; font-family: verdana, arial, helvetica, sans-serif; }
+            .comment { margin-top: 4px; margin-bottom: 4px; border: 1px solid black; }
+            .submission { border: 2px solid blue; padding-bottom: 10px; }
+            .hidden { display: none; }
+            .userinfo { font-size: 12px; color: #555; }
+            .flair {
+                padding: 2px 6px; border-radius: 20px; font-size: 10px; font-weight: bold;
+                margin-left: 5px; display: inline-block; vertical-align: middle; line-height: 1.2;
+            }
+        </style>
+    </head>
+    <body>
+        <a href="../abstractmemes.html#t3_1h7pjau" class="back-link">← Back to Index</a>
+            <div class="submission" id="t3_1h7pjau">
+                <p class="userinfo">
+                    <a href="https://old.reddit.com/u/xijupai">xijupai</a>
+                    | <span class="score">2 points</span>
+                    | <a class="timestamp" href="https://old.reddit.com/r/abstractmemes/comments/1h7pjau/冲浪小本本儿二_httphttpsech_最广泛最真实最管用的互联网隐私保护1/">Dec 06 2024 09:21:10</a>
+                </p>
+                <strong>冲浪小本本儿(二)---- http-https-ECH 最广泛、最真实、最管用的互联网隐私保护[1]--- 简单说两句http；查看http报文；HTTP的TCP握手;OSI模型下的HTTP</strong>
+                <p><p>Mozilla 文档 https://developer.mozilla.org/zh-CN/docs/Web/HTTP 对 HTTP 协议进行了系统性讲解，但细节仍不够。</p>
+<p>编程随想曾经写过一整个系列:扫盲 HTTPS 和 SSL/TLS 协议[0]</p>
+<p>https://program-think.blogspot.com/2014/11/https-ssl-tls-0.html</p>
+<p>来详细讲解https的设计、加密算法，而握手、对HTTPS攻击还没填完坑，新的后量子加密、ech就出来了</p>
+<p>HTTP/TCP/ IP 的内容繁杂，现有中文资料相当详实，限于篇幅，本文只通过几个实操示例，浅入浅出介绍相关内容，并为编程随想未填的坑提供一些补充。</p>
+<p>HTTP是什么</p>
+<p>“超文本传输协议（HTTP）是一个用于传输超媒体文档（例如 HTML）的应用层协议。它是为 Web 浏览器与 Web 服务器之间的通信而设计的，但也可以用于其他目的。”</p>
+<p>那么HTML是什么</p>
+<p>“HTML（超文本标记语言——HyperText Markup Language）是构成 Web 世界的一砖一瓦。它定义了网页内容的含义和结构。”</p>
+<p>我们在linux/win/android上新建一个txt记事本，命名为index.txt，打开输入</p>
+<html>
+
+<head>
+
+</head>
+
+<body>
+
+⣿⣿⣿⣿⣿⠟⠋⠄⠄⠄⠄⠄⠄⠄⢁⠈⢻⢿⣿⣿⣿⣿⣿⣿⣿<br/>
+
+⣿⣿⣿⣿⣿⠃⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠈⡀⠭⢿⣿⣿⣿⣿<br/>
+
+⣿⣿⣿⣿⡟⠄⢀⣾⣿⣿⣿⣷⣶⣿⣷⣶⣶⡆⠄⠄⠄⣿⣿⣿⣿<br/>
+
+⣿⣿⣿⣿⡇⢀⣼⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣧⠄⠄⢸⣿⣿⣿⣿<br/>
+
+⣿⣿⣿⣿⣇⣼⣿⣿⠿⠶⠙⣿⡟⠡⣴⣿⣽⣿⣧⠄⢸⣿⣿⣿⣿<br/>
+
+⣿⣿⣿⣿⣿⣾⣿⣿⣟⣭⣾⣿⣷⣶⣶⣴⣶⣿⣿⢄⣿⣿⣿⣿⣿<br/>
+
+⣿⣿⣿⣿⣿⣿⣿⣿⡟⣩⣿⣿⣿⡏⢻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿<br/>
+
+⣿⣿⣿⣿⣿⣿⣹⡋⠘⠷⣦⣀⣠⡶⠁⠈⠁⠄⣿⣿⣿⣿⣿⣿⣿<br/>
+
+⣿⣿⣿⣿⣿⣿⣍⠃⣴⣶⡔⠒⠄⣠⢀⠄⠄⠄⡨⣿⣿⣿⣿⣿⣿<br/>
+
+⣿⣿⣿⣿⣿⣿⣿⣦⡘⠿⣷⣿⠿⠟⠃⠄⠄⣠⡇⠈⠻⣿⣿⣿⣿<br/>
+
+⣿⣿⣿⣿⡿⠟⠋⢁⣷⣠⠄⠄⠄⠄⣀⣠⣾⡟⠄⠄⠄⠄⠉⠙⠻<br/>
+
+⡿⠟⠋⠁⠄⠄⠄⢸⣿⣿⡯⢓⣴⣾⣿⣿⡟⠄⠄⠄⠄⠄⠄⠄⠄<br/>
+
+⠄⠄⠄⠄⠄⠄⠄⣿⡟⣷⠄⠹⣿⣿⣿⡿⠁⠄⠄⠄⠄⠄⠄⠄⠄<br/>
+
+</body>
+
+</html>
+
+<p>将文件后缀从 .txt 更改为 .html，然后在浏览器中打开 index.html，您将看到一个结构最简单的 HTML 网页。</p>
+<p>如果只是为了个人欣赏，本地运行即可。然而，若要在不同设备之间传输此 HTML 文件，则需要将其封装成数据帧。在这一过程中，应用层所使用的协议就是 HTTP 协议。HTTP 协议负责将数据从客户端（如浏览器）传输到服务器，并确保数据能够正确到达目标设备。</p>
+<p>为了更好的观察http协议是如何将html封装成http报文，我们自建一个web服务器来观察浏览器和服务器之间的通信，浏览器和服务器暂时先在放在同一台机器上</p>
+<p>下载nginx服务器 https://nginx.org/en/download.html，版本自选</p>
+<p>将之前创建的 index.html 文件复制到 Nginx 安装目录下的 html 文件夹中，替换掉默认的 index.html 文件。</p>
+<p>嗯鸡克斯(nginx)   启动！</p>
+<ol>
+<li>通过浏览器查看http报文</li>
+</ol>
+<p>在浏览器输入  http://127.0.0.1:80 </p>
+<p>会发现大头没出来，乱码出来了，这不重要，可以直接跳过这段看下面的，不过俺依然给出解决办法，先关闭nginx运行：任务管理器里找到两个nginx.exe进程并结束任务；在nginx\conf 里找到nginx.conf配置文件，在listen同级位置后面加入charset utf-8; 来让nginx告诉浏览器以utf-8编码来读取这份html文件</p>
+<p>server {</p>
+<p>listen 80;</p>
+<p>...</p>
+<p>charset utf-8;</p>
+<p>...</p>
+<p>}</p>
+<p>重新启动nginx，大头出来了</p>
+<p>按 F12 打开开发者工具，切换到“网络”（Network）标签，点击名称为 <a href="http://127.0.0.1">127.0.0.1</a> 的请求，您可以在 Headers 部分查看 HTTP 请求头（Request Header）和响应头（Response Header）。虽然这些信息提供了各字段的内容，但我们无法看到 HTTP 报文的原始内容，这对于深入理解 HTTP 协议并不十分有帮助。</p>
+<p>为了解决这个问题，我们引入第二个工具——curl</p>
+<ol>
+<li>通过curl查看http报文</li>
+</ol>
+<p>打开cmd输入 curl  -v   http://127.0.0.1:80  </p>
+<p>请注意，如果不使用 -v 选项，您将无法看到 HTTP 报文的原始内容。因此，使用 -v 是查看 HTTP 报文的关键步骤。通过这种方式，您可以更深入地理解 HTTP 协议的工作原理。</p>
+<p>curl -v http://127.0.0.1:80</p>
+<p>*   Trying 127.0.0.1:80...</p>
+<p>* Connected to 127.0.0.1 (127.0.0.1) port 80</p>
+<p>&gt; GET / HTTP/1.1</p>
+<p>&gt; Host: 127.0.0.1</p>
+<p>&gt; User-Agent: curl/8.7.1</p>
+<p>&gt; Accept: */*</p>
+<p>&gt;</p>
+<p>&lt; HTTP/1.1 200 OK</p>
+<p>&lt; Server: nginx/1.27.2</p>
+<p>&lt; Date: xxx, xx xxx xxxx xx:xx:xx GMT</p>
+<p>&lt; Content-Type: text/html; charset=utf-8</p>
+<p>&lt; Content-Length: 1115</p>
+<p>&lt; Last-Modified: xxx, xx xxx xxxx xx:xx:xx GMT</p>
+<p>&lt; Connection: keep-alive</p>
+<p>&lt; ETag: "XXXXXXX-xxx"</p>
+<p>&lt; Accept-Ranges: bytes</p>
+<p>&lt;</p>
+<html>
+
+<head>
+
+</head>
+
+<body>
+
+⣿⣿⣿⣿⣿⠟⠋⠄⠄⠄⠄⠄⠄⠄⢁⠈⢻⢿⣿⣿⣿⣿⣿⣿⣿<br/>
+
+⣿⣿⣿⣿⣿⠃⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠈⡀⠭⢿⣿⣿⣿⣿<br/>
+
+⣿⣿⣿⣿⡟⠄⢀⣾⣿⣿⣿⣷⣶⣿⣷⣶⣶⡆⠄⠄⠄⣿⣿⣿⣿<br/>
+
+⣿⣿⣿⣿⡇⢀⣼⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣧⠄⠄⢸⣿⣿⣿⣿<br/>
+
+⣿⣿⣿⣿⣇⣼⣿⣿⠿⠶⠙⣿⡟⠡⣴⣿⣽⣿⣧⠄⢸⣿⣿⣿⣿<br/>
+
+⣿⣿⣿⣿⣿⣾⣿⣿⣟⣭⣾⣿⣷⣶⣶⣴⣶⣿⣿⢄⣿⣿⣿⣿⣿<br/>
+
+⣿⣿⣿⣿⣿⣿⣿⣿⡟⣩⣿⣿⣿⡏⢻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿<br/>
+
+⣿⣿⣿⣿⣿⣿⣹⡋⠘⠷⣦⣀⣠⡶⠁⠈⠁⠄⣿⣿⣿⣿⣿⣿⣿<br/>
+
+⣿⣿⣿⣿⣿⣿⣍⠃⣴⣶⡔⠒⠄⣠⢀⠄⠄⠄⡨⣿⣿⣿⣿⣿⣿<br/>
+
+⣿⣿⣿⣿⣿⣿⣿⣦⡘⠿⣷⣿⠿⠟⠃⠄⠄⣠⡇⠈⠻⣿⣿⣿⣿<br/>
+
+⣿⣿⣿⣿⡿⠟⠋⢁⣷⣠⠄⠄⠄⠄⣀⣠⣾⡟⠄⠄⠄⠄⠉⠙⠻<br/>
+
+⡿⠟⠋⠁⠄⠄⠄⢸⣿⣿⡯⢓⣴⣾⣿⣿⡟⠄⠄⠄⠄⠄⠄⠄⠄<br/>
+
+⠄⠄⠄⠄⠄⠄⠄⣿⡟⣷⠄⠹⣿⣿⣿⡿⠁⠄⠄⠄⠄⠄⠄⠄⠄<br/>
+
+</body>
+
+</html>
+<p>* Request completely sent off</p>
+<p>* Connection #0 to host 127.0.0.1 left intact</p>
+<p>第一部分http报文 客户端向nginx发起request请求</p>
+<p>GET / HTTP/1.1   GET方法 / 路径  HTTP/1.1协议版本</p>
+<p>Host: 127.0.0.1    请求的域名或者ip、端口，端口这里没有写出来因为http默认是80，如果是异形端口举个例子会这么写Host: www.xuexi.cn:8964</p>
+<p>User-Agent: curl/8.7.1   "通过User-Agent字段，网站服务器会知道访问者是通过什么工具来请求的，如果是爬虫请求，无情拒绝；如果是用户浏览器，准许放行"</p>
+<p>Accept: */*</p>
+<p>&gt;</p>
+<p>第二部分http报文 服务器nginx发回response响应</p>
+<p>HTTP/1.1 200 OK    HTTP/1.1协议版本 200状态码 OK状态信息</p>
+<p>Server: nginx/1.27.2   nginx/1.27.2服务器为nginx，服务器版本1.27.2</p>
+<p>Date: xxx, xx xxx xxxx xx:xx:xx GMT   时间我做隐私修改 GMT显示的格林威治时间</p>
+<p>Content-Type: text/html; charset=utf-8  告诉浏览器是HTML格式文件；告诉浏览器以utf-8编码格式读取文件</p>
+<p>Content-Length: 1115    <html>...</html> 内容长度1115字节</p>
+<p>Last-Modified: xxx, xx xxx xxxx xx:xx:xx GMT</p>
+<p>Connection: keep-alive  支持HTTP连接的持久性</p>
+<p>ETag: "XXXXXXX-xxx"   标识资源的特定版本</p>
+<p>Accept-Ranges: bytes 可以按照字节范围来发送资源的一部分</p>
+<p>&lt;</p>
+<html>      就是我们要传输的html的内容了
+
+... 
+
+</html>
+
+<p>现在回过头来看浏览器的 F12 开发者工具中整理好的字段，您会发现理解这些字段变得更加容易。由于篇幅，本文对 HTTP 字段的讲解相对粗浅，建议读者自行深入了解各字段的具体作用。</p>
+<p>上述通过 HTTP 协议传输的 HTML 内容是我们真正需要保护的隐私信息。然而，HTTP 协议本身并不提供加密，经过 HTTP 协议封装后的整个 HTTP 报文是以明文形式传输的。</p>
+<p>浏览器和 curl 能够看到 HTTP 报文的原因在于它们作为应用层程序直接访问应用层数据，但它们无法看到下层（如传输层和网络层）的协议头部数据。下层协议传输时是能够看到上层数据的，无论这些数据是加密的还是明文的。</p>
+<p>为了更清楚地说明这两点，我们再次引入一个工具wireshark 下载地址https://www.wireshark.org/#downloadLink 来观察数据在网络中的传输过程。 </p>
+<ol>
+<li>通过wireshark查看http报文</li>
+</ol>
+<p>为了更好地模拟真实网络环境并观察 HTTP 报文，引入以下三个改变：</p>
+<p>192.168.136.130  bu.huan.jian</p>
+<p>服务器 nginx 192.168.136.130:8080 ------  客户端 chrome系  192.168.136.1  </p>
+<ol>
+<li>开启虚拟机</li>
+</ol>
+<p>将服务器和客户端分开在两台机器上，这样可以更真实地模拟网络环境，抓包表现也会更加直观。</p>
+<p>2.自定义域名指定服务器 IP</p>
+<p>在客户端修改 hosts 文件，将自定义域名 bu.huan.jian 解析到服务器的 IP 地址 192.168.136.130</p>
+<p>windows 在 C:\Windows\System32\drivers\etc    192.168.136.130  bu.huan.jian</p>
+<p>linux在  vim /etc/hosts </p>
+<p>这样，客户端在访问 bu.huan.jian 时会自动解析到 192.168.136.130</p>
+<p>3.修改nginx端口到8080</p>
+<p>nginx/conf 的nginx.conf</p>
+<p>server{</p>
+<p>listen       8080;</p>
+<p>...</p>
+<p>}</p>
+<p>这样做的好处有两个方面：</p>
+<p>在抓包时，过滤 HTTP 报文会更容易，因为使用了非标准端口，减少了其他数据包的干扰。</p>
+<p>这也会体现在 HTTP 报文的 Host 字段中，便于观察</p>
+<p>在wireshark中选择对应的网卡，输入过滤规则 tcp.port==8080 开始捕获源or目的地端口8080的数据包</p>
+<p>在浏览器中输入 http://bu.huan.jian:8080，F5刷新页面，F5刷新页面，关掉浏览器</p>
+<p>tcp握手流程</p>
+<p>https://preview.redd.it/5xx3t9ckq45e1.jpg?width=1314&amp;format=pjpg&amp;auto=webp&amp;s=1324c98e98ef6c7deace91a837f3fb112390f47f</p>
+<p>序号 chrome192.168.136.1   nginx192.168.136.130</p>
+<p>5                         第一次握手---&gt;</p>
+<p>6                        &lt;---第二次握手</p>
+<p>7                         第三次握手---&gt;</p>
+<p>8        开始传数据 客户端发起request---&gt;</p>
+<p>9           &lt;---服务器返回response</p>
+<p>10     开启keep-alive，tcp长连接，保活---&gt;</p>
+<p>11     刷新页面，复用tcp连接，发起request---&gt;</p>
+<p>12         &lt;---服务器返回response</p>
+<p>13             tcp长连接，保活---&gt;</p>
+<p>14-16                刷新页面，略</p>
+<p>17                  第一次挥手---&gt;</p>
+<p>18                  &lt;---第二次挥手</p>
+<p>19                   第三次挥手---&gt;</p>
+<p>20                  &lt;---第四次挥手</p>
+<p>http的长连接</p>
+<p>“HTTP 对 TCP 连接的使用，分为两种方式：俗称“短连接”和“长连接”“ https://program-think.blogspot.com/2014/11/https-ssl-tls-1.html#:\~:text=3.%20HTTP%20%E5%8D%8F%E8%AE%AE%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8%20TCP%20%E8%BF%9E%E6%8E%A5%EF%BC%9F</p>
+<p>这点体现在http报文Connection: keep-alive （在下面数据包解析可以看到，或者打开浏览器F12-网络查看）和 序号13  tcp长连接，保活 </p>
+<p>http的短连接</p>
+<p>在nginx中注释掉长连接等待时间</p>
+<p>#    keepalive_timeout  65;</p>
+<p>取消注释等待时间为0，启用短链接</p>
+<p>keepalive_timeout  0;</p>
+<p>重启nginx</p>
+<p>在浏览器中输入 http://bu.huan.jian:8080，F5刷新页面，F5刷新页面，关掉浏览器</p>
+<p>https://preview.redd.it/wym06lcnq45e1.jpg?width=1323&amp;format=pjpg&amp;auto=webp&amp;s=3732a0f30a94e5f6bc3abe89bb7e6c7688ed438b</p>
+<p>序号 chrome192.168.136.1   nginx192.168.136.130</p>
+<p>4                         第一次握手---&gt;</p>
+<p>5                        &lt;---第二次握手</p>
+<p>6                         第三次握手---&gt;</p>
+<p>7        开始传数据 客户端发起request---&gt;</p>
+<p>8           &lt;---服务器返回response</p>
+<p>9      &lt;---服务器传完数据主动发起第一次挥手</p>
+<p>10                  第二次挥手---&gt;</p>
+<p>11                   第三次挥手---&gt;</p>
+<p>12                  &lt;---第四次挥手</p>
+<p>15-23              刷新页面</p>
+<p>26-34              刷新页面</p>
+<p>短连接传完数据，服务器就主动关闭连接了</p>
+<p>这时候我们去浏览器F12-网络，查看响应标头会发现 Connection: close </p>
+<p>还有一种长连接设定时间65秒到了，客户端主动关闭连接就不展示了</p>
+<p>回到本文的主题隐私。查看服务器响应http数据包，那是一点都藏不住了</p>
+<p>https://preview.redd.it/1i0qcaiqq45e1.jpg?width=1327&amp;format=pjpg&amp;auto=webp&amp;s=22baaeaefeced0962923198d26564002439da175</p>
+<p>其实在wireshark中已经可以逐协议层查看十六进制原始数据及其含义，为了方便解析原始的十六进制数据，将右下角的十六进制原始数据复制出来 as a Hex Stream ，并粘贴入https://hpd.gasmi.net/  这个网站可以帮助用户解析、理解数据包</p>
+<p>00 50 56 C0 00 08 00 0C 29 74 89 15 08 00 45 00 05 81 3D 9F 40 00 80 06 26 03 C0 A8 88 82 C0 A8 88 01 1F 90 24 A1 B5 0E E4 13 1F 1F 6F 18 50 18 20 14 2D DD 00 00 48 54 54 50 2F 31 2E 31 20 32 30 30 20 4F 4B 0D 0A 53 65 72 76 65 72 3A 20 6E 67 69 6E 78 2F 31 2E 32 37 2E 32 0D 0A 44 61 74 65 3A 20 46 72 69 2C 20 30 31 20 4A 61 6E 20 32 30 31 33 20 30 30 3A 30 30 3A 30 30 20 47 4D 54 0D 0A 43 6F 6E 74 65 6E 74 2D 54 79 70 65 3A 20 74 65 78 74 2F 68 74 6D 6C 3B 20 63 68 61 72 73 65 74 3D 75 74 66 2D 38 0D 0A 43 6F 6E 74 65 6E 74 2D 4C 65 6E 67 74 68 3A 20 31 31 31 35 0D 0A 4C 61 73 74 2D 4D 6F 64 69 66 69 65 64 3A 20 46 72 69 2C 20 30 31 20 4A 61 6E 20 32 30 31 33 20 30 30 3A 31 39 3A 34 30 20 47 4D 54 0D 0A 43 6F 6E 6E 65 63 74 69 6F 6E 3A 20 6B 65 65 70 2D 61 6C 69 76 65 0D 0A 45 54 61 67 3A 20 22 36 37 32 34 31 65 39 63 2D 34 35 62 22 0D 0A 41 63 63 65 70 74 2D 52 61 6E 67 65 73 3A 20 62 79 74 65 73 0D 0A 0D 0A 3C 68 74 6D 6C 3E 0D 0A 3C 68 65 61 64 3E 0D 0A 3C 2F 68 65 61 64 3E 0D 0A 3C 62 6F 64 79 3E 0D 0A E2 A3 BF E2 A3 BF E2 A3 BF E2 A3 BF E2 A3 BF E2 A0 9F E2 A0 8B E2 A0 84 E2 A0 84 E2 A0 84 E2 A0 84 E2 A0 84 E2 A0 84 E2 A0 84 E2 A2 81 E2 A0 88 E2 A2 BB E2 A2 BF E2 A3 BF E2 A3 BF E2 A3 BF E2 A3 BF E2 A3 BF E2 A3 BF E2 A3 BF 3C 62 72 2F 3E 0D 0A E2 A3 BF E2 A3 BF E2 A3 BF E2 A3 BF E2 A3 BF E2 A0 83 E2 A0 84 E2 A0 84 E2 A0 84 E2 A0 84 E2 A0 84 E2 A0 84 E2 A0 84 E2 A0 84 E2 A0 84 E2 A0 84 E2 A0 84 E2 A0 88 E2 A1 80 E2 A0 AD E2 A2 BF E2 A3 BF E2 A3 BF E2 A3 BF E2 A3 BF 3C 62 72 2F 3E 0D 0A E2 A3 BF E2 A3 BF E2 A3 BF E2 A3 BF E2 A1 9F E2 A0 84 E2 A2 80 E2 A3 BE E2 A3 BF E2 A3 BF E2 A3 BF E2 A3 B7 E2 A3 B6 E2 A3 BF E2 A3 B7 E2 A3 B6 E2 A3 B6 E2 A1 86 E2 A0 84 E2 A0 84 E2 A0 84 E2 A3 BF E2 A3 BF E2 A3 BF E2 A3 BF 3C 62 72 2F 3E 0D 0A E2 A3 BF E2 A3 BF E2 A3 BF E2 A3 BF E2 A1 87 E2 A2 80 E2 A3 BC E2 A3 BF E2 A3 BF E2 A3 BF E2 A3 BF E2 A3 BF E2 A3 BF E2 A3 BF E2 A3 BF E2 A3 BF E2 A3 BF E2 A3 A7 E2 A0 84 E2 A0 84 E2 A2 B8 E2 A3 BF E2 A3 BF E2 A3 BF E2 A3 BF 3C 62 72 2F 3E 0D 0A E2 A3 BF E2 A3 BF E2 A3 BF E2 A3 BF E2 A3 87 E2 A3 BC E2 A3 BF E2 A3 BF E2 A0 BF E2 A0 B6 E2 A0 99 E2 A3 BF E2 A1 9F E2 A0 A1 E2 A3 B4 E2 A3 BF E2 A3 BD E2 A3 BF E2 A3 A7 E2 A0 84 E2 A2 B8 E2 A3 BF E2 A3 BF E2 A3 BF E2 A3 BF 3C 62 72 2F 3E 0D 0A E2 A3 BF E2 A3 BF E2 A3 BF E2 A3 BF E2 A3 BF E2 A3 BE E2 A3 BF E2 A3 BF E2 A3 9F E2 A3 AD E2 A3 BE E2 A3 BF E2 A3 B7 E2 A3 B6 E2 A3 B6 E2 A3 B4 E2 A3 B6 E2 A3 BF E2 A3 BF E2 A2 84 E2 A3 BF E2 A3 BF E2 A3 BF E2 A3 BF E2 A3 BF 3C 62 72 2F 3E 0D 0A E2 A3 BF E2 A3 BF E2 A3 BF E2 A3 BF E2 A3 BF E2 A3 BF E2 A3 BF E2 A3 BF E2 A1 9F E2 A3 A9 E2 A3 BF E2 A3 BF E2 A3 BF E2 A1 8F E2 A2 BB E2 A3 BF E2 A3 BF E2 A3 BF E2 A3 BF E2 A3 BF E2 A3 BF E2 A3 BF E2 A3 BF E2 A3 BF E2 A3 BF 3C 62 72 2F 3E 0D 0A E2 A3 BF E2 A3 BF E2 A3 BF E2 A3 BF E2 A3 BF E2 A3 BF E2 A3 B9 E2 A1 8B E2 A0 98 E2 A0 B7 E2 A3 A6 E2 A3 80 E2 A3 A0 E2 A1 B6 E2 A0 81 E2 A0 88 E2 A0 81 E2 A0 84 E2 A3 BF E2 A3 BF E2 A3 BF E2 A3 BF E2 A3 BF E2 A3 BF E2 A3 BF 3C 62 72 2F 3E 0D 0A E2 A3 BF E2 A3 BF E2 A3 BF E2 A3 BF E2 A3 BF E2 A3 BF E2 A3 8D E2 A0 83 E2 A3 B4 E2 A3 B6 E2 A1 94 E2 A0 92 E2 A0 84 E2 A3 A0 E2 A2 80 E2 A0 84 E2 A0 84 E2 A0 84 E2 A1 A8 E2 A3 BF E2 A3 BF E2 A3 BF E2 A3 BF E2 A3 BF E2 A3 BF 3C 62 72 2F 3E 0D 0A E2 A3 BF E2 A3 BF E2 A3 BF E2 A3 BF E2 A3 BF E2 A3 BF E2 A3 BF E2 A3 A6 E2 A1 98 E2 A0 BF E2 A3 B7 E2 A3 BF E2 A0 BF E2 A0 9F E2 A0 83 E2 A0 84 E2 A0 84 E2 A3 A0 E2 A1 87 E2 A0 88 E2 A0 BB E2 A3 BF E2 A3 BF E2 A3 BF E2 A3 BF 3C 62 72 2F 3E 0D 0A E2 A3 BF E2 A3 BF E2 A3 BF E2 A3 BF E2 A1 BF E2 A0 9F E2 A0 8B E2 A2 81 E2 A3 B7 E2 A3 A0 E2 A0 84 E2 A0 84 E2 A0 84 E2 A0 84 E2 A3 80 E2 A3 A0 E2 A3 BE E2 A1 9F E2 A0 84 E2 A0 84 E2 A0 84 E2 A0 84 E2 A0 89 E2 A0 99 E2 A0 BB 3C 62 72 2F 3E 0D 0A E2 A1 BF E2 A0 9F E2 A0 8B E2 A0 81 E2 A0 84 E2 A0 84 E2 A0 84 E2 A2 B8 E2 A3 BF E2 A3 BF E2 A1 AF E2 A2 93 E2 A3 B4 E2 A3 BE E2 A3 BF E2 A3 BF E2 A1 9F E2 A0 84 E2 A0 84 E2 A0 84 E2 A0 84 E2 A0 84 E2 A0 84 E2 A0 84 E2 A0 84 3C 62 72 2F 3E 0D 0A E2 A0 84 E2 A0 84 E2 A0 84 E2 A0 84 E2 A0 84 E2 A0 84 E2 A0 84 E2 A3 BF E2 A1 9F E2 A3 B7 E2 A0 84 E2 A0 B9 E2 A3 BF E2 A3 BF E2 A3 BF E2 A1 BF E2 A0 81 E2 A0 84 E2 A0 84 E2 A0 84 E2 A0 84 E2 A0 84 E2 A0 84 E2 A0 84 E2 A0 84 3C 62 72 2F 3E 0D 0A 3C 2F 62 6F 64 79 3E 0D 0A 3C 2F 68 74 6D 6C 3E</p>
+<p>OSI 模型协议分层:</p>
+<p>数据链路层 00 50 56 C0 00 08   00 0C 29 74 89 15   08 00</p>
+<p>网络层      45 00 05 81 3D 9F 40 00 80 06 26 03 C0 A8 88 82 C0 A8 88 01</p>
+<p>传输层     1F 90 24 A1 B5 0E E4 13 1F 1F 6F 18 50 18 20 14 2D DD 00 00</p>
+<p>数据层(HTTP报文)  48 54 54 50 2F 31 2E 31 20 32 30 30 20 4F 4B 0D 0A 53 65 72 76 65 72 3A 20 6E 67 69 6E 78 2F 31 2E 32 37 2E 32 0D 0A 44 61 74 65 3A 20 46 72 69 2C 20 30 31 20 4A 61 6E 20 32 30 31 33 20 30 30 3A 30 30 3A 30 30 20 47 4D 54 0D 0A 43 6F 6E 74 65 6E 74 2D 54 79 70 65 3A 20 74 65 78 74 2F 68 74 6D 6C 3B 20 63 68 61 72 73 65 74 3D 75 74 66 2D 38 0D 0A 43 6F 6E 74 65 6E 74 2D 4C 65 6E 67 74 68 3A 20 31 31 31 35 0D 0A 4C 61 73 74 2D 4D 6F 64 69 66 69 65 64 3A 20 46 72 69 2C 20 30 31 20 4A 61 6E 20 32 30 31 33 20 30 30 3A 31 39 3A 34 30 20 47 4D 54 0D 0A 43 6F 6E 6E 65 63 74 69 6F 6E 3A 20 6B 65 65 70 2D 61 6C 69 76 65 0D 0A 45 54 61 67 3A 20 22 36 37 32 34 31 65 39 63 2D 34 35 62 22 0D 0A 41 63 63 65 70 74 2D 52 61 6E 67 65 73 3A 20 62 79 74 65 73 0D 0A 0D 0A 3C 68 74 6D 6C 3E 0D 0A 3C 68 65 61 64 3E 0D 0A 3C 2F 68 65 61 64 3E 0D 0A 3C 62 6F 64 79 3E 0D 0A E2 A3 BF E2 A3 BF E2 A3 BF E2 A3 BF E2 A3 BF E2 A0 9F E2 A0 8B E2 A0 84 E2 A0 84 E2 A0 84 E2 A0 84 E2 A0 84 E2 A0 84 E2 A0 84 E2 A2 81 E2 A0 88 E2 A2 BB E2 A2 BF E2 A3 BF E2 A3 BF E2 A3 BF E2 A3 BF E2 A3 BF E2 A3 BF E2 A3 BF 3C 62 72 2F 3E 0D 0A E2 A3 BF E2 A3 BF E2 A3 BF E2 A3 BF E2 A3 BF E2 A0 83 E2 A0 84 E2 A0 84 E2 A0 84 E2 A0 84 E2 A0 84 E2 A0 84 E2 A0 84 E2 A0 84 E2 A0 84 E2 A0 84 E2 A0 84 E2 A0 88 E2 A1 80 E2 A0 AD E2 A2 BF E2 A3 BF E2 A3 BF E2 A3 BF E2 A3 BF 3C 62 72 2F 3E 0D 0A E2 A3 BF E2 A3 BF E2 A3 BF E2 A3 BF E2 A1 9F E2 A0 84 E2 A2 80 E2 A3 BE E2 A3 BF E2 A3 BF E2 A3 BF E2 A3 B7 E2 A3 B6 E2 A3 BF E2 A3 B7 E2 A3 B6 E2 A3 B6 E2 A1 86 E2 A0 84 E2 A0 84 E2 A0 84 E2 A3 BF E2 A3 BF E2 A3 BF E2 A3 BF 3C 62 72 2F 3E 0D 0A E2 A3 BF E2 A3 BF E2 A3 BF E2 A3 BF E2 A1 87 E2 A2 80 E2 A3 BC E2 A3 BF E2 A3 BF E2 A3 BF E2 A3 BF E2 A3 BF E2 A3 BF E2 A3 BF E2 A3 BF E2 A3 BF E2 A3 BF E2 A3 A7 E2 A0 84 E2 A0 84 E2 A2 B8 E2 A3 BF E2 A3 BF E2 A3 BF E2 A3 BF 3C 62 72 2F 3E 0D 0A E2 A3 BF E2 A3 BF E2 A3 BF E2 A3 BF E2 A3 87 E2 A3 BC E2 A3 BF E2 A3 BF E2 A0 BF E2 A0 B6 E2 A0 99 E2 A3 BF E2 A1 9F E2 A0 A1 E2 A3 B4 E2 A3 BF E2 A3 BD E2 A3 BF E2 A3 A7 E2 A0 84 E2 A2 B8 E2 A3 BF E2 A3 BF E2 A3 BF E2 A3 BF 3C 62 72 2F 3E 0D 0A E2 A3 BF E2 A3 BF E2 A3 BF E2 A3 BF E2 A3 BF E2 A3 BE E2 A3 BF E2 A3 BF E2 A3 9F E2 A3 AD E2 A3 BE E2 A3 BF E2 A3 B7 E2 A3 B6 E2 A3 B6 E2 A3 B4 E2 A3 B6 E2 A3 BF E2 A3 BF E2 A2 84 E2 A3 BF E2 A3 BF E2 A3 BF E2 A3 BF E2 A3 BF 3C 62 72 2F 3E 0D 0A E2 A3 BF E2 A3 BF E2 A3 BF E2 A3 BF E2 A3 BF E2 A3 BF E2 A3 BF E2 A3 BF E2 A1 9F E2 A3 A9 E2 A3 BF E2 A3 BF E2 A3 BF E2 A1 8F E2 A2 BB E2 A3 BF E2 A3 BF E2 A3 BF E2 A3 BF E2 A3 BF E2 A3 BF E2 A3 BF E2 A3 BF E2 A3 BF E2 A3 BF 3C 62 72 2F 3E 0D 0A E2 A3 BF E2 A3 BF E2 A3 BF E2 A3 BF E2 A3 BF E2 A3 BF E2 A3 B9 E2 A1 8B E2 A0 98 E2 A0 B7 E2 A3 A6 E2 A3 80 E2 A3 A0 E2 A1 B6 E2 A0 81 E2 A0 88 E2 A0 81 E2 A0 84 E2 A3 BF E2 A3 BF E2 A3 BF E2 A3 BF E2 A3 BF E2 A3 BF E2 A3 BF 3C 62 72 2F 3E 0D 0A E2 A3 BF E2 A3 BF E2 A3 BF E2 A3 BF E2 A3 BF E2 A3 BF E2 A3 8D E2 A0 83 E2 A3 B4 E2 A3 B6 E2 A1 94 E2 A0 92 E2 A0 84 E2 A3 A0 E2 A2 80 E2 A0 84 E2 A0 84 E2 A0 84 E2 A1 A8 E2 A3 BF E2 A3 BF E2 A3 BF E2 A3 BF E2 A3 BF E2 A3 BF 3C 62 72 2F 3E 0D 0A E2 A3 BF E2 A3 BF E2 A3 BF E2 A3 BF E2 A3 BF E2 A3 BF E2 A3 BF E2 A3 A6 E2 A1 98 E2 A0 BF E2 A3 B7 E2 A3 BF E2 A0 BF E2 A0 9F E2 A0 83 E2 A0 84 E2 A0 84 E2 A3 A0 E2 A1 87 E2 A0 88 E2 A0 BB E2 A3 BF E2 A3 BF E2 A3 BF E2 A3 BF 3C 62 72 2F 3E 0D 0A E2 A3 BF E2 A3 BF E2 A3 BF E2 A3 BF E2 A1 BF E2 A0 9F E2 A0 8B E2 A2 81 E2 A3 B7 E2 A3 A0 E2 A0 84 E2 A0 84 E2 A0 84 E2 A0 84 E2 A3 80 E2 A3 A0 E2 A3 BE E2 A1 9F E2 A0 84 E2 A0 84 E2 A0 84 E2 A0 84 E2 A0 89 E2 A0 99 E2 A0 BB 3C 62 72 2F 3E 0D 0A E2 A1 BF E2 A0 9F E2 A0 8B E2 A0 81 E2 A0 84 E2 A0 84 E2 A0 84 E2 A2 B8 E2 A3 BF E2 A3 BF E2 A1 AF E2 A2 93 E2 A3 B4 E2 A3 BE E2 A3 BF E2 A3 BF E2 A1 9F E2 A0 84 E2 A0 84 E2 A0 84 E2 A0 84 E2 A0 84 E2 A0 84 E2 A0 84 E2 A0 84 3C 62 72 2F 3E 0D 0A E2 A0 84 E2 A0 84 E2 A0 84 E2 A0 84 E2 A0 84 E2 A0 84 E2 A0 84 E2 A3 BF E2 A1 9F E2 A3 B7 E2 A0 84 E2 A0 B9 E2 A3 BF E2 A3 BF E2 A3 BF E2 A1 BF E2 A0 81 E2 A0 84 E2 A0 84 E2 A0 84 E2 A0 84 E2 A0 84 E2 A0 84 E2 A0 84 E2 A0 84 3C 62 72 2F 3E 0D 0A 3C 2F 62 6F 64 79 3E 0D 0A 3C 2F 68 74 6D 6C 3E</p>
+<p>解析:</p>
+<p>数据链路层  帧头frame    00:50:56:C0:00:08 目的mac地址  00:0C:29:74:89:15 源mac地址 08 00 代表数据帧内网络层是ipv4数据包</p>
+<p>IP网络层     包头 packet     45 表示该包为IPv4 ， 00 区分服务 ，05 81 代表包头+报文头+data数据加起来（05 81转10进制）1409个字节， 3d 9f 标识， 40 00  标志位和偏移量 ，80（十六进制转10进制为128） 表示生存时间TTL，单位为跳数，即128跳 ， 06 表示传输层为TCP，26 03 首部校验， C0 A8 88 82 表示源IP为192.168.136.130 ，C0 A8 88 01表示目标IP为192.168.136.1  通过十六进制转十进制 C0-&gt;192 A8-&gt;168 88-&gt;136  82-&gt;130</p>
+<p>TCP传输层   报文头segment  1F 90源端口8080，24 A1目标端口9377 ，B5 0E E4 13序列号seq 十六进制转十进制 3037651987，1F 1F 6F 18确认号ack 十六进制转十进制 522153752。50 十六进制转二进制=&gt; 0101  0000，0101 二进制转十进制=&gt;5 5*4=20 报文头长20字节。0000 拆解与后面的 18 转二进制一起构成Flags，0000 0001 1000 表示PSH,ACK。20 14 十六进制转十进制8212 表示窗口大小8212，2D DD校验和，紧急指针 00 00</p>
+<p>应用层     数据data（HTTP报文）</p>
+<p>48 54 54 50 2F 31 2E 31  十六进制转ascii （google: hex to ascii）=&gt;HTTP/1.1     20 hex to ascii=&gt;空格  32 30 30 hex to ascii=&gt;200  4F 4B=&gt; OK  0D 0A=&gt;/r /n回车</p>
+<p>到这是否眼熟起来了 HTTP/1.1 200 OK </p>
+<p>53 65 72 76 65 72 3A 20 6E 67 69 6E 78 2F 31 2E 32 37 2E 32 0D 0A =&gt;Server: nginx/1.27.2 r/n</p>
+<p>44 61 74 65 3A 20 46 72 69 2C 20 30 31 20 4E 6F 76 20 32 30 32 34 20 32 33 3A 35 34 3A 33 34 20 47 4D 54 0D 0A=&gt;Date: Fri, 01 Jan 2013 00:00:00 GMT\r\n</p>
+<p>43 6F 6E 74 65 6E 74 2D 54 79 70 65 3A 20 74 65 78 74 2F 68 74 6D 6C 3B 20 63 68 61 72 73 65 74 3D 75 74 66 2D 38 0D 0A=&gt;Content-Length: 1115\r\n</p>
+<p>4C 61 73 74 2D 4D 6F 64 69 66 69 65 64 3A 20 46 72 69 2C 20 30 31 20 4A 61 6E 20 32 30 31 33 20 30 30 3A 31 39 3A 34 30 20 47 4D 54 0D 0A=&gt;Last-Modified: Fri, 01 Jan 2013 00:19:40 GMT\r\n</p>
+<p>43 6F 6E 6E 65 63 74 69 6F 6E 3A 20 6B 65 65 70 2D 61 6C 69 76 65 0D 0A=&gt;Connection: keep-alive\r\n 长连接打开</p>
+<p>45 54 61 67 3A 20 22 36 37 32 34 31 65 39 63 2D 34 35 62 22 0D 0A=&gt;Accept-Ranges: bytes\r\n</p>
+<p>r/n 单独一个回车，从这开始传输html内容</p>
+<p>3C 68 74 6D 6C 3E 0D 0A=&gt; <html> r/n</p>
+<p>3C 68 65 61 64 3E 0D 0A=&gt; <head>/r/n</p>
+<p>3C 2F 68 65 61 64 3E 0D 0A=&gt;</head>/r/n</p>
+<p>3C 62 6F 64 79 3E 0D 0A=&gt;<body>/r/n</p>
+<p>E2 A3 BF 转utf-8=&gt;⣿  </p>
+<p>...</p>
+<p>3C 2F 62 6F 64 79 3E 0D 0A=&gt;</body>/r/n</p>
+<p>3C 2F 68 74 6D 6C 3E=&gt;</html></p>
+<p>实际上 OSI模型被倒过来的了，重新修正并标出数据包封装流程、传输路径</p>
+<p>https://preview.redd.it/90s15kdxq45e1.jpg?width=1909&amp;format=pjpg&amp;auto=webp&amp;s=323655d05996837f69126f3da9ed32ca20d30373</p>
+<p>到这里就结束了吗？</p>
+<p>再简单的看一下请求request的HTTP报文，这次剥离TCP报文头，IP包头，帧头直接看HTTP报文部分片段</p>
+<p>47 45 54 20 2F 20 48 54 54 50 2F 31 2E 31 0D 0A 48 6F 73 74 3A 20 62 75 2E 68 75 61 6E 2E 6A 69 61 6E 3A 38 30 38 30 0D 0A 43 6F 6E 6E 65 63 74 69 6F 6E 3A 20 6B 65 65 70 2D 61 6C 69 76 65 0D 0A</p>
+<p>解析：</p>
+<p>47 45 54 =&gt;GET  20=&gt;空格  2F=&gt;/ 路径   48 54 54 50 2F 31 2E 31=&gt;HTTP1.1  0D 0A=&gt;/r/n回车</p>
+<p>GET / HTTP1.1</p>
+<p>48 6F 73 74 3A 20 62 75 2E 68 75 61 6E 2E 6A 69 61 6E 3A 38 30 38 30 0D 0A=&gt;Host: bu.huan.jian:8080/r/n   浏览器里的域名与HTTP报文里的Host一致</p>
+<p>43 6F 6E 6E 65 63 74 69 6F 6E 3A 20 6B 65 65 70 2D 61 6C 69 76 65 0D 0A=&gt;Connection: keep-alive/r/n</p>
+<p>通过剥离 TCP 、 IP 等头部就可以看到 HTTP 报文的<html>内容，这意味着如果在物理层有一个嗅探设备就能看到HTTP 报文内容，这就导致GFW可以直接对数据帧拆包做明文审查，不论是对请求包里的Host进行域名匹配，还是对响应包里的html内容进行关键字过滤https://zh.wikipedia.org/wiki/%E9%98%B2%E7%81%AB%E9%95%BF%E5%9F%8E#:\~:text=%E7%9B%B8%E5%8C%B9%E9%85%8D%E7%9A%84%E3%80%82-,HTTP%E5%8D%8F%E8%AE%AE,-%E3%80%82%E9%98%B2%E7%81%AB%E9%95%BF%E5%9F%8E%E6%A3%80%E6%B5%8B</p>
+<p>那么GFW仅仅只是检测显然是不够的，它检测到了还得把tcp连接断开，这就是TCP重置攻击，TCP阻断，TCP封锁，包括sni阻断的手法都是tcp重置攻击 https://zh.wikipedia.org/wiki/%E9%98%B2%E7%81%AB%E9%95%BF%E5%9F%8E#:\~:text=8%5D%E3%80%82-,TCP%E9%87%8D%E7%BD%AE%E6%94%BB%E5%87%BB,-%5B%E7%BC%96%E8%BE%91%5D</p>
+<p>至于怎么触发、观察GFW的tcp重置攻击有机会再写吧</p>
+<p>|目的mac源mac|源IP目的IP|源PORT目的PORT|HTTP|<html>|</p>
+<p>↓</p>
+<p>|目的mac源mac|源IP目的IP|源PORT目的PORT|tls[|HTTP|<html>|]</p>
+<p>正是因为明文http报文承载的内容（大部分情况下是html）是隐私，引入了ssl/tls加密整个http报文来保护隐私</p>
+<p>[1] 冲浪小本本儿(一)   ✔</p>
+<p>[2] 冲浪小本本儿(一)(1-1) byedpi/zapret/spoofdpi     ✔</p>
+<p>[3]冲浪小本本儿(二)---- http-https-ECH 最广泛、最真实、最管用的互联网隐私保护[1]--- 简单说两句http；查看http报文；HTTP的TCP握手;OSI模型下的HTTP ✔</p>
+<p>[4] 冲浪小本本儿(二)(2-1)---- http-https-ECH 最广泛、最真实、最管用的互联网隐私保护[2]--- 简单说两句https；非常重要的自签证书；后量子加密</p>
+<p>[5] 冲浪小本本儿 (二)(2-2)----http-https-ECH 最广泛、最真实、最管用的互联网隐私保护[3]--- ECH详谈</p>
+<p>[6]冲浪小本本儿 (二)(2-3)----伊友闹得欢，rprx拉清单，小圈子大新闻始末</p>
+<p>[7]冲浪小本本儿 (三) --- 什么是desync类工具，还有哪些直连类型工具；什么是正代反代，如何完成反代；steam++这类工具是怎么完成不连接第三方服务器直连的；简易反代制作；当你直连一个网站时外部能看到什么</p>
+<p>[8]冲浪小本本儿 (三)(3-1)  什么是tun模式，为什么clash的tun模式叫tun模式，而不叫tunnel</p>
+<p>[9] 冲浪小本本儿 (四) --- 当你通过proxy翻墙时，会在日志里、服务器上留下什么，通过代理连接有哪些风险</p>
+<p>[10] 冲浪小本本儿 (五) --- 被墙的网站有哪些分级，一些简单的dns污染名单，sni阻断名单，直连有哪些风险</p>
+<p>[11] 冲浪小本本儿 (六) --- 如何对网站方隐藏自身，什么是浏览器指纹，怎么改变；分析怎么逃过宏迪追杀</p>
+<p>[12] 冲浪小本本儿 (七) --- 如何处理dns污染；低延迟但被污染的dns、高延迟但正确的dns怎么选？域名分流；doh本身被封了怎么办   ✔</p>
+<p>[13] 冲浪小本本儿 (七)(7-1)--- 测试doh/dot/doq 是否被墙方法 ；adguard自签证书让局域网内浏览器用上doh</p>
+<p>[14]冲浪小本本儿(七) (7-2) --- 旧文新更，从“DNS 在代理环境中的应用”说起；Firefox 使用自带的代理设置时， "使用 SOCKS v5 时代理 DNS 查询"开还是不开？令人尴尬的代理解析选择</p>
+<p>[15]冲浪小本本儿(七) (7-3) --- 不知道什么时候会开始写、能用得上的ODOH</p></p>
+                
+            </div>
+    </body>
+    <script>
+        function toggle_collapse(comment_div) {{
+            var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+            var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+            if (collapsible.classList.contains("hidden")) {{
+                collapsible.classList.remove("hidden");
+                button.innerText = "[-]";
+            }} else {{
+                collapsible.classList.add("hidden");
+                button.innerText = "[+]";
+            }}
+        }}
+    </script>
+</html>

@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>冲浪小本本儿(二)(2-1)---- http-https-ECH 最广泛、最真实、最管用的互联网隐私保护[2]--- 简单说两句https；非常重要的自签证书；后量子加密</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <style>
+            .crosspost {
+                border: 1px solid #888;
+                margin-top: 10px;
+                padding: 10px;
+                background-color: #f6f7f8;
+            }
+            .crosspost-header {
+                font-size: 12px;
+                color: #555;
+                margin-bottom: 6px;
+            }
+            .crosspost-content {
+                padding-left: 5px;
+            }
+            .submission, .comment { padding-left: 20px; padding-right: 4px; font-family: verdana, arial, helvetica, sans-serif; }
+            .comment { margin-top: 4px; margin-bottom: 4px; border: 1px solid black; }
+            .submission { border: 2px solid blue; padding-bottom: 10px; }
+            .hidden { display: none; }
+            .userinfo { font-size: 12px; color: #555; }
+            .flair {
+                padding: 2px 6px; border-radius: 20px; font-size: 10px; font-weight: bold;
+                margin-left: 5px; display: inline-block; vertical-align: middle; line-height: 1.2;
+            }
+        </style>
+    </head>
+    <body>
+        <a href="../abstractmemes.html#t3_1h7po4t" class="back-link">← Back to Index</a>
+            <div class="submission" id="t3_1h7po4t">
+                <p class="userinfo">
+                    <a href="https://old.reddit.com/u/xijupai">xijupai</a>
+                    | <span class="score">1 points</span>
+                    | <a class="timestamp" href="https://old.reddit.com/r/abstractmemes/comments/1h7po4t/冲浪小本本儿二21_httphttpsech_最广泛最真实最管用的互联网隐私保护2/">Dec 06 2024 09:27:59</a>
+                </p>
+                <strong>冲浪小本本儿(二)(2-1)---- http-https-ECH 最广泛、最真实、最管用的互联网隐私保护[2]--- 简单说两句https；非常重要的自签证书；后量子加密</strong>
+                <p><p>|目的mac源mac|源IP目的IP|源PORT目的PORT|HTTP|<html>|</p>
+<p>↓</p>
+<p>|目的mac源mac|源IP目的IP|源PORT目的PORT|tls[|HTTP|<html>|]</p>
+<p>在上一篇文章中，我们提到引入 TLS 加密 HTTP 报文以保护隐私。那么，TLS 是如何实现这一目标的捏？</p>
+<p>我们依然通过示例来说明。以 Chrome 浏览器为例，在地址栏输入 https://www.xuexi.cn然后打开“开发者工具”（可以按 F12），切换到“安全”页面，您会看到以下信息：</p>
+<p>Connection - Secure Connection Settings</p>
+<p>The connection to this site is encrypted and authenticated using TLS1.2, ECDHE_RSA with X25519, and AES_128_GCM</p>
+<p>连接-安全连接设置</p>
+<p>与此站点的连接已使用TLS1.2、具有X25519的ECDHE_RSA和AES_128_GCM 进行加密和身份验证</p>
+<p>在这里，X25519 的 ECDHE_RSA 算法用于非对称加密，以安全地交换对称密钥。</p>
+<p>随后，AES_128_GCM 则利用刚刚交换得到的对称密钥，对数据进行对称加密传输。</p>
+<p>tls1.2握手流程会放在后面</p>
+<p>非对称与对称加密算法及其数学原理</p>
+<p>本文一不深入密码学，二不希望理论部分拖长篇幅，三没什么好说的，等哪天吃饱了没事干再来折腾吧</p>
+<p>如果有兴趣，欢迎您参考以下链接：</p>
+<p>https://program-think.blogspot.com/2016/09/https-ssl-tls-3.html</p>
+<p>https://github.com/halfrost/Halfrost-Field/blob/master/contents/Protocol/HTTPS-asymmetric-encryption.md </p>
+<p>接下来将为冲浪小本本儿（二）的网站 bu.huan.jian 配置 SSL 证书。</p>
+<p>给网站配置ssl证书</p>
+<p>非自签证书流程：</p>
+<p>1购买域名---2 将域名托管到 DNS 服务商，并修改 DNS 记录---3 申请证书---4 修改网站服务器配置，添加证书</p>
+<p>自签证书按照同样的流程:</p>
+<p>1.自己编一个域名 例如shi.li.shan.lu  bu.huan.jian</p>
+<p>2.在客户端将域名解析到服务器 IP 地址：</p>
+<p>方法一：在系统的 hosts 文件中将域名指定到服务器 IP。  例如，在客户端的 192.168.136.1 的 hosts 文件中添加以下记录：</p>
+<p>192.168.136.130  bu.huan.jian</p>
+<p>方法二：如果您有部署 DNS 服务器，可以将域名指定到服务器 IP。以 AdGuard Home 为例，在“过滤器”中的“自定义过滤规则”里填入：</p>
+<p>||bu.huan.jian\^$dnsrewrite=NOERROR;A;192.168.136.130</p>
+<p>这条规则会重写 DNS 记录，将域名 bu.huan.jian 解析到 IPv4 地址 192.168.136.130，并返回响应代码 NOERROR。</p>
+<p>接着，您需要将系统的 DNS解析地址 修改为 DNS 服务器的 IP 地址。具体实现步骤请参考冲浪小本本儿(七)</p>
+<p>AdGuard 的 DNS 重写功能非常强大，可以重写type 65 记录、CNAME 等，功能类似于在域名托管商处修改 DNS 记录。而 Windows/Linux 的 hosts 文件只能修改域名的 IP 记录。因此，我强烈推荐使用 AdGuard Home 作为本地自建 DNS 服务器。</p>
+<p>但在这里提到的重写功能可能显得有些超出需求了，对于简单的域名到 IP 的映射，推荐使用方法一即可。</p>
+<p>通过这一步骤，我们也能发现，域名就是个大家约定俗成的东西，其实可以想怎么编就怎么编，只是无法从 IANA 申请到正式的域名，就只能自己指定解析自己玩了。 </p>
+<p>3.非常重要的自签证书</p>
+<p>在创建自签证书之前，需要安装 OpenSSL：</p>
+<p>linux  https://openssl-library.org/source/index.html</p>
+<p>win https://slproweb.com/products/Win32OpenSSL.html  </p>
+<p>为了方便管理证书，请在 Nginx 的安装目录下创建一个名为 cert 的文件夹，并在该文件夹内打开CMD，进行以下操作：</p>
+<p>3.1 创建 CA 私钥（RSA 私钥，4096 位）</p>
+<p>openssl genrsa -out ca.key 4096</p>
+<p>3.2 生成 CA 证书</p>
+<p>使用 req 证书请求和生成工具，-x509 选项用于生成自签名证书而不是证书请求，-new 表示新证书请求，-nodes 表示不加密私钥，-key 指定 CA 私钥，-sha256 使用 SHA-256 哈希算法，-days 3650 设置证书有效期为 10 年，-out 指定输出的 CA 证书文件名。</p>
+<p>openssl req -x509 -new -nodes -key ca.key -sha256 -days 3650 -out ca.crt</p>
+<p>3.3 生成服务器私钥</p>
+<p>openssl genrsa -out server.key 4096</p>
+<p>3.4 创建证书签名请求（CSR）</p>
+<p>CSR 将被 CA 用来签发最终证书</p>
+<p>openssl req -new -key server.key -out server.csr</p>
+<p>3.5 创建 OpenSSL 配置文件</p>
+<p>在 server.key 同目录下创建一个名为 openssl.cnf 的文本文件，内容如下：</p>
+<pre><code>[req]
+distinguished_name = req_distinguished_name
+req_extensions = v3_req
+[req_distinguished_name]
+countryName = Country Name (2 letter code)
+countryName_default = US
+stateOrProvinceName = State or Province Name (full name)
+stateOrProvinceName_default = MN
+localityName = Locality Name (eg, city)
+localityName_default = Minneapolis
+organizationalUnitName  = Organizational Unit Name (eg, section)
+organizationalUnitName_default  = Domain Control Validated
+commonName = Internet Widgits Ltd
+commonName_max  = 64
+
+[ v3_req ]
+# Extensions to add to a certificate request
+basicConstraints = CA:FALSE
+keyUsage = nonRepudiation, digitalSignature, keyEncipherment
+subjectAltName = @alt_names
+
+[alt_names]
+DNS.1 = bu.huan.jian
+DNS.2=shi.li.shan.lu
+IP.1 = 192.168.136.130
+</code></pre>
+<p>请根据需要修改域名，例如将 DNS.1 的值更改为您想要的域名。如果不需要为 IP地址签发证书，可以删除IP.1 相关行。</p>
+<p>使用 openssl.cnf 的好处在于，您可以为一张证书配置多个域名，例如 DNS.1 = bu.huan.jian、DNS.2 = shi.li.shan.lu、DNS.3 = zhao.qi.chi，甚至可以为 IP 地址申请证书。</p>
+<p>这个配置项可以在签发后的证书的"证书使用者可选名称"或者叫"证书主题背景的备用名称"字段查看，在一张证书上签发多个域名和子域名非常方便，我会在其他章节中再次提到并使用。</p>
+<p>3.6 使用 CA 签发服务器证书</p>
+<p>openssl x509 -req -days 3650 -in server.csr  -out server.crt -extensions v3_req -extfile openssl.cnf  -CA ca.crt -CAkey ca.key</p>
+<p>完成</p>
+<p>此时，在cert文件夹下有6个文件</p>
+<ol>
+<li>
+<p>ca.key ca私钥不能泄露</p>
+</li>
+<li>
+<p>ca.crt ca证书需要分发出去</p>
+</li>
+<li>
+<p>server.key 网站私钥不能泄露</p>
+</li>
+<li>
+<p>server.crt 网站证书配置在nginx里，会随着访问网站时传送给客户端，无需分发</p>
+</li>
+<li>
+<p>server.csr 可以删掉</p>
+</li>
+<li>
+<p>openssl.cnf 可以删掉</p>
+</li>
+</ol>
+<p>在实际使用中，服务器端应保留 server.key 和 server.crt，而客户端只需导入 ca.crt 以信任该 CA 颁发的证书即可。</p>
+<ol>
+<li>(非必要，但推荐)ca.crt 需要分发出去，导入到要访问由此CA证书签发的server.crt的网站的机器的(受信任的根证书颁发机构)系统证书里</li>
+</ol>
+<p>简单来说，哪台机器访问网站就装到哪台机器</p>
+<p>步骤（以 Windows 为例）：</p>
+<p>双击 ca.crt 文件。</p>
+<p>选择“当前用户”。</p>
+<p>选择“将所有的证书都放入下列存储”，然后点击“浏览”。</p>
+<p>选择“受信任的根证书颁发机构”，点击“下一步”，然后确认。</p>
+<p>在“控制面板”中，进入“Internet 选项” -&gt; “证书” -&gt; “受信任的根证书颁发机构”，可以查看刚才导入的 CA 证书。在“颁发给”字段中，将显示生成 CA 证书时的 Common Name（例如，服务器的 FQDN 或您的名称）。如果以后不再需要，可以在此处删除。</p>
+<p>对于 Firefox，由于其使用独立的证书管理系统，需要单独导入 CA 证书。您也可以勾选“允许 Firefox 自动信任您安装的第三方根证书”，以直接信任系统证书。</p>
+<p>为什么随意导入CA证书是危险的</p>
+<p>在将其他人的 CA 证书导入“受信任的根证书颁发机构”之前，请务必确认该 CA 证书是可信的。</p>
+<p>”既然老流氓 CNNIC 已经成为合法的 CA，那它就能堂而皇之地制作并发布 CA 证书。然后捏，再配合 GFW 进行【域名污染】。那 GFW 就可以轻松搞定任何网站的 HTTPS 加密传输。“</p>
+<p>https://program-think.blogspot.com/2010/02/introduce-digital-certificate-and-ca.html</p>
+<p>“哈萨克斯坦以网络安全演习为由要求访问外网的首都居民安装其数字证书，一旦安装，哈萨克斯坦政府将可以发动中间人攻击拦截用户的所有 HTTPS 流量。”</p>
+<p>https://program-think.blogspot.com/2021/01/Security-News.html#:\~:text=%E5%93%88%E8%90%A8%E5%85%8B%E6%96%AF%E5%9D%A6%E6%94%BF%E5%BA%9C%E5%AF%B9%E3%80%90%E5%85%A8%E5%9B%BD%E7%9A%84%E3%80%91HTTPS%20%E6%B5%81%E9%87%8F%E8%BF%9B%E8%A1%8C%E3%80%90%E4%B8%AD%E9%97%B4%E4%BA%BA%E6%94%BB%E5%87%BB%E3%80%91</p>
+<p>域名污染+CA植入的中间人攻击可以应用在去广告、免流、以及上述的国家级监控，中间人攻击MITM就像一把利刃，使用者的意图才决定它帮助的是罗宾汉还是契卡、反诈，俺会在别的章节展示</p>
+<ol>
+<li>修改网站服务器配置，添加证书</li>
+</ol>
+<p>继续上次的nginx服务器配置，添加</p>
+<p>server {</p>
+<p>#监听443端口   ssl证书</p>
+<p>listen       443 ssl;</p>
+<p>#指定域名      </p>
+<p>server_name  bu.huan.jian;         </p>
+<p>#用utf-8解码</p>
+<p>charset utf-8;</p>
+<p>#使用tls1.2  也可以改成tls1.3</p>
+<p>ssl_protocols TLSv1.2;    </p>
+<p>#配置证书 nginx配置位置起始于nginx/conf  </p>
+<p>#所以也可以直接把server.crt放到nginx/conf 目录下并直接引用</p>
+<p># ssl_certificate     server.crt; </p>
+<p>#但为了方便管理把证书文件都放入cert文件夹并定位引用</p>
+<p>ssl_certificate      ./cert/server.crt; </p>
+<p>ssl_certificate_key  ./cert/server.key;</p>
+<p>location / {         </p>
+<p>root   html;</p>
+<p>index  index.html index.htm;</p>
+<p>}</p>
+<p>}</p>
+<p>配置完成后，nginx 启动！</p>
+<p>浏览器访问</p>
+<p>chrome访问 https://bu.huan.jian 就能看到大头了</p>
+<p>如果没有导入 CA 证书，浏览器地址栏将显示红色的“非安全”提示，页面会显示“您的连接不是私密连接”。您可以点击“高级”选项，然后选择“继续前往 bu.huan.jian（不安全）”。这意味着，即使没有经过 CA 认证，您仍然可以访问该网站。</p>
+<p>此时，如果您导入了自签 CA 证书，再次访问时，地址栏将显示安全状态。这也是我之前提到导入 CA 证书是“非必要但推荐”的原因。</p>
+<p>使用curl 访问</p>
+<p>为了进行对比，首先我们需要删除“受信任的根证书颁发机构”中的自签 CA 证书。具体步骤如下：</p>
+<p>1.在“控制面板”中，进入“Internet 选项”。</p>
+<p>2.点击"内容"-"证书”。</p>
+<p>3.在“受信任的根证书颁发机构”中，找到刚才导入的 CA 证书。在“颁发给”字段中，您将看到生成 CA 证书时的 Common Name（例如，服务器的 FQDN 或您的名称），然后将其删除。</p>
+<p>curl -v https://bu.huan.jian</p>
+<p>* Host bu.huan.jian:443 was resolved.</p>
+<p>* IPv6: (none)</p>
+<p>* IPv4: 127.0.0.1</p>
+<p>*   Trying 127.0.0.1:443...</p>
+<p>* Connected to bu.huan.jian (127.0.0.1) port 443</p>
+<p>* schannel: disabled automatic use of client certificate</p>
+<p>* ALPN: curl offers http/1.1</p>
+<p>* schannel: SEC_E_UNTRUSTED_ROOT (0x80090325) - 证书链是由不受信任的颁发机构颁发的。</p>
+<p>* Closing connection</p>
+<p>* schannel: shutting down SSL/TLS connection with bu.huan.jian port 443</p>
+<p>curl: (60) schannel: SEC_E_UNTRUSTED_ROOT (0x80090325) - 证书链是由不受信任的颁发机构颁发的。</p>
+<p>More details here: https://curl.se/docs/sslcerts.html</p>
+<p>curl failed to verify the legitimacy of the server and therefore could not</p>
+<p>establish a secure connection to it. To learn more about this situation and</p>
+<p>how to fix it, please visit the web page mentioned above.</p>
+<p>由于 CA 证书未导入根证书，您可以使用 `-k` 或 `--insecure` 选项来允许不安全的服务器连接：</p>
+<p>curl -v https://bu.huan.jian -k</p>
+<p>这相当于浏览器中的“继续前往 bu.huan.jian（不安全）”选项</p>
+<p>此时，我们重新导入 CA 证书，再次使用 curl 访问网站：</p>
+<p>curl -v https://bu.huan.jian</p>
+<p>* Host bu.huan.jian:443 was resolved.</p>
+<p>* IPv6: (none)</p>
+<p>* IPv4: 127.0.0.1</p>
+<p>*   Trying 127.0.0.1:443...</p>
+<p>* Connected to bu.huan.jian (127.0.0.1) port 443</p>
+<p>* schannel: disabled automatic use of client certificate</p>
+<p>* ALPN: curl offers http/1.1</p>
+<p>* schannel: next InitializeSecurityContext failed: CRYPT_E_NO_REVOCATION_CHECK (0x80092012) - 吊销功能无法检查证书是否吊销。</p>
+<p>* Closing connection</p>
+<p>* schannel: shutting down SSL/TLS connection with bu.huan.jian port 443</p>
+<p>curl: (35) schannel: next InitializeSecurityContext failed: CRYPT_E_NO_REVOCATION_CHECK (0x80092012) - 吊销功能无法检查 证书是否吊销。</p>
+<p>您会发现，即使导入了 CA 证书，仍然无法访问，这是因为curl默认执行严格的证书验证，使用证书的"CRL分发点"里CRL的url地址对证书进行证书吊销检查(这个CRL的url地址通常是http，也就是OCSP查询地址)，本文自签证书根本没有包含“CRL分发点”这一字段</p>
+<p>鉴于OCSP 查询是HTTP明文的以及RTT问题，Chrome 默认关闭了 OCSP（在线证书状态协议），它有自己另一套系统来检查证书状态</p>
+<p>firefox在"设置"-“隐私与安全”-"查询 OCSP 响应服务器，以确认证书当前是否有效(Q)"，由用户自行决定是否关闭，不过我测试的时候发现不管勾选与否，都能正常访问，不像curl会提示“吊销功能无法检查证书是否吊销。”从而无法访问，不知道为什么</p>
+<p>此时，有两个解决方案：</p>
+<p>一，使用 --ssl-no-revoke 选项：该选项可以禁用证书吊销检查（Schannel）</p>
+<p>curl -v https://bu.huan.jian --ssl-no-revoke</p>
+<p>方便起见直接使用 -k 选项来替代</p>
+<p>二，完成 OCSP 检查：例如自建OCSP服务器，不做展开，推荐方法一</p>
+<p>终于我们成功访问</p>
+<p>curl -v https://bu.huan.jian -k</p>
+<p>* Host bu.huan.jian:443 was resolved.</p>
+<p>* IPv6: (none)</p>
+<p>* IPv4: 127.0.0.1</p>
+<p>*   Trying 127.0.0.1:443...</p>
+<p>* Connected to bu.huan.jian (127.0.0.1) port 443</p>
+<p>* schannel: disabled automatic use of client certificate</p>
+<p>* ALPN: curl offers http/1.1</p>
+<p>* ALPN: server accepted http/1.1</p>
+<p>* using HTTP/1.x</p>
+<p>&gt; GET / HTTP/1.1</p>
+<p>&gt; Host: bu.huan.jian</p>
+<p>&gt; User-Agent: curl/8.7.1</p>
+<p>&gt; Accept: */*</p>
+<p>&gt;</p>
+<p>&lt; HTTP/1.1 200 OK</p>
+<p>&lt; Server: nginx/1.27.2</p>
+<p>&lt; Date:</p>
+<p>&lt; Content-Type: text/html; charset=utf-8</p>
+<p>&lt; Content-Length: 1115</p>
+<p>&lt; Connection: keep-alive</p>
+<p>&lt; ETag: </p>
+<p>&lt; Accept-Ranges: bytes</p>
+<p>&lt;</p>
+<html>
+
+<head>
+
+</head>
+
+<body>
+
+⣿⣿⣿⣿⣿⠟⠋⠄⠄⠄⠄⠄⠄⠄⢁⠈⢻⢿⣿⣿⣿⣿⣿⣿⣿<br/>
+
+⣿⣿⣿⣿⣿⠃⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠈⡀⠭⢿⣿⣿⣿⣿<br/>
+
+⣿⣿⣿⣿⡟⠄⢀⣾⣿⣿⣿⣷⣶⣿⣷⣶⣶⡆⠄⠄⠄⣿⣿⣿⣿<br/>
+
+⣿⣿⣿⣿⡇⢀⣼⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣧⠄⠄⢸⣿⣿⣿⣿<br/>
+
+⣿⣿⣿⣿⣇⣼⣿⣿⠿⠶⠙⣿⡟⠡⣴⣿⣽⣿⣧⠄⢸⣿⣿⣿⣿<br/>
+
+⣿⣿⣿⣿⣿⣾⣿⣿⣟⣭⣾⣿⣷⣶⣶⣴⣶⣿⣿⢄⣿⣿⣿⣿⣿<br/>
+
+⣿⣿⣿⣿⣿⣿⣿⣿⡟⣩⣿⣿⣿⡏⢻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿<br/>
+
+⣿⣿⣿⣿⣿⣿⣹⡋⠘⠷⣦⣀⣠⡶⠁⠈⠁⠄⣿⣿⣿⣿⣿⣿⣿<br/>
+
+⣿⣿⣿⣿⣿⣿⣍⠃⣴⣶⡔⠒⠄⣠⢀⠄⠄⠄⡨⣿⣿⣿⣿⣿⣿<br/>
+
+⣿⣿⣿⣿⣿⣿⣿⣦⡘⠿⣷⣿⠿⠟⠃⠄⠄⣠⡇⠈⠻⣿⣿⣿⣿<br/>
+
+⣿⣿⣿⣿⡿⠟⠋⢁⣷⣠⠄⠄⠄⠄⣀⣠⣾⡟⠄⠄⠄⠄⠉⠙⠻<br/>
+
+⡿⠟⠋⠁⠄⠄⠄⢸⣿⣿⡯⢓⣴⣾⣿⣿⡟⠄⠄⠄⠄⠄⠄⠄⠄<br/>
+
+⠄⠄⠄⠄⠄⠄⠄⣿⡟⣷⠄⠹⣿⣿⣿⡿⠁⠄⠄⠄⠄⠄⠄⠄⠄<br/>
+
+</body>
+
+</html>
+<p>* Request completely sent off</p>
+<p>* Connection #0 to host bu.huan.jian left intact</p>
+<p>tls1.2握手抓包简单展示，挨个数据包查看并解释每个字段含义等吃饱了没事干再写</p>
+<p>如图 2-1-1</p>
+<p>序号5  clientHello-----&gt;客户端通过发送 Client Hello 消息来启动握手支持的加密套件列表，包括 ECDHE_RSA 和 AES128-GCM</p>
+<p>序号7  serverHello&lt;----服务器以 Server Hello 消息响应 选择ECDHE_RSA 和 AES128-GCM</p>
+<p>序号8  certificate&lt;---- 服务器证书</p>
+<p>serverkeyexchnage&lt;----服务器密钥交换 服务器会发送一个 Server Key Exchange 消息，其中包含：服务器的临时公钥（基于 X25519 派生）。</p>
+<p>serverhellodone&lt;---- 服务器 Hello 完成</p>
+<p>序号10 clientkeyexchange----&gt;客户端回应发送一个 Client Key Exchange 消息，其中包括：用服务器公钥加密的预主密钥，只有服务器可以解密。</p>
+<p>changecipherspec----&gt;更改密码规范</p>
+<p>encryptedhandshakemessage----&gt;客户端随后发送一条加密的握手完成消息，确认它已成功切换到新的加密设置。</p>
+<p>序号11 applicationdata---&gt; 开始传输 AES128-GCM 加密后的密文</p>
+<p>序号13 newsessionticket&lt;---会话票据</p>
+<p>changecipherspec&lt;---更改密码规范</p>
+<p>encryptedhandshakemessage&lt;----</p>
+<p>序号14  applicationdata&lt;--- 开始传输 AES128-GCM 加密后的密文</p>
+<p>回到本专题主题隐私</p>
+<p>在上一期中，我们提到，“浏览器和 curl 能够看到 HTTP 报文的原因在于它们作为应用层程序直接访问应用层数据”。接下来，我们需要通过 Wireshark 检查在 OSI 模型的下层能否看到上层的明文内容。</p>
+<p>https://preview.redd.it/bt3kh9o1s45e1.jpg?width=1392&amp;format=pjpg&amp;auto=webp&amp;s=5d4355fb59fcbbaa6b5b3f4027ad7a36623dcdf5</p>
+<p>我们将客户端向服务器发送的 applicationData 数据包复制出来：</p>
+<p>aabbccddeeff005056c0000808004500008b1776400080065122c0a88801c0a8888213e001bb30f9d1b06e3048075018100a7e3e0000170303005e0000000000000001080d00313e85beaf1ae4722593ce0369fa736baa7946c4b436da519bd3a772daf5b01bc27760ad96b19e7c0bc246e7c39784b500a4bb9ebcf50bc9b7b5fe1cddff2480b5b8ca568bed54f2b7054c2b10c851879f103b</p>
+<p>将其粘贴到 https://hpd.gasmi.net 进行分析</p>
+<p>数据链路层  AA BB CC DD EE FF 00 50 56 C0 00 08 08 00</p>
+<p>网络层        45 00 00 8B 17 76 40 00 80 06 51 22 C0 A8 88 01 C0 A8 88 82 </p>
+<p>传输层        13 E0 01 BB 30 F9 D1 B0 6E 30 48 07 50 18 10 0A 7E 3E 00 00</p>
+<p>tls        17 03 03 00 5E</p>
+<p>应用层         00 00 00 00 00 00 00 01 08 0D 00 31 3E 85 BE AF 1A E4 72 25 93 CE 03 69 FA 73 6B AA 79 46 C4 B4 36 DA 51 9B D3 A7 72 DA F5 B0 1B C2 77 60 AD 96 B1 9E 7C 0B C2 46 E7 C3 97 84 B5 00 A4 BB 9E BC F5 0B C9 B7 B5 FE 1C DD FF 24 80 B5 B8 CA 56 8B ED 54 F2 B7 05 4C 2B 10 C8 51 87 9F 10 3B</p>
+<p>下三层的内容不再赘述</p>
+<p>TLS 由于工作在应用层和传输层之间，很多地方对其在 OSI 分层中的位置存在混淆，有些说是应用层，有些说是传输层，还有些说是表示层。为了方便理解，这里单独列出 TLS 为一层：</p>
+<p>TLS: 17（内容类型：应用数据，23），03 03（TLS 版本 1.2），00 5E（加密后的 HTTP 报文长度 94 字节）</p>
+<p>应用层</p>
+<p>HTTP报文</p>
+<p>GET / HTTP/1.1</p>
+<p>Host:...</p>
+<p>...</p>
+<p>被加密后的密文</p>
+<p>00 00 00 00 00 00 00 01 08 0D 00 31 3E 85 BE AF 1A E4 72 25 93 CE 03 69 FA 73 6B AA 79 46 C4 B4 36 DA 51 9B D3 A7 72 DA F5 B0 1B C2 77 60 AD 96 B1 9E 7C 0B C2 46 E7 C3 97 84 B5 00 A4 BB 9E BC F5 0B C9 B7 B5 FE 1C DD FF 24 80 B5 B8 CA 56 8B ED 54 F2 B7 05 4C 2B 10 C8 51 87 9F 10 3B</p>
+<p>至于HTTP明文是如何通过密钥和aes-128-gcm加密算法变成密文，怎么反解回明文，等吃饱了没事干再写</p>
+<p>此时，下层无法直接看到 HTTP 报文的内容，在不考虑加密算法本身是否坚固的情况下，tls加密使数据包传输实现了隐私保护</p>
+<p>|mac|IP|PORT|tls head|tls Encrypted data|</p>
+<p>是这样吗？</p>
+<p>我们再查看 clientHello 中的 Server Name Indication (SNI) 扩展字段</p>
+<p>https://preview.redd.it/k2ertlx4s45e1.jpg?width=1401&amp;format=pjpg&amp;auto=webp&amp;s=dacecb3b86071d862f62e19dd97ab2e6cd1a8842</p>
+<p>我们明确的知道applicationData的数据包是没有sni的，但是为了简洁进行不确切地描述，tls 数据包传输的方式是这样的</p>
+<p>|mac|IP|PORT|tls head(sni:bu.huan.jian)|tls Encrypted data|</p>
+<p>浏览器里输入的域名，会出现在HTTPS密文的Host: bu.huan.jian ,也会出现在clientHello的sni里</p>
+<p>|mac|IP|PORT|tls head(sni:bu.huan.jian)|[GET / HTTP/1.1/r/nHost:bu.huan.jian...]|</p>
+<p>由于 SNI 信息以明文形式传输，GFW可以根据域名黑名单匹配这些 SNI，从而对客户端进行 TCP 重置攻击、 RST 抢答（这部分依然是有机会再写），这就是我们常说的 SNI 阻断。</p>
+<p>这种攻击手法与 DNS 抢答一样，都是利用 DPI（深度包检测）设备物理上比网站方距离客户端更近的优势，使得 DPI 设备能够更早地接收到数据包、更早地发出RST数据包。由于 TCP/IP 的机制，客户端会接收更早到达的包，而丢弃后到的包，即使后到的包是准确的。</p>
+<p>client                                  GFW               server</p>
+<p>ClientHello:google.com------&gt;--------------&gt;</p>
+<p>|&lt;-----------RST---------------|                </p>
+<p>|时间差|&lt;--------------------------------------</p>
+<p>（一个设想，如果可以丢掉GFW抢答的包，接收正确的包，能否把TCP重新连接起来呢）</p>
+<p>在国内环境下，SNI 阻断这一行为本身也十分的人治。由于无法看到公民的交流内容（ 如HTTP 报文），审查机构便根据一些线索（如 SNI）人为地定义哪些域名不可以访问。然而，这些被封禁的域名既没有公开公告，也不清楚由谁来决定，更不知道具体网站被封禁的具体理由</p>
+<p>那么有没有办法既能传递浏览器要访问的域名，又能不暴露在sni里捏？由此引出了ECH</p>
+<p>后量子加密</p>
+<p>虽然之前提到不深入密码学，但在进入 ECH 章节之前，还是有必要简单说一下后量子加密（Post-quantum cryptography）。</p>
+<ol>
+<li>后量子加密的背景</li>
+</ol>
+<p>随着量子计算技术的迅速发展，后量子加密的研究也在加速推进。2024 年，后量子加密的进展尤为显著。今年早些时候，Cloudflare 发布了一篇关于“后量子互联网状态”的文章，探讨对这一领域的未来规划，参见 https://blog.cloudflare.com/pq-2024</p>
+<p>量子计算机能够加速 Shor 算法，从而有效破解 RSA 加密算法。这一特性引发了对“先储存，后破解”攻击的担忧，因此迫切需要开发能够抵御量子计算机攻击的加密算法，即后量子加密。</p>
+<ol>
+<li>后量子密码学的方案</li>
+</ol>
+<p>后量子密码学提出了多种加密方案，包括：</p>
+<p>ML-KEM (FIPS 203)：基于模块格的密钥封装机制标准（旧称 Kyber）。</p>
+<p>ML-DSA (FIPS 204)：基于模块格的数字签名标准。</p>
+<p>SLH-DSA (FIPS 205)：无状态基于哈希的数字签名标准。</p>
+<p>FN-DSA FFT：基于 NTRU 格的数字签名标准。</p>
+<p>另外，AES-GCM 被认为是后量子安全的，这意味着混合加密方式 X25519 ML-KEM 768_with_AES_128_GCM ， ML-KEM 交换密钥，aes-gcm对称加密传输在可预见的未来仍将保持安全性。这也表明，目前的 Shadowsocks 和 Vmess 协议在密文被破解方面依然安全，被识别就是另一个话题了。</p>
+<ol>
+<li>迁移与标准化</li>
+</ol>
+<p>后量子加密的迁移需要分两次进行：第一次迁移涉及密钥协议，第二次迁移则涉及签名和证书。最近，针对证书签名进行后量子加密的标准化工作也已开始</p>
+<p>参见https://blog.cloudflare.com/another-look-at-pq-signatures </p>
+<ol>
+<li>Shor 算法与量子计算</li>
+</ol>
+<p>量子计算确实跟量子有关，但后量子加密ML-KEM 是基于格密码学的，跟量子无关</p>
+<p>关于 Shor 算法如何破解 RSA 加密算法，以及量子计算机加速 Shor 算法的具体步骤，ML-KEM算法基于的数学原理格论知识，还有技术革新中破解所需的量子位数量的下降和已拥有的量子位的上升的进展下RSA被破解的零点时间大概会在什么时候，可以参考视频: https://www.youtube.com/watch?v=-UrdExQW0cs</p>
+<p>D-wave破解RSA 大炒特炒，最近又没动静了，还是要会算1/2+1/3的数学高手来指明一下方向</p>
+<ol>
+<li>后量子证书签名的应用</li>
+</ol>
+<p>令人意外的是，sing-box 已经支持后量子证书签名，参见 https://sing-box.sagernet.org/zh/configuration/shared/tls/#pq_signature_schemes_enabled ，但该功能仅限于在生成 ech-keypair 时使用。</p>
+<ol>
+<li>后量子加密需要双端支持，浏览器和网站都要启用才行。</li>
+</ol>
+<p>对于用户而言，可以访问 https://pq.cloudflareresearch.com  来检查浏览器是否支持了后量子加密。目前，最新版 Chrome 和 Firefox 已支持 X25519 ML-KEM 768</p>
+<p>托管在Cloudflare的网站例如 medium.com  www.uber.com 及 Google 的网站（如 YouTube 和 Blogger）基本上已启用 X25519 Kyber 768 Draft 00（或X25519 ML-KEM 768） 后量子加密 与 AES_128_GCM 对称加密。</p>
+<p>可以在浏览器的 F12 "开发者工具"中的“安全”选项卡查看网站是否支持该技术</p>
+<ol>
+<li>自己构建一个支持X25519Kyber768Draft00 加密的nginx服务器，略</li>
+</ol>
+<p>https://github.com/linode/docs/blob/develop/docs/guides/security/encryption/post-quantum-encryption-nginx-ubuntu2404/index.md</p>
+<p>[1] 冲浪小本本儿(一)   ✔</p>
+<p>[2] 冲浪小本本儿(一)(1-1) byedpi/zapret/spoofdpi     ✔</p>
+<p>[3]冲浪小本本儿(二)---- http-https-ECH 最广泛、最真实、最管用的互联网隐私保护[1]--- 简单说两句http；查看http报文；HTTP的TCP握手;OSI模型下的HTTP ✔</p>
+<p>[4] 冲浪小本本儿(二)(2-1)---- http-https-ECH 最广泛、最真实、最管用的互联网隐私保护[2]--- 简单说两句https；非常重要的自签证书；后量子加密 ✔</p>
+<p>[5] 冲浪小本本儿 (二)(2-2)----http-https-ECH 最广泛、最真实、最管用的互联网隐私保护[3]--- ECH详谈 ✔</p>
+<p>[6]冲浪小本本儿 (二)(2-3)----伊友闹得欢，rprx拉清单，小圈子大新闻始末 ✔</p>
+<p>[7]冲浪小本本儿 (三) --- 什么是desync类工具，还有哪些直连类型工具；什么是正代反代，如何完成反代；steam++这类工具是怎么完成不连接第三方服务器直连的；简易反代制作；当你直连一个网站时外部能看到什么</p>
+<p>[8]冲浪小本本儿 (三)(3-1)  什么是tun模式，为什么clash的tun模式叫tun模式，而不叫tunnel</p>
+<p>[9] 冲浪小本本儿 (四) --- 当你通过proxy翻墙时，会在日志里、服务器上留下什么，通过代理连接有哪些风险</p>
+<p>[10] 冲浪小本本儿 (五) --- 被墙的网站有哪些分级，一些简单的dns污染名单，sni阻断名单，直连有哪些风险</p>
+<p>[11] 冲浪小本本儿 (六) --- 如何对网站方隐藏自身，什么是浏览器指纹，怎么改变；分析怎么逃过宏迪追杀</p>
+<p>[12] 冲浪小本本儿 (七) --- 如何处理dns污染；低延迟但被污染的dns、高延迟但正确的dns怎么选？域名分流；doh本身被封了怎么办   ✔</p>
+<p>[13] 冲浪小本本儿 (七)(7-1)--- 测试doh/dot/doq 是否被墙方法 ；adguard home自签证书让局域网内浏览器用上doh</p>
+<p>[14]冲浪小本本儿(七) (7-2) --- 旧文新更，从“DNS 在代理环境中的应用”说起；Firefox 使用自带的代理设置时， "使用 SOCKS v5 时代理 DNS 查询"开还是不开？令人尴尬的代理解析选择</p>
+<p>[15]冲浪小本本儿(七) (7-3) --- 不知道什么时候会开始写、能用得上的ODOH</p></p>
+                
+            </div>
+    <div class="comment" id="t1_m0n34lo">
+        <p class="userinfo">
+            <a class="toggle_hide_button" href="javascript:void(0)" onclick="toggle_collapse(this.parentElement.parentElement)">[-]</a>
+            <a href="https://old.reddit.com/u/Ill_Dig2643">Ill_Dig2643</a>
+            | <span class="score">1 points</span>
+            | <a class="timestamp" href="https://old.reddit.com/r/abstractmemes/comments/1h7po4t/冲浪小本本儿二21_httphttpsech_最广泛最真实最管用的互联网隐私保护2/m0n34lo/">Dec 06 2024 10:01:01</a>
+        </p>
+        <div class="collapsible">
+            <p>这写的什么鸡巴，谁让你把上课笔记发这来的</p></div></div>
+    </body>
+    <script>
+        function toggle_collapse(comment_div) {{
+            var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+            var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+            if (collapsible.classList.contains("hidden")) {{
+                collapsible.classList.remove("hidden");
+                button.innerText = "[-]";
+            }} else {{
+                collapsible.classList.add("hidden");
+                button.innerText = "[+]";
+            }}
+        }}
+    </script>
+</html>
