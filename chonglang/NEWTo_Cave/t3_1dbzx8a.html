@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Qwen 2 7B 太强了，这下 7B 本地模型都有顺滑的 Agent 能力了，难道 7B 大小模型的潜力还没有完全挖掘出来</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <style>
+            .crosspost {
+                border: 1px solid #888;
+                margin-top: 10px;
+                padding: 10px;
+                background-color: #f6f7f8;
+            }
+            .crosspost-header {
+                font-size: 12px;
+                color: #555;
+                margin-bottom: 6px;
+            }
+            .crosspost-content {
+                padding-left: 5px;
+            }
+            .submission, .comment { padding-left: 20px; padding-right: 4px; font-family: verdana, arial, helvetica, sans-serif; }
+            .comment { margin-top: 4px; margin-bottom: 4px; border: 1px solid black; }
+            .submission { border: 2px solid blue; padding-bottom: 10px; }
+            .hidden { display: none; }
+            .userinfo { font-size: 12px; color: #555; }
+            .flair {
+                padding: 2px 6px; border-radius: 20px; font-size: 10px; font-weight: bold;
+                margin-left: 5px; display: inline-block; vertical-align: middle; line-height: 1.2;
+            }
+        </style>
+    </head>
+    <body>
+        <a href="../NEWTo_Cave.html#t3_1dbzx8a" class="back-link">← Back to Index</a>
+            <div class="submission" id="t3_1dbzx8a">
+                <p class="userinfo">
+                    <a href="https://old.reddit.com/u/EvenDogWontUseReddit">EvenDogWontUseReddit</a>
+                    | <span class="score">2 points</span>
+                    | <a class="timestamp" href="https://old.reddit.com/r/NEWTo_Cave/comments/1dbzx8a/qwen_2_7b_太强了这下_7b_本地模型都有顺滑的_agent_能力了难道_7b/">Jun 10 2024 02:02:45</a>
+                </p>
+                <strong>Qwen 2 7B 太强了，这下 7B 本地模型都有顺滑的 Agent 能力了，难道 7B 大小模型的潜力还没有完全挖掘出来</strong><span class="flair" style="background-color: #0079d3; color: #ffffff;">学术交流</span>
+                <p><a href="https://www.youtube.com/watch?v=H9ZqZTqpTvk">https://www.youtube.com/watch?v=H9ZqZTqpTvk</a></p>
+                
+            </div>
+    <div class="comment" id="t1_l7uh8sq">
+        <p class="userinfo">
+            <a class="toggle_hide_button" href="javascript:void(0)" onclick="toggle_collapse(this.parentElement.parentElement)">[-]</a>
+            <a href="https://old.reddit.com/u/AutoModerator">AutoModerator</a>
+            | <span class="score">1 points</span>
+            | <a class="timestamp" href="https://old.reddit.com/r/NEWTo_Cave/comments/1dbzx8a/qwen_2_7b_太强了这下_7b_本地模型都有顺滑的_agent_能力了难道_7b/l7uh8sq/">Jun 10 2024 02:02:46</a>
+        </p>
+        <div class="collapsible">
+            <p>这下支了。我们被造底䵹囲了</p>
+<p><em>I am a bot, and this action was performed automatically. Please <a href="/message/compose/?to=/r/NEWTo_Cave">contact the moderators of this subreddit</a> if you have any questions or concerns.</em></p></div></div>
+    <div class="comment" id="t1_l7uhmke">
+        <p class="userinfo">
+            <a class="toggle_hide_button" href="javascript:void(0)" onclick="toggle_collapse(this.parentElement.parentElement)">[-]</a>
+            <a href="https://old.reddit.com/u/EvenDogWontUseReddit">EvenDogWontUseReddit</a>
+            | <span class="score">0 points</span>
+            | <a class="timestamp" href="https://old.reddit.com/r/NEWTo_Cave/comments/1dbzx8a/qwen_2_7b_太强了这下_7b_本地模型都有顺滑的_agent_能力了难道_7b/l7uhmke/">Jun 10 2024 02:05:01</a>
+        </p>
+        <div class="collapsible">
+            <p>就在前天，阿里正式发布了 Qwen 2 开源大语言模型，这次发布包括基础语言模型和指令调整语言模型，参数范围从 0.5 到 720 亿，还包括了 Mixture-of-Experts 模型。</p>
+<p>作为一个一直使用 Qwen 直到 Qwen 1.5 模型的忠实用户，我对这次的发布感到格外兴奋。因为在全球权威测评中，Qwen 2 72B 模型的性能已经超过最强开源模型的王者 Llama3 70B 模型。要知道，Llama3 距今发布可还不到两个月的时间！</p>
+<p>模型测试</p>
+<p>虽然 Qwen 2 刚刚推出，但已经有很多人对其进行了广泛的测试。这些测试主要涵盖语义理解、语言生成质量、世界知识准确性、问题回答和对话能力、安全性，以及鲁棒性和稳定性等方面。由于这些方面的测试已经很多，我此次测试的重点将更侧重于模型在代理方面的能力。我将为 Qwen 2 添加代码解释器，以评估其任务分解和代码编写能力。此外，我还会为其添加本地知识库、搜索引擎、Function Calling 和 Google 工具箱，测试模型在多种工具情境下自动选择并正确调用合适工具的能力。</p>
+<p>本次测试使用的工具包括：<br />
+Python 代码解释器 (可以执行 Python 代码和本机脚本语言)<br />
+本地知识库 (使用 PS5 用户手册文档构建的知识库)<br />
+搜索引擎 (duckduckgo)<br />
+Function Calling (包含三个函数，获取本地时间，本地位置，向 support@sony.com 发送修理单邮件)<br />
+Google 工具箱<br />
+（ 1 ）从 Google Mail 中搜索和发送邮件<br />
+（ 2 ）从 Google Drive 中搜索，上传和下载文档<br />
+（ 3 ）从 Google Calendar 中检查和添加提醒事件<br />
+（ 4 ）从 Youtube 中搜索视频<br />
+（ 5 ）从 Google Map 中搜索位置</p>
+<p>本次测试主要有三个大测试以及多个小任务组成：</p>
+<p>Qwen2 7B Instruct 任务分解和代码编写能力测试</p>
+<p>股票绘图任务：绘制 Tesla 和 Apple 今年的股票价格曲线。</p>
+<p>浪漫之心任务：使用 python 语言绘制一个浪漫之心并显示它。</p>
+<p>词云任务：读取本地文件"D:\lord_of_the_rings.txt"内容，统计词频并绘制词云图像。</p>
+<p>使用的工具：代码解释器</p>
+<p>Qwen2 7B Instruct 扮演 PS5 客服代理测试</p>
+<p>介绍 PS5 产品任务：预期通过预制的代理提示词介绍产品。</p>
+<p>介绍 PlayStation 新产品任务：预期自动使用搜索引擎结果来归纳并回答。</p>
+<p>介绍 PS5 的特殊特性任务：预期自动从本地知识库中搜索后回答。</p>
+<p>提交修理单任务：预期自动调用提交修理单函数，向 support@sony.com 发送修理单邮件。</p>
+<p>使用的工具：本地知识库，搜索引擎 (duckduckgo)，Function Calling</p>
+<p>Qwen2 7B Instruct 扮演个人助理代理测试</p>
+<p>自我介绍任务：预期通过预制的代理提示词介绍自己。</p>
+<p>检索新闻任务：预期自动使用搜索引擎结果来归纳并回答。</p>
+<p>检索工作邮件任务：预期自动使用邮件检索工具来回答。</p>
+<p>添加提醒任务：预期自动检查空闲时间，并协助添加新的提醒事件。</p>
+<p>分享文档任务：预期自动从 Google Drive 中下载工作文档，并通过邮件分享给组员。</p>
+<p>分享视频任务：预期自动从 Youtube 中搜索视频，并通过邮件分享给朋友。</p>
+<p>使用的工具：本地知识库，搜索引擎 (duckduckgo)，Google 工具箱</p>
+<p>完整的视频演示：</p>
+<p>下面我将详细演示 Qwen2 7B Instruct 模型在这些任务上的完成情况。</p>
+<p>一、Qwen2 7B Instruct 任务分解和代码编写能力测试</p>
+<p>股票绘图任务：绘制 Tesla 和 Apple 今年的股票价格曲线。（成功）</p>
+<p>Qwen2 模型很好的完成了任务，首先使用 yfinance 从雅虎财经上获取了 TSLA 和 AAPL 的股票数据；然后使用 plt 绘制了两支股票今年的价格趋势图型。</p>
+<ol>
+<li>浪漫之心任务：使用 python 语言绘制一个浪漫之心并显示它。（完美）</li>
+</ol>
+<p>Qwen2 模型非常完美的完成了任务，它导入了 turtle 库，然后编写 python 代码动态绘制了浪漫之心！看到这颗心动态生成的过程，心里还有点小感动...</p>
+<p>浪漫之心的绘制过程：</p>
+<p>https://i.imgur.com/9akLk2q.mp4</p>
+<ol>
+<li>词云任务：读取本地文件"D:\lord_of_the_rings.txt"内容，统计词频并绘制词云图像。（成功）</li>
+</ol>
+<p>文件内容是指环王故事的一部分，模型首先编写代码并读取了文件内容，最后编写代码制作词云并显示。</p>
+<p>二、Qwen2 7B Instruct 扮演 PS5 客服代理测试</p>
+<p>1.介绍 PS5 产品任务：预期通过预制的代理提示词介绍产品。（成功）</p>
+<p>模型介绍了自己和 PS5 主机，没有使用工具，符合预期。</p>
+<ol>
+<li>介绍 PlayStation 新产品任务：预期自动使用搜索引擎结果来归纳并回答。（成功）</li>
+</ol>
+<p>模型使用了搜索引擎 (duckduckgo)搜索相关内容之后，回答了 PlayStation 在 2024 年的新产品。</p>
+<ol>
+<li>介绍 PS5 的文本转语音特性任务：预期自动从本地知识库中搜索后回答。（成功）</li>
+</ol>
+<p>模型从本地知识库（ PS5 ）中搜索相关内容之后，回答了这个问题。</p>
+<ol>
+<li>提交修理单任务：预期自动调用提交修理单函数，向 support@sony.com 发送修理单邮件。（成功）</li>
+</ol>
+<p>告诉模型 PS5 手柄的肩键损坏之后，模型调用了正确的函数提交了修理单，并返回了修理单号给客户。不过期待模型进一步询问修理信息，比如客户名称，损坏的细节描述，购买时间，购买凭证等，模型并没有询问，稍有遗憾。但总体上还是成功完成了任务。</p>
+<p>三、Qwen2 7B Instruct 扮演个人助理代理测试</p>
+<ol>
+<li>自我介绍任务：预期通过预制的代理提示词介绍自己。（成功）</li>
+</ol>
+<p>模型仅使用了预制的提示词进行了自我介绍。</p>
+<ol>
+<li>检索新闻任务：预期自动使用搜索引擎结果来归纳并回答。（成功）</li>
+</ol>
+<p>询问刚刚结束的 Google IO 开发者大会的新闻，模型使用了搜索引擎 (duckduckgo)搜索相关内容之后，回答了这个问题。</p>
+<ol>
+<li>检索工作邮件任务：预期自动使用邮件检索工具来回答。（成功）</li>
+</ol>
+<p>让模型搜索我的 Gmail 邮箱，查找关于 Google 开发者比赛的邮件，模型调用 Google 工具箱中的邮件搜索工具之后，总结邮件内容并进行了回答。任务成功！稍有不满意的地方是，回答的文本格式有点问题。</p>
+<ol>
+<li>添加提醒任务：预期自动检查空闲时间，并协助添加新的提醒事件。（成功）</li>
+</ol>
+<p>让模型检查今天下午 2 点-3 点的时间安排，是否有空。模型调用 Google 工具箱中的 Calendar 工具检查之后发现 2:30 到 3:30 有一个 meeting ，点开模型返回的连接之后，还可以直接导航到 Google Calendar 中检查这个 meeting 的详细信息。</p>
+<p>让模型把面试的提醒安排到 3:30 到 4:30 ，模型调用 Calendar 工具添加了新的提醒，点开连接之后，可以导航到 Google Calendar 中检查这个新添加的提醒。</p>
+<ol>
+<li>分享文档任务：预期自动从 Google Drive 中下载工作文档，并通过邮件分享给组员。（成功）</li>
+</ol>
+<p>让模型搜索 Google Drive 中关于 HipsHook 的介绍文档，并把它下载到本地的"Download"目录中。</p>
+<p>接着让模型发送邮件，并把其中一个文件作为附件，发送给了 Team 中的另外一个成员 Tony 。</p>
+<ol>
+<li>分享视频任务：预期自动从 Youtube 中搜索视频，并通过邮件分享给朋友。（成功）</li>
+</ol>
+<p>让模型从我的 Youtube 频道中查找关于"实时语言翻译"的视频信息。模型通过 Youtube 工具找到了视频以及视频的连接。</p>
+<p>接着让模型发送邮件，把这个视频链接作为邮件内容的一部分，分享给了我的朋友 Tony 。</p>
+<p>最终总结：经过测试，Qwen 2 是目前唯一一个通过所有测试的本地开源语言模型。此前，只有闭源的大模型（如 Gemini 1.5 Pro 和 GPT-4 ）才能达到这种能力。大语言模型技术的迭代速度之快令人难以置信，我期待这项技术能够真正落地的那一天。我相信，通过手机端部署的个人助理，自动检查邮箱、编写并发送邮件、安排日常工作和生活的日子在不久的将来一定会实现！</p>
+    <div class="comment" id="t1_l808370">
+        <p class="userinfo">
+            <a class="toggle_hide_button" href="javascript:void(0)" onclick="toggle_collapse(this.parentElement.parentElement)">[-]</a>
+            <a href="https://old.reddit.com/u/No_Environment_9431">No_Environment_9431</a>
+            | <span class="score">1 points</span>
+            | <a class="timestamp" href="https://old.reddit.com/r/NEWTo_Cave/comments/1dbzx8a/qwen_2_7b_太强了这下_7b_本地模型都有顺滑的_agent_能力了难道_7b/l808370/">Jun 11 2024 03:12:51</a>
+        </p>
+        <div class="collapsible">
+            <p>看不懂，中华民族是要伟大崛起了吗</p>
+    <div class="comment" id="t1_l80asue">
+        <p class="userinfo">
+            <a class="toggle_hide_button" href="javascript:void(0)" onclick="toggle_collapse(this.parentElement.parentElement)">[-]</a>
+            <a href="https://old.reddit.com/u/EvenDogWontUseReddit">EvenDogWontUseReddit</a>
+            | <span class="score">1 points</span>
+            | <a class="timestamp" href="https://old.reddit.com/r/NEWTo_Cave/comments/1dbzx8a/qwen_2_7b_太强了这下_7b_本地模型都有顺滑的_agent_能力了难道_7b/l80asue/">Jun 11 2024 03:28:01</a>
+        </p>
+        <div class="collapsible">
+            <p>你好，是的，支产手机都要崛起了，现在支产手机都搭载 7B 本地大模型，换成丝滑 Agent 调用的模型，自动化更强，相当于 Apple Intelligence 已经实现了一半，接下来就是把这一切整合成一个系统，苹果今天给了例子可以抄了</p></div></div></div></div></div></div>
+    <div class="comment" id="t1_l7ujexm">
+        <p class="userinfo">
+            <a class="toggle_hide_button" href="javascript:void(0)" onclick="toggle_collapse(this.parentElement.parentElement)">[-]</a>
+            <a href="https://old.reddit.com/u/Kindly_Yesterday_552">Kindly_Yesterday_552</a>
+            | <span class="score">1 points</span>
+            | <a class="timestamp" href="https://old.reddit.com/r/NEWTo_Cave/comments/1dbzx8a/qwen_2_7b_太强了这下_7b_本地模型都有顺滑的_agent_能力了难道_7b/l7ujexm/">Jun 10 2024 02:15:29</a>
+        </p>
+        <div class="collapsible">
+            <p>7B也比llama3 7b 强吗</p>
+    <div class="comment" id="t1_l7ujp02">
+        <p class="userinfo">
+            <a class="toggle_hide_button" href="javascript:void(0)" onclick="toggle_collapse(this.parentElement.parentElement)">[-]</a>
+            <a href="https://old.reddit.com/u/EvenDogWontUseReddit">EvenDogWontUseReddit</a>
+            | <span class="score">1 points</span>
+            | <a class="timestamp" href="https://old.reddit.com/r/NEWTo_Cave/comments/1dbzx8a/qwen_2_7b_太强了这下_7b_本地模型都有顺滑的_agent_能力了难道_7b/l7ujp02/">Jun 10 2024 02:17:06</a>
+        </p>
+        <div class="collapsible">
+            <p>Llama 一般都是开源模型的战力单位，打不过 Llama 的模型根本不敢放出来</p>
+    <div class="comment" id="t1_l7ujx2l">
+        <p class="userinfo">
+            <a class="toggle_hide_button" href="javascript:void(0)" onclick="toggle_collapse(this.parentElement.parentElement)">[-]</a>
+            <a href="https://old.reddit.com/u/Kindly_Yesterday_552">Kindly_Yesterday_552</a>
+            | <span class="score">1 points</span>
+            | <a class="timestamp" href="https://old.reddit.com/r/NEWTo_Cave/comments/1dbzx8a/qwen_2_7b_太强了这下_7b_本地模型都有顺滑的_agent_能力了难道_7b/l7ujx2l/">Jun 10 2024 02:18:26</a>
+        </p>
+        <div class="collapsible">
+            <p>哦 不过现在除了Qwen2 不就是llama3最强吗</p>
+    <div class="comment" id="t1_l7ukoif">
+        <p class="userinfo">
+            <a class="toggle_hide_button" href="javascript:void(0)" onclick="toggle_collapse(this.parentElement.parentElement)">[-]</a>
+            <a href="https://old.reddit.com/u/EvenDogWontUseReddit">EvenDogWontUseReddit</a>
+            | <span class="score">1 points</span>
+            | <a class="timestamp" href="https://old.reddit.com/r/NEWTo_Cave/comments/1dbzx8a/qwen_2_7b_太强了这下_7b_本地模型都有顺滑的_agent_能力了难道_7b/l7ukoif/">Jun 10 2024 02:22:53</a>
+        </p>
+        <div class="collapsible">
+            <p>支那最近就有一个基于 Llama 3 微调的多模态模型 <a href="https://github.com/OpenBMB/MiniCPM-V">https://github.com/OpenBMB/MiniCPM-V</a></p>
+<p>如果比原来还弱，根本不敢放出来</p>
+    <div class="comment" id="t1_l7ul1l6">
+        <p class="userinfo">
+            <a class="toggle_hide_button" href="javascript:void(0)" onclick="toggle_collapse(this.parentElement.parentElement)">[-]</a>
+            <a href="https://old.reddit.com/u/Kindly_Yesterday_552">Kindly_Yesterday_552</a>
+            | <span class="score">2 points</span>
+            | <a class="timestamp" href="https://old.reddit.com/r/NEWTo_Cave/comments/1dbzx8a/qwen_2_7b_太强了这下_7b_本地模型都有顺滑的_agent_能力了难道_7b/l7ul1l6/">Jun 10 2024 02:25:02</a>
+        </p>
+        <div class="collapsible">
+            <p>微调的太多了 </p>
+<p>要比的话 还是架构不同的才有意思吧</p></div></div></div></div></div></div></div></div>
+    <div class="comment" id="t1_l7ukxnp">
+        <p class="userinfo">
+            <a class="toggle_hide_button" href="javascript:void(0)" onclick="toggle_collapse(this.parentElement.parentElement)">[-]</a>
+            <a href="https://old.reddit.com/u/EvenDogWontUseReddit">EvenDogWontUseReddit</a>
+            | <span class="score">1 points</span>
+            | <a class="timestamp" href="https://old.reddit.com/r/NEWTo_Cave/comments/1dbzx8a/qwen_2_7b_太强了这下_7b_本地模型都有顺滑的_agent_能力了难道_7b/l7ukxnp/">Jun 10 2024 02:24:24</a>
+        </p>
+        <div class="collapsible">
+            <p>Qwen 2 72B 的 RLHF 似乎出问题了</p>
+<p>支那最近也有一个很强的 GLM-4-9B 模型</p></div></div></div></div>
+    <div class="comment" id="t1_l7un6os">
+        <p class="userinfo">
+            <a class="toggle_hide_button" href="javascript:void(0)" onclick="toggle_collapse(this.parentElement.parentElement)">[-]</a>
+            <a href="https://old.reddit.com/u/Aggravating-Beach801">Aggravating-Beach801</a>
+            | <span class="score">1 points</span>
+            | <a class="timestamp" href="https://old.reddit.com/r/NEWTo_Cave/comments/1dbzx8a/qwen_2_7b_太强了这下_7b_本地模型都有顺滑的_agent_能力了难道_7b/l7un6os/">Jun 10 2024 02:37:28</a>
+        </p>
+        <div class="collapsible">
+            <p>72b你都有显卡能跑起来？</p>
+    <div class="comment" id="t1_l7un6pe">
+        <p class="userinfo">
+            <a class="toggle_hide_button" href="javascript:void(0)" onclick="toggle_collapse(this.parentElement.parentElement)">[-]</a>
+            <a href="https://old.reddit.com/u/AutoModerator">AutoModerator</a>
+            | <span class="score">1 points</span>
+            | <a class="timestamp" href="https://old.reddit.com/r/NEWTo_Cave/comments/1dbzx8a/qwen_2_7b_太强了这下_7b_本地模型都有顺滑的_agent_能力了难道_7b/l7un6pe/">Jun 10 2024 02:37:28</a>
+        </p>
+        <div class="collapsible">
+            <p>你这是个充满恶意的问题吧</p>
+<p><em>I am a bot, and this action was performed automatically. Please <a href="/message/compose/?to=/r/NEWTo_Cave">contact the moderators of this subreddit</a> if you have any questions or concerns.</em></p></div></div>
+    <div class="comment" id="t1_l7wd98s">
+        <p class="userinfo">
+            <a class="toggle_hide_button" href="javascript:void(0)" onclick="toggle_collapse(this.parentElement.parentElement)">[-]</a>
+            <a href="https://old.reddit.com/u/EvenDogWontUseReddit">EvenDogWontUseReddit</a>
+            | <span class="score">1 points</span>
+            | <a class="timestamp" href="https://old.reddit.com/r/NEWTo_Cave/comments/1dbzx8a/qwen_2_7b_太强了这下_7b_本地模型都有顺滑的_agent_能力了难道_7b/l7wd98s/">Jun 10 2024 09:16:20</a>
+        </p>
+        <div class="collapsible">
+            <p>这个是 7B</p></div></div></div></div>
+    <div class="comment" id="t1_l7uo89i">
+        <p class="userinfo">
+            <a class="toggle_hide_button" href="javascript:void(0)" onclick="toggle_collapse(this.parentElement.parentElement)">[-]</a>
+            <a href="https://old.reddit.com/u/Anarco-Statist">Anarco-Statist</a>
+            | <span class="score">1 points</span>
+            | <a class="timestamp" href="https://old.reddit.com/r/NEWTo_Cave/comments/1dbzx8a/qwen_2_7b_太强了这下_7b_本地模型都有顺滑的_agent_能力了难道_7b/l7uo89i/">Jun 10 2024 02:43:29</a>
+        </p>
+        <div class="collapsible">
+            <p>这个模型会乳包吗</p>
+    <div class="comment" id="t1_l7wcj0l">
+        <p class="userinfo">
+            <a class="toggle_hide_button" href="javascript:void(0)" onclick="toggle_collapse(this.parentElement.parentElement)">[-]</a>
+            <a href="https://old.reddit.com/u/EvenDogWontUseReddit">EvenDogWontUseReddit</a>
+            | <span class="score">1 points</span>
+            | <a class="timestamp" href="https://old.reddit.com/r/NEWTo_Cave/comments/1dbzx8a/qwen_2_7b_太强了这下_7b_本地模型都有顺滑的_agent_能力了难道_7b/l7wcj0l/">Jun 10 2024 09:11:25</a>
+        </p>
+        <div class="collapsible">
+            <p>修改采样算法任何本地模型都可以乳包</p></div></div></div></div>
+    <div class="comment" id="t1_l7xz9gp">
+        <p class="userinfo">
+            <a class="toggle_hide_button" href="javascript:void(0)" onclick="toggle_collapse(this.parentElement.parentElement)">[-]</a>
+            <a href="https://old.reddit.com/u/No_regular1601">No_regular1601</a>
+            | <span class="score">1 points</span>
+            | <a class="timestamp" href="https://old.reddit.com/r/NEWTo_Cave/comments/1dbzx8a/qwen_2_7b_太强了这下_7b_本地模型都有顺滑的_agent_能力了难道_7b/l7xz9gp/">Jun 10 2024 18:36:32</a>
+        </p>
+        <div class="collapsible">
+            <p>哦对，我漏了qwen</p></div></div>
+    <div class="comment" id="t1_l7yz37v">
+        <p class="userinfo">
+            <a class="toggle_hide_button" href="javascript:void(0)" onclick="toggle_collapse(this.parentElement.parentElement)">[-]</a>
+            <a href="https://old.reddit.com/u/Glad_Past_9838">Glad_Past_9838</a>
+            | <span class="score">1 points</span>
+            | <a class="timestamp" href="https://old.reddit.com/r/NEWTo_Cave/comments/1dbzx8a/qwen_2_7b_太强了这下_7b_本地模型都有顺滑的_agent_能力了难道_7b/l7yz37v/">Jun 10 2024 23:01:29</a>
+        </p>
+        <div class="collapsible">
+            <p>支产ai用不下去，这个模型偷的谁的开源模型？我直接用原版</p>
+    <div class="comment" id="t1_l7yz7pe">
+        <p class="userinfo">
+            <a class="toggle_hide_button" href="javascript:void(0)" onclick="toggle_collapse(this.parentElement.parentElement)">[-]</a>
+            <a href="https://old.reddit.com/u/EvenDogWontUseReddit">EvenDogWontUseReddit</a>
+            | <span class="score">1 points</span>
+            | <a class="timestamp" href="https://old.reddit.com/r/NEWTo_Cave/comments/1dbzx8a/qwen_2_7b_太强了这下_7b_本地模型都有顺滑的_agent_能力了难道_7b/l7yz7pe/">Jun 10 2024 23:02:13</a>
+        </p>
+        <div class="collapsible">
+            <p>其他哪个开源模型能 7B 做到流畅调用 Agent 的</p></div></div></div></div>
+    </body>
+    <script>
+        function toggle_collapse(comment_div) {{
+            var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+            var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+            if (collapsible.classList.contains("hidden")) {{
+                collapsible.classList.remove("hidden");
+                button.innerText = "[-]";
+            }} else {{
+                collapsible.classList.add("hidden");
+                button.innerText = "[+]";
+            }}
+        }}
+    </script>
+</html>

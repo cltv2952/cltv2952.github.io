@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>太监检测器</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <style>
+            .crosspost {
+                border: 1px solid #888;
+                margin-top: 10px;
+                padding: 10px;
+                background-color: #f6f7f8;
+            }
+            .crosspost-header {
+                font-size: 12px;
+                color: #555;
+                margin-bottom: 6px;
+            }
+            .crosspost-content {
+                padding-left: 5px;
+            }
+            .submission, .comment { padding-left: 20px; padding-right: 4px; font-family: verdana, arial, helvetica, sans-serif; }
+            .comment { margin-top: 4px; margin-bottom: 4px; border: 1px solid black; }
+            .submission { border: 2px solid blue; padding-bottom: 10px; }
+            .hidden { display: none; }
+            .userinfo { font-size: 12px; color: #555; }
+            .flair {
+                padding: 2px 6px; border-radius: 20px; font-size: 10px; font-weight: bold;
+                margin-left: 5px; display: inline-block; vertical-align: middle; line-height: 1.2;
+            }
+        </style>
+    </head>
+    <body>
+        <a href="../NEWTo_Cave.html#t3_1d45wl0" class="back-link">← Back to Index</a>
+            <div class="submission" id="t3_1d45wl0">
+                <p class="userinfo">
+                    <a href="https://old.reddit.com/u/EvenDogWontUseReddit">EvenDogWontUseReddit</a>
+                    | <span class="score">2 points</span>
+                    | <a class="timestamp" href="https://old.reddit.com/r/NEWTo_Cave/comments/1d45wl0/太监检测器/">May 30 2024 22:52:20</a>
+                </p>
+                <strong>太监检测器</strong><span class="flair" style="background-color: #0079d3; color: #ffffff;">学术交流</span>
+                <p><pre><code>import asyncio
+import os
+
+import asyncpraw
+from asyncpraw import Reddit
+from dotenv import load_dotenv
+
+reddit: Reddit
+load_dotenv()
+
+
+async def get_latest_comments(subreddit_name):
+    # 获取指定subreddit的最新评论
+    subreddit = await reddit.subreddit(subreddit_name)
+    comments = subreddit.comments(limit=100)
+    authors = set()
+    async for comment in comments:
+        if comment.author:
+            authors.add(comment.author.name)
+
+    return authors
+
+
+async def check_author_in_subreddits(author, subreddits, semaphore):
+    async with semaphore:
+        author_activity = {subreddit: 0 for subreddit in subreddits}
+        user = await reddit.redditor(author)
+        async for comment in user.comments.new(limit=100):
+            subreddit_name = comment.subreddit.display_name
+            if subreddit_name in author_activity:
+                author_activity[subreddit_name] += 1
+            else:
+                author_activity[subreddit_name] = 1
+
+        total_comments = sum(author_activity.values())
+        if total_comments &gt; 0:
+            # 计算用户在指定subreddits中的评论数占总评论数的百分比
+            subreddits_comments = sum(author_activity[subreddit] for subreddit in subreddits)
+            if subreddits_comments / total_comments &gt; 0.5:
+                print(f"Author {author} is a TJ:")
+                for subreddit in subreddits:
+                    print(f" - {subreddit}: {author_activity[subreddit]}")
+            else:
+                print(f"{author} is not a TJ.")
+
+
+async def check_authors_in_subreddits(authors, subreddits):
+    semaphore = asyncio.Semaphore(5)  # 设定最大并发任务数
+    tasks = [
+        check_author_in_subreddits(author, subreddits, semaphore)
+        for author in authors
+    ]
+    await asyncio.gather(*tasks)
+
+
+async def main():
+    global reddit
+    # 设置Reddit API凭证
+    reddit = asyncpraw.Reddit(
+        client_id=os.environ["REDDIT_CLIENT_ID"],
+        client_secret=os.environ["REDDIT_CLIENT_SECRET"],
+        user_agent="YOUR_USER_AGENT"
+    )
+
+    subreddit_name = "NEWTo_Cave"
+    subreddits_to_check = ["China_irl", "real_China_irl", "KanagawaWave"]
+
+    authors = await get_latest_comments(subreddit_name)
+    await check_authors_in_subreddits(authors, subreddits_to_check)
+
+    await reddit.close()
+
+
+if __name__ == "__main__":
+    asyncio.run(main())
+</code></pre>
+<h1>让 Gemini 1.5 Pro 来介绍这段代码的功能和使用方法：</h1>
+<p>这段代码的功能是：<strong>识别特定Reddit用户是否为"TJ"</strong>。</p>
+<p><strong>TJ</strong> 在此代码的语境下，指的是主要在特定中文 subreddits 上活跃的用户。</p>
+<p><strong>工作流程：</strong></p>
+<ol>
+<li><strong>获取目标 subreddit 最新评论的作者列表：</strong></li>
+<li>代码首先从环境变量中读取 Reddit API 凭证。</li>
+<li><code>get_latest_comments</code> 函数获取指定 subreddit（例如 "NEWTo_Cave"） 的最新 100 条评论，并将评论作者的用户名添加到一个集合中。</li>
+<li><strong>检查每个作者在特定 subreddits 上的活跃度：</strong></li>
+<li><code>check_author_in_subreddits</code> 函数接受一个作者用户名、一个目标 subreddits 列表（例如 ["China_irl", "real_China_irl", "KanagawaWave"]） 和一个 asyncio Semaphore 作为参数。</li>
+<li>对于每个作者，它会获取该用户最新的 100 条评论，并统计他们在每个目标 subreddit 上的评论数量。</li>
+<li>如果该用户在目标 subreddits 上的评论数量超过其总评论数量的 50%，则认为该用户是"TJ"，并打印相关信息。</li>
+<li><strong>并发检查多个作者：</strong></li>
+<li><code>check_authors_in_subreddits</code> 函数接受一个作者列表和一个目标 subreddits 列表作为参数。</li>
+<li>它使用 asyncio Semaphore 限制并发任务数量，并使用 <code>asyncio.gather</code> 并发运行 <code>check_author_in_subreddits</code> 函数来检查每个作者。</li>
+</ol>
+<p><strong>使用方法：</strong></p>
+<ol>
+<li><strong>设置环境变量：</strong></li>
+<li>创建一个名为 <code>.env</code> 的文件，并在其中添加以下内容：REDDIT_CLIENT_ID=你的Reddit应用的Client ID REDDIT_CLIENT_SECRET=你的Reddit应用的Client Secret</li>
+<li><strong>修改代码中的参数：</strong></li>
+<li>将 <code>subreddit_name</code> 变量的值修改为你想要获取评论的 subreddit 名称。</li>
+<li>将 <code>subreddits_to_check</code> 变量的值修改为你想要检查活跃度的 subreddits 列表。</li>
+<li><strong>运行代码：</strong></li>
+<li>使用 Python 3 运行代码： <code>python your_script_name.py</code></li>
+</ol>
+<p><strong>需要注意的是：</strong></p>
+<ul>
+<li>你需要在 Reddit 上创建一个应用并获取 Client ID 和 Client Secret。</li>
+<li>你需要将 <code>user_agent</code> 变量的值修改为一个有意义的字符串，例如 "MyScript/1.0"。</li>
+<li>这段代码只是一个示例，你可以根据自己的需要进行修改。例如，你可以修改判断"TJ"的阈值，或者添加其他判断条件。</li>
+</ul>
+<h1>运行结果：</h1>
+<p>https://preview.redd.it/rchk658huk3d1.png?width=1365&amp;format=png&amp;auto=webp&amp;s=51011a9aacb817b7ce4a1ca629b5534f034a3ac1</p></p>
+                
+            </div>
+    <div class="comment" id="t1_l6bz2en">
+        <p class="userinfo">
+            <a class="toggle_hide_button" href="javascript:void(0)" onclick="toggle_collapse(this.parentElement.parentElement)">[-]</a>
+            <a href="https://old.reddit.com/u/AutoModerator">AutoModerator</a>
+            | <span class="score">1 points</span>
+            | <a class="timestamp" href="https://old.reddit.com/r/NEWTo_Cave/comments/1d45wl0/太监检测器/l6bz2en/">May 30 2024 22:52:21</a>
+        </p>
+        <div class="collapsible">
+            <p>厦门174医院还我鸡吧！还我鸡吧！我本来是去割包皮，他们说要先把鸡毛刮了，我就同意了，免责单上面也签了字，打上麻醉醒来以后发现自己鸡吧没了，what？？？他们无人监管！谋财害命！！我在微博上维权这么久，他们也不把我的鸡吧接上！还我鸡吧！</p>
+<p><em>I am a bot, and this action was performed automatically. Please <a href="/message/compose/?to=/r/NEWTo_Cave">contact the moderators of this subreddit</a> if you have any questions or concerns.</em></p></div></div>
+    <div class="comment" id="t1_l6bz2gx">
+        <p class="userinfo">
+            <a class="toggle_hide_button" href="javascript:void(0)" onclick="toggle_collapse(this.parentElement.parentElement)">[-]</a>
+            <a href="https://old.reddit.com/u/AutoModerator">AutoModerator</a>
+            | <span class="score">5 points</span>
+            | <a class="timestamp" href="https://old.reddit.com/r/NEWTo_Cave/comments/1d45wl0/太监检测器/l6bz2gx/">May 30 2024 22:52:21</a>
+        </p>
+        <div class="collapsible">
+            <p>哈哈，你崇洋媚外，写些像蚯蚓一样的东西，不会写中文吗</p>
+<p><em>I am a bot, and this action was performed automatically. Please <a href="/message/compose/?to=/r/NEWTo_Cave">contact the moderators of this subreddit</a> if you have any questions or concerns.</em></p></div></div>
+    <div class="comment" id="t1_l6ckx51">
+        <p class="userinfo">
+            <a class="toggle_hide_button" href="javascript:void(0)" onclick="toggle_collapse(this.parentElement.parentElement)">[-]</a>
+            <a href="https://old.reddit.com/u/Glad_Past_9838">Glad_Past_9838</a>
+            | <span class="score">6 points</span>
+            | <a class="timestamp" href="https://old.reddit.com/r/NEWTo_Cave/comments/1d45wl0/太监检测器/l6ckx51/">May 31 2024 01:03:46</a>
+        </p>
+        <div class="collapsible">
+            <p>好用，偷了，什么时候弄个织女检测器</p>
+    <div class="comment" id="t1_l9eq47v">
+        <p class="userinfo">
+            <a class="toggle_hide_button" href="javascript:void(0)" onclick="toggle_collapse(this.parentElement.parentElement)">[-]</a>
+            <a href="https://old.reddit.com/u/Precipitevolissimo">Precipitevolissimo</a>
+            | <span class="score">1 points</span>
+            | <a class="timestamp" href="https://old.reddit.com/r/NEWTo_Cave/comments/1d45wl0/太监检测器/l9eq47v/">Jun 20 2024 11:00:30</a>
+        </p>
+        <div class="collapsible">
+            <p>把subreddit_to_check裡面的版名從太監真太監浪太監改成各大織女版就行了 不過織女一般不來咱穴發言 所以可能測不出來</p></div></div></div></div>
+    <div class="comment" id="t1_l6d6aea">
+        <p class="userinfo">
+            <a class="toggle_hide_button" href="javascript:void(0)" onclick="toggle_collapse(this.parentElement.parentElement)">[-]</a>
+            <a href="https://old.reddit.com/u/PayJazzlike1090">PayJazzlike1090</a>
+            | <span class="score">1 points</span>
+            | <a class="timestamp" href="https://old.reddit.com/r/NEWTo_Cave/comments/1d45wl0/太监检测器/l6d6aea/">May 31 2024 03:14:25</a>
+        </p>
+        <div class="collapsible">
+            <p>检测到是太监应该高亮标出来</p>
+    <div class="comment" id="t1_l6d6afg">
+        <p class="userinfo">
+            <a class="toggle_hide_button" href="javascript:void(0)" onclick="toggle_collapse(this.parentElement.parentElement)">[-]</a>
+            <a href="https://old.reddit.com/u/AutoModerator">AutoModerator</a>
+            | <span class="score">1 points</span>
+            | <a class="timestamp" href="https://old.reddit.com/r/NEWTo_Cave/comments/1d45wl0/太监检测器/l6d6afg/">May 31 2024 03:14:25</a>
+        </p>
+        <div class="collapsible">
+            <p>厦门174医院还我鸡吧！还我鸡吧！我本来是去割包皮，他们说要先把鸡毛刮了，我就同意了，免责单上面也签了字，打上麻醉醒来以后发现自己鸡吧没了，what？？？他们无人监管！谋财害命！！我在微博上维权这么久，他们也不把我的鸡吧接上！还我鸡吧！</p>
+<p><em>I am a bot, and this action was performed automatically. Please <a href="/message/compose/?to=/r/NEWTo_Cave">contact the moderators of this subreddit</a> if you have any questions or concerns.</em></p></div></div></div></div>
+    <div class="comment" id="t1_l6gwgxg">
+        <p class="userinfo">
+            <a class="toggle_hide_button" href="javascript:void(0)" onclick="toggle_collapse(this.parentElement.parentElement)">[-]</a>
+            <a href="https://old.reddit.com/u/No_Regular1600">No_Regular1600</a>
+            | <span class="score">1 points</span>
+            | <a class="timestamp" href="https://old.reddit.com/r/NEWTo_Cave/comments/1d45wl0/太监检测器/l6gwgxg/">May 31 2024 20:47:09</a>
+        </p>
+        <div class="collapsible">
+            <p>妈妈我上电视了</p></div></div>
+    </body>
+    <script>
+        function toggle_collapse(comment_div) {{
+            var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+            var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+            if (collapsible.classList.contains("hidden")) {{
+                collapsible.classList.remove("hidden");
+                button.innerText = "[-]";
+            }} else {{
+                collapsible.classList.add("hidden");
+                button.innerText = "[+]";
+            }}
+        }}
+    </script>
+</html>

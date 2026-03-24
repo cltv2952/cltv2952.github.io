@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>最强 AI 文爱软件 SillyTavern 简单教程</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <style>
+            .crosspost {
+                border: 1px solid #888;
+                margin-top: 10px;
+                padding: 10px;
+                background-color: #f6f7f8;
+            }
+            .crosspost-header {
+                font-size: 12px;
+                color: #555;
+                margin-bottom: 6px;
+            }
+            .crosspost-content {
+                padding-left: 5px;
+            }
+            .submission, .comment { padding-left: 20px; padding-right: 4px; font-family: verdana, arial, helvetica, sans-serif; }
+            .comment { margin-top: 4px; margin-bottom: 4px; border: 1px solid black; }
+            .submission { border: 2px solid blue; padding-bottom: 10px; }
+            .hidden { display: none; }
+            .userinfo { font-size: 12px; color: #555; }
+            .flair {
+                padding: 2px 6px; border-radius: 20px; font-size: 10px; font-weight: bold;
+                margin-left: 5px; display: inline-block; vertical-align: middle; line-height: 1.2;
+            }
+        </style>
+    </head>
+    <body>
+        <a href="../NEWTo_Cave.html#t3_1cjf041" class="back-link">← Back to Index</a>
+            <div class="submission" id="t3_1cjf041">
+                <p class="userinfo">
+                    <a href="https://old.reddit.com/u/EvenDogWontUseReddit">EvenDogWontUseReddit</a>
+                    | <span class="score">12 points</span>
+                    | <a class="timestamp" href="https://old.reddit.com/r/NEWTo_Cave/comments/1cjf041/最强_ai_文爱软件_sillytavern_简单教程/">May 04 2024 01:55:29</a>
+                </p>
+                <strong>最强 AI 文爱软件 SillyTavern 简单教程</strong><span class="flair" style="background-color: #ff8717; color: #ffffff;">网络学堂</span>
+                <p><p>大名鼎鼎的 SillyTavern （江湖人称“酒馆”） 这个软件我早有耳闻，但因为试玩过觉得太复杂，我一度觉得这是只有 AI 文爱魔怔人才用的软件。但在红迪某位友友的强烈推荐下我试玩了一下，才发现这个软件的强大与好用。</p>
+<p>这个软件能接入 OpenAI GPT、Anthropic Claude、Cohere、Google Gemini 等 LLM API 接口，每次你发送一条消息，他会自动给你的消息加上 NSFW 越狱指令，并且允许你自由编辑上下文，文爱体验比在这些 AI 的官网好得多。它还有角色卡功能，你可以把角色人设写成一张角色卡，然后你就可以和不同人物对话。</p>
+<p>效果图：</p>
+<p>https://preview.redd.it/lgjxjvel19yc1.png?width=639&amp;format=png&amp;auto=webp&amp;s=cbad76d63c58e28b6c49548f3fbe5920619cc434</p>
+<p>https://preview.redd.it/qg4c7tvl19yc1.png?width=639&amp;format=png&amp;auto=webp&amp;s=2368c4282a3a722703b756f7b7f51d27fd33b990</p>
+<p>下面是教程，这个教程假定你用的是 Windows 系统，用 Mac 的富蛆滚；如果你用的是安卓机，可以用 Termux 运行，用 iPhone 的富蛆滚</p>
+<p>首先最好加一下这个 AI 文爱群 <a href="https://discord.com/invite/B7Wr25Z7BZ">https://discord.com/invite/B7Wr25Z7BZ</a> 如果群邀请链接过期可以在 <a href="https://rentry.org/teralomaniac_clewd">https://rentry.org/teralomaniac_clewd</a> 看最新链接</p>
+<p>在翻墙软件上打开 TUN 模式。广泛使用的 Clash 有 TUN 模式，这个模式通过创建虚拟网络接口来强制所有软件网络请求经过 Clash；如果是安卓上的翻墙软件，那么本来就是虚拟 VPN 接口所以什么都不用做。</p>
+<p>Windows 教程在 <a href="https://docs.sillytavern.app/installation/windows/">https://docs.sillytavern.app/installation/windows/</a> 如果看不懂英文可以用浏览器翻译功能，我推荐 staging 测试版本，有最新的功能</p>
+<p>安卓教程在 <a href="https://rentry.org/STAI-Termux">https://rentry.org/STAI-Termux</a></p>
+<p>安装完运行 Start 脚本，如果一切成功，首先会出现一个输入你的角色名称对话框，默认是 “User”，比如这里你可以输入你的角色名称是 “毛刃支” 然后确定</p>
+<p>接下来点第二个插头按钮，选择 API 为 Chat Completion，然后去 <a href="https://dashboard.cohere.com/api-keys">https://dashboard.cohere.com/api-keys</a> 注册拿一个 API KEY，这个是免费的 Command R+ 接口，每个月免费用 1000 次</p>
+<p>点第一个预设设置按钮，点“对话补全预设”里的“导入预设”按钮，导入在 AI 文爱群得到的破限预设文件；然后重新在 API 设置选择一下 Cohere，这是因为这个软件的设计，切换预设会连 API 一起切换</p>
+<p>Cohere 的 API 限制频率惩罚和存在惩罚必须有至少一个是 0，AI 文爱群的破限预设是为 Claude 设计所以它不符合这个要求需要自己修改。同时 Cohere 的 API 限制最大回复长度不能大于 4000 所以也需要自己修改成 4000。</p>
+<p>接着是角色卡设置，是最后一个按钮。可以在 AI 文爱群随便偷一个先试试，注意角色卡文件可以是图片文件（信息藏在图片文件二进制流的末尾），所以角色卡经常用图片的形式发布，下载原图导入就行。</p>
+<p>然后开始聊天试试，简单的教程就到这里</p></p>
+                
+            </div>
+    <div class="comment" id="t1_l2fjikt">
+        <p class="userinfo">
+            <a class="toggle_hide_button" href="javascript:void(0)" onclick="toggle_collapse(this.parentElement.parentElement)">[-]</a>
+            <a href="https://old.reddit.com/u/colorbalcony">colorbalcony</a>
+            | <span class="score">5 points</span>
+            | <a class="timestamp" href="https://old.reddit.com/r/NEWTo_Cave/comments/1cjf041/最强_ai_文爱软件_sillytavern_简单教程/l2fjikt/">May 04 2024 02:04:43</a>
+        </p>
+        <div class="collapsible">
+            <p>南无三</p></div></div>
+    <div class="comment" id="t1_l2fr247">
+        <p class="userinfo">
+            <a class="toggle_hide_button" href="javascript:void(0)" onclick="toggle_collapse(this.parentElement.parentElement)">[-]</a>
+            <a href="https://old.reddit.com/u/nanniangjiawo">nanniangjiawo</a>
+            | <span class="score">1 points</span>
+            | <a class="timestamp" href="https://old.reddit.com/r/NEWTo_Cave/comments/1cjf041/最强_ai_文爱软件_sillytavern_简单教程/l2fr247/">May 04 2024 02:48:40</a>
+        </p>
+        <div class="collapsible">
+            <p>已收藏</p></div></div>
+    <div class="comment" id="t1_l2gir2c">
+        <p class="userinfo">
+            <a class="toggle_hide_button" href="javascript:void(0)" onclick="toggle_collapse(this.parentElement.parentElement)">[-]</a>
+            <a href="https://old.reddit.com/u/Thomas_d_Aquin">Thomas_d_Aquin</a>
+            | <span class="score">7 points</span>
+            | <a class="timestamp" href="https://old.reddit.com/r/NEWTo_Cave/comments/1cjf041/最强_ai_文爱软件_sillytavern_简单教程/l2gir2c/">May 04 2024 05:54:16</a>
+        </p>
+        <div class="collapsible">
+            <p>Gouranga! 和AI南希=san进行玄奥赛博文字交合，这也是末法时代的一个侧面</p></div></div>
+    <div class="comment" id="t1_l2hgu9r">
+        <p class="userinfo">
+            <a class="toggle_hide_button" href="javascript:void(0)" onclick="toggle_collapse(this.parentElement.parentElement)">[-]</a>
+            <a href="https://old.reddit.com/u/Relevant_Horror6498">Relevant_Horror6498</a>
+            | <span class="score">1 points</span>
+            | <a class="timestamp" href="https://old.reddit.com/r/NEWTo_Cave/comments/1cjf041/最强_ai_文爱软件_sillytavern_简单教程/l2hgu9r/">May 04 2024 09:54:59</a>
+        </p>
+        <div class="collapsible">
+            <p>厉害</p></div></div>
+    <div class="comment" id="t1_l2hrp4u">
+        <p class="userinfo">
+            <a class="toggle_hide_button" href="javascript:void(0)" onclick="toggle_collapse(this.parentElement.parentElement)">[-]</a>
+            <a href="https://old.reddit.com/u/Electronic-Emu7435">Electronic-Emu7435</a>
+            | <span class="score">1 points</span>
+            | <a class="timestamp" href="https://old.reddit.com/r/NEWTo_Cave/comments/1cjf041/最强_ai_文爱软件_sillytavern_简单教程/l2hrp4u/">May 04 2024 11:18:55</a>
+        </p>
+        <div class="collapsible">
+            <p>u/cyber_niuniu</p></div></div>
+    <div class="comment" id="t1_l2ibhvp">
+        <p class="userinfo">
+            <a class="toggle_hide_button" href="javascript:void(0)" onclick="toggle_collapse(this.parentElement.parentElement)">[-]</a>
+            <a href="https://old.reddit.com/u/Artistic-Actuary-387">Artistic-Actuary-387</a>
+            | <span class="score">1 points</span>
+            | <a class="timestamp" href="https://old.reddit.com/r/NEWTo_Cave/comments/1cjf041/最强_ai_文爱软件_sillytavern_简单教程/l2ibhvp/">May 04 2024 14:27:27</a>
+        </p>
+        <div class="collapsible">
+            <p>非常好</p></div></div>
+    <div class="comment" id="t1_l4anu4l">
+        <p class="userinfo">
+            <a class="toggle_hide_button" href="javascript:void(0)" onclick="toggle_collapse(this.parentElement.parentElement)">[-]</a>
+            <a href="https://old.reddit.com/u/Electronic-Emu7435">Electronic-Emu7435</a>
+            | <span class="score">1 points</span>
+            | <a class="timestamp" href="https://old.reddit.com/r/NEWTo_Cave/comments/1cjf041/最强_ai_文爱软件_sillytavern_简单教程/l4anu4l/">May 16 2024 20:15:10</a>
+        </p>
+        <div class="collapsible">
+            <p>收到</p></div></div>
+    <div class="comment" id="t1_l4gzp0m">
+        <p class="userinfo">
+            <a class="toggle_hide_button" href="javascript:void(0)" onclick="toggle_collapse(this.parentElement.parentElement)">[-]</a>
+            <a href="https://old.reddit.com/u/Kindly_Yesterday_552">Kindly_Yesterday_552</a>
+            | <span class="score">1 points</span>
+            | <a class="timestamp" href="https://old.reddit.com/r/NEWTo_Cave/comments/1cjf041/最强_ai_文爱软件_sillytavern_简单教程/l4gzp0m/">May 17 2024 23:55:29</a>
+        </p>
+        <div class="collapsible">
+            <p>谢谢，这个比github还有discord上大堆混乱的东西好100倍</p></div></div>
+    <div class="comment" id="t1_l4gzr0k">
+        <p class="userinfo">
+            <a class="toggle_hide_button" href="javascript:void(0)" onclick="toggle_collapse(this.parentElement.parentElement)">[-]</a>
+            <a href="https://old.reddit.com/u/Kindly_Yesterday_552">Kindly_Yesterday_552</a>
+            | <span class="score">1 points</span>
+            | <a class="timestamp" href="https://old.reddit.com/r/NEWTo_Cave/comments/1cjf041/最强_ai_文爱软件_sillytavern_简单教程/l4gzr0k/">May 17 2024 23:55:48</a>
+        </p>
+        <div class="collapsible">
+            <p>已经根据这个教程成功对话了</p></div></div>
+    <div class="comment" id="t1_l4h0a99">
+        <p class="userinfo">
+            <a class="toggle_hide_button" href="javascript:void(0)" onclick="toggle_collapse(this.parentElement.parentElement)">[-]</a>
+            <a href="https://old.reddit.com/u/Kindly_Yesterday_552">Kindly_Yesterday_552</a>
+            | <span class="score">2 points</span>
+            | <a class="timestamp" href="https://old.reddit.com/r/NEWTo_Cave/comments/1cjf041/最强_ai_文爱软件_sillytavern_简单教程/l4h0a99/">May 17 2024 23:58:51</a>
+        </p>
+        <div class="collapsible">
+            <p>需要注意的是，</p>
+<blockquote>
+<p>角色卡文件可以是图片文件（信息藏在图片文件二进制流的末尾），所以角色卡经常用图片的形式发布，下载原图导入就行。<br />
+Edge 会用Edge image viewer打开图片，这样下载的图片是无效的。解决方法是不用edge或者关闭Edge的这个功能。</p>
+</blockquote></div></div>
+    <div class="comment" id="t1_l56d9o6">
+        <p class="userinfo">
+            <a class="toggle_hide_button" href="javascript:void(0)" onclick="toggle_collapse(this.parentElement.parentElement)">[-]</a>
+            <a href="https://old.reddit.com/u/Organic_Ad_3409">Organic_Ad_3409</a>
+            | <span class="score">1 points</span>
+            | <a class="timestamp" href="https://old.reddit.com/r/NEWTo_Cave/comments/1cjf041/最强_ai_文爱软件_sillytavern_简单教程/l56d9o6/">May 22 2024 22:42:33</a>
+        </p>
+        <div class="collapsible">
+            <p>马克，明天试试。</p></div></div>
+    <div class="comment" id="t1_l56wklp">
+        <p class="userinfo">
+            <a class="toggle_hide_button" href="javascript:void(0)" onclick="toggle_collapse(this.parentElement.parentElement)">[-]</a>
+            <a href="https://old.reddit.com/u/Dear-Address-3026">Dear-Address-3026</a>
+            | <span class="score">1 points</span>
+            | <a class="timestamp" href="https://old.reddit.com/r/NEWTo_Cave/comments/1cjf041/最强_ai_文爱软件_sillytavern_简单教程/l56wklp/">May 23 2024 00:32:12</a>
+        </p>
+        <div class="collapsible">
+            <p>大佬牛逼</p></div></div>
+    </body>
+    <script>
+        function toggle_collapse(comment_div) {{
+            var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+            var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+            if (collapsible.classList.contains("hidden")) {{
+                collapsible.classList.remove("hidden");
+                button.innerText = "[-]";
+            }} else {{
+                collapsible.classList.add("hidden");
+                button.innerText = "[+]";
+            }}
+        }}
+    </script>
+</html>

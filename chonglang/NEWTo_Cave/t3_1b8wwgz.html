@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>有没有计算机nerd讲讲cdn反代是啥</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <style>
+            .crosspost {
+                border: 1px solid #888;
+                margin-top: 10px;
+                padding: 10px;
+                background-color: #f6f7f8;
+            }
+            .crosspost-header {
+                font-size: 12px;
+                color: #555;
+                margin-bottom: 6px;
+            }
+            .crosspost-content {
+                padding-left: 5px;
+            }
+            .submission, .comment { padding-left: 20px; padding-right: 4px; font-family: verdana, arial, helvetica, sans-serif; }
+            .comment { margin-top: 4px; margin-bottom: 4px; border: 1px solid black; }
+            .submission { border: 2px solid blue; padding-bottom: 10px; }
+            .hidden { display: none; }
+            .userinfo { font-size: 12px; color: #555; }
+            .flair {
+                padding: 2px 6px; border-radius: 20px; font-size: 10px; font-weight: bold;
+                margin-left: 5px; display: inline-block; vertical-align: middle; line-height: 1.2;
+            }
+        </style>
+    </head>
+    <body>
+        <a href="../NEWTo_Cave.html#t3_1b8wwgz" class="back-link">← Back to Index</a>
+            <div class="submission" id="t3_1b8wwgz">
+                <p class="userinfo">
+                    <a href="https://old.reddit.com/u/Appro_Principle">Appro_Principle</a>
+                    | <span class="score">4 points</span>
+                    | <a class="timestamp" href="https://old.reddit.com/r/NEWTo_Cave/comments/1b8wwgz/有没有计算机nerd讲讲cdn反代是啥/">Mar 07 2024 23:06:41</a>
+                </p>
+                <strong>有没有计算机nerd讲讲cdn反代是啥</strong>
+                <p><p>晶哥一直给我安利说这个不限速没有流量限制比机场好多了</p></p>
+                
+            </div>
+    <div class="comment" id="t1_ktseaj7">
+        <p class="userinfo">
+            <a class="toggle_hide_button" href="javascript:void(0)" onclick="toggle_collapse(this.parentElement.parentElement)">[-]</a>
+            <a href="https://old.reddit.com/u/CLTV8964CLTV">CLTV8964CLTV</a>
+            | <span class="score">1 points</span>
+            | <a class="timestamp" href="https://old.reddit.com/r/NEWTo_Cave/comments/1b8wwgz/有没有计算机nerd讲讲cdn反代是啥/ktseaj7/">Mar 08 2024 00:55:28</a>
+        </p>
+        <div class="collapsible">
+            <p>cloudfare那个吗，原理差不多</p></div></div>
+    <div class="comment" id="t1_ktunm1u">
+        <p class="userinfo">
+            <a class="toggle_hide_button" href="javascript:void(0)" onclick="toggle_collapse(this.parentElement.parentElement)">[-]</a>
+            <a href="https://old.reddit.com/u/JackReedTheSyndie">JackReedTheSyndie</a>
+            | <span class="score">2 points</span>
+            | <a class="timestamp" href="https://old.reddit.com/r/NEWTo_Cave/comments/1b8wwgz/有没有计算机nerd讲讲cdn反代是啥/ktunm1u/">Mar 08 2024 09:21:08</a>
+        </p>
+        <div class="collapsible">
+            <p>这个只是帮你中转一下的，通过cdn反代实现更高的安全性，还是需要一个服务器做vps部署自己的翻墙服务的。</p></div></div>
+    <div class="comment" id="t1_ku6mf55">
+        <p class="userinfo">
+            <a class="toggle_hide_button" href="javascript:void(0)" onclick="toggle_collapse(this.parentElement.parentElement)">[-]</a>
+            <a href="https://old.reddit.com/u/i_have_no_pussy">i_have_no_pussy</a>
+            | <span class="score">1 points</span>
+            | <a class="timestamp" href="https://old.reddit.com/r/NEWTo_Cave/comments/1b8wwgz/有没有计算机nerd讲讲cdn反代是啥/ku6mf55/">Mar 10 2024 13:43:08</a>
+        </p>
+        <div class="collapsible">
+            <p>如果把 VPN 的服务器的想成是业主，翻墙穷蛆想成是购房者，那么 CDN 就是「房产中介」。你翻墙的时候先和 CDN 沟通，CDN 和 VPN 服务器沟通，后者和 Google 沟通。</p>
+<p>为什么要这么做呢，因为大部分 VPN 服务器的区段都上了晶哥的黑名单，你想和 VPN 服务器洽谈的时候都会被「重点监控」。而 CDN 除了 VPN 的服务器，还代理相当多的正常网站，因此晶是拿 CDN 「无可奈何」的。</p>
+<p>但是我们可以发现，如果没有业主，有一万个房产中介也没有用，所以你还是得找机场。</p>
+<p>给你安利的可能是 CF 旗下的 Workers 产品，说白了就是 CF 提供一台服务器运行 VPN 服务的代码，和传统 VPN 模式差别不大，反而和 CDN 没什么关系。而且 CF 的 Workers 是「有流量限制」的，每日有一定的请求限制，而且很多挂 CF CDN 的网站还可能拒绝你访问，所以我个人是不推荐的。</p></div></div>
+    </body>
+    <script>
+        function toggle_collapse(comment_div) {{
+            var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+            var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+            if (collapsible.classList.contains("hidden")) {{
+                collapsible.classList.remove("hidden");
+                button.innerText = "[-]";
+            }} else {{
+                collapsible.classList.add("hidden");
+                button.innerText = "[+]";
+            }}
+        }}
+    </script>
+</html>
