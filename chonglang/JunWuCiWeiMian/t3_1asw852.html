@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>写了一个批量举办脚本，送给左理解</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <style>
+            .crosspost {
+                border: 1px solid #888;
+                margin-top: 10px;
+                padding: 10px;
+                background-color: #f6f7f8;
+            }
+            .crosspost-header {
+                font-size: 12px;
+                color: #555;
+                margin-bottom: 6px;
+            }
+            .crosspost-content {
+                padding-left: 5px;
+            }
+            .submission, .comment { padding-left: 20px; padding-right: 4px; font-family: verdana, arial, helvetica, sans-serif; }
+            .comment { margin-top: 4px; margin-bottom: 4px; border: 1px solid black; }
+            .submission { border: 2px solid blue; padding-bottom: 10px; }
+            .hidden { display: none; }
+            .userinfo { font-size: 12px; color: #555; }
+            .flair {
+                padding: 2px 6px; border-radius: 20px; font-size: 10px; font-weight: bold;
+                margin-left: 5px; display: inline-block; vertical-align: middle; line-height: 1.2;
+            }
+        </style>
+    </head>
+    <body>
+        <a href="../JunWuCiWeiMian.html#t3_1asw852" class="back-link">← Back to Index</a>
+            <div class="submission" id="t3_1asw852">
+                <p class="userinfo">
+                    <a href="https://old.reddit.com/u/china_man_666">china_man_666</a>
+                    | <span class="score">1 points</span>
+                    | <a class="timestamp" href="https://old.reddit.com/r/JunWuCiWeiMian/comments/1asw852/写了一个批量举办脚本送给左理解/">Feb 17 2024 15:23:51</a>
+                </p>
+                <strong>写了一个批量举办脚本，送给左理解</strong>
+                <p><p>使用方法，注册一个新账号，然后按浏览器f12，从cookies里找到token_v2的值，自己新建一个key.txt文件，把值填入key.txt文件里。就可以看到浪蛆批量被沙了，key.txt可以填入多个账号的值，回车换行，会随机挑选，相当于不断换号，防止举办过于频繁。花了一个小时写的，没有测试过，有问题别找我。下次再写一个自动爆破的</p>
+<pre><code>#!/usr/bin/python3
+#浪蛆都司马了😁
+import requests,random,time
+
+def random_ua():
+    return random.choice([
+    "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:109.0) Gecko/20100101 Firefox/118.0",
+    "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.6 Safari/605.1.15",
+    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36",
+    "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/118.0",
+    "Mozilla/5.0 (Windows NT 10.0; rv:109.0) Gecko/20100101 Firefox/117.0",
+    "Mozilla/5.0 (X11; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/119.0"
+])
+
+def random_proxy():
+    # 把代理填在这里，每次请求都会随机选择
+    proxy = random.choice([""])
+    return {"http":proxy,"https":proxy}
+
+def random_apikeys():
+    keys = []
+    with open("keys.txt","r") as keys_file:
+        keys = keys_file.read().split("\n")[:-1]
+    assert keys[0] != ""
+    key = random.choice(keys)
+    if "Bearer" not in key:
+        key = "Bearer "+ key
+    return key
+
+def report_post(post_id):
+    data = '{"id":"08c43db238fd","variables":{"input":{"postId":"'+post_id+'","fromHelpDesk":false,"siteRule":"VIOLENCE_AT_SOMEONE_ELSE"}}}'
+    headers = {"User-Agent":random_ua()} | {"Authorization":random_apikeys(),"Content-Type":"application/json"}
+    r = requests.post("https://gql.reddit.com/",data=data,headers=headers,proxies=random_proxy())
+
+def report_comment(comment_id):
+    data = '{"id":"cec8e7309a27","variables":{"input":{"commentId":"'+comment_id+'","fromHelpDesk":false,"siteRule":"VIOLENCE_AT_SOMEONE_ELSE"}}}'
+    headers = {"User-Agent":random_ua()} | {"Authorization":random_apikeys(),"Content-Type":"application/json"}
+    r = requests.post("https://gql.reddit.com/",data=data,headers=headers,proxies=random_proxy())
+
+def get_newPost(sub_name):
+    url = f"https://api.reddit.com/r/{sub_name}/new"
+    headers = {"User-Agent":random_ua()}
+    r = requests.get(url,headers=headers,proxies=random_proxy())
+    posts = r.json()["data"]["children"]
+    posts_id = []
+    for post in posts:
+        posts_id.append(post["data"]["name"])
+    return posts_id
+
+def get_newComment(post_id):
+    url = f"https://gateway.reddit.com/desktopapi/v1/postcomments/{post_id}?&amp;sort=new&amp;allow_over18=1"
+    headers = {"User-Agent":random_ua()}
+    r = requests.get(url,headers=headers,proxies=random_proxy())
+    comments = r.json()["comments"]
+    comments_id = []
+    for comment_id in comments.keys():
+        if comments[comment_id]["author"] == "AutoModerator":
+            continue
+        comments_id.append(comment_id)
+    return comments_id
+
+def main():
+    print("原神启动")
+    reported_id = []
+    while True:
+        # 获取新帖子
+        posts_id = get_newPost("junwuciweimian")
+        for post_id in posts_id:
+            # 检测有没有举办过
+            if post_id not in reported_id:
+                report_post(post_id)
+                print("举报帖子经验+1")
+                reported_id.append(post_id)
+            # 开始拉取评论
+            comments_id = get_newComment(post_id)
+            for comment_id in comments_id:
+                # 检测评论有没有被举办过
+                if comment_id in reported_id:
+                    continue
+                report_comment(comment_id)
+                print("举报评论经验+1")
+                reported_id.append(comment_id)
+                time.sleep(5)
+            time.sleep(10)
+        #冷却五分钟
+        time.sleep(5*60)
+
+if __name__ == '__main__':
+    main()
+</code></pre></p>
+                
+            </div>
+    <div class="comment" id="t1_kqt42um">
+        <p class="userinfo">
+            <a class="toggle_hide_button" href="javascript:void(0)" onclick="toggle_collapse(this.parentElement.parentElement)">[-]</a>
+            <a href="https://old.reddit.com/u/BakeFar1364">BakeFar1364</a><span class="flair" style="background-color: #ff8717; color: #1c1c1c;">原航空母舰吧吧友</span>
+            | <span class="score">3 points</span>
+            | <a class="timestamp" href="https://old.reddit.com/r/JunWuCiWeiMian/comments/1asw852/写了一个批量举办脚本送给左理解/kqt42um/">Feb 17 2024 15:35:46</a>
+        </p>
+        <div class="collapsible">
+            <p>码爹讲讲py的__main__呗？为什么用_而不是直接写啊？<br />
+之前听课学过，好像和引用跳转还是什么有关。现在忘了</p>
+    <div class="comment" id="t1_kqt46bu">
+        <p class="userinfo">
+            <a class="toggle_hide_button" href="javascript:void(0)" onclick="toggle_collapse(this.parentElement.parentElement)">[-]</a>
+            <a href="https://old.reddit.com/u/EvenDogWontUseReddit">EvenDogWontUseReddit</a><span class="flair" style="background-color: #0dd3bb; color: #1c1c1c;">In solitude, where we are least alone.</span>
+            | <span class="score">3 points</span>
+            | <a class="timestamp" href="https://old.reddit.com/r/JunWuCiWeiMian/comments/1asw852/写了一个批量举办脚本送给左理解/kqt46bu/">Feb 17 2024 15:36:53</a>
+        </p>
+        <div class="collapsible">
+            <p>为了让其他 py 文件里 import 这个 py 的时候不执行 main 代码</p>
+    <div class="comment" id="t1_kqt4bqg">
+        <p class="userinfo">
+            <a class="toggle_hide_button" href="javascript:void(0)" onclick="toggle_collapse(this.parentElement.parentElement)">[-]</a>
+            <a href="https://old.reddit.com/u/BakeFar1364">BakeFar1364</a><span class="flair" style="background-color: #ff8717; color: #1c1c1c;">原航空母舰吧吧友</span>
+            | <span class="score">2 points</span>
+            | <a class="timestamp" href="https://old.reddit.com/r/JunWuCiWeiMian/comments/1asw852/写了一个批量举办脚本送给左理解/kqt4bqg/">Feb 17 2024 15:38:38</a>
+        </p>
+        <div class="collapsible">
+            <p>我刚学py。对，是这个 想起来了</p></div></div></div></div></div></div>
+    <div class="comment" id="t1_kqt47qs">
+        <p class="userinfo">
+            <a class="toggle_hide_button" href="javascript:void(0)" onclick="toggle_collapse(this.parentElement.parentElement)">[-]</a>
+            <a href="https://old.reddit.com/u/cdjinping321">cdjinping321</a><span class="flair" style="background-color: #ffd635; color: #1c1c1c;">马克思原神吧吧友</span>
+            | <span class="score">2 points</span>
+            | <a class="timestamp" href="https://old.reddit.com/r/JunWuCiWeiMian/comments/1asw852/写了一个批量举办脚本送给左理解/kqt47qs/">Feb 17 2024 15:37:20</a>
+        </p>
+        <div class="collapsible">
+            <p>能不能加点代码把使用者开盒了</p></div></div>
+    </body>
+    <script>
+        function toggle_collapse(comment_div) {{
+            var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+            var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+            if (collapsible.classList.contains("hidden")) {{
+                collapsible.classList.remove("hidden");
+                button.innerText = "[-]";
+            }} else {{
+                collapsible.classList.add("hidden");
+                button.innerText = "[+]";
+            }}
+        }}
+    </script>
+</html>

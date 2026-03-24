@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>SafestBot 教程和配置，自动屏蔽敌对 sub 用户</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <style>
+            .crosspost {
+                border: 1px solid #888;
+                margin-top: 10px;
+                padding: 10px;
+                background-color: #f6f7f8;
+            }
+            .crosspost-header {
+                font-size: 12px;
+                color: #555;
+                margin-bottom: 6px;
+            }
+            .crosspost-content {
+                padding-left: 5px;
+            }
+            .submission, .comment { padding-left: 20px; padding-right: 4px; font-family: verdana, arial, helvetica, sans-serif; }
+            .comment { margin-top: 4px; margin-bottom: 4px; border: 1px solid black; }
+            .submission { border: 2px solid blue; padding-bottom: 10px; }
+            .hidden { display: none; }
+            .userinfo { font-size: 12px; color: #555; }
+            .flair {
+                padding: 2px 6px; border-radius: 20px; font-size: 10px; font-weight: bold;
+                margin-left: 5px; display: inline-block; vertical-align: middle; line-height: 1.2;
+            }
+        </style>
+    </head>
+    <body>
+        <a href="../JunWuCiWeiMian.html#t3_1awc6dz" class="back-link">← Back to Index</a>
+            <div class="submission" id="t3_1awc6dz">
+                <p class="userinfo">
+                    <a href="https://old.reddit.com/u/EvenDogWontUseReddit">EvenDogWontUseReddit</a><span class="flair" style="background-color: #0dd3bb; color: #1c1c1c;">In solitude, where we are least alone.</span>
+                    | <span class="score">1 points</span>
+                    | <a class="timestamp" href="https://old.reddit.com/r/JunWuCiWeiMian/comments/1awc6dz/safestbot_教程和配置自动屏蔽敌对_sub_用户/">Feb 21 2024 21:35:31</a>
+                </p>
+                <strong>SafestBot 教程和配置，自动屏蔽敌对 sub 用户</strong><span class="flair" style="background-color: #24a0ed; color: #1c1c1c;">基础建设</span>
+                <p><a href="/r/HarukaNaSora/comments/1awc5y8/safestbot_教程和配置自动屏蔽敌对_sub_用户/">/r/HarukaNaSora/comments/1awc5y8/safestbot_教程和配置自动屏蔽敌对_sub_用户/</a></p>
+                
+                <div class="crosspost">
+                    <div class="crosspost-header">
+                        Crossposted from <a href="https://old.reddit.com/r/HarukaNaSora/comments/1awc5y8/safestbot_教程和配置自动屏蔽敌对_sub_用户/">
+                        r/HarukaNaSora</a> by /u/EvenDogWontUseReddit
+                        | 1 points
+                    </div>
+                    <div class="crosspost-content">
+                        <strong>SafestBot 教程和配置，自动屏蔽敌对 sub 用户</strong>
+                        <p><p><p><a href="https://www.reddit.com/r/SafestBot/wiki/tutorial/config/">https://www.reddit.com/r/SafestBot/wiki/tutorial/config/</a></p>
+<pre><code>subreddits: [China_irl, real_China_irl]
+
+num_comments: 1 # 用户在指定版块的最少发言数为1条即触发屏蔽
+
+ban: true # 启用封禁
+
+remove: true # 在封禁前移除用户的评论
+
+ban_days: 0 # 永久封禁
+
+ban_note: "Automatic ban due to participation in r/China_irl" # 封禁的内部备注
+
+ban_message: "由于您在 r/China_irl 的参与，您已被本版块自动封禁。" # 发送给被封禁用户的消息
+</code></pre>
+<p>邀请 u/SafestBot 成为 mod，给 Manage Wiki Pages、Manage Posts &amp; Comments、Manage Users 权限</p>
+<p>SafestBot 会自动接受邀请，并发 modmail 告诉你已经新建一个 wiki 配置页</p>
+<p>把该 wiki 配置页修改成上面的配置</p>
+<p>最后给 u/SafestBot 发私信 <a href="https://www.reddit.com/message/compose/?to=SafestBot">https://www.reddit.com/message/compose/?to=SafestBot</a> ，subject 任意，内容为 "UPDATE HarukaNoSora" （HarukaNoSora 改成你的 sub 名称）</p></p></p>
+                    </div>
+                </div>
+            </div>
+    </body>
+    <script>
+        function toggle_collapse(comment_div) {{
+            var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+            var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+            if (collapsible.classList.contains("hidden")) {{
+                collapsible.classList.remove("hidden");
+                button.innerText = "[-]";
+            }} else {{
+                collapsible.classList.add("hidden");
+                button.innerText = "[+]";
+            }}
+        }}
+    </script>
+</html>
