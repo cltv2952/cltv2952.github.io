@@ -1,4 +1,6 @@
-# 搬家地图
+# 红迪照相馆
+
+## 搬家地图
 
 ```mermaid
 flowchart TB
@@ -331,13 +333,13 @@ flowchart TB
     Bagabondo --- Bagabondo_t@{ shape: text, label: "现存" }
 ```
 
-# 参考链接
+## 参考链接
 
 - https://chonglangtv.pythonanywhere.com/
 - https://ivonblog.com/posts/home-of-chonglangtv/
 - https://ghostarchive.org/archive/vQN76
 
-# 已知问题
+## 已知问题
 
 - 无法获取sub设置为私密期间的发贴
 - 缺失r/langren的全部发帖和评论
