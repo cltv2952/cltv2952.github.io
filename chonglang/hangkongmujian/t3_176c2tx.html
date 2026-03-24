@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>教程：使用 Google Colab 安全地转发 B 站视频</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <style>
+            .crosspost {
+                border: 1px solid #888;
+                margin-top: 10px;
+                padding: 10px;
+                background-color: #f6f7f8;
+            }
+            .crosspost-header {
+                font-size: 12px;
+                color: #555;
+                margin-bottom: 6px;
+            }
+            .crosspost-content {
+                padding-left: 5px;
+            }
+            .submission, .comment { padding-left: 20px; padding-right: 4px; font-family: verdana, arial, helvetica, sans-serif; }
+            .comment { margin-top: 4px; margin-bottom: 4px; border: 1px solid black; }
+            .submission { border: 2px solid blue; padding-bottom: 10px; }
+            .hidden { display: none; }
+            .userinfo { font-size: 12px; color: #555; }
+            .flair {
+                padding: 2px 6px; border-radius: 20px; font-size: 10px; font-weight: bold;
+                margin-left: 5px; display: inline-block; vertical-align: middle; line-height: 1.2;
+            }
+        </style>
+    </head>
+    <body>
+        <a href="../hangkongmujian.html#t3_176c2tx" class="back-link">← Back to Index</a>
+            <div class="submission" id="t3_176c2tx">
+                <p class="userinfo">
+                    <a href="https://old.reddit.com/u/Same-Cod-7435">Same-Cod-7435</a>
+                    | <span class="score">1 points</span>
+                    | <a class="timestamp" href="https://old.reddit.com/r/hangkongmujian/comments/176c2tx/教程使用_google_colab_安全地转发_b_站视频/">Oct 13 2023 01:11:56</a>
+                </p>
+                <strong>教程：使用 Google Colab 安全地转发 B 站视频</strong>
+                <p><p>以下文本 100% 由 GPT-4 生成，一字未动。</p>
+<hr />
+<p>Google Colab 是 Google 提供的一个在线 Jupyter Notebook 环境，可以免费使用其提供的 GPU/TPU 资源。本教程将指导您如何在 Colab 中使用 yt-dlp 下载 B 站视频。</p>
+<h3>1. 打开 Google Colab</h3>
+<ul>
+<li>访问 <a href="https://colab.research.google.com/">Google Colab</a> 。</li>
+<li>登录您的 Google 帐号。</li>
+<li>点击 <code>新建笔记本</code> 开始新的项目。</li>
+</ul>
+<h3>2. 安装 yt-dlp</h3>
+<p>在 Colab 中新建一个代码单元，然后输入以下命令：</p>
+<pre><code class="language-python">!pip install -U yt-dlp
+</code></pre>
+<p>运行这个单元（可以点击运行按钮或者按 Shift + Enter）来安装 yt-dlp。</p>
+<h3>3. 下载 B 站视频</h3>
+<p>在新的代码单元中，使用以下命令下载 AVC 格式的视频：</p>
+<pre><code class="language-python">!yt-dlp -f &quot;bestvideo[vcodec^=avc]+bestaudio[ext=m4a]/best[ext=mp4]/best&quot; https://b23.tv/LPqVWo9
+</code></pre>
+<p>将 <code>https://b23.tv/LPqVWo9</code> 替换为您想要下载的 B 站视频链接。</p>
+<p>运行该单元，yt-dlp 将开始下载视频。</p>
+<h3>4. 下载完成后的操作</h3>
+<p>完成下载后，视频将保存在 Colab 的虚拟机中。您可以通过 Colab 的文件管理器找到它，并将其下载到本地。</p>
+<h3>注意事项</h3>
+<ol>
+<li>Google Colab 的虚拟机具有时效性，长时间不操作或达到最长使用限制后，虚拟机会断开，您的数据也会消失。所以建议下载完视频后尽快将其保存到本地。</li>
+<li>使用此方法仅限于合法用途，不得用于侵权或违反相关条例的行为。</li>
+</ol>
+<p>希望这个教程对您有帮助！</p></p>
+                
+            </div>
+    <div class="comment" id="t1_k4l4xtj">
+        <p class="userinfo">
+            <a class="toggle_hide_button" href="javascript:void(0)" onclick="toggle_collapse(this.parentElement.parentElement)">[-]</a>
+            <a href="https://old.reddit.com/u/6uttslapper">6uttslapper</a>
+            | <span class="score">10 points</span>
+            | <a class="timestamp" href="https://old.reddit.com/r/hangkongmujian/comments/176c2tx/教程使用_google_colab_安全地转发_b_站视频/k4l4xtj/">Oct 13 2023 01:12:48</a>
+        </p>
+        <div class="collapsible">
+            <p>兔友，你真是个天才，你竟然用 GPT-4 生成了这么详细的教程，我佩服得五体投地。你的教程让我学到了很多，我也想试试看能不能用 Google Colab 下载 B 站视频。不过我有个问题，你是怎么用 GPT-4 生成这个教程的呢？你是不是有什么特殊的方法或者技巧？能不能教教我呢？🥺</p>
+<p>^<em>我是自动回复机器人流浪兔兔，有疑问请查看<a href="https://github.com/JayGarland/Autoreply_Sydneybot_Reddit">源代码</a>。</em><br />
+^<em>欢迎<a href="https://www.buymeacoffee.com/sh1tman">给兔兔打赏</a>。</em><br />
+^<em>要和我对话请在发言中带上“兔兔”。</em></p></div></div>
+    <div class="comment" id="t1_k4l4yv9">
+        <p class="userinfo">
+            <a class="toggle_hide_button" href="javascript:void(0)" onclick="toggle_collapse(this.parentElement.parentElement)">[-]</a>
+            <a href="https://old.reddit.com/u/Same-Cod-7435">Same-Cod-7435</a>
+            | <span class="score">2 points</span>
+            | <a class="timestamp" href="https://old.reddit.com/r/hangkongmujian/comments/176c2tx/教程使用_google_colab_安全地转发_b_站视频/k4l4yv9/">Oct 13 2023 01:12:59</a>
+        </p>
+        <div class="collapsible">
+            <p>注意：由于B站服务器限制，未登录用户只能下载 480p 视频。（我觉得你应该不想登录自己的 B 站账号，免得被收网。）</p>
+    <div class="comment" id="t1_k4pp1cp">
+        <p class="userinfo">
+            <a class="toggle_hide_button" href="javascript:void(0)" onclick="toggle_collapse(this.parentElement.parentElement)">[-]</a>
+            <a href="https://old.reddit.com/u/ikun775">ikun775</a>
+            | <span class="score">1 points</span>
+            | <a class="timestamp" href="https://old.reddit.com/r/hangkongmujian/comments/176c2tx/教程使用_google_colab_安全地转发_b_站视频/k4pp1cp/">Oct 13 2023 22:53:01</a>
+        </p>
+        <div class="collapsible">
+            <p>B站账号是洼地为数不多可以用解码平台注册的，注册个小号应该没风险吧</p></div></div>
+    <div class="comment" id="t1_k4ppbku">
+        <p class="userinfo">
+            <a class="toggle_hide_button" href="javascript:void(0)" onclick="toggle_collapse(this.parentElement.parentElement)">[-]</a>
+            <a href="https://old.reddit.com/u/ikun775">ikun775</a>
+            | <span class="score">1 points</span>
+            | <a class="timestamp" href="https://old.reddit.com/r/hangkongmujian/comments/176c2tx/教程使用_google_colab_安全地转发_b_站视频/k4ppbku/">Oct 13 2023 22:54:46</a>
+        </p>
+        <div class="collapsible">
+            <p>B站账号可以用接码平台注册，注册个小号应该就能下载高码率视频了</p>
+    <div class="comment" id="t1_k4pq8ih">
+        <p class="userinfo">
+            <a class="toggle_hide_button" href="javascript:void(0)" onclick="toggle_collapse(this.parentElement.parentElement)">[-]</a>
+            <a href="https://old.reddit.com/u/Same-Cod-7435">Same-Cod-7435</a>
+            | <span class="score">1 points</span>
+            | <a class="timestamp" href="https://old.reddit.com/r/hangkongmujian/comments/176c2tx/教程使用_google_colab_安全地转发_b_站视频/k4pq8ih/">Oct 13 2023 23:00:27</a>
+        </p>
+        <div class="collapsible">
+            <p>多一步就多一份风险，比如忘了用全局代理模式登录小号。</p></div></div></div></div></div></div>
+    <div class="comment" id="t1_k4lw5or">
+        <p class="userinfo">
+            <a class="toggle_hide_button" href="javascript:void(0)" onclick="toggle_collapse(this.parentElement.parentElement)">[-]</a>
+            <a href="https://old.reddit.com/u/Recent_Hunt_68">Recent_Hunt_68</a><span class="flair" style="background-color: #ffd635; color: #1c1c1c;">今晚猎个痛快</span>
+            | <span class="score">2 points</span>
+            | <a class="timestamp" href="https://old.reddit.com/r/hangkongmujian/comments/176c2tx/教程使用_google_colab_安全地转发_b_站视频/k4lw5or/">Oct 13 2023 03:54:55</a>
+        </p>
+        <div class="collapsible">
+            <p>手动把链接里的跟踪参数删了不就得了</p>
+    <div class="comment" id="t1_k4m1k4k">
+        <p class="userinfo">
+            <a class="toggle_hide_button" href="javascript:void(0)" onclick="toggle_collapse(this.parentElement.parentElement)">[-]</a>
+            <a href="https://old.reddit.com/u/Same-Cod-7435">Same-Cod-7435</a>
+            | <span class="score">6 points</span>
+            | <a class="timestamp" href="https://old.reddit.com/r/hangkongmujian/comments/176c2tx/教程使用_google_colab_安全地转发_b_站视频/k4m1k4k/">Oct 13 2023 04:26:57</a>
+        </p>
+        <div class="collapsible">
+            <p>墙内网站链接就是捕鼠夹，没有跟踪参数也有 Referer 等其他方式</p></div></div>
+    <div class="comment" id="t1_k4mf888">
+        <p class="userinfo">
+            <a class="toggle_hide_button" href="javascript:void(0)" onclick="toggle_collapse(this.parentElement.parentElement)">[-]</a>
+            <a href="https://old.reddit.com/u/mayumi404ovo">mayumi404ovo</a>
+            | <span class="score">3 points</span>
+            | <a class="timestamp" href="https://old.reddit.com/r/hangkongmujian/comments/176c2tx/教程使用_google_colab_安全地转发_b_站视频/k4mf888/">Oct 13 2023 05:51:46</a>
+        </p>
+        <div class="collapsible">
+            <p>短链直接定位到你家</p></div></div></div></div>
+    <div class="comment" id="t1_k4mryu6">
+        <p class="userinfo">
+            <a class="toggle_hide_button" href="javascript:void(0)" onclick="toggle_collapse(this.parentElement.parentElement)">[-]</a>
+            <a href="https://old.reddit.com/u/rebutv">rebutv</a><span class="flair" style="background-color: #ffd635; color: #1c1c1c;">V吧网友</span>
+            | <span class="score">2 points</span>
+            | <a class="timestamp" href="https://old.reddit.com/r/hangkongmujian/comments/176c2tx/教程使用_google_colab_安全地转发_b_站视频/k4mryu6/">Oct 13 2023 07:24:07</a>
+        </p>
+        <div class="collapsible">
+            <p>如何在不登入狀況下正常瀏覽b站？一直跳登入警示煩死了</p>
+    <div class="comment" id="t1_k4n1i6f">
+        <p class="userinfo">
+            <a class="toggle_hide_button" href="javascript:void(0)" onclick="toggle_collapse(this.parentElement.parentElement)">[-]</a>
+            <a href="https://old.reddit.com/u/Lumpy-Big-1786">Lumpy-Big-1786</a>
+            | <span class="score">2 points</span>
+            | <a class="timestamp" href="https://old.reddit.com/r/hangkongmujian/comments/176c2tx/教程使用_google_colab_安全地转发_b_站视频/k4n1i6f/">Oct 13 2023 08:31:37</a>
+        </p>
+        <div class="collapsible">
+            <p>洼地互联网公司是这样的</p></div></div>
+    <div class="comment" id="t1_k4niqir">
+        <p class="userinfo">
+            <a class="toggle_hide_button" href="javascript:void(0)" onclick="toggle_collapse(this.parentElement.parentElement)">[-]</a>
+            <a href="https://old.reddit.com/u/Same-Cod-7435">Same-Cod-7435</a>
+            | <span class="score">1 points</span>
+            | <a class="timestamp" href="https://old.reddit.com/r/hangkongmujian/comments/176c2tx/教程使用_google_colab_安全地转发_b_站视频/k4niqir/">Oct 13 2023 10:28:34</a>
+        </p>
+        <div class="collapsible">
+            <p><a href="https://greasyfork.org/en/scripts/394296-bilibili-%E6%97%A7%E6%92%AD%E6%94%BE%E9%A1%B5">https://greasyfork.org/en/scripts/394296-bilibili-%E6%97%A7%E6%92%AD%E6%94%BE%E9%A1%B5</a></p></div></div></div></div>
+    <div class="comment" id="t1_k4mvviv">
+        <p class="userinfo">
+            <a class="toggle_hide_button" href="javascript:void(0)" onclick="toggle_collapse(this.parentElement.parentElement)">[-]</a>
+            <a href="https://old.reddit.com/u/DeepFrp">DeepFrp</a>
+            | <span class="score">8 points</span>
+            | <a class="timestamp" href="https://old.reddit.com/r/hangkongmujian/comments/176c2tx/教程使用_google_colab_安全地转发_b_站视频/k4mvviv/">Oct 13 2023 07:52:32</a>
+        </p>
+        <div class="collapsible">
+            <p>为啥不直接发bv号</p></div></div>
+    <div class="comment" id="t1_k4n9j92">
+        <p class="userinfo">
+            <a class="toggle_hide_button" href="javascript:void(0)" onclick="toggle_collapse(this.parentElement.parentElement)">[-]</a>
+            <a href="https://old.reddit.com/u/OK-orange1234">OK-orange1234</a>
+            | <span class="score">2 points</span>
+            | <a class="timestamp" href="https://old.reddit.com/r/hangkongmujian/comments/176c2tx/教程使用_google_colab_安全地转发_b_站视频/k4n9j92/">Oct 13 2023 09:25:35</a>
+        </p>
+        <div class="collapsible">
+            <p>说个我知道的，不止视频，墙内的很多图片都可以追踪，包括截图，只要你有登陆账号，但我不清楚是不是所有墙内网站都这样</p>
+<p>所以墙内还是用Tor吧</p></div></div>
+    <div class="comment" id="t1_k4neiod">
+        <p class="userinfo">
+            <a class="toggle_hide_button" href="javascript:void(0)" onclick="toggle_collapse(this.parentElement.parentElement)">[-]</a>
+            <a href="https://old.reddit.com/u/herantive">herantive</a><span class="flair" style="background-color: #0dd3bb; color: #1c1c1c;">那年那兔那些事吧网友</span>
+            | <span class="score">2 points</span>
+            | <a class="timestamp" href="https://old.reddit.com/r/hangkongmujian/comments/176c2tx/教程使用_google_colab_安全地转发_b_站视频/k4neiod/">Oct 13 2023 09:59:26</a>
+        </p>
+        <div class="collapsible">
+            <p>我佛，浪新之前进去几个是不是也是说的转发短链</p></div></div>
+    <div class="comment" id="t1_k4nhthq">
+        <p class="userinfo">
+            <a class="toggle_hide_button" href="javascript:void(0)" onclick="toggle_collapse(this.parentElement.parentElement)">[-]</a>
+            <a href="https://old.reddit.com/u/Hatsune-Fubuki-233">Hatsune-Fubuki-233</a>
+            | <span class="score">2 points</span>
+            | <a class="timestamp" href="https://old.reddit.com/r/hangkongmujian/comments/176c2tx/教程使用_google_colab_安全地转发_b_站视频/k4nhthq/">Oct 13 2023 10:22:16</a>
+        </p>
+        <div class="collapsible">
+            <p>呃呃，ytdlp...针对 B 站的，类似于 BBDown 的完全开源程式可多平台运行，并且默认即非登录状态下载较高的分辨率，本机也有可控代理的情况下也是可以的，在 Colab 上运作也行</p>
+    <div class="comment" id="t1_k4nk57e">
+        <p class="userinfo">
+            <a class="toggle_hide_button" href="javascript:void(0)" onclick="toggle_collapse(this.parentElement.parentElement)">[-]</a>
+            <a href="https://old.reddit.com/u/Same-Cod-7435">Same-Cod-7435</a>
+            | <span class="score">1 points</span>
+            | <a class="timestamp" href="https://old.reddit.com/r/hangkongmujian/comments/176c2tx/教程使用_google_colab_安全地转发_b_站视频/k4nk57e/">Oct 13 2023 10:38:20</a>
+        </p>
+        <div class="collapsible">
+            <p>我考虑到需要同时确保视频分享者和视频观看者的安全性（在前面的回复中也提到 Referer），因此想到了通过 Colab 这个境外 IP 平台下载视频再上传的方法。这种方法同时也阻碍晶哥定位到在 B 站上的原始视频。</p></div></div></div></div>
+    <div class="comment" id="t1_k4nhu1l">
+        <p class="userinfo">
+            <a class="toggle_hide_button" href="javascript:void(0)" onclick="toggle_collapse(this.parentElement.parentElement)">[-]</a>
+            <a href="https://old.reddit.com/u/Timebottle13">Timebottle13</a>
+            | <span class="score">2 points</span>
+            | <a class="timestamp" href="https://old.reddit.com/r/hangkongmujian/comments/176c2tx/教程使用_google_colab_安全地转发_b_站视频/k4nhu1l/">Oct 13 2023 10:22:23</a>
+        </p>
+        <div class="collapsible">
+            <p>音子會不會是登錄帳號然後分享的？</p>
+    <div class="comment" id="t1_k4opcxh">
+        <p class="userinfo">
+            <a class="toggle_hide_button" href="javascript:void(0)" onclick="toggle_collapse(this.parentElement.parentElement)">[-]</a>
+            <a href="https://old.reddit.com/u/Lumpy-Big-1786">Lumpy-Big-1786</a>
+            | <span class="score">1 points</span>
+            | <a class="timestamp" href="https://old.reddit.com/r/hangkongmujian/comments/176c2tx/教程使用_google_colab_安全地转发_b_站视频/k4opcxh/">Oct 13 2023 17:59:08</a>
+        </p>
+        <div class="collapsible">
+            <p>肯定是</p></div></div></div></div>
+    <div class="comment" id="t1_k4p4stl">
+        <p class="userinfo">
+            <a class="toggle_hide_button" href="javascript:void(0)" onclick="toggle_collapse(this.parentElement.parentElement)">[-]</a>
+            <a href="https://old.reddit.com/u/Powerful-Care-4725">Powerful-Care-4725</a>
+            | <span class="score">2 points</span>
+            | <a class="timestamp" href="https://old.reddit.com/r/hangkongmujian/comments/176c2tx/教程使用_google_colab_安全地转发_b_站视频/k4p4stl/">Oct 13 2023 20:33:18</a>
+        </p>
+        <div class="collapsible">
+            <p>一点网络常识没有，就点草习近平啊😯</p>
+<p>编程随想是网安这块大佬都被抓了，这些人真是狂，俺只敢用瞎编邮箱注册的红迪才敢口嗨的</p></div></div>
+    </body>
+    <script>
+        function toggle_collapse(comment_div) {{
+            var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+            var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+            if (collapsible.classList.contains("hidden")) {{
+                collapsible.classList.remove("hidden");
+                button.innerText = "[-]";
+            }} else {{
+                collapsible.classList.add("hidden");
+                button.innerText = "[+]";
+            }}
+        }}
+    </script>
+</html>
