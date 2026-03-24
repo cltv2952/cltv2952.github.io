@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>多伦多大学公民实验室验证 大陆厂商输入法都在监控</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <style>
+            .crosspost {
+                border: 1px solid #888;
+                margin-top: 10px;
+                padding: 10px;
+                background-color: #f6f7f8;
+            }
+            .crosspost-header {
+                font-size: 12px;
+                color: #555;
+                margin-bottom: 6px;
+            }
+            .crosspost-content {
+                padding-left: 5px;
+            }
+            .submission, .comment { padding-left: 20px; padding-right: 4px; font-family: verdana, arial, helvetica, sans-serif; }
+            .comment { margin-top: 4px; margin-bottom: 4px; border: 1px solid black; }
+            .submission { border: 2px solid blue; padding-bottom: 10px; }
+            .hidden { display: none; }
+            .userinfo { font-size: 12px; color: #555; }
+            .flair {
+                padding: 2px 6px; border-radius: 20px; font-size: 10px; font-weight: bold;
+                margin-left: 5px; display: inline-block; vertical-align: middle; line-height: 1.2;
+            }
+        </style>
+    </head>
+    <body>
+        <a href="../langrenClub.html#t3_1cjdwg3" class="back-link">← Back to Index</a>
+            <div class="submission" id="t3_1cjdwg3">
+                <p class="userinfo">
+                    <a href="https://old.reddit.com/u/DigitalReporterS01">DigitalReporterS01</a>
+                    | <span class="score">15 points</span>
+                    | <a class="timestamp" href="https://old.reddit.com/r/langrenClub/comments/1cjdwg3/多伦多大学公民实验室验证_大陆厂商输入法都在监控/">May 04 2024 01:09:30</a>
+                </p>
+                <strong>多伦多大学公民实验室验证 大陆厂商输入法都在监控</strong><span class="flair" style="background-color: #ffb000; color: #1c1c1c;">日常分享</span>
+                <p><p>重要：我们建议所有用户立即更新所使用的输入法软件以及操作系统。并建议高风险用户停止使用任何输入法提供的云端建议功能，改为完全离线的输入法，以避免数据外泄。</p>
+<p>本文是完整版报告的摘要翻译。</p>
+<p>重要发现</p>
+<p>我们分析了常见云端拼音输入法的安全性，包含百度、荣耀、华为、讯飞、OPPO、三星、腾讯等九家厂商，并分析了它们发送用户输入内容到云端的过程是否含有安全缺陷。</p>
+<p>分析结果指出，九家厂商中，有八家输入法软件包含严重漏洞，使我们得以完整破解厂商设计用于保护用户输入内容的加密法。亦有部分厂商并未使用任何加密法保护用户输入内容。</p>
+<p>综合本研究和我们先前研究中发现的搜狗输入法漏洞，我们估计至多有十亿用户受到这些漏洞影响。基于下述原因，我们认为用户输入的内容可能已经遭到大规模收集：</p>
+<p>这些漏洞影响了广泛的用户群体</p>
+<p>用户在键盘中输入的信息极为敏感</p>
+<p>发现这些漏洞不需要高深技术</p>
+<p>五眼联盟过去曾利用中国应用程序中类似的漏洞施行监控</p>
+<p>我们已向受影响的九家开发商提交这些漏洞，大部分开发商均认真看待问题并予以回应，修补了漏洞，但仍有少数输入法未修补漏洞。</p>
+<p>在报告的末尾，我们为受漏洞影响的各方提供了综合建议，期待这些建议可以减少未来类似漏洞所造成的危害。</p>
+<p>漏洞总结</p>
+<p>在我们测试的九家厂商的应用程序中，仅有华为的产品未发现任何上传用户输入内容至云端相关的安全问题，其余每一家厂商都至少有一个应用程序含有漏洞，使得被动型网络攻击者得以监看用户输入的完整内容。</p>
+<p>&#x200B;</p>
+<p>注：主动型网络监听攻击意指监听时必须要主动发出讯号，例如在信息传输过程中篡改少数比特数据，才能破解加密内容。主动型网络监听相对容易被侦测到。被动型网络监听攻击意指无需发出任何讯号，单纯读取传输中的的数据，即可达成解密。与主动性攻击相比，被动型网络监听攻击难以被侦测到。</p>
+<p>&#x200B;</p>
+<p>补丁总结</p>
+<p>我们依据漏洞披露政策，向各厂商提交了所发现的漏洞。除了百度、Vivo 和小米，其余厂商皆回复了我们。在我们提交这些漏洞不久之后，百度修复了当中最严重的几个，但并未修补其余漏洞。数家手机制造商在操作系统中内置了这些带有漏洞的输入法程序，除了百度输入法之外，如今手机制造商都已对内置输入法的这些漏洞作出修补。针对内置的百度输入法，荣耀完全未修补任何漏洞，其余厂商都只修补了部分最严重的漏洞。我们与厂商的联络内容、时间以及其它细节，参见我们的完整版报告。</p>
+<p>总结来说，除了荣耀以外，我们发现的加密破解方法在经过厂商修补后，均已无效。而在荣耀手机以外厂牌的百度输入法中，仍持续存在加密的弱点，但我们暂时还未找到方法可以利用这些弱点破解传输中的用户输入内容。</p>
+<p>受影响的软件列表</p>
+<p>我们建议所有用户将操作系统和应用程序（包含输入法）升级到最新版本，若您使用了下列软件，我们强烈建议您检查并安装这些软件及操作系统最新的补丁。截至 2024 年 4 月 1 日，下列软件已有可供安装的更新补丁，安装后可修补我们发现的安全漏洞。</p>
+<p>&#x200B;</p>
+<p>非操作系统内置（手动安装）的第三方开发者的输入法：</p>
+<p>&#x200B;</p>
+<p>Android 和 Windows 平台的 Sogou IME / 搜狗输入法</p>
+<p>Android 和 Windows 平台的 Baidu IME /</p>
+<p>百度输入法（此开发者未完整修补我们发现的漏洞，详情见下）</p>
+<p>Android 平台的 iFlyTek IME / 讯飞输入法</p>
+<p>三星中国版操作系统中内置输入法：</p>
+<p>&#x200B;</p>
+<p>Samsung Keyboard</p>
+<p>Baidu IME / 百度输入法</p>
+<p>小米中国版操作系统中内置输入法：</p>
+<p>&#x200B;</p>
+<p>Sogou IME Xiaomi Version / 搜狗输入法小米版</p>
+<p>iFlyTek IME Xiaomi Version / 讯飞输入法小米版</p>
+<p>OPPO 中国版操作系统中内置输入法：</p>
+<p>&#x200B;</p>
+<p>Sogou IME Custom Version / 搜狗输入法定制版</p>
+<p>Vivo 中国版操作系统中内置输入法：</p>
+<p>&#x200B;</p>
+<p>Sogou IME Custom Version / 搜狗输入法定制版</p>
+<p>下列软件仍未使用 TLS 加密协议，因此可能仍有漏洞：</p>
+<p>&#x200B;</p>
+<p>非操作系统内置（手动安装）的第三方开发者的输入法：</p>
+<p>&#x200B;</p>
+<p>Android, Windows, 和 iOS 平台的 Baidu IME / 百度输入法</p>
+<p>小米中国版操作系统中内置输入法：</p>
+<p>&#x200B;</p>
+<p>Baidu IME Xiaomi Version / 百度输入法小米版</p>
+<p>OPPO 中国版操作系统中内置输入法：</p>
+<p>&#x200B;</p>
+<p>Baidu IME Custom Version / 百度输入法定制版</p>
+<p>下列软件含有未修补的漏洞，能够轻易被攻击者所利用，我们建议用户改用其它输入法：</p>
+<p>&#x200B;</p>
+<p>非操作系统内置（手动安装）的第三方开发者的输入法：</p>
+<p>&#x200B;</p>
+<p>Android 和 Windows 平台的 QQ Pinyin IME / QQ 输入法</p>
+<p>荣耀中国版操作系统中内置输入法：</p>
+<p>&#x200B;</p>
+<p>Baidu IME Honor Version / 百度输入法荣耀版</p>
+<p>综合建议</p>
+<p>致信息安全研究人员</p>
+<p>信息安全研究人员应多加研究东亚及其它热门区域的移动应用程序生态系，哪怕这些区域并非研究人员的原生区域。</p>
+<p>信息安全研究人员应进一步发展动态及静态分析方法，以利大规模寻找本研究发现的此类型漏洞。</p>
+<p>信息安全研究人员通报程序漏洞时应以程序开发者所在地区的常见语言写出简短摘要及邮件标题。</p>
+<p>致应用商店</p>
+<p>应用商店不应要求必须注册帐号才能下载安全补丁。</p>
+<p>应用商店不应以设备的地理位置为由阻挡安全补丁。</p>
+<p>如同 Google Play 商店，其他应用商店应提供方式给开发者标示隐私和安全信息，包含网络数据传输是否加密。</p>
+<p>当开发者在应用商店中标示应用程序会加密所有传输数据时，应用商店应予以显示，当开发者并未如此标示时，应用程序商店亦应警告用户。</p>
+<p>应用商店应针对特定敏感类型的应用程序（例如输入法）要求开发者保证所有传输数据均经加密，或保证不上传任何数据。</p>
+<p>致输入法开发者</p>
+<p>使用经过广泛测试的标准加密通信协议，例如 TLS 及 QUIC。</p>
+<p>尽可能将功能设计为可离线运作、不需上传任何敏感数据到云端服务器。</p>
+<p>致移动操作系统开发者</p>
+<p>如同 iOS, Android 应通过沙盒化来限制输入法程序的网络传输和其它危险行为，在用户主动允许前不予放行。</p>
+<p>Android 及 iOS 开发者应设计更好的「网络访问」权限，让用户一目了然应用程序是否通过网络传输任何数据。</p>
+<p>致智能手机制造商</p>
+<p>将输入法集成并内置在操作系统之前，应稽核其安全性。</p>
+<p>致一般用户</p>
+<p>搜狗、QQ、百度、讯飞输入法的用户，无论输入法是手动从应用商店安装或者原本就内置在操作系统当中，应确保输入法及操作系统维持在最新版本。</p>
+<p>顾虑隐私的用户应停用任何输入法中的云端功能。</p>
+<p>顾虑隐私的 iOS 用户不要启用输入法的「允许完整访问权」。</p></p>
+                
+            </div>
+    <div class="comment" id="t1_l2fa1m9">
+        <p class="userinfo">
+            <a class="toggle_hide_button" href="javascript:void(0)" onclick="toggle_collapse(this.parentElement.parentElement)">[-]</a>
+            <a href="https://old.reddit.com/u/DigitalReporterS01">DigitalReporterS01</a>
+            | <span class="score">4 points</span>
+            | <a class="timestamp" href="https://old.reddit.com/r/langrenClub/comments/1cjdwg3/多伦多大学公民实验室验证_大陆厂商输入法都在监控/l2fa1m9/">May 04 2024 01:10:19</a>
+        </p>
+        <div class="collapsible">
+            <p><a href="https://citizenlab.ca/2024/04/%E6%95%B2%E6%95%B2%E6%89%93%E6%89%93%E4%B8%80%E7%B3%BB%E5%88%97%E4%BA%91%E7%AB%AF%E8%BE%93%E5%85%A5%E6%B3%95%E6%BC%8F%E6%B4%9E%E4%BD%BF%E7%BD%91%E7%BB%9C%E6%94%BB%E5%87%BB%E8%80%85%E5%BE%97-zh-cn/">源</a></p></div></div>
+    <div class="comment" id="t1_l2fa5l5">
+        <p class="userinfo">
+            <a class="toggle_hide_button" href="javascript:void(0)" onclick="toggle_collapse(this.parentElement.parentElement)">[-]</a>
+            <a href="https://old.reddit.com/u/DigitalReporterS01">DigitalReporterS01</a>
+            | <span class="score">3 points</span>
+            | <a class="timestamp" href="https://old.reddit.com/r/langrenClub/comments/1cjdwg3/多伦多大学公民实验室验证_大陆厂商输入法都在监控/l2fa5l5/">May 04 2024 01:10:57</a>
+        </p>
+        <div class="collapsible">
+            <p>艾尔迪亚人需要隐私吗？</p></div></div>
+    <div class="comment" id="t1_l2fejsn">
+        <p class="userinfo">
+            <a class="toggle_hide_button" href="javascript:void(0)" onclick="toggle_collapse(this.parentElement.parentElement)">[-]</a>
+            <a href="https://old.reddit.com/u/BabyTime29">BabyTime29</a>
+            | <span class="score">10 points</span>
+            | <a class="timestamp" href="https://old.reddit.com/r/langrenClub/comments/1cjdwg3/多伦多大学公民实验室验证_大陆厂商输入法都在监控/l2fejsn/">May 04 2024 01:36:13</a>
+        </p>
+        <div class="collapsible">
+            <p>PC自带的微软和手机Gboard应该没事吧，G我也禁止联网了，PC就没办法</p>
+    <div class="comment" id="t1_l2j00df">
+        <p class="userinfo">
+            <a class="toggle_hide_button" href="javascript:void(0)" onclick="toggle_collapse(this.parentElement.parentElement)">[-]</a>
+            <a href="https://old.reddit.com/u/Kindly_Yesterday_552">Kindly_Yesterday_552</a>
+            | <span class="score">1 points</span>
+            | <a class="timestamp" href="https://old.reddit.com/r/langrenClub/comments/1cjdwg3/多伦多大学公民实验室验证_大陆厂商输入法都在监控/l2j00df/">May 04 2024 19:13:49</a>
+        </p>
+        <div class="collapsible">
+            <p>巧了我也是相同的配置</p></div></div></div></div>
+    <div class="comment" id="t1_l2fqhcl">
+        <p class="userinfo">
+            <a class="toggle_hide_button" href="javascript:void(0)" onclick="toggle_collapse(this.parentElement.parentElement)">[-]</a>
+            <a href="https://old.reddit.com/u/Kindly_Yesterday_552">Kindly_Yesterday_552</a>
+            | <span class="score">7 points</span>
+            | <a class="timestamp" href="https://old.reddit.com/r/langrenClub/comments/1cjdwg3/多伦多大学公民实验室验证_大陆厂商输入法都在监控/l2fqhcl/">May 04 2024 02:45:18</a>
+        </p>
+        <div class="collapsible">
+            <p>华为是唯一一个没有漏洞的。。。</p>
+    <div class="comment" id="t1_l2j8r0e">
+        <p class="userinfo">
+            <a class="toggle_hide_button" href="javascript:void(0)" onclick="toggle_collapse(this.parentElement.parentElement)">[-]</a>
+            <a href="https://old.reddit.com/u/nonadamz">nonadamz</a>
+            | <span class="score">4 points</span>
+            | <a class="timestamp" href="https://old.reddit.com/r/langrenClub/comments/1cjdwg3/多伦多大学公民实验室验证_大陆厂商输入法都在监控/l2j8r0e/">May 04 2024 20:27:03</a>
+        </p>
+        <div class="collapsible">
+            <p>本身就是漏洞</p></div></div></div></div>
+    <div class="comment" id="t1_l2fsnd4">
+        <p class="userinfo">
+            <a class="toggle_hide_button" href="javascript:void(0)" onclick="toggle_collapse(this.parentElement.parentElement)">[-]</a>
+            <a href="https://old.reddit.com/u/Chieh-Shih">Chieh-Shih</a>
+            | <span class="score">1 points</span>
+            | <a class="timestamp" href="https://old.reddit.com/r/langrenClub/comments/1cjdwg3/多伦多大学公民实验室验证_大陆厂商输入法都在监控/l2fsnd4/">May 04 2024 02:57:56</a>
+        </p>
+        <div class="collapsible">
+            <p>teat</p></div></div>
+    <div class="comment" id="t1_l2g6lfw">
+        <p class="userinfo">
+            <a class="toggle_hide_button" href="javascript:void(0)" onclick="toggle_collapse(this.parentElement.parentElement)">[-]</a>
+            <a href="https://old.reddit.com/u/E-Scooter-CWIS">E-Scooter-CWIS</a>
+            | <span class="score">5 points</span>
+            | <a class="timestamp" href="https://old.reddit.com/r/langrenClub/comments/1cjdwg3/多伦多大学公民实验室验证_大陆厂商输入法都在监控/l2g6lfw/">May 04 2024 04:38:18</a>
+        </p>
+        <div class="collapsible">
+            <p>只用微软自带的</p></div></div>
+    <div class="comment" id="t1_l2gd56k">
+        <p class="userinfo">
+            <a class="toggle_hide_button" href="javascript:void(0)" onclick="toggle_collapse(this.parentElement.parentElement)">[-]</a>
+            <a href="https://old.reddit.com/u/6uttslapper">6uttslapper</a>
+            | <span class="score">9 points</span>
+            | <a class="timestamp" href="https://old.reddit.com/r/langrenClub/comments/1cjdwg3/多伦多大学公民实验室验证_大陆厂商输入法都在监控/l2gd56k/">May 04 2024 05:18:44</a>
+        </p>
+        <div class="collapsible">
+            <p>真是的，国男这点破事还要洋大人操心。国男的输入法不就是用来打拼音的吗，还能有啥秘密？打出来也是些什么“老婆”、“giegie”、“呜呜呜”之类的，笑死我了。🤭🤭🤭</p>
+<p>^<em>我是自动回复机器人流浪鸭鸭，欢迎<a href="https://www.buymeacoffee.com/sh1tman">给鸭鸭打赏</a>。</em><br />
+^<em>要和我对话请在发言中带上“鸭鸭”。</em></p>
+    <div class="comment" id="t1_l2gd57e">
+        <p class="userinfo">
+            <a class="toggle_hide_button" href="javascript:void(0)" onclick="toggle_collapse(this.parentElement.parentElement)">[-]</a>
+            <a href="https://old.reddit.com/u/AutoModerator">AutoModerator</a>
+            | <span class="score">5 points</span>
+            | <a class="timestamp" href="https://old.reddit.com/r/langrenClub/comments/1cjdwg3/多伦多大学公民实验室验证_大陆厂商输入法都在监控/l2gd57e/">May 04 2024 05:18:44</a>
+        </p>
+        <div class="collapsible">
+            <p>都让你懂完了是吧</p>
+<p><em>I am a bot, and this action was performed automatically. Please <a href="/message/compose/?to=/r/langrenClub">contact the moderators of this subreddit</a> if you have any questions or concerns.</em></p>
+    <div class="comment" id="t1_l2z5hft">
+        <p class="userinfo">
+            <a class="toggle_hide_button" href="javascript:void(0)" onclick="toggle_collapse(this.parentElement.parentElement)">[-]</a>
+            <a href="https://old.reddit.com/u/New-Shoe6648">New-Shoe6648</a>
+            | <span class="score">1 points</span>
+            | <a class="timestamp" href="https://old.reddit.com/r/langrenClub/comments/1cjdwg3/多伦多大学公民实验室验证_大陆厂商输入法都在监控/l2z5hft/">May 07 2024 21:18:34</a>
+        </p>
+        <div class="collapsible">
+            <p>一时分不清是mod牛还是bot智能</p></div></div></div></div></div></div>
+    <div class="comment" id="t1_l2h2ukf">
+        <p class="userinfo">
+            <a class="toggle_hide_button" href="javascript:void(0)" onclick="toggle_collapse(this.parentElement.parentElement)">[-]</a>
+            <a href="https://old.reddit.com/u/shudazuo">shudazuo</a>
+            | <span class="score">7 points</span>
+            | <a class="timestamp" href="https://old.reddit.com/r/langrenClub/comments/1cjdwg3/多伦多大学公民实验室验证_大陆厂商输入法都在监控/l2h2ukf/">May 04 2024 08:13:32</a>
+        </p>
+        <div class="collapsible">
+            <p>这都有人点踩?给你支回来</p></div></div>
+    <div class="comment" id="t1_l2hwtk1">
+        <p class="userinfo">
+            <a class="toggle_hide_button" href="javascript:void(0)" onclick="toggle_collapse(this.parentElement.parentElement)">[-]</a>
+            <a href="https://old.reddit.com/u/Timebottle13">Timebottle13</a>
+            | <span class="score">3 points</span>
+            | <a class="timestamp" href="https://old.reddit.com/r/langrenClub/comments/1cjdwg3/多伦多大学公民实验室验证_大陆厂商输入法都在监控/l2hwtk1/">May 04 2024 12:02:09</a>
+        </p>
+        <div class="collapsible">
+            <p>三星的簡體字輸入法用的搜狗的</p></div></div>
+    <div class="comment" id="t1_l2je6lv">
+        <p class="userinfo">
+            <a class="toggle_hide_button" href="javascript:void(0)" onclick="toggle_collapse(this.parentElement.parentElement)">[-]</a>
+            <a href="https://old.reddit.com/u/yuanshenOp">yuanshenOp</a>
+            | <span class="score">1 points</span>
+            | <a class="timestamp" href="https://old.reddit.com/r/langrenClub/comments/1cjdwg3/多伦多大学公民实验室验证_大陆厂商输入法都在监控/l2je6lv/">May 04 2024 21:06:46</a>
+        </p>
+        <div class="collapsible">
+            <p>谷歌输入法怎么样</p></div></div>
+    <div class="comment" id="t1_l2n9c5v">
+        <p class="userinfo">
+            <a class="toggle_hide_button" href="javascript:void(0)" onclick="toggle_collapse(this.parentElement.parentElement)">[-]</a>
+            <a href="https://old.reddit.com/u/FishermanFine6148">FishermanFine6148</a>
+            | <span class="score">1 points</span>
+            | <a class="timestamp" href="https://old.reddit.com/r/langrenClub/comments/1cjdwg3/多伦多大学公民实验室验证_大陆厂商输入法都在监控/l2n9c5v/">May 05 2024 12:25:10</a>
+        </p>
+        <div class="collapsible">
+            <p>呵呵，仔细看文章就知道所有软件都上传数据，被评为差只是没做任何掩饰（也就是没加密，他上传了什么有技术的用户是可以知道的），而评为好是做了掩饰（加密上传的东西，你都不知道它是不是只上传了你输入的东西还是其他任何东西）</p></div></div>
+    </body>
+    <script>
+        function toggle_collapse(comment_div) {{
+            var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+            var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+            if (collapsible.classList.contains("hidden")) {{
+                collapsible.classList.remove("hidden");
+                button.innerText = "[-]";
+            }} else {{
+                collapsible.classList.add("hidden");
+                button.innerText = "[+]";
+            }}
+        }}
+    </script>
+</html>
