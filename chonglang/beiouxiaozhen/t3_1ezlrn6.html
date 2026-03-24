@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>冲浪小本本儿（一）</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <style>
+            .crosspost {
+                border: 1px solid #888;
+                margin-top: 10px;
+                padding: 10px;
+                background-color: #f6f7f8;
+            }
+            .crosspost-header {
+                font-size: 12px;
+                color: #555;
+                margin-bottom: 6px;
+            }
+            .crosspost-content {
+                padding-left: 5px;
+            }
+            .submission, .comment { padding-left: 20px; padding-right: 4px; font-family: verdana, arial, helvetica, sans-serif; }
+            .comment { margin-top: 4px; margin-bottom: 4px; border: 1px solid black; }
+            .submission { border: 2px solid blue; padding-bottom: 10px; }
+            .hidden { display: none; }
+            .userinfo { font-size: 12px; color: #555; }
+            .flair {
+                padding: 2px 6px; border-radius: 20px; font-size: 10px; font-weight: bold;
+                margin-left: 5px; display: inline-block; vertical-align: middle; line-height: 1.2;
+            }
+        </style>
+    </head>
+    <body>
+        <a href="../beiouxiaozhen.html#t3_1ezlrn6" class="back-link">← Back to Index</a>
+            <div class="submission" id="t3_1ezlrn6">
+                <p class="userinfo">
+                    <a href="https://old.reddit.com/u/replaceOrgansKingXjp">replaceOrgansKingXjp</a>
+                    | <span class="score">1 points</span>
+                    | <a class="timestamp" href="https://old.reddit.com/r/beiouxiaozhen/comments/1ezlrn6/冲浪小本本儿一/">Aug 24 2024 03:40:34</a>
+                </p>
+                <strong>冲浪小本本儿（一）</strong><span class="flair" style="background-color: #a06324; color: #1c1c1c;">搬运tv</span>
+                <p><p><strong>前言</strong></p>
+<p>想哥被按后俺玉玉了捏，之后接二连三的，有人洛水、有人接着被摁、以及现实的原因，一下子，俺魔怔不起来了，在两年半的时间里，俺关闭了全部消息源，好累，不想说话，不想阅读，不想写作，不想了解，不想学习，不想关心，不想思考，不想。。。回避一切，就这样当一头麻木的机器。直到发现有人回归了，有人号被允了，有些人一直在。而还有不少人还在烦恼如何自由滴冲浪、老大哥的脚步一步都不停歇，甚至把审查输出到了俄罗斯、伊朗，俺决定</p>
+<p>是该写点技术以内的东西了！</p>
+<p>这个系列会更好几期，俺也不是什么带手子，想到哪写到哪，俺会先挖坑，后续再填捏</p>
+<p><strong>冲浪小本本儿（一）</strong></p>
+<p>没等来ECH[1]，等来了goodbyedpi，八月革命一声炮响，给我们送来了反审查工具</p>
+<p>&#x200B;</p>
+<p>2024.7月roskomnadzor(俄罗斯联邦通信、信息技术和大众传媒监督局) 降低 YouTube 播放速度[2]</p>
+<p>2024.8月俄罗斯全面封禁YouTube，网页版和客户端均无法访问。[3]</p>
+<p>截至目前，俄罗斯陆续封禁了telegram discord signal messenger[4\5\6] google 以及wireguard 等翻墙协议也有不同程度的干扰，在查阅资料时,俺第一次认识了一个词捏----TSPU，俄罗斯的去中心化审查系统[7]，与GFW对标的存在，多亏了器王，俄友也马上要过上跟俺们一样的冲浪好日子咧</p>
+<p>&#x200B;</p>
+<p>让俺注意到上述事情是因为俺以前关注的一个项目goodbyedpi突然更新并冲上github热门趋势，这也是desync类工具[8]，俺很稀饭这类直连工具，首先是因为方便，代理、vpn类工具永远需要一个外部服务器转发数据，有许多人也许不具备这个条件，而代理会有钓鱼节点、机场本身或漏洞或审查或送中等问题。</p>
+<p>其次因为自由访问互联网本就是公民的权力，本就应该直连[9][10]</p>
+<p>此外，《国际联网暂行规定》第六条规定：“计算机信息网络直接进行国际联网，必须使用邮电部国家公用电信网提供的国际出入口信道。任何单位和个人不得自行建立或者使用其他信道进行国际联网。” goodbyedpi本地代理使用的都是“公用电信网提供的国际出入口信道”，从国外服务器到国内用户电脑上goodbyedpi程序的流量，使用的是正常流量通道，其间未对流量进行任何额外加密，而goodbyedpi获取到数据包之后发生的整个发包改动过程完全在国内，不再适用国际互联网相关之规定。</p>
+<p>最后这类工具能否助力各种代理协议，让被墙的节点复活，这个有待研究。</p>
+<p>而混淆翻墙流量隐写和多态两类方法中，隐写的模仿一直致力于将流量变化成一种常规访问的https流量，直连直接达成了这个梦寐以求的目的[13]</p>
+<p>目前，这个工具在俄罗斯很多人使用，具有时效性</p>
+<p>&#x200B;</p>
+<p>项目地址：https://github.com/ValdikSS/GoodbyeDPI</p>
+<p>项目上有作者自己开的反审查社区地址: https://ntc.party/c/community-software/goodbyedpi</p>
+<p>俺发现原来还有另两款byedpi和zapret-master  后续会再写，这本儿先写goodbyedpi的使用教程</p>
+<p>&#x200B;</p>
+<p><strong>傻瓜版:</strong></p>
+<p>俄友其实已经有写一份，机翻一下也看得懂捏</p>
+<p>https://dtf.ru/howto/2878180-kak-oboiti-blokirovku-youtube-s-pomoshyu-goodbyedpi-maksimalno-prostoe-rukovodstvo-dlya-chainikov</p>
+<p>&#x200B;</p>
+<p><strong>聪明瓜版：</strong></p>
+<p>聪明的你是否已经发现不论是按 2_any_country.cmd 1_russia_blacklist.cmd 都没有反应？哈哈，忘了傻瓜版吧</p>
+<p>我们进入x86_64文件夹找到goodbyedpi.exe 。  不是双击，而是按住Shift键并右键点击空白处，选择“在此处打开PowerShell窗口”，输入 .\goodbyedpi.exe -h （当然熟手可以用cmd打开，helpyourself）</p>
+<p>LEGACY modesets:</p>
+<p>-1          -p -r -s -f 2 -k 2 -n -e 2 (most compatible mode)</p>
+<p>-2          -p -r -s -f 2 -k 2 -n -e 40 (better speed for HTTPS yet still compatible)</p>
+<p>-3          -p -r -s -e 40 (better speed for HTTP and HTTPS)</p>
+<p>-4          -p -r -s (best speed)</p>
+<p>Modern modesets (more stable, more compatible, faster):</p>
+<p>-5          -f 2 -e 2 --auto-ttl --reverse-frag --max-payload</p>
+<p>-6          -f 2 -e 2 --wrong-seq --reverse-frag --max-payload</p>
+<p>-7          -f 2 -e 2 --wrong-chksum --reverse-frag --max-payload</p>
+<p>-8          -f 2 -e 2 --wrong-seq --wrong-chksum --reverse-frag --max-payload</p>
+<p>-9          -f 2 -e 2 --wrong-seq --wrong-chksum --reverse-frag --max-payload -q (this is the default)</p>
+<p>&#x200B;</p>
+<p>Note: combination of --wrong-seq and --wrong-chksum generates two different fake packets.</p>
+<p>&#x200B;</p>
+<p>一共有9种模式，其中第九种为默认模式，即在不输入任何参数的情况下，自动使用命令 .\goodbyedpi.exe -9</p>
+<p>在我们逐一尝试这些模式之前，需要先进行一项重要的操作：清理dns污染[12]。请记住，在直接连接任何网站之前，处理DNS问题是首要任务。</p>
+<p>实际上，只要处理了DNS并获得正确的IP地址，就能解锁许多网站。然而，清理DNS污染本身是一项复杂的工作，值得单独撰写一篇文章。在这里，俺将提供一些简易的处理方法，以便让这篇文章保持简洁。有关更详细的内容，请参阅俺后续的文章。[12]</p>
+<p>&#x200B;</p>
+<p>简易处理dns污染</p>
+<p>方法1：使用浏览器自带的DoH解析域名的IP</p>
+<p>这是最简单但也是最具挑战性的方法。您可以通过浏览器的设置启用DoH（DNS over HTTPS）：</p>
+<ul>
+<li>打开浏览器设置。</li>
+<li>选择“隐私和安全”。</li>
+<li>找到“安全性”选项。</li>
+<li>启用“使用安全DNS”，并选择一个DoH提供商。</li>
+</ul>
+<p>这个方法的难点在于，四大DoH服务提供商常常在被墙与未被墙之间摇摆。一旦某个DoH服务被封锁，您将无法使用。例如，Google的DoH服务（https://dns.google/dns-query{?dns}）如果其域名dns.google被SNI阻断，那么该DoH服务也将无法使用。关于这一点，俺将在处理dns篇再写。</p>
+<p>&#x200B;</p>
+<p>如果您需要寻找其他的DoH服务，国内的DoH返回的结果与通过UDP 53裸跑的结果没有区别，都是受到污染的结果，而使用udp 53裸跑还少了一次TLS解包，速度更快。国外无过滤、无日志记录且未被封锁的DoH服务相对难找。</p>
+<p>&#x200B;</p>
+<p>要确认DoH是否正常工作，您可以在启用DoH后，访问一个被DNS污染但没有SNI阻断的域名，例如whoer.net</p>
+<p>如果能够成功访问，说明DoH工作正常。但请注意，DNS污染和SNI阻断的名单是动态变化的，因此该域名的有效性并不持久。关于如何拉这两份清单，俺将在后续文章中进行说明。</p>
+<p>&#x200B;</p>
+<p>方法2：修改hosts文件</p>
+<p>&#x200B;</p>
+<p>您可以通过在线DNS解析网站来查找域名的IP地址，这些网站非常非常多。推荐使用www.nslookup.io，这个网站可以查询A和AAAA记录，并且支持HTTPS记录类型。关于这一点，俺将在后续的关于ECH文章中进一步探讨。</p>
+<p>&#x200B;</p>
+<p>输入域名whoer.net，获得IP地址172.67.70.188后，您需要在hosts文件（C:\Windows\System32\drivers\etc）中添加以下内容：</p>
+<pre><code>172.67.70.188 whoer.net
+</code></pre>
+<p>保存后，您可以在浏览器中查看是否能够连接。</p>
+<p>&#x200B;</p>
+<p>需要注意的是，hosts文件不能使用通配符匹配域名，因此这种方法相对繁琐。每个域名都需要手动添加解析，例如对于twitch.tv，您需要逐一添加assets.twitch.tv、gqls.twitch.tv、www.twitch.tv等。</p>
+<p>&#x200B;</p>
+<p>处理完DNS污染后，您可以继续使用goodbyedpi。在尝试了1到9种模式后，俺发现模式5是可用的，开启后可以访问部分SNI阻断的域名，例如duckduckgo.com、www.startpage.com、f-droid.org、pixiv.net、steamcommunity.com、discord.com、www.facebook.com和www.wikipedia.org，但仍然有部分网站无法访问。</p>
+<p>&#x200B;</p>
+<p><strong>聪明瓜tl;dr版:</strong>  解决dns污染，使用模式5    .\goodbyedpi.exe  -5  </p>
+<p><strong>教师爷版：</strong></p>
+<p>翻译下帮助文档</p>
+<p>&#x200B;</p>
+<p>用法：goodbyedpi.exe [选项...]</p>
+<p>-p          阻止被动 DPI</p>
+<p>-q          阻止 QUIC/HTTP3</p>
+<p>-r          将 Host 替换为 hoSt</p>
+<p>-s          移除 Host 头与其值之间的空格</p>
+<p>-a          在方法和请求 URI 之间添加额外空格（启用 -s，可能会导致网站无法正常工作）</p>
+<p>-m          混合 Host 头的大小写（例如 <a href="https://test.com">test.com</a> -&gt; <a href="https://tEsT.cOm">tEsT.cOm</a>）</p>
+<p>-f &lt;值&gt;    设置 HTTP 分片为值</p>
+<p>-k &lt;值&gt;    启用 HTTP 持久（保持活动）分片并将其设置为值</p>
+<p>-n          启用 -k 时不等待第一个段的 ACK</p>
+<p>-e &lt;值&gt;    设置 HTTPS 分片为值</p>
+<p>-w          尝试在所有处理的端口上查找和解析 HTTP 流量（不仅限于端口 80）</p>
+<p>--port &lt;值&gt;  额外的 TCP 端口以执行分片和使用 -w 的 HTTP 技巧</p>
+<p>--ip-id &lt;值&gt;  处理额外的 IP ID（十进制，丢弃具有此 ID 的重定向和 TCP RST）</p>
+<p>--dns-addr &lt;值&gt;  将 UDPv4 DNS 请求重定向到提供的 IPv4 地址（实验性）</p>
+<p>--dns-port &lt;值&gt;  将 UDPv4 DNS 请求重定向到提供的端口（默认 53）</p>
+<p>--dnsv6-addr &lt;值&gt;  将 UDPv6 DNS 请求重定向到提供的 IPv6 地址（实验性）</p>
+<p>--dnsv6-port &lt;值&gt;  将 UDPv6 DNS 请求重定向到提供的端口（默认 53）</p>
+<p>--dns-verb           打印详细的 DNS 重定向消息</p>
+<p>--blacklist <txtfile>  仅对来自提供文本文件的主机名和子域名执行规避技巧（HTTP Host/TLS SNI）。</p>
+<p>此选项可以多次提供。</p>
+<p>--allow-no-sni       如果启用 --blacklist 时无法检测到 TLS SNI，则执行规避。</p>
+<p>--frag-by-sni        如果在 TLS 数据包中检测到 SNI，则在 SNI 值之前分片数据包。</p>
+<p>--set-ttl &lt;值&gt;      激活假请求模式并以提供的 TTL 值发送。</p>
+<p>危险！可能会以意想不到的方式破坏网站。请谨慎使用（或 --blacklist）。</p>
+<p>--auto-ttl [a1-a2-m]  激活假请求模式，自动检测 TTL 并根据距离减少</p>
+<p>如果距离小于 a2，则 TTL 减少 a2。如果距离更长，则使用 (a1; a2) 比例，</p>
+<p>以距离作为权重。如果结果 TTL 大于 m(ax)，则将其设置为 m。</p>
+<p>默认（如果设置）：--auto-ttl 1-4-10。也设置 --min-ttl 3。</p>
+<p>危险！可能会以意想不到的方式破坏网站。请谨慎使用（或 --blacklist）。</p>
+<p>--min-ttl &lt;值&gt;      发送假请求的最小 TTL 距离（128/64 - TTL）。</p>
+<p>--wrong-chksum       激活假请求模式并以不正确的 TCP 校验和发送。</p>
+<p>可能在虚拟机或某些路由器上不起作用，但比 set-ttl 更安全。</p>
+<p>可以与 --set-ttl 结合使用。</p>
+<p>--wrong-seq          激活假请求模式并以过去的 TCP SEQ/ACK 发送。</p>
+<p>--native-frag        通过发送更小的数据包来分片（拆分）数据包，而不缩小窗口大小。</p>
+<p>工作更快（不会减慢连接）且效果更好。</p>
+<p>--reverse-frag       以与 --native-frag 相同的方式分片（拆分）数据包，但以相反的顺序发送。</p>
+<p>适用于无法处理分段 HTTPS TLS ClientHello 的网站（因为它们接收到的 TCP 流“合并”）。</p>
+<p>--max-payload [值]   TCP 负载数据超过 [值] 的数据包将不会被处理。</p>
+<p>使用此选项可以通过跳过大量数据（如文件传输）来减少 CPU 使用率</p>
+<p>在已经建立的会话中。可能会跳过某些巨大的 HTTP 请求。</p>
+<p>默认（如果设置）：--max-payload 1200。</p>
+<p>&#x200B;</p>
+<p>遗留模式集：</p>
+<p>-1          -p -r -s -f 2 -k 2 -n -e 2（最兼容模式）</p>
+<p>-2          -p -r -s -f 2 -k 2 -n -e 40（更好的 HTTPS 速度但仍兼容）</p>
+<p>-3          -p -r -s -e 40（更好的 HTTP 和 HTTPS 速度）</p>
+<p>-4          -p -r -s（最佳速度）</p>
+<p>现代模式集（更稳定，更兼容，更快）：</p>
+<p>-5          -f 2 -e 2 --auto-ttl --reverse-frag --max-payload</p>
+<p>-6          -f 2 -e 2 --wrong-seq --reverse-frag --max-payload</p>
+<p>-7          -f 2 -e 2 --wrong-chksum --reverse-frag --max-payload</p>
+<p>-8          -f 2 -e 2 --wrong-seq --wrong-chksum --reverse-frag --max-payload</p>
+<p>-9          -f 2 -e 2 --wrong-seq --wrong-chksum --reverse-frag --max-payload -q（这是默认值）</p>
+<p>&#x200B;</p>
+<p>注意：--wrong-seq 和 --wrong-chksum 的组合会生成两个不同的假数据包。</p>
+<p>&#x200B;</p>
+<p><strong>俺将挑选一些俺认为重要的参数进行讲解</strong>：</p>
+<p>-e    设置 HTTPS 的分片值，这个数值可以从2到100都可以设置，</p>
+<p>它实际影响是从上往下数第5个包的长度，关于整个tcp握手部分太长，俺给自己挖的坑又多，暂时不延申</p>
+<p>&#x200B;</p>
+<p>https://preview.redd.it/zzbyaf4jsgkd1.jpg?width=1697&amp;format=pjpg&amp;auto=webp&amp;s=bb2ba613fb3076f783821ea5842d30b6bd71d4d3</p>
+<p>--auto-ttl 与 --set-ttl ，--set-ttl 可以从 1开始递增1往上加，大概在1-7之间可以连接到国内网站，8-12之间可以连接到国外网站是合适的值，但这时候就连接不到国内的网站了，设置这个参数最好配合黑名单模式使用，12往上就开始连接不到任何网站了。而auto-ttl会自动设置相对合适的值来适配，不至于出现国内站访问不到的情况，适合白名单模式使用，如果不想手动调配，请设置--auto-ttl</p>
+<p>--native-frag 和 --reverse-frag  可以来回切换</p>
+<p>--max-payload  加上 </p>
+<p>&#x200B;</p>
+<p>最终俺们得到了这样一组可用的参数  </p>
+<pre><code>goodbyedpi.exe -f 2 -e 10 --set-ttl 10   --reverse-frag --max-payload
+</code></pre>
+<p>&#x200B;</p>
+<p><strong>黑名单模式</strong></p>
+<p>在设置了set-ttl 这组参数情况下，推荐再加入 --blacklist ..\russia-youtube.txt  这就是黑名单模式，即兜底规则为直连，嗅探sni(有些工具是通过嗅探dns来触发，这些工具在浏览器开doh情况下就无法使用)并只捕获黑名单russia-youtube.txt 内的域名进行发包修改。否则，在 TTL 设置为 10 的情况下，国内网站将无法连接。</p>
+<p>命令示例：</p>
+<pre><code>goodbyedpi.exe -f 2 -e 10 --set-ttl 10   --reverse-frag --max-payload  --blacklist ..\russia-youtube.txt
+</code></pre>
+<p>请将 russia-youtube.txt 复制到 goodbyedpi.exe 同一文件夹下，并在文本文件中添加被 SNI 阻断的域名。那么，这些域名该如何获取呢？</p>
+<p>可以通过以下方法手动添加：打开开发者工具（F12），点击“网络”选项，查看哪些请求显示为红色。只需记录域名部分，例如 xxx.com，而无需添加/后面路径部分。关于一个网站下子连接不到的域名，非子域名怎么找、怎么添加，到反代部分还会具体再写</p>
+<p>https://preview.redd.it/4tcrp66atgkd1.jpg?width=225&amp;format=pjpg&amp;auto=webp&amp;s=b11e3184b893177e5bd6c346c4655ac69a698461</p>
+<p><strong>白名单模式</strong></p>
+<p>如果使用以下命令：</p>
+<pre><code>goodbyedpi.exe -f 2 -e 10 --auto-ttl    --reverse-frag --max-payload
+</code></pre>
+<p>在白名单模式下，工具将捕获所有通过网卡的数据包并进行修改。这种模式适合懒人使用，但能够连接的 SNI 阻断网站较少且速度较慢。由于需要检测并设置 TTL 值，因此可能需要等待一段时间。</p>
+<p>&#x200B;</p>
+<p>如果您不考虑访问国内网站，可以使用以下命令：</p>
+<pre><code>goodbyedpi.exe -f 2 -e 10 --set-ttl  10    --reverse-frag --max-payload
+</code></pre>
+<p>俺喜欢在这种模式下调试 ，这样不用去blacklist里一个一个加域名</p>
+<p>&#x200B;</p>
+<p>您还可以添加 --wrong-seq 或 --wrong-chksum，以及 --frag-by-sni 等选项，单项或多项组合进行调试。同时，别忘了 -e 也可以设置不同的数值。</p>
+<p>经过俺的测试，不同的网站实际上适配不同的参数。合理的参数设置可以使得 YouTube、Google 等重点封锁的网站几乎都能连接，甚至 Telegram 客户端也可以直连。请自行探索适合您需求的参数组合。</p>
+<p>&#x200B;</p>
+<p>另外这个工具发出的包的sni固定为www.w3.org ，这也符合俺当时study反代时，发现修改sni必须要mitm，这个就要到反代部分再写了捏。</p>
+<p>&#x200B;</p>
+<p>https://preview.redd.it/gl2a9l7ftgkd1.jpg?width=1697&amp;format=pjpg&amp;auto=webp&amp;s=b0d5b3d591dbbfb3830ce274baeef69498469fc3</p>
+<p>最后参数问题也可以去作者的论坛参考下别人的，也许不同运营商适配的参数也不同。</p>
+<p>这个工具能让大家在找不到节点应急或成为主力的工具</p>
+<p>&#x200B;</p>
+<p>https://preview.redd.it/q7i9e7o9ugkd1.jpg?width=955&amp;format=pjpg&amp;auto=webp&amp;s=f59414be5e91b70e4edb094424d89c94fe472178</p>
+<p>教程结束，下一期讲zapret-master 和byedpi，还是冲浪小本本儿系列没想好</p>
+<p><code>----------------------</code></p>
+<p>夹带一点公货，不知道为什么， .ru 结尾的俄罗斯网站，都是可以直连的，俺经常看俄友的网站，有些俄友那也是狂的不得了</p>
+<p>dzen.ru 战熊比较多，例如这个教程视频下https://dzen.ru/video/watch/66a8aa38b09fea150a6c35ee</p>
+<p>&#x200B;</p>
+<p>123mostif@mail.ru: Ivan Nik.，然后让俄罗斯宣传人员离开美国平台 YouTube，坐在他们的 Rutubes 和 VK 中，每个人都会很高兴</p>
+<p>Слава К.: 123mostif@mail.ru，如果你不喜欢俄罗斯，离开这里，没有人会不高兴。热爱俄罗斯并尊重俄罗斯利益的人们将留在这里。他们明白，如果 YouTube 行为不法，它将被追究责任。</p>
+<p>&#x200B;</p>
+<p>真不是俺说，俄版太平洋没加盖，正义联盟国家社管大脑好像都是一个流水线上生产出来的。</p>
+<p>&#x200B;</p>
+<p>pikabu.ru 社区类似太监区，言论尺度稍大，有效信息也多，但超管会删帖</p>
+<p>dtf.ru 就很欢乐</p>
+<p>[1] 冲浪小本本儿（二）---- 在(一)之前，什么是ECH，如何检测、使用等等</p>
+<p>[2] <a href="https://www.reuters.com/technology/google-blame-slower-youtube-speeds-russia-says-senior-lawmaker-2024-07-26/">https://www.reuters.com/technology/google-blame-slower-youtube-speeds-russia-says-senior-lawmaker-2024-07-26/</a></p>
+<p>[3] <a href="https://x.com/jakobsonradical/status/1823157283699793969">https://x.com/jakobsonradical/status/1823157283699793969</a></p>
+<p>[4]<a href="https://ntc.party/t/telegram-%D0%B1%D0%BB%D0%BE%D0%BA%D0%B8%D1%80%D1%83%D0%B5%D1%82%D1%81%D1%8F-%D0%BC%D0%BE%D0%B1%D0%B8%D0%BB%D1%8C%D0%BD%D1%8B%D0%BC%D0%B8-%D0%BE%D0%BF%D0%B5%D1%80%D0%B0%D1%82%D0%BE%D1%80%D0%B0%D0%BC%D0%B8/9491">https://ntc.party/t/telegram-%D0%B1%D0%BB%D0%BE%D0%BA%D0%B8%D1%80%D1%83%D0%B5%D1%82%D1%81%D1%8F-%D0%BC%D0%BE%D0%B1%D0%B8%D0%BB%D1%8C%D0%BD%D1%8B%D0%BC%D0%B8-%D0%BE%D0%BF%D0%B5%D1%80%D0%B0%D1%82%D0%BE%D1%80%D0%B0%D0%BC%D0%B8/9491</a></p>
+<p>[5]<a href="https://ntc.party/t/%D1%81%D0%B5%D0%B3%D0%BE%D0%B4%D0%BD%D1%8F-%D0%BF%D0%B5%D1%80%D0%B5%D1%81%D1%82%D0%B0%D0%BB-%D0%BE%D1%82%D0%BA%D1%80%D1%8B%D0%B2%D0%B0%D1%82%D1%8C%D1%81%D1%8F-discord-%D0%B1%D0%B5%D0%B7-%D0%B2%D0%BF%D0%BD/9553">https://ntc.party/t/%D1%81%D0%B5%D0%B3%D0%BE%D0%B4%D0%BD%D1%8F-%D0%BF%D0%B5%D1%80%D0%B5%D1%81%D1%82%D0%B0%D0%BB-%D0%BE%D1%82%D0%BA%D1%80%D1%8B%D0%B2%D0%B0%D1%82%D1%8C%D1%81%D1%8F-discord-%D0%B1%D0%B5%D0%B7-%D0%B2%D0%BF%D0%BD/9553</a></p>
+<p>[6]<a href="https://ntc.party/t/%D0%BF%D0%B5%D1%80%D0%B5%D1%81%D1%82%D0%B0%D0%BB-%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%B0%D1%82%D1%8C-%D0%BC%D0%B5%D1%81%D1%81%D0%B5%D0%BD%D0%B4%D0%B6%D0%B5%D1%80-signal/9013">https://ntc.party/t/%D0%BF%D0%B5%D1%80%D0%B5%D1%81%D1%82%D0%B0%D0%BB-%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%B0%D1%82%D1%8C-%D0%BC%D0%B5%D1%81%D1%81%D0%B5%D0%BD%D0%B4%D0%B6%D0%B5%D1%80-signal/9013</a></p>
+<p>[7] <a href="https://censoredplanet.org/tspu">https://censoredplanet.org/tspu</a></p>
+<p>[8]冲浪小本本儿 (三) --- 什么是desync类工具，还有哪些直连类型工具；什么是正代反代，如何完成反代；steam++这类工具是怎么完成不连接第三方服务器直连的；简易反代制作；当你直连一个网站时外部能看到什么</p>
+<p>[8-1] 什么是tun模式，为什么clash的tun模式叫tun模式，而不叫tunnel</p>
+<p>[9] 冲浪小本本儿 (四) --- 当你通过proxy翻墙时，会在日志里、服务器上留下什么，通过代理连接有哪些风险</p>
+<p>[10] 冲浪小本本儿 (五) --- 被墙的网站有哪些分级，一些简单的dns污染名单，sni阻断名单，直连有哪些风险</p>
+<p>[11] 冲浪小本本儿 (六) --- 如何对网站方隐藏自身，什么是浏览器指纹，怎么改变；分析怎么逃过宏迪追杀</p>
+<p>[12] 冲浪小本本儿 (七) --- 如何处理dns污染；低延迟的dns与高延迟但正确的dns怎么选？域名分流；doh本身被封了怎么办</p>
+<p>[13] <a href="https://gfw.report/publications/usenixsecurity23/zh/#:~:text=Tschantz%E7%AD%89%E4%BA%BA%E5%B0%86%E6%B7%B7%E6%B7%86%E7%BF%BB%E5%A2%99%E6%B5%81%E9%87%8F%E7%9A%84%E6%96%B9%E6%B3%95%E5%88%86%E4%B8%BA%E4%B8%A4%E7%B1%BB%EF%BC%9A%E9%9A%90%E5%86%99(steganography)%E5%92%8C%E5%A4%9A%E6%80%81(polymorphism)">https://gfw.report/publications/usenixsecurity23/zh/#:\~:text=Tschantz%E7%AD%89%E4%BA%BA%E5%B0%86%E6%B7%B7%E6%B7%86%E7%BF%BB%E5%A2%99%E6%B5%81%E9%87%8F%E7%9A%84%E6%96%B9%E6%B3%95%E5%88%86%E4%B8%BA%E4%B8%A4%E7%B1%BB%EF%BC%9A%E9%9A%90%E5%86%99(steganography)%E5%92%8C%E5%A4%9A%E6%80%81(polymorphism)</a></p>
+<p>&#x200B;</p></p>
+                
+            </div>
+    <div class="comment" id="t1_ljlha8v">
+        <p class="userinfo">
+            <a class="toggle_hide_button" href="javascript:void(0)" onclick="toggle_collapse(this.parentElement.parentElement)">[-]</a>
+            <a href="https://old.reddit.com/u/AutoModerator">AutoModerator</a>
+            | <span class="score">1 points</span>
+            | <a class="timestamp" href="https://old.reddit.com/r/beiouxiaozhen/comments/1ezlrn6/冲浪小本本儿一/ljlha8v/">Aug 24 2024 03:40:35</a>
+        </p>
+        <div class="collapsible">
+            <p>嗨呀是叫我吗</p>
+<p><em>I am a bot, and this action was performed automatically. Please <a href="/message/compose/?to=/r/beiouxiaozhen">contact the moderators of this subreddit</a> if you have any questions or concerns.</em></p></div></div>
+    <div class="comment" id="t1_ljlha84">
+        <p class="userinfo">
+            <a class="toggle_hide_button" href="javascript:void(0)" onclick="toggle_collapse(this.parentElement.parentElement)">[-]</a>
+            <a href="https://old.reddit.com/u/AutoModerator">AutoModerator</a>
+            | <span class="score">2 points</span>
+            | <a class="timestamp" href="https://old.reddit.com/r/beiouxiaozhen/comments/1ezlrn6/冲浪小本本儿一/ljlha84/">Aug 24 2024 03:40:35</a>
+        </p>
+        <div class="collapsible">
+            <p>您吉祥</p>
+<p><em>I am a bot, and this action was performed automatically. Please <a href="/message/compose/?to=/r/beiouxiaozhen">contact the moderators of this subreddit</a> if you have any questions or concerns.</em></p></div></div>
+    <div class="comment" id="t1_ljlhaa1">
+        <p class="userinfo">
+            <a class="toggle_hide_button" href="javascript:void(0)" onclick="toggle_collapse(this.parentElement.parentElement)">[-]</a>
+            <a href="https://old.reddit.com/u/AutoModerator">AutoModerator</a>
+            | <span class="score">1 points</span>
+            | <a class="timestamp" href="https://old.reddit.com/r/beiouxiaozhen/comments/1ezlrn6/冲浪小本本儿一/ljlhaa1/">Aug 24 2024 03:40:36</a>
+        </p>
+        <div class="collapsible">
+            <p>狗mod和那几个玩小团体的低能听好了，你爹会三重代理，我现在手里也不止一个小号，只要我愿意，时不时给你们私信发些血腥恶心的图片，给你们发些恶心的评论追着你们喷完全没问题。反正我用了三重代理我可以无限创小号绕过封锁追着喷你们，不过我最近心情还不错，等我以后现实里遇见困难了就来这喷你们发泄哦。拉黑也没用的哦，举报到reddit大mod那也是没用的哦。更何况你们这两冲浪sub本来就是违反红迪大mod规则被禁止转发的哦</p>
+<p><em>I am a bot, and this action was performed automatically. Please <a href="/message/compose/?to=/r/beiouxiaozhen">contact the moderators of this subreddit</a> if you have any questions or concerns.</em></p></div></div>
+    <div class="comment" id="t1_ljlhaav">
+        <p class="userinfo">
+            <a class="toggle_hide_button" href="javascript:void(0)" onclick="toggle_collapse(this.parentElement.parentElement)">[-]</a>
+            <a href="https://old.reddit.com/u/AutoModerator">AutoModerator</a>
+            | <span class="score">1 points</span>
+            | <a class="timestamp" href="https://old.reddit.com/r/beiouxiaozhen/comments/1ezlrn6/冲浪小本本儿一/ljlhaav/">Aug 24 2024 03:40:36</a>
+        </p>
+        <div class="collapsible">
+            <p>傻逼炒管操你妈，你妈大逼人人插，左插插那么右插插，插的你妈逼开花，你妈大逼鞋有血，操你妈了个逼濑嘢，你妈大逼转又转，操你妈了个逼来犯，整形师我来操你妈，你妈大逼人人插，插得你妈直开花，我来操你妈我来操你妈！</p>
+<p><em>I am a bot, and this action was performed automatically. Please <a href="/message/compose/?to=/r/beiouxiaozhen">contact the moderators of this subreddit</a> if you have any questions or concerns.</em></p></div></div>
+    <div class="comment" id="t1_ljv2d7i">
+        <p class="userinfo">
+            <a class="toggle_hide_button" href="javascript:void(0)" onclick="toggle_collapse(this.parentElement.parentElement)">[-]</a>
+            <a href="https://old.reddit.com/u/zhuanZhuanShenGong">zhuanZhuanShenGong</a>
+            | <span class="score">1 points</span>
+            | <a class="timestamp" href="https://old.reddit.com/r/beiouxiaozhen/comments/1ezlrn6/冲浪小本本儿一/ljv2d7i/">Aug 25 2024 22:37:09</a>
+        </p>
+        <div class="collapsible">
+            <p>说话有点像编程随想</p>
+    <div class="comment" id="t1_ljx2rct">
+        <p class="userinfo">
+            <a class="toggle_hide_button" href="javascript:void(0)" onclick="toggle_collapse(this.parentElement.parentElement)">[-]</a>
+            <a href="https://old.reddit.com/u/replaceOrgansKingXjp">replaceOrgansKingXjp</a>
+            | <span class="score">1 points</span>
+            | <a class="timestamp" href="https://old.reddit.com/r/beiouxiaozhen/comments/1ezlrn6/冲浪小本本儿一/ljx2rct/">Aug 26 2024 05:23:58</a>
+        </p>
+        <div class="collapsible">
+            <p>此文是一线大厂大名鼎鼎的GPT与俺强强联手完成</p>
+    <div class="comment" id="t1_ljx2reb">
+        <p class="userinfo">
+            <a class="toggle_hide_button" href="javascript:void(0)" onclick="toggle_collapse(this.parentElement.parentElement)">[-]</a>
+            <a href="https://old.reddit.com/u/AutoModerator">AutoModerator</a>
+            | <span class="score">1 points</span>
+            | <a class="timestamp" href="https://old.reddit.com/r/beiouxiaozhen/comments/1ezlrn6/冲浪小本本儿一/ljx2reb/">Aug 26 2024 05:23:58</a>
+        </p>
+        <div class="collapsible">
+            <p>加入我们ACGI神教吧，体验民间最前沿的AI文爱技术，私人订制符合自己口味的AI文爱助手，摆脱令人恶心的低质量现实长毛猴子海鲜批集美，是否破局只在一念之间。你说是吧艾维利亚</p>
+<p><em>I am a bot, and this action was performed automatically. Please <a href="/message/compose/?to=/r/beiouxiaozhen">contact the moderators of this subreddit</a> if you have any questions or concerns.</em></p></div></div></div></div></div></div>
+    <div class="comment" id="t1_ljz58l2">
+        <p class="userinfo">
+            <a class="toggle_hide_button" href="javascript:void(0)" onclick="toggle_collapse(this.parentElement.parentElement)">[-]</a>
+            <a href="https://old.reddit.com/u/Electronic-Still-1">Electronic-Still-1</a>
+            | <span class="score">1 points</span>
+            | <a class="timestamp" href="https://old.reddit.com/r/beiouxiaozhen/comments/1ezlrn6/冲浪小本本儿一/ljz58l2/">Aug 26 2024 14:32:50</a>
+        </p>
+        <div class="collapsible">
+            <p>u/cyber_niuniu</p></div></div>
+    </body>
+    <script>
+        function toggle_collapse(comment_div) {{
+            var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+            var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+            if (collapsible.classList.contains("hidden")) {{
+                collapsible.classList.remove("hidden");
+                button.innerText = "[-]";
+            }} else {{
+                collapsible.classList.add("hidden");
+                button.innerText = "[+]";
+            }}
+        }}
+    </script>
+</html>
