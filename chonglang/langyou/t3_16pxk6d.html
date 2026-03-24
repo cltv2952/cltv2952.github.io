@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>盘点应该弃用VScode进而改用Vim或者Gnu Emacs的原因</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <style>
+            .crosspost {
+                border: 1px solid #888;
+                margin-top: 10px;
+                padding: 10px;
+                background-color: #f6f7f8;
+            }
+            .crosspost-header {
+                font-size: 12px;
+                color: #555;
+                margin-bottom: 6px;
+            }
+            .crosspost-content {
+                padding-left: 5px;
+            }
+            .submission, .comment { padding-left: 20px; padding-right: 4px; font-family: verdana, arial, helvetica, sans-serif; }
+            .comment { margin-top: 4px; margin-bottom: 4px; border: 1px solid black; }
+            .submission { border: 2px solid blue; padding-bottom: 10px; }
+            .hidden { display: none; }
+            .userinfo { font-size: 12px; color: #555; }
+            .flair {
+                padding: 2px 6px; border-radius: 20px; font-size: 10px; font-weight: bold;
+                margin-left: 5px; display: inline-block; vertical-align: middle; line-height: 1.2;
+            }
+        </style>
+    </head>
+    <body>
+        <a href="../langyou.html#t3_16pxk6d" class="back-link">← Back to Index</a>
+            <div class="submission" id="t3_16pxk6d">
+                <p class="userinfo">
+                    <a href="https://old.reddit.com/u/Meritamen__">Meritamen__</a>
+                    | <span class="score">1 points</span>
+                    | <a class="timestamp" href="https://old.reddit.com/r/langyou/comments/16pxk6d/盘点应该弃用vscode进而改用vim或者gnu_emacs的原因/">Sep 23 2023 15:00:26</a>
+                </p>
+                <strong>盘点应该弃用VScode进而改用Vim或者Gnu Emacs的原因</strong>
+                <p><p>又是我，我又来骂微软了。</p></p>
+                
+            </div>
+    <div class="comment" id="t1_k1tovtj">
+        <p class="userinfo">
+            <a class="toggle_hide_button" href="javascript:void(0)" onclick="toggle_collapse(this.parentElement.parentElement)">[-]</a>
+            <a href="https://old.reddit.com/u/Meritamen__">Meritamen__</a>
+            | <span class="score">1 points</span>
+            | <a class="timestamp" href="https://old.reddit.com/r/langyou/comments/16pxk6d/盘点应该弃用vscode进而改用vim或者gnu_emacs的原因/k1tovtj/">Sep 23 2023 15:05:40</a>
+        </p>
+        <div class="collapsible">
+            <p>Lsp(Language server protocol)是源于微软的VScode的，但是微软自己先堕落了，VScode假借着lsp协议，dap协议，号称开源，实际上夹带了很多私货，很多项目都不遵循自家的lsp协议和dap协议。</p>
+<p>比如python，vscode使用的插件是由pylance提供的服务，pylance闭源而且不允许非vscode以外的编辑器使用。pylance比pyright的一点显著的大进步是，它可以同时显示类型签名以及文档，pyright的话，如果一个函数有类型签名，那么就不会显示文档。微软官方将之视为pylance的feature，明确表示不会给pyright提供。<a href="https://github.com/microsoft/pyright/issues/1280">Show documentation when entering arguments of a function · Issue #1280 · microsoft/pyright · GitHub 4</a></p>
+<p>&#x200B;</p>
+<p>vscode官方的typescript插件是tsserver，而不是type-script-languga-server，它并不遵循lsp协议，typescript-language-server有性能问题，体验要比tsserver差很多. <a href="https://github.com/microsoft/TypeScript/issues/39459">tsserver should implement the Language Server Protocol · Issue #39459 · microsoft/TypeScript · GitHub 3</a></p>
+<p>想比之下，谷歌推出的 gopls 就是标准的 lsp，并不搞私货，主要由苹果维护的 clangd 也是标准的 lsp</p></div></div>
+    </body>
+    <script>
+        function toggle_collapse(comment_div) {{
+            var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+            var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+            if (collapsible.classList.contains("hidden")) {{
+                collapsible.classList.remove("hidden");
+                button.innerText = "[-]";
+            }} else {{
+                collapsible.classList.add("hidden");
+                button.innerText = "[+]";
+            }}
+        }}
+    </script>
+</html>
