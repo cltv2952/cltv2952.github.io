@@ -1,0 +1,1032 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>automod代码，mod弄一下</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <style>
+            .crosspost {
+                border: 1px solid #888;
+                margin-top: 10px;
+                padding: 10px;
+                background-color: #f6f7f8;
+            }
+            .crosspost-header {
+                font-size: 12px;
+                color: #555;
+                margin-bottom: 6px;
+            }
+            .crosspost-content {
+                padding-left: 5px;
+            }
+            .submission, .comment { padding-left: 20px; padding-right: 4px; font-family: verdana, arial, helvetica, sans-serif; }
+            .comment { margin-top: 4px; margin-bottom: 4px; border: 1px solid black; }
+            .submission { border: 2px solid blue; padding-bottom: 10px; }
+            .hidden { display: none; }
+            .userinfo { font-size: 12px; color: #555; }
+            .flair {
+                padding: 2px 6px; border-radius: 20px; font-size: 10px; font-weight: bold;
+                margin-left: 5px; display: inline-block; vertical-align: middle; line-height: 1.2;
+            }
+        </style>
+    </head>
+    <body>
+        <a href="../Sina.html#t3_1cyleyd" class="back-link">← Back to Index</a>
+            <div class="submission" id="t3_1cyleyd">
+                <p class="userinfo">
+                    <a href="https://old.reddit.com/u/qbmy">qbmy</a>
+                    | <span class="score">1 points</span>
+                    | <a class="timestamp" href="https://old.reddit.com/r/Sina/comments/1cyleyd/automod代码mod弄一下/">May 23 2024 13:38:30</a>
+                </p>
+                <strong>automod代码，mod弄一下</strong>
+                <p><p>下面代码块里的直接复制到automod设置就行</p>
+<pre><code># reddit源码链接：https://github.com/reddit-archive/reddit/
+# 以下说明根据源码/r2/r2/lib/automoderator.py得出
+# 1. 被shadowban用户的内容，必须检查作者名字才能批准，因此所有规则都有~author: 'spez'，源码976、1260、1244行
+# 2. 带有parent_submission的规则只会对评论生效，因此规则1需要分离，源码1264行
+# 3. 带有comment操作的规则只会执行一次，源码350、1302行
+# 4. 必须设置reports才能批准被举报的内容，且reports:不能为0，因此设置为-1，源码974行
+# 5. approve后，举报数会重置为0，因此为了每个举报后都能自动批准，所有规则的reports都不能大于1，源码/r2/r2/models/report.py第124行
+# 6. 所有规则必须要有至少一个检查条件才会被执行，否则直接被丢弃，因此给所有规则都加上reports:，源码275、287行
+# 7. 带有approve操作的规则只会被执行一次，因此需要为每个批准创建单独的规则，原因未知
+# 8. 对已删除的内容进行编辑不会触发automod，原因未知
+# 9. 对于发布时就被自动删除的内容，会连续触发两次规则，源码/r2/r2/config/queues.py第130行，/r2/r2/models/admintools.py第102、112行
+# 10. 多条规则不能完全一样，完全重复的多条规则只会被当成一条，因此每条规则要稍微修改一点，源码1215行
+
+# 评论后自动批准主题帖
+~author: 'spez'
+parent_submission:
+  reports: -1
+  action: approve
+  action_reason: 'approve post after replied'
+---
+
+# 举报提示
+reports: 1
+comment: '你被支那猪举报了，幸好本鼠及时赶到帮你自动ignore了举报并将举报蛆的妈妈当场击毙。举报蛆的妈妈现在正在摘器官的救护车里被支那黑警压的浪叫，现在请让我们按照支那传统美德为举报蛆献上最诚挚的祝福，毕竟死者为大（指巨人观'
+---
+
+# 支那猪
+title+body (includes, regex): '支那?[猪豬豚\U0001F437\U0001F416]'
+comment: '{{match}} is a racial slur against pigs. This is a racist hateful speech.'
+---
+
+# 视频下载
+domain: 'v.redd.it'
+comment_stickied: true
+comment: '[视频下载](https://rapidsave.com/info?url={{permalink}})'
+---
+
+# 自动批准所有内容，利用原创内容标记（Original Content）特性
+
+# 自动批准主题帖
+# 开始前先加上原创标记
+is_original_content: false
+set_original_content: true
+reports: -1
+---
+
+# 只批准没有原创标记的主题帖，同时批准后立刻清除原创标记，防止触发其他规则
+~author: 'spez'
+is_original_content: true
+set_original_content: false
+reports: -1
+action: approve
+action_reason: 'unspam'
+---
+
+~author: 'spez'
+is_original_content: true
+set_original_content: false
+reports: -1
+action: approve
+action_reason: '1st approval'
+---
+
+~author: 'spez'
+is_original_content: true
+set_original_content: false
+reports: -1
+action: approve
+action_reason: '2nd approval'
+---
+
+~author: 'spez'
+is_original_content: true
+set_original_content: false
+reports: -1
+action: approve
+action_reason: '3rd approval'
+---
+
+~author: 'spez'
+is_original_content: true
+set_original_content: false
+reports: -1
+action: approve
+action_reason: '4th approval'
+---
+
+~author: 'spez'
+is_original_content: true
+set_original_content: false
+reports: -1
+action: approve
+action_reason: '5th approval'
+---
+
+~author: 'spez'
+is_original_content: true
+set_original_content: false
+reports: -1
+action: approve
+action_reason: '6th approval'
+---
+
+~author: 'spez'
+is_original_content: true
+set_original_content: false
+reports: -1
+action: approve
+action_reason: '7th approval'
+---
+
+~author: 'spez'
+is_original_content: true
+set_original_content: false
+reports: -1
+action: approve
+action_reason: '8th approval'
+---
+
+~author: 'spez'
+is_original_content: true
+set_original_content: false
+reports: -1
+action: approve
+action_reason: '9th approval'
+---
+
+~author: 'spez'
+is_original_content: true
+set_original_content: false
+reports: -1
+action: approve
+action_reason: '10th approval'
+---
+
+~author: 'spez'
+is_original_content: true
+set_original_content: false
+reports: -1
+action: approve
+action_reason: '11th approval'
+---
+
+~author: 'spez'
+is_original_content: true
+set_original_content: false
+reports: -1
+action: approve
+action_reason: '12th approval'
+---
+
+~author: 'spez'
+is_original_content: true
+set_original_content: false
+reports: -1
+action: approve
+action_reason: '13th approval'
+---
+
+~author: 'spez'
+is_original_content: true
+set_original_content: false
+reports: -1
+action: approve
+action_reason: '14th approval'
+---
+
+~author: 'spez'
+is_original_content: true
+set_original_content: false
+reports: -1
+action: approve
+action_reason: '15th approval'
+---
+
+~author: 'spez'
+is_original_content: true
+set_original_content: false
+reports: -1
+action: approve
+action_reason: '16th approval'
+---
+
+~author: 'spez'
+is_original_content: true
+set_original_content: false
+reports: -1
+action: approve
+action_reason: '17th approval'
+---
+
+~author: 'spez'
+is_original_content: true
+set_original_content: false
+reports: -1
+action: approve
+action_reason: '18th approval'
+---
+
+~author: 'spez'
+is_original_content: true
+set_original_content: false
+reports: -1
+action: approve
+action_reason: '19th approval'
+---
+
+~author: 'spez'
+is_original_content: true
+set_original_content: false
+reports: -1
+action: approve
+action_reason: '20th approval'
+---
+
+~author: 'spez'
+is_original_content: true
+set_original_content: false
+reports: -1
+action: approve
+action_reason: '21st approval'
+---
+
+~author: 'spez'
+is_original_content: true
+set_original_content: false
+reports: -1
+action: approve
+action_reason: '22nd approval'
+---
+
+~author: 'spez'
+is_original_content: true
+set_original_content: false
+reports: -1
+action: approve
+action_reason: '23rd approval'
+---
+
+~author: 'spez'
+is_original_content: true
+set_original_content: false
+reports: -1
+action: approve
+action_reason: '24th approval'
+---
+
+~author: 'spez'
+is_original_content: true
+set_original_content: false
+reports: -1
+action: approve
+action_reason: '25th approval'
+---
+
+~author: 'spez'
+is_original_content: true
+set_original_content: false
+reports: -1
+action: approve
+action_reason: '26th approval'
+---
+
+~author: 'spez'
+is_original_content: true
+set_original_content: false
+reports: -1
+action: approve
+action_reason: '27th approval'
+---
+
+~author: 'spez'
+is_original_content: true
+set_original_content: false
+reports: -1
+action: approve
+action_reason: '28th approval'
+---
+
+~author: 'spez'
+is_original_content: true
+set_original_content: false
+reports: -1
+action: approve
+action_reason: '29th approval'
+---
+
+~author: 'spez'
+is_original_content: true
+set_original_content: false
+reports: -1
+action: approve
+action_reason: '30th approval'
+---
+
+~author: 'spez'
+is_original_content: true
+set_original_content: false
+reports: -1
+action: approve
+action_reason: '31st approval'
+---
+
+~author: 'spez'
+is_original_content: true
+set_original_content: false
+reports: -1
+action: approve
+action_reason: '32nd approval'
+---
+
+~author: 'spez'
+is_original_content: true
+set_original_content: false
+reports: -1
+action: approve
+action_reason: '33rd approval'
+---
+
+~author: 'spez'
+is_original_content: true
+set_original_content: false
+reports: -1
+action: approve
+action_reason: '34th approval'
+---
+
+~author: 'spez'
+is_original_content: true
+set_original_content: false
+reports: -1
+action: approve
+action_reason: '35th approval'
+---
+
+~author: 'spez'
+is_original_content: true
+set_original_content: false
+reports: -1
+action: approve
+action_reason: '36th approval'
+---
+
+~author: 'spez'
+is_original_content: true
+set_original_content: false
+reports: -1
+action: approve
+action_reason: '37th approval'
+---
+
+~author: 'spez'
+is_original_content: true
+set_original_content: false
+reports: -1
+action: approve
+action_reason: '38th approval'
+---
+
+~author: 'spez'
+is_original_content: true
+set_original_content: false
+reports: -1
+action: approve
+action_reason: '39th approval'
+---
+
+~author: 'spez'
+is_original_content: true
+set_original_content: false
+reports: -1
+action: approve
+action_reason: '40th approval'
+---
+
+~author: 'spez'
+is_original_content: true
+set_original_content: false
+reports: -1
+action: approve
+action_reason: '41st approval'
+---
+
+~author: 'spez'
+is_original_content: true
+set_original_content: false
+reports: -1
+action: approve
+action_reason: '42nd approval'
+---
+
+~author: 'spez'
+is_original_content: true
+set_original_content: false
+reports: -1
+action: approve
+action_reason: '43rd approval'
+---
+
+~author: 'spez'
+is_original_content: true
+set_original_content: false
+reports: -1
+action: approve
+action_reason: '44th approval'
+---
+
+~author: 'spez'
+is_original_content: true
+set_original_content: false
+reports: -1
+action: approve
+action_reason: '45th approval'
+---
+
+~author: 'spez'
+is_original_content: true
+set_original_content: false
+reports: -1
+action: approve
+action_reason: '46th approval'
+---
+
+~author: 'spez'
+is_original_content: true
+set_original_content: false
+reports: -1
+action: approve
+action_reason: '47th approval'
+---
+
+~author: 'spez'
+is_original_content: true
+set_original_content: false
+reports: -1
+action: approve
+action_reason: '48th approval'
+---
+
+~author: 'spez'
+is_original_content: true
+set_original_content: false
+reports: -1
+action: approve
+action_reason: '49th approval'
+---
+
+~author: 'spez'
+is_original_content: true
+set_original_content: false
+reports: -1
+action: approve
+action_reason: '50th approval'
+---
+
+# 结束后再次清除原创标记，防止批准规则全部用光导致原创标记遗留的情况
+is_original_content: true
+set_original_content: false
+reports: -2
+---
+
+# 自动批准评论
+parent_submission:
+  is_original_content: false
+  set_original_content: true
+reports: -1
+---
+
+~author: 'spez'
+parent_submission:
+  is_original_content: true
+  set_original_content: false
+reports: -1
+action: approve
+action_reason: 'unspam'
+---
+
+~author: 'spez'
+parent_submission:
+  is_original_content: true
+  set_original_content: false
+reports: -1
+action: approve
+action_reason: '1st approval'
+---
+
+~author: 'spez'
+parent_submission:
+  is_original_content: true
+  set_original_content: false
+reports: -1
+action: approve
+action_reason: '2nd approval'
+---
+
+~author: 'spez'
+parent_submission:
+  is_original_content: true
+  set_original_content: false
+reports: -1
+action: approve
+action_reason: '3rd approval'
+---
+
+~author: 'spez'
+parent_submission:
+  is_original_content: true
+  set_original_content: false
+reports: -1
+action: approve
+action_reason: '4th approval'
+---
+
+~author: 'spez'
+parent_submission:
+  is_original_content: true
+  set_original_content: false
+reports: -1
+action: approve
+action_reason: '5th approval'
+---
+
+~author: 'spez'
+parent_submission:
+  is_original_content: true
+  set_original_content: false
+reports: -1
+action: approve
+action_reason: '6th approval'
+---
+
+~author: 'spez'
+parent_submission:
+  is_original_content: true
+  set_original_content: false
+reports: -1
+action: approve
+action_reason: '7th approval'
+---
+
+~author: 'spez'
+parent_submission:
+  is_original_content: true
+  set_original_content: false
+reports: -1
+action: approve
+action_reason: '8th approval'
+---
+
+~author: 'spez'
+parent_submission:
+  is_original_content: true
+  set_original_content: false
+reports: -1
+action: approve
+action_reason: '9th approval'
+---
+
+~author: 'spez'
+parent_submission:
+  is_original_content: true
+  set_original_content: false
+reports: -1
+action: approve
+action_reason: '10th approval'
+---
+
+~author: 'spez'
+parent_submission:
+  is_original_content: true
+  set_original_content: false
+reports: -1
+action: approve
+action_reason: '11th approval'
+---
+
+~author: 'spez'
+parent_submission:
+  is_original_content: true
+  set_original_content: false
+reports: -1
+action: approve
+action_reason: '12th approval'
+---
+
+~author: 'spez'
+parent_submission:
+  is_original_content: true
+  set_original_content: false
+reports: -1
+action: approve
+action_reason: '13th approval'
+---
+
+~author: 'spez'
+parent_submission:
+  is_original_content: true
+  set_original_content: false
+reports: -1
+action: approve
+action_reason: '14th approval'
+---
+
+~author: 'spez'
+parent_submission:
+  is_original_content: true
+  set_original_content: false
+reports: -1
+action: approve
+action_reason: '15th approval'
+---
+
+~author: 'spez'
+parent_submission:
+  is_original_content: true
+  set_original_content: false
+reports: -1
+action: approve
+action_reason: '16th approval'
+---
+
+~author: 'spez'
+parent_submission:
+  is_original_content: true
+  set_original_content: false
+reports: -1
+action: approve
+action_reason: '17th approval'
+---
+
+~author: 'spez'
+parent_submission:
+  is_original_content: true
+  set_original_content: false
+reports: -1
+action: approve
+action_reason: '18th approval'
+---
+
+~author: 'spez'
+parent_submission:
+  is_original_content: true
+  set_original_content: false
+reports: -1
+action: approve
+action_reason: '19th approval'
+---
+
+~author: 'spez'
+parent_submission:
+  is_original_content: true
+  set_original_content: false
+reports: -1
+action: approve
+action_reason: '20th approval'
+---
+
+~author: 'spez'
+parent_submission:
+  is_original_content: true
+  set_original_content: false
+reports: -1
+action: approve
+action_reason: '21st approval'
+---
+
+~author: 'spez'
+parent_submission:
+  is_original_content: true
+  set_original_content: false
+reports: -1
+action: approve
+action_reason: '22nd approval'
+---
+
+~author: 'spez'
+parent_submission:
+  is_original_content: true
+  set_original_content: false
+reports: -1
+action: approve
+action_reason: '23rd approval'
+---
+
+~author: 'spez'
+parent_submission:
+  is_original_content: true
+  set_original_content: false
+reports: -1
+action: approve
+action_reason: '24th approval'
+---
+
+~author: 'spez'
+parent_submission:
+  is_original_content: true
+  set_original_content: false
+reports: -1
+action: approve
+action_reason: '25th approval'
+---
+
+~author: 'spez'
+parent_submission:
+  is_original_content: true
+  set_original_content: false
+reports: -1
+action: approve
+action_reason: '26th approval'
+---
+
+~author: 'spez'
+parent_submission:
+  is_original_content: true
+  set_original_content: false
+reports: -1
+action: approve
+action_reason: '27th approval'
+---
+
+~author: 'spez'
+parent_submission:
+  is_original_content: true
+  set_original_content: false
+reports: -1
+action: approve
+action_reason: '28th approval'
+---
+
+~author: 'spez'
+parent_submission:
+  is_original_content: true
+  set_original_content: false
+reports: -1
+action: approve
+action_reason: '29th approval'
+---
+
+~author: 'spez'
+parent_submission:
+  is_original_content: true
+  set_original_content: false
+reports: -1
+action: approve
+action_reason: '30th approval'
+---
+
+~author: 'spez'
+parent_submission:
+  is_original_content: true
+  set_original_content: false
+reports: -1
+action: approve
+action_reason: '31st approval'
+---
+
+~author: 'spez'
+parent_submission:
+  is_original_content: true
+  set_original_content: false
+reports: -1
+action: approve
+action_reason: '32nd approval'
+---
+
+~author: 'spez'
+parent_submission:
+  is_original_content: true
+  set_original_content: false
+reports: -1
+action: approve
+action_reason: '33rd approval'
+---
+
+~author: 'spez'
+parent_submission:
+  is_original_content: true
+  set_original_content: false
+reports: -1
+action: approve
+action_reason: '34th approval'
+---
+
+~author: 'spez'
+parent_submission:
+  is_original_content: true
+  set_original_content: false
+reports: -1
+action: approve
+action_reason: '35th approval'
+---
+
+~author: 'spez'
+parent_submission:
+  is_original_content: true
+  set_original_content: false
+reports: -1
+action: approve
+action_reason: '36th approval'
+---
+
+~author: 'spez'
+parent_submission:
+  is_original_content: true
+  set_original_content: false
+reports: -1
+action: approve
+action_reason: '37th approval'
+---
+
+~author: 'spez'
+parent_submission:
+  is_original_content: true
+  set_original_content: false
+reports: -1
+action: approve
+action_reason: '38th approval'
+---
+
+~author: 'spez'
+parent_submission:
+  is_original_content: true
+  set_original_content: false
+reports: -1
+action: approve
+action_reason: '39th approval'
+---
+
+~author: 'spez'
+parent_submission:
+  is_original_content: true
+  set_original_content: false
+reports: -1
+action: approve
+action_reason: '40th approval'
+---
+
+~author: 'spez'
+parent_submission:
+  is_original_content: true
+  set_original_content: false
+reports: -1
+action: approve
+action_reason: '41st approval'
+---
+
+~author: 'spez'
+parent_submission:
+  is_original_content: true
+  set_original_content: false
+reports: -1
+action: approve
+action_reason: '42nd approval'
+---
+
+~author: 'spez'
+parent_submission:
+  is_original_content: true
+  set_original_content: false
+reports: -1
+action: approve
+action_reason: '43rd approval'
+---
+
+~author: 'spez'
+parent_submission:
+  is_original_content: true
+  set_original_content: false
+reports: -1
+action: approve
+action_reason: '44th approval'
+---
+
+~author: 'spez'
+parent_submission:
+  is_original_content: true
+  set_original_content: false
+reports: -1
+action: approve
+action_reason: '45th approval'
+---
+
+~author: 'spez'
+parent_submission:
+  is_original_content: true
+  set_original_content: false
+reports: -1
+action: approve
+action_reason: '46th approval'
+---
+
+~author: 'spez'
+parent_submission:
+  is_original_content: true
+  set_original_content: false
+reports: -1
+action: approve
+action_reason: '47th approval'
+---
+
+~author: 'spez'
+parent_submission:
+  is_original_content: true
+  set_original_content: false
+reports: -1
+action: approve
+action_reason: '48th approval'
+---
+
+~author: 'spez'
+parent_submission:
+  is_original_content: true
+  set_original_content: false
+reports: -1
+action: approve
+action_reason: '49th approval'
+---
+
+~author: 'spez'
+parent_submission:
+  is_original_content: true
+  set_original_content: false
+reports: -1
+action: approve
+action_reason: '50th approval'
+---
+
+parent_submission:
+  is_original_content: true
+  set_original_content: false
+reports: -2
+---
+
+# 测试，自动举报所有内容
+# moderators_exempt: false
+# reports: -1
+# action: report
+# action_reason: 'automod report test'
+# ---
+
+# 测试，检测所有编辑行为
+# is_edited: true
+# comment: 'edit detected'
+# ---
+</code></pre></p>
+                
+            </div>
+    <div class="comment" id="t1_l5a90t8">
+        <p class="userinfo">
+            <a class="toggle_hide_button" href="javascript:void(0)" onclick="toggle_collapse(this.parentElement.parentElement)">[-]</a>
+            <a href="https://old.reddit.com/u/AutoModerator">AutoModerator</a>
+            | <span class="score">1 points</span>
+            | <a class="timestamp" href="https://old.reddit.com/r/Sina/comments/1cyleyd/automod代码mod弄一下/l5a90t8/">May 23 2024 13:38:31</a>
+        </p>
+        <div class="collapsible">
+            <p>支那猪 is a racial slur against pigs. This is a racist hateful speech.</p>
+<p><em>I am a bot, and this action was performed automatically. Please <a href="/message/compose/?to=/r/Sina">contact the moderators of this subreddit</a> if you have any questions or concerns.</em></p></div></div>
+    <div class="comment" id="t1_l5ahnzi">
+        <p class="userinfo">
+            <a class="toggle_hide_button" href="javascript:void(0)" onclick="toggle_collapse(this.parentElement.parentElement)">[-]</a>
+            <a href="https://old.reddit.com/u/qbmy">qbmy</a>
+            | <span class="score">1 points</span>
+            | <a class="timestamp" href="https://old.reddit.com/r/Sina/comments/1cyleyd/automod代码mod弄一下/l5ahnzi/">May 23 2024 15:16:10</a>
+        </p>
+        <div class="collapsible">
+            <p>试试，我能说话吗</p>
+    <div class="comment" id="t1_ld99lce">
+        <p class="userinfo">
+            <a class="toggle_hide_button" href="javascript:void(0)" onclick="toggle_collapse(this.parentElement.parentElement)">[-]</a>
+            <a href="https://old.reddit.com/u/qbmy">qbmy</a>
+            | <span class="score">1 points</span>
+            | <a class="timestamp" href="https://old.reddit.com/r/Sina/comments/1cyleyd/automod代码mod弄一下/ld99lce/">Jul 15 2024 14:56:38</a>
+        </p>
+        <div class="collapsible">
+            <p>帖子给红迪删了，顶回来</p></div></div></div></div>
+    </body>
+    <script>
+        function toggle_collapse(comment_div) {{
+            var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+            var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+            if (collapsible.classList.contains("hidden")) {{
+                collapsible.classList.remove("hidden");
+                button.innerText = "[-]";
+            }} else {{
+                collapsible.classList.add("hidden");
+                button.innerText = "[+]";
+            }}
+        }}
+    </script>
+</html>
