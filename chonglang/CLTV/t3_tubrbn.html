@@ -1,0 +1,76 @@
+<html>
+<head>
+<title>给各位支个招</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_tubrbn">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/iillaws">iillaws</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tubrbn">Apr 02 2022 05:50:16</a>
+    </p>
+    <strong>给各位支个招</strong>
+    <p><p>用两个不同的浏览器可以登不同的红迪账号，这样一次可以画两个像素（有点作弊）</p></p>
+</div>
+<div class="comment" id="t1_i32umd0">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/GreatFireWaII">GreatFireWaII</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tubrbn/_/i32umd0">Apr 02 2022 05:56:22</a>
+    </p>
+    <div class="collapsible">
+        <p>你用火狐container可以一个窗口开好几个账号呢，虽然没啥意思</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

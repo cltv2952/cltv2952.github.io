@@ -1,0 +1,76 @@
+<html>
+<head>
+<title>Admiral, come here...♡</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_u1zdyg">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/miaomax">miaomax</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/u1zdyg">Apr 12 2022 13:40:55</a>
+    </p>
+    <strong>Admiral, come here...♡</strong>
+    <p><a href="https://i.redd.it/vvd4h728q3t81.jpg">https://i.redd.it/vvd4h728q3t81.jpg</a></p>
+</div>
+<div class="comment" id="t1_i4fdlxu">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/miaomax">miaomax</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/u1zdyg/_/i4fdlxu">Apr 12 2022 13:41:35</a>
+    </p>
+    <div class="collapsible">
+        <p>Source:https://www.pixiv.net/artworks/80558802</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

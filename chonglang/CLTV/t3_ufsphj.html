@@ -1,0 +1,76 @@
+<html>
+<head>
+<title>分享一下风景</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_ufsphj">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/HKPoohPooh">HKPoohPooh</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/ufsphj">May 01 2022 05:14:47</a>
+    </p>
+    <strong>分享一下风景</strong>
+    <p><a href="https://www.reddit.com/gallery/ufsphj">https://www.reddit.com/gallery/ufsphj</a></p>
+</div>
+<div class="comment" id="t1_i6vhgsb">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/zhinazhu420">zhinazhu420</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/ufsphj/_/i6vhgsb">May 01 2022 05:21:44</a>
+    </p>
+    <div class="collapsible">
+        <p>阿尔博塔老嗨</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

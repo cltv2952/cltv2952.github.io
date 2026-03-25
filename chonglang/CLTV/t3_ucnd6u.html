@@ -1,0 +1,112 @@
+<html>
+<head>
+<title>無題</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_ucnd6u">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/Goodmorning932">Goodmorning932</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/ucnd6u">Apr 26 2022 21:34:24</a>
+    </p>
+    <strong>無題</strong>
+    <p><a href="https://i.redd.it/xdn66voczxv81.jpg">https://i.redd.it/xdn66voczxv81.jpg</a></p>
+</div>
+<div class="comment" id="t1_i6bmd0l">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/PersonalTomatillo860">PersonalTomatillo860</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/ucnd6u/_/i6bmd0l">Apr 26 2022 21:54:27</a>
+    </p>
+    <div class="collapsible">
+        <p>看过<img alt="img" src="emote|t5_3ta5rx|2352">很赞</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_i6cn62w">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/honglaozhi12e">honglaozhi12e</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/ucnd6u/_/i6cn62w">Apr 27 2022 02:26:27</a>
+    </p>
+    <div class="collapsible">
+        <p>可以再看看这个人写的《中国国民性演变历程》</p>
+        <div class="comment" id="t1_i6deeg7">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/CraftyCommercial8702">CraftyCommercial8702</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/ucnd6u/_/i6deeg7">Apr 27 2022 06:52:27</a>
+    </p>
+    <div class="collapsible">
+        <p>这本是好书，看完赞不绝口，丑陋中国人的更深解读</p>
+        
+    </div>
+</div>
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

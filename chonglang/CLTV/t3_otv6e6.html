@@ -1,0 +1,95 @@
+<html>
+<head>
+<title>盒武器</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_otv6e6">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/ne-re-na-i">ne-re-na-i</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/otv6e6">Jul 29 2021 10:53:24</a>
+    </p>
+    <strong>盒武器</strong>
+    <p><a href="https://i.redd.it/9xpz8lc3u4e71.jpg">https://i.redd.it/9xpz8lc3u4e71.jpg</a></p>
+</div>
+<div class="comment" id="t1_h6xx600">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/FayeValente">FayeValente</a>
+        |
+        <span class="score">2 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/otv6e6/_/h6xx600">Jul 29 2021 10:55:25</a>
+    </p>
+    <div class="collapsible">
+        <p>难绷</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_h6xxlnj">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/RazeZeta">RazeZeta</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/otv6e6/_/h6xxlnj">Jul 29 2021 11:00:56</a>
+    </p>
+    <div class="collapsible">
+        <p>消灭不鼓掌的</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

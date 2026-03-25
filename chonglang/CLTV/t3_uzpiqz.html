@@ -1,0 +1,111 @@
+<html>
+<head>
+<title>科普系列之DNS篇</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_uzpiqz">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/fsemosa">fsemosa</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/uzpiqz">May 28 2022 15:22:38</a>
+    </p>
+    <strong>科普系列之DNS篇</strong>
+    <p><p>感谢友友们在上一篇的建议与补充，这里我想更正一点：<strong>在上一篇中因为想着是简单科普没有特意区分开VPN与翻墙代理，事实上这两种区别很大，VPN一般都是在第三层而不像代理在应用层</strong>。为什么会提到这一点呢？这是因为这是大部分DNS查询泄露的原因。</p>
+<h2>1.DNS是什么</h2>
+<p>相信友友们一搜寻就知道DNS的定义，这里简单介绍一般DNS的作用。
+- 最基础的使用方式就是用来代替IP地址那不便于记忆的数字，这样当你想要访问Reddit只需要输入<code>reddit.com</code>而不需要输入<code>XXX.XXX.XXX.XXX</code>，特别是在IPV6普及的今天，没有人会想输入<code>2001:0db8:85a3:0000:0000:8a2e:0370:7334</code>这样一大串来访问一个网站。
+- 另一个重要的使用方式就是如Reddit的方式，Reddit将自己的内容放在了CDN后面，这样Reddit自己就不需要在全世界各地都设置服务器来保证访问速度了，只需要在CDN提供商的服务器上缓存好数据，然后CDN服务商就会将内容分发到全球。但是这这个时候会有一个问题: CDN服务商怎样将你分流到距离你最近的服务器上呢？这个时候就需要DNS发挥作用了，当你向DNS服务器请求一个网站的IP时，通常会返回距离你最近的服务器的IP。</p>
+<p>当然DNS还有更多用法，这里只提了最简单的A/AAAA记录。</p>
+<h2>2.DNS如何运作的</h2>
+<p>当你在浏览器地址栏输入想要到达的网址，比如<code>reddit.com</code>,这个时候你的电脑就会向默认的DNS服务器发送一个查询的信息（这个默认DNS一般都是运营商提供），然后DNS服务器就会返回这个域名对应的IP地址，当你的电脑收到这个IP地址后就会进行连接。</p>
+<p>这个过程都是明文传输的。这是因为在过去，网络并没有像现在这样的带宽。虽然在早期的提案中DNS是可以使用UDP和TCP来进行查询的(简单来说UDP损耗更小但是没那么稳定，TCP损耗更大但是更稳定，有兴趣的友友自行查询)，但是受限于网络带宽，实际的落地几乎都是使用UDP查询。同时为了保证性能损耗的最小，所以传统的DNS查询都是使用的明文传输。</p>
+<p>既然整个查询过程都是明文传输，那么任何能够介入你和DNS服务器的线路的第三方都可以知道你查询了哪些网站，并且可以伪造数据包。这就引出了下一个话题：DNS污染。</p>
+<h2>3.什么是DNS污染</h2>
+<p>如前文所说，你查询一个域名的过程都是明文传输且不验证身份，那么能否正确访问到想要去的网站就全看DNS服务器能不能返回正确结果了。<strong>这个时候要是不想让你访问到特定的网站怎么办呢?</strong> 那我只要篡改真实的IP就好了，比如我访问reddit.com，正确的IP地址应该是<code>111.111.111.111</code>，但是运营商分配的DNS服务器却返回了<code>222.222.222.222</code>，当你的浏览器去连接这个错误的IP，只会无限转圈圈。</p>
+<p>那么，我要是不使用运营商提供的服务器呢？比如我可以使用Google的<code>8.8.8.8</code>，这个时候GFW就会开始介入了，因为DNS查询是明文且不验证来源的关系，GFW知道你查询的每一个域名，在遇到不想让你访问的网站时，GFW会跳出来拦截你的数据包，并构造一个虚假的响应，冒充<code>8.8.8.8</code>返回一个错误的IP地址。</p>
+<p>这些过程就是<strong>DNS污染</strong>。</p>
+<h2>4.怎样避免DNS污染</h2>
+<p>既然DNS污染能够成功很大的原因是DNS明文传输且不验证来源，那么我们可不可以把加密与验证签名加入DNS查询来避免DNS污染呢？当然，聪明如你，所以就有了<strong>DOH/DOT</strong>:
+- DOH: <code>DNS over https</code> 的简称，简单的来说就是不再使用传统的UDP查询，而是使用https来传输DNS数据，受益于https的普及度和安全性，在加密了DNS查询内容，验证了来源之外，因为使用的https，所以能很好地隐藏在普通的https流量之中。
+- DOT：<code>DNS over tls</code> 的简称，简单来说就是在普通的查询上套了一层tls，同样实现了加密和验证身份，和DOH相比其流量特征非常明显，但资源占用显著下降。</p>
+<h2>5.为什么DNS需要分流</h2>
+<p>即使<strong>DOH/DOT</strong>有这么多优点，但是还是绕不开一个问题：<strong>你能稳定的直接访问的DOH/DOT服务器都在境内，这些服务器已经自带污染了。</strong> 这个时候聪明的你可能会想到，那我用代理来访问不就好了，这样我就能得到正确的IP了吧。是的，这也是大部分代理工具会帮你完成的事情，于是这个时候DNS查询的过程就变成<code>你的电脑 -&amp;rt; 代理工具 -&amp;rt; 海外服务器 -&amp;rt; DNS服务器</code></p>
+<p>这样一来又会有一个问题：<strong>对于DNS服务器来说查询DNS的是那台海外服务器，自然也就会返回距离你的海外服务器最近的服务器的IP。</strong> 当你本身就是访问的海外网站时自然无所谓，但是国内很多网站针对海外访问做了优化，他们通常也有海外接入点，如果通过代理查询DNS大概率会返回一个海外IP，这样你访问淘宝的路径就成功绕地球一圈了，这无疑大大增加了延迟。为了解决这个问题，通常我们需要进行DNS查询的分流：<strong>如果查询的是国内的网站不通过代理查询，访问海外网站就通过代理进行查询。</strong></p>
+<h2>6.如何进行分流</h2>
+<p>这里我会简单介绍一下如何在<strong>Windows</strong>下进行简单的DNS查询分流。首先，你需要准备四个工具:
+- YogaDNS(https://yogadns.com/): 一个Windows下的DNS工具，免费版只能设置一个DNS服务器，这里就够了，只是用来接管DNS查询而已。
+- mosDNS(https://github.com/IrineSistiana/mosdns): 一个使用Go编写的DNS转发/分流工具。
+- v2ray-rules-dat(https://github.com/Loyalsoldier/v2ray-rules-dat)：网站/域名规则，简单来说就是帮你分类好了那些是国内网站，哪些是国外网站。
+- 一个你习惯用的文本编辑器，这里推荐notepad++(https://notepad-plus-plus.org/downloads/)</p>
+<p>具体步骤:
+1. 去mosdns的releases页面下载<code>mosdns-windows-amd64.zip</code>这个文件并解压。
+2. 去V2ray-rules-dat的release页面下载<code>geoip.dat</code>和<code>geosite.dat</code>并放入mosdns解压出来的文件中。
+3. 使用文本剪辑器打开<code>config.yaml</code>文件，使用这个链接(https://www.codepile.net/pile/E4MnA2rm)的内容覆盖原内容，并修改<code>socks5</code>这一字段的端口为你代理工具开放的socks5端口（比如示例中是6324）。
+4. 右键单击mosdns文件夹里面的<code>service_control.bat</code>，选择使用管理员身份运行，并选择<code>Install service</code>（如果你不想用了，同样管理员身份打开选择<code>Uninstall service</code>就可以了）。
+5. 安装并打开YogaDNS，一直下一步，出来的授权页面选择OK就行了，这里不需要高级版的功能
+6. 这个时候有一个弹窗让你选择是否使用空的设置，这个时候直接点击<code>Next</code>下一步即可，弹出来的提醒也直接<code>OK</code>即可
+7. 点击左上角的<code>DNS Servers</code>,弹出来的窗口右上有一个<code>Add...</code>，点击，这时弹出来的窗口有几个字段可以填写:
+    - User friendly name: 随便填，就是一个备注名称
+    - Type：选择<code>Plain</code>
+    - IP address and optinal port: 填写<code>127.0.0.1</code>
+8. 填写完毕之后点击OK即可，再点击<code>DNS Server</code>页面的<code>OK</code>，这时会有一个弹窗询问你是否用这个DNS服务器来接管系统DNS查询，点击<code>是</code>即可。</p>
+<p>如此一来，DNS的分流查询就完成了。</p>
+<p>友友可以访问DNSleak(https://www.dnsleaktest.com/)来测试自己的DNS服务商是否是代理出口服务器所使用的DNS服务商以判断是否正确完成设置。</p>
+<h2>我真的需要吗？</h2>
+<p>相信友友们看到现在有一个疑惑，我使用代理工具的默认设置就很好了，为什么要这么麻烦呢，在我看来主要的优势有二:</p>
+<ol>
+<li>虽然使用代理的时候代理工具会帮你转发被污染的域名，但是在日常没有使用代理工具的场景中也能很好的起到分流的作用，并且因为上游使用了DOH，所以你的运营商的DNS劫持广告也能得到较好的抑制。</li>
+<li>可以避免DNS泄露的问题。Clash这一类有比较完善的内置DNS功能的工具在规则完善时可以很好的分流，但是Clash的运作方式是先向你设置的国内DNS查询看IP是否为海外，再判断是否通过代理查询，这个过程你的运营商或者国内提供公共DNS服务的服务商也会知道你查询了哪些网站。</li>
+</ol>
+<h2>总结</h2>
+<p>解决DNS污染只是翻墙路上的一个环节而已，如今的GFW已经不仅仅是DNS污染这一个手段了，更有了sni阻断(也就是泉州白名单的落地方式)，端口重置等等。这一片文章真正的用意更多的是在于解决DNS泄露的问题。</p>
+<p>至于为什么只有Windows的解决方案，无奈小弟没有Mac，用Linux的各位大大应该是不用小弟献丑。</p>
+<p>至于为什么没有手机端的方案，因为手机从来都不应该成为你翻墙的主力设备。</p>
+<p>关于上一篇科普文大家讨论的是否使用机场的问题，如果从安全上来讲，确实不应该使用机场，但是个人搭建翻墙节点很难用便宜的价格解决线路问题，通常会造成高峰期的延迟飙升，当然友友愿意花钱，买线路好一点的VPS就可以解决。这个选择题就留给各位友友来做了。</p>
+<p>下一篇应该会写写如何自己搭建节点。</p></p>
+</div>
+</body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

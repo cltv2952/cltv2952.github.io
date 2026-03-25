@@ -1,0 +1,95 @@
+<html>
+<head>
+<title>每周新番</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_slf7s7">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/Anti_Zhina_Pig">Anti_Zhina_Pig</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/slf7s7">Feb 05 2022 19:54:53</a>
+    </p>
+    <strong>每周新番</strong>
+    <p><a href="https://www.youtube.com/watch?v=yeNaR2Av80c">https://www.youtube.com/watch?v=yeNaR2Av80c</a></p>
+</div>
+<div class="comment" id="t1_hvqjgi2">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/FritzKolaClubMate">FritzKolaClubMate</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/slf7s7/_/hvqjgi2">Feb 05 2022 20:28:46</a>
+    </p>
+    <div class="collapsible">
+        <p>旧番了</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_hvqrumd">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Traditional_Berry995">Traditional_Berry995</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/slf7s7/_/hvqrumd">Feb 05 2022 21:36:28</a>
+    </p>
+    <div class="collapsible">
+        <p>这帘子怎么和圆脸一样</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

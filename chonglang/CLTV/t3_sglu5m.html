@@ -1,0 +1,76 @@
+<html>
+<head>
+<title>想到一个有趣的故事</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_sglu5m">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/Old_Suspect2563">Old_Suspect2563</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/sglu5m">Jan 30 2022 23:16:43</a>
+    </p>
+    <strong>想到一个有趣的故事</strong>
+    <p><p>我在上初中的时候，嘴唇下边长了个特别大的青春痘，当时我就自言自语说我长大之后必定会成为像毛腊肉那样的开国领袖，现在我在这里复读屠支，也算是我对小时候说过的话的印证吧</p></p>
+</div>
+<div class="comment" id="t1_hux52bk">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/NukeYangtzeDelta">NukeYangtzeDelta</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/sglu5m/_/hux52bk">Jan 30 2022 23:29:54</a>
+    </p>
+    <div class="collapsible">
+        <p>批小将罢了</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

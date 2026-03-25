@@ -1,0 +1,95 @@
+<html>
+<head>
+<title>你在說誰呢</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_og4pgs">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/datnoobisbloodthirst">datnoobisbloodthirst</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/og4pgs">Jul 08 2021 10:47:04</a>
+    </p>
+    <strong>你在說誰呢</strong>
+    <p><a href="https://imgur.com/a/ulsVkvt">https://imgur.com/a/ulsVkvt</a></p>
+</div>
+<div class="comment" id="t1_h4gz6b8">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/timtomcook">timtomcook</a>
+        |
+        <span class="score">5 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/og4pgs/_/h4gz6b8">Jul 08 2021 13:30:16</a>
+    </p>
+    <div class="collapsible">
+        <p>蜘蛛:你敢侮辱我的鹅爹 我杀了你😡</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_h4k4jf4">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/shazhizhu">shazhizhu</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/og4pgs/_/h4k4jf4">Jul 09 2021 04:54:28</a>
+    </p>
+    <div class="collapsible">
+        <p>给倪哥当狗</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

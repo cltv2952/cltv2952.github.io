@@ -1,0 +1,114 @@
+<html>
+<head>
+<title>抽象</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_uynzw9">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/Repulsive_Ad_7541">Repulsive_Ad_7541</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/uynzw9">May 27 2022 02:31:57</a>
+    </p>
+    <strong>抽象</strong>
+    <p><a href="https://i.redd.it/5j0nz83xjx191.jpg">https://i.redd.it/5j0nz83xjx191.jpg</a></p>
+</div>
+<div class="comment" id="t1_ia59xnp">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/NenNen1">NenNen1</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/uynzw9/_/ia59xnp">May 27 2022 02:32:59</a>
+    </p>
+    <div class="collapsible">
+        <p>就舔白媽媽</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_ia5axlu">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Gongfei999">Gongfei999</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/uynzw9/_/ia5axlu">May 27 2022 02:41:22</a>
+    </p>
+    <div class="collapsible">
+        <p>共产党官方认证批价堪比黄金</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_ia5km2d">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/That_Necessary322">That_Necessary322</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/uynzw9/_/ia5km2d">May 27 2022 04:06:29</a>
+    </p>
+    <div class="collapsible">
+        <p>🥵🥵🙋🏻‍♀️</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

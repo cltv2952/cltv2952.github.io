@@ -1,0 +1,76 @@
+<html>
+<head>
+<title>簡單乳個包</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_tcbg9g">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/jacky890818">jacky890818</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tcbg9g">Mar 12 2022 07:50:54</a>
+    </p>
+    <strong>簡單乳個包</strong>
+    <p><a href="https://i.imgur.com/BzggmzD.jpg">https://i.imgur.com/BzggmzD.jpg</a></p>
+</div>
+<div class="comment" id="t1_i0chp6l">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/MarchingInShenandoah">MarchingInShenandoah</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tcbg9g/_/i0chp6l">Mar 12 2022 07:55:39</a>
+    </p>
+    <div class="collapsible">
+        <p>平子这么haram，Salman跟他握完手以后不得整整洗一个小时？</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

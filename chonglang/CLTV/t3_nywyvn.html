@@ -1,0 +1,131 @@
+<html>
+<head>
+<title>无题</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_nywyvn">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/Vast_Artistic">Vast_Artistic</a>
+        |
+        <span class="score">6 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/nywyvn">Jun 13 2021 14:01:10</a>
+    </p>
+    <strong>无题</strong>
+    <p><a href="https://i.redd.it/rkxd6isnh1571.jpg">https://i.redd.it/rkxd6isnh1571.jpg</a></p>
+</div>
+<div class="comment" id="t1_h1mrhs5">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/VD0NE">VD0NE</a>
+        |
+        <span class="score">3 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/nywyvn/_/h1mrhs5">Jun 13 2021 15:48:43</a>
+    </p>
+    <div class="collapsible">
+        <p>嗨呀 是我吗</p>
+        <div class="comment" id="t1_h1msdhz">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Vast_Artistic">Vast_Artistic</a>
+        |
+        <span class="score">2 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/nywyvn/_/h1msdhz">Jun 13 2021 15:56:06</a>
+    </p>
+    <div class="collapsible">
+        <p>机会均等</p>
+        
+    </div>
+</div>
+    </div>
+</div>
+
+<div class="comment" id="t1_h1n7alz">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/George_the_Facetious">George_the_Facetious</a>
+        |
+        <span class="score">3 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/nywyvn/_/h1n7alz">Jun 13 2021 17:58:30</a>
+    </p>
+    <div class="collapsible">
+        <p>不信抬头看，铁拳饶过谁</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_h1mxs6e">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/kuwakatatakuma">kuwakatatakuma</a>
+        |
+        <span class="score">2 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/nywyvn/_/h1mxs6e">Jun 13 2021 16:40:52</a>
+    </p>
+    <div class="collapsible">
+        <p>下一个轮到你了嘻嘻嘻</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

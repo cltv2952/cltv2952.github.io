@@ -1,0 +1,95 @@
+<html>
+<head>
+<title>热度葬礼</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_tkdb5d">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/lilsojen">lilsojen</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tkdb5d">Mar 22 2022 21:13:03</a>
+    </p>
+    <strong>热度葬礼</strong>
+    <p><p>主人的任务：搬上去，给媒体人照一下</p></p>
+</div>
+<div class="comment" id="t1_i1pplik">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/lilsojen">lilsojen</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tkdb5d/_/i1pplik">Mar 22 2022 21:21:50</a>
+    </p>
+    <div class="collapsible">
+        <p>活着没有物资，死了反而扎堆的送</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_i1q48gq">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/mlguux">mlguux</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tkdb5d/_/i1q48gq">Mar 22 2022 23:01:46</a>
+    </p>
+    <div class="collapsible">
+        <p>别尬黑，比俄军强多了</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

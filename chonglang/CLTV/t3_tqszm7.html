@@ -1,0 +1,133 @@
+<html>
+<head>
+<title>猜猜哪个是我</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_tqszm7">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/HKPoohPooh">HKPoohPooh</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tqszm7">Mar 29 2022 05:52:47</a>
+    </p>
+    <strong>猜猜哪个是我</strong>
+    <p><a href="https://i.redd.it/93rtxiuyh9q81.jpg">https://i.redd.it/93rtxiuyh9q81.jpg</a></p>
+</div>
+<div class="comment" id="t1_i2j6l4y">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Krookodile1989">Krookodile1989</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tqszm7/_/i2j6l4y">Mar 29 2022 05:54:06</a>
+    </p>
+    <div class="collapsible">
+        <p>最右边那个格格不入的黄毛</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_i2j6m1x">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Total_Form2908">Total_Form2908</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tqszm7/_/i2j6m1x">Mar 29 2022 05:54:24</a>
+    </p>
+    <div class="collapsible">
+        <p>剧本杀？不不不，不要啊我忍不住了我要忍住辱骂我的浪人同胞</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_i2j6mn7">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Chemical-Doubt-3810">Chemical-Doubt-3810</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tqszm7/_/i2j6mn7">Mar 29 2022 05:54:37</a>
+    </p>
+    <div class="collapsible">
+        <p>偷？</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_i2j6x3b">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Faye-TD-Valentine">Faye-TD-Valentine</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tqszm7/_/i2j6x3b">Mar 29 2022 05:58:17</a>
+    </p>
+    <div class="collapsible">
+        <p>拍照那个</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

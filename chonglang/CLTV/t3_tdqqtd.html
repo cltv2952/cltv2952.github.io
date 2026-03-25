@@ -1,0 +1,131 @@
+<html>
+<head>
+<title>今天天气真好</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_tdqqtd">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/ChungkuoRun">ChungkuoRun</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tdqqtd">Mar 14 2022 06:15:07</a>
+    </p>
+    <strong>今天天气真好</strong>
+    <p><a href="https://i.redd.it/h6a39ap9kan81.jpg">https://i.redd.it/h6a39ap9kan81.jpg</a></p>
+</div>
+<div class="comment" id="t1_i0l5v7f">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/chairmanXii">chairmanXii</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tdqqtd/_/i0l5v7f">Mar 14 2022 06:17:42</a>
+    </p>
+    <div class="collapsible">
+        <p>辉</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_i0l6auv">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Stasi1950">Stasi1950</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tdqqtd/_/i0l6auv">Mar 14 2022 06:23:05</a>
+    </p>
+    <div class="collapsible">
+        <p>ken这两天忙生活去了？</p>
+        <div class="comment" id="t1_i0l6ruu">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/ChungkuoRun">ChungkuoRun</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tdqqtd/_/i0l6ruu">Mar 14 2022 06:29:16</a>
+    </p>
+    <div class="collapsible">
+        <p>yep</p>
+        
+    </div>
+</div>
+    </div>
+</div>
+
+<div class="comment" id="t1_i0lf1lv">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/XWN_BS">XWN_BS</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tdqqtd/_/i0lf1lv">Mar 14 2022 08:25:09</a>
+    </p>
+    <div class="collapsible">
+        <p>今天也是好天气</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

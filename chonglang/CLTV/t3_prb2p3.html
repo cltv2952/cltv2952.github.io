@@ -1,0 +1,114 @@
+<html>
+<head>
+<title>OP说得对</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_prb2p3">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/PlanBoth">PlanBoth</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/prb2p3">Sep 19 2021 16:22:07</a>
+    </p>
+    <strong>OP说得对</strong>
+    <p><a href="https://i.redd.it/3scqen0wud671.jpg">https://i.redd.it/3scqen0wud671.jpg</a></p>
+</div>
+<div class="comment" id="t1_hdha0gf">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/lynxtrainer">lynxtrainer</a>
+        |
+        <span class="score">6 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/prb2p3/_/hdha0gf">Sep 19 2021 16:31:28</a>
+    </p>
+    <div class="collapsible">
+        <p>他这是属于启发思维了</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_hdjk8mr">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/SpiderPigeon">SpiderPigeon</a>
+        |
+        <span class="score">3 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/prb2p3/_/hdjk8mr">Sep 20 2021 02:19:34</a>
+    </p>
+    <div class="collapsible">
+        <p>炒起来了</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_hdh9kc6">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/misakabruh">misakabruh</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/prb2p3/_/hdh9kc6">Sep 19 2021 16:28:22</a>
+    </p>
+    <div class="collapsible">
+        <p>来个网址</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

@@ -1,0 +1,59 @@
+<html>
+<head>
+<title>我发现我的思维愈发极端了，一有烦心事就想开杀...是不是洼地的社会存在造就了我这种社会意识？</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_u10cab">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/Woaitingting">Woaitingting</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/u10cab">Apr 11 2022 05:30:01</a>
+    </p>
+    <strong>我发现我的思维愈发极端了，一有烦心事就想开杀...是不是洼地的社会存在造就了我这种社会意识？</strong>
+    <p><a href="https://i.redd.it/c7y0ib5q5us81.jpg">https://i.redd.it/c7y0ib5q5us81.jpg</a></p>
+</div>
+</body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

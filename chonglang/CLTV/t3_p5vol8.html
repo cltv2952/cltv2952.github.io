@@ -1,0 +1,93 @@
+<html>
+<head>
+<title>都給你狂完了</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_p5vol8">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/loneliness_tim21">loneliness_tim21</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/p5vol8">Aug 17 2021 03:20:08</a>
+    </p>
+    <strong>都給你狂完了</strong>
+    <p><a href="https://i.redd.it/y6550nmj6uh71.jpg">https://i.redd.it/y6550nmj6uh71.jpg</a></p>
+</div>
+<div class="comment" id="t1_h998lbl">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Sodom36525">Sodom36525</a>
+        |
+        <span class="score">9 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/p5vol8/_/h998lbl">Aug 17 2021 05:40:12</a>
+    </p>
+    <div class="collapsible">
+        <p>习包子的话，在世界都闹笑话</p>
+        <div class="comment" id="t1_h99dhij">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/SlavicDDDAZE">SlavicDDDAZE</a>
+        |
+        <span class="score">6 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/p5vol8/_/h99dhij">Aug 17 2021 06:39:49</a>
+    </p>
+    <div class="collapsible">
+        <p>全世界都在烦种花家</p>
+        
+    </div>
+</div>
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

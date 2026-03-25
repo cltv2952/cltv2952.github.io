@@ -1,0 +1,112 @@
+<html>
+<head>
+<title>码老嗨速进！</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_tg6x7g">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/SpamYummy">SpamYummy</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tg6x7g">Mar 17 2022 10:15:43</a>
+    </p>
+    <strong>码老嗨速进！</strong>
+    <p><p>python用chdir修改完cwd之后，退出重进路径又变回原来的了，怎么解？</p></p>
+</div>
+<div class="comment" id="t1_i102c8h">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/GreenNerve">GreenNerve</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tg6x7g/_/i102c8h">Mar 17 2022 10:21:54</a>
+    </p>
+    <div class="collapsible">
+        <p>CLTV要stackoverflow化了</p>
+        <div class="comment" id="t1_i102gq2">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/SpamYummy">SpamYummy</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tg6x7g/_/i102gq2">Mar 17 2022 10:23:30</a>
+    </p>
+    <div class="collapsible">
+        <p>学代码TV</p>
+        
+    </div>
+</div>
+    </div>
+</div>
+
+<div class="comment" id="t1_i103cg3">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/CandidSmile3241">CandidSmile3241</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tg6x7g/_/i103cg3">Mar 17 2022 10:34:41</a>
+    </p>
+    <div class="collapsible">
+        <p>你说的是Python运行的路径？他的默认路径就是你运行脚本时候的路径，我记得可以用__file__类似的宏把路径修改成.Py文件的路径，然后做相对路径等操作</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

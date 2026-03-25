@@ -1,0 +1,95 @@
+<html>
+<head>
+<title>习习向上模块？</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_uoa0nt">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/KevinKack">KevinKack</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/uoa0nt">May 12 2022 20:16:39</a>
+    </p>
+    <strong>习习向上模块？</strong>
+    <p><a href="https://i.redd.it/5v2vyka7s3z81.jpg">https://i.redd.it/5v2vyka7s3z81.jpg</a></p>
+</div>
+<div class="comment" id="t1_i8d9jzf">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/rebelwall">rebelwall</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/uoa0nt/_/i8d9jzf">May 12 2022 20:59:50</a>
+    </p>
+    <div class="collapsible">
+        <p>完了，手机有后门了</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_i8egz6x">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/burntpussy">burntpussy</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/uoa0nt/_/i8egz6x">May 13 2022 02:25:01</a>
+    </p>
+    <div class="collapsible">
+        <p>我寻思习习向上不是英语听力软件吗</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

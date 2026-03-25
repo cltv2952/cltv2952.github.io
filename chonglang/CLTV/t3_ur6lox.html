@@ -1,0 +1,112 @@
+<html>
+<head>
+<title>经典回顾</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_ur6lox">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/Rx7Twinturbo">Rx7Twinturbo</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/ur6lox">May 16 2022 21:30:14</a>
+    </p>
+    <strong>经典回顾</strong>
+    <p><a href="https://i.redd.it/xyxna8syowz81.gif">https://i.redd.it/xyxna8syowz81.gif</a></p>
+</div>
+<div class="comment" id="t1_i8vnyha">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/nathena_19">nathena_19</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/ur6lox/_/i8vnyha">May 16 2022 22:47:57</a>
+    </p>
+    <div class="collapsible">
+        <p>披萨好吃😋</p>
+        <div class="comment" id="t1_i8vuhmz">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/SenkouNoHanyawei">SenkouNoHanyawei</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/ur6lox/_/i8vuhmz">May 16 2022 23:40:09</a>
+    </p>
+    <div class="collapsible">
+        <p>是taco</p>
+        
+    </div>
+</div>
+    </div>
+</div>
+
+<div class="comment" id="t1_i8vzlw8">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Snoo97200">Snoo97200</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/ur6lox/_/i8vzlw8">May 17 2022 00:22:45</a>
+    </p>
+    <div class="collapsible">
+        <p>塞我嘴里试试</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

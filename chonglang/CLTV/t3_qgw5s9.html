@@ -1,0 +1,76 @@
+<html>
+<head>
+<title>幸福忠花家</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_qgw5s9">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/Sea-Patient-1804">Sea-Patient-1804</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/qgw5s9">Oct 27 2021 13:00:50</a>
+    </p>
+    <strong>幸福忠花家</strong>
+    <p><a href="https://i.redd.it/o5mrj57vqzv71.jpg">https://i.redd.it/o5mrj57vqzv71.jpg</a></p>
+</div>
+<div class="comment" id="t1_hi91r57">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/PlanBoth">PlanBoth</a>
+        |
+        <span class="score">4 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/qgw5s9/_/hi91r57">Oct 27 2021 14:30:25</a>
+    </p>
+    <div class="collapsible">
+        <p>快刀斩乱麻</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

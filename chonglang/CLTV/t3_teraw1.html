@@ -1,0 +1,76 @@
+<html>
+<head>
+<title>这下内斗了</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_teraw1">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/goto-111">goto-111</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/teraw1">Mar 15 2022 15:16:16</a>
+    </p>
+    <strong>这下内斗了</strong>
+    <p><a href="https://twitter.com/wstv_lizzi/status/1503746286004195328?s=21">https://twitter.com/wstv_lizzi/status/1503746286004195328?s=21</a></p>
+</div>
+<div class="comment" id="t1_i0rbh7q">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/stupidStage12dogis2B">stupidStage12dogis2B</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/teraw1/_/i0rbh7q">Mar 15 2022 15:19:04</a>
+    </p>
+    <div class="collapsible">
+        <p>一直在内斗，包子现在除啦他自己派系人马，那个不反他，但他知道自己一下来就肯定扑街，被他提拔上来的人也是知道包子一下去他们绝对死的比包子还扑街，立包要包子连任。</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

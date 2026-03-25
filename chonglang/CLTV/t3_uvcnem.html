@@ -1,0 +1,59 @@
+<html>
+<head>
+<title>简单倒个垃圾</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_uvcnem">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/dangdangluo">dangdangluo</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/uvcnem">May 22 2022 14:57:48</a>
+    </p>
+    <strong>简单倒个垃圾</strong>
+    <p><p>想多交网友，注册了一个Tandem。一上去只有菲律宾女老师推荐我去上她们的英语网络课。不死心，按国家地域细分寻找翻美女。期间偶然发现一个掌握大概十五门外语的年轻小伙，小伙的简介是“女士们，这是Tandem不是Tinder”。给找到的美女留言我想和你一起学中文。然后，七八天过去，无事发生。心情就这么堵了。</p></p>
+</div>
+</body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

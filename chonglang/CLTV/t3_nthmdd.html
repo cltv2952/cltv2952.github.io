@@ -1,0 +1,133 @@
+<html>
+<head>
+<title>大家知道这是谁吗</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_nthmdd">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/kumaba">kumaba</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/nthmdd">Jun 06 2021 09:05:52</a>
+    </p>
+    <strong>大家知道这是谁吗</strong>
+    <p><a href="https://i.redd.it/k882wgwj2m371.jpg">https://i.redd.it/k882wgwj2m371.jpg</a></p>
+</div>
+<div class="comment" id="t1_h0s06nn">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/kumaba">kumaba</a>
+        |
+        <span class="score">11 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/nthmdd/_/h0s06nn">Jun 06 2021 09:06:36</a>
+    </p>
+    <div class="collapsible">
+        <p>维尼之弟，习远平</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_h0sjv0w">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/pingpinglailai">pingpinglailai</a>
+        |
+        <span class="score">5 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/nthmdd/_/h0sjv0w">Jun 06 2021 13:30:10</a>
+    </p>
+    <div class="collapsible">
+        <p>习远平，编程随想大手子的赵家家谱里面有</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_h0s1vwv">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Accomplished-Fix-585">Accomplished-Fix-585</a>
+        |
+        <span class="score">3 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/nthmdd/_/h0s1vwv">Jun 06 2021 09:33:49</a>
+    </p>
+    <div class="collapsible">
+        <p>和硕亲王</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_h0vrfek">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/leengmao">leengmao</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/nthmdd/_/h0vrfek">Jun 07 2021 06:20:08</a>
+    </p>
+    <div class="collapsible">
+        <p>看这面相就不太智能的样子，二婚娶了个比他小24岁的幕刃。</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

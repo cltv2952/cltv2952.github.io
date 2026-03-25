@@ -1,0 +1,86 @@
+<html>
+<head>
+<title>书单推荐</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_taupko">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/ChungkuoRun">ChungkuoRun</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/taupko">Mar 10 2022 09:06:24</a>
+    </p>
+    <strong>书单推荐</strong>
+    <p><h2>1.</h2>
+<p>Republic.com 2.0 Sunstein, Cass R. (2007).</p>
+<h2>2.</h2>
+<p>Psychologie des Foules (1895); The Crowd: A Study of the Popular Mind</p>
+<h2>3.</h2>
+<p>&#x200B;</p>
+<p>Understanding Media: The Extensions of Man (1st ed.). New York:  McGraw Hill.（reissued by MIT Press, 1994, with introduction by Lewis H.  Lapham; reissued by Gingko Press, 2003.）</p>
+<h2>4.</h2>
+<p>1948, Cybernetics: Or Control and Communication in the Animal and the  Machine. Paris, (Hermann &amp; Cie) &amp; Camb. Mass. (MIT Press)</p>
+<h2>5.</h2>
+<p>Propaganda Technique in the World War (1927; Reprinted with a new introduction, 1971)</p></p>
+</div>
+<div class="comment" id="t1_i03601u">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/MundaneAssociation71">MundaneAssociation71</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/taupko/_/i03601u">Mar 10 2022 09:22:17</a>
+    </p>
+    <div class="collapsible">
+        <p>我青年时代就读过</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

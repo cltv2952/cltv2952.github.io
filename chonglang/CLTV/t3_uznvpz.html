@@ -1,0 +1,93 @@
+<html>
+<head>
+<title>比思论坛这个滑动图片怎么回事？无法拖动啊</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_uznvpz">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/timtomcook">timtomcook</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/uznvpz">May 28 2022 13:57:49</a>
+    </p>
+    <strong>比思论坛这个滑动图片怎么回事？无法拖动啊</strong>
+    <p><a href="https://i.redd.it/zpvivzl638291.jpg">https://i.redd.it/zpvivzl638291.jpg</a></p>
+</div>
+<div class="comment" id="t1_iabat1o">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/KWJisTrash">KWJisTrash</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/uznvpz/_/iabat1o">May 28 2022 14:00:03</a>
+    </p>
+    <div class="collapsible">
+        <p>現在才幾點你就開始看色色的東西啦</p>
+        <div class="comment" id="t1_iabcsm2">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/timtomcook">timtomcook</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/uznvpz/_/iabcsm2">May 28 2022 14:17:07</a>
+    </p>
+    <div class="collapsible">
+        <p>以前注册过 后来很久没登陆就把号忘了，怎么现在这么麻烦？</p>
+        
+    </div>
+</div>
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

@@ -1,0 +1,93 @@
+<html>
+<head>
+<title>今日的手沖材料</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_ukyuhv">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/jones17188">jones17188</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/ukyuhv">May 08 2022 10:26:04</a>
+    </p>
+    <strong>今日的手沖材料</strong>
+    <p><a href="https://i.redd.it/sfhdk136b8y81.gif">https://i.redd.it/sfhdk136b8y81.gif</a></p>
+</div>
+<div class="comment" id="t1_i7s792o">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/AeroLewis">AeroLewis</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/ukyuhv/_/i7s792o">May 08 2022 10:37:11</a>
+    </p>
+    <div class="collapsible">
+        <p>不露脸的话，身材再好都是徒然。</p>
+        <div class="comment" id="t1_i7s7ct1">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/jones17188">jones17188</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/ukyuhv/_/i7s7ct1">May 08 2022 10:38:41</a>
+    </p>
+    <div class="collapsible">
+        <p>我就沒要求這麼多了 <img alt="gif" src="emote|free_emotes_pack|kissing_heart"></p>
+        
+    </div>
+</div>
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

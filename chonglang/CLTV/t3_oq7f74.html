@@ -1,0 +1,61 @@
+<html>
+<head>
+<title>一件汶川的事</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_oq7f74">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/Cuthbertism">Cuthbertism</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/oq7f74">Jul 23 2021 17:38:32</a>
+    </p>
+    <strong>一件汶川的事</strong>
+    <p><p>记得当年8.0地震马上被改成7.8。最后又被订成8.0。目的是拒绝国际社会援助。这是不是早期的'别发外网'。
+前两天和家人聊，他们觉得就该这么做。
+地震之后去北川参观残骸。我记得公告上最后一条是地震国家不赔。</p></p>
+</div>
+</body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

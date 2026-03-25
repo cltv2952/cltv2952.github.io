@@ -1,0 +1,133 @@
+<html>
+<head>
+<title>哔哩哔哩评论区是不是没有了按时间排序</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_u8ccqs">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/Frosty-Ad-160">Frosty-Ad-160</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/u8ccqs">Apr 21 2022 01:51:46</a>
+    </p>
+    <strong>哔哩哔哩评论区是不是没有了按时间排序</strong>
+    <p></p>
+</div>
+<div class="comment" id="t1_i5kb82w">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Anon-VK">Anon-VK</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/u8ccqs/_/i5kb82w">Apr 21 2022 01:57:30</a>
+    </p>
+    <div class="collapsible">
+        <p>这下时间无限了</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_i5kbdx8">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Freqjule">Freqjule</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/u8ccqs/_/i5kbdx8">Apr 21 2022 01:58:41</a>
+    </p>
+    <div class="collapsible">
+        <p>手机和网页都有, 你可能被标记了</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_i5kcvg0">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/liule65">liule65</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/u8ccqs/_/i5kcvg0">Apr 21 2022 02:09:39</a>
+    </p>
+    <div class="collapsible">
+        <p>视频作者可以设置取消这个，居心就不用多说了</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_i5ked2u">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Apprehensive-View583">Apprehensive-View583</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/u8ccqs/_/i5ked2u">Apr 21 2022 02:20:56</a>
+    </p>
+    <div class="collapsible">
+        <p>可以取消 类似精选评论</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

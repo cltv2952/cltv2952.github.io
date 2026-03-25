@@ -1,0 +1,95 @@
+<html>
+<head>
+<title>今天我家外面下雪了</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_sv8wkz">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/LAKAM_LOTHART">LAKAM_LOTHART</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/sv8wkz">Feb 18 2022 04:29:54</a>
+    </p>
+    <strong>今天我家外面下雪了</strong>
+    <p><p>第一眼我还以为是楼上扔的塑料泡</p></p>
+</div>
+<div class="comment" id="t1_hxf5bul">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/ZH_Ray">ZH_Ray</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/sv8wkz/_/hxf5bul">Feb 18 2022 07:35:11</a>
+    </p>
+    <div class="collapsible">
+        <p>台北下了雪 你说那是保丽龙</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_hxgtzwv">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/AMongolia">AMongolia</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/sv8wkz/_/hxgtzwv">Feb 18 2022 17:04:37</a>
+    </p>
+    <div class="collapsible">
+        <p>华北</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

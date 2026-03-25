@@ -1,0 +1,129 @@
+<html>
+<head>
+<title>简单搬运点墙内内容</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_u470zc">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/piiih">piiih</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/u470zc">Apr 15 2022 12:32:46</a>
+    </p>
+    <strong>简单搬运点墙内内容</strong>
+    <p><a href="https://www.reddit.com/gallery/u470zc">https://www.reddit.com/gallery/u470zc</a></p>
+</div>
+<div class="comment" id="t1_i4trfjk">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/hanegawa">hanegawa</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/u470zc/_/i4trfjk">Apr 15 2022 12:55:17</a>
+    </p>
+    <div class="collapsible">
+        <p><img alt="gif" src="giphy|RgtQALh8wf4DC7Kjxi|downsized"></p>
+        <div class="comment" id="t1_i4ts33r">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/piiih">piiih</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/u470zc/_/i4ts33r">Apr 15 2022 13:00:55</a>
+    </p>
+    <div class="collapsible">
+        <p>简单的恶心一下</p>
+        
+    </div>
+</div>
+    </div>
+</div>
+
+<div class="comment" id="t1_i4trrzx">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/helderb1">helderb1</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/u470zc/_/i4trrzx">Apr 15 2022 12:58:18</a>
+    </p>
+    <div class="collapsible">
+        <p>Tag换成突开沼气池好不好<img alt="img" src="emote|t5_3ta5rx|7742"></p>
+        <div class="comment" id="t1_i4ts28e">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/piiih">piiih</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/u470zc/_/i4ts28e">Apr 15 2022 13:00:42</a>
+    </p>
+    <div class="collapsible">
+        <p>好，下次就换</p>
+        
+    </div>
+</div>
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

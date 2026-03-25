@@ -1,0 +1,60 @@
+<html>
+<head>
+<title>小加速</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_uc33wo">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/wangbaozhang">wangbaozhang</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/uc33wo">Apr 26 2022 03:18:09</a>
+    </p>
+    <strong>小加速</strong>
+    <p><p>豆瓣标签模块已消失，暂不知道是不是永久关闭。</p>
+<p>https://preview.redd.it/oz1wk62gjsv81.jpg?width=562&amp;format=pjpg&amp;auto=webp&amp;s=7fa4e8b47e4d5faa131e90207e6995da72ab8d0b</p></p>
+</div>
+</body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

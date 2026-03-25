@@ -1,0 +1,77 @@
+<html>
+<head>
+<title>实在难崩</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_pz6b83">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/akira99_">akira99_</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/pz6b83">Oct 01 2021 11:48:32</a>
+    </p>
+    <strong>实在难崩</strong>
+    <p><a href="https://i.redd.it/5vcetis9utq71.jpg">https://i.redd.it/5vcetis9utq71.jpg</a></p>
+</div>
+<div class="comment" id="t1_hf1um25">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/realpresentXJP">realpresentXJP</a>
+        |
+        <span class="score">5 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/pz6b83/_/hf1um25">Oct 02 2021 02:28:51</a>
+    </p>
+    <div class="collapsible">
+        <p>香港就是这个流程，一个傻逼看到自己被写进了黄色本子，恼羞成怒去抓人，香港人上街抗议随意送中被打成分裂势力，于是抗议愈演愈烈发展成直接对抗，最后香港被砸烂被安装国安法，资本撤离，傻逼突然想起来了香港是他曾今的钱袋子，于是赶紧撤回，结果发现撤不了了。于是现在就是这个样子，傻逼没了钱，港友没了家，其他地方的金融机构笑嘻了。
+傻逼面子彻底丢尽，现在开始甩锅，可惜已经没人能接得住了。</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

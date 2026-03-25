@@ -1,0 +1,114 @@
+<html>
+<head>
+<title>无题</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_s271xu">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/DigBigJaeBa">DigBigJaeBa</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/s271xu">Jan 12 2022 14:06:33</a>
+    </p>
+    <strong>无题</strong>
+    <p><a href="https://i.imx.to/i/2022/01/11/2vv28f.jpg">https://i.imx.to/i/2022/01/11/2vv28f.jpg</a></p>
+</div>
+<div class="comment" id="t1_hsddgwx">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Key-Mud-6810">Key-Mud-6810</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/s271xu/_/hsddgwx">Jan 12 2022 17:18:25</a>
+    </p>
+    <div class="collapsible">
+        <p>太大了，看得我不适</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_hsgnng3">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/bbc-tv">bbc-tv</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/s271xu/_/hsgnng3">Jan 13 2022 07:55:41</a>
+    </p>
+    <div class="collapsible">
+        <p>嗍一口</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_hsgzmwc">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/ChampionBitter5026">ChampionBitter5026</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/s271xu/_/hsgzmwc">Jan 13 2022 10:36:54</a>
+    </p>
+    <div class="collapsible">
+        <p>溯suo一口</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

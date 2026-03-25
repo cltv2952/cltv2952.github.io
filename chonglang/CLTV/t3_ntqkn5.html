@@ -1,0 +1,95 @@
+<html>
+<head>
+<title>shadowban的机制是什么样的？</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_ntqkn5">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/Pinochat2">Pinochat2</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/ntqkn5">Jun 06 2021 17:15:34</a>
+    </p>
+    <strong>shadowban的机制是什么样的？</strong>
+    <p><p>之前一个号被shadowban了。有没有董哥知道怎样的行为会触发shadowban？还有谁有进行这种操作的权限，官方还是版主？</p></p>
+</div>
+<div class="comment" id="t1_h0trtsg">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/something4nothingggg">something4nothingggg</a>
+        |
+        <span class="score">2 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/ntqkn5/_/h0trtsg">Jun 06 2021 19:28:59</a>
+    </p>
+    <div class="collapsible">
+        <p>我是腾讯派来帮reddit审查的网管，一般我们按照中国这边的要求涉及政治敏感类会shadowban的。有时候投诉到reddit的mod那里账号解禁我们在后台可以删除记录。</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_h0tfn5v">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/1969707172">1969707172</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/ntqkn5/_/h0tfn5v">Jun 06 2021 17:54:23</a>
+    </p>
+    <div class="collapsible">
+        <p>我亲自</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

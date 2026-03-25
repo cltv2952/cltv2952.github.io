@@ -1,0 +1,1207 @@
+<html>
+<head>
+<title>简单科普下翻墙手法</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_tavkv0">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/zhen_li">zhen_li</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tavkv0">Mar 10 2022 10:12:42</a>
+    </p>
+    <strong>简单科普下翻墙手法</strong>
+    <p><ul>
+<li>VPN: 大多数不会使用linux的鼠鼠使用的翻墙手段，主要有NordVPN、熊猫之类的软件，VPN本质上是一种隧道，主要工作在osi七层模型的第二层和第三层，通过对原数据，原ip的强加密手段进行安全通讯，要论安全性的话比其他代理要强点，但是由于vpn的加密特征太过明显，用的太多会被gfw和电信发现从而橄榄。</li>
+<li>ss:又名shadowsocks，老牌代理方式，从2012年开始出现，基于socks会话层的代理协议，会对socks层整个进行加密，是自己看上去像是正常的tcp或udp包来蒙混过关，但由于墙探测的能力逐渐加强，ss开始逐渐倾向于http伪装，ss是所有翻墙手法中最快的。</li>
+<li>ssr:在ss的基础上加装了一些混淆协议，由于作者跑路长期无人维护，已接近于被墙橄榄的程度，上一个ip橄榄一个，建议不使用。</li>
+<li>trojan:本鼠用的代理方式，trojan本质上是一种http协议的代理，主要通过反向代理分流的方式来伪装成正常网站，使用tls来进行混淆，在墙看来你是在用https的加密流量浏览网站，比如本鼠的域名经过分流直达斯坦福大学官网，但实质上本鼠通过客户端输入正确密码后http直接分流，目前没有见到过被橄榄的（除非流量跑的太过嚣张导致域名被橄榄），由于http connect的一些限制和不支持websocket，所以无法使用cdn中转，速度仅次于ss。</li>
+<li>trojan-go:使用go重构的trojan项目，支持grpc、websocket，多路复用，非常推荐，特别是通过cdn中转后你的服务器ip基本无法被橄榄，有测试表明速度甚至超过ss，</li>
+<li>v2ray:老牌协议，集大成的缝合怪，github项目中包含vmess、ss、trojan协议，其中vmess由于使用时间戳验证和强加密导致cpu耗能猛增，性能上来说非常拉胯，如果不使用混淆ip会被墙很快橄榄，可以使用cdn，但是使用后原本捉急的cpu更加雪上加霜，是本次介绍的翻墙手法中最慢的。</li>
+<li>xray:模仿trojan的项目，弃用了时间戳验证和强加密，改为由ssl进行加密，将里外两条ssl连接合并在一起达到减少cpu消耗的目的，速度上大概和trojan平齐吧，也支持grpc和websocket，可以使用cdn中转。</li>
+<li>中转：一种使用国内鸡的中转方式，一般用于更稳定地连接代理，使用iptable和gost之类的中转程序进行中转，不是翻墙手法，仅仅做个简介。</li>
+</ul>
+<p>转发请注明出处</p></p>
+</div>
+<div class="comment" id="t1_i039ys8">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/yajyupaisen">yajyupaisen</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tavkv0/_/i039ys8">Mar 10 2022 10:17:43</a>
+    </p>
+    <div class="collapsible">
+        <p>介绍下反诈中心亲自推荐的clash</p>
+        <div class="comment" id="t1_i03a316">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/zhen_li">zhen_li</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tavkv0/_/i03a316">Mar 10 2022 10:19:17</a>
+    </p>
+    <div class="collapsible">
+        <p>clash被我弃用了</p>
+        <div class="comment" id="t1_i03b65f">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/yajyupaisen">yajyupaisen</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tavkv0/_/i03b65f">Mar 10 2022 10:34:05</a>
+    </p>
+    <div class="collapsible">
+        <p>细说背后的真实</p>
+        <div class="comment" id="t1_i03bcwf">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/zhen_li">zhen_li</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tavkv0/_/i03bcwf">Mar 10 2022 10:36:39</a>
+    </p>
+    <div class="collapsible">
+        <p>ios和mac用不了罢了</p>
+        <div class="comment" id="t1_i03bo21">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/MundaneAssociation71">MundaneAssociation71</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tavkv0/_/i03bo21">Mar 10 2022 10:40:54</a>
+    </p>
+    <div class="collapsible">
+        <p>iOS用choc，Mac用clashX</p>
+        <div class="comment" id="t1_i03bzvs">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/zhen_li">zhen_li</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tavkv0/_/i03bzvs">Mar 10 2022 10:45:23</a>
+    </p>
+    <div class="collapsible">
+        <p>choc不是据说bug很多吗，我把clashX换成quantumultX了</p>
+        
+    </div>
+</div>
+    </div>
+</div>
+
+<div class="comment" id="t1_i03v8uo">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Hadit1912">Hadit1912</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tavkv0/_/i03v8uo">Mar 10 2022 14:02:50</a>
+    </p>
+    <div class="collapsible">
+        <p>mac也可以用clash for windows,他虽然叫这个名,去release也是有dmg的</p>
+        
+    </div>
+</div>
+    </div>
+</div>
+    </div>
+</div>
+    </div>
+</div>
+
+<div class="comment" id="t1_i03p8rk">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/chonglang-tv">chonglang-tv</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tavkv0/_/i03p8rk">Mar 10 2022 13:12:31</a>
+    </p>
+    <div class="collapsible">
+        <p>clash就一客户端</p>
+        <div class="comment" id="t1_i045igp">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/golangolang">golangolang</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tavkv0/_/i045igp">Mar 10 2022 15:18:21</a>
+    </p>
+    <div class="collapsible">
+        <p>clash没图形界面的开源代理内核, 客户端是其它人自行开发的, 比如clash for Windows就是闭源的.</p>
+        
+    </div>
+</div>
+    </div>
+</div>
+
+<div class="comment" id="t1_i040r7l">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/nostalgiapcy">nostalgiapcy</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tavkv0/_/i040r7l">Mar 10 2022 14:44:43</a>
+    </p>
+    <div class="collapsible">
+        <p>clash很危险吗</p>
+        <div class="comment" id="t1_i041e6m">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/zhen_li">zhen_li</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tavkv0/_/i041e6m">Mar 10 2022 14:49:17</a>
+    </p>
+    <div class="collapsible">
+        <p>被反诈中心抓到当场毙命</p>
+        <div class="comment" id="t1_i04dg6v">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Luna_ei">Luna_ei</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tavkv0/_/i04dg6v">Mar 10 2022 16:11:35</a>
+    </p>
+    <div class="collapsible">
+        <p>啊？正在用clash呢，老哥细说</p>
+        
+    </div>
+</div>
+    </div>
+</div>
+    </div>
+</div>
+    </div>
+</div>
+
+<div class="comment" id="t1_i03aa4z">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/WonderfulEconomist39">WonderfulEconomist39</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tavkv0/_/i03aa4z">Mar 10 2022 10:21:57</a>
+    </p>
+    <div class="collapsible">
+        <p>什么时候快进到只能用Tor？</p>
+        <div class="comment" id="t1_i03ae6i">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/zhen_li">zhen_li</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tavkv0/_/i03ae6i">Mar 10 2022 10:23:31</a>
+    </p>
+    <div class="collapsible">
+        <p>开代理再开无痕理论上来说和tor差不多，前提是代理没付款信息</p>
+        <div class="comment" id="t1_i03pkwf">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/chonglang-tv">chonglang-tv</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tavkv0/_/i03pkwf">Mar 10 2022 13:15:37</a>
+    </p>
+    <div class="collapsible">
+        <p>有个东西叫webrtc，可以获得你的中国IP地址</p>
+<p>用chrome就是找死，chrome根本无法禁止webrtc</p>
+<p>除非你只用chrome上日常网站，不然上钓鱼网站一定会暴露身份</p>
+        <div class="comment" id="t1_i03zhal">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/zhen_li">zhen_li</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tavkv0/_/i03zhal">Mar 10 2022 14:35:23</a>
+    </p>
+    <div class="collapsible">
+        <p>webrtc是啥原理？</p>
+        <div class="comment" id="t1_i04lt36">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/turnovsaltfish">turnovsaltfish</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tavkv0/_/i04lt36">Mar 10 2022 17:05:23</a>
+    </p>
+    <div class="collapsible">
+        <p>p2p</p>
+        
+    </div>
+</div>
+    </div>
+</div>
+
+<div class="comment" id="t1_i04nj2u">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Jaskaran546831">Jaskaran546831</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tavkv0/_/i04nj2u">Mar 10 2022 17:16:27</a>
+    </p>
+    <div class="collapsible">
+        <p>Chrome有插件可以禁止webrtc</p>
+        <div class="comment" id="t1_i07nzts">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/chonglang-tv">chonglang-tv</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tavkv0/_/i07nzts">Mar 11 2022 06:52:07</a>
+    </p>
+    <div class="collapsible">
+        <p>没卵用，不信你上一些webrtc测试网站检查一下</p>
+<p>chrome强行开启webrtc的原因是google旗下的产品会用到这个功能，所以不可能让你关的</p>
+<p>大部分chrome系浏览器都无法关闭，只有少数魔改版浏览器可以关掉</p>
+        <div class="comment" id="t1_i09u83b">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Jaskaran546831">Jaskaran546831</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tavkv0/_/i09u83b">Mar 11 2022 18:41:20</a>
+    </p>
+    <div class="collapsible">
+        <p>我测过啊，都显示没有webrtc泄露</p>
+        <div class="comment" id="t1_i0c931d">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/chonglang-tv">chonglang-tv</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tavkv0/_/i0c931d">Mar 12 2022 06:08:08</a>
+    </p>
+    <div class="collapsible">
+        <p>很多网站测不准，多找几个试试，只要有一个网站给出真实地址就有泄露的风险</p>
+        
+    </div>
+</div>
+    </div>
+</div>
+    </div>
+</div>
+    </div>
+</div>
+    </div>
+</div>
+    </div>
+</div>
+    </div>
+</div>
+
+<div class="comment" id="t1_i03b4ve">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/UnusualBarnacle4781">UnusualBarnacle4781</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tavkv0/_/i03b4ve">Mar 10 2022 10:33:36</a>
+    </p>
+    <div class="collapsible">
+        <p>Vless协议我劝你多用，xtls_rprx_splice模式真的很省电，反正我是24小时开着的（如果把V2rayNG运行模式从VPN Mode调成Proxy Mode就更省电了）</p>
+        <div class="comment" id="t1_i03b594">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/UnusualBarnacle4781">UnusualBarnacle4781</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tavkv0/_/i03b594">Mar 10 2022 10:33:45</a>
+    </p>
+    <div class="collapsible">
+        <p>“Splice 是 Linux Kernel 提供的函数，系统内核直接转发 TCP，不再经过 Xray 的内存，大大减少了数据拷贝、CPU 上下文切换的次数。”</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_i03bfr1">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/zhen_li">zhen_li</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tavkv0/_/i03bfr1">Mar 10 2022 10:37:46</a>
+    </p>
+    <div class="collapsible">
+        <p>还好吧，trojan消耗也不大吧</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_i03c6t9">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/udp1953">udp1953</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tavkv0/_/i03c6t9">Mar 10 2022 10:47:58</a>
+    </p>
+    <div class="collapsible">
+        <p>vless是我用过所有协议里面最抗封锁最稳定，速度还最快的，和ss差不多</p>
+        <div class="comment" id="t1_i03cji6">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/zhen_li">zhen_li</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tavkv0/_/i03cji6">Mar 10 2022 10:52:47</a>
+    </p>
+    <div class="collapsible">
+        <p>主要是quantumultX不支持啊，我也想用</p>
+        
+    </div>
+</div>
+    </div>
+</div>
+    </div>
+</div>
+
+<div class="comment" id="t1_i03bozy">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/ACigaretteaftSex">ACigaretteaftSex</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tavkv0/_/i03bozy">Mar 10 2022 10:41:15</a>
+    </p>
+    <div class="collapsible">
+        <p>ss的安全性如何</p>
+        <div class="comment" id="t1_i03c1qb">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/zhen_li">zhen_li</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tavkv0/_/i03c1qb">Mar 10 2022 10:46:04</a>
+    </p>
+    <div class="collapsible">
+        <p>还行，目前被橄榄频率不高</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_i03q979">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/chonglang-tv">chonglang-tv</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tavkv0/_/i03q979">Mar 10 2022 13:21:39</a>
+    </p>
+    <div class="collapsible">
+        <p>安全都是差不多的，只是如何防止被防火墙探测和干烂</p>
+<p>你要是用晶哥的钓鱼节点，什么技术都救不了你，等着被活摘吧</p>
+        
+    </div>
+</div>
+    </div>
+</div>
+
+<div class="comment" id="t1_i03bpk7">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/MundaneAssociation71">MundaneAssociation71</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tavkv0/_/i03bpk7">Mar 10 2022 10:41:29</a>
+    </p>
+    <div class="collapsible">
+        <p>我用的是中南海IPLC专线</p>
+        <div class="comment" id="t1_i03c29n">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/zhen_li">zhen_li</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tavkv0/_/i03c29n">Mar 10 2022 10:46:16</a>
+    </p>
+    <div class="collapsible">
+        <p>给我试试</p>
+        
+    </div>
+</div>
+    </div>
+</div>
+
+<div class="comment" id="t1_i03cq9y">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Pristine-Degree-8382">Pristine-Degree-8382</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tavkv0/_/i03cq9y">Mar 10 2022 10:55:22</a>
+    </p>
+    <div class="collapsible">
+        <p>穷鼠；外行看不懂这些花里胡哨的；就问有没有免费安全的APP；下载用就完事了😁😁</p>
+        <div class="comment" id="t1_i03dxkh">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/vveg26">vveg26</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tavkv0/_/i03dxkh">Mar 10 2022 11:11:19</a>
+    </p>
+    <div class="collapsible">
+        <p>老王vpn</p>
+        <div class="comment" id="t1_i07sk3c">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/narrow-escape1">narrow-escape1</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tavkv0/_/i07sk3c">Mar 11 2022 07:47:00</a>
+    </p>
+    <div class="collapsible">
+        <p>同学舍友的朋友用老王加校园网，被晶打电话了，笑嘻</p>
+        
+    </div>
+</div>
+    </div>
+</div>
+
+<div class="comment" id="t1_i03pzm3">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/chonglang-tv">chonglang-tv</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tavkv0/_/i03pzm3">Mar 10 2022 13:19:20</a>
+    </p>
+    <div class="collapsible">
+        <p>葱友的迷雾通</p>
+        <div class="comment" id="t1_i03qjdz">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Pristine-Degree-8382">Pristine-Degree-8382</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tavkv0/_/i03qjdz">Mar 10 2022 13:24:09</a>
+    </p>
+    <div class="collapsible">
+        <p>搜迷雾通吗；在商店里</p>
+        <div class="comment" id="t1_i03rck5">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/chonglang-tv">chonglang-tv</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tavkv0/_/i03rck5">Mar 10 2022 13:31:11</a>
+    </p>
+    <div class="collapsible">
+        <p>谷歌商店搜迷雾通或者geph，没有谷歌商店就去官网下apk</p>
+<p>不支持苹果系统</p>
+        
+    </div>
+</div>
+    </div>
+</div>
+    </div>
+</div>
+
+<div class="comment" id="t1_i04l3ms">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/turnovsaltfish">turnovsaltfish</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tavkv0/_/i04l3ms">Mar 10 2022 17:00:51</a>
+    </p>
+    <div class="collapsible">
+        <p>没有没有没有，你得对自己的器官负责</p>
+        
+    </div>
+</div>
+    </div>
+</div>
+
+<div class="comment" id="t1_i03d2g0">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/baymoonofjune">baymoonofjune</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tavkv0/_/i03d2g0">Mar 10 2022 11:00:00</a>
+    </p>
+    <div class="collapsible">
+        <p>强推下vless，这个好用</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_i03ei9d">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/NarrowPerformer552">NarrowPerformer552</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tavkv0/_/i03ei9d">Mar 10 2022 11:18:42</a>
+    </p>
+    <div class="collapsible">
+        <p>怎麼不肉翻</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_i03evi8">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/No_Fortune_8467">No_Fortune_8467</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tavkv0/_/i03evi8">Mar 10 2022 11:23:14</a>
+    </p>
+    <div class="collapsible">
+        <p>且用且珍惜。</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_i03exxb">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/ratman_chonglang">ratman_chonglang</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tavkv0/_/i03exxb">Mar 10 2022 11:24:05</a>
+    </p>
+    <div class="collapsible">
+        <p>什么网络工程书单</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_i03gg1n">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Comfortable_Fly_9855">Comfortable_Fly_9855</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tavkv0/_/i03gg1n">Mar 10 2022 11:42:18</a>
+    </p>
+    <div class="collapsible">
+        <p>我买的提子最近取消了ssr只有v2ray节点，是更安全了吗</p>
+        <div class="comment" id="t1_i03h78c">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/zhen_li">zhen_li</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tavkv0/_/i03h78c">Mar 10 2022 11:51:10</a>
+    </p>
+    <div class="collapsible">
+        <p>更难被橄榄罢了</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_i03q3u6">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/chonglang-tv">chonglang-tv</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tavkv0/_/i03q3u6">Mar 10 2022 13:20:22</a>
+    </p>
+    <div class="collapsible">
+        <p>安全都是差不多的，主要是防火墙会不会主动探测识别</p>
+<p>现在开大会，ssr秒干烂</p>
+        
+    </div>
+</div>
+    </div>
+</div>
+
+<div class="comment" id="t1_i03jslh">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Amyescaped">Amyescaped</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tavkv0/_/i03jslh">Mar 10 2022 12:20:03</a>
+    </p>
+    <div class="collapsible">
+        <p>老哥能写个Trojan安装方式吗，我试试看</p>
+        <div class="comment" id="t1_i03ve0q">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Unhappy-Throat-3999">Unhappy-Throat-3999</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tavkv0/_/i03ve0q">Mar 10 2022 14:04:00</a>
+    </p>
+    <div class="collapsible">
+        <p>装个archlinux，绝大多数开源软件都能一键安装。</p>
+        <div class="comment" id="t1_i03z37d">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Amyescaped">Amyescaped</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tavkv0/_/i03z37d">Mar 10 2022 14:32:29</a>
+    </p>
+    <div class="collapsible">
+        <p>&rt;archlinux</p>
+<p>这个不太会用啊，我下载下来发现是镜像文件。</p>
+        <div class="comment" id="t1_i03zvse">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/zhen_li">zhen_li</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tavkv0/_/i03zvse">Mar 10 2022 14:38:20</a>
+    </p>
+    <div class="collapsible">
+        <p>额，你有服务器吗</p>
+        
+    </div>
+</div>
+    </div>
+</div>
+    </div>
+</div>
+
+<div class="comment" id="t1_i03yf6c">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/zhen_li">zhen_li</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tavkv0/_/i03yf6c">Mar 10 2022 14:27:29</a>
+    </p>
+    <div class="collapsible">
+        <p>会linux吗，直接github搜一键脚本就行</p>
+        
+    </div>
+</div>
+    </div>
+</div>
+
+<div class="comment" id="t1_i03q430">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Innocentchinaman">Innocentchinaman</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tavkv0/_/i03q430">Mar 10 2022 13:20:25</a>
+    </p>
+    <div class="collapsible">
+        <p>自己租服务器搭建死妈贵，用机场除非是直球反共的不然太不放心，如何取舍</p>
+        <div class="comment" id="t1_i03rs23">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/FW-Y">FW-Y</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tavkv0/_/i03rs23">Mar 10 2022 13:34:51</a>
+    </p>
+    <div class="collapsible">
+        <p>就那搭机场的被发现判的肯定比你上外网冲浪久的多，大可不必。前提是你不用这梯子搞什么诈骗之类的。</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_i043i05">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/zhen_li">zhen_li</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tavkv0/_/i043i05">Mar 10 2022 15:04:16</a>
+    </p>
+    <div class="collapsible">
+        <p>机场很慢，试试就知道了</p>
+        <div class="comment" id="t1_i07jx2i">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Innocentchinaman">Innocentchinaman</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tavkv0/_/i07jx2i">Mar 11 2022 06:05:52</a>
+    </p>
+    <div class="collapsible">
+        <p>呃呃，IPLC的还慢吗？我自己租肯定是出不起钱的</p>
+        <div class="comment" id="t1_i07lf5u">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/zhen_li">zhen_li</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tavkv0/_/i07lf5u">Mar 11 2022 06:22:35</a>
+    </p>
+    <div class="collapsible">
+        <p>机场的ilpc比163还慢，用的人太多啦，ilpc都被干烂了</p>
+        
+    </div>
+</div>
+    </div>
+</div>
+    </div>
+</div>
+    </div>
+</div>
+
+<div class="comment" id="t1_i03yu1u">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Ok-Bad-1632">Ok-Bad-1632</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tavkv0/_/i03yu1u">Mar 10 2022 14:30:33</a>
+    </p>
+    <div class="collapsible">
+        <p>trojan真的快，延迟还低，推荐</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_i0431t6">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/AlvinCopper">AlvinCopper</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tavkv0/_/i0431t6">Mar 10 2022 15:01:05</a>
+    </p>
+    <div class="collapsible">
+        <p>过年的时候我的Trojan不幸被封了443端口 可能是邻居ip的问题 现在一个用vless ws tls 加cdn套warp一个用trojan xtls套warp 性能方面速度还是看线路吧 cpu占用只要访问人数不多影响不大  租用服务器便宜的一年才60多块 速度也很稳定超过了之前用的机场 实践出真知 推荐喜欢折腾的试一试 还能搭建WordPress网站 邮箱 bt离线下载 调用api接口自动化等等功能</p>
+        <div class="comment" id="t1_i04976q">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/No-Possibility3644">No-Possibility3644</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tavkv0/_/i04976q">Mar 10 2022 15:43:18</a>
+    </p>
+    <div class="collapsible">
+        <p>老哥能讲下这个自建机场需要什么技能点吗？我不太懂网络技术，想试试学习下</p>
+        <div class="comment" id="t1_i04cbes">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/AlvinCopper">AlvinCopper</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tavkv0/_/i04cbes">Mar 10 2022 16:04:04</a>
+    </p>
+    <div class="collapsible">
+        <p>首先要有机器可谷歌搜索vps 微信上也有vps推荐的 遇上打折廉价的也就9.99刀 一年 有visa万事达信用卡的可以去aws gcp等白嫖练练手 其次对于现在协议需要一个域名 免费的有freenom 廉价的有GoDaddy 有这些ssh登录机器可以直接去找安装脚本了 几分钟就搞定了 这些教程谷歌搜索都有的 就是比较麻烦 基本上爱折腾知道几个Linux指令就可以了</p>
+        <div class="comment" id="t1_i04f2hw">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/No-Possibility3644">No-Possibility3644</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tavkv0/_/i04f2hw">Mar 10 2022 16:22:13</a>
+    </p>
+    <div class="collapsible">
+        <p>谢谢你啦</p>
+        
+    </div>
+</div>
+    </div>
+</div>
+
+<div class="comment" id="t1_i04koo8">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/turnovsaltfish">turnovsaltfish</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tavkv0/_/i04koo8">Mar 10 2022 16:58:18</a>
+    </p>
+    <div class="collapsible">
+        <p>连接服务器－下载梯子服务端－编辑配置文件－运行服务端。 就这么简单</p>
+        
+    </div>
+</div>
+    </div>
+</div>
+    </div>
+</div>
+
+<div class="comment" id="t1_i04jykn">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/turnovsaltfish">turnovsaltfish</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tavkv0/_/i04jykn">Mar 10 2022 16:53:37</a>
+    </p>
+    <div class="collapsible">
+        <p>trojan并不是http proxy，只是在第一个数据包头部插了目标地址和端口，分流也只能基于sni</p>
+<p>速度的评判标准主要在于延迟和带宽。在cpu不是特别弱鸡的情况下，不论什么协议吞吐量都不会成为瓶颈。在延迟方面，基于tcp的协议首先需要三路握手，套tls会多一个rtt(可以开early-data)，再套ws又需要一次握手(可以在header里面发送一小块数据，通常这是来自内层的tls client hello)。 基于udp的方案(kcp/quic(0rtt))则不会有额外的延迟，不过可能会受QoS影响，需要用faketcp添加tcp协议头来绕过限制</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_i3hjhub">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/mc10gs">mc10gs</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tavkv0/_/i3hjhub">Apr 05 2022 13:23:03</a>
+    </p>
+    <div class="collapsible">
+        <p>收藏👍</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

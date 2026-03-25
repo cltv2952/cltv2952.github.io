@@ -1,0 +1,95 @@
+<html>
+<head>
+<title>内循环了</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_r6c64q">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/MasterMandarin">MasterMandarin</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/r6c64q">Dec 01 2021 10:55:18</a>
+    </p>
+    <strong>内循环了</strong>
+    <p><a href="https://i.redd.it/t56rz1vcww281.jpg">https://i.redd.it/t56rz1vcww281.jpg</a></p>
+</div>
+<div class="comment" id="t1_hms6pys">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Mynameisbigpig">Mynameisbigpig</a>
+        |
+        <span class="score">7 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/r6c64q/_/hms6pys">Dec 01 2021 10:56:52</a>
+    </p>
+    <div class="collapsible">
+        <p>这有不是什么大新闻,举报都没用</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_hmsa1u0">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Antique_Ad5679">Antique_Ad5679</a>
+        |
+        <span class="score">2 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/r6c64q/_/hmsa1u0">Dec 01 2021 11:39:41</a>
+    </p>
+    <div class="collapsible">
+        <p>🐶斗不买</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

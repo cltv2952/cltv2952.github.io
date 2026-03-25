@@ -1,0 +1,114 @@
+<html>
+<head>
+<title>一图解释支性</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_uv4fiw">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/feverzsj">feverzsj</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/uv4fiw">May 22 2022 05:34:56</a>
+    </p>
+    <strong>一图解释支性</strong>
+    <p><a href="https://i.redd.it/iromhq2wry091.jpg">https://i.redd.it/iromhq2wry091.jpg</a></p>
+</div>
+<div class="comment" id="t1_i9j8vwg">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Loud_Willingness_481">Loud_Willingness_481</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/uv4fiw/_/i9j8vwg">May 22 2022 05:49:40</a>
+    </p>
+    <div class="collapsible">
+        <p>这不是新北区五洲国际那边？</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_i9jbup7">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/rirri_">rirri_</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/uv4fiw/_/i9jbup7">May 22 2022 06:30:07</a>
+    </p>
+    <div class="collapsible">
+        <p>什么柏林墙</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_i9jyj4m">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Koigggyear">Koigggyear</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/uv4fiw/_/i9jyj4m">May 22 2022 11:57:33</a>
+    </p>
+    <div class="collapsible">
+        <p>这下柏林墙了</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

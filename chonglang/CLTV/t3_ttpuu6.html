@@ -1,0 +1,169 @@
+<html>
+<head>
+<title>抽象</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_ttpuu6">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/Tutulangren">Tutulangren</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/ttpuu6">Apr 01 2022 12:48:24</a>
+    </p>
+    <strong>抽象</strong>
+    <p><a href="https://i.redd.it/fk7tfesuywq81.jpg">https://i.redd.it/fk7tfesuywq81.jpg</a></p>
+</div>
+<div class="comment" id="t1_i2z803i">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/meirk_zhidao">meirk_zhidao</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/ttpuu6/_/i2z803i">Apr 01 2022 13:00:44</a>
+    </p>
+    <div class="collapsible">
+        <p>绷不住了</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_i2z8nuy">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/kissby">kissby</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/ttpuu6/_/i2z8nuy">Apr 01 2022 13:05:53</a>
+    </p>
+    <div class="collapsible">
+        <p>建议入bot</p>
+        <div class="comment" id="t1_i2zb1m1">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Coldbirdbird">Coldbirdbird</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/ttpuu6/_/i2zb1m1">Apr 01 2022 13:24:32</a>
+    </p>
+    <div class="collapsible">
+        <p>烧</p>
+        
+    </div>
+</div>
+    </div>
+</div>
+
+<div class="comment" id="t1_i2zabhl">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Just-Guarantee7800">Just-Guarantee7800</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/ttpuu6/_/i2zabhl">Apr 01 2022 13:18:56</a>
+    </p>
+    <div class="collapsible">
+        <p>这就是🕎</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_i2zclgs">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/HK_SOSY">HK_SOSY</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/ttpuu6/_/i2zclgs">Apr 01 2022 13:36:23</a>
+    </p>
+    <div class="collapsible">
+        <p>我真要吐了 操你媽的</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_i2zmkyz">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Tutulangren">Tutulangren</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/ttpuu6/_/i2zmkyz">Apr 01 2022 14:47:38</a>
+    </p>
+    <div class="collapsible">
+        <p>这下大吃饱了</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

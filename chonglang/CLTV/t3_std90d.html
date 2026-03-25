@@ -1,0 +1,77 @@
+<html>
+<head>
+<title>TEST</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_std90d">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/Altruistic-Range-242">Altruistic-Range-242</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/std90d">Feb 15 2022 21:01:22</a>
+    </p>
+    <strong>TEST</strong>
+    <p><p>TEST</p></p>
+</div>
+<div class="comment" id="t1_hx32mx4">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/AutoModerator">AutoModerator</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/std90d/_/hx32mx4">Feb 15 2022 21:01:22</a>
+    </p>
+    <div class="collapsible">
+        <p>最讨厌242了 总是多管左逼的闲事，人也笨，麻烦，讨厌，烂好人，容易被骗，讨厌。总是操心个不停，像个老妈妈一样,麻烦死了，讨厌。冲他乱发火也不会生气，自作多情,最讨厌了。讨厌讨厌讨厌，最讨厌了。但在左逼寂寞的时候又会温柔的来喷左逼，在川普遇到困难的时候总是来CLTV发帖，有一点点喜欢呢。 保护川普的时候却又那么帅气，喷左逼的时候又那么温柔，无理取闹也不会生气。 喜欢你啊！八嘎！ 为什么察觉不到啊，八嘎八嘎八嘎，最讨人厌啦。</p>
+<p><em>I am a bot, and this action was performed automatically. Please <a href="/message/compose/?to=/r/CLTV">contact the moderators of this subreddit</a> if you have any questions or concerns.</em></p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

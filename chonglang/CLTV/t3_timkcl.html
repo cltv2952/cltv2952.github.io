@@ -1,0 +1,95 @@
+<html>
+<head>
+<title>啊？</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_timkcl">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/Far_Bookkeeper_3971">Far_Bookkeeper_3971</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/timkcl">Mar 20 2022 14:43:32</a>
+    </p>
+    <strong>啊？</strong>
+    <p><a href="https://i.redd.it/0ut8isdgwjo81.jpg">https://i.redd.it/0ut8isdgwjo81.jpg</a></p>
+</div>
+<div class="comment" id="t1_i1fufsn">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Inner-Sprinkles-1754">Inner-Sprinkles-1754</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/timkcl/_/i1fufsn">Mar 20 2022 19:27:50</a>
+    </p>
+    <div class="collapsible">
+        <p>这视频是浪友原创吗？那晶哥不直接上门拉去活摘了</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_i1fuzps">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/w12ww">w12ww</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/timkcl/_/i1fuzps">Mar 20 2022 19:31:48</a>
+    </p>
+    <div class="collapsible">
+        <p>新鲜的器官</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

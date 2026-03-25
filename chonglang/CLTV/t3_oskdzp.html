@@ -1,0 +1,98 @@
+<html>
+<head>
+<title>一键点赞当前页面所有主题帖，配合个人设置不展示已点赞主题实现快速浏览</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_oskdzp">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/henanpunk">henanpunk</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/oskdzp">Jul 27 2021 10:40:24</a>
+    </p>
+    <strong>一键点赞当前页面所有主题帖，配合个人设置不展示已点赞主题实现快速浏览</strong>
+    <p><p>最近人气很旺，帖子也变多了，逐条浏览属实有些看不过来了。
+app都有的功能，网页端很多人不想装插件，这个直接拖动到标签栏就可以用</p>
+<p>reddit点赞所有
+                javascript:(function(){var q=[];$('.up').each(function(){var that=this;var f=function(index){that.dispatchEvent(new MouseEvent('click',{bubbles:true,cancelable:true}));setTimeout(function(){if(q[index]){q<a href="index+1">index</a>;}else{if(upVoteTimer){window.clearTimeout(upVoteTimer);}}},1000);};q.push(f);});var upVoteTimer=window.setTimeout(function(){q<a href="1">0</a>;},50);}());</p></p>
+</div>
+<div class="comment" id="t1_h6oyssg">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/anti-shina">anti-shina</a>
+        |
+        <span class="score">2 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/oskdzp/_/h6oyssg">Jul 27 2021 10:54:32</a>
+    </p>
+    <div class="collapsible">
+        <p>与Steam资深玩家有异曲同工之妙</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_h6oyzv4">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/GriffinTrump">GriffinTrump</a>
+        |
+        <span class="score">2 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/oskdzp/_/h6oyzv4">Jul 27 2021 10:57:01</a>
+    </p>
+    <div class="collapsible">
+        <p>这代码有点学院风，理论上js可以拒绝所有非人类触发的event，reddit似乎不太在乎刷票。</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

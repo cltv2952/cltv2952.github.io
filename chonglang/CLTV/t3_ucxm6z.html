@@ -1,0 +1,114 @@
+<html>
+<head>
+<title>评论竟然没关</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_ucxm6z">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/gsygtr">gsygtr</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/ucxm6z">Apr 27 2022 07:03:55</a>
+    </p>
+    <strong>评论竟然没关</strong>
+    <p><p>在寝室闲坐的两个包子 https://b23.tv/XfZNndf</p></p>
+</div>
+<div class="comment" id="t1_i6dg82b">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/NNNNINNNN">NNNNINNNN</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/ucxm6z/_/i6dg82b">Apr 27 2022 07:16:59</a>
+    </p>
+    <div class="collapsible">
+        <p>包子</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_i6dgijk">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/love_mm">love_mm</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/ucxm6z/_/i6dgijk">Apr 27 2022 07:20:53</a>
+    </p>
+    <div class="collapsible">
+        <p>可惜现在自我审查已经深入吱人的DNA里了，看这评论就没多少去触摸，还一本正经的讨论包子，真是没救了</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_i6djaxf">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/JOLTEON__L">JOLTEON__L</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/ucxm6z/_/i6djaxf">Apr 27 2022 08:00:31</a>
+    </p>
+    <div class="collapsible">
+        <p>帮忙举报一下</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

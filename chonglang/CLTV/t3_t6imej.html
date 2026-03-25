@@ -1,0 +1,76 @@
+<html>
+<head>
+<title>大的来了</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_t6imej">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/fpskjun">fpskjun</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/t6imej">Mar 04 2022 13:08:45</a>
+    </p>
+    <strong>大的来了</strong>
+    <p><a href="https://twitter.com/nexta_tv/status/1499732613765943310">https://twitter.com/nexta_tv/status/1499732613765943310</a></p>
+</div>
+<div class="comment" id="t1_hzb9l5g">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Low-Elevator8271">Low-Elevator8271</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/t6imej/_/hzb9l5g">Mar 04 2022 13:15:20</a>
+    </p>
+    <div class="collapsible">
+        <p>不太可能通過啦，禁飛區實行起來跟宣戰沒兩樣</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

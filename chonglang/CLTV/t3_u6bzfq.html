@@ -1,0 +1,114 @@
+<html>
+<head>
+<title>傻图</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_u6bzfq">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/kissby">kissby</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/u6bzfq">Apr 18 2022 12:28:47</a>
+    </p>
+    <strong>傻图</strong>
+    <p><a href="https://i.redd.it/yxawpmcu6au81.jpg">https://i.redd.it/yxawpmcu6au81.jpg</a></p>
+</div>
+<div class="comment" id="t1_i57aygw">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Kira902">Kira902</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/u6bzfq/_/i57aygw">Apr 18 2022 12:51:14</a>
+    </p>
+    <div class="collapsible">
+        <p>可以P好一点</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_i57czx5">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Ken_Ayazaka1001">Ken_Ayazaka1001</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/u6bzfq/_/i57czx5">Apr 18 2022 13:09:00</a>
+    </p>
+    <div class="collapsible">
+        <p>我一个学了3年画画的朋友kissby改的画，大家喜欢吗？</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_i57qnkt">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Reasonable_Box_2470">Reasonable_Box_2470</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/u6bzfq/_/i57qnkt">Apr 18 2022 14:51:25</a>
+    </p>
+    <div class="collapsible">
+        <p>习主席亲自p图</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

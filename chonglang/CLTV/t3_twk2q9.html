@@ -1,0 +1,76 @@
+<html>
+<head>
+<title>刘明</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_twk2q9">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/Ken_Ayazaka403">Ken_Ayazaka403</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/twk2q9">Apr 05 2022 02:11:38</a>
+    </p>
+    <strong>刘明</strong>
+    <p><a href="https://i.redd.it/307do4cucmr81.png">https://i.redd.it/307do4cucmr81.png</a></p>
+</div>
+<div class="comment" id="t1_i3g0q0v">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/GreatFireWaII">GreatFireWaII</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/twk2q9/_/i3g0q0v">Apr 05 2022 03:18:20</a>
+    </p>
+    <div class="collapsible">
+        <p>涂像素点闹麻了</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

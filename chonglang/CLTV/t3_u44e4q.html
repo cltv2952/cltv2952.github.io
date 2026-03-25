@@ -1,0 +1,114 @@
+<html>
+<head>
+<title>这是否</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_u44e4q">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/FriendshipPitiful719">FriendshipPitiful719</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/u44e4q">Apr 15 2022 09:41:28</a>
+    </p>
+    <strong>这是否</strong>
+    <p><a href="https://i.redd.it/6z199ne9ynt81.jpg">https://i.redd.it/6z199ne9ynt81.jpg</a></p>
+</div>
+<div class="comment" id="t1_i4tbivj">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Lazy-Management-9029">Lazy-Management-9029</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/u44e4q/_/i4tbivj">Apr 15 2022 10:00:01</a>
+    </p>
+    <div class="collapsible">
+        <p>衣逼做题家都幻想着逃难呢</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_i4tebed">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/vendetta8964">vendetta8964</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/u44e4q/_/i4tebed">Apr 15 2022 10:37:18</a>
+    </p>
+    <div class="collapsible">
+        <p>傻逼别炒作了！！！</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_i4th5vb">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/saki__">saki__</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/u44e4q/_/i4th5vb">Apr 15 2022 11:12:18</a>
+    </p>
+    <div class="collapsible">
+        <p>github不封能行吗？</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

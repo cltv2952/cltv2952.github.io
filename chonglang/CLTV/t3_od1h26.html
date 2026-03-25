@@ -1,0 +1,114 @@
+<html>
+<head>
+<title>怎麼會是呢？</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_od1h26">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/rebutv">rebutv</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/od1h26">Jul 03 2021 16:37:43</a>
+    </p>
+    <strong>怎麼會是呢？</strong>
+    <p><a href="https://i.redd.it/17w8z8vqz0971.jpg">https://i.redd.it/17w8z8vqz0971.jpg</a></p>
+</div>
+<div class="comment" id="t1_h3yay7d">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/OddBird_S">OddBird_S</a>
+        |
+        <span class="score">2 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/od1h26/_/h3yay7d">Jul 03 2021 20:01:31</a>
+    </p>
+    <div class="collapsible">
+        <p>编程联想</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_h3xo876">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/fatfat443">fatfat443</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/od1h26/_/h3xo876">Jul 03 2021 16:44:18</a>
+    </p>
+    <div class="collapsible">
+        <p>太坏了</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_h3xzpo8">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Opposite_Inside_9249">Opposite_Inside_9249</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/od1h26/_/h3xzpo8">Jul 03 2021 18:23:26</a>
+    </p>
+    <div class="collapsible">
+        <p>这下抵制王一搏了</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

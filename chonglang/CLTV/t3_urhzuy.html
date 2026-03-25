@@ -1,0 +1,95 @@
+<html>
+<head>
+<title>嗨呀,不都是我嗎？</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_urhzuy">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/No_Rush9029">No_Rush9029</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/urhzuy">May 17 2022 08:43:18</a>
+    </p>
+    <strong>嗨呀,不都是我嗎？</strong>
+    <p><a href="https://i.redd.it/wziqug0210091.jpg">https://i.redd.it/wziqug0210091.jpg</a></p>
+</div>
+<div class="comment" id="t1_i8xlzn4">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Ok-Painter5326">Ok-Painter5326</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/urhzuy/_/i8xlzn4">May 17 2022 11:23:48</a>
+    </p>
+    <div class="collapsible">
+        <p>《這就是蜘蛛》☝<img alt="gif" src="emote|free_emotes_pack|sunglasses"></p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_i8xzgl1">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/NBonaparte_BG">NBonaparte_BG</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/urhzuy/_/i8xzgl1">May 17 2022 13:29:27</a>
+    </p>
+    <div class="collapsible">
+        <p>都讓你流完了</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

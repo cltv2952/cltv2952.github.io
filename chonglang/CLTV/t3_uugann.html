@@ -1,0 +1,95 @@
+<html>
+<head>
+<title>猪猪投稿画作</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_uugann">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/bigpigpro">bigpigpro</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/uugann">May 21 2022 05:14:36</a>
+    </p>
+    <strong>猪猪投稿画作</strong>
+    <p><a href="https://i.redd.it/z79qe7jdjr091.png">https://i.redd.it/z79qe7jdjr091.png</a></p>
+</div>
+<div class="comment" id="t1_i9f4eis">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/PatrioticTu">PatrioticTu</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/uugann/_/i9f4eis">May 21 2022 05:31:08</a>
+    </p>
+    <div class="collapsible">
+        <p>homo特有的浪费才华</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_i9fnqre">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/bihiki">bihiki</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/uugann/_/i9fnqre">May 21 2022 10:14:27</a>
+    </p>
+    <div class="collapsible">
+        <p>为什么不是肛试</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

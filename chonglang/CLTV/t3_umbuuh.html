@@ -1,0 +1,93 @@
+<html>
+<head>
+<title>👁什么都不想看</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_umbuuh">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/Own_Strain_9016">Own_Strain_9016</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/umbuuh">May 10 2022 06:06:33</a>
+    </p>
+    <strong>👁什么都不想看</strong>
+    <p><a href="https://i.redd.it/3fpc1udpaly81.jpg">https://i.redd.it/3fpc1udpaly81.jpg</a></p>
+</div>
+<div class="comment" id="t1_i80q7t7">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Traditional-Gap-9954">Traditional-Gap-9954</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/umbuuh/_/i80q7t7">May 10 2022 06:10:01</a>
+    </p>
+    <div class="collapsible">
+        <p>這是哪部</p>
+        <div class="comment" id="t1_i80veym">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/ReplacementTop8532">ReplacementTop8532</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/umbuuh/_/i80veym">May 10 2022 07:17:40</a>
+    </p>
+    <div class="collapsible">
+        <p>少年的深渊</p>
+        
+    </div>
+</div>
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

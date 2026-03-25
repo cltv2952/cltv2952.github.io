@@ -1,0 +1,95 @@
+<html>
+<head>
+<title>哈人</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_u3b7r5">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/Mysterious_Fish_9903">Mysterious_Fish_9903</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/u3b7r5">Apr 14 2022 06:53:38</a>
+    </p>
+    <strong>哈人</strong>
+    <p><a href="https://i.redd.it/x879nnmezft81.jpg">https://i.redd.it/x879nnmezft81.jpg</a></p>
+</div>
+<div class="comment" id="t1_i4o73hz">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Wintillnumb">Wintillnumb</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/u3b7r5/_/i4o73hz">Apr 14 2022 07:01:56</a>
+    </p>
+    <div class="collapsible">
+        <p>晶哥：我他吗来啦！</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_i4q67vl">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Noname6867668">Noname6867668</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/u3b7r5/_/i4q67vl">Apr 14 2022 17:38:17</a>
+    </p>
+    <div class="collapsible">
+        <p>为什么会出现这种情况</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

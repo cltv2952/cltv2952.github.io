@@ -1,0 +1,76 @@
+<html>
+<head>
+<title>sub里有没有懂浏览器的越共来指导一下</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_tcrwpf">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/Ok-Bad-1632">Ok-Bad-1632</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tcrwpf">Mar 12 2022 21:58:13</a>
+    </p>
+    <strong>sub里有没有懂浏览器的越共来指导一下</strong>
+    <p><p>有些网站强制登录才可以看，但又能被搜索引擎搜索到，那它得是对爬虫开放的吧。那么普通的浏览器有没有办法通过扩展，脚本啥的来伪装成搜索引擎的爬虫来直接看那些要强制登录的网站？</p></p>
+</div>
+<div class="comment" id="t1_i0fee27">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/billychung">billychung</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tcrwpf/_/i0fee27">Mar 12 2022 23:13:46</a>
+    </p>
+    <div class="collapsible">
+        <p>把user-agent: 改為Googlebot</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

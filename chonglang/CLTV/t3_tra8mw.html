@@ -1,0 +1,112 @@
+<html>
+<head>
+<title>五提</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_tra8mw">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/jiaiguo">jiaiguo</a>
+        |
+        <span class="score">10 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tra8mw">Mar 29 2022 17:26:42</a>
+    </p>
+    <strong>五提</strong>
+    <p><a href="https://i.redd.it/2n21wmirxcq81.png">https://i.redd.it/2n21wmirxcq81.png</a></p>
+</div>
+<div class="comment" id="t1_i2lsqa0">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Ynumen">Ynumen</a>
+        |
+        <span class="score">2 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tra8mw/_/i2lsqa0">Mar 29 2022 19:36:23</a>
+    </p>
+    <div class="collapsible">
+        <p>下次割包皮</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_i2mod9n">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Evangeline-2022">Evangeline-2022</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tra8mw/_/i2mod9n">Mar 29 2022 22:43:31</a>
+    </p>
+    <div class="collapsible">
+        <p>下次隔著圍欄生孩子，麻麻在這頭，孩子在那頭</p>
+        <div class="comment" id="t1_i2moyng">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Evangeline-2022">Evangeline-2022</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tra8mw/_/i2moyng">Mar 29 2022 22:44:45</a>
+    </p>
+    <div class="collapsible">
+        <p>然後白衣說：“這孩子沒做核酸不讓出來，快給塞回去”</p>
+        
+    </div>
+</div>
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

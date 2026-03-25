@@ -1,0 +1,95 @@
+<html>
+<head>
+<title>红迪sub的在线人数是怎么算的</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_t82acm">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/Ok-Bad-1632">Ok-Bad-1632</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/t82acm">Mar 06 2022 16:25:26</a>
+    </p>
+    <strong>红迪sub的在线人数是怎么算的</strong>
+    <p><p>是只要用户开了online status就算一人还是必须在浏览某个sub的帖子才统计进那个sub的在线人数</p></p>
+</div>
+<div class="comment" id="t1_hzlds8v">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/FurudeSatoko">FurudeSatoko</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/t82acm/_/hzlds8v">Mar 06 2022 16:54:11</a>
+    </p>
+    <div class="collapsible">
+        <p>似乎和bilibili的“人气值”一路货色。建个个人sub都一直显示有好几个人在线。</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_hzlxbh6">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/T_F_Catus">T_F_Catus</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/t82acm/_/hzlxbh6">Mar 06 2022 19:06:24</a>
+    </p>
+    <div class="collapsible">
+        <p>只要开着这个sub的页面就都算吧，另外在线数有乱数生成系统，数目会随机化防止爬虫软件判定准确人数</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

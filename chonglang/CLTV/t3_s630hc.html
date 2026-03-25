@@ -1,0 +1,76 @@
+<html>
+<head>
+<title>SERB</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_s630hc">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/mxx333Qwerty1">mxx333Qwerty1</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/s630hc">Jan 17 2022 12:33:03</a>
+    </p>
+    <strong>SERB</strong>
+    <p><a href="https://www.youtube.com/watch?v=oiEku4TTyG4&amp;list=PLqPwaZ9SK946m3pC5oDOYHcYZpgcajf9X&amp;index=3">https://www.youtube.com/watch?v=oiEku4TTyG4&amp;list=PLqPwaZ9SK946m3pC5oDOYHcYZpgcajf9X&amp;index=3</a></p>
+</div>
+<div class="comment" id="t1_ht3c65x">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Butters_777999">Butters_777999</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/s630hc/_/ht3c65x">Jan 17 2022 21:46:18</a>
+    </p>
+    <div class="collapsible">
+        <p>好可爱</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

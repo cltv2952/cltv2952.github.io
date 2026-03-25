@@ -1,0 +1,76 @@
+<html>
+<head>
+<title>胜地巡礼</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_rgggkj">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/lynxtrainer">lynxtrainer</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/rgggkj">Dec 14 2021 20:27:06</a>
+    </p>
+    <strong>胜地巡礼</strong>
+    <p><a href="https://i.redd.it/x98phsg8ik581.png">https://i.redd.it/x98phsg8ik581.png</a></p>
+</div>
+<div class="comment" id="t1_hok11yk">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/CityHunter001">CityHunter001</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/rgggkj/_/hok11yk">Dec 14 2021 20:32:04</a>
+    </p>
+    <div class="collapsible">
+        <p>你这样不太好吧。澳洲华人这么多。有人弄他怎么办</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

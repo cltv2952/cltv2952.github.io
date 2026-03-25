@@ -1,0 +1,76 @@
+<html>
+<head>
+<title>🥛晕</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_qfkhmd">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/Tasty-Kick8834">Tasty-Kick8834</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/qfkhmd">Oct 25 2021 16:27:05</a>
+    </p>
+    <strong>🥛晕</strong>
+    <p><a href="https://www.reddit.com/gallery/qfkhmd">https://www.reddit.com/gallery/qfkhmd</a></p>
+</div>
+<div class="comment" id="t1_hi3m6av">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/fadaiavi">fadaiavi</a>
+        |
+        <span class="score">11 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/qfkhmd/_/hi3m6av">Oct 26 2021 11:05:01</a>
+    </p>
+    <div class="collapsible">
+        <p>打码就别发了，发出来给大伙看码？😠</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

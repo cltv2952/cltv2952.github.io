@@ -1,0 +1,76 @@
+<html>
+<head>
+<title>酸死我力</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_r2iraa">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/PriorAny">PriorAny</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/r2iraa">Nov 26 2021 08:40:02</a>
+    </p>
+    <strong>酸死我力</strong>
+    <p><a href="https://imgur.com/a/tabCWlm/">https://imgur.com/a/tabCWlm/</a></p>
+</div>
+<div class="comment" id="t1_hm4zc1x">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/shinabutaisfreedom">shinabutaisfreedom</a>
+        |
+        <span class="score">6 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/r2iraa/_/hm4zc1x">Nov 26 2021 09:23:57</a>
+    </p>
+    <div class="collapsible">
+        <p>支那人冷静一点</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

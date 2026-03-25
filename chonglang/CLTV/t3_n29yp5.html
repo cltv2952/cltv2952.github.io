@@ -1,0 +1,76 @@
+<html>
+<head>
+<title>这下支了</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_n29yp5">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/zhihu_lidangjianchu">zhihu_lidangjianchu</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/n29yp5">May 01 2021 03:17:20</a>
+    </p>
+    <strong>这下支了</strong>
+    <p><a href="/r/AsianParentStories/comments/n1ts15/asking_for_privacy_youre_hiding_something/">/r/AsianParentStories/comments/n1ts15/asking_for_privacy_youre_hiding_something/</a></p>
+</div>
+<div class="comment" id="t1_gwila5w">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/TheKeyToSchool">TheKeyToSchool</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/n29yp5/_/gwila5w">May 01 2021 06:34:32</a>
+    </p>
+    <div class="collapsible">
+        <p>"If you have nothing to hide, you have nothing to fear." 不过这句话倒不是桂枝发明的。桂枝根本不讲道理，都是直接搞监控的。</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

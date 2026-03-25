@@ -1,0 +1,153 @@
+<html>
+<head>
+<title>看到有浪人讲ssl证书，说说我之前遇到的一种可能的中间人攻击方式</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_ozredu">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/Ok-Ad-2513">Ok-Ad-2513</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/ozredu">Aug 07 2021 11:14:04</a>
+    </p>
+    <strong>看到有浪人讲ssl证书，说说我之前遇到的一种可能的中间人攻击方式</strong>
+    <p><a href="https://i.redd.it/tueoid5z5xf71.jpg">https://i.redd.it/tueoid5z5xf71.jpg</a></p>
+</div>
+<div class="comment" id="t1_h81lx81">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Ok-Ad-2513">Ok-Ad-2513</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/ozredu/_/h81lx81">Aug 07 2021 11:15:26</a>
+    </p>
+    <div class="collapsible">
+        <p>因为这种攻击方式随想大神没有讲过，我也没有在哪里看到过介绍的文章，但是我确实遇到了，所以来说说：https也不是完全可信的</p>
+        <div class="comment" id="t1_h81ma1x">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Ok-Ad-2513">Ok-Ad-2513</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/ozredu/_/h81ma1x">Aug 07 2021 11:20:06</a>
+    </p>
+    <div class="collapsible">
+        <p>如果你之前做过app的抓包应该知道，对于https的请求，你需要在设备上安装自签证书，并且信任自签证书，才能看到https的内容。</p>
+<p>这种攻击方式的原理和这个一致，也是通过代理https流量，并使用自己的ssl证书替换原有的证书来实现的</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_h81mz3d">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Ok-Ad-2513">Ok-Ad-2513</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/ozredu/_/h81mz3d">Aug 07 2021 11:29:02</a>
+    </p>
+    <div class="collapsible">
+        <p>我遇到的是怎么样的呢？</p>
+<p>我之前在做一个和蓝厂、政府有关的项目时，要求不能上传代码或者下载文件，不能发图。对此，蓝厂让所有人的流量都走了一遍代理，并在代理处使用了自签的证书转发https流量，对所有流量进行了监控</p>
+<p>（我也不知道为什么电脑会信任这个iis自签证书的颁发机构，但是情况确实如此，可能是蓝厂自己对电脑进行了处理，可以看我发的图）</p>
+        
+    </div>
+</div>
+    </div>
+</div>
+
+<div class="comment" id="t1_h81lzu4">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/loverussian">loverussian</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/ozredu/_/h81lzu4">Aug 07 2021 11:16:24</a>
+    </p>
+    <div class="collapsible">
+        <p>標記一下</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_h81n1zb">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/yuqqwechat">yuqqwechat</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/ozredu/_/h81n1zb">Aug 07 2021 11:30:03</a>
+    </p>
+    <div class="collapsible">
+        <p>不记得是蓝还是绿会劫持apk安装包到自家市场的源，应该是这个技术</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

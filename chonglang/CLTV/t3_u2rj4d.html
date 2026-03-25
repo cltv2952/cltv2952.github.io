@@ -1,0 +1,81 @@
+<html>
+<head>
+<title>盘点深吧用户的常用词</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_u2rj4d">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/meirk_zhidao">meirk_zhidao</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/u2rj4d">Apr 13 2022 14:25:42</a>
+    </p>
+    <strong>盘点深吧用户的常用词</strong>
+    <p></p>
+</div>
+<div class="comment" id="t1_i4khqm3">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/meirk_zhidao">meirk_zhidao</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/u2rj4d/_/i4khqm3">Apr 13 2022 14:25:51</a>
+    </p>
+    <div class="collapsible">
+        <p>1.单字词语篇</p>
+<p>麻：深友最常用的词汇，以此来形容其深入骨髓的荒诞感，变体诸如：闹麻了，给我弄麻了</p>
+<p>滑：最早的出处是神吧用户形容喝烧仙草吸到肺里了，“滑了”，后来因其节目效果爆炸，拿来代指生理现象</p>
+<p>典：典中典，经典回顾等等，由于深友常看土味视频，回顾环节居多，标题名难起，于是形成了发帖格式</p>
+<p>绷：是拿来形容忍俊不禁的，由于深吧内容过于诙谐，令人往往难以绷住，演变出了今日首绷、绷不住了、今天就绷到这里吧等等</p>
+<p>烧：深友人均坐怀不动，喜好羞辱抖音女等不守妇道的东西，演变出此词</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

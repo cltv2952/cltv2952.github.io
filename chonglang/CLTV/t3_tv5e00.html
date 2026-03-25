@@ -1,0 +1,95 @@
+<html>
+<head>
+<title>有沒有place的腳本？</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_tv5e00">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/Striking-Ad9893">Striking-Ad9893</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tv5e00">Apr 03 2022 09:24:45</a>
+    </p>
+    <strong>有沒有place的腳本？</strong>
+    <p><p>[removed]</p></p>
+</div>
+<div class="comment" id="t1_i37gbkw">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/ciongcu_sianmu">ciongcu_sianmu</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tv5e00/_/i37gbkw">Apr 03 2022 09:55:04</a>
+    </p>
+    <div class="collapsible">
+        <p>sub tab从post切到menu就有</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_i37gjy1">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/wep0523z">wep0523z</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tv5e00/_/i37gjy1">Apr 03 2022 09:58:21</a>
+    </p>
+    <div class="collapsible">
+        <p>传送门：https://www.reddit.com/r/CLTV/comments/tuj8ff/%E6%8A%A4%E5%9F%8E%E6%B2%B3%E8%87%AA%E5%8A%A8%E5%8C%96%E6%8C%87%E5%8C%97/</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

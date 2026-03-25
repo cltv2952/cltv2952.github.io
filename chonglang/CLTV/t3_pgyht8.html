@@ -1,0 +1,114 @@
+<html>
+<head>
+<title>这是否有点……</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_pgyht8">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/Leon_czebyczew">Leon_czebyczew</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/pgyht8">Sep 03 2021 05:02:49</a>
+    </p>
+    <strong>这是否有点……</strong>
+    <p><a href="https://i.redd.it/pp7ek4zc08l71.jpg">https://i.redd.it/pp7ek4zc08l71.jpg</a></p>
+</div>
+<div class="comment" id="t1_hbeyrh1">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/beile-Ajige">beile-Ajige</a>
+        |
+        <span class="score">12 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/pgyht8/_/hbeyrh1">Sep 03 2021 06:07:20</a>
+    </p>
+    <div class="collapsible">
+        <p>这首歌b站萌腊蛆们听了都高潮了，认为辱美之至，我看了评论笑死了。</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_hbgo9im">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Jacklikemarco">Jacklikemarco</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/pgyht8/_/hbgo9im">Sep 03 2021 16:19:08</a>
+    </p>
+    <div class="collapsible">
+        <p>马上下令将点赞数和谐掉89跟64</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_hbj97qi">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Rentaro_Taki">Rentaro_Taki</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/pgyht8/_/hbj97qi">Sep 04 2021 04:44:33</a>
+    </p>
+    <div class="collapsible">
+        <p>Tom Paxton評論區還不錯，估計很多人不知道他是原唱，Pete Seeger版那裡臘畜和品客群魔亂舞。</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

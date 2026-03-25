@@ -1,0 +1,76 @@
+<html>
+<head>
+<title>已经到最后时刻了，一个小小的按钮，到底还是挡不住洪水</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_ttscxj">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/banbuliren">banbuliren</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/ttscxj">Apr 01 2022 14:42:31</a>
+    </p>
+    <strong>已经到最后时刻了，一个小小的按钮，到底还是挡不住洪水</strong>
+    <p><a href="https://i.redd.it/209pngq7jxq81.jpg">https://i.redd.it/209pngq7jxq81.jpg</a></p>
+</div>
+<div class="comment" id="t1_i2zm1h8">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Next-Victory5382">Next-Victory5382</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/ttscxj/_/i2zm1h8">Apr 01 2022 14:43:59</a>
+    </p>
+    <div class="collapsible">
+        <p>建议底色用乌友的，保住小献忠就行</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

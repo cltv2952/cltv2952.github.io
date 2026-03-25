@@ -1,0 +1,113 @@
+<html>
+<head>
+<title>试试flair</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_mtp99k">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/somethin4nothing">somethin4nothing</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/mtp99k">Apr 19 2021 00:32:43</a>
+    </p>
+    <strong>试试flair</strong>
+    <p><p>不是 我flair呢？</p></p>
+</div>
+<div class="comment" id="t1_gv1foby">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/T_F_Catus">T_F_Catus</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/mtp99k/_/gv1foby">Apr 19 2021 02:49:37</a>
+    </p>
+    <div class="collapsible">
+        <p>去老版reddit右侧导航栏，有show my flair on this subreddit的选项，选中就能显示了，下面能自定义flair  </p>
+<p>新版reddit更换flair选项在右侧community options底下</p>
+        <div class="comment" id="t1_gv2y3fl">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/somethin4nothing">somethin4nothing</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/mtp99k/_/gv2y3fl">Apr 19 2021 13:55:56</a>
+    </p>
+    <div class="collapsible">
+        <p>你这mod行 比阳痿男行</p>
+        
+    </div>
+</div>
+    </div>
+</div>
+
+<div class="comment" id="t1_gv22yin">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/stockings_kat">stockings_kat</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/mtp99k/_/gv22yin">Apr 19 2021 07:34:25</a>
+    </p>
+    <div class="collapsible">
+        <p>试试</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

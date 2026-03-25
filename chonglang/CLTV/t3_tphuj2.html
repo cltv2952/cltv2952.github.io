@@ -1,0 +1,95 @@
+<html>
+<head>
+<title>这种公告一定要留着</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_tphuj2">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/SET_Web">SET_Web</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tphuj2">Mar 27 2022 11:16:25</a>
+    </p>
+    <strong>这种公告一定要留着</strong>
+    <p><a href="https://i.redd.it/6teamf2vtwp81.jpg">https://i.redd.it/6teamf2vtwp81.jpg</a></p>
+</div>
+<div class="comment" id="t1_i2ave51">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/SET_Web">SET_Web</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tphuj2/_/i2ave51">Mar 27 2022 11:18:56</a>
+    </p>
+    <div class="collapsible">
+        <p>谎称买菜，实际做工</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_i2avfef">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/bihiki">bihiki</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tphuj2/_/i2avfef">Mar 27 2022 11:19:22</a>
+    </p>
+    <div class="collapsible">
+        <p>就不做工了，上街捉几条两脚羊吃</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

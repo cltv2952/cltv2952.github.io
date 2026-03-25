@@ -1,0 +1,95 @@
+<html>
+<head>
+<title>麦兜行</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_ndt50z">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/RoughPercussionythm">RoughPercussionythm</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/ndt50z">May 16 2021 17:22:59</a>
+    </p>
+    <strong>麦兜行</strong>
+    <p><a href="https://i.redd.it/z9w43c35oiz61.jpg">https://i.redd.it/z9w43c35oiz61.jpg</a></p>
+</div>
+<div class="comment" id="t1_gycpbka">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/jobsjoestar">jobsjoestar</a>
+        |
+        <span class="score">10 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/ndt50z/_/gycpbka">May 16 2021 18:38:54</a>
+    </p>
+    <div class="collapsible">
+        <p>超时空乳包</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_gydxvyh">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/DukeOfStyria">DukeOfStyria</a>
+        |
+        <span class="score">5 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/ndt50z/_/gydxvyh">May 17 2021 00:30:09</a>
+    </p>
+    <div class="collapsible">
+        <p>警惕拜登使用超时空科技乳包！</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

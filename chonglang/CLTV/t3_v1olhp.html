@@ -1,0 +1,95 @@
+<html>
+<head>
+<title>请问大家可以看到我的帖子吗</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_v1olhp">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/juban4000jia">juban4000jia</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/v1olhp">May 31 2022 11:58:53</a>
+    </p>
+    <strong>请问大家可以看到我的帖子吗</strong>
+    <p><a href="https://www.reddit.com/gallery/v1olhp">https://www.reddit.com/gallery/v1olhp</a></p>
+</div>
+<div class="comment" id="t1_iapdvyj">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/yesbanmeagainreddit">yesbanmeagainreddit</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/v1olhp/_/iapdvyj">May 31 2022 20:34:31</a>
+    </p>
+    <div class="collapsible">
+        <p>能</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_iapi6lo">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Finest-Hour89">Finest-Hour89</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/v1olhp/_/iapi6lo">May 31 2022 21:05:38</a>
+    </p>
+    <div class="collapsible">
+        <p>看不到啊 什么帖子🙈 你可以去shadowban测试一下</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

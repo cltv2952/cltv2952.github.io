@@ -1,0 +1,93 @@
+<html>
+<head>
+<title>你最喜欢哪个？</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_pff5oy">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/Anarco-Statist">Anarco-Statist</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/pff5oy">Aug 31 2021 21:20:51</a>
+    </p>
+    <strong>你最喜欢哪个？</strong>
+    <p><p><a href="https://www.reddit.com/poll/pff5oy">View Poll</a></p></p>
+</div>
+<div class="comment" id="t1_hb4kb7x">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/KAMENRIDER_ZEROTSU">KAMENRIDER_ZEROTSU</a>
+        |
+        <span class="score">2 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/pff5oy/_/hb4kb7x">Sep 01 2021 00:22:22</a>
+    </p>
+    <div class="collapsible">
+        <p>没有樱花妹妹就滚</p>
+        <div class="comment" id="t1_hb5ty89">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Anarco-Statist">Anarco-Statist</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/pff5oy/_/hb5ty89">Sep 01 2021 07:39:28</a>
+    </p>
+    <div class="collapsible">
+        <p>小黄人狗都不糙</p>
+        
+    </div>
+</div>
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

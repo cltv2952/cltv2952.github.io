@@ -1,0 +1,95 @@
+<html>
+<head>
+<title>May the 4th be with you</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_uibdby">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/EbregiselGamwich">EbregiselGamwich</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/uibdby">May 04 2022 17:06:57</a>
+    </p>
+    <strong>May the 4th be with you</strong>
+    <p><a href="https://i.redd.it/5mt2ldayqhx81.jpg">https://i.redd.it/5mt2ldayqhx81.jpg</a></p>
+</div>
+<div class="comment" id="t1_i7d1ci2">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Both_Connection_6135">Both_Connection_6135</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/uibdby/_/i7d1ci2">May 05 2022 00:01:15</a>
+    </p>
+    <div class="collapsible">
+        <p>我靠，这图信息量有点大</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_i7dm76a">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Markdown1">Markdown1</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/uibdby/_/i7dm76a">May 05 2022 02:37:59</a>
+    </p>
+    <div class="collapsible">
+        <p>缝是吧</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

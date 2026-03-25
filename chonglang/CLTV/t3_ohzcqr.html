@@ -1,0 +1,131 @@
+<html>
+<head>
+<title>简单摆拍一个</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_ohzcqr">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/kumaba">kumaba</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/ohzcqr">Jul 11 2021 06:29:44</a>
+    </p>
+    <strong>简单摆拍一个</strong>
+    <p><a href="https://www.reddit.com/gallery/ohzcqr">https://www.reddit.com/gallery/ohzcqr</a></p>
+</div>
+<div class="comment" id="t1_h4sbepz">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Zigggggg135">Zigggggg135</a>
+        |
+        <span class="score">5 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/ohzcqr/_/h4sbepz">Jul 11 2021 07:06:25</a>
+    </p>
+    <div class="collapsible">
+        <p>你也喜欢茶叶啊</p>
+        <div class="comment" id="t1_h4sbhzs">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/kumaba">kumaba</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/ohzcqr/_/h4sbhzs">Jul 11 2021 07:07:47</a>
+    </p>
+    <div class="collapsible">
+        <p>哈哈哈哈</p>
+        
+    </div>
+</div>
+    </div>
+</div>
+
+<div class="comment" id="t1_h4sdn90">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Mars_critic273">Mars_critic273</a>
+        |
+        <span class="score">2 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/ohzcqr/_/h4sdn90">Jul 11 2021 07:40:56</a>
+    </p>
+    <div class="collapsible">
+        <p>火速开个 drug_tv把飞老嗨全送过去吧</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_h4sag31">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/superusr_">superusr_</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/ohzcqr/_/h4sag31">Jul 11 2021 06:52:04</a>
+    </p>
+    <div class="collapsible">
+        <p>粉色的是啥</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

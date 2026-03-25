@@ -1,0 +1,76 @@
+<html>
+<head>
+<title>经我调查发现：b站用户比知乎用户更爱学习</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_uvh2j4">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/habajkfk">habajkfk</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/uvh2j4">May 22 2022 18:34:04</a>
+    </p>
+    <strong>经我调查发现：b站用户比知乎用户更爱学习</strong>
+    <p><p>根据盒老嗨的指引，这几天在网上收集了不少b站用户的账号与大会员，而知乎账号几乎没有，更别说会员账号了，由此可见：b站用户对爬虫的学习热情十分高涨</p></p>
+</div>
+<div class="comment" id="t1_i9ns3aa">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Blood-Ravens">Blood-Ravens</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/uvh2j4/_/i9ns3aa">May 23 2022 07:59:36</a>
+    </p>
+    <div class="collapsible">
+        <p>速速私聊给我来一个号我去冲塔</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

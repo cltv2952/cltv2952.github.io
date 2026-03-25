@@ -1,0 +1,114 @@
+<html>
+<head>
+<title>🏀</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_owxc9k">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/Sccc_">Sccc_</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/owxc9k">Aug 03 2021 06:09:19</a>
+    </p>
+    <strong>🏀</strong>
+    <p><a href="https://v.redd.it/4mtm9ipeh1f71">https://v.redd.it/4mtm9ipeh1f71</a></p>
+</div>
+<div class="comment" id="t1_h7iuxhu">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/lynxtrainer">lynxtrainer</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/owxc9k/_/h7iuxhu">Aug 03 2021 06:15:05</a>
+    </p>
+    <div class="collapsible">
+        <p>这就是超级变变变吗</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_h7ixnxz">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Responsible_Leek4448">Responsible_Leek4448</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/owxc9k/_/h7ixnxz">Aug 03 2021 06:50:51</a>
+    </p>
+    <div class="collapsible">
+        <p>这个节目一直都这么抽象</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_h7j38it">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/overthinkw">overthinkw</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/owxc9k/_/h7j38it">Aug 03 2021 08:09:34</a>
+    </p>
+    <div class="collapsible">
+        <p>过于抽象</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

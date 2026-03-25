@@ -1,0 +1,76 @@
+<html>
+<head>
+<title>一个想法</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_rc8c39">
+    <p class="userinfo">
+        [deleted]
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/rc8c39">Dec 09 2021 03:16:44</a>
+    </p>
+    <strong>一个想法</strong>
+    <p><p>[deleted]</p></p>
+</div>
+<div class="comment" id="t1_hnt33jz">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/BearKickFrog">BearKickFrog</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/rc8c39/_/hnt33jz">Dec 09 2021 03:20:26</a>
+    </p>
+    <div class="collapsible">
+        <p>看人造子宫能不能短时间内突破，不过既然都要那种技术了，智能化机器人应该比滞纳猪的维护成本更低，贵支到时候肯定又有一堆蜘蛛上街寻衅滋事🤗</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

@@ -1,0 +1,93 @@
+<html>
+<head>
+<title>New challenge</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_p59osn">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/Sccc_">Sccc_</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/p59osn">Aug 16 2021 05:22:21</a>
+    </p>
+    <strong>New challenge</strong>
+    <p><a href="https://v.redd.it/9c3mcfx13kh71">https://v.redd.it/9c3mcfx13kh71</a></p>
+</div>
+<div class="comment" id="t1_h94gm1u">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Glittering-Oil1587">Glittering-Oil1587</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/p59osn/_/h94gm1u">Aug 16 2021 05:37:49</a>
+    </p>
+    <div class="collapsible">
+        <p>白男被黑爹狂暴轰入</p>
+        <div class="comment" id="t1_h94md0z">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Aidenfred">Aidenfred</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/p59osn/_/h94md0z">Aug 16 2021 06:48:10</a>
+    </p>
+    <div class="collapsible">
+        <p>这个白男不是视频作者的兄弟吗，难道他家是黑白两朵，各表一枝</p>
+        
+    </div>
+</div>
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

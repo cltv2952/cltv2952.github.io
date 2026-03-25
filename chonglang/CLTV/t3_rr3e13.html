@@ -1,0 +1,95 @@
+<html>
+<head>
+<title>嗯了</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_rr3e13">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/Sea-Patient-1804">Sea-Patient-1804</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/rr3e13">Dec 29 2021 08:34:46</a>
+    </p>
+    <strong>嗯了</strong>
+    <p><a href="https://i.redd.it/h2i448ut0g881.jpg">https://i.redd.it/h2i448ut0g881.jpg</a></p>
+</div>
+<div class="comment" id="t1_hqf4k16">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/KRKTMK_97">KRKTMK_97</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/rr3e13/_/hqf4k16">Dec 29 2021 15:38:48</a>
+    </p>
+    <div class="collapsible">
+        <p>这创意过于抽象了</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_hqhq9rm">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Glittering-Oil1587">Glittering-Oil1587</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/rr3e13/_/hqhq9rm">Dec 30 2021 02:05:58</a>
+    </p>
+    <div class="collapsible">
+        <p>想到了尖叫，不过这种瓶口能这么吸入可以说是很呃呃了</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

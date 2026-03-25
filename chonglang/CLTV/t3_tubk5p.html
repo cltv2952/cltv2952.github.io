@@ -1,0 +1,76 @@
+<html>
+<head>
+<title>草，浪花完整度是不是下降了</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_tubk5p">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/Green_Dog4314">Green_Dog4314</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tubk5p">Apr 02 2022 05:37:34</a>
+    </p>
+    <strong>草，浪花完整度是不是下降了</strong>
+    <p><p>看上去也沒有破壞，似乎是單純倒退了</p></p>
+</div>
+<div class="comment" id="t1_i32tt3b">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Elllllite">Elllllite</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tubk5p/_/i32tt3b">Apr 02 2022 05:46:14</a>
+    </p>
+    <div class="collapsible">
+        <p>换成hot看mod的贴，浪花的位置是定在别的地方的</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

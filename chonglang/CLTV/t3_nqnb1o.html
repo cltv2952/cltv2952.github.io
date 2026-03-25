@@ -1,0 +1,383 @@
+<html>
+<head>
+<title>鸿蒙公布了，有无鸿老嗨说说背后的真实</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_nqnb1o">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/keepussyummy">keepussyummy</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/nqnb1o">Jun 02 2021 14:39:38</a>
+    </p>
+    <strong>鸿蒙公布了，有无鸿老嗨说说背后的真实</strong>
+    <p></p>
+</div>
+<div class="comment" id="t1_h0botis">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/sageerk">sageerk</a>
+        |
+        <span class="score">18 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/nqnb1o/_/h0botis">Jun 02 2021 15:38:47</a>
+    </p>
+    <div class="collapsible">
+        <p>支那的东西你不需要知道技术细节也知道是瓦房店产物。即使不懂技术，只要懂支那就够了，那种996把人当畜生用的环境是绝对不可能产生原创性的，只能是简单抄个代码</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_h0bkcji">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        [deleted]
+        |
+        <span class="score">16 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/nqnb1o/_/h0bkcji">Jun 02 2021 15:06:27</a>
+    </p>
+    <div class="collapsible">
+        <p>搬运：<a href="https://www.zhihu.com/question/462685335/answer/1918991287">https://www.zhihu.com/question/462685335/answer/1918991287</a>下</p>
+<p>下载了代码粗略看了一下，这个2.0的OpenHarmony可以简单的看成是带有小程序引擎的嵌入式linux系统，而且暂时只支持自己家的hi3516dv300芯片。<br>
+当然里面不单单只带有小程序引擎（但小程序引擎是app核心嘛），还有很多组件可以用，譬如电话，媒体，短距，多模输入，图形等，具体看他们的宣传文案和开发文档。<br>
+早期有mozilla的boot2gecko，现有三星tizen，都想推用js写app的嵌入式linux系统，前者已经销声匿迹，后者看样子准备退场。中间google出了个android things，早已退场。<br>
+开箱即用的嵌入式linux系统还是有一定需求的（boot2qt虽好，但qt商用要钱啊），成不成就看芯片厂支不支持了，单靠海思是肯定活不下去的，起码这个L2能力的2.0活不下去。<br>
+这个2.0只用了很少aosp部件，连3d库都没有，肯定不支持安卓app的。要看带aosp的OpenHarmony，等多半年吧。<br>
+里面的c++代码蛮规范的，想学可以去学。而且大部分是apache license，想抄可以去抄。<br>
+虽然这个2.0不能跑安卓app，但用在儿童手表、学习机、nest hub类型的智能家居面板、他们的车载智慧屏、甚至kaios档次的手机，这些功能比较固定（同时性能和成本受限）的设备上，倒是一个可行的选择，这个2.0面向的设备大概率也是这些，而不是智能手机。<br>
+我想鸿蒙的核心也就它里面foundation目录下面的那部分代码（aafwk，ace，ai，appexecfwk，communication，distributeddatamgr，distributedschedule，graphic，multimedia，multimodalinput）。鸿蒙的路子应该就是搞一个foundation提供一堆功能，然后不同档次的设备可以选这些功能里面的部分使用。Foundation这部分代码既能够跑在liteos也能跑在linux，甚至FreeRTOS啊，RT-Thread啊移植适配一下也能跑的，我想也能跑在aosp的linux+hwservicemanager上，所以鸿蒙是多内核多终端同foundation。<br>
+至于说比android快，那肯定的，整个系统基本都是c++，只是app用了js，android一大坨java呢。至于说自研微内核，liteos确实是他们自研的rtos，摄像头手环手表上面的鸿蒙确实使用liteos。你要问手机上的呢，手机里面某部分硬件也是跑liteos的，说整台机没有微内核吧好像也不是（笑）。跟google apple使用同一个操作系统但不同设备系统名称各异（wear os, ipados...）不同，华为采用不同设备不同操作系统但同一个系统名称。这怎么说呢，就说 人家脑子比较活，比较能说话吧，They marketing well。<br>
+至于你说像google那样搞个从底到顶都让人耳目一新的Fuchsia OS，像apple那样搞个swift语言，然后搞个swiftui，让swift像js那样前端后端一脚踢，我想不断砸钱的话2025应该能有苗头，2030会有小成。<br>
+最后说一下，L0到L2的鸿蒙还是有一定商用价值的，没必要抵触，他们确实做了点东西，该用就用。自己用Buildroot，Yocto搞出来的系统也不一定比他们砸几亿搞出来的好。至于L3到L5商用价值多大，后面再看咯。</p>
+        <div class="comment" id="t1_h0c3cwx">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/AdEnvironmental9127">AdEnvironmental9127</a>
+        |
+        <span class="score">5 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/nqnb1o/_/h0c3cwx">Jun 02 2021 17:15:23</a>
+    </p>
+    <div class="collapsible">
+        <p>看不懂</p>
+        <div class="comment" id="t1_h0deske">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/yuqqwechat">yuqqwechat</a>
+        |
+        <span class="score">4 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/nqnb1o/_/h0deske">Jun 02 2021 22:53:21</a>
+    </p>
+    <div class="collapsible">
+        <p>鸿蒙可以装GMS，懂了吗？🤗</p>
+        <div class="comment" id="t1_h0dg7ql">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/AdEnvironmental9127">AdEnvironmental9127</a>
+        |
+        <span class="score">5 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/nqnb1o/_/h0dg7ql">Jun 02 2021 23:04:58</a>
+    </p>
+    <div class="collapsible">
+        <p>呜呜呜，高贵的湾区码农和下贱的工人高下立判</p>
+        
+    </div>
+</div>
+    </div>
+</div>
+    </div>
+</div>
+
+<div class="comment" id="t1_h0cw8dx">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        [deleted]
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/nqnb1o/_/h0cw8dx">Jun 02 2021 20:34:04</a>
+    </p>
+    <div class="collapsible">
+        <p>[deleted]</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_h0dy0hj">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Kalftazhi">Kalftazhi</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/nqnb1o/_/h0dy0hj">Jun 03 2021 01:32:20</a>
+    </p>
+    <div class="collapsible">
+        <p>用个鸡巴</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_h0e6mxv">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/XX0318">XX0318</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/nqnb1o/_/h0e6mxv">Jun 03 2021 02:43:59</a>
+    </p>
+    <div class="collapsible">
+        <p>学习了</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_h0f03pz">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Puzzled-Hotel8062">Puzzled-Hotel8062</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/nqnb1o/_/h0f03pz">Jun 03 2021 08:20:29</a>
+    </p>
+    <div class="collapsible">
+        <p>中肯</p>
+        
+    </div>
+</div>
+    </div>
+</div>
+
+<div class="comment" id="t1_h0bpbuf">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/jOl5a_6k2n2">jOl5a_6k2n2</a>
+        |
+        <span class="score">8 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/nqnb1o/_/h0bpbuf">Jun 02 2021 15:42:23</a>
+    </p>
+    <div class="collapsible">
+        <p>支那的氢弹都是假的</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_h0bkqx1">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/ghuhjjkk">ghuhjjkk</a>
+        |
+        <span class="score">6 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/nqnb1o/_/h0bkqx1">Jun 02 2021 15:09:28</a>
+    </p>
+    <div class="collapsible">
+        <p>华为哄蒙更新后可以直接玩一个韩国小手游第七史诗，个人感觉挺那啥的。</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_h0boqla">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Proper-Dimension4599">Proper-Dimension4599</a>
+        |
+        <span class="score">5 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/nqnb1o/_/h0boqla">Jun 02 2021 15:38:13</a>
+    </p>
+    <div class="collapsible">
+        <p>爱国的赶紧安排上</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_h0bpg0x">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/FayeValente">FayeValente</a>
+        |
+        <span class="score">5 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/nqnb1o/_/h0bpg0x">Jun 02 2021 15:43:11</a>
+    </p>
+    <div class="collapsible">
+        <p>粉畜简单高个潮，还有matepad直球抄袭苹果，笑嘻了</p>
+        <div class="comment" id="t1_h0cnwdr">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/kumaba">kumaba</a>
+        |
+        <span class="score">6 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/nqnb1o/_/h0cnwdr">Jun 02 2021 19:36:42</a>
+    </p>
+    <div class="collapsible">
+        <p>matepad，配种平板，催生催到这种地步了吗</p>
+        
+    </div>
+</div>
+    </div>
+</div>
+
+<div class="comment" id="t1_h0bv9qo">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/xiashuidaolaoshu9527">xiashuidaolaoshu9527</a>
+        |
+        <span class="score">5 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/nqnb1o/_/h0bv9qo">Jun 02 2021 16:23:21</a>
+    </p>
+    <div class="collapsible">
+        <p>代码文件名都偷的项目，我觉得没有谈论的必要</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_h0bvfty">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/_Newdkmf_">_Newdkmf_</a>
+        |
+        <span class="score">5 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/nqnb1o/_/h0bvfty">Jun 02 2021 16:24:29</a>
+    </p>
+    <div class="collapsible">
+        <p>狗鸡巴都不用</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_h0bh1su">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/MundaneAssociation71">MundaneAssociation71</a>
+        |
+        <span class="score">2 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/nqnb1o/_/h0bh1su">Jun 02 2021 14:42:09</a>
+    </p>
+    <div class="collapsible">
+        <p>先看几天</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

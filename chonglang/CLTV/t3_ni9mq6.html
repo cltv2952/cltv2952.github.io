@@ -1,0 +1,78 @@
+<html>
+<head>
+<title>这下反转了</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_ni9mq6">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/RoughPercussionythm">RoughPercussionythm</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/ni9mq6">May 22 2021 03:22:58</a>
+    </p>
+    <strong>这下反转了</strong>
+    <p><p>到底死了没</p></p>
+</div>
+<div class="comment" id="t1_gz0pdz7">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/RoughPercussionythm">RoughPercussionythm</a>
+        |
+        <span class="score">2 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/ni9mq6/_/gz0pdz7">May 22 2021 03:23:36</a>
+    </p>
+    <div class="collapsible">
+        <p>袁隆平秘书：袁隆平目前在医院，网传逝世是假消息</p>
+<p>5月22日上午，澎湃新闻（<a href="https://www.thepaper.cn">www.thepaper.cn</a>）从袁隆平院士秘书杨耀松处获悉，网上关于袁隆平逝世的消息是假消息。袁隆平目前在医院，身体状况不太好。“我们目前正在医院。”</p>
+<p>(本文来自澎湃新闻，更多原创资讯请下载“澎湃新闻”APP)</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

@@ -1,0 +1,112 @@
+<html>
+<head>
+<title>我来了。。。。。</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_oseohi">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/LooseLeadership309">LooseLeadership309</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/oseohi">Jul 27 2021 03:08:17</a>
+    </p>
+    <strong>我来了。。。。。</strong>
+    <p></p>
+</div>
+<div class="comment" id="t1_h6o0md8">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/freedomlian">freedomlian</a>
+        |
+        <span class="score">6 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/oseohi/_/h6o0md8">Jul 27 2021 03:26:15</a>
+    </p>
+    <div class="collapsible">
+        <p>你来个几把毛了</p>
+        <div class="comment" id="t1_h6o3qed">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/XianZhongIsAMyth">XianZhongIsAMyth</a>
+        |
+        <span class="score">-3 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/oseohi/_/h6o3qed">Jul 27 2021 03:56:43</a>
+    </p>
+    <div class="collapsible">
+        <p>你come 一个我看看</p>
+        
+    </div>
+</div>
+    </div>
+</div>
+
+<div class="comment" id="t1_h6o2z30">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/fleeChina">fleeChina</a>
+        |
+        <span class="score">2 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/oseohi/_/h6o2z30">Jul 27 2021 03:49:14</a>
+    </p>
+    <div class="collapsible">
+        <p>你寄吧谁啊</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

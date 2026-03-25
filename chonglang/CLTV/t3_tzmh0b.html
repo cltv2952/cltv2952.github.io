@@ -1,0 +1,76 @@
+<html>
+<head>
+<title>鼠鼠回家了，大哭</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_tzmh0b">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/xjplianren114">xjplianren114</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tzmh0b">Apr 09 2022 05:32:33</a>
+    </p>
+    <strong>鼠鼠回家了，大哭</strong>
+    <p><a href="https://i.redd.it/5jjbmjpdwfs81.jpg">https://i.redd.it/5jjbmjpdwfs81.jpg</a></p>
+</div>
+<div class="comment" id="t1_i40gvjc">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/egowill">egowill</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tzmh0b/_/i40gvjc">Apr 09 2022 08:44:06</a>
+    </p>
+    <div class="collapsible">
+        <p>さくら</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

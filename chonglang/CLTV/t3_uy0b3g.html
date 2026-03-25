@@ -1,0 +1,95 @@
+<html>
+<head>
+<title>死了但没完全死</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_uy0b3g">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/bigpigpro">bigpigpro</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/uy0b3g">May 26 2022 05:21:28</a>
+    </p>
+    <strong>死了但没完全死</strong>
+    <p><a href="https://i.redd.it/oi5erzd89r191.png">https://i.redd.it/oi5erzd89r191.png</a></p>
+</div>
+<div class="comment" id="t1_ia16ss2">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/kim-c0ck">kim-c0ck</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/uy0b3g/_/ia16ss2">May 26 2022 05:36:36</a>
+    </p>
+    <div class="collapsible">
+        <p>滚 大猪</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_ia19ifz">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/FriendshipPitiful719">FriendshipPitiful719</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/uy0b3g/_/ia19ifz">May 26 2022 06:10:59</a>
+    </p>
+    <div class="collapsible">
+        <p>大猪滚滚大猪猪大滚猪滚大</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

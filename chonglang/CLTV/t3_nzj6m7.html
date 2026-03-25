@@ -1,0 +1,96 @@
+<html>
+<head>
+<title>什么共时性</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_nzj6m7">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/Wandsong">Wandsong</a>
+        |
+        <span class="score">2 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/nzj6m7">Jun 14 2021 09:50:08</a>
+    </p>
+    <strong>什么共时性</strong>
+    <p><a href="https://abcnews.go.com/US/mass-shootings-hours-leave-39-wounded-dead-us/story?id=78252429">https://abcnews.go.com/US/mass-shootings-hours-leave-39-wounded-dead-us/story?id=78252429</a></p>
+</div>
+<div class="comment" id="t1_h1q7w7n">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/EricXing">EricXing</a>
+        |
+        <span class="score">3 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/nzj6m7/_/h1q7w7n">Jun 14 2021 13:24:19</a>
+    </p>
+    <div class="collapsible">
+        <p>美国县中太拉了</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_h1szv34">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/overthinkw">overthinkw</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/nzj6m7/_/h1szv34">Jun 15 2021 02:31:38</a>
+    </p>
+    <div class="collapsible">
+        <p>等会，mass shooting的定义不是得死三人以上么</p>
+<p>不够分的啊</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

@@ -1,0 +1,82 @@
+<html>
+<head>
+<title>用去广告插件手动屏蔽献忠gif，减少保存本sub网页占用空间</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_urgzru">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/cltv3333">cltv3333</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/urgzru">May 17 2022 07:26:06</a>
+    </p>
+    <strong>用去广告插件手动屏蔽献忠gif，减少保存本sub网页占用空间</strong>
+    <p><p>教大家屏蔽本sub那张gif献忠动图。</p>
+<p>大家有没有发现，自己保存帖子，下载帖子，变成了8\~10mb？之前都是2\~3mb，没错，问题就是那张gif献忠图片，导致保存帖子非常占空间。</p>
+<p>但是可以使用ublockorig屏蔽掉这个图片，进入元素选择器，选中。</p>
+<p>再测试保存一下帖子，就恢复2\~3mb的保存容量了。</p>
+<p>这张图片就跟牛皮鲜一样，那么大gif。</p>
+<p>一般爬虫都不爬取这些背景图，gif广告之类的版图，但如果手动保存帖子肯定保存这些，保存插件会显然导致空间变大，因为保存了这垃圾广告图片。</p>
+<p>之前我不知道原因，还以为中病毒了，保存个帖子居然10mb。</p></p>
+</div>
+<div class="comment" id="t1_i8x5jgj">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/ForestRandom">ForestRandom</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/urgzru/_/i8x5jgj">May 17 2022 07:29:54</a>
+    </p>
+    <div class="collapsible">
+        <p>就是右边那个 r/place 活动绘制献忠的gif，一张图大小3.75MB</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

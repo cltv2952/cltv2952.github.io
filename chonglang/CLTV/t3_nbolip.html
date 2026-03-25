@@ -1,0 +1,104 @@
+<html>
+<head>
+<title>有无安卓老嗨出来解答一下安卓权限问题</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_nbolip">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/Double-Ad3742">Double-Ad3742</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/nbolip">May 13 2021 19:08:18</a>
+    </p>
+    <strong>有无安卓老嗨出来解答一下安卓权限问题</strong>
+    <p><p>Why are Android permissions granted in groups? 为什么安卓权限授予不能细分？比如 contacts group 包括 write, read contacts，get accounts 等权限，只能同一授予，如果应用能查看联系人的话，那你手机上有些应用登录的账户信息，比如Facebook，twitter，等等就会自动暴露，</p>
+<p>还有，READ_CONTACTS 这个权限到底能获取哪些信息？下面这个是adb返回的权限说明：</p>
+<p>&rt;  + permission:android.permission.READ_CONTACTS<br>
+&rt;<br>
+&rt;package:android<br>
+&rt;<br>
+&rt;label:read your contacts<br>
+&rt;<br>
+&rt;description:Allows the app to read data about your contacts stored on your phone. Apps will also have access to the accounts on your phone that have created contacts. This may include accounts created by apps you have installed. This permission allows apps to save your contact data, and malicious apps may share contact data without your knowledge.</p>
+<p>Apps will also have access to the accounts on your phone that have created contacts. 意思是这个权限也会暴露accounts on your phone ？安卓官方开发文档写的和一坨狗屎一样，看了等于没看，有无安卓开发出来解答一下</p></p>
+</div>
+<div class="comment" id="t1_gy16fs6">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Existing-Listen-4883">Existing-Listen-4883</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/nbolip/_/gy16fs6">May 13 2021 22:20:39</a>
+    </p>
+    <div class="collapsible">
+        <p>试试其他权限管理软件呗</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_gy2m9bj">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/yuqqwechat">yuqqwechat</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/nbolip/_/gy2m9bj">May 14 2021 06:46:32</a>
+    </p>
+    <div class="collapsible">
+        <p>谷歌就是靠卖用户隐私赚钱的呀🐶清水怎么摸鱼？</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

@@ -1,0 +1,76 @@
+<html>
+<head>
+<title>简单摘个器官</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_ut4rsn">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/Foreign-Rent-3131">Foreign-Rent-3131</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/ut4rsn">May 19 2022 14:33:43</a>
+    </p>
+    <strong>简单摘个器官</strong>
+    <p><a href="https://i.redd.it/yjse549e1g091.jpg">https://i.redd.it/yjse549e1g091.jpg</a></p>
+</div>
+<div class="comment" id="t1_i97imcg">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/rebelwall">rebelwall</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/ut4rsn/_/i97imcg">May 19 2022 14:52:24</a>
+    </p>
+    <div class="collapsible">
+        <p>我们怀念1.8w人，，，（脂宫程序猿能不能别写这种脑子有坑的拼写1.8w，，，要么18k要么1.8万）</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

@@ -1,0 +1,95 @@
+<html>
+<head>
+<title>张哥回归,盒来!</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_t5kf53">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/wearebigpig">wearebigpig</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/t5kf53">Mar 03 2022 05:42:51</a>
+    </p>
+    <strong>张哥回归,盒来!</strong>
+    <p><a href="https://i.redd.it/u5n98fdhw3l81.png">https://i.redd.it/u5n98fdhw3l81.png</a></p>
+</div>
+<div class="comment" id="t1_hz5dsdj">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/ChungkuoRun">ChungkuoRun</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/t5kf53/_/hz5dsdj">Mar 03 2022 05:44:37</a>
+    </p>
+    <div class="collapsible">
+        <p>敬礼！降半旗！</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_hz5edws">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Ok_Cookie_8459">Ok_Cookie_8459</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/t5kf53/_/hz5edws">Mar 03 2022 05:50:44</a>
+    </p>
+    <div class="collapsible">
+        <p>说了个啥呀，图太小看不见。</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

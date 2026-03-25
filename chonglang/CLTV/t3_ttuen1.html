@@ -1,0 +1,110 @@
+<html>
+<head>
+<title>⑧往右移一格，望周知</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_ttuen1">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/ellipsedy">ellipsedy</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/ttuen1">Apr 01 2022 16:07:19</a>
+    </p>
+    <strong>⑧往右移一格，望周知</strong>
+    <p></p>
+</div>
+<div class="comment" id="t1_i30000m">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/sghwiah">sghwiah</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/ttuen1/_/i30000m">Apr 01 2022 16:17:25</a>
+    </p>
+    <div class="collapsible">
+        <p>机枪阵地左移五厘米</p>
+        <div class="comment" id="t1_i300lkh">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/ellipsedy">ellipsedy</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/ttuen1/_/i300lkh">Apr 01 2022 16:21:16</a>
+    </p>
+    <div class="collapsible">
+        <p>你麻麻的</p>
+        <div class="comment" id="t1_i300s7v">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/sghwiah">sghwiah</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/ttuen1/_/i300s7v">Apr 01 2022 16:22:28</a>
+    </p>
+    <div class="collapsible">
+        <p>怎么说话的，没有教养的东西</p>
+        
+    </div>
+</div>
+    </div>
+</div>
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

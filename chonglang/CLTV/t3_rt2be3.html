@@ -1,0 +1,96 @@
+<html>
+<head>
+<title>抽象</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_rt2be3">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/shazhizhu">shazhizhu</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/rt2be3">Dec 31 2021 20:17:45</a>
+    </p>
+    <strong>抽象</strong>
+    <p><p>&#x200B;</p>
+<p><em>Processing video x179o73brx881...</em></p></p>
+</div>
+<div class="comment" id="t1_hqqtvqe">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/pingzityra">pingzityra</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/rt2be3/_/hqqtvqe">Dec 31 2021 23:51:02</a>
+    </p>
+    <div class="collapsible">
+        <p>我特别想试一次一脚把小孩锁骨踢碎那种感觉，最好能踢飞</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_hqt0grl">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/kstavish">kstavish</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/rt2be3/_/hqt0grl">Jan 01 2022 13:59:03</a>
+    </p>
+    <div class="collapsible">
+        <p>绷</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

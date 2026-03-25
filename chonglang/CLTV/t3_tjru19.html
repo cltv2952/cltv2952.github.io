@@ -1,0 +1,76 @@
+<html>
+<head>
+<title>這應該是毛國支籍軍團的badge</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_tjru19">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/Topherdynail">Topherdynail</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tjru19">Mar 22 2022 01:43:04</a>
+    </p>
+    <strong>這應該是毛國支籍軍團的badge</strong>
+    <p><a href="https://i.redd.it/fobl4qn362n81.jpg">https://i.redd.it/fobl4qn362n81.jpg</a></p>
+</div>
+<div class="comment" id="t1_i1lyl2n">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Whythebanhammer">Whythebanhammer</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tjru19/_/i1lyl2n">Mar 22 2022 01:49:21</a>
+    </p>
+    <div class="collapsible">
+        <p>大雄</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

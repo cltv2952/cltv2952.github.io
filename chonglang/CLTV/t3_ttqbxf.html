@@ -1,0 +1,114 @@
+<html>
+<head>
+<title>b站有点狂</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_ttqbxf">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/redliuou">redliuou</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/ttqbxf">Apr 01 2022 13:11:40</a>
+    </p>
+    <strong>b站有点狂</strong>
+    <p><a href="https://i.redd.it/qcwrr2103xq81.jpg">https://i.redd.it/qcwrr2103xq81.jpg</a></p>
+</div>
+<div class="comment" id="t1_i2z9ktt">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/TainanWildPig">TainanWildPig</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/ttqbxf/_/i2z9ktt">Apr 01 2022 13:13:09</a>
+    </p>
+    <div class="collapsible">
+        <p>你這一放，這影片馬上就下架了，連個碼都不打</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_i2z9zla">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/KWJisTrash">KWJisTrash</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/ttqbxf/_/i2z9zla">Apr 01 2022 13:16:22</a>
+    </p>
+    <div class="collapsible">
+        <p>小兵張嘎只能找到閹割版，D等民族那段剪掉了</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_i2ziw2u">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Jeff1795">Jeff1795</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/ttqbxf/_/i2ziw2u">Apr 01 2022 14:22:10</a>
+    </p>
+    <div class="collapsible">
+        <p>小王啊，查查第四个硬币是谁投的</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

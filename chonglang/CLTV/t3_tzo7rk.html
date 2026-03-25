@@ -1,0 +1,133 @@
+<html>
+<head>
+<title>这是哪位朋友</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_tzo7rk">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/Gengui">Gengui</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tzo7rk">Apr 09 2022 07:36:42</a>
+    </p>
+    <strong>这是哪位朋友</strong>
+    <p><a href="https://www.reddit.com/gallery/tzo7rk">https://www.reddit.com/gallery/tzo7rk</a></p>
+</div>
+<div class="comment" id="t1_i40btaq">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/WilsonEdchi">WilsonEdchi</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tzo7rk/_/i40btaq">Apr 09 2022 07:37:28</a>
+    </p>
+    <div class="collapsible">
+        <p>善意造謠。</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_i40bw6k">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/SlaveCHN">SlaveCHN</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tzo7rk/_/i40bw6k">Apr 09 2022 07:38:28</a>
+    </p>
+    <div class="collapsible">
+        <p>不幫，怕反轉被它告</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_i40bx42">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Substantial_Pay_1675">Substantial_Pay_1675</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tzo7rk/_/i40bx42">Apr 09 2022 07:38:47</a>
+    </p>
+    <div class="collapsible">
+        <p>他们这代人没做啥好事，该。</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_i40cg5n">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Jacuening">Jacuening</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tzo7rk/_/i40cg5n">Apr 09 2022 07:45:30</a>
+    </p>
+    <div class="collapsible">
+        <p>已举办</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

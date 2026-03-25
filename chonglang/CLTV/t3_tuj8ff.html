@@ -1,0 +1,585 @@
+<html>
+<head>
+<title>护城河自动化指北</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_tuj8ff">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/tizeejit">tizeejit</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tuj8ff">Apr 02 2022 13:46:32</a>
+    </p>
+    <strong>护城河自动化指北</strong>
+    <p><p>个人目前使用，效果稳定。</p>
+<h2>1:1 Logo素材帖</h2>
+<p>见：https://www.reddit.com/r/CLTV/comments/tughne/%E6%8A%A4%E5%9F%8E%E6%B2%B3%E8%87%AA%E5%8A%A8%E5%8C%96%E5%87%86%E5%A4%87_rplace%E6%95%B0%E6%8D%AE%E7%9A%84%E8%AE%B0%E5%BD%95/</p>
+<p>将想自动化维护的logo命名为<code>image.png</code>，与脚本同目录。</p>
+<h2>Automation script guide</h2>
+<ol>
+<li>go to: https://www.reddit.com/prefs/apps</li>
+<li>Click the "create (another) app" button at the very bottom</li>
+<li>Select the "script" option and fill in the fields with anything</li>
+</ol>
+<p>What we need:</p>
+<ol>
+<li>app secret id</li>
+<li>app client id (under the title <code>personal use script</code> with format pattern like <code>sfad-GdgA7vOEdP51mdCT6w</code>)</li>
+<li>your account username</li>
+<li>your account password</li>
+<li>a 1:1 logo image file</li>
+</ol>
+<h3>python脚本依赖 <code>requirements.txt</code></h3>
+<p>使用<code>python -m pip install -r requirements.txt</code>安装依赖。</p>
+<p><code>certifi==2021.10.8
+charset-normalizer==2.0.12
+idna==3.3
+python-dotenv==0.20.0
+requests==2.27.1
+urllib3==1.26.9
+Pillow~=9.1.0
+websocket-client~=1.3.2</code></p>
+<h3>python脚本</h3>
+<p>脚本地址: https://pastebin.com/3ZdQdyH4</p>
+<p>增加了代理的配置，方便国内浪人。</p>
+<p>~~匿名化避免被王晶开盒~~</p>
+<p>命名为<code>main.py</code>或者你自定义的名字，<code>python main.py</code>使用</p>
+<p><strong>Notice</strong>：<strong>第一次运行</strong>将在脚本所处目录下创建<code>.env</code>文件，可填好配置信息。</p>
+<ul>
+<li>ENV_PLACE_USERNAME: 用户名数组（支持多个账号，与密码匹配，每个用户开一个线程）</li>
+<li>ENV_PLACE_PASSWORD: 密码数组</li>
+<li>ENV_PLACE_APP_CLIENT_ID: app client id数组，可以大号申请一个，将小号添加到developers中</li>
+<li>ENV_PLACE_SECRET_KEY: app secret key数组</li>
+<li>ENV_HTTP_PROXY_HOST: 本地Http代理Host</li>
+<li>ENV_HTTP_PROXY_PORT: 本地Http代理Port</li>
+<li>ENV_DRAW_X_START: Canvas的起始x坐标</li>
+<li>ENV_DRAW_Y_START: Canvas的起始y坐标</li>
+<li>ENV_R_START：相对logo的起始x位置（以logo左上角为原点）</li>
+<li>ENV_C_START：相对logo的起始y位置</li>
+</ul>
+<p><code>txt
+ENV_PLACE_USERNAME='["developer_username"]'
+ENV_PLACE_PASSWORD='["developer_password"]'
+ENV_PLACE_APP_CLIENT_ID='["app_client_id"]'
+ENV_PLACE_SECRET_KEY='["app_secret_key"]'
+ENV_HTTP_PROXY_HOST="http_proxy"
+ENV_HTTP_PROXY_PORT="http_proxy_port"
+ENV_DRAW_X_START="x_position_start_integer"
+ENV_DRAW_Y_START="y_position_start_integer"
+ENV_R_START='["0"]'
+ENV_C_START='["0"]'</code></p></p>
+</div>
+<div class="comment" id="t1_i33w37u">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/tizeejit">tizeejit</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tuj8ff/_/i33w37u">Apr 02 2022 13:51:12</a>
+    </p>
+    <div class="collapsible">
+        <h2>最佳实践</h2>
+<p>使用小号挂机。</p>
+<p>大号在网页冲浪。</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_i34og9i">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Professional_Ice3229">Professional_Ice3229</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tuj8ff/_/i34og9i">Apr 02 2022 17:26:43</a>
+    </p>
+    <div class="collapsible">
+        <p>这么长 兄弟牛啊</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_i357t0o">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/minuslouist">minuslouist</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tuj8ff/_/i357t0o">Apr 02 2022 19:58:57</a>
+    </p>
+    <div class="collapsible">
+        <p>牛啊，</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_i37708m">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/ZhongXun_Xi">ZhongXun_Xi</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tuj8ff/_/i37708m">Apr 03 2022 07:47:28</a>
+    </p>
+    <div class="collapsible">
+        <p>这具体怎么搞？不是整程序的看不懂，有没有手把手的教程</p>
+        <div class="comment" id="t1_i378yvh">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/tizeejit">tizeejit</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tuj8ff/_/i378yvh">Apr 03 2022 08:13:36</a>
+    </p>
+    <div class="collapsible">
+        <p>根据你的操作系统，先安装python。这个可以看网络上的教程</p>
+        
+    </div>
+</div>
+    </div>
+</div>
+
+<div class="comment" id="t1_i37mebm">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/sonoichi">sonoichi</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tuj8ff/_/i37mebm">Apr 03 2022 11:17:35</a>
+    </p>
+    <div class="collapsible">
+        <p>我填好了你的env了啊，</p>
+<pre><code>ENV_HTTP_PROXY_HOST="127.0.0.1"
+ENV_HTTP_PROXY_PORT="8964"
+</code></pre>
+<p>他怎么还提醒我超时？我不会用python</p>
+        <div class="comment" id="t1_i37rwb1">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/wang-hu-ning">wang-hu-ning</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tuj8ff/_/i37rwb1">Apr 03 2022 12:22:15</a>
+    </p>
+    <div class="collapsible">
+        <p>本常委也在挠头</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_i37yoy2">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/FwjedsfE">FwjedsfE</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tuj8ff/_/i37yoy2">Apr 03 2022 13:27:55</a>
+    </p>
+    <div class="collapsible">
+        <p>&rt;ENV_PLACE_USERNAME='["developer_username"]'<br>
+ENV_PLACE_PASSWORD='["developer_password"]'<br>
+ENV_PLACE_APP_CLIENT_ID='["app_client_id"]'<br>
+ENV_PLACE_SECRET_KEY='["app_secret_key"]'<br>
+ENV_HTTP_PROXY_HOST="http_proxy"<br>
+ENV_HTTP_PROXY_PORT="http_proxy_port"<br>
+ENV_DRAW_X_START="x_position_start_integer"<br>
+ENV_DRAW_Y_START="y_position_start_integer"<br>
+ENV_R_START='["0"]'<br>
+ENV_C_START='["0"]'</p>
+<p>这个地方是填本地的代理如果是clash啥的应该在7890，你本地真的有一个在8964的http代理么？</p>
+        <div class="comment" id="t1_i37yx9j">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/sonoichi">sonoichi</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tuj8ff/_/i37yx9j">Apr 03 2022 13:29:57</a>
+    </p>
+    <div class="collapsible">
+        <p>是的，我回复你时用的就是这个。是一个http协议的8964</p>
+        <div class="comment" id="t1_i3829gj">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/FwjedsfE">FwjedsfE</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tuj8ff/_/i3829gj">Apr 03 2022 13:58:44</a>
+    </p>
+    <div class="collapsible">
+        <p>那不应该啊？执行这个你会返回啥？是http 429么？
+<code>curl -I -X GET https://ssl.reddit.com/api/v1/access_token -x http://127.0.0.1:8964 -v</code></p>
+        <div class="comment" id="t1_i382ltu">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/sonoichi">sonoichi</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tuj8ff/_/i382ltu">Apr 03 2022 14:01:36</a>
+    </p>
+    <div class="collapsible">
+        <pre><code>C:\Users\sonoichi&amp;rt;curl -I -X GET https://ssl.reddit.com/api/v1/access_token -x http://127.0.0.1:8964 -v*   Trying 127.0.0.1:8964...* Connected to 127.0.0.1 (127.0.0.1) port 8964 (#0)* allocate connect buffer!* Establish HTTP proxy tunnel to ssl.reddit.com:443&amp;rt; CONNECT ssl.reddit.com:443 HTTP/1.1&amp;rt; Host: ssl.reddit.com:443&amp;rt; User-Agent: curl/7.79.1&amp;rt; Proxy-Connection: Keep-Alive&amp;rt;&amp;lt; HTTP/1.1 200 OKHTTP/1.1 200 OK&amp;lt;* Proxy replied 200 to CONNECT request* CONNECT phase completed!* schannel: disabled automatic use of client certificate* schannel: ALPN, offering http/1.1* schannel: ALPN, server accepted to use http/1.1&amp;rt; GET /api/v1/access_token HTTP/1.1&amp;rt; Host: ssl.reddit.com&amp;rt; User-Agent: curl/7.79.1&amp;rt; Accept: */*&amp;rt;* Mark bundle as not supporting multiuse&amp;lt; HTTP/1.1 429 Too Many RequestsHTTP/1.1 429 Too Many Requests&amp;lt; Connection: keep-aliveConnection: keep-alive&amp;lt; Content-Length: 46Content-Length: 46&amp;lt; Content-Type: application/json; charset=UTF-8Content-Type: application/json; charset=UTF-8&amp;lt; x-ua-compatible: IE=edgex-ua-compatible: IE=edge&amp;lt; x-frame-options: SAMEORIGINx-frame-options: SAMEORIGIN&amp;lt; x-content-type-options: nosniffx-content-type-options: nosniff&amp;lt; x-xss-protection: 1; mode=blockx-xss-protection: 1; mode=block&amp;lt; access-control-allow-origin: *access-control-allow-origin: *&amp;lt; access-control-expose-headers: X-Mooseaccess-control-expose-headers: X-Moose&amp;lt; cache-control: max-age=0, must-revalidatecache-control: max-age=0, must-revalidate&amp;lt; X-Moose: majesticX-Moose: majestic&amp;lt; Accept-Ranges: bytesAccept-Ranges: bytes&amp;lt; Date: Sun, 03 Apr 2022 13:59:35 GMTDate: Sun, 03 Apr 2022 13:59:35 GMT&amp;lt; Via: 1.1 varnishVia: 1.1 varnish&amp;lt; Set-Cookie: loid=0000000000lhlefngo.2.1648994375486.Z0FBQUFBQmlTYWhIMlM5d2wtX3hOM3pJZUt3WnpnbGhxUzVaZ0NyNGtSdm5LWWh5OUs1RjM4Slk0d1VXV1c5bVVyWEdGMS1Jb3UxOGpUb0hNblg0QkRHM1RNN1BrTE95M2JmT3c0LVZadGZyOFJuZENvRUpSQ3VhX0xXcU1fcHlFWDUtTkJVdlFhdTg; Domain=reddit.com; Max-Age=63071999; Path=/; expires=Tue, 02-Apr-2024 13:59:35 GMT; secure; SameSite=None; SecureSet-Cookie: loid=0000000000lhlefngo.2.1648994375486.Z0FBQUFBQmlTYWhIMlM5d2wtX3hOM3pJZUt3WnpnbGhxUzVaZ0NyNGtSdm5LWWh5OUs1RjM4Slk0d1VXV1c5bVVyWEdGMS1Jb3UxOGpUb0hNblg0QkRHM1RNN1BrTE95M2JmT3c0LVZadGZyOFJuZENvRUpSQ3VhX0xXcU1fcHlFWDUtTkJVdlFhdTg; Domain=reddit.com; Max-Age=63071999; Path=/; expires=Tue, 02-Apr-2024 13:59:35 GMT; secure; SameSite=None; Secure&amp;lt; Set-Cookie: session_tracker=s2arlODwPIEYYlxFSA.0.1648994375486.Z0FBQUFBQmlTYWhIOHJKS21Mak5YdXpZM3gycHFVUkdCME9CeVN3LTBkNnBqNmtnZU5MOS14TkhQZjhYcmJnRTRXZ0pJM01FcUtlTll5RmJmX2NUSXdjdGhhN3d5YVFTbDc5S2wydkFldmlHN1hsZS00YWZOSmF5Qkl1V2ZTZUZ5eGVkYzdXY3hfNS0; Domain=reddit.com; Max-Age=7199; Path=/; expires=Sun, 03-Apr-2022 15:59:35 GMT; secure; SameSite=None; SecureSet-Cookie: session_tracker=s2arlODwPIEYYlxFSA.0.1648994375486.Z0FBQUFBQmlTYWhIOHJKS21Mak5YdXpZM3gycHFVUkdCME9CeVN3LTBkNnBqNmtnZU5MOS14TkhQZjhYcmJnRTRXZ0pJM01FcUtlTll5RmJmX2NUSXdjdGhhN3d5YVFTbDc5S2wydkFldmlHN1hsZS00YWZOSmF5Qkl1V2ZTZUZ5eGVkYzdXY3hfNS0; Domain=reddit.com; Max-Age=7199; Path=/; expires=Sun, 03-Apr-2022 15:59:35 GMT; secure; SameSite=None; Secure&amp;lt; Set-Cookie: csv=2; Max-Age=63072000; Domain=.reddit.com; Path=/; Secure; SameSite=NoneSet-Cookie: csv=2; Max-Age=63072000; Domain=.reddit.com; Path=/; Secure; SameSite=None&amp;lt; Set-Cookie: edgebucket=05QPCjj7Nvpl3ntAi5; Domain=reddit.com; Max-Age=63071999; Path=/;  secureSet-Cookie: edgebucket=05QPCjj7Nvpl3ntAi5; Domain=reddit.com; Max-Age=63071999; Path=/;  secure&amp;lt; Strict-Transport-Security: max-age=15552000; includeSubDomains; preloadStrict-Transport-Security: max-age=15552000; includeSubDomains; preload&amp;lt; Server: snooservServer: snooserv&amp;lt;* Excess found: excess = 46 url = /api/v1/access_token (zero-length body)* Connection #0 to host 127.0.0.1 left intactC:\Users\sonoichi&amp;rt;
+</code></pre>
+        <div class="comment" id="t1_i3838i5">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/FwjedsfE">FwjedsfE</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tuj8ff/_/i3838i5">Apr 03 2022 14:06:42</a>
+    </p>
+    <div class="collapsible">
+        <p>试试 <code>https://gql-realtime-2.reddit.com/query</code> 这个url呢？</p>
+        <div class="comment" id="t1_i383otr">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/sonoichi">sonoichi</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tuj8ff/_/i383otr">Apr 03 2022 14:10:22</a>
+    </p>
+    <div class="collapsible">
+        <pre><code>*   Trying 127.0.0.1:8964...* Connected to 127.0.0.1 (127.0.0.1) port 8964 (#0)* allocate connect buffer!* Establish HTTP proxy tunnel to gql-realtime-2.reddit.com:443&amp;rt; CONNECT gql-realtime-2.reddit.com:443 HTTP/1.1&amp;rt; Host: gql-realtime-2.reddit.com:443&amp;rt; User-Agent: curl/7.79.1&amp;rt; Proxy-Connection: Keep-Alive&amp;rt;&amp;lt; HTTP/1.1 200 OKHTTP/1.1 200 OK&amp;lt;* Proxy replied 200 to CONNECT request* CONNECT phase completed!* schannel: disabled automatic use of client certificate* schannel: ALPN, offering http/1.1* schannel: ALPN, server accepted to use http/1.1&amp;rt; GET /query HTTP/1.1&amp;rt; Host: gql-realtime-2.reddit.com&amp;rt; User-Agent: curl/7.79.1&amp;rt; Accept: */*&amp;rt;* Mark bundle as not supporting multiuse&amp;lt; HTTP/1.1 401 UnauthorizedHTTP/1.1 401 Unauthorized&amp;lt; Date: Sun, 03 Apr 2022 14:08:18 GMTDate: Sun, 03 Apr 2022 14:08:18 GMT&amp;lt; Content-Type: application/json; charset=utf-8Content-Type: application/json; charset=utf-8&amp;lt; Content-Length: 159Content-Length: 159&amp;lt; Connection: keep-aliveConnection: keep-alive&amp;lt;* Excess found: excess = 159 url = /query (zero-length body)* Connection #0 to host 127.0.0.1 left intact
+</code></pre>
+        <div class="comment" id="t1_i384bzq">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/FwjedsfE">FwjedsfE</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tuj8ff/_/i384bzq">Apr 03 2022 14:15:30</a>
+    </p>
+    <div class="collapsible">
+        <p>感觉没问题，这个脚本总共就向这两个url发请求，你那都能访问都没问题</p>
+        
+    </div>
+</div>
+    </div>
+</div>
+
+<div class="comment" id="t1_i384cuo">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/sonoichi">sonoichi</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tuj8ff/_/i384cuo">Apr 03 2022 14:15:42</a>
+    </p>
+    <div class="collapsible">
+        <p>=============&rt;env</p>
+<pre><code>ENV_PLACE_USERNAME='["sonoichi"]'ENV_PLACE_PASSWORD='["⬛⬛⬛⬛"]'ENV_PLACE_APP_CLIENT_ID='["sERSI7mb_bOWZtnp0iGttQ"]'ENV_PLACE_SECRET_KEY='["⬛⬛⬛⬛⬛⬛_⬛⬛⬛⬛"]'ENV_HTTP_PROXY_HOST="127.0.0.1"ENV_HTTP_PROXY_PORT="8964"ENV_DRAW_X_START="848"ENV_DRAW_Y_START="130"ENV_R_START='["0"]'ENV_C_START='["0"]'
+</code></pre>
+<p>=============&rt;where python</p>
+<pre><code>C:\Users\--------\AppData\Local\Programs\Python\Python310\python.exeC:\Users\--------\AppData\Local\Microsoft\WindowsApps\python.exeC:\msys64\mingw64\bin\python.exe
+</code></pre>
+<p>=============&rt; python <a href="https://main.py">main.py</a></p>
+<pre><code>image size:  (25, 36)-------Thread #0-------Refreshing access token...Exception in thread Thread-1 (task):Traceback (most recent call last):  File "C:\Users\--------\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connection.py", line 174, in _new_conn    conn = connection.create_connection(  File "C:\Users\--------\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\util\connection.py", line 95, in create_connection    raise err  File "C:\Users\--------\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\util\connection.py", line 85, in create_connection    sock.connect(sa)TimeoutError: [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respondDuring handling of the above exception, another exception occurred:Traceback (most recent call last):  File "C:\Users\--------\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py", line 703, in urlopen    httplib_response = self._make_request(  File "C:\Users\--------\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py", line 386, in _make_request    self._validate_conn(conn)  File "C:\Users\--------\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py", line 1040, in _validate_conn    conn.connect()  File "C:\Users\--------\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connection.py", line 358, in connect    self.sock = conn = self._new_conn()  File "C:\Users\--------\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connection.py", line 179, in _new_conn    raise ConnectTimeoutError(urllib3.exceptions.ConnectTimeoutError: (&amp;lt;urllib3.connection.HTTPSConnection object at 0x000002959F853070&amp;rt;, 'Connection to ssl.reddit.com timed out. (connect timeout=None)')During handling of the above exception, another exception occurred:Traceback (most recent call last):  File "C:\Users\--------\AppData\Local\Programs\Python\Python310\lib\site-packages\requests\adapters.py", line 440, in send    resp = conn.urlopen(  File "C:\Users\--------\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py", line 785, in urlopen    retries = retries.increment(  File "C:\Users\--------\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\util\retry.py", line 592, in increment    raise MaxRetryError(_pool, url, error or ResponseError(cause))urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='ssl.reddit.com', port=443): Max retries exceeded with url: /api/v1/access_token (Caused by Connect
+</code></pre>
+        <div class="comment" id="t1_i38c48r">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/FwjedsfE">FwjedsfE</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tuj8ff/_/i38c48r">Apr 03 2022 15:14:31</a>
+    </p>
+    <div class="collapsible">
+        <p>我知道什么原因了，不知道为什么这里的 websockets 没法被这个http代理，我找了个 VPS 能跑的</p>
+        
+    </div>
+</div>
+    </div>
+</div>
+    </div>
+</div>
+    </div>
+</div>
+    </div>
+</div>
+
+<div class="comment" id="t1_i382d0u">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/FwjedsfE">FwjedsfE</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tuj8ff/_/i382d0u">Apr 03 2022 13:59:34</a>
+    </p>
+    <div class="collapsible">
+        <p>对了op的号已经被封了，别用大号测试</p>
+        
+    </div>
+</div>
+    </div>
+</div>
+    </div>
+</div>
+    </div>
+</div>
+
+<div class="comment" id="t1_i37wmj9">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/CesareBorgia-">CesareBorgia-</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tuj8ff/_/i37wmj9">Apr 03 2022 13:08:57</a>
+    </p>
+    <div class="collapsible">
+        <p>我觉得先把支文去除了</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_i37x8wb">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Professional-Bar3559">Professional-Bar3559</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tuj8ff/_/i37x8wb">Apr 03 2022 13:14:45</a>
+    </p>
+    <div class="collapsible">
+        <p><a href="https://pastebin.com/C4v4GdGB">https://pastebin.com/C4v4GdGB</a></p>
+<p>我发现现在Reddit似乎会给识别为脚本的操作返回时间戳-300,这样CD就会变成600s，加了两行代码来识别和绕过这个行为。</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_i38g4q5">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/FwjedsfE">FwjedsfE</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tuj8ff/_/i38g4q5">Apr 03 2022 15:43:30</a>
+    </p>
+    <div class="collapsible">
+        <p>关于 <code>.env</code> 文件设置坐标：
+小献忠左上角坐标为(848,130),那么如下变量就置为：
+<code>ENV_DRAW_X_START="848"
+ENV_DRAW_Y_START="130"</code>
+其他图像以此类推～～</p>
+<p>关于http代理，这里代理 websockets 有问题：
+注释代码第190，191行（加#），建议脚本跑在 VPS 上，或者🦇人的机器帮忙跑吧</p>
+<p>Dockerfile:
+```</p>
+<h1>set first stage</h1>
+<p>FROM python:3.9 AS builder
+COPY requirements.txt .</p>
+<h1>install dependencies to the local user directory (e.g. /root/.local)</h1>
+<p>RUN pip install --user -r requirements.txt</p>
+<h1>set the working directory in the container</h1>
+<p>FROM python:3.9-slim
+WORKDIR /app</p>
+<h1>copy the content of the local src directory to the working directory</h1>
+<p>COPY --from=builder /root/.local /root/.local
+COPY . .</p>
+<h1>update PATH environment variable</h1>
+<p>ENV PATH=/root/.local:$PATH</p>
+<h1>command to run on container start</h1>
+<p>CMD ["python", "-u", "main.py"]
+```</p>
+        <div class="comment" id="t1_i392clg">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Next-Victory5382">Next-Victory5382</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tuj8ff/_/i392clg">Apr 03 2022 18:15:54</a>
+    </p>
+    <div class="collapsible">
+        <p>小号怎么搞？有卖号的吗？</p>
+        <div class="comment" id="t1_i3acupx">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/FwjedsfE">FwjedsfE</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tuj8ff/_/i3acupx">Apr 03 2022 23:49:47</a>
+    </p>
+    <div class="collapsible">
+        <p>随便弄个邮箱，邮箱验证后冷却时间才会是5分钟</p>
+        
+    </div>
+</div>
+    </div>
+</div>
+    </div>
+</div>
+
+<div class="comment" id="t1_i3bn9x9">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Tall-Abbreviations16">Tall-Abbreviations16</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tuj8ff/_/i3bn9x9">Apr 04 2022 06:44:28</a>
+    </p>
+    <div class="collapsible">
+        <p>new error :</p>
+<p>hon3.8/threading.py", line 870, in run<br>
+self._target(*self._args, **self._kwargs)<br>
+  File "main.py", line 469, in task<br>
+access_tokens[credentials_index] = response_data["access_token"]<br>
+KeyError: 'access_token'</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

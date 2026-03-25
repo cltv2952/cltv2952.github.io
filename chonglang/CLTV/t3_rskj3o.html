@@ -1,0 +1,114 @@
+<html>
+<head>
+<title>無題</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_rskj3o">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/OrganizationSorry577">OrganizationSorry577</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/rskj3o">Dec 31 2021 03:43:11</a>
+    </p>
+    <strong>無題</strong>
+    <p><a href="https://i.redd.it/vuscg51mus881.jpg">https://i.redd.it/vuscg51mus881.jpg</a></p>
+</div>
+<div class="comment" id="t1_hqn12yt">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Old_Suspect2563">Old_Suspect2563</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/rskj3o/_/hqn12yt">Dec 31 2021 03:52:05</a>
+    </p>
+    <div class="collapsible">
+        <p>大健身2.0 ：大抗疫</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_hqnsj3r">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/HongDiChangMaoXiang">HongDiChangMaoXiang</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/rskj3o/_/hqnsj3r">Dec 31 2021 08:28:10</a>
+    </p>
+    <div class="collapsible">
+        <p>这下自上而下了</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_hqrd7z7">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/UkitaAkane">UkitaAkane</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/rskj3o/_/hqrd7z7">Jan 01 2022 02:24:17</a>
+    </p>
+    <div class="collapsible">
+        <p>《复刻活动》</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

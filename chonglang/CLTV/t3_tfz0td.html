@@ -1,0 +1,115 @@
+<html>
+<head>
+<title>chonglangTV视频贴保存教程</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_tfz0td">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/nomennonhabeo">nomennonhabeo</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tfz0td">Mar 17 2022 01:50:16</a>
+    </p>
+    <strong>chonglangTV视频贴保存教程</strong>
+    <p><p>用“以神之名”作为例子。</p>
+<p>进入<a href="https://camas.github.io/reddit-search">https://camas.github.io/reddit-search</a>，在subreddit一栏中输入chonglangtv，将search for的类型改为post，然后在search term中输入"以神之名"（使用英文半角引号以精确匹配），点击search。</p>
+<p>在结果中可以看到以v.redd.it开头的链接（https://v.redd.it/3dosz3as3xe71），这就是视频的链接，但是直接点进去会跳转到帖子中，结果就只能看到sub被封禁的消息。因此我们需要获取视频文件名，幸运的是，文件名是有规律的：在这个例子中，“以神之名”视频的文件链接是https://v.redd.it/3dosz3as3xe71/DASH_<em>.mp4，其中</em>代表视频的画质，可以为96（预览）、240、360、480、720、1080。注意有些视频可能没有高画质，可以先使用96画质验证reddit服务器中是否还存有该视频。对于有声音的视频，音频被独立存储，链接为https://v.redd.it/…/DASH_audio.mp4。</p>
+<p>因此，要保存“以神之名”的视频，我们只需要进入两个链接https://v.redd.it/3dosz3as3xe71/DASH_1080.mp4和https://v.redd.it/3dosz3as3xe71/DASH_audio.mp4分别得到视频和音频文件。之后可以使用ffmpeg等工具合并视频和音频。</p></p>
+</div>
+<div class="comment" id="t1_i0ytsk5">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/ziyouyizhi">ziyouyizhi</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tfz0td/_/i0ytsk5">Mar 17 2022 02:07:45</a>
+    </p>
+    <div class="collapsible">
+        <p>那就是说红迪不会清空被封sub的数据是吧，只屏蔽？</p>
+        <div class="comment" id="t1_i0yu67y">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/nomennonhabeo">nomennonhabeo</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tfz0td/_/i0yu67y">Mar 17 2022 02:10:41</a>
+    </p>
+    <div class="collapsible">
+        <p>图片和视频似乎不会，但保险起见还是最好保存到本地。</p>
+        
+    </div>
+</div>
+    </div>
+</div>
+
+<div class="comment" id="t1_i0z9o91">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/apidya2">apidya2</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tfz0td/_/i0z9o91">Mar 17 2022 04:18:02</a>
+    </p>
+    <div class="collapsible">
+        <p>好帖，收藏了</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

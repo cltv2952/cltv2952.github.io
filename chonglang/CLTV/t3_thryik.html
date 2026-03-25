@@ -1,0 +1,129 @@
+<html>
+<head>
+<title>盒来！</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_thryik">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/himrskinmi">himrskinmi</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/thryik">Mar 19 2022 09:54:49</a>
+    </p>
+    <strong>盒来！</strong>
+    <p><a href="https://www.youtube.com/shorts/GCcmasOxHEY">https://www.youtube.com/shorts/GCcmasOxHEY</a></p>
+</div>
+<div class="comment" id="t1_i19it03">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/himrskinmi">himrskinmi</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/thryik/_/i19it03">Mar 19 2022 09:55:24</a>
+    </p>
+    <div class="collapsible">
+        <p>看看主页还是个夹心糖捏</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_i19j2tk">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/chinobuta">chinobuta</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/thryik/_/i19j2tk">Mar 19 2022 09:59:29</a>
+    </p>
+    <div class="collapsible">
+        <p>千十人能不能老實一點？sub規範更新了，小心被超管刪號，還連累查理</p>
+        <div class="comment" id="t1_i19j6f3">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/himrskinmi">himrskinmi</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/thryik/_/i19j6f3">Mar 19 2022 10:00:57</a>
+    </p>
+    <div class="collapsible">
+        <p>呜呜呜，不敢，麻烦开好之后放频道</p>
+        <div class="comment" id="t1_i19jabc">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/chinobuta">chinobuta</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/thryik/_/i19jabc">Mar 19 2022 10:02:30</a>
+    </p>
+    <div class="collapsible">
+        <p>你仔細看看規範，不是在這裡發春就可以糊弄過去的，別連累sub</p>
+        
+    </div>
+</div>
+    </div>
+</div>
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

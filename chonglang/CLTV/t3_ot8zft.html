@@ -1,0 +1,59 @@
+<html>
+<head>
+<title>赞美人生</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_ot8zft">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/Jared_att">Jared_att</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/ot8zft">Jul 28 2021 12:34:01</a>
+    </p>
+    <strong>赞美人生</strong>
+    <p><p>赞美人生！人生啊，有苦有泪。造物主，我的主，我的上帝，他以他的子民的泪水和痛苦为快乐。他在作乐；但他同时又是怜悯的，他给予我空间，给予我希望。尽管这一切让我感到不受控制，让我刚到无力。但是在此刻，在得到他的仁慈。我只想赞美人生，赞美自然，赞美造物主。赞美世界。</p></p>
+</div>
+</body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

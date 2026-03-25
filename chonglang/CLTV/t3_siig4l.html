@@ -1,0 +1,76 @@
+<html>
+<head>
+<title>重回战争时期</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_siig4l">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/Plastic-Royal">Plastic-Royal</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/siig4l">Feb 02 2022 07:19:42</a>
+    </p>
+    <strong>重回战争时期</strong>
+    <p><p>某吧的吧务团队被下，可以重铸神吧荣光了</p></p>
+</div>
+<div class="comment" id="t1_hv8ybjf">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Plastic-Royal">Plastic-Royal</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/siig4l/_/hv8ybjf">Feb 02 2022 07:20:37</a>
+    </p>
+    <div class="collapsible">
+        <p>为让大伙多臊皮一会，就不告诉晶哥吧名了</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

@@ -1,0 +1,95 @@
+<html>
+<head>
+<title>来自大洋彼岸的小花</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_umn1ii">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/edke00">edke00</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/umn1ii">May 10 2022 16:45:03</a>
+    </p>
+    <strong>来自大洋彼岸的小花</strong>
+    <p><a href="https://www.reddit.com/gallery/umn1ii">https://www.reddit.com/gallery/umn1ii</a></p>
+</div>
+<div class="comment" id="t1_i82r5cu">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/usernotobserved">usernotobserved</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/umn1ii/_/i82r5cu">May 10 2022 17:34:03</a>
+    </p>
+    <div class="collapsible">
+        <p>恶不恶心</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_i82tim5">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/CesareBorgia-">CesareBorgia-</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/umn1ii/_/i82tim5">May 10 2022 17:50:08</a>
+    </p>
+    <div class="collapsible">
+        <p>chairman mao这长相确实是老太太脸</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

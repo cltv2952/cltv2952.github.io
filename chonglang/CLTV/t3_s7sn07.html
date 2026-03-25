@@ -1,0 +1,112 @@
+<html>
+<head>
+<title>老孙又触摸了是吧</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_s7sn07">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/lynxtrainer">lynxtrainer</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/s7sn07">Jan 19 2022 15:29:38</a>
+    </p>
+    <strong>老孙又触摸了是吧</strong>
+    <p><a href="https://i.redd.it/9w4hkdgzxnc81.png">https://i.redd.it/9w4hkdgzxnc81.png</a></p>
+</div>
+<div class="comment" id="t1_hte0gme">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/BearKickFrog">BearKickFrog</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/s7sn07/_/hte0gme">Jan 19 2022 23:50:08</a>
+    </p>
+    <div class="collapsible">
+        <p>哈哈</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_htelobs">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Mars_critic273">Mars_critic273</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/s7sn07/_/htelobs">Jan 20 2022 02:27:51</a>
+    </p>
+    <div class="collapsible">
+        <p>孙哥行，墙外冲浪多了受影响了</p>
+        <div class="comment" id="t1_htepo6y">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/lynxtrainer">lynxtrainer</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/s7sn07/_/htepo6y">Jan 20 2022 02:56:56</a>
+    </p>
+    <div class="collapsible">
+        <p>他b站播放量还没youtube多 估计没少冲浪</p>
+        
+    </div>
+</div>
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

@@ -1,0 +1,60 @@
+<html>
+<head>
+<title>支乎控评观察</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_tt47d9">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/UkitaAkane">UkitaAkane</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tt47d9">Mar 31 2022 16:55:25</a>
+    </p>
+    <strong>支乎控评观察</strong>
+    <p><p>大约5天前，知乎对我的推荐回答里突然开始充满了狱友类型的评论（这种看多了一眼就能看出来，狱友的低能文字不用两行就能分辨），屎里淘金实在是太吃力了。</p>
+<p>从昨晚开始，推荐又恢复了让我欢乐吃瓜加速冲塔的环境。这波控评看来是结束了。</p></p>
+</div>
+</body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

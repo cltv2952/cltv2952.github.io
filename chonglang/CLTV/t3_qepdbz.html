@@ -1,0 +1,114 @@
+<html>
+<head>
+<title>我怎么创建不了社区，又搞什么鬼</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_qepdbz">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/freedomshinabuta">freedomshinabuta</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/qepdbz">Oct 24 2021 10:15:05</a>
+    </p>
+    <strong>我怎么创建不了社区，又搞什么鬼</strong>
+    <p><a href="https://i.redd.it/mlkcnp7kidv71.jpg">https://i.redd.it/mlkcnp7kidv71.jpg</a></p>
+</div>
+<div class="comment" id="t1_hhuh65k">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/freedomshinabuta">freedomshinabuta</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/qepdbz/_/hhuh65k">Oct 24 2021 10:17:03</a>
+    </p>
+    <div class="collapsible">
+        <p>老嗨指导我一下</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_hhvj5iu">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Old_Suspect2563">Old_Suspect2563</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/qepdbz/_/hhvj5iu">Oct 24 2021 16:13:08</a>
+    </p>
+    <div class="collapsible">
+        <p>op是不是被ban了？</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_hhvyxgb">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/kumaba">kumaba</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/qepdbz/_/hhvyxgb">Oct 24 2021 17:59:02</a>
+    </p>
+    <div class="collapsible">
+        <p>Shadowban了</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

@@ -1,0 +1,76 @@
+<html>
+<head>
+<title>呃呃</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_urk8kk">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/AttorneyEquivalent75">AttorneyEquivalent75</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/urk8kk">May 17 2022 11:23:46</a>
+    </p>
+    <strong>呃呃</strong>
+    <p><p>原谅人家，到国外留学交不到朋友，也融不进洋大人的圈子，整天摁刷手机在红迪中文区幻想当官找存在感。</p></p>
+</div>
+<div class="comment" id="t1_i8xmva0">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/rebelwall">rebelwall</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/urk8kk/_/i8xmva0">May 17 2022 11:33:35</a>
+    </p>
+    <div class="collapsible">
+        <p>没办法了，，，可以尝试去索人牛仔，，，谢</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

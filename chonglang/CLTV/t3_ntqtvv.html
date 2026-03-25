@@ -1,0 +1,112 @@
+<html>
+<head>
+<title>哈哈哈</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_ntqtvv">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/somethih4nothing">somethih4nothing</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/ntqtvv">Jun 06 2021 17:28:00</a>
+    </p>
+    <strong>哈哈哈</strong>
+    <p><a href="https://www.youtube.com/watch?v=m5o6vP0Obdg">https://www.youtube.com/watch?v=m5o6vP0Obdg</a></p>
+</div>
+<div class="comment" id="t1_h0tf11v">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        [deleted]
+        |
+        <span class="score">2 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/ntqtvv/_/h0tf11v">Jun 06 2021 17:49:33</a>
+    </p>
+    <div class="collapsible">
+        <p>[deleted]</p>
+        <div class="comment" id="t1_h0tlmze">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/EricXing">EricXing</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/ntqtvv/_/h0tlmze">Jun 06 2021 18:40:56</a>
+    </p>
+    <div class="collapsible">
+        <p>老了嘛</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_h0uvbqr">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Narsil_">Narsil_</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/ntqtvv/_/h0uvbqr">Jun 07 2021 00:53:11</a>
+    </p>
+    <div class="collapsible">
+        <p>啥时候Linus能长得像中年人</p>
+        
+    </div>
+</div>
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

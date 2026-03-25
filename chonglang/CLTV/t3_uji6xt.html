@@ -1,0 +1,95 @@
+<html>
+<head>
+<title>同事：我百度一下这是什么意思</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_uji6xt">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/AdEastern3059">AdEastern3059</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/uji6xt">May 06 2022 07:41:31</a>
+    </p>
+    <strong>同事：我百度一下这是什么意思</strong>
+    <p><a href="https://i.redd.it/no50pu608tx81.jpg">https://i.redd.it/no50pu608tx81.jpg</a></p>
+</div>
+<div class="comment" id="t1_i7j7cfv">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/xijinping_xi">xijinping_xi</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/uji6xt/_/i7j7cfv">May 06 2022 09:05:49</a>
+    </p>
+    <div class="collapsible">
+        <p>收网</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_i7jd7as">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Accomplished-Fly-506">Accomplished-Fly-506</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/uji6xt/_/i7jd7as">May 06 2022 10:28:40</a>
+    </p>
+    <div class="collapsible">
+        <p>你好，我姓王</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

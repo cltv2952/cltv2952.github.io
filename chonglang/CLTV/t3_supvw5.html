@@ -1,0 +1,112 @@
+<html>
+<head>
+<title>欢乐表</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_supvw5">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/ParticularIll9062">ParticularIll9062</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/supvw5">Feb 17 2022 14:18:56</a>
+    </p>
+    <strong>欢乐表</strong>
+    <p><a href="https://i.redd.it/a5ba08zsjei81.jpg">https://i.redd.it/a5ba08zsjei81.jpg</a></p>
+</div>
+<div class="comment" id="t1_hxbw5in">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Mighti-Guanxi">Mighti-Guanxi</a>
+        |
+        <span class="score">6 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/supvw5/_/hxbw5in">Feb 17 2022 17:09:32</a>
+    </p>
+    <div class="collapsible">
+        <p>one, two, three.......one-hundred-thirty-two........thirteen-thousand-two-hundred</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_hxed9g3">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/spidercut8964">spidercut8964</a>
+        |
+        <span class="score">3 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/supvw5/_/hxed9g3">Feb 18 2022 03:05:58</a>
+    </p>
+    <div class="collapsible">
+        <p>一眼假，本穷蛆测出来10000多词汇量，考研5500词都没背完。</p>
+        <div class="comment" id="t1_hxf3tyo">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/ParticularIll9062">ParticularIll9062</a>
+        |
+        <span class="score">2 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/supvw5/_/hxf3tyo">Feb 18 2022 07:17:06</a>
+    </p>
+    <div class="collapsible">
+        <p>扇贝的测试大概夸大了30%左右，根特大学或者牛津的在线测试相对准确一些</p>
+        
+    </div>
+</div>
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

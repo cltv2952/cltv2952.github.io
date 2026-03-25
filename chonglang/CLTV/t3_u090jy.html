@@ -1,0 +1,352 @@
+<html>
+<head>
+<title>紙飛機情報系統源代碼以及技術分析</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_u090jy">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/angelinaaa_dding">angelinaaa_dding</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/u090jy">Apr 10 2022 03:22:14</a>
+    </p>
+    <strong>紙飛機情報系統源代碼以及技術分析</strong>
+    <p><p>As a current law enforcement agency officer, I will provide you with an overview of the surveillance program in the People's Republic of China. Also, to ensure the security of personal information, articles are sent automatically using disposable email addresses.</p>
+<p>In addition, to reduce the probability of grammatical conventions being detected, random alternative terms are used throughout the text, such as這本書寫的很好：
+這幅畫好美：
+我忙到晝夜顛倒了：
+Preface
+All aspects of human intelligence (HUMINT) operations, from targeting to recruitment and covert processing to intelligence collection and processing, have been profoundly affected by technological developments, particularly in cyberspace. Rapid innovation in this area has both enabled and hindered intelligence collection through human resources, and in some ways has even altered the established process of intelligence acquisition by human agents. While John Le Carre's Cold War warrior George Smiley may not be familiar with some aspects of 21st century HUMINT technology, he would certainly insist that personal interaction remains at the heart of HUMINT and that no amount of cyber interaction can replace the intimate bond between an intelligence officer and his or her agents.</p>
+<p>Despite rapid advances in other types of intelligence collection, including signals intelligence, imagery intelligence, and electronic intelligence, human intelligence operations will remain a core component of intelligence collection for the foreseeable future and will be complemented, not replaced, by cyber developments. How much HUMINT can actually achieve (or defeat) in cyberspace is a challenging question, given the necessity and eternity of human interaction. However, one thing is certain: "Technology drives espionage" (Campbell, 2013: 62).
+[Abstract].
+This paper explores five main lines of inquiry into the impact of digital and web-based developments in human intelligence (HUMINT).
+First, this chapter will consider whether HUMINT is still needed in an era of unprecedented open information, which has led to Open Source Intelligence (OSINT) and accessible Big Data.
+Second, if HUMINT operations remain a core function of intelligence, this chapter will further explore offensive human recruitment targets resulting from social media exploitation and cyber espionage.
+Third, the flip side of this targeted boon is the increased counterintelligence challenges facing any intelligence or security agency, from phishing to cyber hacking, which have infiltrated and exposed a wealth of sensitive information about ongoing intelligence capabilities and operations, as well as the personally identifiable information (PII) of those employees of the U.S. intelligence community.
+Fourth, advances in technology and networked communications have raised concerns about the challenges of working undercover as an intelligence officer. In particular, this chapter will consider the impact of data mining and the proliferation of biometric data collected and often shared internationally.
+Finally, perhaps the most underestimated development is the role that massive intelligence leaks play in recruiting new human resources (also known as "agents").
+The conclusion is that cyber capabilities and considerations will not fundamentally change the nature of HUMINT operations, but they will force changes in the process by which HUMINT operations are conducted. While HUMINT operations will have to evolve, intelligence officers should take full advantage of the potential of technology-enabled HUMINT operations while recognizing and mitigating the myriad of attendant challenges.</p>
+<p>I. Human intelligence is about to decrease?
+There is a popular and pernicious myth that after the September 2, 2001, attacks by al-Qaeda, the CIA admitted that its traditional espionage techniques would not work against radical Islamic terrorist organizations. Moreover, because CIA operations officers (or "case officers") do not infiltrate organizations like al Qaeda under traditional cover, the CIA needs to reinvent itself for the coming struggle. In any case, groups like al Qaeda are cellular, based on a high degree of trust and personal verification. The result of this analysis is that human intelligence (HUMINT) methods are unlikely to be effective against such groups under any circumstances, and technology will replace traditional methods. This is allegedly happening as the NSA's technological capabilities explode, resulting in an over-reliance on Signals Intelligence (SIGINT) to provide early warning and actionable intelligence.</p>
+<p>According to Charles Cummings, "After 9/11, the Central Intelligence Agency (CIA) effectively abandoned Human Intelligence (HUMINT) and increasingly relied on comprehensive telephone and email, chat room conversations, bank records, and travel plans electronic surveillance" (Cummings, 2015). Cummings argues that signals intelligence (SIGINT), which is the responsibility of the National Security Agency (NSA) rather than the Central Intelligence Agency (CIA), has, as Cummings seems to imply, overtaken human intelligence (HUMINT) as the primary type of collection for counterterrorism. This exposes a profound misunderstanding of the Central Intelligence Agency's (CIA) role and efforts in HumanIntelligence (HUMINT) and demonstrates a misunderstanding of the process by the general public, especially in the digital age.</p>
+<p>Not only are human intelligence (HUMINT) and signals intelligence (SIGINT) not mutually exclusive, most post-9/II counterterrorism (and other) operational successes have depended on the synergistic relationship between the various "INTs. But if human intelligence (HUMINT) is not overshadowed by signals intelligence (SIGINT), will it be replaced by open source intelligence (osint) and the alluring promise of "big data"? One CIA official noted that 'mouse clicks and online dictionaries are now often more useful for intelligence gathering than fashionable cloaks and shiny daggers' (Mercado, 2004: 45). Does this relegate human intelligence (HUMINT) specialists to the status of relics, or street craft anachronisms?</p>
+<p>As the amount of information available online increases each year, open source intelligence is gaining traction, and some authors believe that open source intelligence collection and analysis (including "big data") will overcome covert sources in the near future. According to senior U.S. intelligence official John Gannon, "Open source has gone far beyond [freezing] and contains much of the cake itself. It has become indispensable for producing authoritative analysis" (Gannon, 2001: 67). Moreover, as one CIA official wrote, 'intelligence gathering today is sometimes done not by meeting agents in dark foreign alleys, but by surfing the Internet under the fluorescent lights of office cubicles' (Mercado, 2004: 45). These officials seem to imply that the days of Human Intelligence (HUMINT) are over, perhaps considered quaint, and that stealing an adversary's plans and intentions can be done almost exclusively through fiber optic cables. While there is no denying that open source intelligence is a valuable tool, it cannot replace traditional human intelligence (HUMINT) in the formative stages of gathering national security information, i.e., at some point in its emergence on the Internet.</p>
+<p>Whether information is worth stealing is a constant debate as governments or other entities attempt to conceal it. For example, the Soviet KGB historically placed a higher level of trust in classified information gathered through human intelligence (HUMINT) means, even though open source information made publicly available was more reliable. However, information that is believed to be secret is not necessarily more valuable than information collected by human agents. Still, not all intelligence officials agree that non-secret intelligence is intelligence, but the pendulum appears to be swinging toward open source intelligence, especially as analytical tools improve and budget watchers see real value. Indeed, open-source intelligence is attractive because it is politically acceptable to an adversary (no foreign official is subordinate to or betraying his country), there is little risk of a diplomatic incident, and it is relatively cheap.</p>
+<p>Social media intelligence (SOCMINT) is a subcategory of open source intelligence that may yield valuable insights into a nation's political and cultural dynamics, especially if a nation is "hard targeted" or closed. SOCMINT is considered a key type of intelligence collection, along with signals intelligence (SIGINT) and imagery intelligence (IMINT), among others. (Omand et ai, 2012: 1-23). But can SOCMINT be the first among equals?</p>
+<p>Technical sources provide a great deal of intelligence, but human intelligence (HUMINT) remains critical to truly understanding the capabilities and intentions of adversaries. Properly vetted and systematically corroborated open source information (including social media) can tell intelligence analysts or defense planners what is currently happening, but cannot reveal much about the plans and intentions of foreign adversaries, especially the few senior leaders who call the tune in most hostile regimes. This remains a major area of human intelligence. In fact, the vast amount of intelligence gathered through skilled Internet browsing can help human intelligence collectors focus on the so-called "unknown unknowns" and ensure that these intelligence officers are utilized at the highest priority. During the Cold War, the FBI, Soviet newspapers and other "gray literature" needed to be collected by CIA officers because they were not available by other means. With digital technology freeing up such collection duties, today's operations officers can search for higher priority quarries. And, as explained below, they can use social media intelligence (SOCMINT) and open source intelligence as force multipliers in their periphery.</p>
+<p>Second, biometric identification: a double-edged sword
+Since the post-9/II invasions of Iraq and Afghanistan, military intelligence in particular has relied heavily on biometrics to identify hostile actors in guerrilla or counterinsurgency environments. Even small units routinely perform fingerprint or retinal scans on suspected insurgents for uploading to large biometric databases (Clark, 2014). Advances in high-speed data transmission have allowed local intelligence to be put into action in unimaginable ways. This interconnected technology on the battlefield and improved real-time situational awareness has been revolutionary for military personnel, but networked computer systems carrying vast amounts of information can also pose a threat to intelligence officials. Former CIA Director John Brennan noted that "digital footprints may allow us to track a suspected terrorist, but they may also make our officers vulnerable" (Lyngaas, 2015). Brennan may have been referring to the challenges posed by advanced biometrics, which can make developing and maintaining cover identities difficult.</p>
+<p>Maintaining and "defending" cover is always a key requirement for any operational intelligence officer. Intelligence officers travel internationally for many reasons, where the chief is meeting with their covert agents. The use of aliases or disguises can increase operational security. However, technology and the Internet present a direct challenge to this in two major ways.
+First, biometrics, particularly for use at international borders, have made alias travel more challenging. Restricting the use of a single alias to one country has already reduced the use of alias travel, and as countries share more biometric information, such as that of the European Union, a single identity can now only be used in a group of countries. If an intelligence officer wishes to travel as an individual, for example, on vacation in Europe, he or she must think carefully and attempt to balance the professional and personal. The most common forms of biometric tracking are retinal scans and fingerprints, but successive improvements in facial recognition software can be applied precisely beyond border checkpoints, for example. While it may be technically possible to thwart these measures, a more prudent course of action might be to accept them as the new normal from a joint investigative perspective and to plan operations accordingly.</p>
+<p>It is difficult to plan around the second goal of digital tracking, which is the popularity of social media. As mentioned earlier, social media intelligence (SOCMINT) can be a powerful tool for gathering intelligence or verifying sources, but it must also be considered from a counterintelligence perspective. Over one billion people now have Facebook (or similar) accounts, not to mention professional profiles on Linkedln and other social networking sites. In the words of director Brennan, these can also be described as "digital footprints" - footprints that both validate personas and withstand a certain level of scrutiny by curious acquaintances or security services. Thanks to the proliferation of social media, certainly during the Cold War, an intelligence officer could only support (or "cover") his resume in a superficial way. For example, he could travel dressed as a businessman looking for contracts or clients. He would need some business cards, maybe some company letterhead, a phone number, and some sort of specious resume lore to tie it all together.</p>
+<p>Today, even if the biometric problem can be solved, this apparent businessman will need a LinkedIn profile, a web presence, and other digital lifestyles to pursue business. If pressed, he may have to describe his office building, his parking lot, his favorite lunch spot, or the route he takes to and from work each day, all of which can be easily viewed in Google Earth or similar business mapping software. Even if investigators believe his business is legitimate, how can he explain the lack of a personal social media presence? And, if he does have a businessman, how far back can it go? A digitally connected world and the necessary footprint of cyberspace, the ease of identification, and the higher level of scrutiny that pseudonymous travel must endure have called into question the effectiveness, cost-effectiveness, timeliness, and defensibility of this intelligence exchange tool well into the 21st century. Given the continued need for operational travel (and at least the occasional need to meet with agents in person), new methods of communication must be developed that allow for both the use of technology for defensive purposes, such as being subject to scrutiny, and the use of cyber power for offensive missions.
+Third, network counterintelligence: phishing, hacking and social media exploitation
+The classic concepts that have influenced HUMINT in the cyber age range from how agents are recruited to how they are processed, including communication procedures, meeting arrangements, and even payment for services. Human Intelligence (HUMINT) informant recruitment has followed a common pattern, often referred to as the "Human Intelligence (HUMINT) recruitment cycle. While the terminology used may vary, the prerequisites for any recruitment of agents include an identification, assessment, and development phase prior to formal recruitment. Just a generation ago, an intelligence officer will spend a significant amount of time attempting to meet with as many contacts as possible, possibly attending various international conferences or similar functions. He would then sift through these contacts to determine who worked in which agency or department and in what capacity. Once this has been determined, the intelligence officer will seek to determine more precisely which contacts have access to non-public information requested by the intelligence community or political leadership. This process, known as "location and access," is very time-consuming.</p>
+<p>However, savvy spy and intelligence agencies can leverage the power of social media and online research tools to save significant time and effort by reducing the time required to "search" for contacts and further reducing the screening required to determine their "location and access. This has been made possible by two key web events. This has been made possible by two key online events: first, the use of social media to understand what information people voluntarily disclose about themselves; and second, malicious hacking attacks. For example, through professional social networking sites such as Link (LinkedIn), people have disclosed a staggering amount of information, including their professional positions, detailed responsibilities for those positions, positions in companies, customer bases, dates of employment, military service, security clearance levels, and other information that might require weeks or even months of private meetings with non-STI officers to obtain. Combining information from professional sites such as LinkedIn with personal information provided by sites such as Facebook - again, voluntarily - could reveal a staggering amount of personal information, including personal circumstances such as marital status, travel history, dates of birth, names and dates of birth of children and siblings, and even candid comments about frustrations at work, conflicts with professional superiors, disagreements with national policies conflicts with professional superiors, disagreements with national policies, disappointment with election results, etc.</p>
+<p>Even if a person wishes to stay off social media and not volunteer information, this is no longer a dead letter due to a second key cyber consideration: the age of sustained (and often successful) cyberattacks. While economic espionage and organized crime make up the bulk of hacking activity, cyber intrusions like the one at Anselm Health Insurance will reveal vast amounts of sensitive personal data that may include one's own medical history and, perhaps more importantly, that of family members (Reuters, 2015). Even more alarming is the disruption of the U.S. government system, such as the Office of Personnel Management (OPM) breach in June 2015, which exposed vast amounts of personal information that would have saved any intelligence community countless hours of searching for the right way to recruit the right people at the right time, at the right agency.</p>
+<p>It is no exaggeration to say that the two cyber giants, social media and malicious hackers, have revolutionized the way intelligence services find, locate, assess and vet quarries. During the Cold War, intelligence agencies were happy to receive an internal phone book listing individuals and the departments or directories in which they worked. While the internal employee directory was not a highly classified document, it was a basic building block for mapping adversaries, even though knowing who was on their team was a starting point. Therefore, even this rather low level of information is protected. Today, there is no need to steal internal phone books. Many employees of intelligence and security agencies have social media presences and publicly advertise their affiliations (although most are accountable). This seemingly innocuous information may be part of a carefully woven targeting mosaic by hostile intelligence agencies. As this counterintelligence threat grew, it wasn't long before the government developed training and awareness programs for social media. Currently, the U.S. Department of Defense has at least five different such programs (U.S. Department of Defense, 2015). Similarly, in 2011, the UK Ministry of Defense launched the "Think Before You Share" campaign for service members and MoD civilians active on social media sites. The director of strategic communications for the UK Defense Staff reminded his staff to "be aware of the risks that sharing too much information can pose" and warned that "you don't always know who else is watching in cyberspace" (UK Ministry of Defense, 2011).</p>
+<p>Prior to the massive leaks and government hacks, intelligence officers and those with high-level clearance were encouraged to minimize or not develop social media at all. Some argue that this careful reduction of one's online presence will help maintain covert overlays and hinder some advances in biometrics. In fact, having a smaller digital footprint will make it more difficult for any adversary to challenge their cover and complicate any potential recruitment approach. This calculus is starting to gain traction due to the massive disruption of some government and private databases that store personally identifiable information as well as personally sensitive data.</p>
+<p>Minimizing social media presence can be considered a best practice, as hostile intelligence services will certainly use any publicly available information to portray their targets. For example, they will look for social media posts that may indicate disagreement with national political issues or foreign policy practices. This would be seen as a potential motive to betray one's government. In addition to looking for potential motives, the Internet will be searched for potential weaknesses. The target could be having financial problems or could it be a serious health problem that affects him or his family? Does the target have vices that could be exploited? Or she may suffer from a gambling or alcohol problem. Keeping these personal beliefs and issues out of social media is part of a strong counterintelligence posture. However, according to U.S. officials, the recent Office of Personnel Management (OPM) breach is highly likely to expose the underlying motivations and vulnerabilities of millions of current and former U.S. government employees, more than a million of whom were exposed to top secret information at some point in their careers.</p>
+<p>In fact, the stolen data included "Questionnairefbr National Security Positions" (Questionnaire fbr National Security Positions) (commonly referred to as SF-86), filled out by millions of U.S. federal employees seeking some sort of security clearance (Takala, 2015). The SF-86 is over one hundred pages long and lists personal finances, assets, personally identifiable information, passport information, including dates of travel to foreign countries, and an exhaustive list of lodging addresses, employers, friends, and family. Perhaps most alarmingly, the Office of Personnel Management (OPM) hack also gave the perpetrator access to the background investigator's notes during the security clearance investigation. These notes would likely contain comments and concerns from the investigating officer about the suitability of the subject of the investigation for access to classified information. In hostile hands, these notes, along with the SF-86 form itself, could provide vulnerable U.S. government employees with a blueprint for foreign intelligence methods. As one author comments, 'U.S. national security is in a serious bind, perhaps the worst in history.' The same author notes that 'the Office of Personnel Management (OPM) breach unleashed what may be the most complete national government employee extortion kit ever' (Gewirtz, 2015).</p>
+<p>In addition, the cyber age has changed not only the assessment process, but also some of the proxy processing techniques, including the speed at which case officers can receive sensitive information and the enhanced security of relationships. The network age has enabled the secure and rapid flow of data around the world, even in other "closed" countries. In addition, rapid advances in encryption technology now protect data in ways previously thought impossible, including developments related to The Onion Router (TOR) and other "dark sites. As applied to proxy communications, secure links with real-time connections are nothing less than a communication revolution.</p>
+<p>For example, during the Cold War, the CIA and its partner, the British SIS, had high-level sources within Soviet military intelligence (GRU.) Colonel Penkovsky knew in advance that the Berlin Wall would be erected in August 1961, but he was in Moscow at the time, and his men were unable to meet with him in person to ask for this information. In the Internet age, Penkovsky may have been granted some sort of secure communications system to alert his handlers of the impending construction. Had Penkovsky been able to warn the Kennedy administration in advance about the construction of the wall, the historical outcome might have been different. In fact, the Cuban missile crisis was peacefully resolved thanks to Pankowski's timely intelligence. Throughout history, meeting recruited agents has almost always been the most dangerous and risky part of human intelligence operations. Indeed, the very reason why intelligence street trading techniques were developed was to make individual meetings as safe as possible. Historically, the deadly and serious cat-and-mouse game between intelligence agents and adversarial security services has been incorporated into technology development as soon as possible. Cleverly, the history of exchange operations reads like the history of innovation, and the side that has successfully employed the latest technology has often won that round.</p>
+<p>IV. Personal or exclusive network relationship?
+While it may have a rather glamorous or sensational reputation, many aspects of espionage have a great deal in common with its more prosaic cousin, dating. In both cases, technology (for those who use themselves) allows people to meet, think about what they have in common, and get to know each other. But it's hard to imagine that online dating will turn into a purely online or "virtual" marriage. At some point, participants will meet face-to-face. Likewise, even if social media or cyberspace could bridge the gap between intelligence agencies and their agents, they will meet at some point.</p>
+<p>Despite the advantages of technology, there is no substitute for the personal interaction between case officers and their agents. Any caseworker
+Officers want to more fully assess an agent's suitability by meeting his or her "gut" instincts in person. The case officer wants to hear in person why his agent decided to risk working for the intelligence community. Even if the answer is provided through computer messages, the case officer wants to see his agent's eyes as he explains his motivation. Can an informant maintain eye contact? What if he kept looking away? Can he sound sincere? Can he summarize the information that has been provided? What if the details don't match what is provided by electronic means? What if he can't personally reiterate his motives for spying? It could be that the agent is hopelessly shy, or has a bad memory. Or, it may indicate a looming counterintelligence problem, such as the fact that he may be under the control of his service, or that he may not be the person behind the keyboard feeding messages to the case officer. Just as online interest in love sounds too good to be true, a hostile intelligence agency will have a hard time personally leading a seasoned case officer down the path of escalation. If the operations officer succumbs to the convenience of a purely clandestine online relationship, he or she will lose a valuable opportunity to apply human intuition and emotional intelligence (sometimes called "soft skills") to the case.</p>
+<p>Even if there is no disconnect between the "virtual" and actual personas, the need for interpersonal contact replaces the review and evaluation phase of HUMINT. A great deal of interpersonal communication occurs through nonverbal means, and part of HUMINT is the unspoken communication of things like emotions and body language. It is often assumed that the most successful case officers are good at manipulation, but this time the skills of good listening and empathy are underestimated. This is why the most talented case officers have a high level of emotional intelligence. A touch on the arm, or a glance in the eye, an act of calm kindness, a timely and thoughtful gift, and some reassuring words of encouragement are all necessary parts of managing a human agent. Any informant needs guidance and assignments, and this can be done digitally. However, if the case officer and the agent are connected only by fiber optic line or satellite uplink, the case officer may not be able to discern what his or her agent is thinking or feeling. It is difficult to discern paranoia and tone in e-mail, yet these are critical insights for an agent who may be desperate or rocking the boat in the midst of dual life stressors. Many agents will at some point face a personal crisis or perhaps distracting family issues, or have a security scare. In such cases, the case officer becomes more than just the person gathering intelligence; he becomes the friend to confide in, or the rock when things get tough. So, while running an informant solely through a computer or digital interface is not the way to motivate, access, mentor, and maintain a productive human informant from both an efficiency and security standpoint.
+V. Highly credible internal leaks jeopardize future human intelligence</p>
+<p>Perhaps the greatest hidden cost to the future of human intelligence (HUMINT) collection of large-scale intelligence disclosures is the crisis of confidence in the minds of those Western governments most desperately want to recruit. Recruiting human intelligence (HUMINT) resources is already a daunting task, made more difficult by massive leaks. A representative of an enemy government, a rogue state, or a member of a terrorist network who can reasonably ensure his security may want to cooperate with the intelligence community for a variety of reasons. If he is considering cooperation, he will look for a discreet professional official to provide his information. He may study the officials of his desired agency over time in order to decide on a life-changing decision. Indeed, any lapse by the case officer, such as a reckless or hasty means of informant contact, may well cost the life of the foreign informant and may even jeopardize the well-being of his family in his home country. This is serious work, and the potential foreign agent will carefully weigh the risks and benefits of a clandestine relationship with the beneficiary government. The potential agent must be confident that his case officer can guarantee his safety, and, of course, those guarantees must be credible.</p>
+<p>Thanks to the actions of Edward Snowden and Chelsea (Bradley) Manning, this challenge may currently plague only U.S. intelligence, but the problem affects other countries as well. First, it directly affects allies who rely heavily on the American people, who are often contacted through liaison channels. In addition, it may affect other intelligence agencies that have not suffered catastrophic intelligence leaks to date, but are wrong to assume that large-scale leaks can only occur in the United States. For example, in February 2015, hundreds of intelligence cables belonging to multiple South African intelligence and security agencies were leaked to the media (Smith, 2015). A South African government spokesperson called the massive leak "deeply embarrassing," but embarrassment is only the tip of the iceberg in terms of the problems in the South African service industry. More problematic is the chilling effect this could have on future human intelligence (HUMINT) recruitment. The massive leak and its attendant security confidence crisis is now the primary reason that potential HUMINT sources may choose to avoid spying on behalf of any foreign intelligence service.</p>
+<p>Recruiting foreign sources may require a number of real-world performance. For example, because his placement and contact may be enabled by social media intelligence (SOCMINT) and open source intelligence, approached by a CIA case officer or FBI special agent, his motivation and personality are assessed and potential sources may be sought, perhaps enlisted for military work (on motivation and recruitment, see Burkett, 2013: 7-17). He may walk into an embassy or consulate abroad and volunteer his services. Perhaps he needs some convincing evidence that the risk is worth the reward; in any case, the risk will be minimized through confidential interaction with trained professionals.</p>
+<p>But how do intelligence services continue to attract those who need information for decision makers and defense planners? Human agents have a calculated risk that includes money, ideology, ego, revenge, or a combination of these. In all cases, however, potential sources must be assured that silence spoken in secret will not jeopardize the next batch of leaked information. The consequences for diplomats, military officers, security personnel of hostile regimes, or terrorist networks would be swift and severe. Given such guaranteed penalties, it is understandable that potential foreign agents might decide not to enter an embassy, seek representation, or accept a follow-up meeting with a friendly foreign interlocutor. Indeed, a curious correlation may be that those who face the most severe penalties, if exposed, are likely to have the information most desired by decision makers.</p>
+<p>Diplomats may have more trouble engaging with foreign interlocutors in the future, and one can imagine why. The diplomat may meet privately and may say something compelling and undiplomatic in order to bypass public posturing and advance an issue of bilateral concern. It is the diplomat's job to honestly relate the information provided by the interlocutor to his capital, and he will naturally include the interlocutor's name and position as well as the interlocutor's unvarnished remarks.</p>
+<p>In the age of mass leaks, foreign government officials may think twice about sharing candid thoughts with each other if they think they will be speaking out tomorrow in The Guardian, AI Jazeera or WikiLeaks (WikiLeaks). For example, according to British media reports, WikiLeaks cables show that Helmut Metzner, a member of Germany's Free Democratic Party (FDP), provided candid information about the 2009 German government coalition negotiations to the U.S. Embassy in Berlin. metzner, for his efforts to keep U.S. officials informed about political developments in Germany, was removed from his position as the party's senior chief of staff. Perhaps in light of the Metzner case, Patrick Kennedy, former U.S. Under Secretary of State for Management, described Chelsea Manning's disclosure as having a "chilling effect" on foreign officials ( Gosztola, 2013). If diplomatic practice requires trust and discretion, intelligence officers have a much more difficult task.</p>
+<p>The real issue in Manning's case, beyond the damage caused by the information he revealed, was the potential value to decision makers of intelligence that would not have been gathered. A discreet conversation with a potential collaborator would not have occurred, and that is the intelligence price to be paid. To be sure, Manning did not have access to CIA-operated cable communications (internal communications of the National Clandestine Service, see Hosenball, 2009), but if she had had that access, he likely would have provided it to WikiLeaks (Shane and Lheren, 2010); and the cost in human life would have been much higher, so the global, and especially U.S., human intelligence (HUMINT) sources creates a crisis of confidence.</p>
+<p>The CIA places great importance on protecting the identity of sources (see Kimball, 2007: 63-67), even in a "need-to-share" culture, and Manning did not have access to this information. But does a potential HUMINT agent know exactly what types of cable communications a low-level Army analyst may or may not have access to? Or more precisely, would he assess that someone like Manning could know his identity? How would he calculate the odds of his name being buried in 700,000 classified U.S. government cables? Or what about Snowden's treasure trove of an estimated 1.5+ million documents? (Kloc, 2014). A dedicated counterintelligence agency would certainly have invested time and effort in combing through tens of thousands of cables to find and connect the dots, thus exposing a variety of sources, as clearly demonstrated by the painstaking reconstruction of cables from the U.S. Embassy in Tehran by students of the Iranian Revolution in 1979. Former Secretary of Defense Robert Gates concluded, "I spent most of my life in the intelligence community, where the sacred principle is to protect your sources. It seems to me that because of this massive breach of security, we have a lot of repair work to do in terms of reassuring people and rebuilding trust, because they obviously feel that people are at risk" (Mick, 2010).</p>
+<p>The next Oleg Pankovsky to become a CIA volunteer will have to be even braver than the last one. He will have to face a time when it seems doubtful that the United States will be able to keep secrecy on the front pages of the major media and the Internet. Indeed, the next Pankovsky may wish to volunteer his services, but may be silent lest his identity (or information traceable to his revealed sources) be included in classified information in the United States, South Africa or other countries. To ensure their reputation in the digital age, intelligence agencies must assure their official liaison partners and their confidential sources that they can continue to protect sensitive information. Prior to the cyber age, mass disclosure of classified information was never part of the risk calculus for potential sources of human intelligence (HUMINT). Of course, it is now.
+VI. New dimensions, same skills
+Abroad, in the digital age, will technology collection types such as signals intelligence (SIGINT), electronic intelligence (ELINT), open source intelligence, or social media intelligence (SOCMINT) replace human intelligence (HUMINT)? Is it true that cyber operations will replace traditional military operations and that digital or cyber capabilities will replace human intelligence (HUMINT). It is true that technological innovation will add new capabilities and new challenges to human intelligence (HUMINT) operations. It will further enable certain types of operations and cause a reassessment of the need or wisdom of other human intelligence (HUMINT) operations. Challenges such as rampant biometrics and data mining need to be addressed, and even curious people with Internet connections and search engines can easily and seriously challenge the cover of operations officers.
+In addition, social media will provide counterintelligence issues and active intelligence opportunities for intelligence and security agencies. Despite the extraordinary capabilities of cyber encryption and dark networks, cyberspace is unlikely to be the only world where agents meet with their processing officers. In addition, the challenges of hacking, phishing, and mass leaks have the potential to disrupt ongoing intelligence operations and impede future ones. For these individuals, there are no easy solutions, but certainly any solution will involve more than just the Intelligence Community (IC) - these are domestic and international problems that require as much innovation and creativity as the technology that can use them. In the cyber age, Human Intelligence (HUMINT) will become more complex, and case officers, their supervisors, and their political gurus will need to understand the important role of technology in their operations, the creative and persistent counterintelligence threat, and how intelligence collection is evolving faster than ever.</p></p>
+</div>
+<div class="comment" id="t1_i44i5jk">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/KevinKack">KevinKack</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/u090jy/_/i44i5jk">Apr 10 2022 04:26:46</a>
+    </p>
+    <div class="collapsible">
+        <p>太好了收藏了</p>
+        <div class="comment" id="t1_i44pvrg">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/angelinaaa_dding">angelinaaa_dding</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/u090jy/_/i44pvrg">Apr 10 2022 05:40:41</a>
+    </p>
+    <div class="collapsible">
+        <p>沒必要</p>
+        <div class="comment" id="t1_i44syc8">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/KevinKack">KevinKack</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/u090jy/_/i44syc8">Apr 10 2022 06:13:02</a>
+    </p>
+    <div class="collapsible">
+        <p>你是干什么的，能破坏CCP监视系统吗</p>
+        <div class="comment" id="t1_i453v63">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Slengman302">Slengman302</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/u090jy/_/i453v63">Apr 10 2022 08:25:17</a>
+    </p>
+    <div class="collapsible">
+        <p>她是严格意义上来说把 ”视奸“ 作为正经工作的人 
+“federal intelligence analyst”
+https://libredd.it/r/CLTV/comments/u093np/%E7%B4%99%E9%A3%9B%E6%A9%9F%E6%83%85%E5%A0%B1%E7%B3%BB%E7%B5%B1/i44c28g/?context=3</p>
+        
+    </div>
+</div>
+    </div>
+</div>
+    </div>
+</div>
+    </div>
+</div>
+
+<div class="comment" id="t1_i44lmd5">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Ziyv">Ziyv</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/u090jy/_/i44lmd5">Apr 10 2022 04:58:32</a>
+    </p>
+    <div class="collapsible">
+        <p>太长不看</p>
+        <div class="comment" id="t1_i44punv">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/angelinaaa_dding">angelinaaa_dding</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/u090jy/_/i44punv">Apr 10 2022 05:40:22</a>
+    </p>
+    <div class="collapsible">
+        <p>原本寫完5w字，已經盡量濃縮到只有論文編號和結論了</p>
+        
+    </div>
+</div>
+    </div>
+</div>
+
+<div class="comment" id="t1_i44nl60">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/John_Best_14425">John_Best_14425</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/u090jy/_/i44nl60">Apr 10 2022 05:17:19</a>
+    </p>
+    <div class="collapsible">
+        <p>直接给个结论吧
+我们现在还能用啥 聊天软件？</p>
+        <div class="comment" id="t1_i44oxm6">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/angelinaaa_dding">angelinaaa_dding</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/u090jy/_/i44oxm6">Apr 10 2022 05:31:13</a>
+    </p>
+    <div class="collapsible">
+        <p>使用的時候增加三方插件，文字sha256加密。 圖片用LOGISTIC加密即可。 插件play store下載即可</p>
+        <div class="comment" id="t1_i44str2">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/John_Best_14425">John_Best_14425</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/u090jy/_/i44str2">Apr 10 2022 06:11:37</a>
+    </p>
+    <div class="collapsible">
+        <p>谢谢，人美心善的美国女网晶</p>
+        
+    </div>
+</div>
+    </div>
+</div>
+    </div>
+</div>
+
+<div class="comment" id="t1_i44u1m9">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/detective_of_Wall">detective_of_Wall</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/u090jy/_/i44u1m9">Apr 10 2022 06:25:05</a>
+    </p>
+    <div class="collapsible">
+        <p>谢谢你美丽国的漂亮女网警</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_i44wxrk">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/thunder-chinaborn">thunder-chinaborn</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/u090jy/_/i44wxrk">Apr 10 2022 06:57:34</a>
+    </p>
+    <div class="collapsible">
+        <p>happy to see that i'm not alone here.</p>
+<p>what this community desperately needs are 1) actionable sanitation practices 2) security recommendations 3) tools for reverse social eng, especially in Mainland CN. </p>
+<p>i believe your expertise can help us in deploying more effective psyops and counter intelligence activities, please remain active and be safe.</p>
+<p>happy surfing.</p>
+        <div class="comment" id="t1_i45qn03">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/angelinaaa_dding">angelinaaa_dding</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/u090jy/_/i45qn03">Apr 10 2022 13:04:33</a>
+    </p>
+    <div class="collapsible">
+        <p>I would consider making a manual</p>
+        
+    </div>
+</div>
+    </div>
+</div>
+
+<div class="comment" id="t1_i45chmh">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Available-Comfort362">Available-Comfort362</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/u090jy/_/i45chmh">Apr 10 2022 10:23:51</a>
+    </p>
+    <div class="collapsible">
+        <p>能说中文吗</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

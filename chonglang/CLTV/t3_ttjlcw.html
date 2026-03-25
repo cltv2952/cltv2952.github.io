@@ -1,0 +1,95 @@
+<html>
+<head>
+<title>蝴蝶</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_ttjlcw">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/ChungkuoRun">ChungkuoRun</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/ttjlcw">Apr 01 2022 05:53:06</a>
+    </p>
+    <strong>蝴蝶</strong>
+    <p><a href="https://i.redd.it/1f0ae8oqwuq81.jpg">https://i.redd.it/1f0ae8oqwuq81.jpg</a></p>
+</div>
+<div class="comment" id="t1_i2y8e6f">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Ryriot">Ryriot</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/ttjlcw/_/i2y8e6f">Apr 01 2022 05:57:00</a>
+    </p>
+    <div class="collapsible">
+        <p>拉尔瓦也有毛毛虫时代吗？</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_i2ytzo0">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/saki__">saki__</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/ttjlcw/_/i2ytzo0">Apr 01 2022 10:45:38</a>
+    </p>
+    <div class="collapsible">
+        <p>东方可以不玩，东方骚屄必须肏！</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

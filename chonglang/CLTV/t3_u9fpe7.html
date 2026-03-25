@@ -1,0 +1,95 @@
+<html>
+<head>
+<title>某一天：</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_u9fpe7">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/BeforeSaturday">BeforeSaturday</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/u9fpe7">Apr 22 2022 14:15:36</a>
+    </p>
+    <strong>某一天：</strong>
+    <p><a href="https://i.redd.it/0xhnaauj93v81.jpg">https://i.redd.it/0xhnaauj93v81.jpg</a></p>
+</div>
+<div class="comment" id="t1_i5raxfb">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Comprehensive_Law628">Comprehensive_Law628</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/u9fpe7/_/i5raxfb">Apr 22 2022 15:14:10</a>
+    </p>
+    <div class="collapsible">
+        <p>涉嫌恶意发微博，抹黑防疫</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_i5t50q4">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/philosophy9math">philosophy9math</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/u9fpe7/_/i5t50q4">Apr 22 2022 22:42:54</a>
+    </p>
+    <div class="collapsible">
+        <p>经典扑腾</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

@@ -1,0 +1,95 @@
+<html>
+<head>
+<title>集思广益</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_uwh1ey">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/Impressive_Sail2356">Impressive_Sail2356</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/uwh1ey">May 24 2022 02:52:45</a>
+    </p>
+    <strong>集思广益</strong>
+    <p></p>
+</div>
+<div class="comment" id="t1_i9rmhu4">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Sesamnese">Sesamnese</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/uwh1ey/_/i9rmhu4">May 24 2022 03:36:31</a>
+    </p>
+    <div class="collapsible">
+        <p>废物，已经有集美在做了，都上新闻了东北集美帮助十八个黑人偷渡</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_i9rn63r">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/CrazyRunMouse">CrazyRunMouse</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/uwh1ey/_/i9rn63r">May 24 2022 03:43:03</a>
+    </p>
+    <div class="collapsible">
+        <p>这下改良基因了</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

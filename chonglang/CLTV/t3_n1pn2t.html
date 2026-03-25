@@ -1,0 +1,124 @@
+<html>
+<head>
+<title>有无技术老嗨解答手机安全问题</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_n1pn2t">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/ButterscotchNo7373">ButterscotchNo7373</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/n1pn2t">Apr 30 2021 08:39:48</a>
+    </p>
+    <strong>有无技术老嗨解答手机安全问题</strong>
+    <p><p><strong>警方是如何破解“犯罪人士”的手机锁屏密码的？</strong><br>
+解答：总的来说分为几个方面。<br>
+国产手机：直接给厂商，让他们解锁，不费吹灰之力。<br>
+国行海外品牌手机：通过后门解锁，特别难搞的就对厂商施压。（前其他警种朋友对我讲，这招是真好用，因为没有厂商会跟钱过意不去，屡试不爽）<br>
+苹果手机：通过系统漏洞绕过锁屏密码的重试保护机制暴力重试来破解（我了解的，iphonex 6位数最长记录108小时、iphone7plus及其以前4位数最长记录12分钟）<br>
+海外品牌手机：通过已知Android漏洞破解，或者是硬件芯片短接方式。<br>
+无法破解的：如果是刑事案件，则通过虐待嫌疑人方式逼其说出密码。如果是社会案件，则通过心理术让嫌疑人情绪出现显著变化套出密码。如果遇到特别难搞的，则采取警械电击、残害其家人方式逼出密码。（包括但不限于给其本人断水断粮、威胁其家人朋友等方式）<br>
+<strong>国内手机刷原生系统是否安全？（能阻挡一般破解锁屏密码和网络安全的隐患吗）</strong><br>
+解答：对于抵御锁屏密码的破解其实会更加不安全，因为刷机之前都是要解锁的，而解了bootloader锁之后就相当于是给任何人都敞开了大门，此时破解密码就超级简单了，只需要刷入特定的recovery替换系统里的相关文件就行，或者是利用fastboot的指令擦除某个分区再重新写入即可。<br>
+如果解锁刷机但未root，从一般网络安全的角度讲，那确实会比用国产系统好点。但优势不明显。</p>
+<p>&#x200B;</p>
+<p>我手机是解锁bootloader后root水货手机，风险大吗，求细说。</p></p>
+</div>
+<div class="comment" id="t1_gweimx8">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/wabjtam">wabjtam</a>
+        |
+        <span class="score">3 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/n1pn2t/_/gweimx8">Apr 30 2021 08:48:09</a>
+    </p>
+    <div class="collapsible">
+        <p><a href="https://xkcd.com/538/">再强的加密也会败于一个$5的扳手</a></p>
+<p>放弃吧</p>
+        <div class="comment" id="t1_gwf6szg">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/zhihorseopendoor">zhihorseopendoor</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/n1pn2t/_/gwf6szg">Apr 30 2021 13:12:32</a>
+    </p>
+    <div class="collapsible">
+        <p>人机具获是没办法了，好的加密主要目的是丢失的情况下不被解锁</p>
+        
+    </div>
+</div>
+    </div>
+</div>
+
+<div class="comment" id="t1_gwezzxh">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/tough_leek">tough_leek</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/n1pn2t/_/gwezzxh">Apr 30 2021 12:08:01</a>
+    </p>
+    <div class="collapsible">
+        <p>实机到晶哥手里理论上无论如何都能破解，只看晶哥愿意投入多少资源</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

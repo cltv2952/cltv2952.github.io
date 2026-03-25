@@ -1,0 +1,96 @@
+<html>
+<head>
+<title>我們都知道發生了什麽和將要發生什麽</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_t8ruec">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/wall-in-water">wall-in-water</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/t8ruec">Mar 07 2022 15:34:29</a>
+    </p>
+    <strong>我們都知道發生了什麽和將要發生什麽</strong>
+    <p><p><a href="https://www.youtube.com/watch?v=h0DTGrKPkTE">https://www.youtube.com/watch?v=h0DTGrKPkTE</a></p></p>
+</div>
+<div class="comment" id="t1_hzpwvox">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/John_Best_14425">John_Best_14425</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/t8ruec/_/hzpwvox">Mar 07 2022 16:29:00</a>
+    </p>
+    <div class="collapsible">
+        <p>腊神！
+为了你我要嗯吃 腊肉蛋炒饭！</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_hzs8g34">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Pristine-Ad8964">Pristine-Ad8964</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/t8ruec/_/hzs8g34">Mar 08 2022 01:52:19</a>
+    </p>
+    <div class="collapsible">
+        <p>漂师兄！</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

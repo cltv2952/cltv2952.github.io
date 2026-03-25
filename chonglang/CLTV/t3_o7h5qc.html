@@ -1,0 +1,114 @@
+<html>
+<head>
+<title>简单玩个狗</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_o7h5qc">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/lynxtrainer">lynxtrainer</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/o7h5qc">Jun 25 2021 05:22:33</a>
+    </p>
+    <strong>简单玩个狗</strong>
+    <p><a href="https://v.redd.it/to8y3royjc771">https://v.redd.it/to8y3royjc771</a></p>
+</div>
+<div class="comment" id="t1_h2yw0a6">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Foreign_Ad_9448">Foreign_Ad_9448</a>
+        |
+        <span class="score">8 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/o7h5qc/_/h2yw0a6">Jun 25 2021 06:31:06</a>
+    </p>
+    <div class="collapsible">
+        <p>多发狗，狗比魔怔人好</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_h2yxq9b">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Sager8964">Sager8964</a>
+        |
+        <span class="score">2 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/o7h5qc/_/h2yxq9b">Jun 25 2021 06:54:36</a>
+    </p>
+    <div class="collapsible">
+        <p>老胡，中肯！</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_h309l7r">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        [deleted]
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/o7h5qc/_/h309l7r">Jun 25 2021 15:50:52</a>
+    </p>
+    <div class="collapsible">
+        <p>[deleted]</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

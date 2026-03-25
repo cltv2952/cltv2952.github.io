@@ -1,0 +1,169 @@
+<html>
+<head>
+<title>test</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_q353ab">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/EvilRedCrashUs">EvilRedCrashUs</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/q353ab">Oct 07 2021 09:09:38</a>
+    </p>
+    <strong>test</strong>
+    <p><p>test</p></p>
+</div>
+<div class="comment" id="t1_hfpllry">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/MrWAVEChing">MrWAVEChing</a>
+        |
+        <span class="score">5 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/q353ab/_/hfpllry">Oct 07 2021 09:53:00</a>
+    </p>
+    <div class="collapsible">
+        <p>test 导管时间到</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_hfpt6qk">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Think-Lawyer-3002">Think-Lawyer-3002</a>
+        |
+        <span class="score">2 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/q353ab/_/hfpt6qk">Oct 07 2021 11:32:40</a>
+    </p>
+    <div class="collapsible">
+        <p>打胶是吧</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_hfpopao">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/cremnt">cremnt</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/q353ab/_/hfpopao">Oct 07 2021 10:38:02</a>
+    </p>
+    <div class="collapsible">
+        <p>test</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_hfq17t0">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/kaeru1551">kaeru1551</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/q353ab/_/hfq17t0">Oct 07 2021 12:51:00</a>
+    </p>
+    <div class="collapsible">
+        <p>标记</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_hfpj3o8">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/anti-shina">anti-shina</a>
+        |
+        <span class="score">-2 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/q353ab/_/hfpj3o8">Oct 07 2021 09:14:10</a>
+    </p>
+    <div class="collapsible">
+        <p>taste what?</p>
+        <div class="comment" id="t1_hfpj76w">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Ecrsoul">Ecrsoul</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/q353ab/_/hfpj76w">Oct 07 2021 09:15:42</a>
+    </p>
+    <div class="collapsible">
+        <p>test新家</p>
+        
+    </div>
+</div>
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

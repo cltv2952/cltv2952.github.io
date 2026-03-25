@@ -1,0 +1,76 @@
+<html>
+<head>
+<title>今日欢乐源泉</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_tzxf9t">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/AndretheLiu">AndretheLiu</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tzxf9t">Apr 09 2022 17:00:51</a>
+    </p>
+    <strong>今日欢乐源泉</strong>
+    <p><a href="https://i.redd.it/dmk41ew4bjs81.png">https://i.redd.it/dmk41ew4bjs81.png</a></p>
+</div>
+<div class="comment" id="t1_i420y91">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Suzhou_65">Suzhou_65</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tzxf9t/_/i420y91">Apr 09 2022 17:07:21</a>
+    </p>
+    <div class="collapsible">
+        <p>沈条英机怎么不跟大毛拿点大米吃呢，之前都这么努力帮布查屠杀辩护了，黄鹅至此没有大毛给的大米来煮饭我不是很认可</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

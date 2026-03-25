@@ -1,0 +1,76 @@
+<html>
+<head>
+<title>人にやさしく the blue hearts</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_r1veb4">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/Cuthbertism">Cuthbertism</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/r1veb4">Nov 25 2021 12:21:08</a>
+    </p>
+    <strong>人にやさしく the blue hearts</strong>
+    <p><a href="https://youtu.be/5WB3kZHsbPE">https://youtu.be/5WB3kZHsbPE</a></p>
+</div>
+<div class="comment" id="t1_hm1aekj">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Used-Ad-8388">Used-Ad-8388</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/r1veb4/_/hm1aekj">Nov 25 2021 14:12:44</a>
+    </p>
+    <div class="collapsible">
+        <p>终于遇到听蓝心的了</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

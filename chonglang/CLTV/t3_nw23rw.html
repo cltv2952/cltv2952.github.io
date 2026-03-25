@@ -1,0 +1,114 @@
+<html>
+<head>
+<title>你我情到深处</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_nw23rw">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/43212321423">43212321423</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/nw23rw">Jun 09 2021 18:00:12</a>
+    </p>
+    <strong>你我情到深处</strong>
+    <p><a href="https://v.redd.it/7i0ev5lur8471">https://v.redd.it/7i0ev5lur8471</a></p>
+</div>
+<div class="comment" id="t1_h16wknc">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/qinzijinping">qinzijinping</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/nw23rw/_/h16wknc">Jun 09 2021 19:32:45</a>
+    </p>
+    <div class="collapsible">
+        <p>鉴定为支</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_h170nff">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Whythebanhammer">Whythebanhammer</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/nw23rw/_/h170nff">Jun 09 2021 20:00:01</a>
+    </p>
+    <div class="collapsible">
+        <p>反轉了，今天是撥水節</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_h18nppk">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/MeishinKanary">MeishinKanary</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/nw23rw/_/h18nppk">Jun 10 2021 03:42:31</a>
+    </p>
+    <div class="collapsible">
+        <p>欧美les就是不行</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

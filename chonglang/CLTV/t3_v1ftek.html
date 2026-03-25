@@ -1,0 +1,112 @@
+<html>
+<head>
+<title>网页端很多页面内容是不分页，拉到底才刷新的，导致想要寻找很久前发的内容很麻烦，有没有办法解决这个问题</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_v1ftek">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/WalterMckeown">WalterMckeown</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/v1ftek">May 31 2022 02:17:54</a>
+    </p>
+    <strong>网页端很多页面内容是不分页，拉到底才刷新的，导致想要寻找很久前发的内容很麻烦，有没有办法解决这个问题</strong>
+    <p><p>码老嗨指导一下</p></p>
+</div>
+<div class="comment" id="t1_iama3cu">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/EbregiselGamwich">EbregiselGamwich</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/v1ftek/_/iama3cu">May 31 2022 02:41:48</a>
+    </p>
+    <div class="collapsible">
+        <p>Reddit 有 REST API</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_iamdnw2">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/furry199564">furry199564</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/v1ftek/_/iamdnw2">May 31 2022 03:14:22</a>
+    </p>
+    <div class="collapsible">
+        <p>ctrl+f页面搜索？</p>
+        <div class="comment" id="t1_ianvck2">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/WalterMckeown">WalterMckeown</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/v1ftek/_/ianvck2">May 31 2022 13:53:02</a>
+    </p>
+    <div class="collapsible">
+        <p>没刷新出来的内容搜不出来</p>
+        
+    </div>
+</div>
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

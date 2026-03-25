@@ -1,0 +1,93 @@
+<html>
+<head>
+<title>关于Reddit的社区Hot Post</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_tc8o5m">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/Evan_Demeter">Evan_Demeter</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tc8o5m">Mar 12 2022 04:45:41</a>
+    </p>
+    <strong>关于Reddit的社区Hot Post</strong>
+    <p><p>有无码老嗨这个红迪社区的Hot post排序的算法是怎样的啊，为什么有些贴子赞和评论都比较少还能排在一些赞多的上面，我的炒作贴热度还可以，但是往下翻了好久都没看到</p></p>
+</div>
+<div class="comment" id="t1_i0c3z7f">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/FurudeSatoko">FurudeSatoko</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tc8o5m/_/i0c3z7f">Mar 12 2022 05:13:08</a>
+    </p>
+    <div class="collapsible">
+        <p>貌似这个算法reddit没公开</p>
+        <div class="comment" id="t1_i0c5bmu">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Evan_Demeter">Evan_Demeter</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tc8o5m/_/i0c5bmu">Mar 12 2022 05:27:06</a>
+    </p>
+    <div class="collapsible">
+        <p>作为炒作狗这几天研究了一下，貌似upvote和评论比较多的贴子都是在北京时间的下午14点到17点，看来以后要集中再这个时间段炒作了</p>
+        
+    </div>
+</div>
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

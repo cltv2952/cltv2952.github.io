@@ -1,0 +1,76 @@
+<html>
+<head>
+<title>进群答题答麻了</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_t88a24">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/BigearTuTu">BigearTuTu</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/t88a24">Mar 06 2022 21:00:20</a>
+    </p>
+    <strong>进群答题答麻了</strong>
+    <p><p>已经试了8964次，从16年高中的时候开始看抽象，感觉多少有点平行世界了，题目整得我一问三不知。</p></p>
+</div>
+<div class="comment" id="t1_hznj3nh">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/AssociateOk5305">AssociateOk5305</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/t88a24/_/hznj3nh">Mar 07 2022 02:15:00</a>
+    </p>
+    <div class="collapsible">
+        <p>连常凯申1949这位重量级都能进去，你进不来？</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

@@ -1,0 +1,95 @@
+<html>
+<head>
+<title>今天的紅迪怎麼了, 留言一直也發不出來</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_ohk22v">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/SmallPotatoSimon">SmallPotatoSimon</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/ohk22v">Jul 10 2021 14:49:09</a>
+    </p>
+    <strong>今天的紅迪怎麼了, 留言一直也發不出來</strong>
+    <p><p>如題</p></p>
+</div>
+<div class="comment" id="t1_h4phviw">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/lynxtrainer">lynxtrainer</a>
+        |
+        <span class="score">6 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/ohk22v/_/h4phviw">Jul 10 2021 15:07:18</a>
+    </p>
+    <div class="collapsible">
+        <p>看见错误提示就是发出来了，不要重复发</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_h4pqqkv">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/ChampionshipIcy1888">ChampionshipIcy1888</a>
+        |
+        <span class="score">4 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/ohk22v/_/h4pqqkv">Jul 10 2021 16:17:18</a>
+    </p>
+    <div class="collapsible">
+        <p>晶哥狂暴攻入红迪服务器</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

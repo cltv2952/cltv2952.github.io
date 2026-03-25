@@ -1,0 +1,114 @@
+<html>
+<head>
+<title>呦，这不是</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_tpfroo">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/Crafty_Definition_30">Crafty_Definition_30</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tpfroo">Mar 27 2022 08:35:15</a>
+    </p>
+    <strong>呦，这不是</strong>
+    <p><a href="https://i.redd.it/rg0mh1t41wp81.jpg">https://i.redd.it/rg0mh1t41wp81.jpg</a></p>
+</div>
+<div class="comment" id="t1_i2aju9l">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Nakiri-erina">Nakiri-erina</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tpfroo/_/i2aju9l">Mar 27 2022 08:36:42</a>
+    </p>
+    <div class="collapsible">
+        <p>还没有人评论</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_i2ajvl8">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/ciongcu_sianmu">ciongcu_sianmu</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tpfroo/_/i2ajvl8">Mar 27 2022 08:37:15</a>
+    </p>
+    <div class="collapsible">
+        <p>我们迪友这么喜欢repost？</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_i2ak69o">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Coloful_cloud">Coloful_cloud</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tpfroo/_/i2ak69o">Mar 27 2022 08:41:38</a>
+    </p>
+    <div class="collapsible">
+        <p>这下真的饿死也不吃他们一点东西了</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

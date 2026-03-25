@@ -1,0 +1,93 @@
+<html>
+<head>
+<title>簡單來個臺獨科普</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_ow8oe2">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/poclee">poclee</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/ow8oe2">Aug 02 2021 06:04:00</a>
+    </p>
+    <strong>簡單來個臺獨科普</strong>
+    <p><a href="https://i.redd.it/a2908urljue71.jpg">https://i.redd.it/a2908urljue71.jpg</a></p>
+</div>
+<div class="comment" id="t1_h7ejmt3">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/ChampionshipIcy1888">ChampionshipIcy1888</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/ow8oe2/_/h7ejmt3">Aug 02 2021 07:05:04</a>
+    </p>
+    <div class="collapsible">
+        <p>笑嘻了，把国民党赶到金马是吧</p>
+        <div class="comment" id="t1_h7ek5w9">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/poclee">poclee</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/ow8oe2/_/h7ek5w9">Aug 02 2021 07:12:50</a>
+    </p>
+    <div class="collapsible">
+        <p>我無限期支持中華民國在金馬。</p>
+        
+    </div>
+</div>
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

@@ -1,0 +1,172 @@
+<html>
+<head>
+<title>簡單來個行為藝術</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_umfzvc">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/hihanemaisimo">hihanemaisimo</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/umfzvc">May 10 2022 10:56:39</a>
+    </p>
+    <strong>簡單來個行為藝術</strong>
+    <p><a href="https://www.reddit.com/gallery/umfzvc">https://www.reddit.com/gallery/umfzvc</a></p>
+</div>
+<div class="comment" id="t1_i81b6eq">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Outrageous_Oil_7125">Outrageous_Oil_7125</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/umfzvc/_/i81b6eq">May 10 2022 11:00:14</a>
+    </p>
+    <div class="collapsible">
+        <p>哈哈哈，狗咬狗，打起来。</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_i81bmfa">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/NanNan0">NanNan0</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/umfzvc/_/i81bmfa">May 10 2022 11:05:24</a>
+    </p>
+    <div class="collapsible">
+        <p>您好</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_i81ckxt">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/CupofSpaidersBlood">CupofSpaidersBlood</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/umfzvc/_/i81ckxt">May 10 2022 11:16:25</a>
+    </p>
+    <div class="collapsible">
+        <p>哈哈这下浪人成麻风病人了</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_i81id90">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/PatrioticTu">PatrioticTu</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/umfzvc/_/i81id90">May 10 2022 12:15:19</a>
+    </p>
+    <div class="collapsible">
+        <p>警惕神狙病毒🦠</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_i81r8kh">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/xijinping_xi">xijinping_xi</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/umfzvc/_/i81r8kh">May 10 2022 13:30:13</a>
+    </p>
+    <div class="collapsible">
+        <p>&#x200B;</p>
+<p><img alt="gif" src="giphy|1sfPDfTi0Asfe"></p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_i82x5gv">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/rebel-bone">rebel-bone</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/umfzvc/_/i82x5gv">May 10 2022 18:14:26</a>
+    </p>
+    <div class="collapsible">
+        <p>哈哈</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

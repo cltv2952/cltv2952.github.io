@@ -1,0 +1,95 @@
+<html>
+<head>
+<title>这期赞啊</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_tfclag">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/Hour_Ad32">Hour_Ad32</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tfclag">Mar 16 2022 08:12:51</a>
+    </p>
+    <strong>这期赞啊</strong>
+    <p><a href="https://www.youtube.com/watch?v=IEOyozHKAU0">https://www.youtube.com/watch?v=IEOyozHKAU0</a></p>
+</div>
+<div class="comment" id="t1_i0v5vr0">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/ShowMeThePath_1">ShowMeThePath_1</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tfclag/_/i0v5vr0">Mar 16 2022 09:40:37</a>
+    </p>
+    <div class="collapsible">
+        <p>这集带劲啊</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_i0v9pxn">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/stupidStage12dogis2B">stupidStage12dogis2B</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tfclag/_/i0v9pxn">Mar 16 2022 10:31:34</a>
+    </p>
+    <div class="collapsible">
+        <p>笑死我啦</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

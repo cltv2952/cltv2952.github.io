@@ -1,0 +1,112 @@
+<html>
+<head>
+<title>简单买一个礼拜吃的</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_ui715a">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/bbkrepeater">bbkrepeater</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/ui715a">May 04 2022 13:49:59</a>
+    </p>
+    <strong>简单买一个礼拜吃的</strong>
+    <p><a href="https://i.redd.it/7kubft5xrgx81.jpg">https://i.redd.it/7kubft5xrgx81.jpg</a></p>
+</div>
+<div class="comment" id="t1_i7ak8mk">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/SoftShopping9610">SoftShopping9610</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/ui715a/_/i7ak8mk">May 04 2022 14:01:39</a>
+    </p>
+    <div class="collapsible">
+        <p>死蝙蝠，滚</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_i7bz51k">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Patient-Bee4392">Patient-Bee4392</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/ui715a/_/i7bz51k">May 04 2022 19:39:42</a>
+    </p>
+    <div class="collapsible">
+        <p>那你挺省的</p>
+        <div class="comment" id="t1_i7c0lny">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/bbkrepeater">bbkrepeater</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/ui715a/_/i7c0lny">May 04 2022 19:49:09</a>
+    </p>
+    <div class="collapsible">
+        <p>的确。。一个月生活费350到400 房租500</p>
+        
+    </div>
+</div>
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

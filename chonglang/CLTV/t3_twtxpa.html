@@ -1,0 +1,59 @@
+<html>
+<head>
+<title>欢迎来到Reddit最大的中文键政sub——CLTV</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_twtxpa">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/ForestRandom">ForestRandom</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/twtxpa">Apr 05 2022 12:35:44</a>
+    </p>
+    <strong>欢迎来到Reddit最大的中文键政sub——CLTV</strong>
+    <p><p>不论你反对习近平还是支持习近平、反对共产党还是支持共产党、讨厌中国还是喜欢中国，也不论你的爱好如何，兴趣怎样，只要你喜欢键政，我们就是查友了。</p></p>
+</div>
+</body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

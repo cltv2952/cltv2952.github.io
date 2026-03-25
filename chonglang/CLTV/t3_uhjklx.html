@@ -1,0 +1,112 @@
+<html>
+<head>
+<title>卡哇伊</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_uhjklx">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/GreenNerve">GreenNerve</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/uhjklx">May 03 2022 16:11:55</a>
+    </p>
+    <strong>卡哇伊</strong>
+    <p><a href="https://youtube.com/watch?v=PGm3vwx51Yc">https://youtube.com/watch?v=PGm3vwx51Yc</a></p>
+</div>
+<div class="comment" id="t1_i76f9ai">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/jiaiguo">jiaiguo</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/uhjklx/_/i76f9ai">May 03 2022 16:31:02</a>
+    </p>
+    <div class="collapsible">
+        <p>奶油豆很厲害的</p>
+        <div class="comment" id="t1_i76iu86">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/GreenNerve">GreenNerve</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/uhjklx/_/i76iu86">May 03 2022 16:54:01</a>
+    </p>
+    <div class="collapsible">
+        <p>动作太搞笑了</p>
+        
+    </div>
+</div>
+    </div>
+</div>
+
+<div class="comment" id="t1_i77n7v0">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/_liye_s_ennui">_liye_s_ennui</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/uhjklx/_/i77n7v0">May 03 2022 21:30:41</a>
+    </p>
+    <div class="collapsible">
+        <p>Genki</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

@@ -1,0 +1,76 @@
+<html>
+<head>
+<title>簡單當個錯誤出題者😋</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_nej607">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/Kitchen_Molasses9424">Kitchen_Molasses9424</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/nej607">May 17 2021 15:25:31</a>
+    </p>
+    <strong>簡單當個錯誤出題者😋</strong>
+    <p><a href="https://i.redd.it/u1v62he08pz61.jpg">https://i.redd.it/u1v62he08pz61.jpg</a></p>
+</div>
+<div class="comment" id="t1_gyifbyg">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Aidenfred">Aidenfred</a>
+        |
+        <span class="score">2 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/nej607/_/gyifbyg">May 18 2021 00:24:28</a>
+    </p>
+    <div class="collapsible">
+        <p>可以，加速起来</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

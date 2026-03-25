@@ -1,0 +1,114 @@
+<html>
+<head>
+<title>Copy cat</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_ny9rmi">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/43212321423">43212321423</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/ny9rmi">Jun 12 2021 15:51:00</a>
+    </p>
+    <strong>Copy cat</strong>
+    <p><a href="https://v.redd.it/x65cc01j6u471">https://v.redd.it/x65cc01j6u471</a></p>
+</div>
+<div class="comment" id="t1_h1l59ar">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/jobsjoestar">jobsjoestar</a>
+        |
+        <span class="score">2 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/ny9rmi/_/h1l59ar">Jun 13 2021 03:57:59</a>
+    </p>
+    <div class="collapsible">
+        <p>可爱小猫给我糙糙</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_h1ltjk3">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/IntrepidCriticism225">IntrepidCriticism225</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/ny9rmi/_/h1ltjk3">Jun 13 2021 09:32:34</a>
+    </p>
+    <div class="collapsible">
+        <p>我都想爱了</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_h1ne9ky">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/ClassicMaterial5546">ClassicMaterial5546</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/ny9rmi/_/h1ne9ky">Jun 13 2021 18:55:02</a>
+    </p>
+    <div class="collapsible">
+        <p>Pack it up pack it in. Let me begin</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

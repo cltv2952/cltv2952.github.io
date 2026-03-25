@@ -1,0 +1,63 @@
+<html>
+<head>
+<title>无尽的梦魇</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_tfmai0">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/Ancient_Parsley6838">Ancient_Parsley6838</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tfmai0">Mar 16 2022 16:41:24</a>
+    </p>
+    <strong>无尽的梦魇</strong>
+    <p><p>新中国成立后爷爷奶奶那一辈睡觉做吃饱梦;  <br>
+改革开放后父母辈睡觉做香港梦;
+当家境富裕后我睡觉做美国梦;
+什么时候才能睡觉做“中国梦”?
+答案是:从来都没有“中国梦”只有自己骗自己</p></p>
+</div>
+</body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

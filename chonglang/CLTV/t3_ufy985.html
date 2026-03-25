@@ -1,0 +1,505 @@
+<html>
+<head>
+<title>什么KMP匹配算法？</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_ufy985">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/Playful-Assistant-48">Playful-Assistant-48</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/ufy985">May 01 2022 11:51:26</a>
+    </p>
+    <strong>什么KMP匹配算法？</strong>
+    <p><a href="https://i.redd.it/rm9p8q91suw81.jpg">https://i.redd.it/rm9p8q91suw81.jpg</a></p>
+</div>
+<div class="comment" id="t1_i6w9j45">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Dependent-Virus-7550">Dependent-Virus-7550</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/ufy985/_/i6w9j45">May 01 2022 11:53:46</a>
+    </p>
+    <div class="collapsible">
+        <p>数字论证，请</p>
+        <div class="comment" id="t1_i6wefi3">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Darth-Xidious">Darth-Xidious</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/ufy985/_/i6wefi3">May 01 2022 12:47:54</a>
+    </p>
+    <div class="collapsible">
+        <p>中国共产党=34笔划=1-14+51-4 论证完毕</p>
+        
+    </div>
+</div>
+    </div>
+</div>
+
+<div class="comment" id="t1_i6w9k2l">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Ubuntu_20_04_LTS">Ubuntu_20_04_LTS</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/ufy985/_/i6w9k2l">May 01 2022 11:54:06</a>
+    </p>
+    <div class="collapsible">
+        <p>也可能是Robin-Karp</p>
+        <div class="comment" id="t1_i6wvfzn">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/iacz489">iacz489</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/ufy985/_/i6wvfzn">May 01 2022 15:12:28</a>
+    </p>
+    <div class="collapsible">
+        <p>好像叫Rabin Karp</p>
+        <div class="comment" id="t1_i6xgbpb">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Ubuntu_20_04_LTS">Ubuntu_20_04_LTS</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/ufy985/_/i6xgbpb">May 01 2022 17:43:28</a>
+    </p>
+    <div class="collapsible">
+        <p>脑残了我</p>
+        
+    </div>
+</div>
+    </div>
+</div>
+    </div>
+</div>
+
+<div class="comment" id="t1_i6w9kim">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/ObviousEagle6006">ObviousEagle6006</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/ufy985/_/i6w9kim">May 01 2022 11:54:15</a>
+    </p>
+    <div class="collapsible">
+        <p>真你妈鸡巴抽象</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_i6wbhym">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/AggressiveConcept124">AggressiveConcept124</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/ufy985/_/i6wbhym">May 01 2022 12:16:31</a>
+    </p>
+    <div class="collapsible">
+        <p>什么脑瘫</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_i6wbkso">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/xiaoliu66666">xiaoliu66666</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/ufy985/_/i6wbkso">May 01 2022 12:17:24</a>
+    </p>
+    <div class="collapsible">
+        <p>我只能：？</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_i6wcpjq">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Inner-Sprinkles-1754">Inner-Sprinkles-1754</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/ufy985/_/i6wcpjq">May 01 2022 12:29:40</a>
+    </p>
+    <div class="collapsible">
+        <p>inm民人均大数学家</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_i6wcxyq">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/caizhuan">caizhuan</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/ufy985/_/i6wcxyq">May 01 2022 12:32:11</a>
+    </p>
+    <div class="collapsible">
+        <p>好抽象</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_i6we0fr">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/xjp198964">xjp198964</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/ufy985/_/i6we0fr">May 01 2022 12:43:32</a>
+    </p>
+    <div class="collapsible">
+        <p>玄学家 神学家</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_i6wlvg5">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Swimming_Ad_4903">Swimming_Ad_4903</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/ufy985/_/i6wlvg5">May 01 2022 13:56:50</a>
+    </p>
+    <div class="collapsible">
+        <p>典</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_i6wm8rx">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/NyarPhysics">NyarPhysics</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/ufy985/_/i6wm8rx">May 01 2022 14:00:00</a>
+    </p>
+    <div class="collapsible">
+        <p>这货连数学民工都称不上</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_i6wntzx">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/bishengjdk">bishengjdk</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/ufy985/_/i6wntzx">May 01 2022 14:13:17</a>
+    </p>
+    <div class="collapsible">
+        <p>什么bm算法、</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_i6wvvjx">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/xijinping_xi">xijinping_xi</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/ufy985/_/i6wvvjx">May 01 2022 15:15:44</a>
+    </p>
+    <div class="collapsible">
+        <p>弱智</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_i6wye8r">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/programhink">programhink</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/ufy985/_/i6wye8r">May 01 2022 15:34:36</a>
+    </p>
+    <div class="collapsible">
+        <p>这pattern才8个字符。直接暴力匹配也才8N复杂度，何必KMP</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_i6wymlc">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Li-lyvlpj-163">Li-lyvlpj-163</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/ufy985/_/i6wymlc">May 01 2022 15:36:23</a>
+    </p>
+    <div class="collapsible">
+        <p>他怎么不去从圆周率里面去找19890604呢？从理论上来说圆周率里面什么日期不能找呢？</p>
+        <div class="comment" id="t1_i6x9ubb">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/cjmjohn">cjmjohn</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/ufy985/_/i6x9ubb">May 01 2022 16:57:13</a>
+    </p>
+    <div class="collapsible">
+        <p>19890604在圆周率小数点后的第67490981位，在国前面，党后面，哈哈哈</p>
+        
+    </div>
+</div>
+    </div>
+</div>
+
+<div class="comment" id="t1_i6x1kli">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Realistic_Bell_9256">Realistic_Bell_9256</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/ufy985/_/i6x1kli">May 01 2022 15:58:11</a>
+    </p>
+    <div class="collapsible">
+        <p>以前我在传销的时候觉得他们说的各种数字尽是扯淡，现在看来是我才疏学浅了</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_i6x7xwt">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Cyborg42x">Cyborg42x</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/ufy985/_/i6x7xwt">May 01 2022 16:43:37</a>
+    </p>
+    <div class="collapsible">
+        <p>acm老嗨？</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_i6xffep">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Xilai_Bo">Xilai_Bo</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/ufy985/_/i6xffep">May 01 2022 17:37:08</a>
+    </p>
+    <div class="collapsible">
+        <p>呃</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_i6xk09b">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Zealousideal_Ad3816">Zealousideal_Ad3816</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/ufy985/_/i6xk09b">May 01 2022 18:09:50</a>
+    </p>
+    <div class="collapsible">
+        <p>什么sunday算法</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_i6ykrh4">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/FearlessBusiness9475">FearlessBusiness9475</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/ufy985/_/i6ykrh4">May 01 2022 22:38:31</a>
+    </p>
+    <div class="collapsible">
+        <p>反转了，都在17760704之后。</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_i6ypz4o">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Pang2baka">Pang2baka</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/ufy985/_/i6ypz4o">May 01 2022 23:19:53</a>
+    </p>
+    <div class="collapsible">
+        <p>直接维护个长度为8的先进先出的滑动窗口，维护窗口内的8位数字，在扫的时候就能全找到，不用预处理kmp的nex指针也是O(n)</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

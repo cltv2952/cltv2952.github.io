@@ -1,0 +1,148 @@
+<html>
+<head>
+<title>被自己hidden的帖子怎么才能恢复</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_ui029s">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/Dazzling_Shake_4489">Dazzling_Shake_4489</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/ui029s">May 04 2022 06:09:38</a>
+    </p>
+    <strong>被自己hidden的帖子怎么才能恢复</strong>
+    <p><p>迪友们，刚才手抖不小心hidden了一个帖子，还没看完。怎么样才能恢复</p></p>
+</div>
+<div class="comment" id="t1_i79f2a3">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/freethepooh">freethepooh</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/ui029s/_/i79f2a3">May 04 2022 06:13:53</a>
+    </p>
+    <div class="collapsible">
+        <p>谷歌</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_i79f2lx">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/ForestRandom">ForestRandom</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/ui029s/_/i79f2lx">May 04 2022 06:14:00</a>
+    </p>
+    <div class="collapsible">
+        <p>https://www.reddit.com/user/Dazzling_Shake_4489/hidden/</p>
+        <div class="comment" id="t1_i79fni6">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Dazzling_Shake_4489">Dazzling_Shake_4489</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/ui029s/_/i79fni6">May 04 2022 06:21:07</a>
+    </p>
+    <div class="collapsible">
+        <p>谢谢</p>
+        
+    </div>
+</div>
+    </div>
+</div>
+
+<div class="comment" id="t1_i79f3ni">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Freqjule">Freqjule</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/ui029s/_/i79f3ni">May 04 2022 06:14:21</a>
+    </p>
+    <div class="collapsible">
+        <p>网页版，profile</p>
+        <div class="comment" id="t1_i79fner">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Dazzling_Shake_4489">Dazzling_Shake_4489</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/ui029s/_/i79fner">May 04 2022 06:21:05</a>
+    </p>
+    <div class="collapsible">
+        <p>谢谢</p>
+        
+    </div>
+</div>
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

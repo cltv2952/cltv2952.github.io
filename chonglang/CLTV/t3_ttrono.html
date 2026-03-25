@@ -1,0 +1,114 @@
+<html>
+<head>
+<title>9×9小浪花完成</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_ttrono">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/RealSager">RealSager</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/ttrono">Apr 01 2022 14:12:51</a>
+    </p>
+    <strong>9×9小浪花完成</strong>
+    <p><a href="https://i.redd.it/gywklivwdxq81.jpg">https://i.redd.it/gywklivwdxq81.jpg</a></p>
+</div>
+<div class="comment" id="t1_i2zhx6l">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/NotOnlyGodKnows">NotOnlyGodKnows</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/ttrono/_/i2zhx6l">Apr 01 2022 14:15:20</a>
+    </p>
+    <div class="collapsible">
+        <p>什么毕加索</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_i2zi3oq">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/ruridmn">ruridmn</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/ttrono/_/i2zi3oq">Apr 01 2022 14:16:38</a>
+    </p>
+    <div class="collapsible">
+        <p>雅</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_i2zll63">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/dsbxjp">dsbxjp</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/ttrono/_/i2zll63">Apr 01 2022 14:40:55</a>
+    </p>
+    <div class="collapsible">
+        <p>真·抽象</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

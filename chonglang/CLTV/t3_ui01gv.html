@@ -1,0 +1,112 @@
+<html>
+<head>
+<title>兔友的下场</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_ui01gv">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/2005002000">2005002000</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/ui01gv">May 04 2022 06:07:56</a>
+    </p>
+    <strong>兔友的下场</strong>
+    <p><a href="https://i.redd.it/gnyj2e7hhex81.jpg">https://i.redd.it/gnyj2e7hhex81.jpg</a></p>
+</div>
+<div class="comment" id="t1_i79eq10">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/turn_Karma_wheel">turn_Karma_wheel</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/ui01gv/_/i79eq10">May 04 2022 06:09:37</a>
+    </p>
+    <div class="collapsible">
+        <p>反轉了，其實是貓友，臘來了，爽了</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_i79im0r">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/LotusWannaMochi">LotusWannaMochi</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/ui01gv/_/i79im0r">May 04 2022 06:59:25</a>
+    </p>
+    <div class="collapsible">
+        <p>这下脱脂了</p>
+        <div class="comment" id="t1_i79sg4y">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/sodomaneverends">sodomaneverends</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/ui01gv/_/i79sg4y">May 04 2022 09:21:44</a>
+    </p>
+    <div class="collapsible">
+        <p>脱皮脱脂不脱味，永远都是—</p>
+        
+    </div>
+</div>
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

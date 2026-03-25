@@ -1,0 +1,76 @@
+<html>
+<head>
+<title>说个事</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_uv3847">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/0hhThjsDd4">0hhThjsDd4</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/uv3847">May 22 2022 04:09:42</a>
+    </p>
+    <strong>说个事</strong>
+    <p><p>互联网有条准则是互联网没有女性，所以你在互联网上看到的集美其实都是恶男反串的。豆瓣鹅组其实全是男的，婷婷也是男的。</p></p>
+</div>
+<div class="comment" id="t1_i9j245e">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/bo_kuangyi">bo_kuangyi</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/uv3847/_/i9j245e">May 22 2022 04:26:44</a>
+    </p>
+    <div class="collapsible">
+        <p>嗯，周阴婷确实是男的</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

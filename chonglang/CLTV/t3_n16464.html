@@ -1,0 +1,93 @@
+<html>
+<head>
+<title>哈哈</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_n16464">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/Soulsof_drawing">Soulsof_drawing</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/n16464">Apr 29 2021 14:54:09</a>
+    </p>
+    <strong>哈哈</strong>
+    <p><a href="https://www.reddit.com/gallery/n16464">https://www.reddit.com/gallery/n16464</a></p>
+</div>
+<div class="comment" id="t1_gwaylk6">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Kaowui">Kaowui</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/n16464/_/gwaylk6">Apr 29 2021 15:09:46</a>
+    </p>
+    <div class="collapsible">
+        <p>稍有常识的人都能看出，葱友才说权蛆滚</p>
+        <div class="comment" id="t1_gwb1dej">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Soulsof_drawing">Soulsof_drawing</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/n16464/_/gwb1dej">Apr 29 2021 15:29:01</a>
+    </p>
+    <div class="collapsible">
+        <p>盼r归</p>
+        
+    </div>
+</div>
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

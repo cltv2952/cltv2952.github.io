@@ -1,0 +1,76 @@
+<html>
+<head>
+<title>疑似台妹</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_nijk9k">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/kaeru1551">kaeru1551</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/nijk9k">May 22 2021 14:16:22</a>
+    </p>
+    <strong>疑似台妹</strong>
+    <p><a href="https://www.reddit.com/rpan/r/RedditSessions/nijbvj?utm_medium=android_app&amp;utm_source=share">https://www.reddit.com/rpan/r/RedditSessions/nijbvj?utm_medium=android_app&amp;utm_source=share</a></p>
+</div>
+<div class="comment" id="t1_gz24vem">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/80000000_">80000000_</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/nijk9k/_/gz24vem">May 22 2021 14:36:08</a>
+    </p>
+    <div class="collapsible">
+        <p>不知道为啥 老是给我推到首页</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

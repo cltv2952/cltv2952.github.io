@@ -1,0 +1,76 @@
+<html>
+<head>
+<title>坐上来别乱动 我是公用的,坏了的话等会没办法给别人使用了…</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_v1ft9o">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/bigpigpro">bigpigpro</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/v1ft9o">May 31 2022 02:17:40</a>
+    </p>
+    <strong>坐上来别乱动 我是公用的,坏了的话等会没办法给别人使用了…</strong>
+    <p><a href="https://www.reddit.com/r/bigpigTV/comments/v1fsb0/测试/">https://www.reddit.com/r/bigpigTV/comments/v1fsb0/测试/</a></p>
+</div>
+<div class="comment" id="t1_iam7hfm">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/bigpigpro">bigpigpro</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/v1ft9o/_/iam7hfm">May 31 2022 02:19:06</a>
+    </p>
+    <div class="collapsible">
+        <p>今天是头动物，而且只能给你骑</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

@@ -1,0 +1,95 @@
+<html>
+<head>
+<title>笑嘻了</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_l98utf">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/T_F_Catus">T_F_Catus</a>
+        |
+        <span class="score">9 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/l98utf">Jan 31 2021 09:17:24</a>
+    </p>
+    <strong>笑嘻了</strong>
+    <p><a href="https://youtu.be/Pyzg3biuz1Q">https://youtu.be/Pyzg3biuz1Q</a></p>
+</div>
+<div class="comment" id="t1_glgu87b">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/KnownRex">KnownRex</a>
+        |
+        <span class="score">2 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/l98utf/_/glgu87b">Jan 31 2021 10:05:03</a>
+    </p>
+    <div class="collapsible">
+        <p>经典狗都不要</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_glgxr3v">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/ChampionshipIcy1888">ChampionshipIcy1888</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/l98utf/_/glgxr3v">Jan 31 2021 11:03:21</a>
+    </p>
+    <div class="collapsible">
+        <p>肥肥做错什么了</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

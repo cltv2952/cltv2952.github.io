@@ -1,0 +1,133 @@
+<html>
+<head>
+<title>抽象</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_uxyoz7">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/891964">891964</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/uxyoz7">May 26 2022 03:39:24</a>
+    </p>
+    <strong>抽象</strong>
+    <p><a href="https://i.redd.it/tz5r3ll1rq191.jpg">https://i.redd.it/tz5r3ll1rq191.jpg</a></p>
+</div>
+<div class="comment" id="t1_ia0wvcx">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/swinefarmer">swinefarmer</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/uxyoz7/_/ia0wvcx">May 26 2022 03:48:27</a>
+    </p>
+    <div class="collapsible">
+        <p>图纸大员们一直都是把治国当作在玩frostpunk<img alt="img" src="emote|t5_3ta5rx|12790"></p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_ia100un">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Flimsy-Platypus-1367">Flimsy-Platypus-1367</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/uxyoz7/_/ia100un">May 26 2022 04:20:05</a>
+    </p>
+    <div class="collapsible">
+        <p>看出来了，就是面子不能丢，所以所谓的外国封锁也是宣传，当时的根本情况是政府为了面子不接受外国支援</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_ia12lhf">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Walking-Harpyia-2426">Walking-Harpyia-2426</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/uxyoz7/_/ia12lhf">May 26 2022 04:47:41</a>
+    </p>
+    <div class="collapsible">
+        <p>和苏联一脉相承，一边大吃饱还一边往外面出口粮食</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_ia14ai2">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Own_Lengthiness8104">Own_Lengthiness8104</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/uxyoz7/_/ia14ai2">May 26 2022 05:06:54</a>
+    </p>
+    <div class="collapsible">
+        <p>我爷爷说以前他们种很多品质好的蔬菜，自己一口都没吃过，全部精挑细选出口赚外汇</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

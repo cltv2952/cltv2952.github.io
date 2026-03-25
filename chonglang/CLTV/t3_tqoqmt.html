@@ -1,0 +1,95 @@
+<html>
+<head>
+<title>还是原版好</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_tqoqmt">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/Hour_Ad32">Hour_Ad32</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tqoqmt">Mar 29 2022 01:40:04</a>
+    </p>
+    <strong>还是原版好</strong>
+    <p><a href="https://www.youtube.com/watch?v=sOVeE7p3PtI">https://www.youtube.com/watch?v=sOVeE7p3PtI</a></p>
+</div>
+<div class="comment" id="t1_i2igc5d">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/houruximingze">houruximingze</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tqoqmt/_/i2igc5d">Mar 29 2022 01:43:30</a>
+    </p>
+    <div class="collapsible">
+        <p>反送中主题曲</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_i2iwjwi">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Ok_Philosophy7893">Ok_Philosophy7893</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tqoqmt/_/i2iwjwi">Mar 29 2022 04:03:54</a>
+    </p>
+    <div class="collapsible">
+        <p>谁能离开自己的家园，抛弃世世代代的尊严</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

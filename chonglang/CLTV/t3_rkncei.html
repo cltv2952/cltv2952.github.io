@@ -1,0 +1,114 @@
+<html>
+<head>
+<title>推荐大伙看看这个视频</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_rkncei">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/arkcompiler">arkcompiler</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/rkncei">Dec 20 2021 13:31:25</a>
+    </p>
+    <strong>推荐大伙看看这个视频</strong>
+    <p><a href="https://www.youtube.com/watch?v=K7thTg_PEBg#0">https://www.youtube.com/watch?v=K7thTg_PEBg#0</a></p>
+</div>
+<div class="comment" id="t1_hpbbkcn">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Unlucky-Addition312">Unlucky-Addition312</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/rkncei/_/hpbbkcn">Dec 20 2021 17:04:25</a>
+    </p>
+    <div class="collapsible">
+        <p>看完了，讲的很不错 关注了先睡觉 有时间再看看其他的视频</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_hpbjqxw">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/rinimalegebide">rinimalegebide</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/rkncei/_/hpbjqxw">Dec 20 2021 17:59:46</a>
+    </p>
+    <div class="collapsible">
+        <p>这个博主声音很好听，文案写得很牛逼，看得出是精心制作的</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_hpe9owm">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Chigusasayoko">Chigusasayoko</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/rkncei/_/hpe9owm">Dec 21 2021 06:29:30</a>
+    </p>
+    <div class="collapsible">
+        <p>黑客帝国是真的神作</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

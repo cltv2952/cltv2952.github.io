@@ -1,0 +1,491 @@
+<html>
+<head>
+<title>像素大战绘图辅助脚本使用指南</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_tuepg5">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/Quantum_convolution">Quantum_convolution</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tuepg5">Apr 02 2022 09:13:43</a>
+    </p>
+    <strong>像素大战绘图辅助脚本使用指南</strong>
+    <p><p>&#x200B;</p>
+<p>https://preview.redd.it/dzm6o62rz2r81.png?width=1220&amp;format=png&amp;auto=webp&amp;s=4c541862e89bf39c2ad7d36b4a3b21536b7e8b49</p>
+<p>实际效果如图，该脚本只是将图纸显示在屏幕右方，参考起来比较方便而已；其实可以调整至像素 1:1 对应，但需要透明图纸，否则会覆盖像素。</p>
+<p>使用指南：</p>
+<ol>
+<li>安装油猴脚本 Tampermonkey，直接搜索即可。</li>
+<li>安装完后浏览器插件栏点击油猴的图标，点击添加新脚本</li>
+</ol>
+<p>https://preview.redd.it/px7mcnof03r81.png?width=624&amp;format=png&amp;auto=webp&amp;s=ca4f2e4ab0163be174fee44f3077c7b196c0dac1</p>
+<ol>
+<li>删除页面上的所有代码，复制以下内容并保存：</li>
+</ol>
+<p>// ==UserScript==</p>
+<p>&#x200B;</p>
+<p>// u/name 噗噗熊大作战</p>
+<p>&#x200B;</p>
+<p>// u/namespace <a href="http://tampermonkey.net/">http://tampermonkey.net/</a></p>
+<p>&#x200B;</p>
+<p>// u/version 0.1</p>
+<p>&#x200B;</p>
+<p>// u/description try to take over the canvas!</p>
+<p>&#x200B;</p>
+<p>// u/author oralekin</p>
+<p>&#x200B;</p>
+<p>// u/match <a href="https://hot-potato.reddit.com/embed*">https://hot-potato.reddit.com/embed*</a></p>
+<p>&#x200B;</p>
+<p>// u/icon <a href="https://www.google.com/s2/favicons?sz=64&amp;domain=reddit.com">https://www.google.com/s2/favicons?sz=64&amp;domain=reddit.com</a></p>
+<p>&#x200B;</p>
+<p>// u/grant none</p>
+<p>&#x200B;</p>
+<p>// ==/UserScript==</p>
+<p>&#x200B;</p>
+<p>if (<a href="https://window.top">window.top</a> !== window.self) {</p>
+<p>&#x200B;</p>
+<p>window.addEventListener('load', () =&rt; {</p>
+<p>&#x200B;</p>
+<p>document.getElementsByTagName("mona-lisa-embed")[0].shadowRoot.children[0].getElementsByTagName("mona-lisa-canvas")[0].shadowRoot.children[0].appendChild(</p>
+<p>&#x200B;</p>
+<p>(function () {</p>
+<p>&#x200B;</p>
+<p>const i = document.createElement("img");</p>
+<p>&#x200B;</p>
+<p>i.src = "<a href="https://cdn.discordapp.com/attachments/959708764863365141/959737880828346418/poopoo_xi.png">https://cdn.discordapp.com/attachments/959708764863365141/959737880828346418/poopoo_xi.png</a>";</p>
+<p>&#x200B;</p>
+<p><a href="https://i.style">i.style</a> ="position: absolute;left: 1000px;top: 113px;image-rendering: pixelated;width: 50px;height: 52px;";</p>
+<p>&#x200B;</p>
+<p>console.log(i);</p>
+<p>&#x200B;</p>
+<p>return i;</p>
+<p>&#x200B;</p>
+<p>})())</p>
+<p>&#x200B;</p>
+<p>}, false);</p>
+<p>&#x200B;</p>
+<p>}</p>
+<p>&#x200B;</p>
+<ol>
+<li>打开像素大战页面，确保脚本已启用</li>
+</ol>
+<p>&#x200B;</p>
+<p>https://preview.redd.it/xspncrtb13r81.png?width=636&amp;format=png&amp;auto=webp&amp;s=7d6ef3ac8d85b2deb1db76bdbc67e767b931344f</p>
+<p>可爱的噗噗熊就会显示在页面上了！</p></p>
+</div>
+<div class="comment" id="t1_i338sa7">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/FengqinYundan">FengqinYundan</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tuepg5/_/i338sa7">Apr 02 2022 09:18:52</a>
+    </p>
+    <div class="collapsible">
+        <p>收到</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_i338vde">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/biewenwoshishei">biewenwoshishei</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tuepg5/_/i338vde">Apr 02 2022 09:20:06</a>
+    </p>
+    <div class="collapsible">
+        <p>收到 回家试</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_i33956m">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/SadminionYH">SadminionYH</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tuepg5/_/i33956m">Apr 02 2022 09:24:08</a>
+    </p>
+    <div class="collapsible">
+        <p>直接复制粘贴不行</p>
+        <div class="comment" id="t1_i339w4y">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Quantum_convolution">Quantum_convolution</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tuepg5/_/i339w4y">Apr 02 2022 09:35:18</a>
+    </p>
+    <div class="collapsible">
+        <p>已修改，再试试</p>
+        <div class="comment" id="t1_i33t738">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Xenon1898">Xenon1898</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tuepg5/_/i33t738">Apr 02 2022 13:25:50</a>
+    </p>
+    <div class="collapsible">
+        <p>建议再弄另外几个像素图的版本：CLTV献忠的、坦克与鼠（Fuck CCP）的和港友Free HK的</p>
+        <div class="comment" id="t1_i33u5h0">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Quantum_convolution">Quantum_convolution</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tuepg5/_/i33u5h0">Apr 02 2022 13:34:25</a>
+    </p>
+    <div class="collapsible">
+        <p>有浪友做了，我发布出去了</p>
+<p>https://greasyfork.org/zh-TW/scripts/442549-%E5%86%B2%E6%B5%AA%E6%8C%87%E5%8D%97</p>
+        <div class="comment" id="t1_i34ajym">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Xenon1898">Xenon1898</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tuepg5/_/i34ajym">Apr 02 2022 15:45:31</a>
+    </p>
+    <div class="collapsible">
+        <p>但是里面的图片地址挂了</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_i34e7ru">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Equivalent_Ad_2112">Equivalent_Ad_2112</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tuepg5/_/i34e7ru">Apr 02 2022 16:13:11</a>
+    </p>
+    <div class="collapsible">
+        <p>if you are looking for an image, it was probably deleted 怎么办啊</p>
+        <div class="comment" id="t1_i34h4zj">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Quantum_convolution">Quantum_convolution</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tuepg5/_/i34h4zj">Apr 02 2022 16:34:46</a>
+    </p>
+    <div class="collapsible">
+        <p>图纸又更新了 已修复</p>
+        
+    </div>
+</div>
+    </div>
+</div>
+    </div>
+</div>
+    </div>
+</div>
+    </div>
+</div>
+    </div>
+</div>
+
+<div class="comment" id="t1_i339999">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/LobsterParty6916">LobsterParty6916</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tuepg5/_/i339999">Apr 02 2022 09:25:48</a>
+    </p>
+    <div class="collapsible">
+        <p>报错，估计是缩进错误</p>
+        <div class="comment" id="t1_i339pwl">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/LobsterParty6916">LobsterParty6916</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tuepg5/_/i339pwl">Apr 02 2022 09:32:46</a>
+    </p>
+    <div class="collapsible">
+        <p>解决方法</p>
+<p>将脚本内所有u/ 替换成@</p>
+<p>这是reddit自作多情导致</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_i339voc">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Quantum_convolution">Quantum_convolution</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tuepg5/_/i339voc">Apr 02 2022 09:35:07</a>
+    </p>
+    <div class="collapsible">
+        <p>已修改，是reddit会将@自动转义，现在换了格式肯定没问题了</p>
+        
+    </div>
+</div>
+    </div>
+</div>
+
+<div class="comment" id="t1_i33axin">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Some-Commercial-4387">Some-Commercial-4387</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tuepg5/_/i33axin">Apr 02 2022 09:50:33</a>
+    </p>
+    <div class="collapsible">
+        <p>收到</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_i33bi5j">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/OtherwiseOriginal754">OtherwiseOriginal754</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tuepg5/_/i33bi5j">Apr 02 2022 09:59:02</a>
+    </p>
+    <div class="collapsible">
+        <p>支持！！！</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_i33ecal">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Top_Garlic5250">Top_Garlic5250</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tuepg5/_/i33ecal">Apr 02 2022 10:39:11</a>
+    </p>
+    <div class="collapsible">
+        <p>已成功添加</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_i33llna">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/SageCanGo">SageCanGo</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tuepg5/_/i33llna">Apr 02 2022 12:09:29</a>
+    </p>
+    <div class="collapsible">
+        <p>已经运行成功</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_i33pswk">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Frosty_Ad3566">Frosty_Ad3566</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tuepg5/_/i33pswk">Apr 02 2022 12:53:40</a>
+    </p>
+    <div class="collapsible">
+        <p>求一个浪花的，浪花不太好画</p>
+        <div class="comment" id="t1_i33qh74">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/SageCanGo">SageCanGo</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tuepg5/_/i33qh74">Apr 02 2022 13:00:17</a>
+    </p>
+    <div class="collapsible">
+        <p>浪花看本tag置顶</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_i33u3ad">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Quantum_convolution">Quantum_convolution</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tuepg5/_/i33u3ad">Apr 02 2022 13:33:53</a>
+    </p>
+    <div class="collapsible">
+        <p>来了，不用手动新建了</p>
+<p>https://greasyfork.org/zh-TW/scripts/442549-%E5%86%B2%E6%B5%AA%E6%8C%87%E5%8D%97</p>
+        
+    </div>
+</div>
+    </div>
+</div>
+
+<div class="comment" id="t1_i3621fj">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/wang-hu-ning">wang-hu-ning</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tuepg5/_/i3621fj">Apr 03 2022 00:01:44</a>
+    </p>
+    <div class="collapsible">
+        <pre><code>/* 画布突然扩大一倍，图纸在新位置增加了大浪花  */
+</code></pre>
+<p>这个注释别放在头部，会报错</p>
+<p>拉底部去</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

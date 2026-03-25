@@ -1,0 +1,95 @@
+<html>
+<head>
+<title>嗯造</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_uie1a7">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/Specialist-War6193">Specialist-War6193</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/uie1a7">May 04 2022 19:08:18</a>
+    </p>
+    <strong>嗯造</strong>
+    <p><a href="https://www.reddit.com/gallery/uie1a7">https://www.reddit.com/gallery/uie1a7</a></p>
+</div>
+<div class="comment" id="t1_i7c04a4">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/BidenTrump996">BidenTrump996</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/uie1a7/_/i7c04a4">May 04 2022 19:46:05</a>
+    </p>
+    <div class="collapsible">
+        <p>一眼美式日料</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_i7c5e80">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/apide_">apide_</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/uie1a7/_/i7c5e80">May 04 2022 20:20:16</a>
+    </p>
+    <div class="collapsible">
+        <p>在阿妹我现在也就吃得起猪排定食了。一份sashimi要30起步了</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

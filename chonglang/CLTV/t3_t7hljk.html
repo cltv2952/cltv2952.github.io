@@ -1,0 +1,95 @@
+<html>
+<head>
+<title>你怎么不摇？</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_t7hljk">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/Ok-Bad-1632">Ok-Bad-1632</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/t7hljk">Mar 05 2022 20:04:07</a>
+    </p>
+    <strong>你怎么不摇？</strong>
+    <p><a href="https://i.redd.it/a3pc8x1zfml81.jpg">https://i.redd.it/a3pc8x1zfml81.jpg</a></p>
+</div>
+<div class="comment" id="t1_hzhqqab">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/ZiggggggMaster728">ZiggggggMaster728</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/t7hljk/_/hzhqqab">Mar 05 2022 20:30:22</a>
+    </p>
+    <div class="collapsible">
+        <p>晶哥 摇了狗mod吧 他只是对牛子饥渴难耐</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_hzi9fyz">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/CrazyRunMouse">CrazyRunMouse</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/t7hljk/_/hzi9fyz">Mar 05 2022 22:50:56</a>
+    </p>
+    <div class="collapsible">
+        <p>小果汁（掏出一个芒果）你（掏出一个芒果）摇了（掏出一个芒果）我吧（掏出一个芒果）</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

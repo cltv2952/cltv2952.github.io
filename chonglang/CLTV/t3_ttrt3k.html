@@ -1,0 +1,76 @@
+<html>
+<head>
+<title>要被乌克兰橄榄了</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_ttrt3k">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/jamoosyrndnd">jamoosyrndnd</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/ttrt3k">Apr 01 2022 14:18:28</a>
+    </p>
+    <strong>要被乌克兰橄榄了</strong>
+    <p><p>要不要抓紧换位置，刚开始几小时就成型了换个位置不难吧</p></p>
+</div>
+<div class="comment" id="t1_i2zikal">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/jamoosyrndnd">jamoosyrndnd</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/ttrt3k/_/i2zikal">Apr 01 2022 14:19:54</a>
+    </p>
+    <div class="collapsible">
+        <p>隔壁集美开始讨论换位置了</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

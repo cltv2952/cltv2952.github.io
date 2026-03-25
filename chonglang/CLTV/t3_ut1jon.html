@@ -1,0 +1,76 @@
+<html>
+<head>
+<title>無題</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_ut1jon">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/newsfromsina">newsfromsina</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/ut1jon">May 19 2022 11:44:48</a>
+    </p>
+    <strong>無題</strong>
+    <p><a href="https://i.redd.it/g8q61hv77f091.jpg">https://i.redd.it/g8q61hv77f091.jpg</a></p>
+</div>
+<div class="comment" id="t1_i974c4t">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/AC_celeron_8964">AC_celeron_8964</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/ut1jon/_/i974c4t">May 19 2022 13:05:05</a>
+    </p>
+    <div class="collapsible">
+        <p>今天上午就发过了，迪友的消息真不灵通啊</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

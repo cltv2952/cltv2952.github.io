@@ -1,0 +1,115 @@
+<html>
+<head>
+<title>最近想拿個線上課的積分認證，需要用觀看時數兌換，但不知道為什麼進度條除了實心的已播放時長外，還多了淡色的固定延長，而且播一播就會自動停止，要你手動按播放繼續，請問這機制叫甚麼啊？有沒有辦法移除？</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_s3ir20">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/rebutv">rebutv</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/s3ir20">Jan 14 2022 04:02:44</a>
+    </p>
+    <strong>最近想拿個線上課的積分認證，需要用觀看時數兌換，但不知道為什麼進度條除了實心的已播放時長外，還多了淡色的固定延長，而且播一播就會自動停止，要你手動按播放繼續，請問這機制叫甚麼啊？有沒有辦法移除？</strong>
+    <p></p>
+</div>
+<div class="comment" id="t1_hsl5a43">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/thirteen234">thirteen234</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/s3ir20/_/hsl5a43">Jan 14 2022 04:27:30</a>
+    </p>
+    <div class="collapsible">
+        <p>寫個javascript腳本就行。  去查查應該有。
+我高中先修課用腳本搞定</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_hsliq7x">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/furry199564">furry199564</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/s3ir20/_/hsliq7x">Jan 14 2022 06:31:23</a>
+    </p>
+    <div class="collapsible">
+        <p>防止你挂机啊</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_hsm3yzo">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Fun_Contribution3051">Fun_Contribution3051</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/s3ir20/_/hsm3yzo">Jan 14 2022 10:52:07</a>
+    </p>
+    <div class="collapsible">
+        <p>按键精灵，请</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

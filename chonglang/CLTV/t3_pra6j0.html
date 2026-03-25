@@ -1,0 +1,95 @@
+<html>
+<head>
+<title>show up in search result这个功能怎么关了以后还是能通过谷歌搜出以前的发言呢 甚至之前被我删掉的都能搜出几句</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_pra6j0">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/timtomcook">timtomcook</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/pra6j0">Sep 19 2021 15:35:22</a>
+    </p>
+    <strong>show up in search result这个功能怎么关了以后还是能通过谷歌搜出以前的发言呢 甚至之前被我删掉的都能搜出几句</strong>
+    <p></p>
+</div>
+<div class="comment" id="t1_hdh3ep6">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/MagicEyes586">MagicEyes586</a>
+        |
+        <span class="score">4 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/pra6j0/_/hdh3ep6">Sep 19 2021 15:45:41</a>
+    </p>
+    <div class="collapsible">
+        <p>互联网是有记忆的</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_hdhavqx">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/beutifulrain">beutifulrain</a>
+        |
+        <span class="score">2 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/pra6j0/_/hdhavqx">Sep 19 2021 16:37:26</a>
+    </p>
+    <div class="collapsible">
+        <p>都是有一本账的</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

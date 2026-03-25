@@ -1,0 +1,78 @@
+<html>
+<head>
+<title>话说reddit怎么看live</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_t4ry22">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/Real__XiJinPing">Real__XiJinPing</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/t4ry22">Mar 02 2022 04:43:56</a>
+    </p>
+    <strong>话说reddit怎么看live</strong>
+    <p><p>就是那种直播或者聊天室</p>
+<p>只能靠首页推荐吗？有没有专门的入口</p>
+<p>前两天旁听了一个讨论电影的live感觉挺好的</p></p>
+</div>
+<div class="comment" id="t1_hz0e7ar">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Unhappy-Cycle8242">Unhappy-Cycle8242</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/t4ry22/_/hz0e7ar">Mar 02 2022 04:44:43</a>
+    </p>
+    <div class="collapsible">
+        <p>…</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

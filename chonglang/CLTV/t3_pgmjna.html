@@ -1,0 +1,114 @@
+<html>
+<head>
+<title>想回家</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_pgmjna">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/lynxtrainer">lynxtrainer</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/pgmjna">Sep 02 2021 17:29:14</a>
+    </p>
+    <strong>想回家</strong>
+    <p><a href="https://i.redd.it/12pss1hpo1l71.jpg">https://i.redd.it/12pss1hpo1l71.jpg</a></p>
+</div>
+<div class="comment" id="t1_hbcdskl">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/MrWAVEChing">MrWAVEChing</a>
+        |
+        <span class="score">5 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/pgmjna/_/hbcdskl">Sep 02 2021 17:56:24</a>
+    </p>
+    <div class="collapsible">
+        <p>恬静的家，闭上眼，我到家了～</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_hbdprlw">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Dengshopping">Dengshopping</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/pgmjna/_/hbdprlw">Sep 02 2021 23:36:59</a>
+    </p>
+    <div class="collapsible">
+        <p>里面有个坦克巫女</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_hbe811j">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/wfwsdaswad">wfwsdaswad</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/pgmjna/_/hbe811j">Sep 03 2021 02:00:17</a>
+    </p>
+    <div class="collapsible">
+        <p>浅草行，该喝口嚼酒了</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

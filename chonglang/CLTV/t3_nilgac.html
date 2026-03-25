@@ -1,0 +1,95 @@
+<html>
+<head>
+<title>台北奇行種</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_nilgac">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/Ame_PSG">Ame_PSG</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/nilgac">May 22 2021 15:47:30</a>
+    </p>
+    <strong>台北奇行種</strong>
+    <p><a href="https://i.redd.it/rhcx05wk0p071.png">https://i.redd.it/rhcx05wk0p071.png</a></p>
+</div>
+<div class="comment" id="t1_gz3kspr">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/PalatineTHEsenate">PalatineTHEsenate</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/nilgac/_/gz3kspr">May 22 2021 21:55:18</a>
+    </p>
+    <div class="collapsible">
+        <p>裸奔？</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_gz8h3m3">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/leengmao">leengmao</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/nilgac/_/gz8h3m3">May 24 2021 03:20:53</a>
+    </p>
+    <div class="collapsible">
+        <p>是药王吗？</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

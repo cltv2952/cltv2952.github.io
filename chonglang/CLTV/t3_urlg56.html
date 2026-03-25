@@ -1,0 +1,77 @@
+<html>
+<head>
+<title>愈发抽象</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_urlg56">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/wangbaozhang">wangbaozhang</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/urlg56">May 17 2022 12:34:25</a>
+    </p>
+    <strong>愈发抽象</strong>
+    <p><p>好舞，好湿，不要停</p>
+<p>https://preview.redd.it/4a7papcv41091.jpg?width=879&amp;format=pjpg&amp;auto=webp&amp;s=3820b77cb5137d113ed7757476e7acda654c6293</p></p>
+</div>
+<div class="comment" id="t1_i8y6oh3">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/xijinping_xi">xijinping_xi</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/urlg56/_/i8y6oh3">May 17 2022 14:23:57</a>
+    </p>
+    <div class="collapsible">
+        <p>《大白特烦恼》</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

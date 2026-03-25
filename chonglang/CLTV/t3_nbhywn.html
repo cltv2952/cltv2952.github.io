@@ -1,0 +1,59 @@
+<html>
+<head>
+<title>从强扭的瓜不甜，到甜瓜不扭。</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_nbhywn">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/Jared_att">Jared_att</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/nbhywn">May 13 2021 14:30:56</a>
+    </p>
+    <strong>从强扭的瓜不甜，到甜瓜不扭。</strong>
+    <p><p>爱吃瓜，以至于在最贫瘠的土地上找瓜，便出现了畸形的瓜。从此再也无法分辨正常的瓜，从此便不再吃瓜。土地的贫瘠也不再重要。</p></p>
+</div>
+</body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

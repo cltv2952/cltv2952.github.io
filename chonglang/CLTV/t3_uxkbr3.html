@@ -1,0 +1,59 @@
+<html>
+<head>
+<title>又一個</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_uxkbr3">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/Ok-Original5793">Ok-Original5793</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/uxkbr3">May 25 2022 15:49:53</a>
+    </p>
+    <strong>又一個</strong>
+    <p><a href="https://std.stheadline.com/realtime/article/1839780/%E5%8D%B3%E6%99%82-%E5%9C%8B%E9%9A%9B-%E4%BC%8A%E6%9C%97%E9%9D%A9%E5%91%BD%E8%A1%9E%E9%9A%8A%E4%B8%8A%E6%A0%A1%E8%A2%AB%E6%93%8A%E6%96%83-%E5%A4%96%E4%BA%A4%E9%83%A8%E6%9A%97%E6%8C%87%E7%BE%8E%E5%9C%8B%E7%AD%89%E5%8B%A2%E5%8A%9B%E6%89%80%E7%82%BA">https://std.stheadline.com/realtime/article/1839780/%E5%8D%B3%E6%99%82-%E5%9C%8B%E9%9A%9B-%E4%BC%8A%E6%9C%97%E9%9D%A9%E5%91%BD%E8%A1%9E%E9%9A%8A%E4%B8%8A%E6%A0%A1%E8%A2%AB%E6%93%8A%E6%96%83-%E5%A4%96%E4%BA%A4%E9%83%A8%E6%9A%97%E6%8C%87%E7%BE%8E%E5%9C%8B%E7%AD%89%E5%8B%A2%E5%8A%9B%E6%89%80%E7%82%BA</a></p>
+</div>
+</body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

@@ -1,0 +1,110 @@
+<html>
+<head>
+<title>互动热线</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_u1s093">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/Esuccp">Esuccp</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/u1s093">Apr 12 2022 06:09:40</a>
+    </p>
+    <strong>互动热线</strong>
+    <p><a href="https://i.redd.it/bynrx23ed1t81.jpg">https://i.redd.it/bynrx23ed1t81.jpg</a></p>
+</div>
+<div class="comment" id="t1_i4ea3jy">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/wpdjdbwhw">wpdjdbwhw</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/u1s093/_/i4ea3jy">Apr 12 2022 06:27:13</a>
+    </p>
+    <div class="collapsible">
+        <p>mod快来删帖</p>
+        <div class="comment" id="t1_i4ea7lt">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Once_upon_a_time233">Once_upon_a_time233</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/u1s093/_/i4ea7lt">Apr 12 2022 06:28:37</a>
+    </p>
+    <div class="collapsible">
+        <p>已删帖+ban op</p>
+        <div class="comment" id="t1_i4evzfg">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/HalleluYahmygod">HalleluYahmygod</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/u1s093/_/i4evzfg">Apr 12 2022 11:11:57</a>
+    </p>
+    <div class="collapsible">
+        <p>test,能收到我的mod请求吗</p>
+        
+    </div>
+</div>
+    </div>
+</div>
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

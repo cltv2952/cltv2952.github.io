@@ -1,0 +1,76 @@
+<html>
+<head>
+<title>Ready to run</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_ujcq10">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/ImaginaryDesign2">ImaginaryDesign2</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/ujcq10">May 06 2022 01:52:03</a>
+    </p>
+    <strong>Ready to run</strong>
+    <p><a href="https://www.economist.com/china/2022/05/05/chinas-young-elite-are-considering-moving-abroad">https://www.economist.com/china/2022/05/05/chinas-young-elite-are-considering-moving-abroad</a></p>
+</div>
+<div class="comment" id="t1_i7ilrwm">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Peasant598">Peasant598</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/ujcq10/_/i7ilrwm">May 06 2022 04:26:14</a>
+    </p>
+    <div class="collapsible">
+        <p>晚了，一个都别想跑</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

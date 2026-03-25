@@ -1,0 +1,131 @@
+<html>
+<head>
+<title>画布变大了？</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_tumryu">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/yumomoke">yumomoke</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tumryu">Apr 02 2022 16:27:38</a>
+    </p>
+    <strong>画布变大了？</strong>
+    <p><p>速速开辟新大陆</p></p>
+</div>
+<div class="comment" id="t1_i34gdjj">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Ataraxia_S">Ataraxia_S</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tumryu/_/i34gdjj">Apr 02 2022 16:29:20</a>
+    </p>
+    <div class="collapsible">
+        <p>杀</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_i34ghcz">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Ok-Bad-1632">Ok-Bad-1632</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tumryu/_/i34ghcz">Apr 02 2022 16:30:05</a>
+    </p>
+    <div class="collapsible">
+        <p>mod在线吗，来定个新坐标置顶一下</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_i34gmjc">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/ChingChenHanJi8964">ChingChenHanJi8964</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tumryu/_/i34gmjc">Apr 02 2022 16:31:08</a>
+    </p>
+    <div class="collapsible">
+        <p>赶快圈地!</p>
+        <div class="comment" id="t1_i34gphg">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/yumomoke">yumomoke</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tumryu/_/i34gphg">Apr 02 2022 16:31:44</a>
+    </p>
+    <div class="collapsible">
+        <p>1989，604方块拿下</p>
+        
+    </div>
+</div>
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

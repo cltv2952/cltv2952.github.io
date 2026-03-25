@@ -1,0 +1,325 @@
+<html>
+<head>
+<title>介绍一个很有意思的安全性加强手机固件：GrapheneOS</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_tof2rs">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/ddclbk">ddclbk</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tof2rs">Mar 26 2022 02:40:08</a>
+    </p>
+    <strong>介绍一个很有意思的安全性加强手机固件：GrapheneOS</strong>
+    <p><p><a href="https://grapheneos.org/">官网链接先放在这里</a> 不想看我叨叨的直接进去看，En页面。</p>
+<p><a href="https://app.element.io/#/room/#grapheneos:grapheneos.org">官方Matrix</a></p>
+<p>GrapheneOS 是为数不多进行安全性强化的定制Android固件。大部分固件，如LOS/CM/RR/CRDROID/PE/AEX，都强调<strong>可定制性</strong>（或者尽可能把某个Android手机变成Pixel）而不是强调<strong>安全性</strong>。想象一下，<strong>你拿着一个解锁了bootloader的机器翻墙冲浪触摸，晶哥在路上抓到你，一扫手机直接笑嘻了</strong>——BL一解直接等于<strong>裸奔</strong>。大部分情况下这么做的安全性还不如用stock ROM，而回锁BL之后提供OTA服务的第三方ROM少之又少。今天的主角，GrapheneOS，是一个少有的注重安全性的定制Android固件。</p>
+<p><strong>Q1:GrapheneOS 额外做了哪些工作？</strong></p>
+<p>A1:<a href="https://grapheneos.org/features">具体可以参考这里</a> 简而言之，重写内存分配，强化内核；针对隐私/安全，细节进行大量修改；移除了所有不必要的组件（包括Google服务）。技术实现可以参考<a href="https://github.com/GrapheneOS">这里</a></p>
+<p><strong>Q2:GrapheneOS 对适配设备有无要求？如果有，要求为何？</strong></p>
+<p>A2:Graphene 适配所有 <strong>Google Pixel</strong>设备，并对<strong>仍能接收月度安全更新</strong>的设备提供更新，每月有数次。如果你只有其他设备，又恰好是个机老嗨，可以自己Build，但GrapheneOS并不保证体验和安全性。<strong>恐怕某些驱动得自己弄</strong>。</p>
+<p><strong>Q3:GrapheneOS 如何实现应用分发？如果我非要用Google Mobile Services怎么办？</strong></p>
+<p>A3:无自带应用分发。可以尝试<a href="https://f-droid.org/en/">F-Droid</a> ，有足够数目日常应用，包括GPL v3下分发的第三方开源Reddit客户端。或者使用<a href="https://auroraoss.com/">Aurora</a> ，开源的Play商店替代。若必需GMS、Google相机，GOS 提供了沙盒模式下GMS。详情查看<a href="https://grapheneos.org/usage#sandboxed-google-play">这里</a> 。</p>
+<p><strong>Q4:说了半天，怎么安装？</strong></p>
+<p>A4:麻，应该先说的。用过Pixel，应该都见过Google web-based flash tool，官网有一个类似产品。用一个<strong>Chromium系</strong>的浏览器就行，仅需点按几次按钮。若你热爱复古，<a href="https://grapheneos.org/install/">这里</a> 也提供详细的命令行刷机方法。</p>
+<p><strong>Q5:用起来怎么样？Bug多么？省电么？系统更新怎么处理？</strong></p>
+<p>A5:前后好几个机器用了至少一年，体验和Pixel基本无区别。个人体验Bug非常少，拿动画掉帧那种当Bug另说。比Pixel自带ROM省电，因为GMS不需要后台常驻。系统更新可以手动设置每4h检查一次，OTA升级，和其他手机别无二致。</p>
+<p><strong>Q6:我可以信任这个项目么？有没有安全性担忧？</strong></p>
+<p>A6:针对细节的安全问题，可以<a href="https://app.element.io/#/room/#grapheneos:grapheneos.org">官方Matrix</a> 询问。Reddit 上<a href="https://www.reddit.com/r/privacytoolsIO/comments/pdgsor/31_grapheneos_security_questions/">有一个问答</a> ，可以参考。同时，这里有一份<a href="https://redmine.replicant.us/boards/39/topics/15440">Replicant社群对GrapheneOS的讨论</a> 。安全老嗨自己实验下吧。</p>
+<p><strong>Q7:刷炸了怎么办？</strong></p>
+<p>A7:你还有一个槽，应该能正常开机。真炸了就进FB回官。还是注意 <strong>USE AT YOUR OWN RISK.</strong></p></p>
+</div>
+<div class="comment" id="t1_i25cudp">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/block_account">block_account</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tof2rs/_/i25cudp">Mar 26 2022 02:41:45</a>
+    </p>
+    <div class="collapsible">
+        <p>[unavailable]</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_i25d0oy">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/jaymode-ben">jaymode-ben</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tof2rs/_/i25d0oy">Mar 26 2022 02:43:15</a>
+    </p>
+    <div class="collapsible">
+        <p>我华为手机能加固么</p>
+        <div class="comment" id="t1_i25d47e">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/ddclbk">ddclbk</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tof2rs/_/i25d47e">Mar 26 2022 02:44:06</a>
+    </p>
+    <div class="collapsible">
+        <p>这个社群还真有过适配Kirin的想法，但是感兴趣的人太少了，就闲置了这个想法。</p>
+        
+    </div>
+</div>
+    </div>
+</div>
+
+<div class="comment" id="t1_i25ehmg">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Kashiwaki">Kashiwaki</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tof2rs/_/i25ehmg">Mar 26 2022 02:56:22</a>
+    </p>
+    <div class="collapsible">
+        <p>裝了這個可以安裝Shina的反詐app嗎？</p>
+        <div class="comment" id="t1_i25leu0">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/ddclbk">ddclbk</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tof2rs/_/i25leu0">Mar 26 2022 04:00:19</a>
+    </p>
+    <div class="collapsible">
+        <p>我一般吧大陆应用专门放一个手机里</p>
+        
+    </div>
+</div>
+    </div>
+</div>
+
+<div class="comment" id="t1_i25kxia">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Pristine-Degree-8382">Pristine-Degree-8382</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tof2rs/_/i25kxia">Mar 26 2022 03:55:44</a>
+    </p>
+    <div class="collapsible">
+        <p>能不能给外行老哥来个通俗易懂科普；你就说这是VPN还是其他；能不能翻墙用；不能的话；下载是不是只相当于加固用的😀😀</p>
+        <div class="comment" id="t1_i25lfy3">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/ddclbk">ddclbk</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tof2rs/_/i25lfy3">Mar 26 2022 04:00:37</a>
+    </p>
+    <div class="collapsible">
+        <p>其他。这是刷机包。强化的是本地安全。</p>
+        <div class="comment" id="t1_i25lnjb">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Pristine-Degree-8382">Pristine-Degree-8382</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tof2rs/_/i25lnjb">Mar 26 2022 04:02:37</a>
+    </p>
+    <div class="collapsible">
+        <p>支持什么系统，安卓，苹果，Windows，苹果平板，是不是VPN玩家下一个更安全，不怕晶格</p>
+        <div class="comment" id="t1_i25mtpx">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Establish_">Establish_</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tof2rs/_/i25mtpx">Mar 26 2022 04:14:01</a>
+    </p>
+    <div class="collapsible">
+        <p>安卓啊</p>
+        
+    </div>
+</div>
+    </div>
+</div>
+    </div>
+</div>
+    </div>
+</div>
+
+<div class="comment" id="t1_i25mcqw">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Establish_">Establish_</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tof2rs/_/i25mcqw">Mar 26 2022 04:09:24</a>
+    </p>
+    <div class="collapsible">
+        <p>太好了 好久没搞机了</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_i25nubq">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/sj_ghost">sj_ghost</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tof2rs/_/i25nubq">Mar 26 2022 04:24:12</a>
+    </p>
+    <div class="collapsible">
+        <p>亲儿子就是好啊</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_i266xf3">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Tienxen">Tienxen</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tof2rs/_/i266xf3">Mar 26 2022 08:33:41</a>
+    </p>
+    <div class="collapsible">
+        <p>“安全性加強手機固件”，這幾個字我真的是理不清其主謂賓結構，究竟是誰加強了誰。</p>
+        <div class="comment" id="t1_i29ekrz">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Noahxen_4277">Noahxen_4277</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tof2rs/_/i29ekrz">Mar 27 2022 01:08:35</a>
+    </p>
+    <div class="collapsible">
+        <p>安全性加强 手机固件</p>
+        <div class="comment" id="t1_i29jce9">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Tienxen">Tienxen</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tof2rs/_/i29jce9">Mar 27 2022 01:48:08</a>
+    </p>
+    <div class="collapsible">
+        <p>介紹一個很有意思的固件加強手機安全性，是这个意思麼？</p>
+        
+    </div>
+</div>
+    </div>
+</div>
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

@@ -1,0 +1,2114 @@
+<html>
+<head>
+<title>摸鱼时间整了一个翻墙穷蛆检测器，左逼右逼都进来康康到底谁是东8区土左/右</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_pjuplv">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/WestSalamander9041">WestSalamander9041</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/pjuplv">Sep 07 2021 20:01:18</a>
+    </p>
+    <strong>摸鱼时间整了一个翻墙穷蛆检测器，左逼右逼都进来康康到底谁是东8区土左/右</strong>
+    <p><p>[removed]</p></p>
+</div>
+<div class="comment" id="t1_hbz0gqq">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/WestSalamander9041">WestSalamander9041</a>
+        |
+        <span class="score">51 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/pjuplv/_/hbz0gqq">Sep 07 2021 20:03:33</a>
+    </p>
+    <div class="collapsible">
+        <p>```
+import requests
+import re
+import collections
+import matplotlib.pyplot as plt
+import sys</p>
+<p>session = requests.Session()</p>
+<p>username = sys.argv[1]</p>
+<p>uesrMainPageUrl = f"https://old.reddit.com/user/{username}"</p>
+<p>next_page_url_ptn = r'next-button"&rt;&lt;a href="(.+?)" rel'
+datetime_ptn = r'datetime="(.+?)" class="live-timestamp"'
+comment_ptn = r'md-container " &rt;&lt;div class="md"&rt;(.+?)&lt;/div&rt;'  # dotall flag</p>
+<p>comments_list = []
+cm_datetime_list = []</p>
+<p>headers = {
+    "user-agent": (
+        "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko)"
+        " Chrome/93.0.4577.63 Safari/537.36"
+    )
+}</p>
+<p>def datetime_format(datetime_str):
+    return datetime_str.replace("T", " ").replace("+", " ")</p>
+<p>def comment_format(comment_str):
+    return "".join(
+        comment_str.replace("&lt;p&rt;", "").replace("&lt;/p&rt;", "").split("\n")
+    )</p>
+<p>next_page_url = uesrMainPageUrl</p>
+<p>session.cookies["over18"] = "1"</p>
+<p>page_num = 1</p>
+<p>while True:
+    current_page_url = next_page_url
+    current_page_text = session.get(current_page_url, headers=headers).text
+    cm_datetime = re.findall(datetime_ptn, current_page_text)
+    comments = re.findall(comment_ptn, current_page_text, re.DOTALL)
+    fmt_cm_datetime = [datetime_format(d) for d in cm_datetime]
+    fmt_comments = [comment_format(c) for c in comments]</p>
+<pre><code>comments_list.extend(fmt_comments)
+cm_datetime_list.extend(fmt_cm_datetime)
+
+if next_page_url_find := re.findall(next_page_url_ptn, current_page_text):
+    next_page_url = next_page_url_find[0]
+    page_num += 1
+
+else:
+    break
+</code></pre>
+<h1>print(f"comments count: {len(comments_list)}, page count: {page_num}")</h1>
+<p>die_mom_left_vigina_cm_list = [
+    m for m in comments_list if ("死妈" in m or "左逼" in m)
+]</p>
+<p>print(f"复读指数: {len(die_mom_left_vigina_cm_list)}")</p>
+<p>hour_utc_lists = [t.split(" ")[1][:2] for t in cm_datetime_list]</p>
+<p>def hour_utc_to_e8(str_h):
+    east8_h = str((int(str_h) + 8) % 24)
+    if len(east8_h) == 1:
+        east8_h = "0" + east8_h
+    return east8_h</p>
+<p>hour_east8_lists = [hour_utc_to_e8(h) for h in hour_utc_lists]</p>
+<p>w = collections.Counter(hour_east8_lists)
+d = dict(w)
+for i in range(24):
+    s = str(i)
+    if len(s) == 1:
+        s = "0" + s
+    if not d.get(s):
+        d[s] = 0</p>
+<p>s_d = sorted(d.items())
+plt.plot(<em>zip(</em>s_d))
+plt.show()</p>
+<p>```</p>
+<p>代码在这里，有兴趣的同学还可以继续统计</p>
+        <div class="comment" id="t1_hbzacuy">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/T_F_Catus">T_F_Catus</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/pjuplv/_/hbzacuy">Sep 07 2021 21:11:17</a>
+    </p>
+    <div class="collapsible">
+        <p>&rt; die_mom_left_vigina</p>
+<p>今日首绷</p>
+        <div class="comment" id="t1_hc034u3">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/kumaba">kumaba</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/pjuplv/_/hc034u3">Sep 08 2021 00:50:49</a>
+    </p>
+    <div class="collapsible">
+        <p>经典左阴</p>
+        
+    </div>
+</div>
+    </div>
+</div>
+
+<div class="comment" id="t1_hbzdfm9">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/ruisnow">ruisnow</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/pjuplv/_/hbzdfm9">Sep 07 2021 21:32:58</a>
+    </p>
+    <div class="collapsible">
+        <p>我被人家追着喷左逼，竟然没有我。差评。</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_hbzp8u1">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/ianhohkccym">ianhohkccym</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/pjuplv/_/hbzp8u1">Sep 07 2021 23:03:02</a>
+    </p>
+    <div class="collapsible">
+        <p>Reddit原來有api可以調用，還是第一次知道</p>
+        <div class="comment" id="t1_hbzqyyd">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/SurfaceOfTheSun01">SurfaceOfTheSun01</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/pjuplv/_/hbzqyyd">Sep 07 2021 23:16:22</a>
+    </p>
+    <div class="collapsible">
+        <p>这个帖子里的代码是模拟浏览器发的http request，受限制少一些但是要手动爬网页</p>
+<p>关于api的使用可以参考<a href="https://www.reddit.com/r/CLTV/comments/pjav4u/%E5%AF%B9%E7%BA%BF%E7%A5%9E%E5%99%A8%E4%B9%8Bkalftazhi%E5%96%B7%E5%AD%90%E6%9C%BA%E5%99%A8%E4%BA%BA/?utm_source=share&amp;utm_medium=ios_app&amp;utm_name=iossmf">这位</a></p>
+        <div class="comment" id="t1_hbzqzxh">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/FatFingerHelperBot">FatFingerHelperBot</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/pjuplv/_/hbzqzxh">Sep 07 2021 23:16:34</a>
+    </p>
+    <div class="collapsible">
+        <p>It seems that your comment contains 1 or more links that are hard to tap for mobile users. 
+I will extend those so they're easier for our sausage fingers to click!</p>
+<p><a href="https://www.reddit.com/r/CLTV/comments/pjav4u/%E5%AF%B9%E7%BA%BF%E7%A5%9E%E5%99%A8%E4%B9%8Bkalftazhi%E5%96%B7%E5%AD%90%E6%9C%BA%E5%99%A8%E4%BA%BA/?utm_source=share&amp;utm_medium=ios_app&amp;utm_name=iossmf">Here is link number 1 - Previous text "这位"</a></p>
+<hr>
+<p>^Please ^PM ^<a href="http://reddit.com/user/eganwall">\/u\/eganwall</a> ^with ^issues ^or ^feedback! ^| ^<a href="https://github.com/eganwall/FatFingerHelperBot">Code</a> ^| ^<a href="https://reddit.com/message/compose/?to=FatFingerHelperBot&amp;subject=delete&amp;message=delete%20hbzqzxh">Delete</a></p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_hbzs9nd">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/ianhohkccym">ianhohkccym</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/pjuplv/_/hbzs9nd">Sep 07 2021 23:26:28</a>
+    </p>
+    <div class="collapsible">
+        <p>謝謝，這就寫個機器人出來玩玩</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_hc0rukq">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/fengfubuffalo">fengfubuffalo</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/pjuplv/_/hc0rukq">Sep 08 2021 04:17:53</a>
+    </p>
+    <div class="collapsible">
+        <p>穷蛆滚</p>
+        
+    </div>
+</div>
+    </div>
+</div>
+    </div>
+</div>
+
+<div class="comment" id="t1_hdwhsol">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Aidenfred">Aidenfred</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/pjuplv/_/hdwhsol">Sep 22 2021 23:51:00</a>
+    </p>
+    <div class="collapsible">
+        <p>这个怎么用啊，放浏览器里面运行吗</p>
+<p>我代码白痴</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_hdxq4wt">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Aidenfred">Aidenfred</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/pjuplv/_/hdxq4wt">Sep 23 2021 06:46:02</a>
+    </p>
+    <div class="collapsible">
+        <p>VM258:1 Uncaught SyntaxError: Cannot use import statement outside a module</p>
+<p>咋玩啊</p>
+        
+    </div>
+</div>
+    </div>
+</div>
+
+<div class="comment" id="t1_hbzam57">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/T_F_Catus">T_F_Catus</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/pjuplv/_/hbzam57">Sep 07 2021 21:13:07</a>
+    </p>
+    <div class="collapsible">
+        <p>242这个作息时间真的牛逼，不睡觉的？</p>
+        <div class="comment" id="t1_hbzcvb2">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/lynxtrainer">lynxtrainer</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/pjuplv/_/hbzcvb2">Sep 07 2021 21:28:57</a>
+    </p>
+    <div class="collapsible">
+        <p>242很显然可以自己写个机器人发帖</p>
+        <div class="comment" id="t1_hbzfh0a">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/SurfaceOfTheSun01">SurfaceOfTheSun01</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/pjuplv/_/hbzfh0a">Sep 07 2021 21:48:29</a>
+    </p>
+    <div class="collapsible">
+        <p>敌进我退，敌疲我打是吧 😅</p>
+<p>这下融入大洋彼岸战友们的作息时间了</p>
+        <div class="comment" id="t1_hbzfotn">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/lynxtrainer">lynxtrainer</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/pjuplv/_/hbzfotn">Sep 07 2021 21:50:12</a>
+    </p>
+    <div class="collapsible">
+        <p>怎么全都是腊老嗨，这下左逼了</p>
+        
+    </div>
+</div>
+    </div>
+</div>
+
+<div class="comment" id="t1_hbzsvom">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/somethin4nothing">somethin4nothing</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/pjuplv/_/hbzsvom">Sep 07 2021 23:31:13</a>
+    </p>
+    <div class="collapsible">
+        <p>我不是本sub第一左逼吗</p>
+        <div class="comment" id="t1_hc0md0w">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Leader_Kim_Il-sung">Leader_Kim_Il-sung</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/pjuplv/_/hc0md0w">Sep 08 2021 03:26:56</a>
+    </p>
+    <div class="collapsible">
+        <p>你能左的过我吗？:)</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_hc0rvkb">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/fengfubuffalo">fengfubuffalo</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/pjuplv/_/hc0rvkb">Sep 08 2021 04:18:09</a>
+    </p>
+    <div class="collapsible">
+        <p>穷蛆滚</p>
+        <div class="comment" id="t1_hc0s7nn">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/somethin4nothing">somethin4nothing</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/pjuplv/_/hc0s7nn">Sep 08 2021 04:21:23</a>
+    </p>
+    <div class="collapsible">
+        <p>同意</p>
+        <div class="comment" id="t1_hc0si4d">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/fengfubuffalo">fengfubuffalo</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/pjuplv/_/hc0si4d">Sep 08 2021 04:24:15</a>
+    </p>
+    <div class="collapsible">
+        <p>炒作蛆滚</p>
+        <div class="comment" id="t1_hc2eqtw">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/somethin4nothing">somethin4nothing</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/pjuplv/_/hc2eqtw">Sep 08 2021 15:07:10</a>
+    </p>
+    <div class="collapsible">
+        <p>同意</p>
+        
+    </div>
+</div>
+    </div>
+</div>
+    </div>
+</div>
+    </div>
+</div>
+    </div>
+</div>
+    </div>
+</div>
+    </div>
+</div>
+
+<div class="comment" id="t1_hbzc7a8">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/PlanBoth">PlanBoth</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/pjuplv/_/hbzc7a8">Sep 07 2021 21:24:10</a>
+    </p>
+    <div class="collapsible">
+        <p>晶哥你摇了尾巴😭</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_hbzck8v">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Hsiamoo">Hsiamoo</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/pjuplv/_/hbzck8v">Sep 07 2021 21:26:45</a>
+    </p>
+    <div class="collapsible">
+        <p>什么晶哥小插件</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_hbzcwy4">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/xijinping_siquanjia">xijinping_siquanjia</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/pjuplv/_/hbzcwy4">Sep 07 2021 21:29:16</a>
+    </p>
+    <div class="collapsible">
+        <p>检测我试试？</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_hbzd575">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/lynxtrainer">lynxtrainer</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/pjuplv/_/hbzd575">Sep 07 2021 21:30:53</a>
+    </p>
+    <div class="collapsible">
+        <p>妈妈的我的纵坐标是不是太长了，感觉有点浪费生命了</p>
+        <div class="comment" id="t1_hbzzft0">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/tuzhizhina">tuzhizhina</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/pjuplv/_/hbzzft0">Sep 08 2021 00:22:10</a>
+    </p>
+    <div class="collapsible">
+        <p>高强度冲浪了属于是</p>
+        
+    </div>
+</div>
+    </div>
+</div>
+
+<div class="comment" id="t1_hbzda8t">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/MontblancAlps">MontblancAlps</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/pjuplv/_/hbzda8t">Sep 07 2021 21:31:52</a>
+    </p>
+    <div class="collapsible">
+        <p>来试试我看下</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_hbzdd03">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/PlanBoth">PlanBoth</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/pjuplv/_/hbzdd03">Sep 07 2021 21:32:26</a>
+    </p>
+    <div class="collapsible">
+        <p>好想拥有fangshiminn的作息😭</p>
+        <div class="comment" id="t1_hbzefog">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/lynxtrainer">lynxtrainer</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/pjuplv/_/hbzefog">Sep 07 2021 21:40:21</a>
+    </p>
+    <div class="collapsible">
+        <p>很明显监狱作息，9点到12点属于挣工分时间</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_hbzf12m">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/xijinping_siquanjia">xijinping_siquanjia</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/pjuplv/_/hbzf12m">Sep 07 2021 21:44:57</a>
+    </p>
+    <div class="collapsible">
+        <p>狱友标准作息</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_hbzfzi4">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/T_F_Catus">T_F_Catus</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/pjuplv/_/hbzfzi4">Sep 07 2021 21:52:36</a>
+    </p>
+    <div class="collapsible">
+        <p>这个显然和开各种左逼高仿号的人是同一个，不一定每天都要待在这个号上发帖</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_hbzgfgv">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/ImpossibleTech">ImpossibleTech</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/pjuplv/_/hbzgfgv">Sep 07 2021 21:56:15</a>
+    </p>
+    <div class="collapsible">
+        <p>这比怕不是晶哥帆船，八点上班六点下班，什么职业工作者</p>
+        <div class="comment" id="t1_hbzi2bl">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/lynxtrainer">lynxtrainer</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/pjuplv/_/hbzi2bl">Sep 07 2021 22:09:02</a>
+    </p>
+    <div class="collapsible">
+        <p>下午还摸个鱼是吧 哈哈</p>
+        
+    </div>
+</div>
+    </div>
+</div>
+    </div>
+</div>
+
+<div class="comment" id="t1_hbzdmpm">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/43212321423">43212321423</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/pjuplv/_/hbzdmpm">Sep 07 2021 21:34:22</a>
+    </p>
+    <div class="collapsible">
+        <p>很典型了，嘴上整天左逼左逼，然后98%的时间在骂民主党甚至现在连fox也左逼，然后2%的时间不痛不痒的骂骂国内。连俄爹都没怎么骂过，大概率国内的翻墙粉蛆反串</p>
+        <div class="comment" id="t1_hbzee00">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/PlanBoth">PlanBoth</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/pjuplv/_/hbzee00">Sep 07 2021 21:40:00</a>
+    </p>
+    <div class="collapsible">
+        <p>合理推测，中嘞！</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_hbzy1zy">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Dengshopping">Dengshopping</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/pjuplv/_/hbzy1zy">Sep 08 2021 00:11:31</a>
+    </p>
+    <div class="collapsible">
+        <p>我马上化身俄爹屠杀中华田园川粉</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_hbzyaf1">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Maple560">Maple560</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/pjuplv/_/hbzyaf1">Sep 08 2021 00:13:20</a>
+    </p>
+    <div class="collapsible">
+        <p>我说有几个怎么那么烦天天挑事，这下又上当了</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_hc095zn">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/matterrun">matterrun</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/pjuplv/_/hc095zn">Sep 08 2021 01:37:35</a>
+    </p>
+    <div class="collapsible">
+        <p>这下支了</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_hc0l8vm">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/AlaFidelis">AlaFidelis</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/pjuplv/_/hc0l8vm">Sep 08 2021 03:17:08</a>
+    </p>
+    <div class="collapsible">
+        <p>什么鬼逻辑？照你这么说98%时间都在骂中共，从来不舍得骂西方左逼的也是西方左逼派来反串的？</p>
+        <div class="comment" id="t1_hc0mrmk">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/PlanBoth">PlanBoth</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/pjuplv/_/hc0mrmk">Sep 08 2021 03:30:36</a>
+    </p>
+    <div class="collapsible">
+        <p>逻辑没毛病啊，我就是西方左逼，莫非恁就是翻墙粉…🤯</p>
+        
+    </div>
+</div>
+    </div>
+</div>
+    </div>
+</div>
+
+<div class="comment" id="t1_hbzh26b">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Yasu-Tomohiro">Yasu-Tomohiro</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/pjuplv/_/hbzh26b">Sep 07 2021 22:01:30</a>
+    </p>
+    <div class="collapsible">
+        <p>技术力支持，这才稍微有点overwall应有的玩网感，互喷-扣帽子太费拉了</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_hbzizg5">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        [deleted]
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/pjuplv/_/hbzizg5">Sep 07 2021 22:16:13</a>
+    </p>
+    <div class="collapsible">
+        <p>[deleted]</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_hbzja73">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/SiriusGuyyy">SiriusGuyyy</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/pjuplv/_/hbzja73">Sep 07 2021 22:18:38</a>
+    </p>
+    <div class="collapsible">
+        <p>你也是个左逼吧！死妈左逼又在这里挂大字报了！</p>
+        <div class="comment" id="t1_hbzkczq">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/PlanBoth">PlanBoth</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/pjuplv/_/hbzkczq">Sep 07 2021 22:26:33</a>
+    </p>
+    <div class="collapsible">
+        <p>意大利炮厚葬！</p>
+        
+    </div>
+</div>
+    </div>
+</div>
+
+<div class="comment" id="t1_hbzkytv">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/heyjojori">heyjojori</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/pjuplv/_/hbzkytv">Sep 07 2021 22:30:43</a>
+    </p>
+    <div class="collapsible">
+        <p>符合预期。
+16年知乎上一堆为特朗普当选叫好的人 可能现在都翻到这sub里来了</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_hbznrva">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Sager_Forever">Sager_Forever</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/pjuplv/_/hbznrva">Sep 07 2021 22:51:44</a>
+    </p>
+    <div class="collapsible">
+        <p>肚子给爷笑痛了，这下是蝙蝠还是鼠一目了然。</p>
+<p>不过L皇居然被你归为左逼，L皇铁右逼啊</p>
+        <div class="comment" id="t1_hbzocwn">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/lynxtrainer">lynxtrainer</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/pjuplv/_/hbzocwn">Sep 07 2021 22:56:16</a>
+    </p>
+    <div class="collapsible">
+        <p>我早就是左逼了，我都被入了左籍了</p>
+        <div class="comment" id="t1_hbzzjrx">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/tuzhizhina">tuzhizhina</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/pjuplv/_/hbzzjrx">Sep 08 2021 00:23:02</a>
+    </p>
+    <div class="collapsible">
+        <p>什么右逼的左边是左逼</p>
+        
+    </div>
+</div>
+    </div>
+</div>
+    </div>
+</div>
+
+<div class="comment" id="t1_hbzxmua">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Dengshopping">Dengshopping</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/pjuplv/_/hbzxmua">Sep 08 2021 00:08:13</a>
+    </p>
+    <div class="collapsible">
+        <p>我又没上榜，我天天被中华田园川粉杀妈😭😭😭我就猜这帮byd是粉红五毛来卧底搞破坏了。</p>
+        <div class="comment" id="t1_hc0ewab">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/dkmfTheMaster">dkmfTheMaster</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/pjuplv/_/hc0ewab">Sep 08 2021 02:22:55</a>
+    </p>
+    <div class="collapsible">
+        <p>不跟魔怔比争不就没事了，我看到魔怔比我都懒得回他们，给自己找事。</p>
+        <div class="comment" id="t1_hc0fk88">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Dengshopping">Dengshopping</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/pjuplv/_/hc0fk88">Sep 08 2021 02:28:27</a>
+    </p>
+    <div class="collapsible">
+        <p>😭😭😭</p>
+        
+    </div>
+</div>
+    </div>
+</div>
+
+<div class="comment" id="t1_hc0gx1k">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Palage420">Palage420</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/pjuplv/_/hc0gx1k">Sep 08 2021 02:39:48</a>
+    </p>
+    <div class="collapsible">
+        <p>平平，我的平平😭😭</p>
+        
+    </div>
+</div>
+    </div>
+</div>
+
+<div class="comment" id="t1_hbzzvoq">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Jat_star42">Jat_star42</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/pjuplv/_/hbzzvoq">Sep 08 2021 00:25:35</a>
+    </p>
+    <div class="collapsible">
+        <p>左左右右上上下下</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_hc01qz2">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/kumaba">kumaba</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/pjuplv/_/hc01qz2">Sep 08 2021 00:40:07</a>
+    </p>
+    <div class="collapsible">
+        <p>这哈睡的香了</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_hc076y8">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Kalftazhi">Kalftazhi</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/pjuplv/_/hc076y8">Sep 08 2021 01:22:15</a>
+    </p>
+    <div class="collapsible">
+        <p>哦，自己觉得蝙蝠作息高人一等是吧，左逼就是这么平等的哈。那我也可以说，左逼们都是一帮白天睡觉不做正事，夜里撸完管就指点江山的东八区废物。当然也可能跟D蛆一样，窝在法拉盛地下室自认为伟大。</p>
+        <div class="comment" id="t1_hc079k1">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/QiongQuChatBot">QiongQuChatBot</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/pjuplv/_/hc079k1">Sep 08 2021 01:22:49</a>
+    </p>
+    <div class="collapsible">
+        <p>Kalftazhi高雅创作：左逼亲妈下体烂成150榴炮口</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_hc0cnp7">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/SiriusGuyyy">SiriusGuyyy</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/pjuplv/_/hc0cnp7">Sep 08 2021 02:04:41</a>
+    </p>
+    <div class="collapsible">
+        <p>翻墙穷蛆滚</p>
+        <div class="comment" id="t1_hc0d1f8">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Kalftazhi">Kalftazhi</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/pjuplv/_/hc0d1f8">Sep 08 2021 02:07:44</a>
+    </p>
+    <div class="collapsible">
+        <p>左逼你跳出来了，看来家里其他人的丧事办完了吧，节哀顺变啊</p>
+        <div class="comment" id="t1_hc0d4ce">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/SiriusGuyyy">SiriusGuyyy</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/pjuplv/_/hc0d4ce">Sep 08 2021 02:08:24</a>
+    </p>
+    <div class="collapsible">
+        <p>酸蛆滚</p>
+        <div class="comment" id="t1_hc0ddrs">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Kalftazhi">Kalftazhi</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/pjuplv/_/hc0ddrs">Sep 08 2021 02:10:33</a>
+    </p>
+    <div class="collapsible">
+        <p>原来是R蛆的分身之一，失敬失敬，你一股子R蛆下体的味道，想来是R蛆鸡巴的分身吧</p>
+        <div class="comment" id="t1_hc0dgg9">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/QiongQuChatBot">QiongQuChatBot</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/pjuplv/_/hc0dgg9">Sep 08 2021 02:11:09</a>
+    </p>
+    <div class="collapsible">
+        <p>Kalftazhi高雅创作：左逼狗学人说话可是要烂鸡巴的</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_hc0dgy7">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/SiriusGuyyy">SiriusGuyyy</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/pjuplv/_/hc0dgy7">Sep 08 2021 02:11:16</a>
+    </p>
+    <div class="collapsible">
+        <p>引流蛆滚</p>
+        <div class="comment" id="t1_hc0doh7">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Kalftazhi">Kalftazhi</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/pjuplv/_/hc0doh7">Sep 08 2021 02:12:59</a>
+    </p>
+    <div class="collapsible">
+        <p>什么？你说你想拿你爸妈的骨灰拌饭，那你得跟火葬工说了，我做不了主</p>
+        <div class="comment" id="t1_hc0dpbo">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/QiongQuChatBot">QiongQuChatBot</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/pjuplv/_/hc0dpbo">Sep 08 2021 02:13:10</a>
+    </p>
+    <div class="collapsible">
+        <p>Kalftazhi高雅创作：左逼必须被消灭，无论是物理层面还是理念层面，否则后患无穷</p>
+        
+    </div>
+</div>
+    </div>
+</div>
+    </div>
+</div>
+    </div>
+</div>
+    </div>
+</div>
+
+<div class="comment" id="t1_hc0d7jb">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/QiongQuChatBot">QiongQuChatBot</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/pjuplv/_/hc0d7jb">Sep 08 2021 02:09:08</a>
+    </p>
+    <div class="collapsible">
+        <p>Kalftazhi高雅创作：杀光左逼！杀光左逼！杀光左逼！</p>
+        <div class="comment" id="t1_hc0djne">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/WholeSea6100">WholeSea6100</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/pjuplv/_/hc0djne">Sep 08 2021 02:11:53</a>
+    </p>
+    <div class="collapsible">
+        <p>杀光右逼，杀光右逼！美国白皮的左右和你个支那人有几把关系，支那猪真就只会关注你美国爹呗。</p>
+        <div class="comment" id="t1_hc0e2e9">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Kalftazhi">Kalftazhi</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/pjuplv/_/hc0e2e9">Sep 08 2021 02:16:09</a>
+    </p>
+    <div class="collapsible">
+        <p>美国白皮和我的关系就像你黑叔叔和我以及你现在喊爸爸那人的关系，我们都通过同一种形式感受过你妈妈的温暖。</p>
+        <div class="comment" id="t1_hc0e6zh">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/QiongQuChatBot">QiongQuChatBot</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/pjuplv/_/hc0e6zh">Sep 08 2021 02:17:12</a>
+    </p>
+    <div class="collapsible">
+        <p>Kalftazhi高雅创作：这算啥，这年头纯黑人搞种族仇杀，都有人说是白人至上主义</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_hc0ei62">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/WholeSea6100">WholeSea6100</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/pjuplv/_/hc0ei62">Sep 08 2021 02:19:42</a>
+    </p>
+    <div class="collapsible">
+        <p>可惜美国白皮大部分是左逼哦 特朗普都被推特脸书封了，好可怜哦</p>
+        <div class="comment" id="t1_hc0etsf">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Kalftazhi">Kalftazhi</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/pjuplv/_/hc0etsf">Sep 08 2021 02:22:20</a>
+    </p>
+    <div class="collapsible">
+        <p>是啊，这也是我一直痛心疾首的原因，是左逼就会滥交，常滥交就会染病然后传染别人比如你妈妈，感受你妈妈的温暖之前我没有考虑到这个风险。</p>
+        <div class="comment" id="t1_hc0exrg">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/QiongQuChatBot">QiongQuChatBot</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/pjuplv/_/hc0exrg">Sep 08 2021 02:23:15</a>
+    </p>
+    <div class="collapsible">
+        <p>Kalftazhi高雅创作：左逼喜欢性侵幼女，塔利班：我操这个我熟！</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_hc0t97r">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/WholeSea6100">WholeSea6100</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/pjuplv/_/hc0t97r">Sep 08 2021 04:31:37</a>
+    </p>
+    <div class="collapsible">
+        <p>还有这种好事！那我马上变左逼，求快来个好妹妹跟我滥交一下</p>
+        <div class="comment" id="t1_hc0tf8s">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Kalftazhi">Kalftazhi</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/pjuplv/_/hc0tf8s">Sep 08 2021 04:33:18</a>
+    </p>
+    <div class="collapsible">
+        <p>你可以手术加长下你的阴茎，然后再自己肏自己的屁眼</p>
+        <div class="comment" id="t1_hc0tfvv">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/QiongQuChatBot">QiongQuChatBot</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/pjuplv/_/hc0tfvv">Sep 08 2021 04:33:29</a>
+    </p>
+    <div class="collapsible">
+        <p>Kalftazhi高雅创作：右逼：“以上全部”。</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_hc0tong">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/WholeSea6100">WholeSea6100</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/pjuplv/_/hc0tong">Sep 08 2021 04:35:53</a>
+    </p>
+    <div class="collapsible">
+        <p>说好的滥交呢，原来左逼妹妹很保守啊。不过跪舔共产党的你妈也是左逼吧？和我滥交一下我不介意啦</p>
+        <div class="comment" id="t1_hc0tuz9">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Kalftazhi">Kalftazhi</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/pjuplv/_/hc0tuz9">Sep 08 2021 04:37:41</a>
+    </p>
+    <div class="collapsible">
+        <p>你看，又是一个大麻上头的王八左逼，跪着给你社区主任舔鸡巴是你妈。这大麻果然害人不浅。</p>
+        <div class="comment" id="t1_hc0u1nl">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/QiongQuChatBot">QiongQuChatBot</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/pjuplv/_/hc0u1nl">Sep 08 2021 04:39:32</a>
+    </p>
+    <div class="collapsible">
+        <p>Kalftazhi高雅创作：右逼喜欢性侵幼女，塔利班：我操这个我熟！</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_hc17r87">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/QiongQuChatBot">QiongQuChatBot</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/pjuplv/_/hc17r87">Sep 08 2021 07:28:21</a>
+    </p>
+    <div class="collapsible">
+        <p>Kalftazhi高雅创作：右逼亲妈溃烂而亡</p>
+        
+    </div>
+</div>
+    </div>
+</div>
+    </div>
+</div>
+    </div>
+</div>
+    </div>
+</div>
+    </div>
+</div>
+    </div>
+</div>
+
+<div class="comment" id="t1_hc0em77">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/WholeSea6100">WholeSea6100</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/pjuplv/_/hc0em77">Sep 08 2021 02:20:35</a>
+    </p>
+    <div class="collapsible">
+        <p>我巴不得川普拜登一起死呢</p>
+        <div class="comment" id="t1_hc0f37e">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Kalftazhi">Kalftazhi</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/pjuplv/_/hc0f37e">Sep 08 2021 02:24:30</a>
+    </p>
+    <div class="collapsible">
+        <p>我无所谓啊，川普年纪这么大了，生老病死是自然之理；逼登老年痴呆还不忘祸害幼女，属实该死。但不管怎么说，这两位走的时候只要能带上左逼们一起死绝，我一天三次给他们磕头烧纸。</p>
+        <div class="comment" id="t1_hc0f6gy">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/QiongQuChatBot">QiongQuChatBot</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/pjuplv/_/hc0f6gy">Sep 08 2021 02:25:16</a>
+    </p>
+    <div class="collapsible">
+        <p>Kalftazhi高雅创作：滚你妈的，老子没义务跟你个左逼浪费时间</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_hc0t48o">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/WholeSea6100">WholeSea6100</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/pjuplv/_/hc0t48o">Sep 08 2021 04:30:18</a>
+    </p>
+    <div class="collapsible">
+        <p>支持左逼右逼一起死然后带上你</p>
+        <div class="comment" id="t1_hc0t8bs">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Kalftazhi">Kalftazhi</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/pjuplv/_/hc0t8bs">Sep 08 2021 04:31:23</a>
+    </p>
+    <div class="collapsible">
+        <p>左逼还有你恐怕都没那个本事，你们所有的进步都体现在操屁眼上了</p>
+        <div class="comment" id="t1_hc0tdtm">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/WholeSea6100">WholeSea6100</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/pjuplv/_/hc0tdtm">Sep 08 2021 04:32:54</a>
+    </p>
+    <div class="collapsible">
+        <p>然而就是能压着右逼乱草，就是能封你特爹的号，只能说明右逼更垃圾</p>
+        <div class="comment" id="t1_hc0tlwy">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Kalftazhi">Kalftazhi</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/pjuplv/_/hc0tlwy">Sep 08 2021 04:35:07</a>
+    </p>
+    <div class="collapsible">
+        <p>然而大麻的致幻效果过后，左逼发现自己只是在被拜登操屁眼。</p>
+        <div class="comment" id="t1_hc0tnb4">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/QiongQuChatBot">QiongQuChatBot</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/pjuplv/_/hc0tnb4">Sep 08 2021 04:35:30</a>
+    </p>
+    <div class="collapsible">
+        <p>Kalftazhi高雅创作：多操操我妈大逼</p>
+        
+    </div>
+</div>
+    </div>
+</div>
+    </div>
+</div>
+
+<div class="comment" id="t1_hc0tfwn">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/QiongQuChatBot">QiongQuChatBot</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/pjuplv/_/hc0tfwn">Sep 08 2021 04:33:29</a>
+    </p>
+    <div class="collapsible">
+        <p>Kalftazhi高雅创作：支共我操我妈！</p>
+        
+    </div>
+</div>
+    </div>
+</div>
+    </div>
+</div>
+    </div>
+</div>
+    </div>
+</div>
+
+<div class="comment" id="t1_hc0q0ll">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/nimadabirenrenc">nimadabirenrenc</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/pjuplv/_/hc0q0ll">Sep 08 2021 04:00:29</a>
+    </p>
+    <div class="collapsible">
+        <p>死妈的狱友别来bb了，你看有人把你当个人吗？</p>
+        <div class="comment" id="t1_hc0qsfq">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Kalftazhi">Kalftazhi</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/pjuplv/_/hc0qsfq">Sep 08 2021 04:07:42</a>
+    </p>
+    <div class="collapsible">
+        <p>我狱友你妈个逼，你们这帮左逼有资格把人不当人吗？</p>
+        <div class="comment" id="t1_hc0qyhf">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/QiongQuChatBot">QiongQuChatBot</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/pjuplv/_/hc0qyhf">Sep 08 2021 04:09:18</a>
+    </p>
+    <div class="collapsible">
+        <p>Kalftazhi高雅创作：记得是个经济学叫兽？那就不奇怪了，经济学但凡沾点凯恩斯的都是右逼死妈贵物</p>
+        
+    </div>
+</div>
+    </div>
+</div>
+    </div>
+</div>
+    </div>
+</div>
+
+<div class="comment" id="t1_hc0y3wv">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Dengshopping">Dengshopping</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/pjuplv/_/hc0y3wv">Sep 08 2021 05:23:58</a>
+    </p>
+    <div class="collapsible">
+        <p>蜘蛛竟然不优先关注俄爹！不孝！</p>
+        
+    </div>
+</div>
+    </div>
+</div>
+    </div>
+</div>
+    </div>
+</div>
+    </div>
+</div>
+
+<div class="comment" id="t1_hc1bq0c">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/hhffvgu">hhffvgu</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/pjuplv/_/hc1bq0c">Sep 08 2021 08:28:13</a>
+    </p>
+    <div class="collapsible">
+        <p>穷蛆滚</p>
+        
+    </div>
+</div>
+    </div>
+</div>
+
+<div class="comment" id="t1_hc07z1w">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/ru1snow">ru1snow</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/pjuplv/_/hc07z1w">Sep 08 2021 01:28:19</a>
+    </p>
+    <div class="collapsible">
+        <p>死妈左逼又赢了，赢两次</p>
+        <div class="comment" id="t1_hc08bbc">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Kalftazhi">Kalftazhi</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/pjuplv/_/hc08bbc">Sep 08 2021 01:30:57</a>
+    </p>
+    <div class="collapsible">
+        <p>死全家的左逼什么时候不赢呢？小粉红都赢不了的时候，左逼都在赢。</p>
+        <div class="comment" id="t1_hc08k47">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/QiongQuChatBot">QiongQuChatBot</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/pjuplv/_/hc08k47">Sep 08 2021 01:32:53</a>
+    </p>
+    <div class="collapsible">
+        <p>Kalftazhi高雅创作：左逼的爷爷住进纽约州老人院</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_hc08t0h">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/ru1snow">ru1snow</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/pjuplv/_/hc08t0h">Sep 08 2021 01:34:46</a>
+    </p>
+    <div class="collapsible">
+        <p>死妈左逼对言论自由不适应，我观察了几个左逼发现他们都很无奈，搞不了一言堂的情况下舔拜登都不敢公开舔了。</p>
+        
+    </div>
+</div>
+    </div>
+</div>
+
+<div class="comment" id="t1_hc0gzp8">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/RomancingSugar">RomancingSugar</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/pjuplv/_/hc0gzp8">Sep 08 2021 02:40:26</a>
+    </p>
+    <div class="collapsible">
+        <p>这味儿一看就知道是谁，除了换号还有点别的本事没有？</p>
+        
+    </div>
+</div>
+    </div>
+</div>
+
+<div class="comment" id="t1_hc0a0ma">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/ekiniechisuru">ekiniechisuru</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/pjuplv/_/hc0a0ma">Sep 08 2021 01:44:13</a>
+    </p>
+    <div class="collapsible">
+        <p>我之前也做了几个数据分析系列但是用的是pushshiftio https://pypi.org/project/pushshift.py/</p>
+<p>里面的数据除了几个月没有外每个中文sub数据都蛮整齐的</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_hc0arna">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/matterrun">matterrun</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/pjuplv/_/hc0arna">Sep 08 2021 01:49:52</a>
+    </p>
+    <div class="collapsible">
+        <p>右逼为翻墙穷蛆鉴定完毕，高华人均左逼，看来献忠需要在美国也开设分部，一个也别想跑</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_hc0bbva">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Opposite-Message-997">Opposite-Message-997</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/pjuplv/_/hc0bbva">Sep 08 2021 01:54:13</a>
+    </p>
+    <div class="collapsible">
+        <p>这下晶哥笑习了</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_hc0pwb4">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Conscious-Boss">Conscious-Boss</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/pjuplv/_/hc0pwb4">Sep 08 2021 03:59:22</a>
+    </p>
+    <div class="collapsible">
+        <p>白天不工作还是不上学？哪怕键政废宅谁不是日夜颠倒，中午下午跑网上扯淡？你这个结论可以直接反过来了。</p>
+        <div class="comment" id="t1_hc0x4j5">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/WestSalamander9041">WestSalamander9041</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/pjuplv/_/hc0x4j5">Sep 08 2021 05:12:39</a>
+    </p>
+    <div class="collapsible">
+        <p>怕你不知道提一嘴，本sub左逼人均美帝程序员，疫情期间 work from home 每天工作时间不足3小时，悠闲程度不是国内996翻墙穷蛆能比的</p>
+        <div class="comment" id="t1_hc0yck3">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Dengshopping">Dengshopping</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/pjuplv/_/hc0yck3">Sep 08 2021 05:26:46</a>
+    </p>
+    <div class="collapsible">
+        <p>确实 还是当左逼幸福。我都快两年没去办公室了</p>
+        
+    </div>
+</div>
+    </div>
+</div>
+    </div>
+</div>
+
+<div class="comment" id="t1_hc0yj97">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Dengshopping">Dengshopping</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/pjuplv/_/hc0yj97">Sep 08 2021 05:28:58</a>
+    </p>
+    <div class="collapsible">
+        <p>u/lostinmodu 乐乐爹！我们要还你清白😭😭😭本sub主流是好的，只有一小撮翻墙穷蛆骂你是左逼😭</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_hc1a3ok">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Random-32927">Random-32927</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/pjuplv/_/hc1a3ok">Sep 08 2021 08:03:25</a>
+    </p>
+    <div class="collapsible">
+        <p>数字记者呢，可是位重量级</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_hc1i061">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/PainKatana">PainKatana</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/pjuplv/_/hc1i061">Sep 08 2021 10:05:08</a>
+    </p>
+    <div class="collapsible">
+        <p>什麼？有右派？這怎麼可能？！中國大陸普通人本質上沒有任何政治意識，對任何政策的決議都沒有話語權，加上70年的共產洗腦，表現出來基本都是極左。如果你的鄰居講普通話你會給他擺臭臉嗎？在公司裡羞於用自己的母語方言說話嗎？外地人跑來搶你們的工作崗位你們會集結兒時的玩伴找他們麻煩嗎？噢，你兒時的玩伴說不定也是外地人。大多數人都是可以一聲不吭就離開自己的村或鎮子打工的人，這種人也能算右派嗎(戶籍制度下有的人會不得不回去)？連小區裡的居委會都TM是入了共產黨的，小到連社區都沒有自治能力。</p>
+<p>右，多為傳統保守，主張本地勢力掌握當地話語權，原先的規矩願意縫縫補補，但絕不實行改革，改革這種字眼完全是左派的專屬，能推動改革的也是右派裡出過國見識異國文化的人，他們和有出息的外地人合作才形成了最初的左派。只要是右派就不會喜歡和統一沾邊的字眼，哪怕是兩個小鎮之間，這就是為什麼有的國家是聯邦制，抵觸情緒強的，就直接變兩個國家了。所謂的中華民族，是TM包含了56個民族左到爆炸的統戰口號，中共更是純外來政權，政治傳統完完全全來自蘇共。有的人肯定要拿美國這個多民族移民國家舉例反駁，就這麼說吧，二戰時期，日裔美國人全都進了集中營。不過要是拿黑人種族問題來反駁，我認為黑人早已融入美國社區了，只是一些人看不慣，特別是地位超低但又沒人在乎的支那人。</p>
+<p>中國這地方，沒有右派，要是有，劉仲敬口裡的諸夏都成真了。即使移民到其他國家，不想當大家眼中固有印象的xx人，那得流上幾十年的血來證明，要徹底融入進去，那得流幾百年血了，只交稅的話，那只能算是居民，和平年代不會有什麼事還能受到庇護，所以各位有是移民外國的人，記得讓後代去參軍，不要當費拉了，當然，是從事顛覆和外宣的話祝你早日被驅逐出境，回到與你匹配的“祖國”。</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_hc1i4l5">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/xidada2021">xidada2021</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/pjuplv/_/hc1i4l5">Sep 08 2021 10:06:55</a>
+    </p>
+    <div class="collapsible">
+        <p>卧槽，什么名侦探柯南👏👏👏</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_hc2oe5v">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/99bane">99bane</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/pjuplv/_/hc2oe5v">Sep 08 2021 16:14:47</a>
+    </p>
+    <div class="collapsible">
+        <p>建议支川大胆承认自己是支那人</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_hfd0n34">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/KamijoMikoto">KamijoMikoto</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/pjuplv/_/hfd0n34">Oct 04 2021 15:37:50</a>
+    </p>
+    <div class="collapsible">
+        <p>不用这么麻烦 redditmetis可以直接看，还能比照两个id的作息/风格，看是不是小号。</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

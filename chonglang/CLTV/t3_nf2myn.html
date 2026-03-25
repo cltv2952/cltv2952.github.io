@@ -1,0 +1,112 @@
+<html>
+<head>
+<title>我被封了</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_nf2myn">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/ZGJJKOIY">ZGJJKOIY</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/nf2myn">May 18 2021 05:53:02</a>
+    </p>
+    <strong>我被封了</strong>
+    <p></p>
+</div>
+<div class="comment" id="t1_gykd31u">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/pupuxiong">pupuxiong</a>
+        |
+        <span class="score">5 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/nf2myn/_/gykd31u">May 18 2021 13:17:26</a>
+    </p>
+    <div class="collapsible">
+        <p>chonglangTV？狗都不去！我开了几个号了，一发言就给我shadowban</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_gyje8m9">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Kaowui">Kaowui</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/nf2myn/_/gyje8m9">May 18 2021 05:55:48</a>
+    </p>
+    <div class="collapsible">
+        <p>微博？B站？ chonglangTV？</p>
+        <div class="comment" id="t1_gyjeaqz">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/ZGJJKOIY">ZGJJKOIY</a>
+        |
+        <span class="score">9 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/nf2myn/_/gyjeaqz">May 18 2021 05:56:34</a>
+    </p>
+    <div class="collapsible">
+        <p>chingchong tv</p>
+        
+    </div>
+</div>
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

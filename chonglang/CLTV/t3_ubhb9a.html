@@ -1,0 +1,93 @@
+<html>
+<head>
+<title>可爱</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_ubhb9a">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/MiyohashiKori">MiyohashiKori</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/ubhb9a">Apr 25 2022 09:44:56</a>
+    </p>
+    <strong>可爱</strong>
+    <p><a href="https://www.youtube.com/watch?v=Yaagm-rjYaw">https://www.youtube.com/watch?v=Yaagm-rjYaw</a></p>
+</div>
+<div class="comment" id="t1_i640a4w">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/NyarPhysics">NyarPhysics</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/ubhb9a/_/i640a4w">Apr 25 2022 09:49:41</a>
+    </p>
+    <div class="collapsible">
+        <p>狂草包萝莉</p>
+        <div class="comment" id="t1_i642m0r">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/JOLTEON__L">JOLTEON__L</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/ubhb9a/_/i642m0r">Apr 25 2022 10:21:09</a>
+    </p>
+    <div class="collapsible">
+        <p>再可爱也好，他还是习近平</p>
+        
+    </div>
+</div>
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

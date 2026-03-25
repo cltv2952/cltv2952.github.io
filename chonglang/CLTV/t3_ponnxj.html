@@ -1,0 +1,93 @@
+<html>
+<head>
+<title>好累啊，手都发黑了</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_ponnxj">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/katesjsisn">katesjsisn</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/ponnxj">Sep 15 2021 10:46:06</a>
+    </p>
+    <strong>好累啊，手都发黑了</strong>
+    <p><a href="https://i.redd.it/9vlxzlajcnn71.jpg">https://i.redd.it/9vlxzlajcnn71.jpg</a></p>
+</div>
+<div class="comment" id="t1_hcy37m3">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/kepreal">kepreal</a>
+        |
+        <span class="score">3 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/ponnxj/_/hcy37m3">Sep 15 2021 13:15:23</a>
+    </p>
+    <div class="collapsible">
+        <p>请问你想表达什么？我认为不太好理解</p>
+        <div class="comment" id="t1_hdjuwa0">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/wuBIGwei">wuBIGwei</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/ponnxj/_/hdjuwa0">Sep 20 2021 03:49:50</a>
+    </p>
+    <div class="collapsible">
+        <p>让你见识见识什么叫黑手</p>
+        
+    </div>
+</div>
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

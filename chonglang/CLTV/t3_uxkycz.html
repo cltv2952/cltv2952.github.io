@@ -1,0 +1,95 @@
+<html>
+<head>
+<title>新皮肤</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_uxkycz">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/Vladimir_xjp">Vladimir_xjp</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/uxkycz">May 25 2022 16:19:02</a>
+    </p>
+    <strong>新皮肤</strong>
+    <p><a href="https://i.redd.it/30gakchndn191.jpg">https://i.redd.it/30gakchndn191.jpg</a></p>
+</div>
+<div class="comment" id="t1_i9yavgx">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/XComhghall">XComhghall</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/uxkycz/_/i9yavgx">May 25 2022 16:25:08</a>
+    </p>
+    <div class="collapsible">
+        <p>怪不得譚書記這麼支，破案了</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_i9z3nck">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/nmsl_hongdi">nmsl_hongdi</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/uxkycz/_/i9z3nck">May 25 2022 19:33:32</a>
+    </p>
+    <div class="collapsible">
+        <p>埃塞俄比亚的芝麻居然出油率更高？正宗芝麻人怎么咽得下这口气？</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

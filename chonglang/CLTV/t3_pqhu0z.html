@@ -1,0 +1,93 @@
+<html>
+<head>
+<title>啊，账户被锁了</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_pqhu0z">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/katesjsisn">katesjsisn</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/pqhu0z">Sep 18 2021 07:16:59</a>
+    </p>
+    <strong>啊，账户被锁了</strong>
+    <p><a href="https://i.redd.it/8duoutgyp7o71.jpg">https://i.redd.it/8duoutgyp7o71.jpg</a></p>
+</div>
+<div class="comment" id="t1_hddjkgb">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/ekiniechisuru">ekiniechisuru</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/pqhu0z/_/hddjkgb">Sep 18 2021 20:38:27</a>
+    </p>
+    <div class="collapsible">
+        <p>内网身份和宏迪挂上了。王晶马上翻你旧账</p>
+        <div class="comment" id="t1_hddm2dv">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/katesjsisn">katesjsisn</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/pqhu0z/_/hddm2dv">Sep 18 2021 20:55:11</a>
+    </p>
+    <div class="collapsible">
+        <p>翻病号旧账？</p>
+        
+    </div>
+</div>
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

@@ -1,0 +1,110 @@
+<html>
+<head>
+<title>贴吧回复和帖子又都发不出来了</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_txrvrn">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/Next-Estate-5273">Next-Estate-5273</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/txrvrn">Apr 06 2022 17:48:21</a>
+    </p>
+    <strong>贴吧回复和帖子又都发不出来了</strong>
+    <p><p>过一段时间就这样，好烦🤬</p></p>
+</div>
+<div class="comment" id="t1_i3o4rpc">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/105VS106">105VS106</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/txrvrn/_/i3o4rpc">Apr 06 2022 19:56:04</a>
+    </p>
+    <div class="collapsible">
+        <p>你被特定了</p>
+        <div class="comment" id="t1_i3qaxzu">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Next-Estate-5273">Next-Estate-5273</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/txrvrn/_/i3qaxzu">Apr 07 2022 06:06:53</a>
+    </p>
+    <div class="collapsible">
+        <p>我这个号甚至都没怎么在政治话题下留过言😓</p>
+        <div class="comment" id="t1_i3qyp5h">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/105VS106">105VS106</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/txrvrn/_/i3qyp5h">Apr 07 2022 11:16:51</a>
+    </p>
+    <div class="collapsible">
+        <p>我的大号也是</p>
+        
+    </div>
+</div>
+    </div>
+</div>
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

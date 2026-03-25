@@ -1,0 +1,95 @@
+<html>
+<head>
+<title>很难绷住</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_nk7ifw">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/alexaugustsunny">alexaugustsunny</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/nk7ifw">May 24 2021 20:28:28</a>
+    </p>
+    <strong>很难绷住</strong>
+    <p><a href="https://twitter.com/UNESCO_chinese/status/1396724143043665923?s=20">https://twitter.com/UNESCO_chinese/status/1396724143043665923?s=20</a></p>
+</div>
+<div class="comment" id="t1_gzbb3ki">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/alexaugustsunny">alexaugustsunny</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/nk7ifw/_/gzbb3ki">May 24 2021 20:28:54</a>
+    </p>
+    <div class="collapsible">
+        <p>什么维尼快乐组织</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_gzf1e33">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/plarq">plarq</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/nk7ifw/_/gzf1e33">May 25 2021 17:59:02</a>
+    </p>
+    <div class="collapsible">
+        <p>献忠语</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

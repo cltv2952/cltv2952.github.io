@@ -1,0 +1,114 @@
+<html>
+<head>
+<title>恶意的颜色组合</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_tv8dev">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/Illustrious_Lunch482">Illustrious_Lunch482</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tv8dev">Apr 03 2022 12:40:48</a>
+    </p>
+    <strong>恶意的颜色组合</strong>
+    <p><a href="https://i.redd.it/bmd9lo9b7br81.jpg">https://i.redd.it/bmd9lo9b7br81.jpg</a></p>
+</div>
+<div class="comment" id="t1_i37ty94">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/MMMMMMMMMMWMMMMMMMMM">MMMMMMMMMMWMMMMMMMMM</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tv8dev/_/i37ty94">Apr 03 2022 12:43:17</a>
+    </p>
+    <div class="collapsible">
+        <p>看来是欠镇压了</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_i37viyr">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/KWJisTrash">KWJisTrash</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tv8dev/_/i37viyr">Apr 03 2022 12:58:42</a>
+    </p>
+    <div class="collapsible">
+        <p>笑死，官大人是不是忘了平民百姓的家貓都被白皮嗯圖</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_i3bm5bn">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Comfortable-Art7084">Comfortable-Art7084</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tv8dev/_/i3bm5bn">Apr 04 2022 06:29:54</a>
+    </p>
+    <div class="collapsible">
+        <p>早删了</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

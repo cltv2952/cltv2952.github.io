@@ -1,0 +1,93 @@
+<html>
+<head>
+<title>幽默</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_txcaht">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/pisstips">pisstips</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/txcaht">Apr 06 2022 02:59:13</a>
+    </p>
+    <strong>幽默</strong>
+    <p><a href="https://i.redd.it/dnwklzcaqtr81.jpg">https://i.redd.it/dnwklzcaqtr81.jpg</a></p>
+</div>
+<div class="comment" id="t1_i3kxkf5">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/SpiderXiJinPing">SpiderXiJinPing</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/txcaht/_/i3kxkf5">Apr 06 2022 03:24:56</a>
+    </p>
+    <div class="collapsible">
+        <p>當一個植物根部壞掉時，這棵植物還會繼續存活嗎</p>
+        <div class="comment" id="t1_i3l3grz">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/rickenbacker4001a">rickenbacker4001a</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/txcaht/_/i3l3grz">Apr 06 2022 04:17:59</a>
+    </p>
+    <div class="collapsible">
+        <p>会  而且会火的像个太监</p>
+        
+    </div>
+</div>
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

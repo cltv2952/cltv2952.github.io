@@ -1,0 +1,150 @@
+<html>
+<head>
+<title>text</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_tpe3sc">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/GroundbreakingGap401">GroundbreakingGap401</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tpe3sc">Mar 27 2022 06:25:34</a>
+    </p>
+    <strong>text</strong>
+    <p><a href="https://i.redd.it/7qk2n5jzdvp81.jpg">https://i.redd.it/7qk2n5jzdvp81.jpg</a></p>
+</div>
+<div class="comment" id="t1_i2aarro">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/TainanWildPig">TainanWildPig</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tpe3sc/_/i2aarro">Mar 27 2022 06:28:18</a>
+    </p>
+    <div class="collapsible">
+        <p>懶羊羊也要開獻了</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_i2ac7zb">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Next-Kitchen-3089">Next-Kitchen-3089</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tpe3sc/_/i2ac7zb">Mar 27 2022 06:47:39</a>
+    </p>
+    <div class="collapsible">
+        <p>什么小说，我要去学习</p>
+        <div class="comment" id="t1_i2b27im">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/GroundbreakingGap401">GroundbreakingGap401</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tpe3sc/_/i2b27im">Mar 27 2022 12:38:31</a>
+    </p>
+    <div class="collapsible">
+        <p>我再发一遍，没发全</p>
+        
+    </div>
+</div>
+    </div>
+</div>
+
+<div class="comment" id="t1_i2adu2g">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/guidejun">guidejun</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tpe3sc/_/i2adu2g">Mar 27 2022 07:10:00</a>
+    </p>
+    <div class="collapsible">
+        <p>mark</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_i2agttk">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Love-sky">Love-sky</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tpe3sc/_/i2agttk">Mar 27 2022 07:52:34</a>
+    </p>
+    <div class="collapsible">
+        <p>懒羊羊，你好像跑错方向了吧</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

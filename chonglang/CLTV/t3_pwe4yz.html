@@ -1,0 +1,114 @@
+<html>
+<head>
+<title>删减一览</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_pwe4yz">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/bihiki">bihiki</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/pwe4yz">Sep 27 2021 10:22:39</a>
+    </p>
+    <strong>删减一览</strong>
+    <p><a href="https://i.redd.it/jyriv5tav0q71.jpg">https://i.redd.it/jyriv5tav0q71.jpg</a></p>
+</div>
+<div class="comment" id="t1_hegxjhe">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/aotfans">aotfans</a>
+        |
+        <span class="score">3 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/pwe4yz/_/hegxjhe">Sep 27 2021 13:37:35</a>
+    </p>
+    <div class="collapsible">
+        <p>已经折中评论开始感恩了</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_hegn424">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/OtherwiseAgency5080">OtherwiseAgency5080</a>
+        |
+        <span class="score">2 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/pwe4yz/_/hegn424">Sep 27 2021 12:02:41</a>
+    </p>
+    <div class="collapsible">
+        <p>都是基里艾洛德人搞的阴谋</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_hegsmdh">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Pinochat2">Pinochat2</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/pwe4yz/_/hegsmdh">Sep 27 2021 12:55:41</a>
+    </p>
+    <div class="collapsible">
+        <p>说实话22集那个寄生怪兽小时候看了确实感觉很恶心，45集的大脑也是</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

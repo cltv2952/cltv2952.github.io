@@ -1,0 +1,153 @@
+<html>
+<head>
+<title>简单对比一下</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_n5el3e">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/xijinpingdiguo">xijinpingdiguo</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/n5el3e">May 05 2021 12:19:51</a>
+    </p>
+    <strong>简单对比一下</strong>
+    <p><a href="https://www.reddit.com/gallery/n5ekqa">https://www.reddit.com/gallery/n5ekqa</a></p>
+</div>
+<div class="comment" id="t1_gx0nv9r">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/BlockNoir5">BlockNoir5</a>
+        |
+        <span class="score">5 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/n5el3e/_/gx0nv9r">May 05 2021 12:22:28</a>
+    </p>
+    <div class="collapsible">
+        <p>也就是新冠疫情国际旅游挡住了</p>
+<p>要不然全世界旅游胜地照样被污染</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_gx0ptvi">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/RoughPercussionythm">RoughPercussionythm</a>
+        |
+        <span class="score">2 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/n5el3e/_/gx0ptvi">May 05 2021 12:41:20</a>
+    </p>
+    <div class="collapsible">
+        <p>我的黄金周：烂在家里</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_gx0o9dp">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/kaeru1551">kaeru1551</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/n5el3e/_/gx0o9dp">May 05 2021 12:26:18</a>
+    </p>
+    <div class="collapsible">
+        <p>😭😭😭</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_gx0puhq">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/waiting_YOU">waiting_YOU</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/n5el3e/_/gx0puhq">May 05 2021 12:41:29</a>
+    </p>
+    <div class="collapsible">
+        <p>哈人</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_gx1v8nj">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/99bane">99bane</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/n5el3e/_/gx1v8nj">May 05 2021 17:43:03</a>
+    </p>
+    <div class="collapsible">
+        <p>我要回家，让我回家</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

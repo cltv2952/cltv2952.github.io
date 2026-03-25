@@ -1,0 +1,93 @@
+<html>
+<head>
+<title>红迪的删贴是个什么机制？</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_n2d57m">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/TheKeyToSchool">TheKeyToSchool</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/n2d57m">May 01 2021 06:58:30</a>
+    </p>
+    <strong>红迪的删贴是个什么机制？</strong>
+    <p><p>刚才在 r/shadowban 里发了一贴试了下，回复说我最近在 r/chonglangtv 回的几个贴都被 remove 了，但我自己还能看见这些回复，而且也被收到任何删贴提醒（也没被冲浪TV封禁）。这种情况是红迪自动删的吗？还是冲浪TV的mod删除的？</p></p>
+</div>
+<div class="comment" id="t1_gwinckl">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/T_F_Catus">T_F_Catus</a>
+        |
+        <span class="score">4 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/n2d57m/_/gwinckl">May 01 2021 07:05:00</a>
+    </p>
+    <div class="collapsible">
+        <p>被remove的帖子全部都是自己可见别人不可见，delete的帖子才是谁都看不见的，mod可以remove帖子但不能delete</p>
+        <div class="comment" id="t1_gwine9h">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/TheKeyToSchool">TheKeyToSchool</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/n2d57m/_/gwine9h">May 01 2021 07:05:41</a>
+    </p>
+    <div class="collapsible">
+        <p>好吧...红迪这个设计有点奇怪。</p>
+        
+    </div>
+</div>
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

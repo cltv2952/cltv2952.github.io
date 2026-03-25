@@ -1,0 +1,571 @@
+<html>
+<head>
+<title>开个帖入门下刷机，简单指个北</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_sgyfop">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/park_chung_xi">park_chung_xi</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/sgyfop">Jan 31 2022 10:45:34</a>
+    </p>
+    <strong>开个帖入门下刷机，简单指个北</strong>
+    <p><p>作为一位原酷安基佬，刷机看Fastboot/Recovery界面频率甚至比见亲妈的脸还多。现在酷安被支蛆狂暴轰入以及贵安头条化，已退勿念。随着几年反共心的不断深入，刷机也已从当年Debloat提升手机性能到现在逃脱老大哥监视的手段。但有时在贵sub看截图能看到都是原装系统（MIUI、oneUI、H2OS/O2OS等支产UI，甚至还有党产homoOS），本鼠觉得推动浪友平均搞机水平，很有必要。</p>
+<p>Android篇
+先推荐在刷机友好的手机品牌，一加好刷机没错但是支牌是原罪，要排的话在三星前面灯厂后面；摩托罗拉被渣想收了，并且本鼠不了解，所以不提。蝙蝠人可以买Fairphone，其主打全过程平等（The phone that cares for people and planet, Blue Angel certified），中等配置也提供OTA镜像。
+Pixel≈Essential Phone≈Razer Phone（以上三家是少数提供Factory Image的厂，但Essential倒了，Razer不做手机了）&rt;Samsung（刷机必熔断，Warranty和安全文件夹不保，且无fastboot交互层，得用自家流出的odin，对Windows外不友好）≈ASUS（台支企业，但是想解锁恢复原厂官网有包，比较简单，但是机型命名混乱）&rt;Sony（注意！解锁Bootloader会彻底清除其DRM分区，后果包括但不限于永久性相机算法丢失导致拍照如座机）LG（想恢复出厂ROM的话不大好找，xda可能有dump；解锁要注册帐号）&rt;HTC（解锁bootloader要注册账号，但更深的话却难以真正s-off彻底解锁，出厂ruu包别人提取了竟然还要解密！这下支了）</p>
+<p>本鼠首推GrapheneOS(grapheneos.org)/Calyx OS(calyxos.org)，几乎全过程开源化，比LineageOS官方维护版单system纯洁不知高到哪里去了，但缺点是只支持谷歌Pixel系列（Calyx从2开始，还有一个小米A2，但支牌手机狗都不用; GrapheneOS只支持Google官方还维护的机型，至码文时间为止是Pixel 3系列在Extended Support，之后就要停更了）。有教程，英语自己看。</p>
+<p>再来就是LineageOS官方版（download.lineageos.org) ，官网上有很多官方支持机型。里面对应机型有Install Instruction，同英语自己看。官方LineageOS我个人不推荐采用先刷第三方Recovery（如TWRP）再刷LineageOS的方法，可能会遇到兼容性问题（以及TWRP误导性刷入system镜像后还提示没有系统安装的bug以及部分机型每次退出提示一遍要不要装TWRP官方升级程序）尤其是没有经验的小白</p>
+<p>以上的ROM做到了去闭源Google化，在Google成为隐私数据收集巨头并尝试重返支那市场（蜻蜓计划）的情况下我劝你别用，安应用去f-droid.org找自由开源应用，实在是没Gapps用会死级别的可以考虑刷openGapps（实际上一点也不open）或者开源的microG。</p>
+<p>更后面就是其他第三方原生ROM或者去xda论坛(在搜索引擎按按着你的机型/codename来。
+比如三星S8欧版型号SM-G950F，codename=dreamlte（在这里批斗一下三棒，一个机型细分了好多个型号，导致一个包通常不能全球机型通刷，不光分欧韩等用Exynos的版本和支美等用睾酮的版本，可能还细分到基带型号，比如S6因火龙810全球都用Exynos 7420，但是支那等CDMA版用了睾酮基带，强刷上其他的最坏不开机，最好没法用sim），可以搜"xda Samsung S8" or "xda dreamlte" or "xda G950F"来搜。我青年时代就刷过的ROM有：LineageOS, CrDroid(crdroid.net), DotOS(www.droidontime.com), Bliss ROM(blissroms.org), AICP(www.aicp-rom.com), omniROM(omnirom.org), AOSP Extended(www.aospextended.com), Pixel Experience(download.pixelexperience.org), Havoc OS(havoc-os.com), Evolution OS(evolution-x.org)......有适配的最好，具体看ROM发布者说要怎么搞。通用模板大概是这样（非Treble以及部分已适配的Treble包）：解锁手机bootloader—刷入第三方Recovery如TWRP—Twrp内Wipe-Format Data—重启Recovery后传入待刷包—刷机；但是找了一圈没有适配的也不要紧，支持Treble的可以找Treble通用镜像刷。</p>
+<p>现在的Android设备如果出厂版本大于等于Oreo的话，一定自带Treble，以及一些旧机型官方会给Treble化（不确定可以到github.com/phhusson/treble_experimentations/wiki上看，上面也有机型的兼容性测试报告）。带Treble并且能够解锁Bootloader并绕过或关闭验证的话是可以刷入General System Image的（GSI汇总地址：github.com/phhusson/treble_experimentations/wiki/Generic-System-Image-(GSI)-list），可以看着Google的官方教程操作：source.android.com/setup/build/gsi#flashing-gsis，或国内Google.cn镜像：source.android.google.cn/setup/build/gsi?hl=zh-cn#flashing-gsis。但Treble镜像是通用的（就像船新安装但没打驱动的Windows，或Linux Live Image，不保证全部功能可用）。注意一下你的设备架构（一般是Armv8/Arm64）以及分区结构(A/B或A-only）下载对应GSI。一般流程是：进入recovery或fastboot—运行fastboot -w或Recovery内Factory Reset—刷入vbmeta.img禁用签名验证（一部分机型得刷universal disabler: forum.xda-developers.com/t/deprecated-universal-dm-verity-forceencrypt-disk-quota-disabler-11-2-2020.3817389/ 或者其他方式禁用boot分区验证签名)—刷入system.img
+（现在Google搞了个新的Dynamic System Update也可以起到类似效果，并且能够保留原系统，但这里不展开，因为本穷蛆没有支持这个特性的新设备，没有实践过）</p>
+<p>iOS/iPadOS篇
+ios/ipados在本自由开源强迫症看来，真不适合重度安全人士（全过程毕源且安装应用需要登录，重置后开机必联网激活上传手机信息，以及库克时代云上贵州及支行删除台湾国旗恶臭舔支怀疑是否与支那有py交易），但对于初翻人士我对ios比较中立（主要得注意应用是不是钓鱼的，一般ios应用也是不开源，开源的没钱上架），毕竟简单且比支行支产Android安全（除了外版未熔断三星的安全文件夹）。这里简单带一下iTunes出厂设置的方法，貌似会比手机自己出厂的干净，但是强制更到最新版，去ipsw.me有时可以装最新版的前几个版本，看谁前面有打勾就是苹果还没废了它们的签名。
+1. 下载安装iTunes，（Windows分应用商店版和普通msi版，看个人）安装完之后打开设置最后一个部分里面有禁止与设备自动同步还是自动备份来着的，关掉。别刷机刷完itunes自动把同步到电脑的又同回去了。
+2. 手机退出帐号，关机进恢复模式。具体机型进入方法网上搜。
+3. 连机子，iTunes会弹检测到在恢复模式的设备，然后选恢复。如果你要选从ipsw.me下的旧版，要shift点恢复选择你下载的ipsw文件。然后恢复。
+最后ios/ipados设置时把区域去掉不要有支那，不要用支、港ID，可能被徐俊平亲自视奸的概率可能低点。提示：输入法添加一个语言，系统备选区域就多一个，记得手动删。</p></p>
+</div>
+<div class="comment" id="t1_huz9jdk">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/park_chung_xi">park_chung_xi</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/sgyfop/_/huz9jdk">Jan 31 2022 10:54:08</a>
+    </p>
+    <div class="collapsible">
+        <p>今晚闲的无聊或者太吵可以拿台没用的机子练练手，祝大家除习快乐</p>
+<p>还有reddit怎么回事，https://打不了</p>
+        <div class="comment" id="t1_huzb571">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/AzumaAtago">AzumaAtago</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/sgyfop/_/huzb571">Jan 31 2022 11:14:45</a>
+    </p>
+    <div class="collapsible">
+        <p>英版xzp怎么解锁，求问</p>
+        <div class="comment" id="t1_huzbhkb">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/park_chung_xi">park_chung_xi</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/sgyfop/_/huzbhkb">Jan 31 2022 11:19:03</a>
+    </p>
+    <div class="collapsible">
+        <p>https://developer.sony.com/develop/open-devices/get-started/unlock-bootloader
+索尼的解bl后果很严重，是不可逆破坏，一定要三思
+xda等也许有你机型备份DRM分区或者解锁免格DRM的方法，搜一下</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_hv05nrz">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Odd_One_8342">Odd_One_8342</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/sgyfop/_/hv05nrz">Jan 31 2022 15:37:42</a>
+    </p>
+    <div class="collapsible">
+        <p>xda有一个免root备份drm分区的帖子 可以去看看</p>
+        
+    </div>
+</div>
+    </div>
+</div>
+    </div>
+</div>
+
+<div class="comment" id="t1_huzapuy">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/MasterMandarin">MasterMandarin</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/sgyfop/_/huzapuy">Jan 31 2022 11:09:18</a>
+    </p>
+    <div class="collapsible">
+        <p>怀念htc hd2刷3系统的时代</p>
+        <div class="comment" id="t1_huzb7gz">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/park_chung_xi">park_chung_xi</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/sgyfop/_/huzb7gz">Jan 31 2022 11:15:32</a>
+    </p>
+    <div class="collapsible">
+        <p>htc的哪个型号甚至能刷ios
+当年从Android 4.X刷到5.X的时候是真的惊艳，简洁的Material UI和全面弃用Dalvik虚拟机性能飙升，不像现在一年挤牙膏，而且Android 12UI倒车，滑动到底动画像oppo／vivo，字体调大感觉像老干部专用机</p>
+        
+    </div>
+</div>
+    </div>
+</div>
+
+<div class="comment" id="t1_huzca0l">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/XWN_BS">XWN_BS</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/sgyfop/_/huzca0l">Jan 31 2022 11:28:42</a>
+    </p>
+    <div class="collapsible">
+        <p>我天天不用google不行，这下我支了</p>
+        <div class="comment" id="t1_huze9fp">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/park_chung_xi">park_chung_xi</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/sgyfop/_/huze9fp">Jan 31 2022 11:52:00</a>
+    </p>
+    <div class="collapsible">
+        <p>Google开源或隐私友好型替代品多得是
+比如搜索引擎可用Startpage或searx instance代替（都是能够以谷歌做后端，准确性不会像用bing做后端的duckduckgo）</p>
+<p>Google会故意给全家桶用户更好的体验，让用户粘性更大</p>
+        <div class="comment" id="t1_hv3rt6n">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Adeptus2">Adeptus2</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/sgyfop/_/hv3rt6n">Feb 01 2022 07:05:19</a>
+    </p>
+    <div class="collapsible">
+        <p>我完全離不開Google😭</p>
+        
+    </div>
+</div>
+    </div>
+</div>
+    </div>
+</div>
+
+<div class="comment" id="t1_huzddnh">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/ching-chong-han-ji">ching-chong-han-ji</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/sgyfop/_/huzddnh">Jan 31 2022 11:41:55</a>
+    </p>
+    <div class="collapsible">
+        <p>请问，小米刷官方EEA欧版，非EU水友魔改欧版</p>
+<p>楼主请问这样有危险吗？</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_huzizth">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/thqw0925">thqw0925</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/sgyfop/_/huzizth">Jan 31 2022 12:42:04</a>
+    </p>
+    <div class="collapsible">
+        <p>project treble的包不太好用，搞了这么多年驱动层分离还是这鸟样</p>
+        <div class="comment" id="t1_huzq4z5">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/park_chung_xi">park_chung_xi</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/sgyfop/_/huzq4z5">Jan 31 2022 13:45:19</a>
+    </p>
+    <div class="collapsible">
+        <p>的确，所以我优先推荐专门适配的包（无论是传统刷法还是PT刷法）</p>
+        
+    </div>
+</div>
+    </div>
+</div>
+
+<div class="comment" id="t1_hv0669f">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Odd_One_8342">Odd_One_8342</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/sgyfop/_/hv0669f">Jan 31 2022 15:41:02</a>
+    </p>
+    <div class="collapsible">
+        <p>顶 纠正一下现在sony的机子解锁都基本不会影响功能了 xz1/2 这两代的可以按照xda的帖子备份ta分区 1mark2以后的解锁不影响功能 回锁bl之后照样有保修</p>
+        <div class="comment" id="t1_hv0b9c1">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/park_chung_xi">park_chung_xi</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/sgyfop/_/hv0b9c1">Jan 31 2022 16:14:27</a>
+    </p>
+    <div class="collapsible">
+        <p>谢谢，已合并到主帖</p>
+        
+    </div>
+</div>
+    </div>
+</div>
+
+<div class="comment" id="t1_hv0au9w">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Benedict_r">Benedict_r</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/sgyfop/_/hv0au9w">Jan 31 2022 16:11:44</a>
+    </p>
+    <div class="collapsible">
+        <p>收藏了。前几天Android手机刚刷了机</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_hv0rszr">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/zasdcrq">zasdcrq</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/sgyfop/_/hv0rszr">Jan 31 2022 17:56:39</a>
+    </p>
+    <div class="collapsible">
+        <p>现在哪个牌子解bl锁不用插手机卡啊</p>
+<p>我手机卡是实名的</p>
+        <div class="comment" id="t1_hv2w74x">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/park_chung_xi">park_chung_xi</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/sgyfop/_/hv2w74x">Feb 01 2022 02:26:55</a>
+    </p>
+    <div class="collapsible">
+        <p>国外品牌不用（除非是运营商机型），支那一加现在也不用</p>
+        
+    </div>
+</div>
+    </div>
+</div>
+
+<div class="comment" id="t1_hv2imv5">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/henanpunk">henanpunk</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/sgyfop/_/hv2imv5">Feb 01 2022 00:47:51</a>
+    </p>
+    <div class="collapsible">
+        <p>搞机的难点不是在于软件生态吗，没有统一推送咋弄都没啥用</p>
+        <div class="comment" id="t1_hv2wyrj">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/park_chung_xi">park_chung_xi</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/sgyfop/_/hv2wyrj">Feb 01 2022 02:32:31</a>
+    </p>
+    <div class="collapsible">
+        <p>如果很在意要求稳定的统一推送服务的话，要么刷gapps，要么去用ios
+开源microG也有类似的统一推送，但是稳定性未知，可以测试下</p>
+        <div class="comment" id="t1_hv395yn">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/henanpunk">henanpunk</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/sgyfop/_/hv395yn">Feb 01 2022 04:04:47</a>
+    </p>
+    <div class="collapsible">
+        <p>墙内环境还没整合好法律法规还没跟上，双持是目前最优解。</p>
+        
+    </div>
+</div>
+    </div>
+</div>
+    </div>
+</div>
+
+<div class="comment" id="t1_hv2vuph">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Candid-Drag2948">Candid-Drag2948</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/sgyfop/_/hv2vuph">Feb 01 2022 02:24:24</a>
+    </p>
+    <div class="collapsible">
+        <p>pixel4刚升级到12，我这还等了1个多月，很多方面不如11啊，原生系统怎么也拉了</p>
+        <div class="comment" id="t1_hv2xd7p">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/park_chung_xi">park_chung_xi</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/sgyfop/_/hv2xd7p">Feb 01 2022 02:35:25</a>
+    </p>
+    <div class="collapsible">
+        <p>Android 12UI大倒车，滑动到底动画像oppo／vivo，字体调大感觉像老干部专用机，看得都吐了
+等LineageOS 19.1出来之后我打算备份各大机型最后一版18.1 LineageOS往Archive.org传</p>
+        
+    </div>
+</div>
+    </div>
+</div>
+
+<div class="comment" id="t1_hv37enq">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/WinneThePoop19530615">WinneThePoop19530615</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/sgyfop/_/hv37enq">Feb 01 2022 03:50:41</a>
+    </p>
+    <div class="collapsible">
+        <p>只用 F-Droid 什么鬼，日常app基本都没有吧。移动端早被大公司鸿儒完了，开源app也就图个乐。当然，Termux 不能不用😁</p>
+        <div class="comment" id="t1_hv3aqog">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/park_chung_xi">park_chung_xi</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/sgyfop/_/hv3aqog">Feb 01 2022 04:17:40</a>
+    </p>
+    <div class="collapsible">
+        <p>日常app可以用网页版，有的网页还支持add to desktop变成像chromeos的轻应用。
+如果没人都支持短期内为排挤竞争对手做得更好用的闭源app，等对手排完了，自己就会越做越恶心，但用户粘性已经形成，想退退不掉了，自己看看巨硬GoogleFB推特的丑恶嘴脸吧</p>
+        
+    </div>
+</div>
+    </div>
+</div>
+
+<div class="comment" id="t1_hv39wx9">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/CattlePractical108">CattlePractical108</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/sgyfop/_/hv39wx9">Feb 01 2022 04:10:51</a>
+    </p>
+    <div class="collapsible">
+        <p>呵呵，发的啥玩意？看不懂，去斯吧</p>
+        <div class="comment" id="t1_hv3awdd">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/park_chung_xi">park_chung_xi</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/sgyfop/_/hv3awdd">Feb 01 2022 04:18:59</a>
+    </p>
+    <div class="collapsible">
+        <p>你鸡巴谁呀，在这颐使气指</p>
+        
+    </div>
+</div>
+    </div>
+</div>
+
+<div class="comment" id="t1_hv3oq4q">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Flat_Shop9969">Flat_Shop9969</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/sgyfop/_/hv3oq4q">Feb 01 2022 06:30:27</a>
+    </p>
+    <div class="collapsible">
+        <p>补充一下，除了少数设备(pixel,部分一加,小米A2)支持导入自定义avb key(grapheneos的安装脚本会自动做这一步)，回锁bootloader后会拒绝启动没有签名的boot。其他设备，解了bootloader基本等于完全放弃了安全性。如果你的设备本来就不是国行，并且制造商和支那关联比较小，就没有必要刷机。另外，没有回锁bl的手机尽量不要用来冲浪，用来冲浪了就少带上街，不然被黑皮拦路查手机跟自首也没啥差别。</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

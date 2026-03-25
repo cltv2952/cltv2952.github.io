@@ -1,0 +1,114 @@
+<html>
+<head>
+<title>IOS Reddit又改了嗎，block的貴物的發言變得只會折疊了</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_p6h8v4">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/Ok-Oil4945">Ok-Oil4945</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/p6h8v4">Aug 18 2021 01:30:44</a>
+    </p>
+    <strong>IOS Reddit又改了嗎，block的貴物的發言變得只會折疊了</strong>
+    <p><p>[removed]</p></p>
+</div>
+<div class="comment" id="t1_h9d1b17">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/XiJinpingShaBi">XiJinpingShaBi</a>
+        |
+        <span class="score">13 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/p6h8v4/_/h9d1b17">Aug 18 2021 01:49:23</a>
+    </p>
+    <div class="collapsible">
+        <p>D宝光速被折叠，block了等于没block</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_h9d2f91">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/qiao_ni_ma">qiao_ni_ma</a>
+        |
+        <span class="score">3 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/p6h8v4/_/h9d2f91">Aug 18 2021 01:58:49</a>
+    </p>
+    <div class="collapsible">
+        <p>我的也是 🤮</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_h9d89wy">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/birdlive">birdlive</a>
+        |
+        <span class="score">3 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/p6h8v4/_/h9d89wy">Aug 18 2021 02:49:50</a>
+    </p>
+    <div class="collapsible">
+        <p>应该是隔一段时间就有的bug，之后会修复的吧？刚才不小心点进太监区背溅得满脸是粪</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

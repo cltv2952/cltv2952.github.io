@@ -1,0 +1,108 @@
+<html>
+<head>
+<title>有没有会写油猴的，我想屏蔽掉PC端右下角的的gif（看的头花），但切换url时下面代码不管用</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_updhgg">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/Acrobatic_Taro_1984">Acrobatic_Taro_1984</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/updhgg">May 14 2022 09:16:57</a>
+    </p>
+    <strong>有没有会写油猴的，我想屏蔽掉PC端右下角的的gif（看的头花），但切换url时下面代码不管用</strong>
+    <p><p>// ==UserScript==</p>
+<p>// u/nameNew Userscript</p>
+<p>// u/namespace<a href="http://tampermonkey.net/">http://tampermonkey.net/</a></p>
+<p>// u/version0.1</p>
+<p>// u/description  try to take over the world!</p>
+<p>// u/authorYou</p>
+<p>// u/match<a href="https://www.reddit.com/*">https://www.reddit.com/*</a></p>
+<p>// u/icon<a href="https://www.google.com/s2/favicons?sz=64&amp;domain=reddit.com">https://www.google.com/s2/favicons?sz=64&amp;domain=reddit.com</a></p>
+<p>// u/grantnone</p>
+<p>// ==/UserScript==</p>
+<p>&#x200B;</p>
+<p>(function() {</p>
+<p>'use strict';</p>
+<p>&#x200B;</p>
+<p>// Your code here...</p>
+<p>var img = document.querySelector('._3WqRAmto46uhALFWnn8-Pa')</p>
+<p>img.style.display = 'none'</p>
+<p>var _wr = function (type) {</p>
+<p>var orig = history[type];</p>
+<p>return function () {</p>
+<p>var rv = orig.apply(this, arguments);</p>
+<p>var e = new Event(type);</p>
+<p>e.arguments = arguments;</p>
+<p>window.dispatchEvent(e);</p>
+<p>return rv;</p>
+<p>};</p>
+<p>};</p>
+<p>history.pushState = _wr('pushState');</p>
+<p>window.addEventListener('pushState', function (e) {</p>
+<p>var img = document.querySelector('._3WqRAmto46uhALFWnn8-Pa')</p>
+<p>img.style.display = 'none'</p>
+<p>});</p>
+<p>})();</p></p>
+</div>
+<div class="comment" id="t1_i8k49jr">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/suicl">suicl</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/updhgg/_/i8k49jr">May 14 2022 09:21:02</a>
+    </p>
+    <div class="collapsible">
+        <p>Adcock选中模块屏蔽就行了</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

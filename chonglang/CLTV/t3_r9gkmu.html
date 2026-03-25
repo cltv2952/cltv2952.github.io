@@ -1,0 +1,76 @@
+<html>
+<head>
+<title>我支吗？</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_r9gkmu">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/RegnitzRW">RegnitzRW</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/r9gkmu">Dec 05 2021 14:14:18</a>
+    </p>
+    <strong>我支吗？</strong>
+    <p><p>乳啼，每次去公共厕所的时候我都会下意识地朝女厕所门里瞟一眼，我也知道这很猥琐，我也尝试过改，但朝女厕所门里瞟一眼这刁惯就像膝跳反射一样已经深深地刻进了我的基因里，我也没办法啊，哎...</p></p>
+</div>
+<div class="comment" id="t1_hnc874o">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/43212321423">43212321423</a>
+        |
+        <span class="score">0 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/r9gkmu/_/hnc874o">Dec 05 2021 16:37:06</a>
+    </p>
+    <div class="collapsible">
+        <p>女厕有什么好瞄的，出来个大妈你还能硬？要瞄去健身房瞄啊</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

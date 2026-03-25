@@ -1,0 +1,76 @@
+<html>
+<head>
+<title>终于开始了。</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_u6vgao">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/Legitimate_Maybe_380">Legitimate_Maybe_380</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/u6vgao">Apr 19 2022 03:26:10</a>
+    </p>
+    <strong>终于开始了。</strong>
+    <p><a href="https://www.reddit.com/gallery/u6vgao">https://www.reddit.com/gallery/u6vgao</a></p>
+</div>
+<div class="comment" id="t1_i5aq1ev">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Outrageous_Oil_7125">Outrageous_Oil_7125</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/u6vgao/_/i5aq1ev">Apr 19 2022 03:27:08</a>
+    </p>
+    <div class="collapsible">
+        <p>已经文革了。结束时间：祂去世的那天😊</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

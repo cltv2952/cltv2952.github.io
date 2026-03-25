@@ -1,0 +1,114 @@
+<html>
+<head>
+<title>难绷</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_nbe37z">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/Ame_PSG">Ame_PSG</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/nbe37z">May 13 2021 11:08:05</a>
+    </p>
+    <strong>难绷</strong>
+    <p><a href="https://i.redd.it/74ybqbyievy61.jpg">https://i.redd.it/74ybqbyievy61.jpg</a></p>
+</div>
+<div class="comment" id="t1_gxyrjy1">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Brilliant-Sweet-7874">Brilliant-Sweet-7874</a>
+        |
+        <span class="score">16 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/nbe37z/_/gxyrjy1">May 13 2021 11:20:40</a>
+    </p>
+    <div class="collapsible">
+        <p>这不是坚子吗</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_gxyqow9">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/kaeru1551">kaeru1551</a>
+        |
+        <span class="score">7 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/nbe37z/_/gxyqow9">May 13 2021 11:10:14</a>
+    </p>
+    <div class="collapsible">
+        <p>心梗：xxx(有低保)，用法类似于xxx(已黑化)</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_gxzimuw">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        [deleted]
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/nbe37z/_/gxzimuw">May 13 2021 15:14:04</a>
+    </p>
+    <div class="collapsible">
+        <p>[deleted]</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

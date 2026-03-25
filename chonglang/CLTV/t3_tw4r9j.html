@@ -1,0 +1,112 @@
+<html>
+<head>
+<title>完了呀</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_tw4r9j">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/lckaj">lckaj</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tw4r9j">Apr 04 2022 15:26:57</a>
+    </p>
+    <strong>完了呀</strong>
+    <p><a href="https://i.redd.it/mjhcd1dv5jr81.jpg">https://i.redd.it/mjhcd1dv5jr81.jpg</a></p>
+</div>
+<div class="comment" id="t1_i3d2sao">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/FengqinYundan">FengqinYundan</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tw4r9j/_/i3d2sao">Apr 04 2022 15:29:49</a>
+    </p>
+    <div class="collapsible">
+        <p>港友联动中，少话</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_i3d33rd">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/7853plus1111">7853plus1111</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tw4r9j/_/i3d33rd">Apr 04 2022 15:31:59</a>
+    </p>
+    <div class="collapsible">
+        <p>被攻陷了吗 半边都没形了</p>
+        <div class="comment" id="t1_i3d6spo">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/zakura61">zakura61</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tw4r9j/_/i3d6spo">Apr 04 2022 15:56:26</a>
+    </p>
+    <div class="collapsible">
+        <p>借块地方给港友</p>
+        
+    </div>
+</div>
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

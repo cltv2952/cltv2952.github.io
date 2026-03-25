@@ -1,0 +1,112 @@
+<html>
+<head>
+<title>这下裹了</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_oequtn">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/Curious_Community937">Curious_Community937</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/oequtn">Jul 06 2021 08:32:37</a>
+    </p>
+    <strong>这下裹了</strong>
+    <p><a href="https://i.redd.it/ds28k18m0d971.jpg">https://i.redd.it/ds28k18m0d971.jpg</a></p>
+</div>
+<div class="comment" id="t1_h481v7u">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Big-Blacksmith-5073">Big-Blacksmith-5073</a>
+        |
+        <span class="score">3 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/oequtn/_/h481v7u">Jul 06 2021 10:27:56</a>
+    </p>
+    <div class="collapsible">
+        <p>后面跟着的人其实是黑暗流浪者</p>
+        <div class="comment" id="t1_h4c3xkh">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Curious_Community937">Curious_Community937</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/oequtn/_/h4c3xkh">Jul 07 2021 09:15:37</a>
+    </p>
+    <div class="collapsible">
+        <p>什么大菠萝</p>
+        
+    </div>
+</div>
+    </div>
+</div>
+
+<div class="comment" id="t1_h47z78w">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/mulangrenyunjie">mulangrenyunjie</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/oequtn/_/h47z78w">Jul 06 2021 09:46:27</a>
+    </p>
+    <div class="collapsible">
+        <p>圆筒帽的意义是什么？又不能遮光</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

@@ -1,0 +1,76 @@
+<html>
+<head>
+<title>盼林归</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_u230uh">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/FriendshipPitiful719">FriendshipPitiful719</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/u230uh">Apr 12 2022 16:24:26</a>
+    </p>
+    <strong>盼林归</strong>
+    <p><a href="https://youtu.be/n3vDJ5GZB_Y">https://youtu.be/n3vDJ5GZB_Y</a></p>
+</div>
+<div class="comment" id="t1_i4g4alh">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/daddysgirl2112">daddysgirl2112</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/u230uh/_/i4g4alh">Apr 12 2022 16:35:49</a>
+    </p>
+    <div class="collapsible">
+        <p>此時正是中華人民共和國最開放階段的晚期。</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

@@ -1,0 +1,112 @@
+<html>
+<head>
+<title>这是道什么菜？</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_oedzk9">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/somethin4nonthing">somethin4nonthing</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/oedzk9">Jul 05 2021 19:06:02</a>
+    </p>
+    <strong>这是道什么菜？</strong>
+    <p><a href="https://i.imgur.com/78n0k77.gifv">https://i.imgur.com/78n0k77.gifv</a></p>
+</div>
+<div class="comment" id="t1_h462xwf">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/4sth">4sth</a>
+        |
+        <span class="score">8 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/oedzk9/_/h462xwf">Jul 05 2021 21:18:33</a>
+    </p>
+    <div class="collapsible">
+        <p>肉酱</p>
+        <div class="comment" id="t1_h4630a6">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/somethin4nonthing">somethin4nonthing</a>
+        |
+        <span class="score">5 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/oedzk9/_/h4630a6">Jul 05 2021 21:19:07</a>
+    </p>
+    <div class="collapsible">
+        <p>馋</p>
+        
+    </div>
+</div>
+    </div>
+</div>
+
+<div class="comment" id="t1_h483iha">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/frontcount-">frontcount-</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/oedzk9/_/h483iha">Jul 06 2021 10:52:29</a>
+    </p>
+    <div class="collapsible">
+        <p>local sated she is alive</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

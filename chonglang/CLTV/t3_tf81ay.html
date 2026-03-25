@@ -1,0 +1,76 @@
+<html>
+<head>
+<title>湾友那么抽象的么？</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_tf81ay">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/Krookodile1989">Krookodile1989</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tf81ay">Mar 16 2022 03:18:21</a>
+    </p>
+    <strong>湾友那么抽象的么？</strong>
+    <p><a href="https://www.reddit.com/gallery/tf81ay">https://www.reddit.com/gallery/tf81ay</a></p>
+</div>
+<div class="comment" id="t1_i0u9lnx">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Krookodile1989">Krookodile1989</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tf81ay/_/i0u9lnx">Mar 16 2022 03:20:19</a>
+    </p>
+    <div class="collapsible">
+        <p>如果在吸纳改名也能那么容易就好了，娘炮名字给我添了不少麻烦</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

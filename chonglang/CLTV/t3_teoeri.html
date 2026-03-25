@@ -1,0 +1,96 @@
+<html>
+<head>
+<title>大家對新頭像似乎不滿，如果有什麼想法提出來，我跟mod討論 看看能不能實現</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_teoeri">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/Illustrious-Song2674">Illustrious-Song2674</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/teoeri">Mar 15 2022 12:57:54</a>
+    </p>
+    <strong>大家對新頭像似乎不滿，如果有什麼想法提出來，我跟mod討論 看看能不能實現</strong>
+    <p></p>
+</div>
+<div class="comment" id="t1_i0qsm6h">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Stasi1950">Stasi1950</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/teoeri/_/i0qsm6h">Mar 15 2022 12:58:55</a>
+    </p>
+    <div class="collapsible">
+        <p>光复冲浪，时代革命，五大诉求，缺一不可</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_i0qt0q4">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/sanshan33">sanshan33</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/teoeri/_/i0qt0q4">Mar 15 2022 13:02:27</a>
+    </p>
+    <div class="collapsible">
+        <p>支持乌克兰，也不反对evy，但新的banner真的...一言难尽。</p>
+<p>“支、反”的图标也不可爱，当然，之前那个青🐛更丑</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

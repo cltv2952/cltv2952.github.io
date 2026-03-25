@@ -1,0 +1,93 @@
+<html>
+<head>
+<title>你们都错怪小王了！</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_uanlbi">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/SuckMyPUXI">SuckMyPUXI</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/uanlbi">Apr 24 2022 05:25:08</a>
+    </p>
+    <strong>你们都错怪小王了！</strong>
+    <p><a href="https://i.redd.it/4detxr8qwev81.jpg">https://i.redd.it/4detxr8qwev81.jpg</a></p>
+</div>
+<div class="comment" id="t1_i5zb3wa">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Inner-Sprinkles-1754">Inner-Sprinkles-1754</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/uanlbi/_/i5zb3wa">Apr 24 2022 08:57:25</a>
+    </p>
+    <div class="collapsible">
+        <p>昨天好像上百度热搜了，看来思聪哥是出来后不爽就上微博开怼了</p>
+        <div class="comment" id="t1_i5zdbip">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/SuckMyPUXI">SuckMyPUXI</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/uanlbi/_/i5zdbip">Apr 24 2022 09:28:47</a>
+    </p>
+    <div class="collapsible">
+        <p>是出来了？我以为还关在里面</p>
+        
+    </div>
+</div>
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

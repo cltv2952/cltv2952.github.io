@@ -1,0 +1,112 @@
+<html>
+<head>
+<title>简单来个50线操作</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_s57zlt">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/kumaba">kumaba</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/s57zlt">Jan 16 2022 09:10:58</a>
+    </p>
+    <strong>简单来个50线操作</strong>
+    <p><a href="https://i.redd.it/0msoga4pn0c81.jpg">https://i.redd.it/0msoga4pn0c81.jpg</a></p>
+</div>
+<div class="comment" id="t1_hsvvf2s">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/packWolf77">packWolf77</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/s57zlt/_/hsvvf2s">Jan 16 2022 10:06:14</a>
+    </p>
+    <div class="collapsible">
+        <p>干什么的</p>
+        <div class="comment" id="t1_hsvwi17">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/OddBird_S">OddBird_S</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/s57zlt/_/hsvwi17">Jan 16 2022 10:20:50</a>
+    </p>
+    <div class="collapsible">
+        <p>王晶</p>
+        
+    </div>
+</div>
+    </div>
+</div>
+
+<div class="comment" id="t1_hsw3izg">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/AMongolia">AMongolia</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/s57zlt/_/hsw3izg">Jan 16 2022 11:52:08</a>
+    </p>
+    <div class="collapsible">
+        <p>群控，这是电诈窝点，晶哥收网了</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

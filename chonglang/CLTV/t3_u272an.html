@@ -1,0 +1,76 @@
+<html>
+<head>
+<title>狗咬狗咯</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_u272an">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/Rx7Twinturbo">Rx7Twinturbo</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/u272an">Apr 12 2022 19:20:08</a>
+    </p>
+    <strong>狗咬狗咯</strong>
+    <p><a href="https://i.redd.it/eiy5igsre5t81.jpg">https://i.redd.it/eiy5igsre5t81.jpg</a></p>
+</div>
+<div class="comment" id="t1_i4gviiy">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/BidenTrump996">BidenTrump996</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/u272an/_/i4gviiy">Apr 12 2022 19:25:51</a>
+    </p>
+    <div class="collapsible">
+        <p>有一说一，国内批斗女拳和浪友批斗女拳有本质区别，国内是嫌女拳是反贼，是境外势力；而浪友反而是觉得女拳反的不够彻底，在一个人权都没有的国家搞女权实属笑话</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

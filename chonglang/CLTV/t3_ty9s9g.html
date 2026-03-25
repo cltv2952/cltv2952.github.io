@@ -1,0 +1,95 @@
+<html>
+<head>
+<title>我们之间有一个中国人</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_ty9s9g">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/happytechtech">happytechtech</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/ty9s9g">Apr 07 2022 10:09:32</a>
+    </p>
+    <strong>我们之间有一个中国人</strong>
+    <p><a href="https://youtube.com/watch?v=oTjFbKJYkkw&amp;feature=share">https://youtube.com/watch?v=oTjFbKJYkkw&amp;feature=share</a></p>
+</div>
+<div class="comment" id="t1_i3qt76k">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Tadaoki_Z">Tadaoki_Z</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/ty9s9g/_/i3qt76k">Apr 07 2022 10:13:19</a>
+    </p>
+    <div class="collapsible">
+        <p>典</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_i3r3fku">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/1q956_">1q956_</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/ty9s9g/_/i3r3fku">Apr 07 2022 12:03:56</a>
+    </p>
+    <div class="collapsible">
+        <p>雅</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

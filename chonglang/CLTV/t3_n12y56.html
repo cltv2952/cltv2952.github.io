@@ -1,0 +1,95 @@
+<html>
+<head>
+<title>无题</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_n12y56">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/BrownAme7">BrownAme7</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/n12y56">Apr 29 2021 12:10:26</a>
+    </p>
+    <strong>无题</strong>
+    <p><a href="https://i.redd.it/eikt3swvs3w61.png">https://i.redd.it/eikt3swvs3w61.png</a></p>
+</div>
+<div class="comment" id="t1_gwadejf">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/huangdidexinnong">huangdidexinnong</a>
+        |
+        <span class="score">2 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/n12y56/_/gwadejf">Apr 29 2021 12:19:53</a>
+    </p>
+    <div class="collapsible">
+        <p>点进你以前的帖子看了下，还有你的id后缀，熟脸孔，看来冲浪要陷落了</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_gwaeg7l">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/NeyGorChowHai">NeyGorChowHai</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/n12y56/_/gwaeg7l">Apr 29 2021 12:30:09</a>
+    </p>
+    <div class="collapsible">
+        <p>我也是，种花速度</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

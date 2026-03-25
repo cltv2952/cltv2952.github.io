@@ -1,0 +1,114 @@
+<html>
+<head>
+<title>晚餐</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_uljdhb">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/sakurakosugimoto">sakurakosugimoto</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/uljdhb">May 09 2022 04:40:32</a>
+    </p>
+    <strong>晚餐</strong>
+    <p><a href="https://i.redd.it/780x752gqdy81.jpg">https://i.redd.it/780x752gqdy81.jpg</a></p>
+</div>
+<div class="comment" id="t1_i7vu25t">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/sakurakosugimoto">sakurakosugimoto</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/uljdhb/_/i7vu25t">May 09 2022 04:42:46</a>
+    </p>
+    <div class="collapsible">
+        <p>洋蔥汁澆豬肉香腸和薯泥</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_i7vw92c">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Plane_Anxiety_yuri">Plane_Anxiety_yuri</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/uljdhb/_/i7vw92c">May 09 2022 05:07:09</a>
+    </p>
+    <div class="collapsible">
+        <p>我也想吃</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_i7wu8xd">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/xijinping_xi">xijinping_xi</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/uljdhb/_/i7wu8xd">May 09 2022 12:32:39</a>
+    </p>
+    <div class="collapsible">
+        <p>什么特色料理</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

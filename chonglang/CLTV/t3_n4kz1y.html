@@ -1,0 +1,95 @@
+<html>
+<head>
+<title>整活</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_n4kz1y">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/IsolationAssistance">IsolationAssistance</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/n4kz1y">May 04 2021 10:24:23</a>
+    </p>
+    <strong>整活</strong>
+    <p><a href="https://i.redd.it/9359t3pwx2x61.png">https://i.redd.it/9359t3pwx2x61.png</a></p>
+</div>
+<div class="comment" id="t1_gww3u3r">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Cdguy123">Cdguy123</a>
+        |
+        <span class="score">3 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/n4kz1y/_/gww3u3r">May 04 2021 10:42:50</a>
+    </p>
+    <div class="collapsible">
+        <p>小孤烟暮蝉</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_gwwd7fr">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/No-Kale-8539">No-Kale-8539</a>
+        |
+        <span class="score">2 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/n4kz1y/_/gwwd7fr">May 04 2021 12:26:53</a>
+    </p>
+    <div class="collapsible">
+        <p>是Fukushima,外国人怕是会搞错</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

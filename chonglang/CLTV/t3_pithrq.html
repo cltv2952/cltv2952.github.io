@@ -1,0 +1,133 @@
+<html>
+<head>
+<title>红迪的block功能傻逼透了</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_pithrq">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/beatmysoymeat">beatmysoymeat</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/pithrq">Sep 06 2021 05:58:03</a>
+    </p>
+    <strong>红迪的block功能傻逼透了</strong>
+    <p><p>被block的还是可以看帖回帖，除了你自己其他人都能看到，意义何在？</p></p>
+</div>
+<div class="comment" id="t1_hbs5uds">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/freedomlian">freedomlian</a>
+        |
+        <span class="score">9 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/pithrq/_/hbs5uds">Sep 06 2021 06:47:17</a>
+    </p>
+    <div class="collapsible">
+        <p>自己也能看到，会显示一个折叠了的blocked account，真的傻逼透了</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_hbs31bl">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/XiJinpingShaBi">XiJinpingShaBi</a>
+        |
+        <span class="score">2 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/pithrq/_/hbs31bl">Sep 06 2021 06:12:58</a>
+    </p>
+    <div class="collapsible">
+        <p>被block的不能私信你</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_hbtcuwp">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/100kgwheat">100kgwheat</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/pithrq/_/hbtcuwp">Sep 06 2021 15:02:10</a>
+    </p>
+    <div class="collapsible">
+        <p>眼不见心不烦</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_hbvh49z">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/arasaka2077saimurai">arasaka2077saimurai</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/pithrq/_/hbvh49z">Sep 07 2021 00:39:04</a>
+    </p>
+    <div class="collapsible">
+        <p>不如贴吧大会员一根几把毛</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

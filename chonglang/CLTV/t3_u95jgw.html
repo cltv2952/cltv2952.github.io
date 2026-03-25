@@ -1,0 +1,77 @@
+<html>
+<head>
+<title>沈逸微博的节目效果</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_u95jgw">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/EngineerPlenty4213">EngineerPlenty4213</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/u95jgw">Apr 22 2022 03:52:28</a>
+    </p>
+    <strong>沈逸微博的节目效果</strong>
+    <p><p>&#x200B;</p>
+<p>https://preview.redd.it/95cd5p1960v81.png?width=611&amp;format=png&amp;auto=webp&amp;s=e52d9fc793e6ed1ae6266e13459eea4752c425fa</p></p>
+</div>
+<div class="comment" id="t1_i5pi6wj">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Ok_Philosophy7893">Ok_Philosophy7893</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/u95jgw/_/i5pi6wj">Apr 22 2022 03:58:39</a>
+    </p>
+    <div class="collapsible">
+        <p>这是在质疑我平子的亲自指挥么😭</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

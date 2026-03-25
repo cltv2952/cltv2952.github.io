@@ -1,0 +1,110 @@
+<html>
+<head>
+<title>Judgement day</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_tmx611">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/ChiangKaiShek1949">ChiangKaiShek1949</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tmx611">Mar 24 2022 19:15:07</a>
+    </p>
+    <strong>Judgement day</strong>
+    <p><a href="https://i.redd.it/b93xoc3ksdp81.jpg">https://i.redd.it/b93xoc3ksdp81.jpg</a></p>
+</div>
+<div class="comment" id="t1_i1zhoj9">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Pretend_Potato_small">Pretend_Potato_small</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tmx611/_/i1zhoj9">Mar 24 2022 21:41:48</a>
+    </p>
+    <div class="collapsible">
+        <p>喜欢这个画风 好奇作者是谁</p>
+        <div class="comment" id="t1_i1zu2bh">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/T_F_Catus">T_F_Catus</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tmx611/_/i1zu2bh">Mar 24 2022 23:07:34</a>
+    </p>
+    <div class="collapsible">
+        <p>善用saucenao</p>
+        <div class="comment" id="t1_i211xmt">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Pretend_Potato_small">Pretend_Potato_small</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tmx611/_/i211xmt">Mar 25 2022 04:55:07</a>
+    </p>
+    <div class="collapsible">
+        <p>谢谢～</p>
+        
+    </div>
+</div>
+    </div>
+</div>
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

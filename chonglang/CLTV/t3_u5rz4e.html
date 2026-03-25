@@ -1,0 +1,76 @@
+<html>
+<head>
+<title>难绷，太米线了</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_u5rz4e">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/okconstructor">okconstructor</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/u5rz4e">Apr 17 2022 17:36:09</a>
+    </p>
+    <strong>难绷，太米线了</strong>
+    <p><a href="https://i.redd.it/8plymvyrk4u81.jpg">https://i.redd.it/8plymvyrk4u81.jpg</a></p>
+</div>
+<div class="comment" id="t1_i53tjx7">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/okconstructor">okconstructor</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/u5rz4e/_/i53tjx7">Apr 17 2022 17:38:34</a>
+    </p>
+    <div class="collapsible">
+        <p>jakson还能拼错，太有节目效果了</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

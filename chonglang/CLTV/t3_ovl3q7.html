@@ -1,0 +1,95 @@
+<html>
+<head>
+<title>绷</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_ovl3q7">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/Len_Ackerman">Len_Ackerman</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/ovl3q7">Aug 01 2021 03:47:20</a>
+    </p>
+    <strong>绷</strong>
+    <p><a href="https://www.reddit.com/gallery/ovl3q7">https://www.reddit.com/gallery/ovl3q7</a></p>
+</div>
+<div class="comment" id="t1_h7a2im1">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/kanda14">kanda14</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/ovl3q7/_/h7a2im1">Aug 01 2021 04:23:49</a>
+    </p>
+    <div class="collapsible">
+        <p>简单破防下nmslese</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_h7a6z0c">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Lucky_Ronin_777">Lucky_Ronin_777</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/ovl3q7/_/h7a6z0c">Aug 01 2021 05:15:27</a>
+    </p>
+    <div class="collapsible">
+        <p>Epidemic has calmed down😅😅</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

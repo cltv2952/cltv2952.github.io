@@ -1,0 +1,114 @@
+<html>
+<head>
+<title>这是？</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_t8k50a">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/Plasma0911">Plasma0911</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/t8k50a">Mar 07 2022 07:53:36</a>
+    </p>
+    <strong>这是？</strong>
+    <p><a href="https://i.redd.it/8j9tj0xe3xl81.png">https://i.redd.it/8j9tj0xe3xl81.png</a></p>
+</div>
+<div class="comment" id="t1_hzohv4d">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/yorkkie">yorkkie</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/t8k50a/_/hzohv4d">Mar 07 2022 07:55:57</a>
+    </p>
+    <div class="collapsible">
+        <p>温子访德经典动作</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_hzomux3">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Evangeline-2022">Evangeline-2022</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/t8k50a/_/hzomux3">Mar 07 2022 09:04:22</a>
+    </p>
+    <div class="collapsible">
+        <p>提前学习</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_hzon6u1">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/No_Advance_1537">No_Advance_1537</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/t8k50a/_/hzon6u1">Mar 07 2022 09:09:06</a>
+    </p>
+    <div class="collapsible">
+        <p>艳红总是整些新花样</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

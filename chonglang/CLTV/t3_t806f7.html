@@ -1,0 +1,127 @@
+<html>
+<head>
+<title>Test</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_t806f7">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/apidya2">apidya2</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/t806f7">Mar 06 2022 14:44:18</a>
+    </p>
+    <strong>Test</strong>
+    <p><a href="https://i.redd.it/fuypstbtzrl81.png">https://i.redd.it/fuypstbtzrl81.png</a></p>
+</div>
+<div class="comment" id="t1_hzl2g02">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/CesareBorgia-">CesareBorgia-</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/t806f7/_/hzl2g02">Mar 06 2022 15:34:44</a>
+    </p>
+    <div class="collapsible">
+        <p>这个图好看啊，想做桌面</p>
+        <div class="comment" id="t1_hzl6ggi">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/apidya2">apidya2</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/t806f7/_/hzl6ggi">Mar 06 2022 16:03:43</a>
+    </p>
+    <div class="collapsible">
+        <p>作者是P站画师Rune Xiao</p>
+        <div class="comment" id="t1_hzl7jde">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/CesareBorgia-">CesareBorgia-</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/t806f7/_/hzl7jde">Mar 06 2022 16:11:23</a>
+    </p>
+    <div class="collapsible">
+        <p>Pornhub么</p>
+        <div class="comment" id="t1_hznlozw">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/apidya2">apidya2</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/t806f7/_/hznlozw">Mar 07 2022 02:35:32</a>
+    </p>
+    <div class="collapsible">
+        <p>PixIV</p>
+        
+    </div>
+</div>
+    </div>
+</div>
+    </div>
+</div>
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

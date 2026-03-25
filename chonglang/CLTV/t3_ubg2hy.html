@@ -1,0 +1,114 @@
+<html>
+<head>
+<title>我就说好像见过一样的图</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_ubg2hy">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/cjmjohn">cjmjohn</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/ubg2hy">Apr 25 2022 08:15:50</a>
+    </p>
+    <strong>我就说好像见过一样的图</strong>
+    <p><a href="https://i.redd.it/0oqfhxj3wmv81.jpg">https://i.redd.it/0oqfhxj3wmv81.jpg</a></p>
+</div>
+<div class="comment" id="t1_i63tujy">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/JAUKUS983">JAUKUS983</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/ubg2hy/_/i63tujy">Apr 25 2022 08:17:21</a>
+    </p>
+    <div class="collapsible">
+        <p>完全一致</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_i63utk6">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/zzztttpp">zzztttpp</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/ubg2hy/_/i63utk6">Apr 25 2022 08:31:28</a>
+    </p>
+    <div class="collapsible">
+        <p>底线.. 噢噢还没到底线 还有下降空间</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_i63xjbk">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Big-Blacksmith-5073">Big-Blacksmith-5073</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/ubg2hy/_/i63xjbk">Apr 25 2022 09:10:54</a>
+    </p>
+    <div class="collapsible">
+        <p>萧规曹随</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

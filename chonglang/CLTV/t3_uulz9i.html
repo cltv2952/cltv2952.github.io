@@ -1,0 +1,95 @@
+<html>
+<head>
+<title>特大新闻</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_uulz9i">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/flajjimier">flajjimier</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/uulz9i">May 21 2022 12:20:44</a>
+    </p>
+    <strong>特大新闻</strong>
+    <p><p>我出门了，小蓝聊了个xyn，九点在大学门口见面</p></p>
+</div>
+<div class="comment" id="t1_i9fxp6d">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Crazyuniverse147">Crazyuniverse147</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/uulz9i/_/i9fxp6d">May 21 2022 12:22:15</a>
+    </p>
+    <div class="collapsible">
+        <p>开口声音比你粗</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_i9fy24q">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/realTsarOfRussia">realTsarOfRussia</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/uulz9i/_/i9fy24q">May 21 2022 12:26:11</a>
+    </p>
+    <div class="collapsible">
+        <p>你們中國人的縮寫真是讓人摸不著頭腦</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

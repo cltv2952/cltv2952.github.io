@@ -1,0 +1,96 @@
+<html>
+<head>
+<title>每日一葱 【ジターバグ】</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_svlftc">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/ChungkuoRun">ChungkuoRun</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/svlftc">Feb 18 2022 16:02:51</a>
+    </p>
+    <strong>每日一葱 【ジターバグ】</strong>
+    <p><a href="https://www.youtube.com/watch?v=Of7sjjPOiLc">https://www.youtube.com/watch?v=Of7sjjPOiLc</a></p>
+</div>
+<div class="comment" id="t1_hxgkaj5">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/ChungkuoRun">ChungkuoRun</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/svlftc/_/hxgkaj5">Feb 18 2022 16:03:15</a>
+    </p>
+    <div class="collapsible">
+        <p><a href="https://www.youtube.com/watch?v=3rAblF_p704">https://www.youtube.com/watch?v=3rAblF_p704</a></p>
+<p>不过我更喜欢原PV</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_hxk5nmc">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/XWN_BS">XWN_BS</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/svlftc/_/hxk5nmc">Feb 19 2022 09:18:57</a>
+    </p>
+    <div class="collapsible">
+        <p>good</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

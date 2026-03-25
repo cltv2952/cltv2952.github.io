@@ -1,0 +1,93 @@
+<html>
+<head>
+<title>做了点点贡献</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_tuc85t">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/Mammoth-Bat926">Mammoth-Bat926</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tuc85t">Apr 02 2022 06:21:52</a>
+    </p>
+    <strong>做了点点贡献</strong>
+    <p><a href="https://www.reddit.com/gallery/tuc85t">https://www.reddit.com/gallery/tuc85t</a></p>
+</div>
+<div class="comment" id="t1_i32wz0y">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/RatOfSewer">RatOfSewer</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tuc85t/_/i32wz0y">Apr 02 2022 06:27:36</a>
+    </p>
+    <div class="collapsible">
+        <p>这个怎么玩的啊</p>
+        <div class="comment" id="t1_i32x3og">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Mammoth-Bat926">Mammoth-Bat926</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tuc85t/_/i32x3og">Apr 02 2022 06:29:21</a>
+    </p>
+    <div class="collapsible">
+        <p>r/place</p>
+        
+    </div>
+</div>
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

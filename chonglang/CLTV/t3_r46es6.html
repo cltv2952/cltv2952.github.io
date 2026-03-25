@@ -1,0 +1,59 @@
+<html>
+<head>
+<title>中的来了</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_r46es6">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/Ondisk2021">Ondisk2021</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/r46es6">Nov 28 2021 15:12:03</a>
+    </p>
+    <strong>中的来了</strong>
+    <p><a href="https://old.reddit.com/r/noniuziTV/comments/r2u33h/cltv%E5%B7%B2%E6%88%90%E5%B7%A8%E5%A4%A7%E7%B2%AA%E5%9D%91/">https://old.reddit.com/r/noniuziTV/comments/r2u33h/cltv%E5%B7%B2%E6%88%90%E5%B7%A8%E5%A4%A7%E7%B2%AA%E5%9D%91/</a></p>
+</div>
+</body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

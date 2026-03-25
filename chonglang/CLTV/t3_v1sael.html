@@ -1,0 +1,115 @@
+<html>
+<head>
+<title>推特问题求助</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_v1sael">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/killxibaozi">killxibaozi</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/v1sael">May 31 2022 15:02:16</a>
+    </p>
+    <strong>推特问题求助</strong>
+    <p><p>新注册的推特号一下子关注了几十个人之后疑似触发了推特的什么机制，被关注受限了无法再关注人了也无法发推，到底怎么解决友友们</p></p>
+</div>
+<div class="comment" id="t1_iao4v6u">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/qingzhidaowomen">qingzhidaowomen</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/v1sael/_/iao4v6u">May 31 2022 15:05:15</a>
+    </p>
+    <div class="collapsible">
+        <p>好像得让人关注你才行</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_iao5q2x">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Slaanesh9621">Slaanesh9621</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/v1sael/_/iao5q2x">May 31 2022 15:11:34</a>
+    </p>
+    <div class="collapsible">
+        <p>大约是被判定为机器人然后被冻结了 去申诉试试</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_iaobbz1">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/NotOnlyGodKnows">NotOnlyGodKnows</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/v1sael/_/iaobbz1">May 31 2022 15:51:36</a>
+    </p>
+    <div class="collapsible">
+        <p>被判定bot。</p>
+<p>我微博的二代目也是同样后来过几天就自动给解了，twitter不清楚。</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

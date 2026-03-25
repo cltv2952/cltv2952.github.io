@@ -1,0 +1,65 @@
+<html>
+<head>
+<title>第N次分享一键备份帖子的方式</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_t7qxie">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/bilibilixionggui">bilibilixionggui</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/t7qxie">Mar 06 2022 04:25:24</a>
+    </p>
+    <strong>第N次分享一键备份帖子的方式</strong>
+    <p><p>新建书签栏书签，标题随便起，地址填上下面这行即可。遇到想保存镜像的网页，点击书签栏的该书签即可。</p>
+<p>*</p>
+<pre><code>javascript:void(open('https://archive.today/?run=1&amp;url='+encodeURIComponent(document.location)))
+</code></pre>
+<p>today可以替换为is、fo等。</p>
+<pre><code>javascript:void(open('https://web.archive.org/save/'+(document.location)))
+</code></pre></p>
+</div>
+</body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

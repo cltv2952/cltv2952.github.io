@@ -1,0 +1,114 @@
+<html>
+<head>
+<title>紧急通知！</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_relg1e">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/ziyouyizhi">ziyouyizhi</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/relg1e">Dec 12 2021 09:21:47</a>
+    </p>
+    <strong>紧急通知！</strong>
+    <p><a href="https://www.reddit.com/gallery/relg1e">https://www.reddit.com/gallery/relg1e</a></p>
+</div>
+<div class="comment" id="t1_ho8tdgs">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/CityHunter001">CityHunter001</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/relg1e/_/ho8tdgs">Dec 12 2021 13:38:25</a>
+    </p>
+    <div class="collapsible">
+        <p>海淀区是这样的。又不是朝阳区</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_ho9lrhk">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/kuwakatatakuma">kuwakatatakuma</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/relg1e/_/ho9lrhk">Dec 12 2021 17:03:41</a>
+    </p>
+    <div class="collapsible">
+        <p>这下不得不苗了</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_hocfd23">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        [deleted]
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/relg1e/_/hocfd23">Dec 13 2021 05:13:07</a>
+    </p>
+    <div class="collapsible">
+        <p>[removed]</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

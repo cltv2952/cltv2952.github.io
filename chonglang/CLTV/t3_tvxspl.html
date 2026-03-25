@@ -1,0 +1,77 @@
+<html>
+<head>
+<title>每日批話搬運</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_tvxspl">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/jiaiguo">jiaiguo</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tvxspl">Apr 04 2022 09:28:51</a>
+    </p>
+    <strong>每日批話搬運</strong>
+    <p><a href="https://i.redd.it/hcmcnwfzdhr81.png">https://i.redd.it/hcmcnwfzdhr81.png</a></p>
+</div>
+<div class="comment" id="t1_i3c0ayx">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Sensitive-Medium3287">Sensitive-Medium3287</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tvxspl/_/i3c0ayx">Apr 04 2022 09:47:29</a>
+    </p>
+    <div class="collapsible">
+        <p>燒杯冷鳥鳥之燒杯呆鳥鳥</p>
+<p>冷鳥鳥：明白人</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

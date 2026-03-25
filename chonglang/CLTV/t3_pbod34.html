@@ -1,0 +1,169 @@
+<html>
+<head>
+<title>抽象</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_pbod34">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/BusinessCivil6569">BusinessCivil6569</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/pbod34">Aug 26 2021 00:34:08</a>
+    </p>
+    <strong>抽象</strong>
+    <p><a href="https://v.redd.it/8uxjvtdrrjj71">https://v.redd.it/8uxjvtdrrjj71</a></p>
+</div>
+<div class="comment" id="t1_hadzhc2">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Responsible_Leek4448">Responsible_Leek4448</a>
+        |
+        <span class="score">8 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/pbod34/_/hadzhc2">Aug 26 2021 04:55:34</a>
+    </p>
+    <div class="collapsible">
+        <p>不守妇道的东西！</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_hae13c6">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/BrazilFrog">BrazilFrog</a>
+        |
+        <span class="score">8 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/pbod34/_/hae13c6">Aug 26 2021 05:13:20</a>
+    </p>
+    <div class="collapsible">
+        <p>这个血管真的太写实了</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_hae204i">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/MrWAVEChing">MrWAVEChing</a>
+        |
+        <span class="score">6 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/pbod34/_/hae204i">Aug 26 2021 05:23:34</a>
+    </p>
+    <div class="collapsible">
+        <p>什么手艺人</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_hadgb4v">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/frontcount-">frontcount-</a>
+        |
+        <span class="score">5 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/pbod34/_/hadgb4v">Aug 26 2021 02:05:48</a>
+    </p>
+    <div class="collapsible">
+        <p>迪克男孩</p>
+        <div class="comment" id="t1_haevloj">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/ChampionshipIcy1888">ChampionshipIcy1888</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/pbod34/_/haevloj">Aug 26 2021 11:48:06</a>
+    </p>
+    <div class="collapsible">
+        <p>迪克牛仔</p>
+        
+    </div>
+</div>
+    </div>
+</div>
+
+<div class="comment" id="t1_hadofhs">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Ball-Pretend">Ball-Pretend</a>
+        |
+        <span class="score">3 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/pbod34/_/hadofhs">Aug 26 2021 03:11:22</a>
+    </p>
+    <div class="collapsible">
+        <p>这下docking了</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

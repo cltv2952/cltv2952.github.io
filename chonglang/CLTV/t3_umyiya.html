@@ -1,0 +1,60 @@
+<html>
+<head>
+<title>趣味文章：北京包饺子</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_umyiya">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/iillaws">iillaws</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/umyiya">May 11 2022 01:47:00</a>
+    </p>
+    <strong>趣味文章：北京包饺子</strong>
+    <p><pre><code>     “你们这夏天都吃什么呀？”杰夫操着一口蹩脚的口音问着，一边有样学样地模仿着矮子挥动着手上的扇子。“这六月初，咱老北京儿，都爱吃饺砸！”矮子咯咯笑了两声，“咱老北京儿的馅儿跟别的不一样儿，往绞肉机里放的啊…”矮子漏出几颗上排的牙齿，“可都是活哒！”杰夫愣了住。“那玩意儿这么硬，能搅碎嘛？”老李嘴角微翘着，不时吐出一口云雾。“害！这新买的绞肉机，非常的好，可是咱国产的，人苏联人帮着造的，五九的，好用着呢。”房间里的烟雾愈来愈浓厚，呛得人喘不过气。“再不济，拿铲子把黏在桌上的肉铲下来吃！”
+</code></pre></p>
+</div>
+</body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

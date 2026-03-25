@@ -1,0 +1,95 @@
+<html>
+<head>
+<title>认真问个问题</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_tfaf1i">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/Koigggyear">Koigggyear</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tfaf1i">Mar 16 2022 05:40:01</a>
+    </p>
+    <strong>认真问个问题</strong>
+    <p><p>现在华为在海外的手机平板用的都是哪些代替谷歌的软件？</p>
+<p>比如说谷歌地图海外肯定是用不了了，Googleplay也是</p></p>
+</div>
+<div class="comment" id="t1_i0uqnde">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Domtroop">Domtroop</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tfaf1i/_/i0uqnde">Mar 16 2022 06:10:15</a>
+    </p>
+    <div class="collapsible">
+        <p>高德？百度？
+华为自己也有应用商店（哄蒙）</p>
+        <div class="comment" id="t1_i0urfah">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Koigggyear">Koigggyear</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tfaf1i/_/i0urfah">Mar 16 2022 06:19:56</a>
+    </p>
+    <div class="collapsible">
+        <p>海外手机呢</p>
+        
+    </div>
+</div>
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

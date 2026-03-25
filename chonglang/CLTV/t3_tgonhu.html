@@ -1,0 +1,76 @@
+<html>
+<head>
+<title>为什么减速了</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_tgonhu">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/Total_Form2908">Total_Form2908</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tgonhu">Mar 18 2022 00:28:55</a>
+    </p>
+    <strong>为什么减速了</strong>
+    <p><a href="https://www.reddit.com/gallery/tgonhu">https://www.reddit.com/gallery/tgonhu</a></p>
+</div>
+<div class="comment" id="t1_i13h4dm">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Upper_Decision_4173">Upper_Decision_4173</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tgonhu/_/i13h4dm">Mar 18 2022 01:08:16</a>
+    </p>
+    <div class="collapsible">
+        <p>“竟无一人是男儿“</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

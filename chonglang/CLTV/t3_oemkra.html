@@ -1,0 +1,131 @@
+<html>
+<head>
+<title>好像没有献成？</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_oemkra">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/Powerbabyyy">Powerbabyyy</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/oemkra">Jul 06 2021 03:15:38</a>
+    </p>
+    <strong>好像没有献成？</strong>
+    <p><a href="https://v.redd.it/zc9qd95ffi971">https://v.redd.it/zc9qd95ffi971</a></p>
+</div>
+<div class="comment" id="t1_h47b6nl">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/YagoIoroEirin">YagoIoroEirin</a>
+        |
+        <span class="score">8 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/oemkra/_/h47b6nl">Jul 06 2021 04:10:29</a>
+    </p>
+    <div class="collapsible">
+        <p>刹车失灵，特斯拉全责</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_h47cg5k">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/SirThisWayyy">SirThisWayyy</a>
+        |
+        <span class="score">6 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/oemkra/_/h47cg5k">Jul 06 2021 04:24:36</a>
+    </p>
+    <div class="collapsible">
+        <p>扔下电动车就跑那个好像被献了</p>
+        <div class="comment" id="t1_h47lipx">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/CinaCoron8964">CinaCoron8964</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/oemkra/_/h47lipx">Jul 06 2021 06:19:11</a>
+    </p>
+    <div class="collapsible">
+        <p>那我就放心了</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_h47rzns">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/udp1953">udp1953</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/oemkra/_/h47rzns">Jul 06 2021 07:53:20</a>
+    </p>
+    <div class="collapsible">
+        <p>竟然没逃过</p>
+        
+    </div>
+</div>
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

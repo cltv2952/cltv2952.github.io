@@ -1,0 +1,133 @@
+<html>
+<head>
+<title>这个区这么抽象啊</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_nrcill">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/somethin4nothing">somethin4nothing</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/nrcill">Jun 03 2021 12:39:43</a>
+    </p>
+    <strong>这个区这么抽象啊</strong>
+    <p><a href="https://www.reddit.com/gallery/nrcill">https://www.reddit.com/gallery/nrcill</a></p>
+</div>
+<div class="comment" id="t1_h0gmwxc">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/incredibleGoushi">incredibleGoushi</a>
+        |
+        <span class="score">10 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/nrcill/_/h0gmwxc">Jun 03 2021 17:14:15</a>
+    </p>
+    <div class="collapsible">
+        <p>然而這玩意實名制，真出問題了，除了綁的不記名手機號和其他人身份證的，其他人一個都跑不掉</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_h0fmdd6">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/shalanzi">shalanzi</a>
+        |
+        <span class="score">6 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/nrcill/_/h0fmdd6">Jun 03 2021 12:53:16</a>
+    </p>
+    <div class="collapsible">
+        <p>抽象摩尔了属于是</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_h0fosiu">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Own-Butterscotch627">Own-Butterscotch627</a>
+        |
+        <span class="score">6 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/nrcill/_/h0fosiu">Jun 03 2021 13:13:54</a>
+    </p>
+    <div class="collapsible">
+        <p>抗带简单偷一下</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_h0ge15o">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/meriga8964">meriga8964</a>
+        |
+        <span class="score">3 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/nrcill/_/h0ge15o">Jun 03 2021 16:12:28</a>
+    </p>
+    <div class="collapsible">
+        <p>我们AU是这样的</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

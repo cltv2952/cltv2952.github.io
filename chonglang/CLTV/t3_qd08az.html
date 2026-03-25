@@ -1,0 +1,770 @@
+<html>
+<head>
+<title>请教大家一个编程的问题。假如我有200个文件夹，每个文件夹里1000个的刑事判决书docx文档，有的文档可能是在子文件夹里。文件夹的数量还在缓慢增加中。我想做一个本地搜索，输入关键词，全文检索docx里的内容，应该怎么做？谢谢</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_qd08az">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/modaoshishuo">modaoshishuo</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/qd08az">Oct 21 2021 20:07:06</a>
+    </p>
+    <strong>请教大家一个编程的问题。假如我有200个文件夹，每个文件夹里1000个的刑事判决书docx文档，有的文档可能是在子文件夹里。文件夹的数量还在缓慢增加中。我想做一个本地搜索，输入关键词，全文检索docx里的内容，应该怎么做？谢谢</strong>
+    <p><p>请教大家一个编程的问题。假如我有200个文件夹，每个文件夹里1000个的刑事判决书docx文档，平均每个docx文档有6000字。docx文档里只有文字，没有图表或图片。有的文档可能是保存在在子文件夹里。文件夹的数量还会偶尔增加几个。</p>
+<h1>想在笔记本上做一个本地搜索软件，类似裁判文书网的搜索，输入关键词，全文检索docx文档里的内容。</h1>
+<p>先实现一个小目标，返回word文件名。</p>
+<p>目标2，如果能也顺便显示关键词所在的上下文就更好了。</p>
+<p>目标3，关键词能够实现“和”与“非”的逻辑，并且能选择部分文档，导出到某文件夹内。</p>
+<p>检索速度慢，一分钟都可以接受。</p>
+<p>python 和java都懂一点点。但这个任务完全没有头绪，不知道怎么用数据库。</p>
+<p>请教一下大家，用什么语言、什么工具，怎么实现最容易？告诉我一下大概的框架，具体怎么做我再查资料。</p>
+<p>谢谢。</p></p>
+</div>
+<div class="comment" id="t1_hhjezba">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/iccv">iccv</a>
+        |
+        <span class="score">5 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/qd08az/_/hhjezba">Oct 21 2021 21:00:27</a>
+    </p>
+    <div class="collapsible">
+        <ol>
+<li>把docx的meta info和正文都扒出来
+2.elasticsearch https://www.elastic.co/guide/index.html</li>
+</ol>
+        <div class="comment" id="t1_hhjhxjt">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/MafiaXi">MafiaXi</a>
+        |
+        <span class="score">3 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/qd08az/_/hhjhxjt">Oct 21 2021 21:21:24</a>
+    </p>
+    <div class="collapsible">
+        <p>elasticsearch+1，再搞个script每天自动遍历一下你的那几个文件夹update一下数据</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_hhjl8o9">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/43212321423">43212321423</a>
+        |
+        <span class="score">3 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/qd08az/_/hhjl8o9">Oct 21 2021 21:45:14</a>
+    </p>
+    <div class="collapsible">
+        <p>确实，直接扔到elastic里应该是方便的</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_hhkjk74">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/lonely_sail1">lonely_sail1</a>
+        |
+        <span class="score">2 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/qd08az/_/hhkjk74">Oct 22 2021 02:11:46</a>
+    </p>
+    <div class="collapsible">
+        <p>同意，这就是一个全文搜索功能</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_hhkmov3">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/ratman_chonglang">ratman_chonglang</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/qd08az/_/hhkmov3">Oct 22 2021 02:36:53</a>
+    </p>
+    <div class="collapsible">
+        <p>elastic search彳亍</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_hhlm63r">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/modaoshishuo">modaoshishuo</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/qd08az/_/hhlm63r">Oct 22 2021 09:33:09</a>
+    </p>
+    <div class="collapsible">
+        <p>谢谢。</p>
+<p>看了下elasticsearch，感觉有点复杂，以后有需要再学。</p>
+<p>我找到了个软件agent Ransack，不能建索引，搜索很慢，但可以指定文件夹全文搜索，可以显示上下文，虽然慢，将就着也能用。</p>
+        
+    </div>
+</div>
+    </div>
+</div>
+
+<div class="comment" id="t1_hhk885l">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/yyq90">yyq90</a>
+        |
+        <span class="score">4 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/qd08az/_/hhk885l">Oct 22 2021 00:43:19</a>
+    </p>
+    <div class="collapsible">
+        <p>反转了，你们完了，晶哥简单做个废物判定</p>
+        <div class="comment" id="t1_hhlmdo9">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/modaoshishuo">modaoshishuo</a>
+        |
+        <span class="score">2 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/qd08az/_/hhlmdo9">Oct 22 2021 09:36:03</a>
+    </p>
+    <div class="collapsible">
+        <p>年底又要收网了</p>
+        
+    </div>
+</div>
+    </div>
+</div>
+
+<div class="comment" id="t1_hhj95po">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Alexanderlavski">Alexanderlavski</a>
+        |
+        <span class="score">3 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/qd08az/_/hhj95po">Oct 21 2021 20:21:18</a>
+    </p>
+    <div class="collapsible">
+        <p>转换成txt丢到有project manager\全局检索功能的编辑器里直接搜索。
+一些编辑器（比如oxygen）的检索可以表达和非逻辑，不过这样都不太快</p>
+        <div class="comment" id="t1_hhllykb">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/modaoshishuo">modaoshishuo</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/qd08az/_/hhllykb">Oct 22 2021 09:30:09</a>
+    </p>
+    <div class="collapsible">
+        <p>谢谢。我找到了个软件agent Ransack，不能建索引，搜索很慢，但可以指定文件夹全文搜索，可以显示上下文，虽然慢，将就着也能用。</p>
+        
+    </div>
+</div>
+    </div>
+</div>
+
+<div class="comment" id="t1_hhl2ico">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Stock_Search377">Stock_Search377</a>
+        |
+        <span class="score">3 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/qd08az/_/hhl2ico">Oct 22 2021 05:04:24</a>
+    </p>
+    <div class="collapsible">
+        <p>什么晶哥</p>
+        <div class="comment" id="t1_hhlmlpd">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/modaoshishuo">modaoshishuo</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/qd08az/_/hhlmlpd">Oct 22 2021 09:39:10</a>
+    </p>
+    <div class="collapsible">
+        <p>明天凌晨4点就收网</p>
+        
+    </div>
+</div>
+    </div>
+</div>
+
+<div class="comment" id="t1_hhjadwb">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/kumaba">kumaba</a>
+        |
+        <span class="score">2 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/qd08az/_/hhjadwb">Oct 21 2021 20:29:25</a>
+    </p>
+    <div class="collapsible">
+        <p>不需要数据库，做个cli的就行。查下你要用的language 的api怎么读本地文件，写个遍历就行了。</p>
+<p>就是可能慢，算法本身比较讨巧，没专门刷过估计写着费劲</p>
+        <div class="comment" id="t1_hhjdciz">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Striking-Warning9533">Striking-Warning9533</a>
+        |
+        <span class="score">2 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/qd08az/_/hhjdciz">Oct 21 2021 20:49:09</a>
+    </p>
+    <div class="collapsible">
+        <p>还是用索引吧，直接遍历太慢了。中文推荐用jieba分词，然后index</p>
+        <div class="comment" id="t1_hhjfroh">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/kumaba">kumaba</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/qd08az/_/hhjfroh">Oct 21 2021 21:05:56</a>
+    </p>
+    <div class="collapsible">
+        <p>没怎么用过，每次要重新index吗</p>
+        <div class="comment" id="t1_hhjh3fc">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Striking-Warning9533">Striking-Warning9533</a>
+        |
+        <span class="score">2 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/qd08az/_/hhjh3fc">Oct 21 2021 21:15:26</a>
+    </p>
+    <div class="collapsible">
+        <p>没怎么做过这种，但是一般就是把index存起来，然后通过index来找文章。添加新的文章时索引一次就可以了</p>
+        
+    </div>
+</div>
+    </div>
+</div>
+    </div>
+</div>
+
+<div class="comment" id="t1_hhlm1vi">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/modaoshishuo">modaoshishuo</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/qd08az/_/hhlm1vi">Oct 22 2021 09:31:27</a>
+    </p>
+    <div class="collapsible">
+        <p>谢谢。</p>
+<p>我找到了个软件agent Ransack，不能建索引，搜索很慢，但可以指定文件夹全文搜索，可以显示上下文，虽然慢，将就着也能用。</p>
+<p>什么时候不够用了，再想办法。</p>
+        
+    </div>
+</div>
+    </div>
+</div>
+
+<div class="comment" id="t1_hhjjz5t">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/jiangwenqi1995">jiangwenqi1995</a>
+        |
+        <span class="score">2 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/qd08az/_/hhjjz5t">Oct 21 2021 21:36:07</a>
+    </p>
+    <div class="collapsible">
+        <p>直接灌到Elasticsearch，你这个数据量不大</p>
+        <div class="comment" id="t1_hhlmc9k">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/modaoshishuo">modaoshishuo</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/qd08az/_/hhlmc9k">Oct 22 2021 09:35:30</a>
+    </p>
+    <div class="collapsible">
+        <p>谢谢。我找到了个软件agent Ransack，不能建以指定文件夹全文搜索，可以显示上下文，虽然慢，将就着也能用。</p>
+<p>很多人推荐了elasticsearch，以后有需要再学吧</p>
+        
+    </div>
+</div>
+    </div>
+</div>
+
+<div class="comment" id="t1_hhk6h27">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Zealousideal-Can1998">Zealousideal-Can1998</a>
+        |
+        <span class="score">2 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/qd08az/_/hhk6h27">Oct 22 2021 00:29:43</a>
+    </p>
+    <div class="collapsible">
+        <p>Elasticsearch 不二选择</p>
+        <div class="comment" id="t1_hhlmcrm">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/modaoshishuo">modaoshishuo</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/qd08az/_/hhlmcrm">Oct 22 2021 09:35:42</a>
+    </p>
+    <div class="collapsible">
+        <p>&rt;谢谢。我找到了个软件agent Ransack，不能建以指定文件夹全文搜索，可以显示上下文，虽然慢，将就着也能用。<br>
+&rt;<br>
+&rt;很多人推荐了elasticsearch，以后有需要再学吧</p>
+        
+    </div>
+</div>
+    </div>
+</div>
+
+<div class="comment" id="t1_hhkge4n">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/lapour_meta">lapour_meta</a>
+        |
+        <span class="score">2 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/qd08az/_/hhkge4n">Oct 22 2021 01:46:38</a>
+    </p>
+    <div class="collapsible">
+        <p>如果你一定要自己编程实现的话</p>
+<p>小目标：递归遍历目录即可</p>
+<p>目标2：这个和搜索引擎有点像了，需要建立倒排索引</p>
+<p>目标3：这个和目标2基本一样，主要任务还是找到含关键词的文件</p>
+<p>如果你会python的话，python-docx就是一个可选的库。用C#也可以，毕竟office是MS家的东西</p>
+        <div class="comment" id="t1_hhlmgpd">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/modaoshishuo">modaoshishuo</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/qd08az/_/hhlmgpd">Oct 22 2021 09:37:12</a>
+    </p>
+    <div class="collapsible">
+        <p>&rt;谢谢。我编程水平不高。找到了个软件agent Ransack，不能建以指定文件夹全文搜索，可以显示上下文，虽然慢，将就着也能用。</p>
+        
+    </div>
+</div>
+    </div>
+</div>
+
+<div class="comment" id="t1_hhl3vho">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Odd-Contribution4610">Odd-Contribution4610</a>
+        |
+        <span class="score">2 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/qd08az/_/hhl3vho">Oct 22 2021 05:20:03</a>
+    </p>
+    <div class="collapsible">
+        <p>资源可以共享下吗</p>
+        <div class="comment" id="t1_hhlmkiw">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/modaoshishuo">modaoshishuo</a>
+        |
+        <span class="score">3 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/qd08az/_/hhlmkiw">Oct 22 2021 09:38:41</a>
+    </p>
+    <div class="collapsible">
+        <p>我的《刑事判决书里的中国》文字稿已经上传z library了。https://de1lib.org/book/17102862/49135c</p>
+        <div class="comment" id="t1_hhlqaiw">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Odd-Contribution4610">Odd-Contribution4610</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/qd08az/_/hhlqaiw">Oct 22 2021 10:29:42</a>
+    </p>
+    <div class="collapsible">
+        <p>谢谢</p>
+        
+    </div>
+</div>
+    </div>
+</div>
+    </div>
+</div>
+
+<div class="comment" id="t1_hhl5oi5">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/xiashuidaolaoshu9527">xiashuidaolaoshu9527</a>
+        |
+        <span class="score">2 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/qd08az/_/hhl5oi5">Oct 22 2021 05:41:21</a>
+    </p>
+    <div class="collapsible">
+        <p>这么多东西还是建库归档好，而且方便修改添加，也方便查询，功能也能随时添加，就是自己累点。</p>
+        <div class="comment" id="t1_hhlmtd3">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/modaoshishuo">modaoshishuo</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/qd08az/_/hhlmtd3">Oct 22 2021 09:42:05</a>
+    </p>
+    <div class="collapsible">
+        <p>谢谢。我确实想把硬盘里的资料都整理成一个库，特别是扫描版的pdf。得等以后有时间精力做，不然很多书没时间翻到。</p>
+<p>找到了个软件agent Ransack，不能建以指定文件夹全文搜索，可以显示上下文，虽然慢，将就着也能用</p>
+        
+    </div>
+</div>
+    </div>
+</div>
+
+<div class="comment" id="t1_hhlk6y5">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Turbulent_Appeal8097">Turbulent_Appeal8097</a>
+        |
+        <span class="score">2 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/qd08az/_/hhlk6y5">Oct 22 2021 09:03:45</a>
+    </p>
+    <div class="collapsible">
+        <p>晶哥在线求助</p>
+        <div class="comment" id="t1_hhlmvig">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/modaoshishuo">modaoshishuo</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/qd08az/_/hhlmvig">Oct 22 2021 09:42:53</a>
+    </p>
+    <div class="collapsible">
+        <p>收网 收网</p>
+        
+    </div>
+</div>
+    </div>
+</div>
+
+<div class="comment" id="t1_hhjeyzl">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Ok_Card_8783">Ok_Card_8783</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/qd08az/_/hhjeyzl">Oct 21 2021 21:00:24</a>
+    </p>
+    <div class="collapsible">
+        <p>直接用现有的工具，比如</p>
+<p>https://anytxt.net/</p>
+<p>我没用过这个，但是看着不错，你可以试试。</p>
+        <div class="comment" id="t1_hhlm336">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/modaoshishuo">modaoshishuo</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/qd08az/_/hhlm336">Oct 22 2021 09:31:57</a>
+    </p>
+    <div class="collapsible">
+        <p>谢谢。我用full text search找到了个软件agent Ransack，不能建索引，搜索很慢，但可以指定文件夹全文搜索，可以显示上下文，虽然慢，将就着也能用。</p>
+        
+    </div>
+</div>
+    </div>
+</div>
+
+<div class="comment" id="t1_hhkgk8w">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/RevolutionaryEarth58">RevolutionaryEarth58</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/qd08az/_/hhkgk8w">Oct 22 2021 01:47:58</a>
+    </p>
+    <div class="collapsible">
+        <p>有个软件叫tag lyst 可以实现前两个功能</p>
+        <div class="comment" id="t1_hhlmmjj">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/modaoshishuo">modaoshishuo</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/qd08az/_/hhlmmjj">Oct 22 2021 09:39:28</a>
+    </p>
+    <div class="collapsible">
+        <p>&rt;谢谢。找到了个软件agent Ransack，不能建以指定文件夹全文搜索，可以显示上下文，虽然慢，将就着也能用</p>
+        
+    </div>
+</div>
+    </div>
+</div>
+
+<div class="comment" id="t1_hhkk3nt">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/SquirtleCringe">SquirtleCringe</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/qd08az/_/hhkk3nt">Oct 22 2021 02:16:07</a>
+    </p>
+    <div class="collapsible">
+        <p>grep</p>
+        <div class="comment" id="t1_hhlmn3a">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/modaoshishuo">modaoshishuo</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/qd08az/_/hhlmn3a">Oct 22 2021 09:39:41</a>
+    </p>
+    <div class="collapsible">
+        <p>谢谢。找到了个软件agent Ransack，不能建以指定文件夹全文搜索，可以显示上下文，虽然慢，将就着也能用</p>
+        
+    </div>
+</div>
+    </div>
+</div>
+
+<div class="comment" id="t1_hhlhn6n">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/mangadeal">mangadeal</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/qd08az/_/hhlhn6n">Oct 22 2021 08:24:33</a>
+    </p>
+    <div class="collapsible">
+        <p>elasticsearch 或者 solr。 solr简单一些。https://www.baeldung.com/full-text-search-with-solr</p>
+        <div class="comment" id="t1_hhlmuuk">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/modaoshishuo">modaoshishuo</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/qd08az/_/hhlmuuk">Oct 22 2021 09:42:38</a>
+    </p>
+    <div class="collapsible">
+        <p>&rt;谢谢。编程技术不好。找到了个软件agent Ransack，不能建以指定文件夹全文搜索，可以显示上下文，虽然慢，将就着也能用</p>
+        
+    </div>
+</div>
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

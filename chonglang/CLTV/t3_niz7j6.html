@@ -1,0 +1,95 @@
+<html>
+<head>
+<title>这下天收了</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_niz7j6">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/bihiki">bihiki</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/niz7j6">May 23 2021 03:40:47</a>
+    </p>
+    <strong>这下天收了</strong>
+    <p><a href="https://i.redd.it/x7yxntztjs071.jpg">https://i.redd.it/x7yxntztjs071.jpg</a></p>
+</div>
+<div class="comment" id="t1_gz540oi">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Puzzleheaded_Fan_391">Puzzleheaded_Fan_391</a>
+        |
+        <span class="score">4 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/niz7j6/_/gz540oi">May 23 2021 08:13:51</a>
+    </p>
+    <div class="collapsible">
+        <p>这相关搜索的节目效果更出彩</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_gz4ltos">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/DukeOfStyria">DukeOfStyria</a>
+        |
+        <span class="score">2 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/niz7j6/_/gz4ltos">May 23 2021 03:58:14</a>
+    </p>
+    <div class="collapsible">
+        <p>什么八甲田山</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

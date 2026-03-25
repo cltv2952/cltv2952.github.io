@@ -1,0 +1,76 @@
+<html>
+<head>
+<title>习包子可爱捏</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_tqegt8">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/JOLTEON__L">JOLTEON__L</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tqegt8">Mar 28 2022 17:25:23</a>
+    </p>
+    <strong>习包子可爱捏</strong>
+    <p><a href="https://youtu.be/MC_g2kc9F_U">https://youtu.be/MC_g2kc9F_U</a></p>
+</div>
+<div class="comment" id="t1_i2gnapo">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Some-Commercial-4387">Some-Commercial-4387</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tqegt8/_/i2gnapo">Mar 28 2022 17:33:10</a>
+    </p>
+    <div class="collapsible">
+        <p>这要是搬到B站，起码得100万播放外加50年有期徒刑</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

@@ -1,0 +1,169 @@
+<html>
+<head>
+<title>呦 这不是</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_ticoo9">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/wangyouxingping">wangyouxingping</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/ticoo9">Mar 20 2022 04:00:03</a>
+    </p>
+    <strong>呦 这不是</strong>
+    <p><a href="https://i.redd.it/h19ip5cnpgo81.jpg">https://i.redd.it/h19ip5cnpgo81.jpg</a></p>
+</div>
+<div class="comment" id="t1_i1d7f21">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Key-Mud-6810">Key-Mud-6810</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/ticoo9/_/i1d7f21">Mar 20 2022 04:11:24</a>
+    </p>
+    <div class="collapsible">
+        <p>乖</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_i1d7sf7">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/deepintheglass">deepintheglass</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/ticoo9/_/i1d7sf7">Mar 20 2022 04:15:07</a>
+    </p>
+    <div class="collapsible">
+        <p>怎么老发这条炒作狗</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_i1da5el">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/2005002000">2005002000</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/ticoo9/_/i1da5el">Mar 20 2022 04:39:01</a>
+    </p>
+    <div class="collapsible">
+        <p>到达网络大粪坑——B站，哎呀这不文一婷吗？再看看远处的炒作狗吧家人们。</p>
+        <div class="comment" id="t1_i1gbakg">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Evangeline-2022">Evangeline-2022</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/ticoo9/_/i1gbakg">Mar 20 2022 21:27:16</a>
+    </p>
+    <div class="collapsible">
+        <p>不是我</p>
+        
+    </div>
+</div>
+    </div>
+</div>
+
+<div class="comment" id="t1_i1dbks7">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/PossibilityJolly6702">PossibilityJolly6702</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/ticoo9/_/i1dbks7">Mar 20 2022 04:54:08</a>
+    </p>
+    <div class="collapsible">
+        <p>收网！</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_i1gbbm8">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Evangeline-2022">Evangeline-2022</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/ticoo9/_/i1gbbm8">Mar 20 2022 21:27:28</a>
+    </p>
+    <div class="collapsible">
+        <p>这个不是我</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

@@ -1,0 +1,1147 @@
+<html>
+<head>
+<title>懂C的帮我看看（很简单但是网上查不到），为什么switch其他时候用的好好的，到这里却告诉我缺少expression？我明明有啊，就是int a🧐</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_urcd72">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/Freedomkev">Freedomkev</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/urcd72">May 17 2022 02:28:24</a>
+    </p>
+    <strong>懂C的帮我看看（很简单但是网上查不到），为什么switch其他时候用的好好的，到这里却告诉我缺少expression？我明明有啊，就是int a🧐</strong>
+    <p><a href="https://i.redd.it/h4z2a6cz5yz81.jpg">https://i.redd.it/h4z2a6cz5yz81.jpg</a></p>
+</div>
+<div class="comment" id="t1_i8wf3y2">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/EbregiselGamwich">EbregiselGamwich</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/urcd72/_/i8wf3y2">May 17 2022 02:32:28</a>
+    </p>
+    <div class="collapsible">
+        <p>我不用 c，但是我猜你应该 switch(a)</p>
+        <div class="comment" id="t1_i8wfh1f">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Freedomkev">Freedomkev</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/urcd72/_/i8wfh1f">May 17 2022 02:35:35</a>
+    </p>
+    <div class="collapsible">
+        <p>但是不应该表明a是integer吗</p>
+        <div class="comment" id="t1_i8wfsgu">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/EbregiselGamwich">EbregiselGamwich</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/urcd72/_/i8wfsgu">May 17 2022 02:38:20</a>
+    </p>
+    <div class="collapsible">
+        <p>参数那儿不是已经写了 int了吗</p>
+        <div class="comment" id="t1_i8wfzn6">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Freedomkev">Freedomkev</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/urcd72/_/i8wfzn6">May 17 2022 02:40:04</a>
+    </p>
+    <div class="collapsible">
+        <p>谢谢，能再问一个吗，什么样的variable能赋值成“rock”</p>
+        <div class="comment" id="t1_i8wgt89">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/EbregiselGamwich">EbregiselGamwich</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/urcd72/_/i8wgt89">May 17 2022 02:47:15</a>
+    </p>
+    <div class="collapsible">
+        <p>我不用 c，你看c有没有string，如果没有的话可能得用 char[ ] ，byte[ ] 之类的吧。另外，你这个用 enum不是更合适吗？</p>
+        
+    </div>
+</div>
+    </div>
+</div>
+    </div>
+</div>
+    </div>
+</div>
+
+<div class="comment" id="t1_i8wflcr">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Freedomkev">Freedomkev</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/urcd72/_/i8wflcr">May 17 2022 02:36:36</a>
+    </p>
+    <div class="collapsible">
+        <p>当我没说，我把函数的格式记到switch里了</p>
+        
+    </div>
+</div>
+    </div>
+</div>
+
+<div class="comment" id="t1_i8wf7ta">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Freedomkev">Freedomkev</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/urcd72/_/i8wf7ta">May 17 2022 02:33:24</a>
+    </p>
+    <div class="collapsible">
+        <p>我做了个石头剪刀布的游戏，用户填123就可以对应使出石头剪刀或者布。为了告诉用户电脑选了什么和ta的选择，我用了一个函数来通过int a的值，也就是1或2或3，来把“石头”、“剪刀”，和“布”的英文赋值到一个string里。但是这里编码器告诉我expected expression，可是expression不就是int a吗？</p>
+        <div class="comment" id="t1_i8wg2z9">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/lpoijk5656">lpoijk5656</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/urcd72/_/i8wg2z9">May 17 2022 02:40:50</a>
+    </p>
+    <div class="collapsible">
+        <p>function parameter才需要宣告data type, 使用variable時，例如運算或是條件判斷時，不需要額外加上data type，除非你要做casting.</p>
+        
+    </div>
+</div>
+    </div>
+</div>
+
+<div class="comment" id="t1_i8wfc4b">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/NectarineDifferent81">NectarineDifferent81</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/urcd72/_/i8wfc4b">May 17 2022 02:34:25</a>
+    </p>
+    <div class="collapsible">
+        <p>去掉第二个int试试</p>
+        <div class="comment" id="t1_i8wfok2">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Freedomkev">Freedomkev</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/urcd72/_/i8wfok2">May 17 2022 02:37:23</a>
+    </p>
+    <div class="collapsible">
+        <p>谢，只不过C真学不明白，每次build都出不一样的问题</p>
+        
+    </div>
+</div>
+    </div>
+</div>
+
+<div class="comment" id="t1_i8wfdvk">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Freedomkev">Freedomkev</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/urcd72/_/i8wfdvk">May 17 2022 02:34:50</a>
+    </p>
+    <div class="collapsible">
+        <p>卷老嗨来</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_i8wfesx">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/lpoijk5656">lpoijk5656</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/urcd72/_/i8wfesx">May 17 2022 02:35:03</a>
+    </p>
+    <div class="collapsible">
+        <p>switch (a)就好...</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_i8wfh1b">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/weriyir646">weriyir646</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/urcd72/_/i8wfh1b">May 17 2022 02:35:35</a>
+    </p>
+    <div class="collapsible">
+        <p>什么学习tv</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_i8wfhhs">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/gausslawalwaystrue">gausslawalwaystrue</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/urcd72/_/i8wfhhs">May 17 2022 02:35:42</a>
+    </p>
+    <div class="collapsible">
+        <p>少了一个分号？</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_i8wfnsk">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/bhexa">bhexa</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/urcd72/_/i8wfnsk">May 17 2022 02:37:12</a>
+    </p>
+    <div class="collapsible">
+        <p>1.rps不能这样赋值，C语言里它是一个char array，首先要确保长度足够，其次应该用strcpy
+2.每个switch结束的时候需要break
+3.最后一个case没有分号</p>
+        <div class="comment" id="t1_i8wg89n">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Freedomkev">Freedomkev</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/urcd72/_/i8wg89n">May 17 2022 02:42:05</a>
+    </p>
+    <div class="collapsible">
+        <p>厉害！我刚想问呢，编码器告诉我char[10] is not assignable。那请问我应该把rps改成什么type呢？</p>
+        <div class="comment" id="t1_i8wgxri">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/bhexa">bhexa</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/urcd72/_/i8wgxri">May 17 2022 02:48:22</a>
+    </p>
+    <div class="collapsible">
+        <p>char array是可以的，但是你需要在声明它的时候分配一个空间，要么在代码里hardcode，要么通过malloc或者calloc动态分配。简单来说hardcode像这样：char rps[100]</p>
+        <div class="comment" id="t1_i8whfiv">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Freedomkev">Freedomkev</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/urcd72/_/i8whfiv">May 17 2022 02:52:43</a>
+    </p>
+    <div class="collapsible">
+        <p>改成 rps[100]告诉我not assignable</p>
+<p>我怀疑是rps = “rock” 这里错了。我在那一行给rps 后面加[100]也不行，告诉我incompatible pointer to integer conversion assigning to ‘char’ from char[5]’</p>
+        <div class="comment" id="t1_i8whpt7">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/bhexa">bhexa</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/urcd72/_/i8whpt7">May 17 2022 02:55:21</a>
+    </p>
+    <div class="collapsible">
+        <p>有用strcpy来赋值吗</p>
+        <div class="comment" id="t1_i8whuoj">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Freedomkev">Freedomkev</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/urcd72/_/i8whuoj">May 17 2022 02:56:34</a>
+    </p>
+    <div class="collapsible">
+        <p>没，刚去查了查，好像赋值必须要用到另一个已有的variable？可是我就想把rps 赋值成 比如“rock”咋办</p>
+        <div class="comment" id="t1_i8wi4kw">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/bhexa">bhexa</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/urcd72/_/i8wi4kw">May 17 2022 02:59:00</a>
+    </p>
+    <div class="collapsible">
+        <p>rps在函数外面你没有声明成一个全局变量吗？strcpy用法： https://stackoverflow.com/questions/26693537/in-c-why-cant-i-assign-a-string-to-a-char-array-after-its-declared</p>
+        <div class="comment" id="t1_i8wimts">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Freedomkev">Freedomkev</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/urcd72/_/i8wimts">May 17 2022 03:03:26</a>
+    </p>
+    <div class="collapsible">
+        <p>是全局变量，可是在switcheroo这个函数里，如何我把赋值的代码改成strcpy(rps, “rock”)</p>
+<p>还会提示错误</p>
+        <div class="comment" id="t1_i8wjheo">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/NectarineDifferent81">NectarineDifferent81</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/urcd72/_/i8wjheo">May 17 2022 03:11:11</a>
+    </p>
+    <div class="collapsible">
+        <p>“rock”这样的代码形式指的是一个字符串literal，而不是一个variable</p>
+        <div class="comment" id="t1_i8wjvh9">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/NectarineDifferent81">NectarineDifferent81</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/urcd72/_/i8wjvh9">May 17 2022 03:14:51</a>
+    </p>
+    <div class="collapsible">
+        <p>如果我没记错…</p>
+        
+    </div>
+</div>
+    </div>
+</div>
+
+<div class="comment" id="t1_i8wjo4k">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/bhexa">bhexa</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/urcd72/_/i8wjo4k">May 17 2022 03:12:56</a>
+    </p>
+    <div class="collapsible">
+        <p>什么错误，截图呗。还有注意输入法是不是用的英文，鉴于你现在用中文打字</p>
+        <div class="comment" id="t1_i8wk4hw">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Freedomkev">Freedomkev</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/urcd72/_/i8wk4hw">May 17 2022 03:17:09</a>
+    </p>
+    <div class="collapsible">
+        <p>这个是rps的赋值:char rps[100];</p>
+<p>这个是switcheroo的case之后的代码：
+void switcheroo(int a){
+    switch (a){
+        case 1:
+            strcpy(rps, "rock");</p>
+        <div class="comment" id="t1_i8wk9t3">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Freedomkev">Freedomkev</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/urcd72/_/i8wk9t3">May 17 2022 03:18:32</a>
+    </p>
+    <div class="collapsible">
+        <p>请问是不是少了点什么<img alt="gif" src="emote|free_emotes_pack|facepalm"></p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_i8wkl8j">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/bhexa">bhexa</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/urcd72/_/i8wkl8j">May 17 2022 03:21:27</a>
+    </p>
+    <div class="collapsible">
+        <p>编译器说了是什么错误吗？盲猜你没有include string头文件</p>
+        <div class="comment" id="t1_i8wku0d">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Freedomkev">Freedomkev</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/urcd72/_/i8wku0d">May 17 2022 03:23:42</a>
+    </p>
+    <div class="collapsible">
+        <p>牛，这都被你猜中了</p>
+        <div class="comment" id="t1_i8wlhov">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/bhexa">bhexa</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/urcd72/_/i8wlhov">May 17 2022 03:29:59</a>
+    </p>
+    <div class="collapsible">
+        <p>👻</p>
+        <div class="comment" id="t1_i8wmke9">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Freedomkev">Freedomkev</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/urcd72/_/i8wmke9">May 17 2022 03:40:18</a>
+    </p>
+    <div class="collapsible">
+        <p>麻了，又遇到个问题</p>
+<p>RPS.c:83:21: error: result of comparison against a string literal is unspecified (use an explicit string comparison function instead) [-Werror,-Wstring-compare]</p>
+<p>if (*user_input == "a"){</p>
+        <div class="comment" id="t1_i8wndc9">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/bhexa">bhexa</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/urcd72/_/i8wndc9">May 17 2022 03:48:13</a>
+    </p>
+    <div class="collapsible">
+        <p>== 'a', C跟Python不一样，字符串和单个字符不能弄混了</p>
+        
+    </div>
+</div>
+    </div>
+</div>
+
+<div class="comment" id="t1_i8wmo5h">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Freedomkev">Freedomkev</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/urcd72/_/i8wmo5h">May 17 2022 03:41:18</a>
+    </p>
+    <div class="collapsible">
+        <p>我代码长这样：
+printf("\n\n\nDo you wish to go to the game's start page or exit? Input a to return to the start page and input anything else to simply exit the program.\n");</p>
+<p>scanf(" %c", &amp;user_input[0]);</p>
+<p>if (*user_input == "a"){</p>
+<p>printf("No problem, redirecting you to the main page...\n\n\n");</p>
+<p>goto start_page;</p>
+<p>}</p>
+<p>else{</p>
+<p>exit(0);</p>
+        
+    </div>
+</div>
+    </div>
+</div>
+    </div>
+</div>
+    </div>
+</div>
+    </div>
+</div>
+    </div>
+</div>
+    </div>
+</div>
+    </div>
+</div>
+    </div>
+</div>
+    </div>
+</div>
+    </div>
+</div>
+    </div>
+</div>
+
+<div class="comment" id="t1_i8wiv77">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/NectarineDifferent81">NectarineDifferent81</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/urcd72/_/i8wiv77">May 17 2022 03:05:30</a>
+    </p>
+    <div class="collapsible">
+        <p>按照你的逻辑，可以声明一个const char指针，然后在case语句里对这个指针进行assignment，最后返回这个指针就好了</p>
+        <div class="comment" id="t1_i8wj4je">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Freedomkev">Freedomkev</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/urcd72/_/i8wj4je">May 17 2022 03:07:51</a>
+    </p>
+    <div class="collapsible">
+        <p>唉，还没学到这个</p>
+        
+    </div>
+</div>
+    </div>
+</div>
+
+<div class="comment" id="t1_i8wkl99">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Ondisk2021">Ondisk2021</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/urcd72/_/i8wkl99">May 17 2022 03:21:28</a>
+    </p>
+    <div class="collapsible">
+        <p>如果你的string不需要修改的话可以这样写</p>
+<p>char const<em>const s_rock = "rock";<br>
+char const</em>const s_paper = "paper";<br>
+char const<em>const s_scissors = "scissors";<br>
+char const</em>rps;<br>
+//...<br>
+rps = s_rock;<br>
+rps = s_paper;</p>
+        
+    </div>
+</div>
+    </div>
+</div>
+    </div>
+</div>
+
+<div class="comment" id="t1_i8wgjs7">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/cheshire_cat_2022">cheshire_cat_2022</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/urcd72/_/i8wgjs7">May 17 2022 02:44:54</a>
+    </p>
+    <div class="collapsible">
+        <p>哈佛cs小留是吧，简单收个网</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_i8wgndf">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Content_Ad9934">Content_Ad9934</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/urcd72/_/i8wgndf">May 17 2022 02:45:48</a>
+    </p>
+    <div class="collapsible">
+        <p>复制代码,转换成markdown mode </p>
+<p><code>C++
+代码插入此处</code></p>
+        <div class="comment" id="t1_i8who4p">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Freedomkev">Freedomkev</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/urcd72/_/i8who4p">May 17 2022 02:54:55</a>
+    </p>
+    <div class="collapsible">
+        <p>我看看markdown mode 什么意思...</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_i8wi2rg">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Freedomkev">Freedomkev</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/urcd72/_/i8wi2rg">May 17 2022 02:58:33</a>
+    </p>
+    <div class="collapsible">
+        <h1>include &lt;stdio.h&rt;</h1>
+<h1>include &lt;time.h&rt;</h1>
+<h1>include &lt;stdlib.h&rt;</h1>
+<p>char name[100]; char user_input[100]; char rps[100]; int rn, tr, su, sc, ua, ca;
+/*rn = round number (always begins as 1); tr = total round number
+su = score of user; sc = score of computer
+ua = user action; ca = computer action
+rps = used to represent either one of the three choices of the game</p>
+<p>Because user_input[100] is a "string," it cannot be used to store-
+-what user intends to play since rock, paper, or scissors are 1, 2, or 3.
+I chose integers to represent user's action so that "switch" method can be utilized.*/</p>
+<p>void get_name();</p>
+<p>void get_name()
+{
+    printf("Input your preferred username here: ");
+    scanf(" %99s", name);
+}</p>
+<p>void game_page();</p>
+<p>void game_page()
+{
+    printf("\nHello %s, \nStart a new game (a) \nChange your username (b) \nExit the game (c)\nRules (d)\n", name);
+    printf("Enter your instruction: ");
+    scanf(" %c", &amp;user_input[0]);
+    if (<em>user_input == 'b'){
+        get_name();
+    }
+    else if (</em>user_input == 'c'){
+        printf("Exiting the program...");
+        exit(0);
+    }
+    else if (<em>user_input == 'd'){
+        printf("Rock &rt; Scissors; Scissors &rt; Paper; Paper &rt; Rock\n"
+        "Choose either Rock, paper or scissors to play against the machine.\n"
+        "\nThe machine plays randomly.\n"
+        "Round number plus one and then divided by two is the minimum of\n"
+        "'Rock, paper, scissors' you need to perform to win the game.");
+    }
+    else if (</em>user_input == 'a'){
+        printf("Round Number? (3, 5, 7)");
+        scanf(" %d", &amp;tr);
+    }
+}</p>
+<p>void switcheroo(int a);
+//switcherro is a function that "switches" the cases for the object determined by its parameter, int a///</p>
+<p>void switcheroo(int a){
+    switch (a){
+        case 1:
+            rps[5] = "rock";
+        case 2:
+            rps[6] = "paper";
+        case 3:
+            rps[9] = "scissors";
+    }
+}</p>
+<p>void game_result();</p>
+<p>void game_result(){
+    printf("\n\n\n\nThe winner is - drum roll please... (press ENTER)");
+    getchar();
+    if (su == sc){
+        printf("\tno one! \nThe game ended in a draw.\n\nFINAL SCORES: %d : %d", su, sc);
+    }
+    else if (su &rt; sc){
+        printf("\t%s! \nHooray! The victory is yours!\n\nFINAL SCORES: %d : %d", name, su, sc);
+    }
+    else{
+        printf("\t the computer! \nBetter luck next time!\n\nFINAL SCORES: %d : %d", su, sc);
+    }
+    printf("\n\n\nDo you wish to go to the game's start page or exit? Input a to return to the start page and input anything else to simply exit the program.\n");
+    scanf(" %c", &amp;user_input[0]);
+    if (*user_input == "a"){
+        printf("No problem, redirecting you to the main page...\n\n\n");
+        goto start_page;
+    }
+    else{
+        exit(0);
+    }
+}</p>
+<p>void game();</p>
+<p>void game()
+{
+    char urps[10]; char crps[10]
+    //urps = user action in string form; crps = computer action in string form//
+    printf("\nLoading... press ENTER to start the game");
+    getchar();
+    su = 0;
+    sc = 0;
+    for ( rn = 1; rn &lt;= tr; rn++){
+        printf("\n\n%s V.S. Computer\n"
+        "Round %d\n"
+        "Total Round: %d\n"
+        "Scoreboard: %d : %d\n", name, rn, tr, su, sc);
+        printf("\nChoose what you will play next: Rock = 1; Paper = 2; Scissors = 3");
+        scanf("%d", &amp;ua);
+        ca = (rand() % 3)+1;</p>
+<pre><code>    switcheroo(ua);
+    urps = rps;
+    switcheroo(ca);
+    crps = rps;
+
+    printf("The result is... (press ENTER)");
+    getchar();
+    if (ua == ca){
+        printf("\n\n\nUser ( %c) vs. Computer ( %c) results in a DRAW", &amp;urps, &amp;crps);
+    }
+    else:
+        switch (ua){
+            case 1:
+                if (ca == 2){
+                    printf("\n\n\nUser ( %c) vs. Computer ( %c) -- The computer wins!", &amp;urps, &amp;crps);
+                    sc += 1;
+                }
+                else{
+                    printf("\n\n\nUser ( %c) vs. Computer ( %c) -- You win!", &amp;urps, &amp;crps);
+                    su += 1;
+                }
+
+            case 2:
+                if (ca == 3){
+                    printf("\n\n\nUser ( %c) vs. Computer ( %c) -- The computer wins!", &amp;urps, &amp;crps);
+                    sc += 1;
+                }
+                else{
+                    printf("\n\n\nUser ( %c) vs. Computer ( %c) -- You win!", &amp;urps, &amp;crps);
+                    su += 1;
+                }
+
+            case 3:
+                if (ca == 1){
+                    printf("\n\n\nUser ( %c) vs. Computer ( %c) -- The computer wins!", &amp;urps, &amp;crps);
+                    sc += 1;
+                }
+                else{
+                    printf("\n\n\nUser ( %c) vs. Computer ( %c) -- You win!", &amp;urps, &amp;crps);
+                    su += 1;
+                }
+</code></pre>
+<p>//The if statement below acts as a checkpoint to make sure the game ends immediately after the result is fixed.//
+        if ((sc == (tr + 1)/2)||(su == (tr + 1)/2)){
+            game_result();
+        }
+        printf("\n\nNext Term...");
+        printf("\nTo proceed, press ENTER");
+        getchar();
+    game_result();</p>
+<pre><code>        }
+}
+</code></pre>
+<p>}</p>
+<p>int main()
+{</p>
+<pre><code>srand(time(NULL));
+
+printf("\nROCK, PAPER, SCISSORS\n");
+printf("press ENTER to launch the game");
+getchar();
+get_name();
+start_page:
+    game_page();
+    game();
+return 0;
+</code></pre>
+<p>}</p>
+        <div class="comment" id="t1_i8x2vmh">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Some-Commercial-4387">Some-Commercial-4387</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/urcd72/_/i8x2vmh">May 17 2022 06:51:23</a>
+    </p>
+    <div class="collapsible">
+        <p>迪友们是真的热心善良</p>
+        
+    </div>
+</div>
+    </div>
+</div>
+
+<div class="comment" id="t1_i8wi5ey">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Freedomkev">Freedomkev</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/urcd72/_/i8wi5ey">May 17 2022 02:59:13</a>
+    </p>
+    <div class="collapsible">
+        <p>是reddit markdown mode吗？希望我没弄错。</p>
+        
+    </div>
+</div>
+    </div>
+</div>
+
+<div class="comment" id="t1_i8wgpht">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/OddNewspaper7306">OddNewspaper7306</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/urcd72/_/i8wgpht">May 17 2022 02:46:20</a>
+    </p>
+    <div class="collapsible">
+        <p>去钓鱼吧问问</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_i8wj1sf">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Efficient_Address634">Efficient_Address634</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/urcd72/_/i8wj1sf">May 17 2022 03:07:09</a>
+    </p>
+    <div class="collapsible">
+        <p>Switch (不用int)
+Case結束要加break</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_i8wj4rj">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/bhexa">bhexa</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/urcd72/_/i8wj4rj">May 17 2022 03:07:54</a>
+    </p>
+    <div class="collapsible">
+        <p>什么错误？输入法引号逗号不要是中文的字符</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_i8wl54p">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/dhhhja">dhhhja</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/urcd72/_/i8wl54p">May 17 2022 03:26:37</a>
+    </p>
+    <div class="collapsible">
+        <p>最后一个case少个分号</p>
+        <div class="comment" id="t1_i8wlbac">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/dhhhja">dhhhja</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/urcd72/_/i8wlbac">May 17 2022 03:28:14</a>
+    </p>
+    <div class="collapsible">
+        <p>另外每个case后要加break，不然匹配到case后会fall through</p>
+        
+    </div>
+</div>
+    </div>
+</div>
+
+<div class="comment" id="t1_i8wol4y">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Potman1024">Potman1024</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/urcd72/_/i8wol4y">May 17 2022 04:00:35</a>
+    </p>
+    <div class="collapsible">
+        <p>CSTV是吧，人均码老嗨</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_i8wtomt">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/noisyupstairs8964">noisyupstairs8964</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/urcd72/_/i8wtomt">May 17 2022 04:55:31</a>
+    </p>
+    <div class="collapsible">
+        <p>转码tv</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_i8wvf9g">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/WTF_Lilbri185">WTF_Lilbri185</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/urcd72/_/i8wvf9g">May 17 2022 05:15:24</a>
+    </p>
+    <div class="collapsible">
+        <p>晶哥这么好学啊</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

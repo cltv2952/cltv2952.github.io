@@ -1,0 +1,95 @@
+<html>
+<head>
+<title>无题</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_tru17v">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/MedicalNothing3025">MedicalNothing3025</a>
+        |
+        <span class="score">4 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tru17v">Mar 30 2022 00:32:22</a>
+    </p>
+    <strong>无题</strong>
+    <p><a href="https://i.redd.it/1euabvhp1fq81.jpg">https://i.redd.it/1euabvhp1fq81.jpg</a></p>
+</div>
+<div class="comment" id="t1_i2o8r01">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/MedicalNothing3025">MedicalNothing3025</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tru17v/_/i2o8r01">Mar 30 2022 03:45:35</a>
+    </p>
+    <div class="collapsible">
+        <p>想在支多玛狠狠的无双</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_i2p8ak4">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Hopeful_Tale_1934">Hopeful_Tale_1934</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tru17v/_/i2p8ak4">Mar 30 2022 11:07:15</a>
+    </p>
+    <div class="collapsible">
+        <p>一眼龙泉货</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

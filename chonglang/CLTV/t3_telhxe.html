@@ -1,0 +1,114 @@
+<html>
+<head>
+<title>蝴蝶效应？</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_telhxe">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/Meat-Similar">Meat-Similar</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/telhxe">Mar 15 2022 10:01:18</a>
+    </p>
+    <strong>蝴蝶效应？</strong>
+    <p><a href="https://i.redd.it/fvtymo4itin81.jpg">https://i.redd.it/fvtymo4itin81.jpg</a></p>
+</div>
+<div class="comment" id="t1_i0qoqdb">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/91p0rn">91p0rn</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/telhxe/_/i0qoqdb">Mar 15 2022 12:23:59</a>
+    </p>
+    <div class="collapsible">
+        <p>笑嘻</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_i0qwvbl">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/WorriedEquivalent318">WorriedEquivalent318</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/telhxe/_/i0qwvbl">Mar 15 2022 13:34:14</a>
+    </p>
+    <div class="collapsible">
+        <p>破鼓万人锤</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_i0qy38x">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/dddrun">dddrun</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/telhxe/_/i0qy38x">Mar 15 2022 13:43:51</a>
+    </p>
+    <div class="collapsible">
+        <p>刑平你坏事做尽，毁了多少互联网秃头的植发梦！</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

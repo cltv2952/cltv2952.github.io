@@ -1,0 +1,98 @@
+<html>
+<head>
+<title>抽象</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_uwjnzx">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/JAUKUS983">JAUKUS983</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/uwjnzx">May 24 2022 05:37:01</a>
+    </p>
+    <strong>抽象</strong>
+    <p><p>&#x200B;</p>
+<p>https://preview.redd.it/a7d7xj752d191.png?width=510&amp;format=png&amp;auto=webp&amp;s=330f721c31a6bd167439154b8f579964052e4d13</p>
+<p>https://preview.redd.it/tgra0fm52d191.png?width=680&amp;format=png&amp;auto=webp&amp;s=64926eb2c6ccc1f86e97b0fca6402c0438bc28b2</p>
+<p>https://preview.redd.it/isrgxw362d191.png?width=680&amp;format=png&amp;auto=webp&amp;s=dc057fc2500e384402d72abba59e4a0599cbec5d</p></p>
+</div>
+<div class="comment" id="t1_i9rzh4x">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/deepintheglass">deepintheglass</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/uwjnzx/_/i9rzh4x">May 24 2022 06:00:36</a>
+    </p>
+    <div class="collapsible">
+        <p>还以为是魔术表演</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_i9sdqr1">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/bihiki">bihiki</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/uwjnzx/_/i9sdqr1">May 24 2022 09:31:27</a>
+    </p>
+    <div class="collapsible">
+        <p>图2有点像战地1的爆头指示器</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

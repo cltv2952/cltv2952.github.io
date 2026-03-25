@@ -1,0 +1,76 @@
+<html>
+<head>
+<title>互聯網沒有記憶</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_tfkc8l">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/Frosty-Ad-160">Frosty-Ad-160</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tfkc8l">Mar 16 2022 15:34:16</a>
+    </p>
+    <strong>互聯網沒有記憶</strong>
+    <p><a href="https://i.redd.it/g0b90gpulrn81.jpg">https://i.redd.it/g0b90gpulrn81.jpg</a></p>
+</div>
+<div class="comment" id="t1_i0w9la4">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Octane3610">Octane3610</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tfkc8l/_/i0w9la4">Mar 16 2022 15:35:43</a>
+    </p>
+    <div class="collapsible">
+        <p>讲好蜘蛛故事</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

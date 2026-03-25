@@ -1,0 +1,76 @@
+<html>
+<head>
+<title>麻了，我的繪圖屏壞了</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_tfalen">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/Illustrious-Song2674">Illustrious-Song2674</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tfalen">Mar 16 2022 05:51:25</a>
+    </p>
+    <strong>麻了，我的繪圖屏壞了</strong>
+    <p><p>現在要重新打包退回原廠維修，本來想用cilp stuido畫個新的CLTV頭像，不知道什麼時候才能修好</p></p>
+</div>
+<div class="comment" id="t1_i0upfwv">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Illustrious-Song2674">Illustrious-Song2674</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tfalen/_/i0upfwv">Mar 16 2022 05:55:30</a>
+    </p>
+    <div class="collapsible">
+        <p>暫時沒辦法給大家畫一個新頭像了😔</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

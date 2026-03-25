@@ -1,0 +1,95 @@
+<html>
+<head>
+<title>你给我回来！</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_p2uxjq">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/ma_Sh1ro">ma_Sh1ro</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/p2uxjq">Aug 12 2021 07:24:49</a>
+    </p>
+    <strong>你给我回来！</strong>
+    <p><a href="https://v.redd.it/31k02x30asg71">https://v.redd.it/31k02x30asg71</a></p>
+</div>
+<div class="comment" id="t1_h8mr7jq">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/ShitJimPing">ShitJimPing</a>
+        |
+        <span class="score">8 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/p2uxjq/_/h8mr7jq">Aug 12 2021 08:24:18</a>
+    </p>
+    <div class="collapsible">
+        <p>终于重开北欧了…怎么是条🐶？不行继续重开</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_h8nx28g">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Foreign_Ad_9448">Foreign_Ad_9448</a>
+        |
+        <span class="score">2 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/p2uxjq/_/h8nx28g">Aug 12 2021 15:20:50</a>
+    </p>
+    <div class="collapsible">
+        <p>狗：麻了</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

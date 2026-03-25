@@ -1,0 +1,114 @@
+<html>
+<head>
+<title>通常称作什么？</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_uoiqk1">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/edke00">edke00</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/uoiqk1">May 13 2022 03:33:26</a>
+    </p>
+    <strong>通常称作什么？</strong>
+    <p><a href="https://i.redd.it/gzglzw74y5z81.jpg">https://i.redd.it/gzglzw74y5z81.jpg</a></p>
+</div>
+<div class="comment" id="t1_i8epmar">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/TuneGreat1213">TuneGreat1213</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/uoiqk1/_/i8epmar">May 13 2022 03:35:09</a>
+    </p>
+    <div class="collapsible">
+        <p>通常稱作***</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_i8epxij">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Thirstyseeker">Thirstyseeker</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/uoiqk1/_/i8epxij">May 13 2022 03:37:49</a>
+    </p>
+    <div class="collapsible">
+        <p>颈椎骨折警告</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_i8ey9lb">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Environmental_Cry915">Environmental_Cry915</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/uoiqk1/_/i8ey9lb">May 13 2022 04:55:15</a>
+    </p>
+    <div class="collapsible">
+        <p>一眼标日</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

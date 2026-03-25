@@ -1,0 +1,133 @@
+<html>
+<head>
+<title>test</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_u1rut2">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/StarPing">StarPing</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/u1rut2">Apr 12 2022 06:05:53</a>
+    </p>
+    <strong>test</strong>
+    <p><a href="https://i.redd.it/or7uer9i71t81.jpg">https://i.redd.it/or7uer9i71t81.jpg</a></p>
+</div>
+<div class="comment" id="t1_i4earcb">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Ken_Ayazaka409">Ken_Ayazaka409</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/u1rut2/_/i4earcb">Apr 12 2022 06:35:23</a>
+    </p>
+    <div class="collapsible">
+        <p>看得到</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_i4eizvg">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/iceblink256">iceblink256</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/u1rut2/_/i4eizvg">Apr 12 2022 08:24:16</a>
+    </p>
+    <div class="collapsible">
+        <p>殺します...</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_i4evobu">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/OtherwiseOriginal754">OtherwiseOriginal754</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/u1rut2/_/i4evobu">Apr 12 2022 11:08:36</a>
+    </p>
+    <div class="collapsible">
+        <p>天生萬物以養人</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_i4frbmp">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/PatrickLai3">PatrickLai3</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/u1rut2/_/i4frbmp">Apr 12 2022 15:14:40</a>
+    </p>
+    <div class="collapsible">
+        <p>徐俊瓶你这个混蛋！</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

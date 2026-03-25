@@ -1,0 +1,114 @@
+<html>
+<head>
+<title>up/down vote标</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_s130dm">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/mxx333Qwerty1">mxx333Qwerty1</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/s130dm">Jan 11 2022 03:29:00</a>
+    </p>
+    <strong>up/down vote标</strong>
+    <p><p><a href="https://www.reddit.com/poll/s130dm">View Poll</a></p></p>
+</div>
+<div class="comment" id="t1_hs61nnp">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/SuperFapMaster416">SuperFapMaster416</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/s130dm/_/hs61nnp">Jan 11 2022 04:47:33</a>
+    </p>
+    <div class="collapsible">
+        <p>什么民怨</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_hs65ccu">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Opposite-Message-997">Opposite-Message-997</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/s130dm/_/hs65ccu">Jan 11 2022 05:16:55</a>
+    </p>
+    <div class="collapsible">
+        <p>换不换</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_hs66gxw">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/hoooopooo">hoooopooo</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/s130dm/_/hs66gxw">Jan 11 2022 05:26:46</a>
+    </p>
+    <div class="collapsible">
+        <p>我冲浪的支反没了</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

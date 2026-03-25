@@ -1,0 +1,225 @@
+<html>
+<head>
+<title>用户活动时间, 与u/WestSalamander9041不同的结论</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_pk2zuy">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/Vinsep">Vinsep</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/pk2zuy">Sep 08 2021 03:55:07</a>
+    </p>
+    <strong>用户活动时间, 与u/WestSalamander9041不同的结论</strong>
+    <p><a href="https://i.redd.it/ckeka97dc7m71.png">https://i.redd.it/ckeka97dc7m71.png</a></p>
+</div>
+<div class="comment" id="t1_hc0pv3x">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Responsible_Leek4448">Responsible_Leek4448</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/pk2zuy/_/hc0pv3x">Sep 08 2021 03:59:03</a>
+    </p>
+    <div class="collapsible">
+        <p>都是东八区翻墙穷蛆，只能趁上班前刷刷红迪的样子</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_hc0pvdp">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Vinsep">Vinsep</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/pk2zuy/_/hc0pvdp">Sep 08 2021 03:59:08</a>
+    </p>
+    <div class="collapsible">
+        <p>测试的用户是/u/lynxtrainer. 以下是code. 时间是EST. 似乎没有凌晨3到6点的数据. </p>
+<pre><code>import praw as p
+import pandas as pd
+import datetime as dt
+from datetime import timezone
+import plotly.express as px
+import pytz
+
+r = p.Reddit(
+    client_id = client_id,
+    client_secret = client_secret,
+    user_agent = agent,
+    username = userid,
+    password = password
+    )
+
+dt_list = []
+for comment in r.redditor("lynxtrainer").comments.new(limit=1000):
+    dt_e = dt.datetime.fromtimestamp(comment.created_utc, tz = pytz.timezone('EST')).strftime("%H")
+    dt_list.append(dt_e)
+
+df = pd.DataFrame({'hour':dt_list})
+df2 = df.hour.value_counts().to_frame().sort_index(0)
+px.line(df2, x=df2.index, y='hour')
+</code></pre>
+        <div class="comment" id="t1_hc0qevm">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/lynxtrainer">lynxtrainer</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/pk2zuy/_/hc0qevm">Sep 08 2021 04:04:11</a>
+    </p>
+    <div class="collapsible">
+        <p>这个结论好像跟他的没什么区别吧</p>
+        
+    </div>
+</div>
+    </div>
+</div>
+
+<div class="comment" id="t1_hc0ql9w">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Big_Yellow_Rat">Big_Yellow_Rat</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/pk2zuy/_/hc0ql9w">Sep 08 2021 04:05:49</a>
+    </p>
+    <div class="collapsible">
+        <p>看起来像是个在西海岸被迫健康作息的社畜，或者是在东海岸每天后半夜睡的年轻人。</p>
+        <div class="comment" id="t1_hc0r5ga">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/lynxtrainer">lynxtrainer</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/pk2zuy/_/hc0r5ga">Sep 08 2021 04:11:07</a>
+    </p>
+    <div class="collapsible">
+        <p>这…北美大陆中部是真空地带，印第安部落专用是吧</p>
+        <div class="comment" id="t1_hc0ra4y">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Big_Yellow_Rat">Big_Yellow_Rat</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/pk2zuy/_/hc0ra4y">Sep 08 2021 04:12:21</a>
+    </p>
+    <div class="collapsible">
+        <p>因为12点睡8点起这个作息并不算很常见，所以排除了。</p>
+        <div class="comment" id="t1_hc0rtfx">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/lynxtrainer">lynxtrainer</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/pk2zuy/_/hc0rtfx">Sep 08 2021 04:17:35</a>
+    </p>
+    <div class="collapsible">
+        <p>社畜基本都是这作息吧</p>
+        
+    </div>
+</div>
+    </div>
+</div>
+    </div>
+</div>
+    </div>
+</div>
+
+<div class="comment" id="t1_hc0qyku">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/GujranwalaQE">GujranwalaQE</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/pk2zuy/_/hc0qyku">Sep 08 2021 04:09:19</a>
+    </p>
+    <div class="collapsible">
+        <p>所以你想表达什么？彘那贱畜！显摆自己的天赋异禀？还是说显摆自己的寄吧进步思想？真搞不懂你在干嘛？除了法拉盛的那些被包养的无所事事之情妇，我实在想不到还有谁会像你一样无聊！</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

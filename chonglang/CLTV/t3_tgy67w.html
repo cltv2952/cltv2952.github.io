@@ -1,0 +1,95 @@
+<html>
+<head>
+<title>烧杯啾啾</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_tgy67w">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/yes-I-loveyou">yes-I-loveyou</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tgy67w">Mar 18 2022 10:21:21</a>
+    </p>
+    <strong>烧杯啾啾</strong>
+    <p><a href="https://i.redd.it/nby5h2fub4o81.png">https://i.redd.it/nby5h2fub4o81.png</a></p>
+</div>
+<div class="comment" id="t1_i14wool">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Illustrious-Song2674">Illustrious-Song2674</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tgy67w/_/i14wool">Mar 18 2022 10:22:47</a>
+    </p>
+    <div class="collapsible">
+        <p>王一亭: 嗯嗯，你煩</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_i15azmu">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/shasei_association_8">shasei_association_8</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tgy67w/_/i15azmu">Mar 18 2022 12:53:32</a>
+    </p>
+    <div class="collapsible">
+        <p>王一婷你妈死了，回去给你妈收尸吧</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

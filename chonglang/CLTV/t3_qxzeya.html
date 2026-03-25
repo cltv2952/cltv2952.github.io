@@ -1,0 +1,132 @@
+<html>
+<head>
+<title>关于隔离ccp流氓APP的一个抛砖引玉</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_qxzeya">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/arkcompiler">arkcompiler</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/qxzeya">Nov 20 2021 06:13:59</a>
+    </p>
+    <strong>关于隔离ccp流氓APP的一个抛砖引玉</strong>
+    <p><p>昨天俺在tg上冲浪，无意间了解到了shelter,<a href="https://gitea.angry.im/PeterCxy/Shelter">https://gitea.angry.im/PeterCxy/Shelter</a>.原理是利用到了Android for work的功能，它建立一个work profile（俺不知道翻译成啥好），而这个空间和个人的是隔离的，想关闭冻结可以直接一键关闭。俺深入研究了下，这个功能底层用到了多用户。安卓竟然也有多用户（和底层的Linux多用户不是一回事），在创建用户的时候，一些基础的APP也会随之复制到新用户空间里。里面的APP只能和同一用户下的APP交流，无法跨用户。但可惜的是，这个多用户功能隐藏的非常深，对我来说可行的办法是用adb在shell里使用pm（package manager） create-user 用户名来创建。而且好像有的APP的设计没有考虑到这一点。进去的时候会崩溃</p>
+<p>俺只能探索到这一步，权当抛砖引玉，希望能给安卓老嗨提供新的思路，杜绝支国APP窃取隐私和监视。</p></p>
+</div>
+<div class="comment" id="t1_hldfzja">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Positive-Panda8797">Positive-Panda8797</a>
+        |
+        <span class="score">5 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/qxzeya/_/hldfzja">Nov 20 2021 10:55:33</a>
+    </p>
+    <div class="collapsible">
+        <p>island也是同样的原理，把支产软件都放进工作账户，它们就没法窥探隐私，不用的时候冻结了还省电，挺方便的。而且如果只在主账户装代理，还可以用来区分墙内墙外</p>
+        <div class="comment" id="t1_hldsav7">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/arkcompiler">arkcompiler</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/qxzeya/_/hldsav7">Nov 20 2021 13:25:44</a>
+    </p>
+    <div class="collapsible">
+        <p>确实，虽然功能不是很完美，但也能部分替代沙箱的功能，而且还能冻结，可控性更强。</p>
+        
+    </div>
+</div>
+    </div>
+</div>
+
+<div class="comment" id="t1_hlfn6ef">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/gtrersss">gtrersss</a>
+        |
+        <span class="score">2 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/qxzeya/_/hlfn6ef">Nov 20 2021 21:49:16</a>
+    </p>
+    <div class="collapsible">
+        <p>在墙外看到自称俺的就想到编程随想了</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_hld105k">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/fengfubuffalo">fengfubuffalo</a>
+        |
+        <span class="score">-8 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/qxzeya/_/hld105k">Nov 20 2021 07:20:22</a>
+    </p>
+    <div class="collapsible">
+        <p>翻墙穷蛆滚</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

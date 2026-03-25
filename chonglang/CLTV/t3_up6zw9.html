@@ -1,0 +1,76 @@
+<html>
+<head>
+<title>罗生门</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_up6zw9">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/Hour_Ad32">Hour_Ad32</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/up6zw9">May 14 2022 02:00:00</a>
+    </p>
+    <strong>罗生门</strong>
+    <p><p>黑泽明的电影《罗生门》让我们看到一个被灾难摧毁了的世界（二战后的日本）。在这个世界里，每个人（樵夫、强盗、骑士、淑女）都讲述了他们各自的故事，但是灾难使每个人都不敢讲述自己个人的真实人性故事。每个人的故事里都是别人的堕落，惟独没有自己的。</p></p>
+</div>
+<div class="comment" id="t1_i8jex93">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/General_Fly_1115">General_Fly_1115</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/up6zw9/_/i8jex93">May 14 2022 03:58:13</a>
+    </p>
+    <div class="collapsible">
+        <p>共产党：是我啊</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

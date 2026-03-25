@@ -1,0 +1,61 @@
+<html>
+<head>
+<title>这是哪位浪人？</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_utrfle">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/GlumEvening5660">GlumEvening5660</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/utrfle">May 20 2022 10:47:51</a>
+    </p>
+    <strong>这是哪位浪人？</strong>
+    <p><p>&#x200B;</p>
+<p>https://preview.redd.it/hxbp1bhy1m091.png?width=1112&amp;format=png&amp;auto=webp&amp;s=057d34a1fc3e7209fd17bff5b1e1cc261d9da9ca</p>
+<p>https://preview.redd.it/oljzsnhz1m091.png?width=1139&amp;format=png&amp;auto=webp&amp;s=31dfe6002125f35dd4f061835c22b32fd1e85e71</p></p>
+</div>
+</body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

@@ -1,0 +1,95 @@
+<html>
+<head>
+<title>平我具体数据呢</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_n116xj">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/somethih4nothing">somethih4nothing</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/n116xj">Apr 29 2021 10:07:48</a>
+    </p>
+    <strong>平我具体数据呢</strong>
+    <p><a href="https://i.redd.it/i8aegyyrp2w61.jpg">https://i.redd.it/i8aegyyrp2w61.jpg</a></p>
+</div>
+<div class="comment" id="t1_gwa2wko">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Xi_Delete_Comment">Xi_Delete_Comment</a>
+        |
+        <span class="score">6 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/n116xj/_/gwa2wko">Apr 29 2021 10:13:45</a>
+    </p>
+    <div class="collapsible">
+        <p>在编了 别急</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_gwa61nf">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/99bane">99bane</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/n116xj/_/gwa61nf">Apr 29 2021 10:56:51</a>
+    </p>
+    <div class="collapsible">
+        <p>国家说涨那就是涨了，不要着急，继续躺平</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

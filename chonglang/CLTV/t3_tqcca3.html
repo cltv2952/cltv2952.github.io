@@ -1,0 +1,63 @@
+<html>
+<head>
+<title>还不毕业</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_tqcca3">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/John_Best_14425">John_Best_14425</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tqcca3">Mar 28 2022 15:50:51</a>
+    </p>
+    <strong>还不毕业</strong>
+    <p><p>IT行业寒冬来临，很多企业30%～50%大比例裁员。
+毕竟是IT企业，什么都要洋气一点不叫裁员叫“毕业”。
+大有向社会输送人才的意思。
+“狗领导还不毕业呀！”失业的程序员愤愤地说。
+“他最多初中文化，怎么谋生呢？修自行车、剃头发、还是去补鞋？”</p></p>
+</div>
+</body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

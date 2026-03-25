@@ -1,0 +1,177 @@
+<html>
+<head>
+<title>看到网页端右下角的GIF就烦，分享一段油猴脚本代码去除它！本鼠不会写代码，有更好的欢迎在评论区贴出来，谢谢</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_upgpt4">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/Acrobatic_Taro_1984">Acrobatic_Taro_1984</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/upgpt4">May 14 2022 12:57:29</a>
+    </p>
+    <strong>看到网页端右下角的GIF就烦，分享一段油猴脚本代码去除它！本鼠不会写代码，有更好的欢迎在评论区贴出来，谢谢</strong>
+    <p><pre><code>// ==UserScript==
+// @name         removeGIF
+// @namespace    http://tampermonkey.net/
+// @version      0.1
+// @description  try to take over the world!
+// @author       You
+// @match        https://www.reddit.com*
+// @match        https://www.reddit.com/r/CLTV/*
+// @icon         https://www.google.com/s2/favicons?sz=64&amp;domain=reddit.com
+// @grant        none
+// ==/UserScript==
+
+(function() {
+    'use strict';
+
+    // Your code here...
+    setInterval(function(){
+        var img = document.querySelector('._2vEf-C2keJaBMY9qk_BxVn ._3NeWg805wFgqPuE_-LZKN4 img')
+        if(img){
+        var parent = img.parentElement
+        parent.removeChild(img)
+        }
+    },2000)
+
+})();
+</code></pre></p>
+</div>
+<div class="comment" id="t1_i8klqjl">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/realTsarOfRussia">realTsarOfRussia</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/upgpt4/_/i8klqjl">May 14 2022 12:59:27</a>
+    </p>
+    <div class="collapsible">
+        <p>我一直都是包蜜啊</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_i8knoaj">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/MainInternational536">MainInternational536</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/upgpt4/_/i8knoaj">May 14 2022 13:17:52</a>
+    </p>
+    <div class="collapsible">
+        <p>ublock添加自定义规则</p>
+<p><code>reddit.com##img[src="https://styles.redditmedia.com/t5_3ta5rx/styles/image_widget_55k9c1dn4dz81.png"]</code></p>
+        <div class="comment" id="t1_i8koe9t">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Acrobatic_Taro_1984">Acrobatic_Taro_1984</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/upgpt4/_/i8koe9t">May 14 2022 13:24:28</a>
+    </p>
+    <div class="collapsible">
+        <p>谢谢！</p>
+        
+    </div>
+</div>
+    </div>
+</div>
+
+<div class="comment" id="t1_i8kqx4n">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Puzzleheaded_Cap56">Puzzleheaded_Cap56</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/upgpt4/_/i8kqx4n">May 14 2022 13:46:44</a>
+    </p>
+    <div class="collapsible">
+        <p>这个GIF位置那么靠下，除非帖子回复量巨大，网页端也看不了吧。</p>
+<p>一个帖子浏览关键信息就关闭了，你不说，我真还没注意到这个GIF。</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_i8kwc14">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/furry199564">furry199564</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/upgpt4/_/i8kwc14">May 14 2022 14:31:52</a>
+    </p>
+    <div class="collapsible">
+        <p>你这也太复杂了。。。用去广告插件有个点击选择屏蔽元素的功能，点一下就行了。。。</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

@@ -1,0 +1,59 @@
+<html>
+<head>
+<title>學習《肖戰經驗》</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_u4hkh5">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/fuckxjpagain">fuckxjpagain</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/u4hkh5">Apr 15 2022 20:54:33</a>
+    </p>
+    <strong>學習《肖戰經驗》</strong>
+    <p><p>歷史告訴我們，這次集美大概能撐三個月到半年，然後繼續愛蟈。不過仍然有極少數（不足3%）會將仇恨埋在心裡，每年出來喊幾嗓子。不過能給青團和蟈楠添堵，樂子人就嗯開心。想到瓶子還會繼續加速，就更開心了</p></p>
+</div>
+</body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

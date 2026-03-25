@@ -1,0 +1,95 @@
+<html>
+<head>
+<title>新通知! 之後會開辦讓所有人投稿，所有人投票</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_teuxoi">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/Illustrious-Song2674">Illustrious-Song2674</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/teuxoi">Mar 15 2022 17:50:11</a>
+    </p>
+    <strong>新通知! 之後會開辦讓所有人投稿，所有人投票</strong>
+    <p></p>
+</div>
+<div class="comment" id="t1_i0rzjt5">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Illustrious-Song2674">Illustrious-Song2674</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/teuxoi/_/i0rzjt5">Mar 15 2022 17:54:50</a>
+    </p>
+    <div class="collapsible">
+        <p>現在如果有想讓自己作品登上CLTV的，可以準備了</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_i0rzn9z">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/NingChoww">NingChoww</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/teuxoi/_/i0rzn9z">Mar 15 2022 17:55:28</a>
+    </p>
+    <div class="collapsible">
+        <p>叫Evy真名/母狗的人除外</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

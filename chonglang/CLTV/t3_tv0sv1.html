@@ -1,0 +1,76 @@
+<html>
+<head>
+<title>维尼右边，冲</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_tv0sv1">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/Arnoldinmelb">Arnoldinmelb</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tv0sv1">Apr 03 2022 04:23:07</a>
+    </p>
+    <strong>维尼右边，冲</strong>
+    <p><a href="https://i.redd.it/k0ezybsiq8r81.jpg">https://i.redd.it/k0ezybsiq8r81.jpg</a></p>
+</div>
+<div class="comment" id="t1_i36pq36">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/T_F_Catus">T_F_Catus</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tv0sv1/_/i36pq36">Apr 03 2022 04:24:23</a>
+    </p>
+    <div class="collapsible">
+        <p>颜色太复杂了，建议用place的调色盘调一下</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

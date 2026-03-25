@@ -1,0 +1,114 @@
+<html>
+<head>
+<title>事情正在起变化</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_u8medq">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/saki__">saki__</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/u8medq">Apr 21 2022 12:23:19</a>
+    </p>
+    <strong>事情正在起变化</strong>
+    <p></p>
+</div>
+<div class="comment" id="t1_i5lx2a6">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Bright-Purple4921">Bright-Purple4921</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/u8medq/_/i5lx2a6">Apr 21 2022 12:30:05</a>
+    </p>
+    <div class="collapsible">
+        <p>遛条汁 u/zhizhi156</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_i5lx60d">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Puzzled-register-880">Puzzled-register-880</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/u8medq/_/i5lx60d">Apr 21 2022 12:30:59</a>
+    </p>
+    <div class="collapsible">
+        <p>说话说一半是吧，尿尿也尿一半吗</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_i5m6oa9">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/xiaobaigaosan">xiaobaigaosan</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/u8medq/_/i5m6oa9">Apr 21 2022 13:45:43</a>
+    </p>
+    <div class="collapsible">
+        <p>胃口胶</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

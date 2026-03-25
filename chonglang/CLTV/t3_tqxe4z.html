@@ -1,0 +1,95 @@
+<html>
+<head>
+<title>这是否</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_tqxe4z">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/Vast-Stop-9630">Vast-Stop-9630</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tqxe4z">Mar 29 2022 11:12:51</a>
+    </p>
+    <strong>这是否</strong>
+    <p><a href="https://i.redd.it/xbuvatj23bq81.jpg">https://i.redd.it/xbuvatj23bq81.jpg</a></p>
+</div>
+<div class="comment" id="t1_i2jtupp">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Butherisaman">Butherisaman</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tqxe4z/_/i2jtupp">Mar 29 2022 11:16:10</a>
+    </p>
+    <div class="collapsible">
+        <p>广🐒是吧</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_i2jx9t8">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/BoBojiok">BoBojiok</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tqxe4z/_/i2jx9t8">Mar 29 2022 11:52:54</a>
+    </p>
+    <div class="collapsible">
+        <p>配送费5.3，说明你离这家店大概4-5公里。马上通知相关部门，以包子店为中心，方圆5公里以内展开侦察。天河区网警提醒您：网络并非法外之地，一言一行都不可逾越法律的底线！</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

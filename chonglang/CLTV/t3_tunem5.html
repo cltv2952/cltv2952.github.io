@@ -1,0 +1,114 @@
+<html>
+<head>
+<title>哈人</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_tunem5">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/ChampionshipIcy1888">ChampionshipIcy1888</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tunem5">Apr 02 2022 16:52:28</a>
+    </p>
+    <strong>哈人</strong>
+    <p><a href="https://i.redd.it/n8nj740bb5r81.jpg">https://i.redd.it/n8nj740bb5r81.jpg</a></p>
+</div>
+<div class="comment" id="t1_i34k27w">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Legal_District_2313">Legal_District_2313</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tunem5/_/i34k27w">Apr 02 2022 16:55:28</a>
+    </p>
+    <div class="collapsible">
+        <p>名字用白色吧，都快看不见了</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_i34lqkq">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Temporary_Coast_4073">Temporary_Coast_4073</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tunem5/_/i34lqkq">Apr 02 2022 17:07:26</a>
+    </p>
+    <div class="collapsible">
+        <p>还是福瑞可爱</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_i34niva">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/dizhongdii">dizhongdii</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tunem5/_/i34niva">Apr 02 2022 17:20:10</a>
+    </p>
+    <div class="collapsible">
+        <p>有港人参与吧</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

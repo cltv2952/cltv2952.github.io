@@ -1,0 +1,118 @@
+<html>
+<head>
+<title>打印+扫描是否可以规避所有水印？</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_svic63">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/auntamerica">auntamerica</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/svic63">Feb 18 2022 13:46:18</a>
+    </p>
+    <strong>打印+扫描是否可以规避所有水印？</strong>
+    <p><p>[removed]</p></p>
+</div>
+<div class="comment" id="t1_hxhjwkp">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/furry199564">furry199564</a>
+        |
+        <span class="score">3 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/svic63/_/hxhjwkp">Feb 18 2022 19:51:09</a>
+    </p>
+    <div class="collapsible">
+        <p>打印机也有秘密打印上的东西把，我记得能追查打印机型号的。</p>
+<p><a href="https://patents.google.com/patent/CN101118592A/zh">https://patents.google.com/patent/CN101118592A/zh</a></p>
+<p>我还搜到个论文。。。</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_hxiq1tn">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/kriswulifanfan">kriswulifanfan</a>
+        |
+        <span class="score">2 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/svic63/_/hxiq1tn">Feb 19 2022 00:43:39</a>
+    </p>
+    <div class="collapsible">
+        <p>本末倒置了属于是，隐藏水印就是从打印机那来的，打印出来的每张纸都能查到打印机型号打印时间</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_hxj8cyg">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/rff000043">rff000043</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/svic63/_/hxj8cyg">Feb 19 2022 03:12:23</a>
+    </p>
+    <div class="collapsible">
+        <p>看精度，这两个环节精度越高越有可能把水印保留下来。</p>
+<p>隐形水印可以理解为用人眼不敏感的地方来做水印，本质上和正常水印一样都是实际改变了图片。或者用人眼难以区分的相近颜色，或者用规律的高频颜色波动（频域水印）。</p>
+<p>所以一般来说，图片保留的冗余信息越少（高压、二值化、抹平噪点），留给隐形水印的信息就越少，越有可能消除隐形水印。</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

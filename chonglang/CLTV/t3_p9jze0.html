@@ -1,0 +1,95 @@
+<html>
+<head>
+<title>Oh no</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_p9jze0">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/-_-ching">-_-ching</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/p9jze0">Aug 22 2021 20:14:54</a>
+    </p>
+    <strong>Oh no</strong>
+    <p><a href="https://i.redd.it/3c9xfdp3cti71.jpg">https://i.redd.it/3c9xfdp3cti71.jpg</a></p>
+</div>
+<div class="comment" id="t1_h9zar3u">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/kumabaKing">kumabaKing</a>
+        |
+        <span class="score">3 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/p9jze0/_/h9zar3u">Aug 23 2021 01:27:50</a>
+    </p>
+    <div class="collapsible">
+        <p>make taliban great again</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_h9znx23">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Low-Awareness-6857">Low-Awareness-6857</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/p9jze0/_/h9znx23">Aug 23 2021 03:20:40</a>
+    </p>
+    <div class="collapsible">
+        <p>Coincidence? I think not.</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

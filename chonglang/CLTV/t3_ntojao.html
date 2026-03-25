@@ -1,0 +1,60 @@
+<html>
+<head>
+<title>我觉得的我身边的人</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_ntojao">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/Odd_Age_8493">Odd_Age_8493</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/ntojao">Jun 06 2021 15:41:56</a>
+    </p>
+    <strong>我觉得的我身边的人</strong>
+    <p><p>他们觉得好像自己什么都完全了解，可以轻易用标签评价别人，觉得别人这样表现就是抑郁，别人那样表现就是正常；别人问这个问题就是恶意，别人问那个问题就是简单的好奇。他们不对任何事物的意义有基本的怀疑精神，却满嘴“批判辩证“，导致他们看不起任何精细解释，他们似乎宁愿保持浅显的知识不愿深入</p>
+<p>他们把付出努力为他们详细解释的人的行为称为”把知识嚼碎了喂给你“，并以自己用不着嚼碎知识也能工作而自豪。而明明他们的教育与体罚洗脑没区别，他们却依然看不进详细解释，觉得任何”教碎了喂给你“式的逻辑推演得出结论知识的行为是愚蠢的，好像在做一件事时、只会基本操作就能完成工作比那些深入理解原理才能完成工作的人，更加优越似的。这样导致他们只会简单拆卸组装，越来越只会低级体力重复劳动，越来越看不起把理解原理当成工作的基础的人</p></p>
+</div>
+</body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

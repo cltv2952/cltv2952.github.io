@@ -1,0 +1,76 @@
+<html>
+<head>
+<title>B站阿福Thomas的评论区最新的都在刷我似老雷</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_upt61k">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/xianzhong008">xianzhong008</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/upt61k">May 14 2022 23:34:38</a>
+    </p>
+    <strong>B站阿福Thomas的评论区最新的都在刷我似老雷</strong>
+    <p><p>甚至老雷儿子都出来了</p></p>
+</div>
+<div class="comment" id="t1_i8n95o6">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Naive_Owls">Naive_Owls</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/upt61k/_/i8n95o6">May 15 2022 01:35:28</a>
+    </p>
+    <div class="collapsible">
+        <p>老雷一刀攮死德国老乡</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

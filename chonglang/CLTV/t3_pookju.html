@@ -1,0 +1,95 @@
+<html>
+<head>
+<title>为什么呢？</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_pookju">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/PriorAny">PriorAny</a>
+        |
+        <span class="score">0 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/pookju">Sep 15 2021 11:51:00</a>
+    </p>
+    <strong>为什么呢？</strong>
+    <p><a href="https://i.imgur.com/93WrRn1.jpg">https://i.imgur.com/93WrRn1.jpg</a></p>
+</div>
+<div class="comment" id="t1_hcxx6jz">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/MrWAVEChing">MrWAVEChing</a>
+        |
+        <span class="score">2 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/pookju/_/hcxx6jz">Sep 15 2021 12:22:25</a>
+    </p>
+    <div class="collapsible">
+        <p>支蛛很着急，赶紧把人肉了，可惜大势所趋</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_hcy27ge">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Dengshopping">Dengshopping</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/pookju/_/hcy27ge">Sep 15 2021 13:06:56</a>
+    </p>
+    <div class="collapsible">
+        <p>你有锤子用，封杀steam大势所趋，滚去蒸汽中国吧</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

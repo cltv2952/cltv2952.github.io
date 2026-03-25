@@ -1,0 +1,76 @@
+<html>
+<head>
+<title>NPC对话</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_ui4v5i">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/nomennonhabeo">nomennonhabeo</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/ui4v5i">May 04 2022 11:56:33</a>
+    </p>
+    <strong>NPC对话</strong>
+    <p><a href="https://youtu.be/UJAN4bAOCZQ">https://youtu.be/UJAN4bAOCZQ</a></p>
+</div>
+<div class="comment" id="t1_i7a57sj">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/nomennonhabeo">nomennonhabeo</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/ui4v5i/_/i7a57sj">May 04 2022 11:58:09</a>
+    </p>
+    <div class="collapsible">
+        <p>心梗：“这个问题听不清，让我们谈下一个问题。”</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

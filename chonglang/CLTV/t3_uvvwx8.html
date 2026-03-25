@@ -1,0 +1,114 @@
+<html>
+<head>
+<title>哈人</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_uvvwx8">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/FapHero911">FapHero911</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/uvvwx8">May 23 2022 08:57:08</a>
+    </p>
+    <strong>哈人</strong>
+    <p><a href="https://i.redd.it/p4dr7mpzw6191.jpg">https://i.redd.it/p4dr7mpzw6191.jpg</a></p>
+</div>
+<div class="comment" id="t1_i9nw86j">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/OkAge2145">OkAge2145</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/uvvwx8/_/i9nw86j">May 23 2022 09:04:06</a>
+    </p>
+    <div class="collapsible">
+        <p>注意米线</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_i9nx7h4">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Whythebanhammer">Whythebanhammer</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/uvvwx8/_/i9nx7h4">May 23 2022 09:19:33</a>
+    </p>
+    <div class="collapsible">
+        <p>Two wrongs make one right</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_i9nyeha">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/qrr133">qrr133</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/uvvwx8/_/i9nyeha">May 23 2022 09:38:15</a>
+    </p>
+    <div class="collapsible">
+        <p>小时候就梦想炸学校hhh</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

@@ -1,0 +1,76 @@
+<html>
+<head>
+<title>想問一下</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_op8jhz">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/tomomega">tomomega</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/op8jhz">Jul 22 2021 06:49:32</a>
+    </p>
+    <strong>想問一下</strong>
+    <p><p>這裡有加拿大的嗎?想知道那邊實際升學可能性，本人香港中六剛畢業</p></p>
+</div>
+<div class="comment" id="t1_h68710i">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/DigitalReporterS01">DigitalReporterS01</a>
+        |
+        <span class="score">0 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/op8jhz/_/h68710i">Jul 23 2021 08:30:03</a>
+    </p>
+    <div class="collapsible">
+        <p>港友快RUN 不行还能去英国</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

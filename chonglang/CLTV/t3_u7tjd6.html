@@ -1,0 +1,76 @@
+<html>
+<head>
+<title>我嚴重懷疑</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_u7tjd6">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/Brutus831201">Brutus831201</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/u7tjd6">Apr 20 2022 10:39:46</a>
+    </p>
+    <strong>我嚴重懷疑</strong>
+    <p><p>普丁掌握蕭茲被俄羅斯猛男大插皮眼子的床照</p></p>
+</div>
+<div class="comment" id="t1_i5gvzln">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/MasterMandarin">MasterMandarin</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/u7tjd6/_/i5gvzln">Apr 20 2022 11:40:47</a>
+    </p>
+    <div class="collapsible">
+        <p>蘇聯手裡肯定拿滿了各國共產黨的黑料，說不定連共軍裝作國軍挑釁日本的猛料都有</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

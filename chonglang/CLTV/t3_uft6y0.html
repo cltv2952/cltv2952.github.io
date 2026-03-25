@@ -1,0 +1,59 @@
+<html>
+<head>
+<title>快讯一则</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_uft6y0">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/HKPoohPooh">HKPoohPooh</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/uft6y0">May 01 2022 05:48:59</a>
+    </p>
+    <strong>快讯一则</strong>
+    <p><p>韩亚航空公司今日正式复航南京-仁川定期客运航班，因为目前为单向复航南京-仁川出境段，所以初期采用空中客车A321neo执行航班，后根据市场需求调整为A330、B747-400等宽体机执飞。</p></p>
+</div>
+</body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

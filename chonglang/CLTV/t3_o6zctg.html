@@ -1,0 +1,95 @@
+<html>
+<head>
+<title>RIP</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_o6zctg">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/0ttoModerator">0ttoModerator</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/o6zctg">Jun 24 2021 11:54:59</a>
+    </p>
+    <strong>RIP</strong>
+    <p><a href="https://i.redd.it/bzefcex3d7771.png">https://i.redd.it/bzefcex3d7771.png</a></p>
+</div>
+<div class="comment" id="t1_h2vj9pb">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Tadaoki_Z">Tadaoki_Z</a>
+        |
+        <span class="score">11 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/o6zctg/_/h2vj9pb">Jun 24 2021 11:57:14</a>
+    </p>
+    <div class="collapsible">
+        <p>good tool for government</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_h2w12h3">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Naive_Owls">Naive_Owls</a>
+        |
+        <span class="score">2 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/o6zctg/_/h2w12h3">Jun 24 2021 14:38:18</a>
+    </p>
+    <div class="collapsible">
+        <p>这个老哥死的挺离奇</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

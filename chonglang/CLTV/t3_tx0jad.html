@@ -1,0 +1,76 @@
+<html>
+<head>
+<title>確實</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_tx0jad">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/Upstairs-Lab3445">Upstairs-Lab3445</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tx0jad">Apr 05 2022 17:41:34</a>
+    </p>
+    <strong>確實</strong>
+    <p><a href="https://i.redd.it/1dpb1fwsyqr81.jpg">https://i.redd.it/1dpb1fwsyqr81.jpg</a></p>
+</div>
+<div class="comment" id="t1_i3j9130">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/zhongnanhaijimei">zhongnanhaijimei</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tx0jad/_/i3j9130">Apr 05 2022 20:10:02</a>
+    </p>
+    <div class="collapsible">
+        <p>什么小鼠佩奇</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

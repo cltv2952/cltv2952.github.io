@@ -1,0 +1,95 @@
+<html>
+<head>
+<title>是他吗？</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_olp7y8">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/XARS_killer">XARS_killer</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/olp7y8">Jul 16 2021 20:23:28</a>
+    </p>
+    <strong>是他吗？</strong>
+    <p><a href="https://i.redd.it/a8tthkzxvmb71.png">https://i.redd.it/a8tthkzxvmb71.png</a></p>
+</div>
+<div class="comment" id="t1_h5gmrz8">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Blood_Eye8964">Blood_Eye8964</a>
+        |
+        <span class="score">10 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/olp7y8/_/h5gmrz8">Jul 17 2021 00:17:30</a>
+    </p>
+    <div class="collapsible">
+        <p>匈牙利已经有一位奥尔班大大了。天无二日，人无二主！</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_h5gxmg8">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Puzzleheaded_Fan_391">Puzzleheaded_Fan_391</a>
+        |
+        <span class="score">4 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/olp7y8/_/h5gxmg8">Jul 17 2021 01:52:20</a>
+    </p>
+    <div class="collapsible">
+        <p>这个就不叫运动员了叫运动家，再说匈牙利是公认世界上最小的体育强国，出个一专多能的也不奇怪</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

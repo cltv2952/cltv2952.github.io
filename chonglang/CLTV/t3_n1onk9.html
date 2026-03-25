@@ -1,0 +1,112 @@
+<html>
+<head>
+<title>哈人</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_n1onk9">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/LAMSTREAM">LAMSTREAM</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/n1onk9">Apr 30 2021 07:20:53</a>
+    </p>
+    <strong>哈人</strong>
+    <p><a href="https://i.redd.it/riqpp474s8w61.jpg">https://i.redd.it/riqpp474s8w61.jpg</a></p>
+</div>
+<div class="comment" id="t1_gweflz1">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/somethin4nonthing">somethin4nonthing</a>
+        |
+        <span class="score">2 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/n1onk9/_/gweflz1">Apr 30 2021 08:00:39</a>
+    </p>
+    <div class="collapsible">
+        <p>共产大佐简单吃个瓜娃子</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_gwgbygm">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Lunarfalcon666">Lunarfalcon666</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/n1onk9/_/gwgbygm">Apr 30 2021 18:13:59</a>
+    </p>
+    <div class="collapsible">
+        <p>居然还能交易，搁中国那会儿只能自己吃，摆摊属于现行走资派。</p>
+        <div class="comment" id="t1_gwibsro">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/LAMSTREAM">LAMSTREAM</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/n1onk9/_/gwibsro">May 01 2021 04:30:21</a>
+    </p>
+    <div class="collapsible">
+        <p>赢麻了😅</p>
+        
+    </div>
+</div>
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

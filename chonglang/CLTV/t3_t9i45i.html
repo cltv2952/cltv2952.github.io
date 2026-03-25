@@ -1,0 +1,114 @@
+<html>
+<head>
+<title>user flair改不了怎么解决？</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_t9i45i">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/NichtFahrenheit">NichtFahrenheit</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/t9i45i">Mar 08 2022 14:34:32</a>
+    </p>
+    <strong>user flair改不了怎么解决？</strong>
+    <p><a href="https://i.redd.it/gdcbyctw76m81.jpg">https://i.redd.it/gdcbyctw76m81.jpg</a></p>
+</div>
+<div class="comment" id="t1_hzuaerh">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Kira902">Kira902</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/t9i45i/_/hzuaerh">Mar 08 2022 14:36:40</a>
+    </p>
+    <div class="collapsible">
+        <p>网页版</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_hzuaj8y">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/ChungkuoRun">ChungkuoRun</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/t9i45i/_/hzuaj8y">Mar 08 2022 14:37:36</a>
+    </p>
+    <div class="collapsible">
+        <p>用PC</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_hzubay6">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Ok-Bad-1632">Ok-Bad-1632</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/t9i45i/_/hzubay6">Mar 08 2022 14:43:11</a>
+    </p>
+    <div class="collapsible">
+        <p>让🐕mod给你改</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

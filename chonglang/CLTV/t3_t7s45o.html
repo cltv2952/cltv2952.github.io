@@ -1,0 +1,98 @@
+<html>
+<head>
+<title>Steam 真搞了一个排除恶意评论的功能</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_t7s45o">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/JackReedTheSyndie">JackReedTheSyndie</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/t7s45o">Mar 06 2022 05:41:32</a>
+    </p>
+    <strong>Steam 真搞了一个排除恶意评论的功能</strong>
+    <p><p>这下汁煮们没办法捣乱了</p>
+<p>https://steamcommunity.com/games/593110/announcements/detail/1808664240333155775?snr=1_5_9_</p>
+<p>我们之前曾对如何呈现游戏的用户评测以及由此得出的评测分数进行了一些修改， 并在这篇博客中对这些修改进行了讨论。 正如我们在博客中所谈及的，我们希望确保那些玩过游戏的玩家能够表达自己的观点，向其他玩家说明他们为什么应该或不应该购买这款游戏，而我们将这些意见总结形成的一个评测分数也应该能够代表未来购买者购买游戏后的满意度。</p>
+<p>自那篇文章发布以来，我们不断地听取玩家和开发者的反馈意见。 我们很清楚玩家非常重视评测，并希望我们能够确保评测的准确性和可靠性。 开发者也明白评测对玩家的价值，但同时希望自己能够得到公平对待。 我们还花了大量时间构建分析工具，以帮助我们更好地了解 Steam 上所有产品的评测情况。 有了这些反馈和数据，我们认为我们已经准备就绪，可以做出下一个修改。</p>
+<p>这个修改简单说来就是：我们要找出跑题的评测恶意轰炸，并将它们排除在评测分数之外。</p>
+<p>虽然说起来简单，但是这会带来许多问题，所以让我们对细节进行深入探讨。 首先，什么是我们所说的跑题的评测恶意轰炸？ 正如我们之前在原来的博客中所定义的，评测恶意轰炸是指玩家在非常短的时间内发布大量评测，目的是降低某个游戏的测评分数。 而我们定义中的跑离评测恶意轰炸，则是指评测的焦点集中在我们认为与未来玩家购买游戏后的满意度无关的主题上，因此这种评测不应计入评测分数。</p>
+<p>显而易见的是，这里有一个灰色地带，因为玩家关心的事物范围很广。 那么，我们将如何识别这些跑题的评测恶意轰炸呢？ 第一步是我们构建的一个工具，能够尽可能实时地识别 Steam 上所有游戏的任何异常评测活动。 此工具无法得知为什么一款指定游戏会收到异常评测活动，甚至也不会尝试去解决这个问题。 但它会通知 Valve 的一个团队，随后由他们进行调查。 我们已经在 Steam 的整个评测历史记录中运行了此工具，并找出了游戏在多个时间段内出现异常评测活动的许多原因，而跑题的评测恶意轰炸似乎只是其中的一小部分。</p>
+<p>一旦我们的团队确定某个异常活动为跑题评测恶意轰炸，我们会标记出其包含的时间段并通知开发者。 该时间段内的评测将从评测分数计算中移除。 和以前一样，这些评测会保持原样不动，您仍然可以深入阅读以了解它们是否与您相关。 为了有助于您做到这一点，当您浏览已默认移除了一些评测的商店页面时，会清楚地看到这方面发生的变化，并且我们还进一步优化了异常评测期间的 UI。</p>
+<p>最后，您也可以按自己的偏好选择完全退出此功能——在 Steam 商店选项中有一个复选框，勾选后即可将跑题的评测恶意轰炸仍然计入所有看到的评测分数。</p>
+<p>我们在围绕用户评测开发一些其他功能的同时，认为此功能本身值得单独发布。 一如既往，如果您有任何想法或疑虑，请在下方留言。</p>
+<p>常见问题与解答</p>
+<p>问：我所关心的恐怕是其他玩家并不关心的问题，比如 DRM 或 EULA 的变更。 评测恶意轰炸过去也曾与之相关。 你们认为他们属于不相关还是跑题呢？</p>
+<p>答：我们就这两个问题以及其他类似问题进行了长时间的讨论。 从技术上讲，它们并不是游戏的一部分，但对某些玩家来说却是个问题。 最终，我们决定将它们定义为跑题评测恶意轰炸。 原因是“一般”的 Steam 玩家并不太在意它们，因此如果评测分数不包含它们，会更加准确。 除此之外，我们相信那些真正关心像 DRM 这类话题的玩家在购买游戏前往往愿意更深入地挖掘游戏——这也是为什么我们仍然保留了评测恶意轰炸中所有评测的原因。 只需要一分钟就可以深入阅读这些评测，看看这个问题是否是您所关心的。</p>
+<p>问：所以如果我在跑题评测恶意轰炸的时间段内发表了一篇评测，我的这篇评测就不会计入评测分数了？</p>
+<p>答：非常遗憾，确实如此。 我们已经在 Steam 的整个评测历史记录中测试了识别跑题评测恶意轰炸的流程。在此过程中，我们发现尽管可以通过翻阅评测和社区讨论来确定是什么导致了评测恶意轰炸，但阅读每一篇评测并不可行。 但是，正如我们在首篇用户评测文章中所说，我们的数据显示评测轰炸往往为暂时性的歪曲，因此我们相信评测分数将仍然正确，而其他玩家将仍然能查找并读到您在该时段内的评测。</p>
+<p>问：你们在删除评测吗？</p>
+<p>答：不，我们只是在更改计算游戏评测分数的方式。 所有数据仍然保留在 Steam 中。如果您只想查看原始评测分数，可以在您的 Steam 商店偏好中进行更改。</p>
+<p>问：这是不是代表你们会回去识别并移除旧的评测恶意轰炸？</p>
+<p>答：在进行内部沟通，并咨询一些曾遭受评测恶意轰炸的合作伙伴后，我们决定不单方面将新规则施加于之前的情况。</p>
+<p>答：如果我与你们就什么是“无关评测恶意轰炸”的意见不同，怎么办？</p>
+<p>答：我们建议您在您的 Steam 商店偏好中，将“评测分数设置”项下的 Steam 评测默认设置为“在评测分数中计入所有 Steam 购买产生的评测”。</p>
+<p>问：评测对我来说极为重要，因为当顾客上当受骗或者发现所购产品质量不佳时，评测是进行反馈的为数不多的工具之一。 我想这完全不算是个疑问，但是我只想谈谈这点。</p>
+<p>答：我们同意您的说法。 我们仍然会与您和社区积极交流，了解您以及在 Steam 上销售游戏的各种合作伙伴们希望从评测中获得什么。 评测是 Steam 的重要组成部分，正是因为这样，我们不断努力，以确保评测不受任何人操纵。 也是基于同样的原因，我们坚决封禁那些参与操纵评测的合作伙伴——顾客需要相信这个系统，它才能有价值。</p></p>
+</div>
+<div class="comment" id="t1_hzjmt5q">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/sisyphus3434">sisyphus3434</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/t7s45o/_/hzjmt5q">Mar 06 2022 05:47:25</a>
+    </p>
+    <div class="collapsible">
+        <p>这就被炸号了？我操</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

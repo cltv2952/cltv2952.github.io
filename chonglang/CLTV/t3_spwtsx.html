@@ -1,0 +1,93 @@
+<html>
+<head>
+<title>我这是为了你好</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_spwtsx">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/modaoshishuo">modaoshishuo</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/spwtsx">Feb 11 2022 11:00:10</a>
+    </p>
+    <strong>我这是为了你好</strong>
+    <p><p>中国财政部原部长楼继伟在和美国财政部原部长亨利·保尔森的一场闭门对谈活动上说，中美在应对气候变化、公共卫生危机，以及安全领域等方面有合作空间，但美方当前一些做法不利于中美双方，且会让美国自己“吃亏”。</p></p>
+</div>
+<div class="comment" id="t1_hwhqhom">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Dengshopping">Dengshopping</a>
+        |
+        <span class="score">9 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/spwtsx/_/hwhqhom">Feb 11 2022 11:28:42</a>
+    </p>
+    <div class="collapsible">
+        <p>爹味</p>
+        <div class="comment" id="t1_hwhs1ij">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/modaoshishuo">modaoshishuo</a>
+        |
+        <span class="score">5 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/spwtsx/_/hwhs1ij">Feb 11 2022 11:47:09</a>
+    </p>
+    <div class="collapsible">
+        <p>周恩来最擅长这种话术</p>
+        
+    </div>
+</div>
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

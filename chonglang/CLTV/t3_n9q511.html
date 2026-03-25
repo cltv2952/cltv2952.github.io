@@ -1,0 +1,93 @@
+<html>
+<head>
+<title>简单发点兔友</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_n9q511">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/AnyAirRemake">AnyAirRemake</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/n9q511">May 11 2021 05:57:59</a>
+    </p>
+    <strong>简单发点兔友</strong>
+    <p><a href="https://i.imgur.com/PHqFYhq.jpg">https://i.imgur.com/PHqFYhq.jpg</a></p>
+</div>
+<div class="comment" id="t1_gxplst1">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/SquareCalligrapher93">SquareCalligrapher93</a>
+        |
+        <span class="score">5 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/n9q511/_/gxplst1">May 11 2021 09:41:02</a>
+    </p>
+    <div class="collapsible">
+        <p>兔友只配用绳子连成一串拉到河边扫射，这么好看的军装（只谈服装）也是他们配穿的？</p>
+        <div class="comment" id="t1_gy0w86v">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/AnyAirRemake">AnyAirRemake</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/n9q511/_/gy0w86v">May 13 2021 20:58:17</a>
+    </p>
+    <div class="collapsible">
+        <p>原来是俄爹啊</p>
+        
+    </div>
+</div>
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

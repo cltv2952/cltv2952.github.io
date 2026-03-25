@@ -1,0 +1,59 @@
+<html>
+<head>
+<title>我大姨父是一个大厨，每到毛泽东忌日那一天就会做腊肉蛋炒饭</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_tpn1dd">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/2005002000">2005002000</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/tpn1dd">Mar 27 2022 16:07:12</a>
+    </p>
+    <strong>我大姨父是一个大厨，每到毛泽东忌日那一天就会做腊肉蛋炒饭</strong>
+    <p><p>将切好的腊肉配上鸡蛋，放入油锅，之后再加上米饭，进行爆炒，味道非常美味，我吃过以后感觉回味无穷。</p></p>
+</div>
+</body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

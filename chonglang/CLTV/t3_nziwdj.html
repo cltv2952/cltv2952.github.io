@@ -1,0 +1,113 @@
+<html>
+<head>
+<title>有无技术老嗨说说，v2ray 的时间戳验证是否可以抵御重放攻击？</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_nziwdj">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/JuanDBenitez">JuanDBenitez</a>
+        |
+        <span class="score">3 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/nziwdj">Jun 14 2021 09:29:28</a>
+    </p>
+    <strong>有无技术老嗨说说，v2ray 的时间戳验证是否可以抵御重放攻击？</strong>
+    <p></p>
+</div>
+<div class="comment" id="t1_h1prytt">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Birdcage17">Birdcage17</a>
+        |
+        <span class="score">9 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/nziwdj/_/h1prytt">Jun 14 2021 10:16:39</a>
+    </p>
+    <div class="collapsible">
+        <p>目前可以，我看过一篇报告，防火墙不把ws加tls认为是翻墙流量</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_h1py7dp">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Sad-Locksmith-4599">Sad-Locksmith-4599</a>
+        |
+        <span class="score">4 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/nziwdj/_/h1py7dp">Jun 14 2021 11:42:48</a>
+    </p>
+    <div class="collapsible">
+        <p><a href="https://github.com/v2ray/v2ray-core/issues/2523">https://github.com/v2ray/v2ray-core/issues/2523</a></p>
+<p>现已修复，但更好的行为是换用vless</p>
+        <div class="comment" id="t1_h1pyxgg">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Wuqianqh">Wuqianqh</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/nziwdj/_/h1pyxgg">Jun 14 2021 11:51:22</a>
+    </p>
+    <div class="collapsible">
+        <p>有安装说明吗？</p>
+        
+    </div>
+</div>
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

@@ -1,0 +1,74 @@
+<html>
+<head>
+<title>别开玩笑</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_v1jedi">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/Few-Extent5095">Few-Extent5095</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/CLTV/comments/v1jedi">May 31 2022 05:53:16</a>
+    </p>
+    <strong>别开玩笑</strong>
+    <p><p>也许会下雪吧
+噢，请别开玩笑
+我们知道华盛顿密布着彩旗
+和布什的招牌
+一声悲哀的呼叫
+为民主神话而发出
+最高法院任命政府首脑
+共和党最高法院指定了共和党总统
+但何为总统
+何为民主
+现在我们终于明白
+其它那些国家
+合众国
+及共和国
+怎样受到专制，
+穷人怎样死于街头</p></p>
+</div>
+</body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>
