@@ -1,0 +1,112 @@
+<html>
+<head>
+<title>这是否有点</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_svf2vo">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/T_T_QAQ">T_T_QAQ</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/SewerFarm/comments/svf2vo">Feb 18 2022 10:47:48</a>
+    </p>
+    <strong>这是否有点</strong>
+    <p><a href="https://i.redd.it/0unlykq1nki81.jpg">https://i.redd.it/0unlykq1nki81.jpg</a></p>
+</div>
+<div class="comment" id="t1_hxfjzf2">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/merulia">merulia</a>
+        |
+        <span class="score">7 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/SewerFarm/comments/svf2vo/_/hxfjzf2">Feb 18 2022 10:50:51</a>
+    </p>
+    <div class="collapsible">
+        <p>就撞你就撞你</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_hxg6h8i">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/SagerKing_xswl">SagerKing_xswl</a>
+        |
+        <span class="score">5 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/SewerFarm/comments/svf2vo/_/hxg6h8i">Feb 18 2022 14:28:49</a>
+    </p>
+    <div class="collapsible">
+        <p>中国的盲道建了和没建一样，我就没见过哪个盲人是自己走盲道的，有钱买导盲犬的权贵盲人还用得着自己出门？</p>
+        <div class="comment" id="t1_hxgn7z3">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/pray250">pray250</a>
+        |
+        <span class="score">2 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/SewerFarm/comments/svf2vo/_/hxgn7z3">Feb 18 2022 16:21:56</a>
+    </p>
+    <div class="collapsible">
+        <p>很为他们难过，形式主义到底了</p>
+        
+    </div>
+</div>
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

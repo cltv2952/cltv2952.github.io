@@ -1,0 +1,95 @@
+<html>
+<head>
+<title>是不是Joker哦</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_ta9hox">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/6324chenshitou">6324chenshitou</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/SewerFarm/comments/ta9hox">Mar 09 2022 14:53:07</a>
+    </p>
+    <strong>是不是Joker哦</strong>
+    <p><a href="https://www.reddit.com/gallery/ta9hox">https://www.reddit.com/gallery/ta9hox</a></p>
+</div>
+<div class="comment" id="t1_i02gxtp">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Sodom36525">Sodom36525</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/SewerFarm/comments/ta9hox/_/i02gxtp">Mar 10 2022 04:29:50</a>
+    </p>
+    <div class="collapsible">
+        <p>也，长得真像郭教练哦</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_i03wkqs">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/0x9_5ncx">0x9_5ncx</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/SewerFarm/comments/ta9hox/_/i03wkqs">Mar 10 2022 14:13:21</a>
+    </p>
+    <div class="collapsible">
+        <p>宝莲灯天天哭</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

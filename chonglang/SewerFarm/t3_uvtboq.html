@@ -1,0 +1,76 @@
+<html>
+<head>
+<title>我终于驯服蜘猪啦</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_uvtboq">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/miniworld6324">miniworld6324</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/SewerFarm/comments/uvtboq">May 23 2022 05:44:49</a>
+    </p>
+    <strong>我终于驯服蜘猪啦</strong>
+    <p><a href="https://www.reddit.com/gallery/uvtboq">https://www.reddit.com/gallery/uvtboq</a></p>
+</div>
+<div class="comment" id="t1_i9niq8e">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/miniworld6324">miniworld6324</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/SewerFarm/comments/uvtboq/_/i9niq8e">May 23 2022 05:49:17</a>
+    </p>
+    <div class="collapsible">
+        <p>就是血有点薄，能爬墙，赶路也行，就是跳的不高，试了一下好像只能跳一个火把高</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

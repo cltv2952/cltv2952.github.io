@@ -1,0 +1,95 @@
+<html>
+<head>
+<title>摇</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_sc79zm">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/AllHailCyrus">AllHailCyrus</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/SewerFarm/comments/sc79zm">Jan 25 2022 06:35:38</a>
+    </p>
+    <strong>摇</strong>
+    <p><a href="https://v.redd.it/57rhksi14sd81">https://v.redd.it/57rhksi14sd81</a></p>
+</div>
+<div class="comment" id="t1_hu50ehe">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/user-plato">user-plato</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/SewerFarm/comments/sc79zm/_/hu50ehe">Jan 25 2022 10:56:47</a>
+    </p>
+    <div class="collapsible">
+        <p>在天安门楼下跳试试</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_huaxz1w">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Practical-Car-6240">Practical-Car-6240</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/SewerFarm/comments/sc79zm/_/huaxz1w">Jan 26 2022 15:26:33</a>
+    </p>
+    <div class="collapsible">
+        <p>Ctrl+C Ctrl+V Ctrl+V Ctrl+V Ctrl+V Ctrl+V Ctrl+V Ctrl+V Ctrl+V</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

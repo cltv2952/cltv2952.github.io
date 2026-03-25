@@ -1,0 +1,93 @@
+<html>
+<head>
+<title>雅</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_szcxo3">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/NingChoww">NingChoww</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/SewerFarm/comments/szcxo3">Feb 23 2022 09:03:08</a>
+    </p>
+    <strong>雅</strong>
+    <p><a href="https://v.redd.it/4xzxbfsjsjj81">https://v.redd.it/4xzxbfsjsjj81</a></p>
+</div>
+<div class="comment" id="t1_hy2w9wg">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/yanleerriver">yanleerriver</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/SewerFarm/comments/szcxo3/_/hy2w9wg">Feb 23 2022 09:05:30</a>
+    </p>
+    <div class="collapsible">
+        <p>周子，發慢點，看不過來了</p>
+        <div class="comment" id="t1_hy2wise">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/NingChoww">NingChoww</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/SewerFarm/comments/szcxo3/_/hy2wise">Feb 23 2022 09:08:54</a>
+    </p>
+    <div class="collapsible">
+        <p>俺睡了，还剩十个不到没发</p>
+        
+    </div>
+</div>
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

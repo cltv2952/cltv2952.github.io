@@ -1,0 +1,114 @@
+<html>
+<head>
+<title>🌊</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_teevey">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/zhangtom">zhangtom</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/SewerFarm/comments/teevey">Mar 15 2022 02:49:14</a>
+    </p>
+    <strong>🌊</strong>
+    <p><a href="https://i.redd.it/zjqwholgogn81.jpg">https://i.redd.it/zjqwholgogn81.jpg</a></p>
+</div>
+<div class="comment" id="t1_i0pe5w2">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/T_T_QAQ">T_T_QAQ</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/SewerFarm/comments/teevey/_/i0pe5w2">Mar 15 2022 03:16:57</a>
+    </p>
+    <div class="collapsible">
+        <p>批奶川冲浪里</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_i0pemsn">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/yacoyu">yacoyu</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/SewerFarm/comments/teevey/_/i0pemsn">Mar 15 2022 03:20:47</a>
+    </p>
+    <div class="collapsible">
+        <p>绷</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_i0pfabr">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/lunixc">lunixc</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/SewerFarm/comments/teevey/_/i0pfabr">Mar 15 2022 03:26:11</a>
+    </p>
+    <div class="collapsible">
+        <p>我记得之前有另外一个版本的</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

@@ -1,0 +1,76 @@
+<html>
+<head>
+<title>太乳了</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_smis7l">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/yanleerriver">yanleerriver</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/SewerFarm/comments/smis7l">Feb 07 2022 05:57:23</a>
+    </p>
+    <strong>太乳了</strong>
+    <p><p>兩個逼養的白皮朋友叫我一起看奧運會，剛剛一直在爭論第二名是中國還是日本</p></p>
+</div>
+<div class="comment" id="t1_hvxjbfr">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/6324chenshitou">6324chenshitou</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/SewerFarm/comments/smis7l/_/hvxjbfr">Feb 07 2022 11:02:01</a>
+    </p>
+    <div class="collapsible">
+        <p>白皮豬滾，這裡是中國</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

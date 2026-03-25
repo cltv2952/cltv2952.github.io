@@ -1,0 +1,95 @@
+<html>
+<head>
+<title>礼拜中</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_uv0bll">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/flajjimier">flajjimier</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/SewerFarm/comments/uv0bll">May 22 2022 01:05:18</a>
+    </p>
+    <strong>礼拜中</strong>
+    <p><a href="https://i.redd.it/pcxrhkbwfx091.jpg">https://i.redd.it/pcxrhkbwfx091.jpg</a></p>
+</div>
+<div class="comment" id="t1_i9ih6jx">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/cjly3">cjly3</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/SewerFarm/comments/uv0bll/_/i9ih6jx">May 22 2022 01:06:27</a>
+    </p>
+    <div class="collapsible">
+        <p>天堂真的有72个处女吗</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_i9ih85b">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/emanresu1iv">emanresu1iv</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/SewerFarm/comments/uv0bll/_/i9ih85b">May 22 2022 01:06:52</a>
+    </p>
+    <div class="collapsible">
+        <p>是绿绿吗</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

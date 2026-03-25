@@ -1,0 +1,114 @@
+<html>
+<head>
+<title>叫我上尉</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_t0c6es">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/in2your">in2your</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/SewerFarm/comments/t0c6es">Feb 24 2022 14:22:13</a>
+    </p>
+    <strong>叫我上尉</strong>
+    <p><a href="https://i.redd.it/9vpj9xurisj81.jpg">https://i.redd.it/9vpj9xurisj81.jpg</a></p>
+</div>
+<div class="comment" id="t1_hy8tmnf">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/user-plato">user-plato</a>
+        |
+        <span class="score">3 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/SewerFarm/comments/t0c6es/_/hy8tmnf">Feb 24 2022 14:34:04</a>
+    </p>
+    <div class="collapsible">
+        <p>憨憨敬礼</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_hy9mx6q">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/NingChoww">NingChoww</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/SewerFarm/comments/t0c6es/_/hy9mx6q">Feb 24 2022 17:41:24</a>
+    </p>
+    <div class="collapsible">
+        <p>统帅.jpg</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_hydn6ly">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/jzjzwyc">jzjzwyc</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/SewerFarm/comments/t0c6es/_/hydn6ly">Feb 25 2022 13:39:31</a>
+    </p>
+    <div class="collapsible">
+        <p>指挥官降临</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

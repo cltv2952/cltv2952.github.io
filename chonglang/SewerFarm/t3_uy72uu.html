@@ -1,0 +1,112 @@
+<html>
+<head>
+<title>来菜了</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_uy72uu">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/lbxyb2">lbxyb2</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/SewerFarm/comments/uy72uu">May 26 2022 12:59:54</a>
+    </p>
+    <strong>来菜了</strong>
+    <p><a href="https://i.redd.it/brzdkhh1jt191.jpg">https://i.redd.it/brzdkhh1jt191.jpg</a></p>
+</div>
+<div class="comment" id="t1_ia2axfv">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Ok-Tank8964">Ok-Tank8964</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/SewerFarm/comments/uy72uu/_/ia2axfv">May 26 2022 13:38:11</a>
+    </p>
+    <div class="collapsible">
+        <p>世界名画《尼古拉斯 •近平博士的解剖学课》</p>
+        <div class="comment" id="t1_ia2l4zo">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/wocjejc">wocjejc</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/SewerFarm/comments/uy72uu/_/ia2l4zo">May 26 2022 14:50:40</a>
+    </p>
+    <div class="collapsible">
+        <p>。</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_ia2ysfc">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/lbxyb2">lbxyb2</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/SewerFarm/comments/uy72uu/_/ia2ysfc">May 26 2022 16:22:02</a>
+    </p>
+    <div class="collapsible">
+        <p>收收味</p>
+        
+    </div>
+</div>
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

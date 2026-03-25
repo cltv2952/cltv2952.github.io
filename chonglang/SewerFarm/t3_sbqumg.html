@@ -1,0 +1,114 @@
+<html>
+<head>
+<title>安逸</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_sbqumg">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/ouzhouxiaozhen">ouzhouxiaozhen</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/SewerFarm/comments/sbqumg">Jan 24 2022 17:03:38</a>
+    </p>
+    <strong>安逸</strong>
+    <p><a href="https://v.redd.it/0ayab7ca3od81">https://v.redd.it/0ayab7ca3od81</a></p>
+</div>
+<div class="comment" id="t1_hu4ez7e">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/user-plato">user-plato</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/SewerFarm/comments/sbqumg/_/hu4ez7e">Jan 25 2022 06:24:42</a>
+    </p>
+    <div class="collapsible">
+        <p>胖成这个逼样了</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_hujs5po">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/SadPiccolo7701">SadPiccolo7701</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/SewerFarm/comments/sbqumg/_/hujs5po">Jan 28 2022 06:04:45</a>
+    </p>
+    <div class="collapsible">
+        <p>什么温泉啊 环境看起来很好</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_hvruxg3">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Leexiitto">Leexiitto</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/SewerFarm/comments/sbqumg/_/hvruxg3">Feb 06 2022 02:34:04</a>
+    </p>
+    <div class="collapsible">
+        <p>怎么二娃也双头人了哦</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

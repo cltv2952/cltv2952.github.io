@@ -1,0 +1,129 @@
+<html>
+<head>
+<title>測試下能否發帖</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_sa008h">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/jiaiguo">jiaiguo</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/SewerFarm/comments/sa008h">Jan 22 2022 10:51:30</a>
+    </p>
+    <strong>測試下能否發帖</strong>
+    <p><a href="https://v.redd.it/6q90njb2z7d81">https://v.redd.it/6q90njb2z7d81</a></p>
+</div>
+<div class="comment" id="t1_htq9vdq">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/jiaiguo">jiaiguo</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/SewerFarm/comments/sa008h/_/htq9vdq">Jan 22 2022 10:53:27</a>
+    </p>
+    <div class="collapsible">
+        <p>兄弟們能看見帖子嗎</p>
+        <div class="comment" id="t1_htqi0xv">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/yanleerriver">yanleerriver</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/SewerFarm/comments/sa008h/_/htqi0xv">Jan 22 2022 12:27:57</a>
+    </p>
+    <div class="collapsible">
+        <p>可以的 只要你能成功發就可以看到</p>
+        
+    </div>
+</div>
+    </div>
+</div>
+
+<div class="comment" id="t1_htqdh7g">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/user-plato">user-plato</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/SewerFarm/comments/sa008h/_/htqdh7g">Jan 22 2022 11:36:09</a>
+    </p>
+    <div class="collapsible">
+        <p>什么语言</p>
+        <div class="comment" id="t1_htqelwp">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/jiaiguo">jiaiguo</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/SewerFarm/comments/sa008h/_/htqelwp">Jan 22 2022 11:49:13</a>
+    </p>
+    <div class="collapsible">
+        <p>習語言</p>
+        
+    </div>
+</div>
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

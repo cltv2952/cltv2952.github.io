@@ -1,0 +1,95 @@
+<html>
+<head>
+<title>我不好说我擦</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_szb1ja">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/NingChoww">NingChoww</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/SewerFarm/comments/szb1ja">Feb 23 2022 07:00:20</a>
+    </p>
+    <strong>我不好说我擦</strong>
+    <p><a href="https://v.redd.it/niovtvuz6jj81">https://v.redd.it/niovtvuz6jj81</a></p>
+</div>
+<div class="comment" id="t1_hy2ookt">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/packWolf77">packWolf77</a>
+        |
+        <span class="score">2 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/SewerFarm/comments/szb1ja/_/hy2ookt">Feb 23 2022 07:23:49</a>
+    </p>
+    <div class="collapsible">
+        <p>嗑药肏大屄，差点死了</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_hy39m70">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/IdetestStatism">IdetestStatism</a>
+        |
+        <span class="score">2 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/SewerFarm/comments/szb1ja/_/hy39m70">Feb 23 2022 12:03:22</a>
+    </p>
+    <div class="collapsible">
+        <p>杰克马的节目效果我是一直认的</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

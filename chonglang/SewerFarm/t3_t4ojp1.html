@@ -1,0 +1,76 @@
+<html>
+<head>
+<title>抽象的伟大复兴就在此刻</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_t4ojp1">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/in2your">in2your</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/SewerFarm/comments/t4ojp1">Mar 02 2022 01:50:46</a>
+    </p>
+    <strong>抽象的伟大复兴就在此刻</strong>
+    <p><p>要确保红老嗨血脉的纯正性，以保证红色江山永不变色</p></p>
+</div>
+<div class="comment" id="t1_hyztsuc">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/lanqixiaojie">lanqixiaojie</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/SewerFarm/comments/t4ojp1/_/hyztsuc">Mar 02 2022 02:10:33</a>
+    </p>
+    <div class="collapsible">
+        <p>这次真的要好起来了</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

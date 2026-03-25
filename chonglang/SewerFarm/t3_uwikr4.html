@@ -1,0 +1,76 @@
+<html>
+<head>
+<title>风向变了？这比养的到底扮演什么角色</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_uwikr4">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/Decent-Maize-990">Decent-Maize-990</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/SewerFarm/comments/uwikr4">May 24 2022 04:24:44</a>
+    </p>
+    <strong>风向变了？这比养的到底扮演什么角色</strong>
+    <p><a href="https://v.redd.it/5z0wnqnapc191">https://v.redd.it/5z0wnqnapc191</a></p>
+</div>
+<div class="comment" id="t1_i9wrrza">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Opposite_Figure_6283">Opposite_Figure_6283</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/SewerFarm/comments/uwikr4/_/i9wrrza">May 25 2022 07:43:36</a>
+    </p>
+    <div class="collapsible">
+        <p>转中有转，转中转</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

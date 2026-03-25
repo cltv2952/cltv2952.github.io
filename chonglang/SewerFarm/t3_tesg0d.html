@@ -1,0 +1,93 @@
+<html>
+<head>
+<title>求助帖</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_tesg0d">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/crazy12world">crazy12world</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/SewerFarm/comments/tesg0d">Mar 15 2022 16:07:17</a>
+    </p>
+    <strong>求助帖</strong>
+    <p><p>沟友们谁存有一个视频，交警查出带毒品，然后那人说对不起还是不好意思来着的</p></p>
+</div>
+<div class="comment" id="t1_i0ruheb">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Important-War-4326">Important-War-4326</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/SewerFarm/comments/tesg0d/_/i0ruheb">Mar 15 2022 17:22:09</a>
+    </p>
+    <div class="collapsible">
+        <p>司机说自己整了点那个其实是在对镜头表示悔罪，他是以前因为大麻进去过现在出来了，经典的单独截的那一段容易让人误解为当场抓获</p>
+        <div class="comment" id="t1_i0ufeqk">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/crazy12world">crazy12world</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/SewerFarm/comments/tesg0d/_/i0ufeqk">Mar 16 2022 04:10:17</a>
+    </p>
+    <div class="collapsible">
+        <p>太久没看忘了，带哥有没有视频</p>
+        
+    </div>
+</div>
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

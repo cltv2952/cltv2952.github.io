@@ -1,0 +1,95 @@
+<html>
+<head>
+<title>我刚刚想到一个很有趣的事</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_t1v931">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/T_T_QAQ">T_T_QAQ</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/SewerFarm/comments/t1v931">Feb 26 2022 11:44:00</a>
+    </p>
+    <strong>我刚刚想到一个很有趣的事</strong>
+    <p><p>但是准备把这事发帖写出来的时候却发现我把这事给忘了🥲</p></p>
+</div>
+<div class="comment" id="t1_hyi9qb7">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/UniversalNASA">UniversalNASA</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/SewerFarm/comments/t1v931/_/hyi9qb7">Feb 26 2022 12:24:33</a>
+    </p>
+    <div class="collapsible">
+        <p>我命令你赶快想起来！</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_hymrl9w">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/yanleerriver">yanleerriver</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/SewerFarm/comments/t1v931/_/hymrl9w">Feb 27 2022 11:07:02</a>
+    </p>
+    <div class="collapsible">
+        <p>遛狗是吧</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

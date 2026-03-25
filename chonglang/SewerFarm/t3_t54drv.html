@@ -1,0 +1,114 @@
+<html>
+<head>
+<title>首秀？批秀！</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_t54drv">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/6324chenshitou">6324chenshitou</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/SewerFarm/comments/t54drv">Mar 02 2022 16:49:25</a>
+    </p>
+    <strong>首秀？批秀！</strong>
+    <p><a href="https://i.redd.it/36ap1nci20l81.jpg">https://i.redd.it/36ap1nci20l81.jpg</a></p>
+</div>
+<div class="comment" id="t1_hz2i7ev">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Big_Uzi_Horizontal">Big_Uzi_Horizontal</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/SewerFarm/comments/t54drv/_/hz2i7ev">Mar 02 2022 16:56:36</a>
+    </p>
+    <div class="collapsible">
+        <p>装盒里</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_hz371e4">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/kstavish">kstavish</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/SewerFarm/comments/t54drv/_/hz371e4">Mar 02 2022 19:34:17</a>
+    </p>
+    <div class="collapsible">
+        <p>包子是个几把</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_hz4azco">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Decent-Maize-990">Decent-Maize-990</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/SewerFarm/comments/t54drv/_/hz4azco">Mar 03 2022 00:15:11</a>
+    </p>
+    <div class="collapsible">
+        <p>fifa人物</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

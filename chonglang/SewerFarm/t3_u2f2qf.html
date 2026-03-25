@@ -1,0 +1,59 @@
+<html>
+<head>
+<title>这是被反噬了</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_u2f2qf">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/Big_Uzi_Horizontal">Big_Uzi_Horizontal</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/SewerFarm/comments/u2f2qf">Apr 13 2022 01:46:58</a>
+    </p>
+    <strong>这是被反噬了</strong>
+    <p><a href="https://twitter.com/Rap/status/1513905374637830149?s=20&amp;t=EbQ4I7Uq6En7orv98Hi_sA">https://twitter.com/Rap/status/1513905374637830149?s=20&amp;t=EbQ4I7Uq6En7orv98Hi_sA</a></p>
+</div>
+</body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>
