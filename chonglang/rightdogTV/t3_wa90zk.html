@@ -1,0 +1,59 @@
+<html>
+<head>
+<title>哎 太悲哀了</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_wa90zk">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/fhxthh">fhxthh</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/rightdogTV/comments/wa90zk">Jul 28 2022 12:45:41</a>
+    </p>
+    <strong>哎 太悲哀了</strong>
+    <p><p>看一些欧美高中校园青春剧 里面的人感觉无忧无虑的 经常搞什么恋爱娱乐派对的 虽然是虚构的但是感觉现实也差不多 反观差不多年纪的不兴说人 穿麻袋校服在教室里卷 能玩个手机就算是福分了</p></p>
+</div>
+</body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

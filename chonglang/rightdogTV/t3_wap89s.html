@@ -1,0 +1,171 @@
+<html>
+<head>
+<title>抽象</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_wap89s">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/nomennonhabeo">nomennonhabeo</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/rightdogTV/comments/wap89s">Jul 28 2022 23:49:40</a>
+    </p>
+    <strong>抽象</strong>
+    <p><a href="https://i.redd.it/asfw0f6ecee91.jpg">https://i.redd.it/asfw0f6ecee91.jpg</a></p>
+</div>
+<div class="comment" id="t1_ii2gvh3">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Narrow_Potential_166">Narrow_Potential_166</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/rightdogTV/comments/wap89s/_/ii2gvh3">Jul 29 2022 01:13:26</a>
+    </p>
+    <div class="collapsible">
+        <p>这下左胶人均200斤10 里山路不换肩了</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_ii2zwqe">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Unknown_Personnel_">Unknown_Personnel_</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/rightdogTV/comments/wap89s/_/ii2zwqe">Jul 29 2022 03:44:11</a>
+    </p>
+    <div class="collapsible">
+        <p>愿意Hiking已经比那种宅在城市里的weeb不知道高到哪里去了。</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_ii37h3k">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/right_dog_shina">right_dog_shina</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/rightdogTV/comments/wap89s/_/ii37h3k">Jul 29 2022 04:53:49</a>
+    </p>
+    <div class="collapsible">
+        <p>怀疑是爬到山顶后摆拍的</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_ii3ddys">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/generalconfusedgoose">generalconfusedgoose</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/rightdogTV/comments/wap89s/_/ii3ddys">Jul 29 2022 05:55:10</a>
+    </p>
+    <div class="collapsible">
+        <p>有本事回家不用水池不用廚房做飯</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_ii3hn0c">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/sumidagawa_home">sumidagawa_home</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/rightdogTV/comments/wap89s/_/ii3hn0c">Jul 29 2022 06:43:24</a>
+    </p>
+    <div class="collapsible">
+        <p>比织女强</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_ii5vnpp">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Connect-Shoulder4617">Connect-Shoulder4617</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/rightdogTV/comments/wap89s/_/ii5vnpp">Jul 29 2022 18:53:29</a>
+    </p>
+    <div class="collapsible">
+        <p>洗手池做错了什么</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

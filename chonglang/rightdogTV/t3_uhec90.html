@@ -1,0 +1,76 @@
+<html>
+<head>
+<title>这不被举报🐶干烂？</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_uhec90">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/Smiling_Handsome_bro">Smiling_Handsome_bro</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/rightdogTV/comments/uhec90">May 03 2022 11:52:36</a>
+    </p>
+    <strong>这不被举报🐶干烂？</strong>
+    <p></p>
+</div>
+<div class="comment" id="t1_i76rx8q">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/right_dog_shina">right_dog_shina</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/rightdogTV/comments/uhec90/_/i76rx8q">May 03 2022 17:53:51</a>
+    </p>
+    <div class="collapsible">
+        <p>只要不说屠杀XX人和XX人都是劣等基本就没事。要说这些请使用谐音</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

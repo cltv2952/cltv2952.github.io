@@ -1,0 +1,76 @@
+<html>
+<head>
+<title>真相了</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_vvc41z">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/Comprehensive-Bee981">Comprehensive-Bee981</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/rightdogTV/comments/vvc41z">Jul 09 2022 21:52:34</a>
+    </p>
+    <strong>真相了</strong>
+    <p><a href="https://i.redd.it/bi7endk36ma91.jpg">https://i.redd.it/bi7endk36ma91.jpg</a></p>
+</div>
+<div class="comment" id="t1_ifnepwi">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Booboboga">Booboboga</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/rightdogTV/comments/vvc41z/_/ifnepwi">Jul 10 2022 22:21:42</a>
+    </p>
+    <div class="collapsible">
+        <p>我真的不明白左逼想做什么？ 趁有权力，把国家败光？</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

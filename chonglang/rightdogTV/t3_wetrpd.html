@@ -1,0 +1,95 @@
+<html>
+<head>
+<title>虽然但是</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_wetrpd">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/ShowMeThePath_1">ShowMeThePath_1</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/rightdogTV/comments/wetrpd">Aug 03 2022 01:56:54</a>
+    </p>
+    <strong>虽然但是</strong>
+    <p><a href="https://i.redd.it/gw1reninnef91.jpg">https://i.redd.it/gw1reninnef91.jpg</a></p>
+</div>
+<div class="comment" id="t1_iiqa6ys">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/socialcredit_1984">socialcredit_1984</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/rightdogTV/comments/wetrpd/_/iiqa6ys">Aug 03 2022 02:16:45</a>
+    </p>
+    <div class="collapsible">
+        <p>炒作狗就需要配统一排版刷屏的日人民报和CCAV</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_iir5sqr">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/right_dog_shina">right_dog_shina</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/rightdogTV/comments/wetrpd/_/iir5sqr">Aug 03 2022 07:27:38</a>
+    </p>
+    <div class="collapsible">
+        <p>大内宣</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

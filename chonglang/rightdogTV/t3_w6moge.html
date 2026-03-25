@@ -1,0 +1,77 @@
+<html>
+<head>
+<title>meme</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_w6moge">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/tehdhhdhdje90">tehdhhdhdje90</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/rightdogTV/comments/w6moge">Jul 24 2022 04:07:00</a>
+    </p>
+    <strong>meme</strong>
+    <p><a href="https://i.redd.it/eqd7jljqxfd91.jpg">https://i.redd.it/eqd7jljqxfd91.jpg</a></p>
+</div>
+<div class="comment" id="t1_iheqk0s">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/tehdhhdhdje90">tehdhhdhdje90</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/rightdogTV/comments/w6moge/_/iheqk0s">Jul 24 2022 04:09:23</a>
+    </p>
+    <div class="collapsible">
+        <p><a href="https://twitter.com/jokaigonzo/status/1550990723981447168?s=21&amp;t=J0m7uDM-Nq6eW6rxYlkFPQ">来源</a></p>
+<p>🐛：别的神话都是在神的指引下建造大船躲避大洪水，我们神话是劳动人民治理大洪水，说明我们中华民族不靠天不靠地靠自己！</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

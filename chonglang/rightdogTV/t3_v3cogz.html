@@ -1,0 +1,93 @@
+<html>
+<head>
+<title>有没有法老嗨，请教一个问题。</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_v3cogz">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/TitterUnderLockdown">TitterUnderLockdown</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/rightdogTV/comments/v3cogz">Jun 02 2022 16:23:36</a>
+    </p>
+    <strong>有没有法老嗨，请教一个问题。</strong>
+    <p><p>我记得美国历史上有个判例，就是警察抓人的时候直接开枪，被抓的人认为警察自己会被打死就把警察犯傻了，最后这个袭警行为被判无罪。此后这个案例引申为“如果警察抓捕过程会造成人身伤害那就可以拘捕”。这个判例叫什么名字呢？</p></p>
+</div>
+<div class="comment" id="t1_iaxg9cu">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/KanegawaAlchemist">KanegawaAlchemist</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/rightdogTV/comments/v3cogz/_/iaxg9cu">Jun 02 2022 16:32:41</a>
+    </p>
+    <div class="collapsible">
+        <p>https://en.wikipedia.org/wiki/Plummer_v._State</p>
+        <div class="comment" id="t1_iaxjk8d">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/TitterUnderLockdown">TitterUnderLockdown</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/rightdogTV/comments/v3cogz/_/iaxjk8d">Jun 02 2022 16:55:48</a>
+    </p>
+    <div class="collapsible">
+        <p>稳！</p>
+        
+    </div>
+</div>
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

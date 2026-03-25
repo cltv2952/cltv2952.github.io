@@ -1,0 +1,76 @@
+<html>
+<head>
+<title>浪人滚！</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_vbcv9t">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/ruaa_aaaaaaa">ruaa_aaaaaaa</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/rightdogTV/comments/vbcv9t">Jun 13 2022 14:00:03</a>
+    </p>
+    <strong>浪人滚！</strong>
+    <p><a href="https://i.redd.it/8t69tceq3e591.jpg">https://i.redd.it/8t69tceq3e591.jpg</a></p>
+</div>
+<div class="comment" id="t1_ic7df2c">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/ruaa_aaaaaaa">ruaa_aaaaaaa</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/rightdogTV/comments/vbcv9t/_/ic7df2c">Jun 13 2022 14:00:49</a>
+    </p>
+    <div class="collapsible">
+        <p>结果这个人发的同样内容的帖子在自由鹅组直接被她们的mod给删了</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>
