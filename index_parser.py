@@ -6,6 +6,7 @@ import markdown
 README_FILE = 'index.md'
 OUTPUT_FILE = 'index.html'
 BASE_DIR = 'chonglang'
+ASSETS_DIR = 'assets'
 
 def subreddit_index():
     if not os.path.exists(README_FILE):
@@ -44,7 +45,7 @@ def subreddit_index():
 <head>
     <meta charset="UTF-8">
     <title>红迪流浪史 - Archive Index</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.8.1/github-markdown-light.min.css">
+    <link rel="stylesheet" href="./{ASSETS_DIR}/github-markdown.css">
     <style>
         body {{ box-sizing: border-box; margin: 0 auto; padding: 30px; background: #fff; }}
         
@@ -93,10 +94,9 @@ def subreddit_index():
 </head>
 <body class="markdown-body">
     {html_body}
-
-    <script type="module">
-        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
-
+    
+    <script src="./{ASSETS_DIR}/mermaid.min.js"></script>
+    <script>
         const flowCode = {safe_flow};
         const ganttCode = {safe_gantt};
         const validNodes = {safe_nodes};
