@@ -1,0 +1,76 @@
+<html>
+<head>
+<title>这下可以自己操自己了</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_womkvk">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/moonshinewalks">moonshinewalks</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/baomitv/comments/womkvk">Aug 15 2022 01:32:36</a>
+    </p>
+    <strong>这下可以自己操自己了</strong>
+    <p><a href="https://i.redd.it/rv83ot3fjmh91.gif">https://i.redd.it/rv83ot3fjmh91.gif</a></p>
+</div>
+<div class="comment" id="t1_ikd210h">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Szzz2022">Szzz2022</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/baomitv/comments/womkvk/_/ikd210h">Aug 15 2022 09:29:13</a>
+    </p>
+    <div class="collapsible">
+        <p>这脸我觉得才真的辱</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

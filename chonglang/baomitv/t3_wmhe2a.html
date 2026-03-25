@@ -1,0 +1,76 @@
+<html>
+<head>
+<title>知子莫如父</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_wmhe2a">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/XComhghall">XComhghall</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/baomitv/comments/wmhe2a">Aug 12 2022 09:58:35</a>
+    </p>
+    <strong>知子莫如父</strong>
+    <p><a href="https://www.reddit.com/gallery/wmh0s7">https://www.reddit.com/gallery/wmh0s7</a></p>
+</div>
+<div class="comment" id="t1_ik01tr1">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/xijinping_xi">xijinping_xi</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/baomitv/comments/wmhe2a/_/ik01tr1">Aug 12 2022 14:47:59</a>
+    </p>
+    <div class="collapsible">
+        <p><img alt="gif" src="giphy|G6F11UPxLtkcw"></p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

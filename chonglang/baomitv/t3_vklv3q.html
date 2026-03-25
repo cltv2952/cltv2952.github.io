@@ -1,0 +1,114 @@
+<html>
+<head>
+<title>我家呢，我家怎么没了</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_vklv3q">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/bhexa">bhexa</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/baomitv/comments/vklv3q">Jun 25 2022 19:00:47</a>
+    </p>
+    <strong>我家呢，我家怎么没了</strong>
+    <p><a href="https://i.redd.it/f8j9alrret791.png">https://i.redd.it/f8j9alrret791.png</a></p>
+</div>
+<div class="comment" id="t1_idpxaeu">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/laobidaily">laobidaily</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/baomitv/comments/vklv3q/_/idpxaeu">Jun 25 2022 19:13:48</a>
+    </p>
+    <div class="collapsible">
+        <p>丁真灌水</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_idrmfve">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/cheesesteakman1">cheesesteakman1</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/baomitv/comments/vklv3q/_/idrmfve">Jun 26 2022 03:47:05</a>
+    </p>
+    <div class="collapsible">
+        <p>新家呢</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_idrr965">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/_Vaporwav3">_Vaporwav3</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/baomitv/comments/vklv3q/_/idrr965">Jun 26 2022 04:34:56</a>
+    </p>
+    <div class="collapsible">
+        <p>浪人？</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

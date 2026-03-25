@@ -1,0 +1,93 @@
+<html>
+<head>
+<title>心皮肤</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_wgo35k">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/yoimiya_1">yoimiya_1</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/baomitv/comments/wgo35k">Aug 05 2022 06:31:37</a>
+    </p>
+    <strong>心皮肤</strong>
+    <p><a href="https://i.redd.it/m9vymxhhauf91.jpg">https://i.redd.it/m9vymxhhauf91.jpg</a></p>
+</div>
+<div class="comment" id="t1_ij0weqv">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        [deleted]
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/baomitv/comments/wgo35k/_/ij0weqv">Aug 05 2022 07:08:19</a>
+    </p>
+    <div class="collapsible">
+        <p>[removed]</p>
+        <div class="comment" id="t1_ij2wa18">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Wilhelm_Wang">Wilhelm_Wang</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/baomitv/comments/wgo35k/_/ij2wa18">Aug 05 2022 17:35:53</a>
+    </p>
+    <div class="collapsible">
+        <p>看字幕，op是想说两脚羊的新皮肤</p>
+        
+    </div>
+</div>
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

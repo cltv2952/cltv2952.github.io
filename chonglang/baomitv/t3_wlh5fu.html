@@ -1,0 +1,112 @@
+<html>
+<head>
+<title>可爱捏！</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_wlh5fu">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/manchego_brie">manchego_brie</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/baomitv/comments/wlh5fu">Aug 11 2022 03:28:08</a>
+    </p>
+    <strong>可爱捏！</strong>
+    <p><a href="https://i.redd.it/sglfqwl7ozg91.jpg">https://i.redd.it/sglfqwl7ozg91.jpg</a></p>
+</div>
+<div class="comment" id="t1_ijtbgll">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/No_Friendship8520">No_Friendship8520</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/baomitv/comments/wlh5fu/_/ijtbgll">Aug 11 2022 03:45:34</a>
+    </p>
+    <div class="collapsible">
+        <p>大鼠鼠</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_ijvsdg6">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Square_Hat4243">Square_Hat4243</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/baomitv/comments/wlh5fu/_/ijvsdg6">Aug 11 2022 17:27:42</a>
+    </p>
+    <div class="collapsible">
+        <p>硕鼠硕鼠</p>
+        <div class="comment" id="t1_ijweb07">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        [deleted]
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/baomitv/comments/wlh5fu/_/ijweb07">Aug 11 2022 19:45:49</a>
+    </p>
+    <div class="collapsible">
+        <p>[removed]</p>
+        
+    </div>
+</div>
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>
