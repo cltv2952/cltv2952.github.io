@@ -1,0 +1,76 @@
+<html>
+<head>
+<title>什麼槍神</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_w5duel">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/WeiRuanxi">WeiRuanxi</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/YoumoTV/comments/w5duel">Jul 22 2022 15:46:55</a>
+    </p>
+    <strong>什麼槍神</strong>
+    <p><a href="https://i.redd.it/m9p1p5yvd2d91.gif">https://i.redd.it/m9p1p5yvd2d91.gif</a></p>
+</div>
+<div class="comment" id="t1_ih84s7y">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/sosjehejej">sosjehejej</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/YoumoTV/comments/w5duel/_/ih84s7y">Jul 22 2022 18:59:24</a>
+    </p>
+    <div class="collapsible">
+        <p>本鼠人连看都不敢看一眼，别说尝试a上去了。</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

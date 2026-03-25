@@ -1,0 +1,133 @@
+<html>
+<head>
+<title>抽象</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_w8kbzv">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/zukongKing">zukongKing</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/YoumoTV/comments/w8kbzv">Jul 26 2022 13:51:15</a>
+    </p>
+    <strong>抽象</strong>
+    <p><a href="https://v.redd.it/otgu99is3xd91">https://v.redd.it/otgu99is3xd91</a></p>
+</div>
+<div class="comment" id="t1_ihq8ic8">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/yoimiya_1">yoimiya_1</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/YoumoTV/comments/w8kbzv/_/ihq8ic8">Jul 26 2022 15:52:37</a>
+    </p>
+    <div class="collapsible">
+        <p>捅个对穿</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_ihrtuc2">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Tight-Pomegranate-21">Tight-Pomegranate-21</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/YoumoTV/comments/w8kbzv/_/ihrtuc2">Jul 26 2022 21:59:07</a>
+    </p>
+    <div class="collapsible">
+        <p>抱着飞机杯狂糙</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_ihtnkt0">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Multitasking_69">Multitasking_69</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/YoumoTV/comments/w8kbzv/_/ihtnkt0">Jul 27 2022 07:15:36</a>
+    </p>
+    <div class="collapsible">
+        <p>玩不了69</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_ihvaryk">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/cheesesteakman1">cheesesteakman1</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/YoumoTV/comments/w8kbzv/_/ihvaryk">Jul 27 2022 16:19:46</a>
+    </p>
+    <div class="collapsible">
+        <p>手指就够了</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

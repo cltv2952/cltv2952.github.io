@@ -1,0 +1,95 @@
+<html>
+<head>
+<title>到底是谁呢</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_wn2j29">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/zukongTV_02">zukongTV_02</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/YoumoTV/comments/wn2j29">Aug 13 2022 02:04:33</a>
+    </p>
+    <strong>到底是谁呢</strong>
+    <p><a href="https://i.redd.it/235k0ml42eh91.jpg">https://i.redd.it/235k0ml42eh91.jpg</a></p>
+</div>
+<div class="comment" id="t1_ik2w9u4">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/johnwang21">johnwang21</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/YoumoTV/comments/wn2j29/_/ik2w9u4">Aug 13 2022 02:27:47</a>
+    </p>
+    <div class="collapsible">
+        <p>艾爾迪亞人</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_ik3o52d">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/xjp888">xjp888</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/YoumoTV/comments/wn2j29/_/ik3o52d">Aug 13 2022 07:09:46</a>
+    </p>
+    <div class="collapsible">
+        <p>是XJP</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

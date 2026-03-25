@@ -1,0 +1,98 @@
+<html>
+<head>
+<title>Test</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_vh1f2f">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/zhinvIRL">zhinvIRL</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/YoumoTV/comments/vh1f2f">Jun 21 2022 01:31:17</a>
+    </p>
+    <strong>Test</strong>
+    <p><p>123</p></p>
+</div>
+<div class="comment" id="t1_id4pjlk">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/QualityVote">QualityVote</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/YoumoTV/comments/vh1f2f/_/id4pjlk">Jun 21 2022 01:31:22</a>
+    </p>
+    <div class="collapsible">
+        <h2>请你对这个帖子进行评价</h2>
+<p>希望保留帖子的，请<strong>点赞</strong>本条评论</p>
+<p>希望删除帖子的，请<strong>点踩</strong>本条评论</p>
+<p>如果<strong>踩</strong>的数量达到-30，则帖子会自动删除</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_id4pmbc">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/QualityVote">QualityVote</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/YoumoTV/comments/vh1f2f/_/id4pmbc">Jun 21 2022 01:31:59</a>
+    </p>
+    <div class="collapsible">
+        <p>你好，/u/zhinvIRL，你发表的内容：https://www.reddit.com/r/YoumoTV/comments/vh1f2f/test/ 经过投票已被自动删除，感谢你为冲浪酒吧的付出</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

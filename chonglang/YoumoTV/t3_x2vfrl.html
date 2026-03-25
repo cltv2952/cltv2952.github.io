@@ -1,0 +1,76 @@
+<html>
+<head>
+<title>胡中肯</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_x2vfrl">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/Charles_Cheung_1">Charles_Cheung_1</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/YoumoTV/comments/x2vfrl">Sep 01 2022 02:09:17</a>
+    </p>
+    <strong>胡中肯</strong>
+    <p><a href="https://i.redd.it/0n79srkao5l91.jpg">https://i.redd.it/0n79srkao5l91.jpg</a></p>
+</div>
+<div class="comment" id="t1_immhm9w">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/SpiritualPizza1663">SpiritualPizza1663</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/YoumoTV/comments/x2vfrl/_/immhm9w">Sep 01 2022 05:32:48</a>
+    </p>
+    <div class="collapsible">
+        <p>什么习蜴人</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

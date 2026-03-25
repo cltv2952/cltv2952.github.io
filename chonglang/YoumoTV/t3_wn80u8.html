@@ -1,0 +1,76 @@
+<html>
+<head>
+<title>偷点贡品</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_wn80u8">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/zukongTV_02">zukongTV_02</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/YoumoTV/comments/wn80u8">Aug 13 2022 07:01:50</a>
+    </p>
+    <strong>偷点贡品</strong>
+    <p><a href="https://v.redd.it/1ni2ebl5jfh91">https://v.redd.it/1ni2ebl5jfh91</a></p>
+</div>
+<div class="comment" id="t1_ik3syyc">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/pussyshinapig">pussyshinapig</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/YoumoTV/comments/wn80u8/_/ik3syyc">Aug 13 2022 08:14:09</a>
+    </p>
+    <div class="collapsible">
+        <p>这是抢吧</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>
