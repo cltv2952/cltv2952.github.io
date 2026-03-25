@@ -1,0 +1,95 @@
+<html>
+<head>
+<title>心梗</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_uannmc">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/Von_Hombolt">Von_Hombolt</a>
+        |
+        <span class="score">27 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/QuanLangTV/comments/uannmc">Apr 24 2022 05:29:45</a>
+    </p>
+    <strong>心梗</strong>
+    <p><a href="https://i.redd.it/4j4v5y5kxev81.jpg">https://i.redd.it/4j4v5y5kxev81.jpg</a></p>
+</div>
+<div class="comment" id="t1_i5z0ukb">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Ken-Goose-4481">Ken-Goose-4481</a>
+        |
+        <span class="score">3 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/QuanLangTV/comments/uannmc/_/i5z0ukb">Apr 24 2022 06:40:03</a>
+    </p>
+    <div class="collapsible">
+        <p>我倒觉得是vaccum maker</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_i63dobw">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/myl1TTl3pony">myl1TTl3pony</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/QuanLangTV/comments/uannmc/_/i63dobw">Apr 25 2022 04:56:06</a>
+    </p>
+    <div class="collapsible">
+        <p>什么扫地机器人</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

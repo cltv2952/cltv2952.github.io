@@ -1,0 +1,95 @@
+<html>
+<head>
+<title>为什么我建的红迪Sub不能发video？</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_tdmstq">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/huamaomao">huamaomao</a>
+        |
+        <span class="score">2 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/QuanLangTV/comments/tdmstq">Mar 14 2022 02:19:35</a>
+    </p>
+    <strong>为什么我建的红迪Sub不能发video？</strong>
+    <p><p>要怎么才能发video？</p></p>
+</div>
+<div class="comment" id="t1_i0kidcy">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Cerruti-8964">Cerruti-8964</a>
+        |
+        <span class="score">2 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/QuanLangTV/comments/tdmstq/_/i0kidcy">Mar 14 2022 02:23:43</a>
+    </p>
+    <div class="collapsible">
+        <p>r/AskReddit</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_i0kw9kl">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/CathNoctifer">CathNoctifer</a>
+        |
+        <span class="score">2 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/QuanLangTV/comments/tdmstq/_/i0kw9kl">Mar 14 2022 04:28:36</a>
+    </p>
+    <div class="collapsible">
+        <p>你用的是旧版红迪吧，新版默认是能上传的</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

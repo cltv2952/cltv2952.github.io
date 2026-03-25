@@ -1,0 +1,76 @@
+<html>
+<head>
+<title>雅，太雅了</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_v4nomj">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/iillaws">iillaws</a>
+        |
+        <span class="score">9 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/QuanLangTV/comments/v4nomj">Jun 04 2022 12:17:19</a>
+    </p>
+    <strong>雅，太雅了</strong>
+    <p><a href="https://youtu.be/dtoQJhebFgI">https://youtu.be/dtoQJhebFgI</a></p>
+</div>
+<div class="comment" id="t1_ib7dnf0">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/xijinping_xi">xijinping_xi</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/QuanLangTV/comments/v4nomj/_/ib7dnf0">Jun 05 2022 01:16:50</a>
+    </p>
+    <div class="collapsible">
+        <p>支持</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

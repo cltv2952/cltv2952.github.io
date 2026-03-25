@@ -1,0 +1,59 @@
+<html>
+<head>
+<title>“我不信任那些非常了解上帝要他们做什么的人，因为我注意到这总是与他们自己的愿望相吻合。” —— 苏珊·B·安东尼</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_uymiru">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/Ronins_Culture">Ronins_Culture</a>
+        |
+        <span class="score">20 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/QuanLangTV/comments/uymiru">May 27 2022 01:12:36</a>
+    </p>
+    <strong>“我不信任那些非常了解上帝要他们做什么的人，因为我注意到这总是与他们自己的愿望相吻合。” —— 苏珊·B·安东尼</strong>
+    <p><a href="https://i.redd.it/ffpku3fr5x191.jpg">https://i.redd.it/ffpku3fr5x191.jpg</a></p>
+</div>
+</body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

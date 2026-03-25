@@ -1,0 +1,133 @@
+<html>
+<head>
+<title>哈人</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_ux1bi1">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/Von_Hombolt">Von_Hombolt</a>
+        |
+        <span class="score">6 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/QuanLangTV/comments/ux1bi1">May 24 2022 21:16:53</a>
+    </p>
+    <strong>哈人</strong>
+    <p><a href="https://v.redd.it/2q95wgqvph191">https://v.redd.it/2q95wgqvph191</a></p>
+</div>
+<div class="comment" id="t1_i9vurtp">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Lorienzo">Lorienzo</a>
+        |
+        <span class="score">5 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/QuanLangTV/comments/ux1bi1/_/i9vurtp">May 25 2022 02:04:09</a>
+    </p>
+    <div class="collapsible">
+        <p>有些人就是不知道死字怎么写。</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_i9v1d0a">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/DemocracyAndLiberty">DemocracyAndLiberty</a>
+        |
+        <span class="score">4 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/QuanLangTV/comments/ux1bi1/_/i9v1d0a">May 24 2022 22:13:42</a>
+    </p>
+    <div class="collapsible">
+        <p>还以为碾平了</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_i9wfnvq">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/kacievo">kacievo</a>
+        |
+        <span class="score">4 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/QuanLangTV/comments/ux1bi1/_/i9wfnvq">May 25 2022 05:10:00</a>
+    </p>
+    <div class="collapsible">
+        <p>这反应和操作，顶级老司机了</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_i9w22bt">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/daquanxi">daquanxi</a>
+        |
+        <span class="score">2 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/QuanLangTV/comments/ux1bi1/_/i9w22bt">May 25 2022 03:02:13</a>
+    </p>
+    <div class="collapsible">
+        <p>迟早翻车</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

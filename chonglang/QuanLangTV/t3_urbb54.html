@@ -1,0 +1,76 @@
+<html>
+<head>
+<title>boooooooom!!!!!!!</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_urbb54">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/Koigggyear">Koigggyear</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/QuanLangTV/comments/urbb54">May 17 2022 01:30:18</a>
+    </p>
+    <strong>boooooooom!!!!!!!</strong>
+    <p><a href="https://i.redd.it/9j5faaqv1rz81.gif">https://i.redd.it/9j5faaqv1rz81.gif</a></p>
+</div>
+<div class="comment" id="t1_i8wgexc">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/That_Necessary322">That_Necessary322</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/QuanLangTV/comments/urbb54/_/i8wgexc">May 17 2022 02:43:41</a>
+    </p>
+    <div class="collapsible">
+        <p>成龙：中国的会爆炸！</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

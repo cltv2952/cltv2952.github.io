@@ -1,0 +1,95 @@
+<html>
+<head>
+<title>刚看到马斯克点赞了这个雕塑</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_umx2oe">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/Von_Hombolt">Von_Hombolt</a>
+        |
+        <span class="score">13 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/QuanLangTV/comments/umx2oe">May 11 2022 00:30:29</a>
+    </p>
+    <strong>刚看到马斯克点赞了这个雕塑</strong>
+    <p><a href="https://www.reddit.com/gallery/umx2oe">https://www.reddit.com/gallery/umx2oe</a></p>
+</div>
+<div class="comment" id="t1_i85uulh">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Big-Blacksmith-5073">Big-Blacksmith-5073</a>
+        |
+        <span class="score">3 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/QuanLangTV/comments/umx2oe/_/i85uulh">May 11 2022 09:07:10</a>
+    </p>
+    <div class="collapsible">
+        <p>我点赞了这个post</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_i84z6p9">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/whisper02020">whisper02020</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/QuanLangTV/comments/umx2oe/_/i84z6p9">May 11 2022 03:05:26</a>
+    </p>
+    <div class="collapsible">
+        <p>艺术品打什么nsfw</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

@@ -1,0 +1,76 @@
+<html>
+<head>
+<title>我就感觉到快</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_uzh1rt">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/DaiDaoShiWei">DaiDaoShiWei</a>
+        |
+        <span class="score">21 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/QuanLangTV/comments/uzh1rt">May 28 2022 06:00:36</a>
+    </p>
+    <strong>我就感觉到快</strong>
+    <p><a href="https://i.redd.it/hnhky2m1q5291.jpg">https://i.redd.it/hnhky2m1q5291.jpg</a></p>
+</div>
+<div class="comment" id="t1_iaad9u3">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Capable-Echo-5549">Capable-Echo-5549</a>
+        |
+        <span class="score">2 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/QuanLangTV/comments/uzh1rt/_/iaad9u3">May 28 2022 06:55:03</a>
+    </p>
+    <div class="collapsible">
+        <p>感觉其实现在和义和团一样性质，现在轮到广东，香港和海南没和上海这样颠，长沙和武汉再颠一次</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

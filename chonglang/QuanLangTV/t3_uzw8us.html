@@ -1,0 +1,95 @@
+<html>
+<head>
+<title>雅。</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_uzw8us">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/DaiDaoShiWei">DaiDaoShiWei</a>
+        |
+        <span class="score">11 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/QuanLangTV/comments/uzw8us">May 28 2022 21:11:07</a>
+    </p>
+    <strong>雅。</strong>
+    <p><a href="https://i.redd.it/spkxuv0i8a291.jpg">https://i.redd.it/spkxuv0i8a291.jpg</a></p>
+</div>
+<div class="comment" id="t1_iadty0u">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/MrSchithole">MrSchithole</a>
+        |
+        <span class="score">3 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/QuanLangTV/comments/uzw8us/_/iadty0u">May 29 2022 02:32:34</a>
+    </p>
+    <div class="collapsible">
+        <p>巋然不動！</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_iadcako">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/meryujinsdog">meryujinsdog</a>
+        |
+        <span class="score">2 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/QuanLangTV/comments/uzw8us/_/iadcako">May 28 2022 23:49:05</a>
+    </p>
+    <div class="collapsible">
+        <p>什么nightmare</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

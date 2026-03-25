@@ -1,0 +1,76 @@
+<html>
+<head>
+<title>请问一下mod组,为什么我无法添加post flair,哪里出错了吗?</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_uzo50u">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/bigpigpro">bigpigpro</a>
+        |
+        <span class="score">5 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/QuanLangTV/comments/uzo50u">May 28 2022 14:10:51</a>
+    </p>
+    <strong>请问一下mod组,为什么我无法添加post flair,哪里出错了吗?</strong>
+    <p><a href="https://i.redd.it/s54zs0li58291.png">https://i.redd.it/s54zs0li58291.png</a></p>
+</div>
+<div class="comment" id="t1_iabc7hr">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/bigpigpro">bigpigpro</a>
+        |
+        <span class="score">0 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/QuanLangTV/comments/uzo50u/_/iabc7hr">May 28 2022 14:12:05</a>
+    </p>
+    <div class="collapsible">
+        <p>我日,是我屏幕太小没找到保存😅</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

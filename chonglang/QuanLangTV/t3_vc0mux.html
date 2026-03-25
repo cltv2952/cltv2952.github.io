@@ -1,0 +1,93 @@
+<html>
+<head>
+<title>“你对此感到后悔吗”</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_vc0mux">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/GreenValued">GreenValued</a>
+        |
+        <span class="score">9 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/QuanLangTV/comments/vc0mux">Jun 14 2022 10:42:30</a>
+    </p>
+    <strong>“你对此感到后悔吗”</strong>
+    <p><a href="https://i.redd.it/fxqjs2w9wi591.gif">https://i.redd.it/fxqjs2w9wi591.gif</a></p>
+</div>
+<div class="comment" id="t1_icbnz79">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/the-rule-of-law">the-rule-of-law</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/QuanLangTV/comments/vc0mux/_/icbnz79">Jun 14 2022 12:55:24</a>
+    </p>
+    <div class="collapsible">
+        <p>Context?</p>
+        <div class="comment" id="t1_icffntu">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        [deleted]
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/QuanLangTV/comments/vc0mux/_/icffntu">Jun 15 2022 07:12:44</a>
+    </p>
+    <div class="collapsible">
+        <p>[removed]</p>
+        
+    </div>
+</div>
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

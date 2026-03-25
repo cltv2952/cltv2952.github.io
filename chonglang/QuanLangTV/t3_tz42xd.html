@@ -1,0 +1,76 @@
+<html>
+<head>
+<title>看样子像是流浪狗，这下清零了</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_tz42xd">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/qlmission">qlmission</a>
+        |
+        <span class="score">12 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/QuanLangTV/comments/tz42xd">Apr 08 2022 13:54:55</a>
+    </p>
+    <strong>看样子像是流浪狗，这下清零了</strong>
+    <p><a href="https://i.redd.it/i22khul39bs81.jpg">https://i.redd.it/i22khul39bs81.jpg</a></p>
+</div>
+<div class="comment" id="t1_i3xchco">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/chasmalchemist">chasmalchemist</a>
+        |
+        <span class="score">8 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/QuanLangTV/comments/tz42xd/_/i3xchco">Apr 08 2022 17:23:49</a>
+    </p>
+    <div class="collapsible">
+        <p>只能说好似，墙国的流浪狗泛滥程度至少是英国的十倍吧，不养了就直接丢，不拴绳子直接丢。找点玉林沛县人来狠吃</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

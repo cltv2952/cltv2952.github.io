@@ -1,0 +1,76 @@
+<html>
+<head>
+<title>解决不了问题，就解决提出问题的人</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_t6zmkr">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/sunnata_void">sunnata_void</a>
+        |
+        <span class="score">12 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/QuanLangTV/comments/t6zmkr">Mar 05 2022 02:44:24</a>
+    </p>
+    <strong>解决不了问题，就解决提出问题的人</strong>
+    <p><a href="https://i.imgur.com/wB9kmLF.jpg">https://i.imgur.com/wB9kmLF.jpg</a></p>
+</div>
+<div class="comment" id="t1_hzenst2">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/moyaya_you">moyaya_you</a>
+        |
+        <span class="score">2 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/QuanLangTV/comments/t6zmkr/_/hzenst2">Mar 05 2022 03:20:55</a>
+    </p>
+    <div class="collapsible">
+        <p>疫苗导致白血病的没听说过，但有很多听力下降或完全耳聋，案例非常多。</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

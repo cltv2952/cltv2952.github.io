@@ -1,0 +1,76 @@
+<html>
+<head>
+<title>看完最后一句话，我已经全明白了</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_uukkui">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/qlmission">qlmission</a>
+        |
+        <span class="score">9 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/QuanLangTV/comments/uukkui">May 21 2022 10:45:27</a>
+    </p>
+    <strong>看完最后一句话，我已经全明白了</strong>
+    <p><a href="https://www.reddit.com/gallery/uukkui">https://www.reddit.com/gallery/uukkui</a></p>
+</div>
+<div class="comment" id="t1_i9k2vrr">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Uchi_Jeon">Uchi_Jeon</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/QuanLangTV/comments/uukkui/_/i9k2vrr">May 22 2022 12:45:01</a>
+    </p>
+    <div class="collapsible">
+        <p>为什么在基佬里爆发，别告诉我有人日了🐒？</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

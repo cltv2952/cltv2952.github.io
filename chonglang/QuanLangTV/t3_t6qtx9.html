@@ -1,0 +1,95 @@
+<html>
+<head>
+<title>红迪这点赞数是什么情况一直在变化</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_t6qtx9">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/HxllBoy7">HxllBoy7</a>
+        |
+        <span class="score">5 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/QuanLangTV/comments/t6qtx9">Mar 04 2022 19:28:19</a>
+    </p>
+    <strong>红迪这点赞数是什么情况一直在变化</strong>
+    <p></p>
+</div>
+<div class="comment" id="t1_hzcylqe">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/apide_">apide_</a>
+        |
+        <span class="score">3 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/QuanLangTV/comments/t6qtx9/_/hzcylqe">Mar 04 2022 20:12:05</a>
+    </p>
+    <div class="collapsible">
+        <p>final consistency最终一致性。 你的网页端有缓存。 你的后台某个box也有缓存。 所以你切换host就展示了不同数据。还有可能在某nosql里写在json doc里。 最终在最后端的数据库才有一致性。 点赞是非重要数据。 这样可以减轻读写压力</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_hzcu9bz">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/thenamewasused">thenamewasused</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/QuanLangTV/comments/t6qtx9/_/hzcu9bz">Mar 04 2022 19:44:32</a>
+    </p>
+    <div class="collapsible">
+        <p>红迪特性,就是会随机浮动的</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

@@ -1,0 +1,95 @@
+<html>
+<head>
+<title>让我也贴贴</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_utoont">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/GreenValued">GreenValued</a>
+        |
+        <span class="score">12 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/QuanLangTV/comments/utoont">May 20 2022 08:32:46</a>
+    </p>
+    <strong>让我也贴贴</strong>
+    <p><a href="https://v.redd.it/5g28fzqwdl091">https://v.redd.it/5g28fzqwdl091</a></p>
+</div>
+<div class="comment" id="t1_i9b5fnf">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/pandaman36905">pandaman36905</a>
+        |
+        <span class="score">4 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/QuanLangTV/comments/utoont/_/i9b5fnf">May 20 2022 09:55:42</a>
+    </p>
+    <div class="collapsible">
+        <p>我知道既不是狗也不是貓的我為什麼要哭的。因為我其實是一隻老鼠。</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_i9azkxr">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Crazyuniverse147">Crazyuniverse147</a>
+        |
+        <span class="score">2 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/QuanLangTV/comments/utoont/_/i9azkxr">May 20 2022 08:36:52</a>
+    </p>
+    <div class="collapsible">
+        <p>狂糙修勾</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

@@ -1,0 +1,114 @@
+<html>
+<head>
+<title>杨枝</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_ui6vpu">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/DaiDaoShiWei">DaiDaoShiWei</a>
+        |
+        <span class="score">18 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/QuanLangTV/comments/ui6vpu">May 04 2022 13:42:34</a>
+    </p>
+    <strong>杨枝</strong>
+    <p><a href="https://v.redd.it/mf2uhfelqgx81">https://v.redd.it/mf2uhfelqgx81</a></p>
+</div>
+<div class="comment" id="t1_i7axg8i">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/ChitingChen">ChitingChen</a>
+        |
+        <span class="score">14 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/QuanLangTV/comments/ui6vpu/_/i7axg8i">May 04 2022 15:31:12</a>
+    </p>
+    <div class="collapsible">
+        <p>有時看多了也覺得 這他媽又是一個蹭流量社會實驗煩不煩 會不會早有這種想法</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_i7eccp8">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/meatbaggggg">meatbaggggg</a>
+        |
+        <span class="score">2 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/QuanLangTV/comments/ui6vpu/_/i7eccp8">May 05 2022 07:06:01</a>
+    </p>
+    <div class="collapsible">
+        <p>看多了麻了</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_i7bkyrw">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Whole-Strike9024">Whole-Strike9024</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/QuanLangTV/comments/ui6vpu/_/i7bkyrw">May 04 2022 18:07:18</a>
+    </p>
+    <div class="collapsible">
+        <p>换我我也不管</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

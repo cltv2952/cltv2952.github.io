@@ -1,0 +1,76 @@
+<html>
+<head>
+<title>一篇有意思的科普</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_v67qd2">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/Beneficial-Onion6885">Beneficial-Onion6885</a>
+        |
+        <span class="score">6 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/QuanLangTV/comments/v67qd2">Jun 06 2022 16:40:55</a>
+    </p>
+    <strong>一篇有意思的科普</strong>
+    <p><a href="https://youtu.be/GyB2zIByQ9g">https://youtu.be/GyB2zIByQ9g</a></p>
+</div>
+<div class="comment" id="t1_ibg7kra">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/xijinping_xi">xijinping_xi</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/QuanLangTV/comments/v67qd2/_/ibg7kra">Jun 07 2022 03:55:52</a>
+    </p>
+    <div class="collapsible">
+        <p>芝麻猪哪里都去不了，只能在家里嗯背学习强国</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

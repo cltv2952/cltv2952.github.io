@@ -1,0 +1,93 @@
+<html>
+<head>
+<title>晶哥陷阱</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_vb1lc4">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/qchen98">qchen98</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/QuanLangTV/comments/vb1lc4">Jun 13 2022 02:20:58</a>
+    </p>
+    <strong>晶哥陷阱</strong>
+    <p><a href="https://i.redd.it/t3zc23wdta591.png">https://i.redd.it/t3zc23wdta591.png</a></p>
+</div>
+<div class="comment" id="t1_ic5qh5d">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Dramatic-Lunch2481">Dramatic-Lunch2481</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/QuanLangTV/comments/vb1lc4/_/ic5qh5d">Jun 13 2022 02:27:46</a>
+    </p>
+    <div class="collapsible">
+        <p>宁波海曙区是吧 标记</p>
+        <div class="comment" id="t1_ic5qiyt">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/qchen98">qchen98</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/QuanLangTV/comments/vb1lc4/_/ic5qiyt">Jun 13 2022 02:28:14</a>
+    </p>
+    <div class="collapsible">
+        <p>老了我</p>
+        
+    </div>
+</div>
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

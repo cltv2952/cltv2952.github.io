@@ -1,0 +1,93 @@
+<html>
+<head>
+<title>这是否。。。</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_v9h0pd">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/iillaws">iillaws</a>
+        |
+        <span class="score">32 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/QuanLangTV/comments/v9h0pd">Jun 10 2022 20:39:31</a>
+    </p>
+    <strong>这是否。。。</strong>
+    <p><a href="https://i.redd.it/xgk8mwnpuu491.jpg">https://i.redd.it/xgk8mwnpuu491.jpg</a></p>
+</div>
+<div class="comment" id="t1_iby2oec">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Last-Possibility8647">Last-Possibility8647</a>
+        |
+        <span class="score">2 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/QuanLangTV/comments/v9h0pd/_/iby2oec">Jun 11 2022 05:55:56</a>
+    </p>
+    <div class="collapsible">
+        <p>這是不是樂樂</p>
+        <div class="comment" id="t1_iby4r5x">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/iillaws">iillaws</a>
+        |
+        <span class="score">3 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/QuanLangTV/comments/v9h0pd/_/iby4r5x">Jun 11 2022 06:23:44</a>
+    </p>
+    <div class="collapsible">
+        <p>不是，下面有标题</p>
+        
+    </div>
+</div>
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

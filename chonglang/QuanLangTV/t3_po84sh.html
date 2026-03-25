@@ -1,0 +1,76 @@
+<html>
+<head>
+<title>支性特点#1 无视规则走捷径</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_po84sh">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/HommeCasanier">HommeCasanier</a>
+        |
+        <span class="score">2 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/QuanLangTV/comments/po84sh">Sep 14 2021 18:06:49</a>
+    </p>
+    <strong>支性特点#1 无视规则走捷径</strong>
+    <p><a href="https://i.redd.it/ysqaxr99ein71.gif">https://i.redd.it/ysqaxr99ein71.gif</a></p>
+</div>
+<div class="comment" id="t1_he8bpar">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/ZipWerp">ZipWerp</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/QuanLangTV/comments/po84sh/_/he8bpar">Sep 25 2021 15:26:29</a>
+    </p>
+    <div class="collapsible">
+        <p>尾绷</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

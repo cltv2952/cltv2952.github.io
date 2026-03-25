@@ -1,0 +1,76 @@
+<html>
+<head>
+<title>哈人</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_tei56g">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/huamaomao">huamaomao</a>
+        |
+        <span class="score">3 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/QuanLangTV/comments/tei56g">Mar 15 2022 05:57:56</a>
+    </p>
+    <strong>哈人</strong>
+    <p><a href="https://m.weibo.cn/status/4747213986858690?sourceType=weixin&amp;from=10C3195010&amp;wm=9856_0004&amp;featurecode=newtitle">https://m.weibo.cn/status/4747213986858690?sourceType=weixin&amp;from=10C3195010&amp;wm=9856_0004&amp;featurecode=newtitle</a></p>
+</div>
+<div class="comment" id="t1_i0qi2o1">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Weierxunaidehua">Weierxunaidehua</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/QuanLangTV/comments/tei56g/_/i0qi2o1">Mar 15 2022 11:13:58</a>
+    </p>
+    <div class="collapsible">
+        <p>简单再现苏联笑话</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

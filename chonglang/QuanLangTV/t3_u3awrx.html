@@ -1,0 +1,76 @@
+<html>
+<head>
+<title>这不，节目效果来了</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_u3awrx">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/Arksheken">Arksheken</a>
+        |
+        <span class="score">22 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/QuanLangTV/comments/u3awrx">Apr 14 2022 06:30:39</a>
+    </p>
+    <strong>这不，节目效果来了</strong>
+    <p><a href="https://www.reddit.com/gallery/u3awrx">https://www.reddit.com/gallery/u3awrx</a></p>
+</div>
+<div class="comment" id="t1_i4sh9lh">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Black_Jack_008">Black_Jack_008</a>
+        |
+        <span class="score">2 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/QuanLangTV/comments/u3awrx/_/i4sh9lh">Apr 15 2022 03:43:10</a>
+    </p>
+    <div class="collapsible">
+        <p>“打不过乌国和北约，还打不过你蜘国？”😄</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

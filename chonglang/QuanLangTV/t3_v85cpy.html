@@ -1,0 +1,59 @@
+<html>
+<head>
+<title>隐藏帖子和删除帖子有什么区别？</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_v85cpy">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/HotCatCatt">HotCatCatt</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/QuanLangTV/comments/v85cpy">Jun 09 2022 01:31:08</a>
+    </p>
+    <strong>隐藏帖子和删除帖子有什么区别？</strong>
+    <p><p>之前想删除自己发的一个帖子结果点错点成隐藏了，现在怎么也找不到，我想找到这个帖子把他删了，怎么才能找到被自己隐藏的帖子？</p></p>
+</div>
+</body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

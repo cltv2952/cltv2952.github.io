@@ -1,0 +1,76 @@
+<html>
+<head>
+<title>看看洋大人的四眼</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_vg47ov">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/jjking_Zigang-Liao">jjking_Zigang-Liao</a>
+        |
+        <span class="score">15 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/QuanLangTV/comments/vg47ov">Jun 19 2022 20:44:12</a>
+    </p>
+    <strong>看看洋大人的四眼</strong>
+    <p><a href="https://v.redd.it/pluwtg9gll691">https://v.redd.it/pluwtg9gll691</a></p>
+</div>
+<div class="comment" id="t1_id00n0w">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        [deleted]
+        |
+        <span class="score">6 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/QuanLangTV/comments/vg47ov/_/id00n0w">Jun 19 2022 23:32:16</a>
+    </p>
+    <div class="collapsible">
+        <p>武德满满</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

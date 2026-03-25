@@ -1,0 +1,461 @@
+<html>
+<head>
+<title>亲自加密，亲自解密：如何在受监控的一对一私聊中，传递秘密。</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_v2l2d4">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/Difficult_Shop2302">Difficult_Shop2302</a>
+        |
+        <span class="score">6 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/QuanLangTV/comments/v2l2d4">Jun 01 2022 16:33:11</a>
+    </p>
+    <strong>亲自加密，亲自解密：如何在受监控的一对一私聊中，传递秘密。</strong>
+    <p><p>一个可能的答案是：双方各自生成非对称加密的密钥，以现有的受监控的聊天软件为载体，交换公钥，并从此使用对方的公钥去加密发送给对方的消息。</p>
+<p>在这里我会用微信及iOS上的PGPro举例。</p>
+<p>假设A想在微信上发送一条秘密消息给B。A需要做以下步骤：</p>
+<ol>
+<li>
+<p>A在微信上发消息，向B索取B的公钥。</p>
+</li>
+<li>
+<p>B点开PGPro，复制自己的公钥（若没有，生成一个），粘贴至微信发送给A。</p>
+</li>
+<li>
+<p>A将B发来的公钥添加到PGPro中。</p>
+</li>
+<li>
+<p>A在PGPro写下自己想要发送的秘密消息，随后使用B的公钥去加密它。</p>
+</li>
+<li>
+<p>A复制加密后的信息，粘贴至微信发送给B。</p>
+</li>
+<li>
+<p>B在收到加密信息后，将其复制粘贴入PGPro中，随后用自己的私钥去解密它。</p>
+</li>
+</ol></p>
+</div>
+<div class="comment" id="t1_iat7k9p">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Frosty_Ad3566">Frosty_Ad3566</a>
+        |
+        <span class="score">11 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/QuanLangTV/comments/v2l2d4/_/iat7k9p">Jun 01 2022 17:41:43</a>
+    </p>
+    <div class="collapsible">
+        <p>当监控的人在你传递的文本中找不到任何有用信息的时候，就已经知道你在干什么了</p>
+        <div class="comment" id="t1_iat84rx">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Difficult_Shop2302">Difficult_Shop2302</a>
+        |
+        <span class="score">9 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/QuanLangTV/comments/v2l2d4/_/iat84rx">Jun 01 2022 17:45:41</a>
+    </p>
+    <div class="collapsible">
+        <p>长期发大段乱码的确是一个抓捕信号。</p>
+        
+    </div>
+</div>
+    </div>
+</div>
+
+<div class="comment" id="t1_iat32ta">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/uffhuvbkkhb">uffhuvbkkhb</a>
+        |
+        <span class="score">8 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/QuanLangTV/comments/v2l2d4/_/iat32ta">Jun 01 2022 17:10:45</a>
+    </p>
+    <div class="collapsible">
+        <p>然后警哥给你来个特别关注，24h专人专线监控</p>
+        <div class="comment" id="t1_iat7yd6">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Difficult_Shop2302">Difficult_Shop2302</a>
+        |
+        <span class="score">7 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/QuanLangTV/comments/v2l2d4/_/iat7yd6">Jun 01 2022 17:44:27</a>
+    </p>
+    <div class="collapsible">
+        <p>的确。成为可疑人物就可以刑讯逼供了。</p>
+        
+    </div>
+</div>
+    </div>
+</div>
+
+<div class="comment" id="t1_iat4fve">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Terrible-Upstairs874">Terrible-Upstairs874</a>
+        |
+        <span class="score">8 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/QuanLangTV/comments/v2l2d4/_/iat4fve">Jun 01 2022 17:20:18</a>
+    </p>
+    <div class="collapsible">
+        <p>解决方案是加密通信，并加以兔友伪装</p>
+        <div class="comment" id="t1_iat88mc">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Difficult_Shop2302">Difficult_Shop2302</a>
+        |
+        <span class="score">4 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/QuanLangTV/comments/v2l2d4/_/iat88mc">Jun 01 2022 17:46:26</a>
+    </p>
+    <div class="collapsible">
+        <p>这与计算机技术无关，可能需要职业的间谍培训了。</p>
+        <div class="comment" id="t1_iat9eur">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Terrible-Upstairs874">Terrible-Upstairs874</a>
+        |
+        <span class="score">6 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/QuanLangTV/comments/v2l2d4/_/iat9eur">Jun 01 2022 17:54:32</a>
+    </p>
+    <div class="collapsible">
+        <p>了解下web3？web3时代各大中心平台滚蛋去吧，新的时代来了</p>
+        <div class="comment" id="t1_iaw9sf6">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Xi_Winnie_Pooh">Xi_Winnie_Pooh</a>
+        |
+        <span class="score">2 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/QuanLangTV/comments/v2l2d4/_/iaw9sf6">Jun 02 2022 10:28:18</a>
+    </p>
+    <div class="collapsible">
+        <p>为什么大多数web3的dao都用discord交流呢</p>
+        <div class="comment" id="t1_iawakki">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Terrible-Upstairs874">Terrible-Upstairs874</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/QuanLangTV/comments/v2l2d4/_/iawakki">Jun 02 2022 10:38:35</a>
+    </p>
+    <div class="collapsible">
+        <p>有语音吧</p>
+        
+    </div>
+</div>
+    </div>
+</div>
+    </div>
+</div>
+    </div>
+</div>
+    </div>
+</div>
+
+<div class="comment" id="t1_iasz9i0">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/EbregiselGamwich">EbregiselGamwich</a>
+        |
+        <span class="score">7 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/QuanLangTV/comments/v2l2d4/_/iasz9i0">Jun 01 2022 16:44:16</a>
+    </p>
+    <div class="collapsible">
+        <p>Or, just use Signal</p>
+        <div class="comment" id="t1_iat0ktb">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Difficult_Shop2302">Difficult_Shop2302</a>
+        |
+        <span class="score">4 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/QuanLangTV/comments/v2l2d4/_/iat0ktb">Jun 01 2022 16:53:22</a>
+    </p>
+    <div class="collapsible">
+        <p>我的问题是“如何在受监控的一对一私聊中，传递秘密”。</p>
+        
+    </div>
+</div>
+    </div>
+</div>
+
+<div class="comment" id="t1_iasyqqo">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/John_Best_14425">John_Best_14425</a>
+        |
+        <span class="score">5 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/QuanLangTV/comments/v2l2d4/_/iasyqqo">Jun 01 2022 16:40:44</a>
+    </p>
+    <div class="collapsible">
+        <p>我选择自己草书手写，再画干扰线，再拍摄，再滤镜</p>
+        <div class="comment" id="t1_iaszkv5">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Difficult_Shop2302">Difficult_Shop2302</a>
+        |
+        <span class="score">12 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/QuanLangTV/comments/v2l2d4/_/iaszkv5">Jun 01 2022 16:46:26</a>
+    </p>
+    <div class="collapsible">
+        <p>你的方案或许能躲过基于文字识别的自动化审查，但是无法躲过人工审查。</p>
+        
+    </div>
+</div>
+    </div>
+</div>
+
+<div class="comment" id="t1_iaubqn7">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/minlock1pi">minlock1pi</a>
+        |
+        <span class="score">2 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/QuanLangTV/comments/v2l2d4/_/iaubqn7">Jun 01 2022 22:24:08</a>
+    </p>
+    <div class="collapsible">
+        <p>在通讯协议里加料，或者随机发乱码包但是其实是加密信息什么的</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_iauofhs">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Villoweck">Villoweck</a>
+        |
+        <span class="score">2 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/QuanLangTV/comments/v2l2d4/_/iauofhs">Jun 02 2022 00:04:34</a>
+    </p>
+    <div class="collapsible">
+        <p>早就试过了,结果是看不懂的一律疑罪从有,直接把你喊去审问</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_iavt5t9">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Puzzled-Hotel8062">Puzzled-Hotel8062</a>
+        |
+        <span class="score">2 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/QuanLangTV/comments/v2l2d4/_/iavt5t9">Jun 02 2022 06:23:48</a>
+    </p>
+    <div class="collapsible">
+        <p>想死得快就试试，机器学习早就可以做对话内容性质分类了，这种无法分类的大乱码就是最容易暴露的特征。但凡搞个混淆模式在范式内容中插入密文也比这种自杀行径强。</p>
+        <div class="comment" id="t1_iavtqi5">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Difficult_Shop2302">Difficult_Shop2302</a>
+        |
+        <span class="score">2 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/QuanLangTV/comments/v2l2d4/_/iavtqi5">Jun 02 2022 06:31:53</a>
+    </p>
+    <div class="collapsible">
+        <p>你说的“范式内容”指的是什么？</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_iaxk1c8">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Roberto_Reyes">Roberto_Reyes</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/QuanLangTV/comments/v2l2d4/_/iaxk1c8">Jun 02 2022 16:59:06</a>
+    </p>
+    <div class="collapsible">
+        <p>不是很懂，但是点对点的公钥加密下的对话在现在不是理论上安全的吗。机器学习可以从密文中学到哪些特征呢。</p>
+        
+    </div>
+</div>
+    </div>
+</div>
+
+<div class="comment" id="t1_iaun6nr">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/lidangz">lidangz</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/QuanLangTV/comments/v2l2d4/_/iaun6nr">Jun 01 2022 23:54:47</a>
+    </p>
+    <div class="collapsible">
+        <p>反转了，PGPro软件也被共匪hack了</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_iautv74">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/cheems010">cheems010</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/QuanLangTV/comments/v2l2d4/_/iautv74">Jun 02 2022 00:46:57</a>
+    </p>
+    <div class="collapsible">
+        <p>非对称加密</p>
+        
+    </div>
+</div>
+
+<div class="comment" id="t1_iauz8xw">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Piccolo_Upbeat">Piccolo_Upbeat</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/QuanLangTV/comments/v2l2d4/_/iauz8xw">Jun 02 2022 01:29:55</a>
+    </p>
+    <div class="collapsible">
+        <p>文字转动态二维码
+https://www.the-qrcode-generator.com</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

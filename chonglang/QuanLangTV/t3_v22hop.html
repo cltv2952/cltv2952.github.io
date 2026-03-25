@@ -1,0 +1,76 @@
+<html>
+<head>
+<title>到底哪里有新家?</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_v22hop">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/Striking_Ad2580">Striking_Ad2580</a>
+        |
+        <span class="score">0 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/QuanLangTV/comments/v22hop">May 31 2022 22:55:59</a>
+    </p>
+    <strong>到底哪里有新家?</strong>
+    <p><p>有好几个自称新家了，我迷路了。</p></p>
+</div>
+<div class="comment" id="t1_iapwyu5">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/Jackjk123">Jackjk123</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/QuanLangTV/comments/v22hop/_/iapwyu5">May 31 2022 22:58:08</a>
+    </p>
+    <div class="collapsible">
+        <p>都关注一下，毕竟当初chonglang没的时候也有好几个新家，但是大部分都被封了</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

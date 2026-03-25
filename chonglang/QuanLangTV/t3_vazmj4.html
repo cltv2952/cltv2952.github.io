@@ -1,0 +1,76 @@
+<html>
+<head>
+<title>读者你这是想造反啊！</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_vazmj4">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/Flimsy-Platypus-1367">Flimsy-Platypus-1367</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/QuanLangTV/comments/vazmj4">Jun 13 2022 00:34:19</a>
+    </p>
+    <strong>读者你这是想造反啊！</strong>
+    <p><a href="https://i.redd.it/1xy1c5ffaa591.jpg">https://i.redd.it/1xy1c5ffaa591.jpg</a></p>
+</div>
+<div class="comment" id="t1_ic5e2ny">
+    <p class="userinfo">
+        <a
+        class="toggle_hide_button"
+        href="javascript:void(0)"
+        onclick="toggle_collapse(this.parentElement.parentElement)">[-]
+        </a>
+        <a href="https://old.reddit.com/u/QuanLangTV_Emergency">QuanLangTV_Emergency</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/QuanLangTV/comments/vazmj4/_/ic5e2ny">Jun 13 2022 00:35:56</a>
+    </p>
+    <div class="collapsible">
+        <p>你好，此图最近已出现过多次，故现将本贴移除</p>
+        
+    </div>
+</div></body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>

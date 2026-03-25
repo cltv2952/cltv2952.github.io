@@ -1,0 +1,59 @@
+<html>
+<head>
+<title>此人被点破之后继续犟嘴，然后直接把我拉黑，这是否有点…（由于直接显示unavailable，我都不用打码了）</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+.submission, .comment
+{
+    padding-left: 20px;
+    padding-right: 4px;
+}
+.comment
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+.submission
+{
+    border: 2px solid blue;
+}
+.hidden
+{
+    display: none;
+}
+</style>
+</head>
+<body><div class="submission" id="t3_ub0lvr">
+    <p class="userinfo">
+        <a href="https://old.reddit.com/u/GreenValued">GreenValued</a>
+        |
+        <span class="score">1 points</span>
+        |
+        <a class="timestamp" href="https://old.reddit.com/r/QuanLangTV/comments/ub0lvr">Apr 24 2022 18:10:20</a>
+    </p>
+    <strong>此人被点破之后继续犟嘴，然后直接把我拉黑，这是否有点…（由于直接显示unavailable，我都不用打码了）</strong>
+    <p><a href="https://i.redd.it/rxzeg159piv81.jpg">https://i.redd.it/rxzeg159piv81.jpg</a></p>
+</div>
+</body>
+
+<script>
+function toggle_collapse(comment_div)
+{
+    var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
+    var collapsible = comment_div.getElementsByClassName("collapsible")[0];
+    if (collapsible.classList.contains("hidden"))
+    {
+        collapsible.classList.remove("hidden");
+        button.innerText = "[-]";
+    }
+    else
+    {
+        collapsible.classList.add("hidden");
+        button.innerText = "[+]";
+    }
+}
+</script>
+</html>
