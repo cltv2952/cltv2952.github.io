@@ -3,1377 +3,231 @@
     <head>
         <title>CapybaraHome</title>
         <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <style>
+            :root {
+                --row-height: 32px; 
+            }
             body {
-                font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
-                font-size: var(--vscode-markdown-font-size, 14px);
-                padding: 0 26px;
-                line-height: var(--vscode-markdown-line-height, 22px);
-            }
-            a {
-                color: blue; text-decoration: none;
-            }
-            a:hover {
-                color: red;
-            }
-            a:visited {
-                color: rgba(251, 215, 157);
-            }
-            p {
-                scroll-margin-top: 100px; /* Adjust this value based on your header height */
-            }
-            .flair {
-                padding: 2px 6px; border-radius: 20px; font-size: 10px; font-weight: bold;
-                margin-left: 5px; display: inline-block; vertical-align: middle; line-height: 1.2;
-            }
-            .post-listing {
-                margin-bottom: 0px;
-            }
-            .meta-val {
-                color: #888888;
+                font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Ubuntu, "Droid Sans", sans-serif;
                 font-size: 14px;
+                padding: 0 18px;
+                line-height: 20px;
+                margin: 0;
+                background: #fff;
+                max-width: 1100px;
+                margin: 20px auto;
             }
-            .upvote-icon {
-                width: 16px; 
-                height: 16px;
-                color: #888888;
-                vertical-align: middle;
-                display: inline-block;
-                margin-left: 4px;
-                margin-right: -2px;
-            }
-            .comment-icon {
-                width: 16px; 
-                height: 16px;
-                color: #888888;
-                vertical-align: middle;
-                display: inline-block;
-                margin-left: 4px;
-                margin-right: 2px;
-                position: relative;
-                top: 1px;
-            }
-            #note {
-                padding-left: 20px;
-                padding-right: 20px;
-                margin: auto;
-                border: 2px solid rgba(248, 108, 95);
-                background-color: #f3f3f3;
+            a { color: blue; text-decoration: none; }
+            a:hover { color: red; }
+            a:visited { color: rgb(142, 105, 167); }
+            h1 { margin: 16px 0 10px; font-size: 24px; }
+            #sort-controls {
                 position: sticky;
-                top: 8px;
-            }
-            #topspace, #bottomspace {
-                position: fixed;
-                background-color: white;
-                padding: 4px;
-                width: 100%;
-            }
-            #topspace {
                 top: 0;
+                z-index: 10;
+                margin: 0 -18px 0;
+                padding: 10px 18px;
+                background: #f9f9f9;
+                border-bottom: 1px solid #e5e5e5;
+            }
+            #searchBox, #sortOrder {
+                padding: 5px 8px;
+                border-radius: 4px;
+                border: 1px solid #ccc;
+                font: inherit;
+            }
+            #searchBox { width: min(420px, 50vw); margin-right: 8px; }
+            #summary { color: #666; font-size: 12px; margin-left: 10px; }
+            #list-root { position: relative; width: 100%; }
+            #list-spacer { width: 1px; opacity: 0; }
+            #list-viewport { position: absolute; left: 0; right: 0; top: 0; will-change: transform; }
+            .post-listing {
+                position: absolute;
+                left: 0;
+                right: 0;
+                display: flex;
+                align-items: flex-start;
+                min-height: var(--row-height);
+                line-height: var(--row-height);
+                overflow: hidden;
+                border-bottom: 1px solid #f0f0f0;
+            }
+            .post-listing a.title { font-weight: 500; word-break: break-word; }
+            .post-listing:hover {
+                height: auto; 
+                min-height: var(--row-height);
+                z-index: 100;
+                background: #f8fafc;  /* slight tint (very subtle blue-gray) */
+                border: 1px solid #d0d7de;  /* visible but not harsh */
+                box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+                overflow: visible;
+                line-height: 1.6;
+                margin: 0 -8px 0 -8px;
+                padding: 0 7px 0 7px;
+            }
+            .post-listing:hover .content {
+                white-space: normal;
+                overflow: visible;
+                padding-bottom: 6px;
+            }
+            .content {
+                flex: 1;
+                min-width: 0;   /* IMPORTANT: allows wrapping */
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+            }
+            .date {
+                flex: 0 0 auto;
+                color: #555;
+                margin-right: 4px;
+            }
+            .author { color: #444; margin-left: 4px; }
+            .flair {
+                display: inline-block;
+                padding: 2px 6px;
+                border-radius: 20px;
+                font-size: 10px;
+                font-weight: bold;
+                margin-left: 5px;
+                line-height: 1.2;
+                vertical-align: middle;
+            }
+            .pill {
+                display: inline-block;
+                font-size: 11px;
+                padding: 0 6px;
+                margin-left: 6px;
+                border-radius: 999px;
+                background: #efefef;
+                color: #444;
+                vertical-align: middle;
+                line-height: 18px;
             }
         </style>
     </head>
     <body>
         <h1>r/CapybaraHome</h1>
-        <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
-            <symbol id="icon-upvote" viewBox="0 0 20 20">
-                <path d="M10 2l-7 7h4v9h6V9h4z" fill="currentColor"/>
-            </symbol>
-            <symbol id="icon-comment" viewBox="0 0 20 20">
-                <path d="M18 7c0-3-3.6-5-8-5s-8 2-8 5c0 1.8 1.3 3.4 3.2 4.3-.3 1.1-1.2 2.5-1.2 2.5s1.7 0 2.9-1.3c1 .3 2 .5 3.1.5 4.4 0 8-2.5 8-6z" fill="currentColor"/>
-            </symbol>
-        </svg>
-        <div id="sort-controls" style="margin-bottom: 20px; padding: 10px; background: #f9f9f9; border-radius: 8px; border: 1px solid #eee;">
+        <div id="sort-controls">
             <label for="sortOrder" style="font-weight: bold; font-size: 12px;">Sort Archive By: </label>
-            <select id="sortOrder" onchange="sortPosts()" style="padding: 5px; border-radius: 4px;">
+            <select id="sortOrder">
                 <option value="time-asc">Date (Oldest)</option>
                 <option value="time">Date (Newest)</option>
                 <option value="score">Upvotes (Highest)</option>
                 <option value="comments">Comments (Most)</option>
             </select>
+            <input id="searchBox" type="search" placeholder="Filter title / author" spellcheck="false" />
+            <span id="summary"></span>
         </div>
-        <div id="posts-container">
-            <div class="post-listing" id="t3_1mjayp8" data-time="1754501300" data-score="5" data-comments="3">
-                <p>
-                    2025 Aug 07: <a target="_self" href="./CapybaraHome/t3_1mjayp8.html">是新家吗？</a> <span class="flair" style="background-color: #4e90b1; color: #ffffff;">水池建设</span> - /u/Acceptable_Ad7280  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+5</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">3</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1mjba0d" data-time="1754502003" data-score="3" data-comments="1">
-                <p>
-                    2025 Aug 07: <a target="_self" href="./CapybaraHome/t3_1mjba0d.html">基础建设之等待大的</a> <span class="flair" style="background-color: #4e90b1; color: #ffffff;">水池建设</span> - /u/Acceptable_Ad7280  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+3</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">1</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1mlf8p8" data-time="1754709643" data-score="1" data-comments="0">
-                <p>
-                    2025 Aug 09: <a target="_self" href="./CapybaraHome/t3_1mlf8p8.html">太监，觉醒</a> <span class="flair" style="background-color: #8658a7; color: #ffffff;">陆地见闻</span> - /u/Acceptable_Ad7280  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1mlfdi2" data-time="1754710057" data-score="1" data-comments="0">
-                <p>
-                    2025 Aug 09: <a target="_self" href="./CapybaraHome/t3_1mlfdi2.html">集美大战柴犬</a> <span class="flair" style="background-color: #8658a7; color: #ffffff;">陆地见闻</span> - /u/Acceptable_Ad7280  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1mlff0o" data-time="1754710191" data-score="1" data-comments="1">
-                <p>
-                    2025 Aug 09: <a target="_self" href="./CapybaraHome/t3_1mlff0o.html">感觉体制内干部们好可爱</a> <span class="flair" style="background-color: #8658a7; color: #ffffff;">陆地见闻</span> - /u/Acceptable_Ad7280  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">1</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1mlfl4i" data-time="1754710733" data-score="1" data-comments="0">
-                <p>
-                    2025 Aug 09: <a target="_self" href="./CapybaraHome/t3_1mlfl4i.html">基础建设之云宫迅音</a> <span class="flair" style="background-color: #4e90b1; color: #ffffff;">水池建设</span> - /u/Acceptable_Ad7280  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1mlg8p5" data-time="1754712778" data-score="4" data-comments="0">
-                <p>
-                    2025 Aug 09: <a target="_self" href="./CapybaraHome/t3_1mlg8p5.html">红迪照相馆</a> <span class="flair" style="background-color: #bb9344; color: #ffffff;">经典回顾</span> - /u/Acceptable_Ad7280  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+4</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1mlgmr1" data-time="1754714063" data-score="1" data-comments="0">
-                <p>
-                    2025 Aug 09: <a target="_self" href="./CapybaraHome/t3_1mlgmr1.html">什么游戏？</a> <span class="flair" style="background-color: #8658a7; color: #ffffff;">陆地见闻</span> - /u/Acceptable_Ad7280  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1mmn99m" data-time="1754843981" data-score="8" data-comments="2">
-                <p>
-                    2025 Aug 11: <a target="_self" href="./CapybaraHome/t3_1mmn99m.html">幽默机器人</a> <span class="flair" style="background-color: #8658a7; color: #ffffff;">陆地见闻</span> - /u/Acceptable_Ad7280  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+8</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">2</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1moeu96" data-time="1755019175" data-score="8" data-comments="2">
-                <p>
-                    2025 Aug 13: <a target="_self" href="./CapybaraHome/t3_1moeu96.html">这种的是处女吗？</a> <span class="flair" style="background-color: #8658a7; color: #ffffff;">陆地见闻</span> - /u/Acceptable_Ad7280  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+8</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">2</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1moxfdd" data-time="1755068333" data-score="3" data-comments="0">
-                <p>
-                    2025 Aug 13: <a target="_self" href="./CapybaraHome/t3_1moxfdd.html">水豚窝</a>  - /u/No_Possible_597  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+3</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1mp1ddk" data-time="1755083043" data-score="4" data-comments="4">
-                <p>
-                    2025 Aug 13: <a target="_self" href="./CapybaraHome/t3_1mp1ddk.html">何物种</a> <span class="flair" style="background-color: #8658a7; color: #ffffff;">陆地见闻</span> - /u/Acceptable_Ad7280  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+4</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">4</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1mp3grx" data-time="1755089163" data-score="1" data-comments="0">
-                <p>
-                    2025 Aug 13: <a target="_self" href="./CapybaraHome/t3_1mp3grx.html">test</a>  - /u/[deleted]  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1mp8g9z" data-time="1755100911" data-score="11" data-comments="2">
-                <p>
-                    2025 Aug 14: <a target="_self" href="./CapybaraHome/t3_1mp8g9z.html">哪位水友</a> <span class="flair" style="background-color: #639c65; color: #ffffff;">划水日常</span> - /u/Acceptable_Ad7280  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+11</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">2</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1mpm2mh" data-time="1755132494" data-score="10" data-comments="4">
-                <p>
-                    2025 Aug 14: <a target="_self" href="./CapybaraHome/t3_1mpm2mh.html">报告！新家已发现！</a>  - /u/Worldly-Row-1486  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+10</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">4</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1mqdgz2" data-time="1755206044" data-score="11" data-comments="5">
-                <p>
-                    2025 Aug 15: <a target="_self" href="./CapybaraHome/t3_1mqdgz2.html">北支派遣軍の歌</a> <span class="flair" style="background-color: #ba5a45; color: #ffffff;">英灵殿</span> - /u/Acceptable_Ad7280  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+11</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">5</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1mqghp6" data-time="1755213048" data-score="4" data-comments="1">
-                <p>
-                    2025 Aug 15: <a target="_self" href="./CapybaraHome/t3_1mqghp6.html">喜欢这种白妈么</a>  - /u/youmo-ebike  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+4</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">1</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1mqsyv5" data-time="1755250767" data-score="11" data-comments="0">
-                <p>
-                    2025 Aug 15: <a target="_self" href="./CapybaraHome/t3_1mqsyv5.html">抜刀隊</a> <span class="flair" style="background-color: #ba5a45; color: #ffffff;">英灵殿</span> - /u/Acceptable_Ad7280  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+11</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1mqtsbq" data-time="1755253438" data-score="1" data-comments="0">
-                <p>
-                    2025 Aug 15: <a target="_self" href="./CapybaraHome/t3_1mqtsbq.html">这种的有感觉了</a> <span class="flair" style="background-color: #ab5485; color: #ffffff;">处女鉴别</span> - /u/Acceptable_Ad7280  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1mqtthv" data-time="1755253544" data-score="1" data-comments="0">
-                <p>
-                    2025 Aug 15: <a target="_self" href="./CapybaraHome/t3_1mqtthv.html">这种的有感觉了</a> <span class="flair" style="background-color: #ab5485; color: #ffffff;">处女鉴别</span> - /u/[deleted]  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1mqx4cn" data-time="1755262750" data-score="5" data-comments="0">
-                <p>
-                    2025 Aug 15: <a target="_self" href="./CapybaraHome/t3_1mqx4cn.html">这种的美少女胖次想要了</a> <span class="flair" style="background-color: #639c65; color: #ffffff;">划水日常</span> - /u/Acceptable_Ad7280  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+5</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1mqx53c" data-time="1755262798" data-score="9" data-comments="0">
-                <p>
-                    2025 Aug 15: <a target="_self" href="./CapybaraHome/t3_1mqx53c.html">哪位水友</a> <span class="flair" style="background-color: #639c65; color: #ffffff;">划水日常</span> - /u/Acceptable_Ad7280  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+9</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1mqz0yx" data-time="1755267175" data-score="4" data-comments="0">
-                <p>
-                    2025 Aug 15: <a target="_self" href="./CapybaraHome/t3_1mqz0yx.html">谁家白妈</a>  - /u/Remarkable_Score227  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+4</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1mqzufm" data-time="1755268978" data-score="11" data-comments="2">
-                <p>
-                    2025 Aug 15: <a target="_self" href="./CapybaraHome/t3_1mqzufm.html">我们终于又见面了</a>  - /u/Striking_Day_2665  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+11</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">2</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1mr1o3d" data-time="1755272877" data-score="10" data-comments="0">
-                <p>
-                    2025 Aug 15: <a target="_self" href="./CapybaraHome/t3_1mr1o3d.html">不想割了</a> <span class="flair" style="background-color: #8658a7; color: #ffffff;">陆地见闻</span> - /u/Acceptable_Ad7280  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+10</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1mr1t4e" data-time="1755273180" data-score="1" data-comments="0">
-                <p>
-                    2025 Aug 15: <a target="_self" href="./CapybaraHome/t3_1mr1t4e.html">经典回顾之Chyberpunk2027</a> <span class="flair" style="background-color: #bb9344; color: #ffffff;">经典回顾</span> - /u/Acceptable_Ad7280  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1mr2a06" data-time="1755274190" data-score="10" data-comments="0">
-                <p>
-                    2025 Aug 16: <a target="_self" href="./CapybaraHome/t3_1mr2a06.html">经典回顾之Chyberpunk2077</a> <span class="flair" style="background-color: #bb9344; color: #ffffff;">经典回顾</span> - /u/Acceptable_Ad7280  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+10</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1mrm7la" data-time="1755323269" data-score="10" data-comments="3">
-                <p>
-                    2025 Aug 16: <a target="_self" href="./CapybaraHome/t3_1mrm7la.html">谁来了</a>  - /u/No-Airline131  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+10</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">3</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1mrmli4" data-time="1755324458" data-score="10" data-comments="2">
-                <p>
-                    2025 Aug 16: <a target="_self" href="./CapybaraHome/t3_1mrmli4.html">是精灵族吗</a>  - /u/Worldly-Row-1486  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+10</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">2</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1mrq20u" data-time="1755335758" data-score="16" data-comments="3">
-                <p>
-                    2025 Aug 16: <a target="_self" href="./CapybaraHome/t3_1mrq20u.html">基础建设</a>  - /u/No-Airline131  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+16</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">3</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1mrqsy6" data-time="1755338271" data-score="2" data-comments="1">
-                <p>
-                    2025 Aug 16: <a target="_self" href="./CapybaraHome/t3_1mrqsy6.html">谁来了</a>  - /u/iiiiiiiiib  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+2</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">1</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1mrqt4p" data-time="1755338290" data-score="3" data-comments="0">
-                <p>
-                    2025 Aug 16: <a target="_self" href="./CapybaraHome/t3_1mrqt4p.html">是二百斤mod嘛？</a>  - /u/iiiiiiiiib  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+3</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1mrvy4o" data-time="1755352507" data-score="4" data-comments="1">
-                <p>
-                    2025 Aug 16: <a target="_self" href="./CapybaraHome/t3_1mrvy4o.html">幽默家乡人</a> <span class="flair" style="background-color: #ab5485; color: #ffffff;">处女鉴别</span> - /u/Acceptable_Ad7280  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+4</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">1</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1mrwt5w" data-time="1755354482" data-score="11" data-comments="1">
-                <p>
-                    2025 Aug 16: <a target="_self" href="./CapybaraHome/t3_1mrwt5w.html">看一次笑一次</a> <span class="flair" style="background-color: #bb9344; color: #ffffff;">经典回顾</span> - /u/Acceptable_Ad7280  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+11</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">1</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1ms74bo" data-time="1755376931" data-score="1" data-comments="0">
-                <p>
-                    2025 Aug 17: <a target="_self" href="./CapybaraHome/t3_1ms74bo.html">test</a>  - /u/Alarmed-Claim-5287  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1ms9mzi" data-time="1755382707" data-score="2" data-comments="1">
-                <p>
-                    2025 Aug 17: <a target="_self" href="./CapybaraHome/t3_1ms9mzi.html">何意味</a> <span class="flair" style="background-color: #639c65; color: #ffffff;">划水日常</span> - /u/Acceptable_Ad7280  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+2</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">1</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1msbgtu" data-time="1755387159" data-score="6" data-comments="2">
-                <p>
-                    2025 Aug 17: <a target="_self" href="./CapybaraHome/t3_1msbgtu.html">何文字</a>  - /u/Worldly-Row-1486  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+6</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">2</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1msm3cs" data-time="1755421497" data-score="13" data-comments="1">
-                <p>
-                    2025 Aug 17: <a target="_self" href="./CapybaraHome/t3_1msm3cs.html">经典回顾之早安种花家</a> <span class="flair" style="background-color: #bb9344; color: #ffffff;">经典回顾</span> - /u/Acceptable_Ad7280  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+13</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">1</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1msmk9z" data-time="1755423327" data-score="19" data-comments="4">
-                <p>
-                    2025 Aug 17: <a target="_self" href="./CapybaraHome/t3_1msmk9z.html">我服了，蜘蛛切被我老爹拿去割肉砍骨头弄崩😅</a>  - /u/Od_zer  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+19</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">4</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1msmz6l" data-time="1755424919" data-score="9" data-comments="0">
-                <p>
-                    2025 Aug 17: <a target="_self" href="./CapybaraHome/t3_1msmz6l.html">谷歌AI有党性👍</a>  - /u/Nevetherless1929  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+9</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1msob95" data-time="1755429650" data-score="6" data-comments="1">
-                <p>
-                    2025 Aug 17: <a target="_self" href="./CapybaraHome/t3_1msob95.html">这是新家吗</a>  - /u/Human_Technician_423  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+6</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">1</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1msuzha" data-time="1755447109" data-score="9" data-comments="2">
-                <p>
-                    2025 Aug 18: <a target="_self" href="./CapybaraHome/t3_1msuzha.html">上中文课的高精灵</a>  - /u/Worldly-Row-1486  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+9</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">2</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1mtil80" data-time="1755514080" data-score="19" data-comments="1">
-                <p>
-                    2025 Aug 18: <a target="_self" href="./CapybaraHome/t3_1mtil80.html">经典回顾之家人们我在上海</a> <span class="flair" style="background-color: #bb9344; color: #ffffff;">经典回顾</span> - /u/Acceptable_Ad7280  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+19</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">1</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1mtincc" data-time="1755514273" data-score="15" data-comments="0">
-                <p>
-                    2025 Aug 18: <a target="_self" href="./CapybaraHome/t3_1mtincc.html">经典回顾之赶走嫖客自己睡</a> <span class="flair" style="background-color: #bb9344; color: #ffffff;">经典回顾</span> - /u/Acceptable_Ad7280  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+15</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1mtmfaj" data-time="1755524580" data-score="12" data-comments="0">
-                <p>
-                    2025 Aug 18: <a target="_self" href="./CapybaraHome/t3_1mtmfaj.html">是卡皮巴拉之家么</a>  - /u/youmo-ebike  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+12</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1mtqcit" data-time="1755533303" data-score="8" data-comments="2">
-                <p>
-                    2025 Aug 19: <a target="_self" href="./CapybaraHome/t3_1mtqcit.html">想吃腐竹炒肉片、肠粉、炒河粉、白切鸡、西红柿鸡蛋面、饺子、糯米鸡</a>  - /u/One-Mongoose-8138  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+8</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">2</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1mtyvjb" data-time="1755551896" data-score="11" data-comments="1">
-                <p>
-                    2025 Aug 19: <a target="_self" href="./CapybaraHome/t3_1mtyvjb.html">我厚米是不是這麼實誠的噢</a>  - /u/Sea-Field2775  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+11</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">1</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1mu441n" data-time="1755564844" data-score="15" data-comments="1">
-                <p>
-                    2025 Aug 19: <a target="_self" href="./CapybaraHome/t3_1mu441n.html">是新家吗</a>  - /u/Alarmed_Apricot_603  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+15</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">1</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1mu6kbn" data-time="1755571503" data-score="13" data-comments="3">
-                <p>
-                    2025 Aug 19: <a target="_self" href="./CapybaraHome/t3_1mu6kbn.html">谁来了？</a>  - /u/OverallPlaymen  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+13</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">3</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1mu6mrv" data-time="1755571695" data-score="15" data-comments="2">
-                <p>
-                    2025 Aug 19: <a target="_self" href="./CapybaraHome/t3_1mu6mrv.html">大和，偷窃</a>  - /u/Famous_imh_2001  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+15</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">2</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1mu9h6f" data-time="1755580504" data-score="14" data-comments="0">
-                <p>
-                    2025 Aug 19: <a target="_self" href="./CapybaraHome/t3_1mu9h6f.html">基础建设之天津完全胜利</a> <span class="flair" style="background-color: #4e90b1; color: #1c1c1c;">水池建设</span> - /u/Tricer1997  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+14</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1mu9pni" data-time="1755581307" data-score="15" data-comments="0">
-                <p>
-                    2025 Aug 19: <a target="_self" href="./CapybaraHome/t3_1mu9pni.html">基础建设之还好，一切都如愿以偿</a> <span class="flair" style="background-color: #4e90b1; color: #1c1c1c;">水池建设</span> - /u/Tricer1997  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+15</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1mu9rym" data-time="1755581515" data-score="12" data-comments="0">
-                <p>
-                    2025 Aug 19: <a target="_self" href="./CapybaraHome/t3_1mu9rym.html">基础建设之你妈大逼人人插</a> <span class="flair" style="background-color: #4e90b1; color: #1c1c1c;">水池建设</span> - /u/Tricer1997  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+12</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1mu9v2b" data-time="1755581824" data-score="8" data-comments="0">
-                <p>
-                    2025 Aug 19: <a target="_self" href="./CapybaraHome/t3_1mu9v2b.html">基础建设之我是荷兰人</a> <span class="flair" style="background-color: #4e90b1; color: #1c1c1c;">水池建设</span> - /u/Tricer1997  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+8</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1muavxa" data-time="1755585444" data-score="10" data-comments="0">
-                <p>
-                    2025 Aug 19: <a target="_self" href="./CapybaraHome/t3_1muavxa.html">看到一群果蛆评论抗日老兵文革时被SMplay留下后遗症，我就感到越来越喜欢腊主席了</a>  - /u/MurkyChallenge3788  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+10</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1muc7qr" data-time="1755590359" data-score="13" data-comments="0">
-                <p>
-                    2025 Aug 19: <a target="_self" href="./CapybaraHome/t3_1muc7qr.html">经典回顾</a> <span class="flair" style="background-color: #bb9344; color: #1c1c1c;">经典回顾</span> - /u/No-Airline131  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+13</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1muejt4" data-time="1755599084" data-score="15" data-comments="4">
-                <p>
-                    2025 Aug 19: <a target="_self" href="./CapybaraHome/t3_1muejt4.html">韩国人这么大仇？</a>  - /u/youmo-ebike  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+15</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">4</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1mueqmd" data-time="1755599732" data-score="6" data-comments="1">
-                <p>
-                    2025 Aug 19: <a target="_self" href="./CapybaraHome/t3_1mueqmd.html">评论区是新加坡浪友么？</a>  - /u/youmo-ebike  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+6</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">1</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1muffz3" data-time="1755601995" data-score="20" data-comments="4">
-                <p>
-                    2025 Aug 19: <a target="_self" href="./CapybaraHome/t3_1muffz3.html">幽默菜单</a>  - /u/youmo-ebike  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+20</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">4</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1mufqw0" data-time="1755602907" data-score="12" data-comments="2">
-                <p>
-                    2025 Aug 19: <a target="_self" href="./CapybaraHome/t3_1mufqw0.html">这种的是处女吗？</a> <span class="flair" style="background-color: #ab5485; color: #ffffff;">处女鉴别</span> - /u/Acceptable_Ad7280  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+12</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">2</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1muj36a" data-time="1755611611" data-score="1" data-comments="0">
-                <p>
-                    2025 Aug 19: <a target="_self" href="./CapybaraHome/t3_1muj36a.html">爷爷泡的茶</a>  - /u/Master_Ad_9987  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1muj3u7" data-time="1755611655" data-score="16" data-comments="0">
-                <p>
-                    2025 Aug 19: <a target="_self" href="./CapybaraHome/t3_1muj3u7.html">经典回顾之能不能冷静一些？</a> <span class="flair" style="background-color: #bb9344; color: #ffffff;">经典回顾</span> - /u/Acceptable_Ad7280  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+16</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1mukd5w" data-time="1755614476" data-score="1" data-comments="0">
-                <p>
-                    2025 Aug 19: <a target="_self" href="./CapybaraHome/t3_1mukd5w.html">🐵🦍👳🏾‍♂️🦧🦍🐒🙊🌚👳🏿‍♂️</a>  - /u/Equivalent_Panic5780  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1mupr1e" data-time="1755626054" data-score="19" data-comments="3">
-                <p>
-                    2025 Aug 20: <a target="_self" href="./CapybaraHome/t3_1mupr1e.html">何游戏</a>  - /u/Worldly-Row-1486  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+19</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">3</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1mur1ib" data-time="1755628821" data-score="18" data-comments="1">
-                <p>
-                    2025 Aug 20: <a target="_self" href="./CapybaraHome/t3_1mur1ib.html">集美们以后不要说操逼了，要把男的放在被动方，大家以后说裹吊，集美们一定要觉醒女权主义！</a> <span class="flair" style="background-color: #ab5485; color: #ffffff;">处女鉴别</span> - /u/Acceptable_Ad7280  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+18</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">1</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1mur4ah" data-time="1755628987" data-score="11" data-comments="3">
-                <p>
-                    2025 Aug 20: <a target="_self" href="./CapybaraHome/t3_1mur4ah.html">大和 隐忍</a> <span class="flair" style="background-color: #ab5485; color: #ffffff;">处女鉴别</span> - /u/Acceptable_Ad7280  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+11</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">3</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1musyh9" data-time="1755632922" data-score="8" data-comments="2">
-                <p>
-                    2025 Aug 20: <a target="_self" href="./CapybaraHome/t3_1musyh9.html">这里是涿州人之家吗</a>  - /u/neko_canyon  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+8</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">2</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1muz7f0" data-time="1755647454" data-score="15" data-comments="4">
-                <p>
-                    2025 Aug 20: <a target="_self" href="./CapybaraHome/t3_1muz7f0.html">既然你是穷蛆 你就应该支持左b</a>  - /u/OverallPlaymen  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+15</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">4</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1mv1u9u" data-time="1755654518" data-score="14" data-comments="1">
-                <p>
-                    2025 Aug 20: <a target="_self" href="./CapybaraHome/t3_1mv1u9u.html">幽默山东人</a>  - /u/youmo-ebike  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+14</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">1</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1mv2idj" data-time="1755656432" data-score="11" data-comments="1">
-                <p>
-                    2025 Aug 20: <a target="_self" href="./CapybaraHome/t3_1mv2idj.html">最殖幻想</a>  - /u/Tricer1997  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+11</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">1</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1mv3a0j" data-time="1755658623" data-score="15" data-comments="1">
-                <p>
-                    2025 Aug 20: <a target="_self" href="./CapybaraHome/t3_1mv3a0j.html">水友们吃吗</a>  - /u/Stoned-Zheng-Li-73i  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+15</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">1</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1mv4pkn" data-time="1755662941" data-score="9" data-comments="1">
-                <p>
-                    2025 Aug 20: <a target="_self" href="./CapybaraHome/t3_1mv4pkn.html">謝謝你喜歡水友</a> <span class="flair" style="background-color: #4e90b1; color: #ffffff;">水池建设</span> - /u/Acceptable_Ad7280  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+9</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">1</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1mvazqt" data-time="1755685595" data-score="14" data-comments="5">
-                <p>
-                    2025 Aug 20: <a target="_self" href="./CapybaraHome/t3_1mvazqt.html">有没有人觉得自助餐很支</a>  - /u/Alarmed_Apricot_603  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+14</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">5</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1mvehgs" data-time="1755695693" data-score="14" data-comments="0">
-                <p>
-                    2025 Aug 20: <a target="_self" href="./CapybaraHome/t3_1mvehgs.html">冲浪往事之冲浪公寓</a> <span class="flair" style="background-color: #2943d6; color: #ffffff;">冲浪往事</span> - /u/Acceptable_Ad7280  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+14</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1mvf9z7" data-time="1755697627" data-score="7" data-comments="2">
-                <p>
-                    2025 Aug 20: <a target="_self" href="./CapybaraHome/t3_1mvf9z7.html">高雅文学之斯威夫特拷打母人</a> <span class="flair" style="background-color: #d12e2e; color: #ffffff;">高雅文学</span> - /u/Acceptable_Ad7280  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+7</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">2</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1mvfevt" data-time="1755697954" data-score="7" data-comments="0">
-                <p>
-                    2025 Aug 20: <a target="_self" href="./CapybaraHome/t3_1mvfevt.html">高雅文学之妹控老嗨海明威</a> <span class="flair" style="background-color: #d12e2e; color: #ffffff;">高雅文学</span> - /u/Acceptable_Ad7280  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+7</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1mvh576" data-time="1755701893" data-score="3" data-comments="0">
-                <p>
-                    2025 Aug 20: <a target="_self" href="./CapybaraHome/t3_1mvh576.html">选哪个</a> <span class="flair" style="background-color: #639c65; color: #ffffff;">划水日常</span> - /u/Acceptable_Ad7280  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+3</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1mvhy8b" data-time="1755703650" data-score="2" data-comments="1">
-                <p>
-                    2025 Aug 20: <a target="_self" href="./CapybaraHome/t3_1mvhy8b.html">科研题微</a>  - /u/LivingNeat4537  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+2</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">1</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1mvpziw" data-time="1755720935" data-score="15" data-comments="1">
-                <p>
-                    2025 Aug 21: <a target="_self" href="./CapybaraHome/t3_1mvpziw.html">何事件</a>  - /u/Worldly-Row-1486  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+15</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">1</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1mw1kfy" data-time="1755751634" data-score="6" data-comments="0">
-                <p>
-                    2025 Aug 21: <a target="_self" href="./CapybaraHome/t3_1mw1kfy.html">没有自杀的原因</a>  - /u/Cnanobuta  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+6</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1mw64tz" data-time="1755768391" data-score="6" data-comments="0">
-                <p>
-                    2025 Aug 21: <a target="_self" href="./CapybaraHome/t3_1mw64tz.html">巴比伦大贞妇</a> <span class="flair" style="background-color: #ab5485; color: #ffffff;">处女鉴别</span> - /u/Acceptable_Ad7280  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+6</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1mw6bg1" data-time="1755769102" data-score="16" data-comments="0">
-                <p>
-                    2025 Aug 21: <a target="_self" href="./CapybaraHome/t3_1mw6bg1.html">哪位水友</a> <span class="flair" style="background-color: #8658a7; color: #ffffff;">陆地见闻</span> - /u/Acceptable_Ad7280  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+16</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1mw6dwq" data-time="1755769357" data-score="11" data-comments="0">
-                <p>
-                    2025 Aug 21: <a target="_self" href="./CapybaraHome/t3_1mw6dwq.html">经典回顾之圣遗物</a> <span class="flair" style="background-color: #bb9344; color: #ffffff;">经典回顾</span> - /u/Acceptable_Ad7280  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+11</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1mw6g0p" data-time="1755769570" data-score="1" data-comments="0">
-                <p>
-                    2025 Aug 21: <a target="_self" href="./CapybaraHome/t3_1mw6g0p.html">何必意</a> <span class="flair" style="background-color: #8658a7; color: #ffffff;">陆地见闻</span> - /u/Acceptable_Ad7280  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1mw6gj9" data-time="1755769626" data-score="6" data-comments="2">
-                <p>
-                    2025 Aug 21: <a target="_self" href="./CapybaraHome/t3_1mw6gj9.html">何意味</a> <span class="flair" style="background-color: #8658a7; color: #ffffff;">陆地见闻</span> - /u/Acceptable_Ad7280  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+6</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">2</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1mw6ija" data-time="1755769828" data-score="15" data-comments="0">
-                <p>
-                    2025 Aug 21: <a target="_self" href="./CapybaraHome/t3_1mw6ija.html">绿友，隐忍</a> <span class="flair" style="background-color: #8658a7; color: #ffffff;">陆地见闻</span> - /u/Acceptable_Ad7280  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+15</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1mw7brs" data-time="1755772685" data-score="15" data-comments="0">
-                <p>
-                    2025 Aug 21: <a target="_self" href="./CapybaraHome/t3_1mw7brs.html">經典回頋之我的習土</a>  - /u/Nevetherless1929  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+15</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1mw7f7i" data-time="1755773002" data-score="11" data-comments="0">
-                <p>
-                    2025 Aug 21: <a target="_self" href="./CapybaraHome/t3_1mw7f7i.html">我发现超管很清真</a>  - /u/Nevetherless1929  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+11</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1mw8ujh" data-time="1755777395" data-score="13" data-comments="2">
-                <p>
-                    2025 Aug 21: <a target="_self" href="./CapybaraHome/t3_1mw8ujh.html">都是谁家小棉袄？</a>  - /u/Nevetherless1929  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+13</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">2</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1mw978k" data-time="1755778358" data-score="3" data-comments="0">
-                <p>
-                    2025 Aug 21: <a target="_self" href="./CapybaraHome/t3_1mw978k.html">珍珠党好女孩</a>  - /u/youmo-ebike  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+3</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1mw9az9" data-time="1755778635" data-score="11" data-comments="0">
-                <p>
-                    2025 Aug 21: <a target="_self" href="./CapybaraHome/t3_1mw9az9.html">汉族，创新</a>  - /u/youmo-ebike  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+11</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1mwxb75" data-time="1755838101" data-score="8" data-comments="1">
-                <p>
-                    2025 Aug 22: <a target="_self" href="./CapybaraHome/t3_1mwxb75.html">光什么岁月</a>  - /u/Worldly-Row-1486  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+8</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">1</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1mx1ai3" data-time="1755852892" data-score="14" data-comments="2">
-                <p>
-                    2025 Aug 22: <a target="_self" href="./CapybaraHome/t3_1mx1ai3.html">几点打</a> <span class="flair" style="background-color: #639c65; color: #ffffff;">划水日常</span> - /u/Acceptable_Ad7280  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+14</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">2</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1mx1bq1" data-time="1755853021" data-score="10" data-comments="1">
-                <p>
-                    2025 Aug 22: <a target="_self" href="./CapybaraHome/t3_1mx1bq1.html">什么岛？</a> <span class="flair" style="background-color: #8658a7; color: #ffffff;">陆地见闻</span> - /u/Acceptable_Ad7280  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+10</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">1</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1mx1l46" data-time="1755854016" data-score="12" data-comments="1">
-                <p>
-                    2025 Aug 22: <a target="_self" href="./CapybaraHome/t3_1mx1l46.html">吃💩🐷</a>  - /u/youmo-ebike  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+12</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">1</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1mx5w56" data-time="1755867684" data-score="16" data-comments="3">
-                <p>
-                    2025 Aug 22: <a target="_self" href="./CapybaraHome/t3_1mx5w56.html">这种的是好女孩吗？</a> <span class="flair" style="background-color: #ab5485; color: #ffffff;">处女鉴别</span> - /u/Acceptable_Ad7280  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+16</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">3</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1mx5ynr" data-time="1755867856" data-score="7" data-comments="0">
-                <p>
-                    2025 Aug 22: <a target="_self" href="./CapybaraHome/t3_1mx5ynr.html">かがやき</a> <span class="flair" style="background-color: #8658a7; color: #ffffff;">陆地见闻</span> - /u/Acceptable_Ad7280  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+7</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1mx63g9" data-time="1755868198" data-score="5" data-comments="0">
-                <p>
-                    2025 Aug 22: <a target="_self" href="./CapybaraHome/t3_1mx63g9.html">何意味</a> <span class="flair" style="background-color: #8658a7; color: #ffffff;">陆地见闻</span> - /u/Acceptable_Ad7280  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+5</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1mx6wuw" data-time="1755870231" data-score="19" data-comments="3">
-                <p>
-                    2025 Aug 22: <a target="_self" href="./CapybaraHome/t3_1mx6wuw.html">何人种</a> <span class="flair" style="background-color: #8658a7; color: #ffffff;">陆地见闻</span> - /u/Acceptable_Ad7280  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+19</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">3</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1mx7ro2" data-time="1755872268" data-score="10" data-comments="0">
-                <p>
-                    2025 Aug 22: <a target="_self" href="./CapybaraHome/t3_1mx7ro2.html">佳兵者不祥之器，圣人不得已而用之</a>  - /u/youmo-ebike  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+10</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1mxl4ca" data-time="1755903308" data-score="11" data-comments="0">
-                <p>
-                    2025 Aug 23: <a target="_self" href="./CapybaraHome/t3_1mxl4ca.html">何意味</a> <span class="flair" style="background-color: #8658a7; color: #ffffff;">陆地见闻</span> - /u/Acceptable_Ad7280  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+11</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1mxtyma" data-time="1755930178" data-score="10" data-comments="1">
-                <p>
-                    2025 Aug 23: <a target="_self" href="./CapybaraHome/t3_1mxtyma.html">经典回顾之大西Chudjak</a> <span class="flair" style="background-color: #635ba4; color: #ffffff;">文艺复兴</span> - /u/Acceptable_Ad7280  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+10</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">1</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1mxwl5z" data-time="1755940064" data-score="12" data-comments="1">
-                <p>
-                    2025 Aug 23: <a target="_self" href="./CapybaraHome/t3_1mxwl5z.html">哪位？</a> <span class="flair" style="background-color: #639c65; color: #ffffff;">划水日常</span> - /u/Acceptable_Ad7280  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+12</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">1</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1my6r4o" data-time="1755968376" data-score="10" data-comments="0">
-                <p>
-                    2025 Aug 24: <a target="_self" href="./CapybaraHome/t3_1my6r4o.html">何意味</a> <span class="flair" style="background-color: #8658a7; color: #ffffff;">陆地见闻</span> - /u/Acceptable_Ad7280  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+10</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1my70qf" data-time="1755968987" data-score="16" data-comments="2">
-                <p>
-                    2025 Aug 24: <a target="_self" href="./CapybaraHome/t3_1my70qf.html">何人种</a> <span class="flair" style="background-color: #639c65; color: #ffffff;">划水日常</span> - /u/Acceptable_Ad7280  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+16</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">2</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1mykreu" data-time="1756004820" data-score="14" data-comments="6">
-                <p>
-                    2025 Aug 24: <a target="_self" href="./CapybaraHome/t3_1mykreu.html">何人种</a> <span class="flair" style="background-color: #8658a7; color: #ffffff;">陆地见闻</span> - /u/Acceptable_Ad7280  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+14</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">6</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1mylqgd" data-time="1756008051" data-score="17" data-comments="3">
-                <p>
-                    2025 Aug 24: <a target="_self" href="./CapybaraHome/t3_1mylqgd.html">这种的符合教义吗？</a> <span class="flair" style="background-color: #ab5485; color: #ffffff;">处女鉴别</span> - /u/Acceptable_Ad7280  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+17</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">3</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1mz2n3i" data-time="1756058433" data-score="14" data-comments="2">
-                <p>
-                    2025 Aug 25: <a target="_self" href="./CapybaraHome/t3_1mz2n3i.html">铭记历史</a>  - /u/Worldly-Row-1486  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+14</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">2</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1mzmtr2" data-time="1756117743" data-score="6" data-comments="0">
-                <p>
-                    2025 Aug 25: <a target="_self" href="./CapybaraHome/t3_1mzmtr2.html">喝点</a>  - /u/Lost_Chemist_5615  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+6</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1mzsnb3" data-time="1756133609" data-score="6" data-comments="0">
-                <p>
-                    2025 Aug 25: <a target="_self" href="./CapybaraHome/t3_1mzsnb3.html">哪位水友</a> <span class="flair" style="background-color: #635ba4; color: #ffffff;">文艺复兴</span> - /u/Acceptable_Ad7280  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+6</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1mzx51m" data-time="1756143463" data-score="17" data-comments="0">
-                <p>
-                    2025 Aug 26: <a target="_self" href="./CapybaraHome/t3_1mzx51m.html">怎么一扭头</a>  - /u/Effective-Dare-7406  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+17</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1mzx6g4" data-time="1756143550" data-score="28" data-comments="4">
-                <p>
-                    2025 Aug 26: <a target="_self" href="./CapybaraHome/t3_1mzx6g4.html">我的家在哪</a>  - /u/Lost_Chemist_5615  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+28</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">4</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1mzznox" data-time="1756149073" data-score="12" data-comments="3">
-                <p>
-                    2025 Aug 26: <a target="_self" href="./CapybaraHome/t3_1mzznox.html">谁回来了</a>  - /u/Left_Orchid3813  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+12</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">3</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1mzzt9y" data-time="1756149416" data-score="13" data-comments="3">
-                <p>
-                    2025 Aug 26: <a target="_self" href="./CapybaraHome/t3_1mzzt9y.html">这次感觉是真的要散了，每次搬家人都越来越少，很多老面孔基本上都看不到了，真的搬家搬累了感觉，这次真的要散了吗？</a>  - /u/Late_Activity_4244  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+13</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">3</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1mzzvvz" data-time="1756149579" data-score="8" data-comments="1">
-                <p>
-                    2025 Aug 26: <a target="_self" href="./CapybaraHome/t3_1mzzvvz.html">什么人种</a>  - /u/Left_Orchid3813  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+8</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">1</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1mzzzfe" data-time="1756149808" data-score="16" data-comments="2">
-                <p>
-                    2025 Aug 26: <a target="_self" href="./CapybaraHome/t3_1mzzzfe.html">经典回顾之我那么幽默后面一群傻逼都不笑</a>  - /u/Effective-Dare-7406  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+16</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">2</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1n005aw" data-time="1756150182" data-score="13" data-comments="3">
-                <p>
-                    2025 Aug 26: <a target="_self" href="./CapybaraHome/t3_1n005aw.html">经典回顾之闪友们搞了个日~本的了吗</a>  - /u/Effective-Dare-7406  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+13</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">3</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1n00ide" data-time="1756151029" data-score="25" data-comments="4">
-                <p>
-                    2025 Aug 26: <a target="_self" href="./CapybaraHome/t3_1n00ide.html">汉族 废物</a>  - /u/Left_Orchid3813  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+25</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">4</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1n038qh" data-time="1756157243" data-score="10" data-comments="0">
-                <p>
-                    2025 Aug 26: <a target="_self" href="./CapybaraHome/t3_1n038qh.html">汉族 崛起</a>  - /u/Left_Orchid3813  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+10</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1n03jyu" data-time="1756157969" data-score="14" data-comments="2">
-                <p>
-                    2025 Aug 26: <a target="_self" href="./CapybaraHome/t3_1n03jyu.html">一位大白老英雄屠了105沪蛆，另一位大白老英雄屠了106沪蛆</a>  - /u/Late_Activity_4244  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+14</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">2</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1n04g84" data-time="1756160117" data-score="10" data-comments="1">
-                <p>
-                    2025 Aug 26: <a target="_self" href="./CapybaraHome/t3_1n04g84.html">跨栏失败</a> <span class="flair" style="background-color: #8658a7; color: #ffffff;">陆地见闻</span> - /u/Acceptable_Ad7280  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+10</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">1</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1n0905h" data-time="1756172130" data-score="5" data-comments="4">
-                <p>
-                    2025 Aug 26: <a target="_self" href="./CapybaraHome/t3_1n0905h.html">诶美支的party真是太多了，对我这个i人来说简直太难受了</a>  - /u/Left_Orchid3813  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+5</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">4</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1n09gba" data-time="1756173385" data-score="14" data-comments="4">
-                <p>
-                    2025 Aug 26: <a target="_self" href="./CapybaraHome/t3_1n09gba.html">这就是你们这群神蛆反贼的新家吗？</a>  - /u/Zhidihuimieba  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+14</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">4</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1n0ctsu" data-time="1756183814" data-score="12" data-comments="5">
-                <p>
-                    2025 Aug 26: <a target="_self" href="./CapybaraHome/t3_1n0ctsu.html">黄种人为什么长的丑 主要就是鼻梁低加咪咪眼</a>  - /u/Left_Orchid3813  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+12</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">5</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1n0d9hl" data-time="1756185331" data-score="10" data-comments="2">
-                <p>
-                    2025 Aug 26: <a target="_self" href="./CapybaraHome/t3_1n0d9hl.html">欧猪 幻想</a>  - /u/Left_Orchid3813  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+10</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">2</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1n0dtgl" data-time="1756187372" data-score="16" data-comments="3">
-                <p>
-                    2025 Aug 26: <a target="_self" href="./CapybaraHome/t3_1n0dtgl.html">太阳升起</a>  - /u/No-Airline131  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+16</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">3</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1n0e0rn" data-time="1756188113" data-score="18" data-comments="2">
-                <p>
-                    2025 Aug 26: <a target="_self" href="./CapybaraHome/t3_1n0e0rn.html">是粤🐒吗</a>  - /u/neko_canyon  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+18</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">2</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1n0egre" data-time="1756189782" data-score="18" data-comments="5">
-                <p>
-                    2025 Aug 26: <a target="_self" href="./CapybaraHome/t3_1n0egre.html">90年代的日本是不是黄种人真正的巅峰？</a>  - /u/Left_Orchid3813  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+18</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">5</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1n0evvi" data-time="1756191441" data-score="16" data-comments="2">
-                <p>
-                    2025 Aug 26: <a target="_self" href="./CapybaraHome/t3_1n0evvi.html">每次看到支那猪说日本科技落后了就想笑，可能支那猪所谓的高科技就是什么ai新能源汽车之类的，尤其是那个新能源汽车弱智程度不亚于你小时候玩的电动四驱车就跟组装手机一样是毫无技术含量的活，真正工业瑰宝的油车发动机和变速箱支那猪一个都造不出来，日爹一个爱信变速箱就能给支那猪卡脖子了，一断供百分之90的支产燃油车都造不出来。</a>  - /u/Left_Orchid3813  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+16</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">2</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1n0frwt" data-time="1756194942" data-score="1" data-comments="0">
-                <p>
-                    2025 Aug 26: <a target="_self" href="./CapybaraHome/t3_1n0frwt.html">是否变成牛妹是黑丸的唯一出路</a>  - /u/Future_Ask_3034  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1n0g48l" data-time="1756196317" data-score="8" data-comments="2">
-                <p>
-                    2025 Aug 26: <a target="_self" href="./CapybaraHome/t3_1n0g48l.html">台巴还能说话吗？</a>  - /u/Remarkable_Score227  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+8</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">2</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1n0ge0d" data-time="1756197408" data-score="21" data-comments="4">
-                <p>
-                    2025 Aug 26: <a target="_self" href="./CapybaraHome/t3_1n0ge0d.html">隔壁浪太监真把我给整笑了</a>  - /u/Turbulent_Shop_1987  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+21</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">4</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1n0gft4" data-time="1756197613" data-score="10" data-comments="0">
-                <p>
-                    2025 Aug 26: <a target="_self" href="./CapybaraHome/t3_1n0gft4.html">是晶姐么</a>  - /u/youmo-ebike  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+10</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1n0hr7z" data-time="1756202704" data-score="1" data-comments="0">
-                <p>
-                    2025 Aug 26: <a target="_self" href="./CapybaraHome/t3_1n0hr7z.html">支那猪出来受死！费拉支那猪试图赖蹭欧美大爹秩序，零成本上桌的嘴脸一览无余，你永远都是支那猪。这不排能行吗？别以为在德国就能跑得了，等我入籍就去投AFD。德支管不了你，本满洲大爹管得了你，专业尼堪汉畜屠户多尔衮多铎老英雄归来，</a>  - /u/[deleted]  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1n0iawx" data-time="1756204654" data-score="24" data-comments="6">
-                <p>
-                    2025 Aug 26: <a target="_self" href="./CapybaraHome/t3_1n0iawx.html">支那猪出来受死，费拉支那猪试图赖蹭欧美大爹秩序，零成本上桌的费拉嘴脸一览无余，这种的必须拿武士刀砍了</a> <span class="flair" style="background-color: #ff0000; color: #ffffff;">しなぶたかたな </span> - /u/Acceptable_Ad7280  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+24</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">6</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1n0lqxz" data-time="1756214605" data-score="13" data-comments="0">
-                <p>
-                    2025 Aug 26: <a target="_self" href="./CapybaraHome/t3_1n0lqxz.html">是这样的，感觉穷傻逼跨畜炒作🐶就和喜欢说自己有玉玉症的母畜织女一样弱智</a>  - /u/Late_Activity_4244  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+13</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1n0oflx" data-time="1756220950" data-score="2" data-comments="0">
-                <p>
-                    2025 Aug 26: <a target="_self" href="./CapybaraHome/t3_1n0oflx.html">为什么民小蛆普遍喜欢吹捧通古斯韩支，如果民小蛆都是人均通古斯爱好者、喜欢吹捧半岛东百🐶的话，那为什么不去吹最纯正的通古斯人种即东百三省东百🐶？可我看平时民小蛆也挺喜欢黑东百地区的，为什么脑残民小蛆能弱智和精神分裂成这样的？</a>  - /u/Late_Activity_4244  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+2</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1n0txin" data-time="1756233255" data-score="1" data-comments="0">
-                <p>
-                    2025 Aug 27: <a target="_self" href="./CapybaraHome/t3_1n0txin.html">支是一个形容词，形容那些对“支”字反应很强烈，看到就气急败坏语言混乱，说明这个人很支；如果你毫不在意，说明你不“支”</a>  - /u/MurkyChallenge3788  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1n0u01k" data-time="1756233415" data-score="31" data-comments="3">
-                <p>
-                    2025 Aug 27: <a target="_self" href="./CapybaraHome/t3_1n0u01k.html">支是一个形容词，形容那些看到“支”字反应很强烈，看到就气急败坏语言混乱的人，可以说这个人很支；如果你毫不在意，说明你不“支”，君子生于支那，非君子之过也</a>  - /u/MurkyChallenge3788  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+31</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">3</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1n0vte6" data-time="1756237591" data-score="2" data-comments="0">
-                <p>
-                    2025 Aug 27: <a target="_self" href="./CapybaraHome/t3_1n0vte6.html">好揍</a>  - /u/Shinanobuta87  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+2</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1n0w1oa" data-time="1756238129" data-score="13" data-comments="1">
-                <p>
-                    2025 Aug 27: <a target="_self" href="./CapybaraHome/t3_1n0w1oa.html">哪里人</a>  - /u/youmo-ebike  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+13</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">1</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1n13umm" data-time="1756257762" data-score="1" data-comments="0">
-                <p>
-                    2025 Aug 27: <a target="_self" href="./CapybaraHome/t3_1n13umm.html">父权制房门</a>  - /u/[deleted]  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1n13wa8" data-time="1756257892" data-score="9" data-comments="0">
-                <p>
-                    2025 Aug 27: <a target="_self" href="./CapybaraHome/t3_1n13wa8.html">父权制房门</a>  - /u/Hefty_Transition6334  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+9</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1n14nkd" data-time="1756260037" data-score="15" data-comments="0">
-                <p>
-                    2025 Aug 27: <a target="_self" href="./CapybaraHome/t3_1n14nkd.html">我以为这ebike没人要了呢</a>  - /u/youmo-ebike  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+15</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1n19tvj" data-time="1756277037" data-score="15" data-comments="2">
-                <p>
-                    2025 Aug 27: <a target="_self" href="./CapybaraHome/t3_1n19tvj.html">經典回顧</a>  - /u/Shinanobuta87  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+15</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">2</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1n1djbq" data-time="1756291201" data-score="6" data-comments="0">
-                <p>
-                    2025 Aug 27: <a target="_self" href="./CapybaraHome/t3_1n1djbq.html">经典回顾之东百🐶嗯造桌饺</a>  - /u/Late_Activity_4244  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+6</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1n1eryy" data-time="1756295175" data-score="5" data-comments="0">
-                <p>
-                    2025 Aug 27: <a target="_self" href="./CapybaraHome/t3_1n1eryy.html">經典回顧之東北狗跳樓</a>  - /u/Shinanobuta87  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+5</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1n1k9vg" data-time="1756308734" data-score="1" data-comments="0">
-                <p>
-                    2025 Aug 27: <a target="_self" href="./CapybaraHome/t3_1n1k9vg.html">台巴你怎么瞎骂完又删贴了，我说你投票给舔共蓝白党也不丢人吧，你们台湾不是有四成人投蓝白吗</a>  - /u/No-Pitch8412  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1n1lgn9" data-time="1756311416" data-score="18" data-comments="1">
-                <p>
-                    2025 Aug 28: <a target="_self" href="./CapybaraHome/t3_1n1lgn9.html">哪位KanagawaWave用户</a> <span class="flair" style="background-color: #639c65; color: #ffffff;">划水日常</span> - /u/Acceptable_Ad7280  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+18</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">1</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1n1mf7b" data-time="1756313523" data-score="13" data-comments="2">
-                <p>
-                    2025 Aug 28: <a target="_self" href="./CapybaraHome/t3_1n1mf7b.html">这种的是好女孩吗</a> <span class="flair" style="background-color: #ab5485; color: #ffffff;">处女鉴别</span> - /u/Acceptable_Ad7280  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+13</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">2</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1n1mmle" data-time="1756313994" data-score="5" data-comments="0">
-                <p>
-                    2025 Aug 28: <a target="_self" href="./CapybaraHome/t3_1n1mmle.html">上帝你炸了台多瑪吧</a>  - /u/Ill-Organization3505  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+5</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1n1mzn8" data-time="1756314777" data-score="1" data-comments="0">
-                <p>
-                    2025 Aug 28: <a target="_self" href="./CapybaraHome/t3_1n1mzn8.html">致浪太监某掌印及诸火者一封信</a>  - /u/Shinanobuta87  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1n1oi3j" data-time="1756318133" data-score="6" data-comments="1">
-                <p>
-                    2025 Aug 28: <a target="_self" href="./CapybaraHome/t3_1n1oi3j.html">有无新天地</a>  - /u/Worldly-Row-1486  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+6</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">1</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1n1wyse" data-time="1756338171" data-score="13" data-comments="1">
-                <p>
-                    2025 Aug 28: <a target="_self" href="./CapybaraHome/t3_1n1wyse.html">街上如何辨认出好女孩</a>  - /u/youmo-ebike  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+13</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">1</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1n2e1jm" data-time="1756391969" data-score="5" data-comments="0">
-                <p>
-                    2025 Aug 28: <a target="_self" href="./CapybaraHome/t3_1n2e1jm.html">China黑也得提高一下姿势水平</a>  - /u/youmo-ebike  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+5</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1n2g9lw" data-time="1756396902" data-score="9" data-comments="1">
-                <p>
-                    2025 Aug 29: <a target="_self" href="./CapybaraHome/t3_1n2g9lw.html">这种的是好女孩吗</a> <span class="flair" style="background-color: #8658a7; color: #ffffff;">陆地见闻</span> - /u/Acceptable_Ad7280  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+9</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">1</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1n2h3rs" data-time="1756398783" data-score="6" data-comments="0">
-                <p>
-                    2025 Aug 29: <a target="_self" href="./CapybaraHome/t3_1n2h3rs.html">不魔怔了</a> <span class="flair" style="background-color: #4e90b1; color: #ffffff;">水池建设</span> - /u/Acceptable_Ad7280  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+6</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1n2h5ht" data-time="1756398896" data-score="17" data-comments="4">
-                <p>
-                    2025 Aug 29: <a target="_self" href="./CapybaraHome/t3_1n2h5ht.html">日常</a> <span class="flair" style="background-color: #4e90b1; color: #ffffff;">水池建设</span> - /u/Acceptable_Ad7280  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+17</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">4</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1n2ua92" data-time="1756430844" data-score="2" data-comments="1">
-                <p>
-                    2025 Aug 29: <a target="_self" href="./CapybaraHome/t3_1n2ua92.html">明智光秀率兵攻打本能寺,阵前观火起,对诸将说:“cnm的,燃起来了!”</a>  - /u/youmo-ebike  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+2</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">1</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1n2um4r" data-time="1756431767" data-score="10" data-comments="1">
-                <p>
-                    2025 Aug 29: <a target="_self" href="./CapybaraHome/t3_1n2um4r.html">明智光秀率兵攻打本能寺,阵前观火起,对诸将说:cnm的,燃起来了</a>  - /u/youmo-ebike  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+10</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">1</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1n35y6y" data-time="1756470156" data-score="10" data-comments="1">
-                <p>
-                    2025 Aug 29: <a target="_self" href="./CapybaraHome/t3_1n35y6y.html">我的学校是LJHC</a> <span class="flair" style="background-color: #8658a7; color: #ffffff;">陆地见闻</span> - /u/Acceptable_Ad7280  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+10</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">1</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1n3d1pb" data-time="1756487079" data-score="1" data-comments="0">
-                <p>
-                    2025 Aug 30: <a target="_self" href="./CapybaraHome/t3_1n3d1pb.html">雅</a>  - /u/Aromatic-Chipmunk-80  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1n3f7o1" data-time="1756491976" data-score="7" data-comments="0">
-                <p>
-                    2025 Aug 30: <a target="_self" href="./CapybaraHome/t3_1n3f7o1.html">幽默手机</a>  - /u/youmo-ebike  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+7</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1n3pofe" data-time="1756519035" data-score="16" data-comments="2">
-                <p>
-                    2025 Aug 30: <a target="_self" href="./CapybaraHome/t3_1n3pofe.html">智械危机</a> <span class="flair" style="background-color: #8658a7; color: #ffffff;">陆地见闻</span> - /u/Acceptable_Ad7280  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+16</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">2</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1n3v1fy" data-time="1756537117" data-score="18" data-comments="0">
-                <p>
-                    2025 Aug 30: <a target="_self" href="./CapybaraHome/t3_1n3v1fy.html">今日已学习</a> <span class="flair" style="background-color: #8658a7; color: #ffffff;">陆地见闻</span> - /u/Acceptable_Ad7280  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+18</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1n3vf7m" data-time="1756538553" data-score="18" data-comments="3">
-                <p>
-                    2025 Aug 30: <a target="_self" href="./CapybaraHome/t3_1n3vf7m.html">习近平是你枝建国以来唯一一个北方主席，就开始了你枝的飞速衰退，和传统大枝最后一个王朝清朝一样，一堆野猪皮东北狗鸠占鹊巢，用傲慢自大的天朝上国思维开始飞速被列强暴打。是否证明北方人真的是傻逼？智商落后南方人一个档次？</a>  - /u/Zhidihuimieba  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+18</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">3</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1n3wysc" data-time="1756544662" data-score="20" data-comments="5">
-                <p>
-                    2025 Aug 30: <a target="_self" href="./CapybaraHome/t3_1n3wysc.html">还是处女吗？</a> <span class="flair" style="background-color: #8658a7; color: #ffffff;">陆地见闻</span> - /u/Acceptable_Ad7280  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+20</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">5</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1n4c5c1" data-time="1756586821" data-score="8" data-comments="0">
-                <p>
-                    2025 Aug 31: <a target="_self" href="./CapybaraHome/t3_1n4c5c1.html">回家看到这个什么反应？</a>  - /u/youmo-ebike  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+8</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1n69ldd" data-time="1756785415" data-score="19" data-comments="0">
-                <p>
-                    2025 Sep 02: <a target="_self" href="./CapybaraHome/t3_1n69ldd.html">为什么总是有蜘蛛在公共场合外放抖音</a>  - /u/Od_zer  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+19</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1n6jwyj" data-time="1756820766" data-score="1" data-comments="0">
-                <p>
-                    2025 Sep 02: <a target="_self" href="./CapybaraHome/t3_1n6jwyj.html">红迪怎么还引入AI查成分了</a>  - /u/Turbulent_Shop_1987  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1n73wcy" data-time="1756869078" data-score="8" data-comments="1">
-                <p>
-                    2025 Sep 03: <a target="_self" href="./CapybaraHome/t3_1n73wcy.html">刚刚做了个meme</a>  - /u/youmo-ebike  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+8</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">1</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1n7g6xj" data-time="1756909392" data-score="1" data-comments="1">
-                <p>
-                    2025 Sep 03: <a target="_self" href="./CapybaraHome/t3_1n7g6xj.html">盼路易十六归</a> <span class="flair" style="background-color: #8658a7; color: #ffffff;">陆地见闻</span> - /u/Acceptable_Ad7280  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">1</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1n7x9gs" data-time="1756949870" data-score="16" data-comments="0">
-                <p>
-                    2025 Sep 04: <a target="_self" href="./CapybaraHome/t3_1n7x9gs.html">这种的是好女孩吗</a>  - /u/neko_canyon  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+16</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1n8b9ei" data-time="1756995082" data-score="10" data-comments="2">
-                <p>
-                    2025 Sep 04: <a target="_self" href="./CapybaraHome/t3_1n8b9ei.html">哪位</a> <span class="flair" style="background-color: #8658a7; color: #ffffff;">陆地见闻</span> - /u/Acceptable_Ad7280  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+10</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">2</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1n8ljcq" data-time="1757018383" data-score="13" data-comments="2">
-                <p>
-                    2025 Sep 05: <a target="_self" href="./CapybaraHome/t3_1n8ljcq.html">什么算术教室</a> <span class="flair" style="background-color: #8658a7; color: #ffffff;">陆地见闻</span> - /u/Acceptable_Ad7280  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+13</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">2</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1n95n3e" data-time="1757079783" data-score="3" data-comments="3">
-                <p>
-                    2025 Sep 05: <a target="_self" href="./CapybaraHome/t3_1n95n3e.html">Google pixel的ai字幕好用吗，Netflix好多片源没有我想要的语种字幕</a>  - /u/One-Mongoose-8138  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+3</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">3</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1nbjpci" data-time="1757325899" data-score="30" data-comments="2">
-                <p>
-                    2025 Sep 08: <a target="_self" href="./CapybaraHome/t3_1nbjpci.html">以前看未闻花名没什么感觉，感谢日漫痴提醒，已列入圣地巡礼清单</a>  - /u/MurkyChallenge3788  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+30</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">2</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1ndeefh" data-time="1757511362" data-score="1" data-comments="0">
-                <p>
-                    2025 Sep 10: <a target="_self" href="./CapybaraHome/t3_1ndeefh.html">新家 后面忘了</a>  - /u/No-Airline131  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
-                </p>
-            </div>
+        <div id="list-root">
+            <div id="list-spacer"></div>
+            <div id="list-viewport"></div>
         </div>
+        <script id="posts-data" type="application/json">[["t3_1mjayp8", "是新家吗？", "Acceptable_Ad7280", 5, 3, 1754501300, "水池建设", "#4e90b1", "light", null, null, null], ["t3_1mjba0d", "基础建设之等待大的", "Acceptable_Ad7280", 3, 1, 1754502003, "水池建设", "#4e90b1", "light", null, null, null], ["t3_1mlf8p8", "太监，觉醒", "Acceptable_Ad7280", 1, 0, 1754709643, "陆地见闻", "#8658a7", "light", null, null, null], ["t3_1mlfdi2", "集美大战柴犬", "Acceptable_Ad7280", 1, 0, 1754710057, "陆地见闻", "#8658a7", "light", null, null, null], ["t3_1mlff0o", "感觉体制内干部们好可爱", "Acceptable_Ad7280", 1, 1, 1754710191, "陆地见闻", "#8658a7", "light", null, null, null], ["t3_1mlfl4i", "基础建设之云宫迅音", "Acceptable_Ad7280", 1, 0, 1754710733, "水池建设", "#4e90b1", "light", null, null, null], ["t3_1mlg8p5", "红迪照相馆", "Acceptable_Ad7280", 4, 0, 1754712778, "经典回顾", "#bb9344", "light", null, null, null], ["t3_1mlgmr1", "什么游戏？", "Acceptable_Ad7280", 1, 0, 1754714063, "陆地见闻", "#8658a7", "light", null, null, null], ["t3_1mmn99m", "幽默机器人", "Acceptable_Ad7280", 8, 2, 1754843981, "陆地见闻", "#8658a7", "light", null, null, null], ["t3_1moeu96", "这种的是处女吗？", "Acceptable_Ad7280", 8, 2, 1755019175, "陆地见闻", "#8658a7", "light", null, null, null], ["t3_1moxfdd", "水豚窝", "No_Possible_597", 3, 0, 1755068333, null, "", "dark", null, null, null], ["t3_1mp1ddk", "何物种", "Acceptable_Ad7280", 4, 4, 1755083043, "陆地见闻", "#8658a7", "light", null, null, null], ["t3_1mp3grx", "test", "[deleted]", 1, 0, 1755089163, null, "", "dark", null, "", "dark"], ["t3_1mp8g9z", "哪位水友", "Acceptable_Ad7280", 11, 2, 1755100911, "划水日常", "#639c65", "light", null, null, null], ["t3_1mpm2mh", "报告！新家已发现！", "Worldly-Row-1486", 10, 4, 1755132494, null, "", "dark", null, null, null], ["t3_1mqdgz2", "北支派遣軍の歌", "Acceptable_Ad7280", 11, 7, 1755206044, "英灵殿", "#ba5a45", "light", null, null, null], ["t3_1mqghp6", "喜欢这种白妈么", "youmo-ebike", 4, 1, 1755213048, null, "", "dark", null, null, null], ["t3_1mqsyv5", "抜刀隊", "Acceptable_Ad7280", 11, 0, 1755250767, "英灵殿", "#ba5a45", "light", null, null, null], ["t3_1mqtsbq", "这种的有感觉了", "Acceptable_Ad7280", 1, 0, 1755253438, "处女鉴别", "#ab5485", "light", null, null, null], ["t3_1mqtthv", "这种的有感觉了", "[deleted]", 1, 0, 1755253544, "处女鉴别", "#ab5485", "light", null, "", "dark"], ["t3_1mqx4cn", "这种的美少女胖次想要了", "Acceptable_Ad7280", 5, 0, 1755262750, "划水日常", "#639c65", "light", null, null, null], ["t3_1mqx53c", "哪位水友", "Acceptable_Ad7280", 9, 0, 1755262798, "划水日常", "#639c65", "light", null, null, null], ["t3_1mqz0yx", "谁家白妈", "Remarkable_Score227", 4, 0, 1755267175, null, "", "dark", null, null, null], ["t3_1mqzufm", "我们终于又见面了", "Striking_Day_2665", 11, 2, 1755268978, null, "", "dark", null, null, null], ["t3_1mr1o3d", "不想割了", "Acceptable_Ad7280", 10, 0, 1755272877, "陆地见闻", "#8658a7", "light", null, null, null], ["t3_1mr1t4e", "经典回顾之Chyberpunk2027", "Acceptable_Ad7280", 1, 0, 1755273180, "经典回顾", "#bb9344", "light", null, null, null], ["t3_1mr2a06", "经典回顾之Chyberpunk2077", "Acceptable_Ad7280", 10, 0, 1755274190, "经典回顾", "#bb9344", "light", null, null, null], ["t3_1mrm7la", "谁来了", "No-Airline131", 10, 3, 1755323269, null, "", "dark", null, null, null], ["t3_1mrmli4", "是精灵族吗", "Worldly-Row-1486", 10, 2, 1755324458, null, "", "dark", null, null, null], ["t3_1mrq20u", "基础建设", "No-Airline131", 16, 4, 1755335758, null, "", "dark", null, null, null], ["t3_1mrqsy6", "谁来了", "iiiiiiiiib", 2, 1, 1755338271, null, "", "dark", null, null, null], ["t3_1mrqt4p", "是二百斤mod嘛？", "iiiiiiiiib", 3, 0, 1755338290, null, "", "dark", null, null, null], ["t3_1mrvy4o", "幽默家乡人", "Acceptable_Ad7280", 4, 1, 1755352507, "处女鉴别", "#ab5485", "light", null, null, null], ["t3_1mrwt5w", "看一次笑一次", "Acceptable_Ad7280", 11, 1, 1755354482, "经典回顾", "#bb9344", "light", null, null, null], ["t3_1ms74bo", "test", "Alarmed-Claim-5287", 1, 0, 1755376931, null, "", "dark", null, null, null], ["t3_1ms9mzi", "何意味", "Acceptable_Ad7280", 2, 1, 1755382707, "划水日常", "#639c65", "light", null, null, null], ["t3_1msbgtu", "何文字", "Worldly-Row-1486", 6, 3, 1755387159, null, "", "dark", null, null, null], ["t3_1msm3cs", "经典回顾之早安种花家", "Acceptable_Ad7280", 13, 1, 1755421497, "经典回顾", "#bb9344", "light", null, null, null], ["t3_1msmk9z", "我服了，蜘蛛切被我老爹拿去割肉砍骨头弄崩😅", "Od_zer", 19, 4, 1755423327, null, "", "dark", null, null, null], ["t3_1msmz6l", "谷歌AI有党性👍", "Nevetherless1929", 9, 0, 1755424919, null, "", "dark", null, null, null], ["t3_1msob95", "这是新家吗", "Human_Technician_423", 6, 1, 1755429650, null, "", "dark", null, null, null], ["t3_1msuzha", "上中文课的高精灵", "Worldly-Row-1486", 9, 3, 1755447109, null, "", "dark", null, null, null], ["t3_1mtil80", "经典回顾之家人们我在上海", "Acceptable_Ad7280", 19, 1, 1755514080, "经典回顾", "#bb9344", "light", null, null, null], ["t3_1mtincc", "经典回顾之赶走嫖客自己睡", "Acceptable_Ad7280", 15, 0, 1755514273, "经典回顾", "#bb9344", "light", null, null, null], ["t3_1mtmfaj", "是卡皮巴拉之家么", "youmo-ebike", 12, 0, 1755524580, null, "", "dark", null, null, null], ["t3_1mtqcit", "想吃腐竹炒肉片、肠粉、炒河粉、白切鸡、西红柿鸡蛋面、饺子、糯米鸡", "One-Mongoose-8138", 8, 7, 1755533303, null, "", "dark", null, null, null], ["t3_1mtyvjb", "我厚米是不是這麼實誠的噢", "Sea-Field2775", 11, 1, 1755551896, null, "", "dark", null, null, null], ["t3_1mu441n", "是新家吗", "Alarmed_Apricot_603", 15, 1, 1755564844, null, "", "dark", null, null, null], ["t3_1mu6kbn", "谁来了？", "OverallPlaymen", 13, 3, 1755571503, null, "", "dark", null, null, null], ["t3_1mu6mrv", "大和，偷窃", "Famous_imh_2001", 15, 2, 1755571695, null, "", "dark", null, null, null], ["t3_1mu9h6f", "基础建设之天津完全胜利", "Tricer1997", 14, 0, 1755580504, "水池建设", "#4e90b1", "dark", null, null, null], ["t3_1mu9pni", "基础建设之还好，一切都如愿以偿", "Tricer1997", 15, 0, 1755581307, "水池建设", "#4e90b1", "dark", null, null, null], ["t3_1mu9rym", "基础建设之你妈大逼人人插", "Tricer1997", 12, 0, 1755581515, "水池建设", "#4e90b1", "dark", null, null, null], ["t3_1mu9v2b", "基础建设之我是荷兰人", "Tricer1997", 8, 0, 1755581824, "水池建设", "#4e90b1", "dark", null, null, null], ["t3_1muavxa", "看到一群果蛆评论抗日老兵文革时被SMplay留下后遗症，我就感到越来越喜欢腊主席了", "MurkyChallenge3788", 10, 0, 1755585444, null, "", "dark", null, null, null], ["t3_1muc7qr", "经典回顾", "No-Airline131", 13, 0, 1755590359, "经典回顾", "#bb9344", "dark", null, null, null], ["t3_1muejt4", "韩国人这么大仇？", "youmo-ebike", 15, 4, 1755599084, null, "", "dark", null, null, null], ["t3_1mueqmd", "评论区是新加坡浪友么？", "youmo-ebike", 6, 1, 1755599732, null, "", "dark", null, null, null], ["t3_1muffz3", "幽默菜单", "youmo-ebike", 20, 5, 1755601995, null, "", "dark", null, null, null], ["t3_1mufqw0", "这种的是处女吗？", "Acceptable_Ad7280", 12, 2, 1755602907, "处女鉴别", "#ab5485", "light", null, null, null], ["t3_1muj36a", "爷爷泡的茶", "Master_Ad_9987", 1, 0, 1755611611, null, "", "dark", null, null, null], ["t3_1muj3u7", "经典回顾之能不能冷静一些？", "Acceptable_Ad7280", 16, 0, 1755611655, "经典回顾", "#bb9344", "light", null, null, null], ["t3_1mukd5w", "🐵🦍👳🏾‍♂️🦧🦍🐒🙊🌚👳🏿‍♂️", "Equivalent_Panic5780", 1, 0, 1755614476, null, "", "dark", null, null, null], ["t3_1mupr1e", "何游戏", "Worldly-Row-1486", 19, 3, 1755626054, null, "", "dark", null, null, null], ["t3_1mur1ib", "集美们以后不要说操逼了，要把男的放在被动方，大家以后说裹吊，集美们一定要觉醒女权主义！", "Acceptable_Ad7280", 18, 2, 1755628821, "处女鉴别", "#ab5485", "light", null, null, null], ["t3_1mur4ah", "大和 隐忍", "Acceptable_Ad7280", 11, 8, 1755628987, "处女鉴别", "#ab5485", "light", null, null, null], ["t3_1musyh9", "这里是涿州人之家吗", "neko_canyon", 8, 3, 1755632922, null, "", "dark", null, null, null], ["t3_1muz7f0", "既然你是穷蛆 你就应该支持左b", "OverallPlaymen", 15, 6, 1755647454, null, "", "dark", null, null, null], ["t3_1mv1u9u", "幽默山东人", "youmo-ebike", 14, 2, 1755654518, null, "", "dark", null, null, null], ["t3_1mv2idj", "最殖幻想", "Tricer1997", 11, 1, 1755656432, null, "", "dark", null, null, null], ["t3_1mv3a0j", "水友们吃吗", "Stoned-Zheng-Li-73i", 15, 2, 1755658623, null, "", "dark", null, null, null], ["t3_1mv4pkn", "謝謝你喜歡水友", "Acceptable_Ad7280", 9, 1, 1755662941, "水池建设", "#4e90b1", "light", null, null, null], ["t3_1mvazqt", "有没有人觉得自助餐很支", "Alarmed_Apricot_603", 14, 5, 1755685595, null, "", "dark", null, null, null], ["t3_1mvehgs", "冲浪往事之冲浪公寓", "Acceptable_Ad7280", 14, 0, 1755695693, "冲浪往事", "#2943d6", "light", null, null, null], ["t3_1mvf9z7", "高雅文学之斯威夫特拷打母人", "Acceptable_Ad7280", 7, 2, 1755697627, "高雅文学", "#d12e2e", "light", null, null, null], ["t3_1mvfevt", "高雅文学之妹控老嗨海明威", "Acceptable_Ad7280", 7, 0, 1755697954, "高雅文学", "#d12e2e", "light", null, null, null], ["t3_1mvh576", "选哪个", "Acceptable_Ad7280", 3, 0, 1755701893, "划水日常", "#639c65", "light", null, null, null], ["t3_1mvhy8b", "科研题微", "LivingNeat4537", 2, 1, 1755703650, null, "", "dark", null, null, null], ["t3_1mvpziw", "何事件", "Worldly-Row-1486", 15, 1, 1755720935, null, "", "dark", null, null, null], ["t3_1mw1kfy", "没有自杀的原因", "Cnanobuta", 6, 0, 1755751634, null, "", "dark", null, null, null], ["t3_1mw64tz", "巴比伦大贞妇", "Acceptable_Ad7280", 6, 0, 1755768391, "处女鉴别", "#ab5485", "light", null, null, null], ["t3_1mw6bg1", "哪位水友", "Acceptable_Ad7280", 16, 0, 1755769102, "陆地见闻", "#8658a7", "light", null, null, null], ["t3_1mw6dwq", "经典回顾之圣遗物", "Acceptable_Ad7280", 11, 0, 1755769357, "经典回顾", "#bb9344", "light", null, null, null], ["t3_1mw6g0p", "何必意", "Acceptable_Ad7280", 1, 0, 1755769570, "陆地见闻", "#8658a7", "light", null, null, null], ["t3_1mw6gj9", "何意味", "Acceptable_Ad7280", 6, 2, 1755769626, "陆地见闻", "#8658a7", "light", null, null, null], ["t3_1mw6ija", "绿友，隐忍", "Acceptable_Ad7280", 15, 0, 1755769828, "陆地见闻", "#8658a7", "light", null, null, null], ["t3_1mw7brs", "經典回頋之我的習土", "Nevetherless1929", 15, 0, 1755772685, null, "", "dark", null, null, null], ["t3_1mw7f7i", "我发现超管很清真", "Nevetherless1929", 11, 0, 1755773002, null, "", "dark", null, null, null], ["t3_1mw8ujh", "都是谁家小棉袄？", "Nevetherless1929", 13, 2, 1755777395, null, "", "dark", null, null, null], ["t3_1mw978k", "珍珠党好女孩", "youmo-ebike", 3, 0, 1755778358, null, "", "dark", null, null, null], ["t3_1mw9az9", "汉族，创新", "youmo-ebike", 11, 0, 1755778635, null, "", "dark", null, null, null], ["t3_1mwxb75", "光什么岁月", "Worldly-Row-1486", 8, 1, 1755838101, null, "", "dark", null, null, null], ["t3_1mx1ai3", "几点打", "Acceptable_Ad7280", 14, 2, 1755852892, "划水日常", "#639c65", "light", null, null, null], ["t3_1mx1bq1", "什么岛？", "Acceptable_Ad7280", 10, 1, 1755853021, "陆地见闻", "#8658a7", "light", null, null, null], ["t3_1mx1l46", "吃💩🐷", "youmo-ebike", 12, 1, 1755854016, null, "", "dark", null, null, null], ["t3_1mx5w56", "这种的是好女孩吗？", "Acceptable_Ad7280", 16, 3, 1755867684, "处女鉴别", "#ab5485", "light", null, null, null], ["t3_1mx5ynr", "かがやき", "Acceptable_Ad7280", 7, 0, 1755867856, "陆地见闻", "#8658a7", "light", null, null, null], ["t3_1mx63g9", "何意味", "Acceptable_Ad7280", 5, 0, 1755868198, "陆地见闻", "#8658a7", "light", null, null, null], ["t3_1mx6wuw", "何人种", "Acceptable_Ad7280", 19, 3, 1755870231, "陆地见闻", "#8658a7", "light", null, null, null], ["t3_1mx7ro2", "佳兵者不祥之器，圣人不得已而用之", "youmo-ebike", 10, 0, 1755872268, null, "", "dark", null, null, null], ["t3_1mxl4ca", "何意味", "Acceptable_Ad7280", 11, 0, 1755903308, "陆地见闻", "#8658a7", "light", null, null, null], ["t3_1mxtyma", "经典回顾之大西Chudjak", "Acceptable_Ad7280", 10, 1, 1755930178, "文艺复兴", "#635ba4", "light", null, null, null], ["t3_1mxwl5z", "哪位？", "Acceptable_Ad7280", 12, 1, 1755940064, "划水日常", "#639c65", "light", null, null, null], ["t3_1my6r4o", "何意味", "Acceptable_Ad7280", 10, 0, 1755968376, "陆地见闻", "#8658a7", "light", null, null, null], ["t3_1my70qf", "何人种", "Acceptable_Ad7280", 16, 2, 1755968987, "划水日常", "#639c65", "light", null, null, null], ["t3_1mykreu", "何人种", "Acceptable_Ad7280", 14, 7, 1756004820, "陆地见闻", "#8658a7", "light", null, null, null], ["t3_1mylqgd", "这种的符合教义吗？", "Acceptable_Ad7280", 17, 3, 1756008051, "处女鉴别", "#ab5485", "light", null, null, null], ["t3_1mz2n3i", "铭记历史", "Worldly-Row-1486", 14, 2, 1756058433, null, "", "dark", null, null, null], ["t3_1mzmtr2", "喝点", "Lost_Chemist_5615", 6, 0, 1756117743, null, "", "dark", null, null, null], ["t3_1mzsnb3", "哪位水友", "Acceptable_Ad7280", 6, 0, 1756133609, "文艺复兴", "#635ba4", "light", null, null, null], ["t3_1mzx51m", "怎么一扭头", "Effective-Dare-7406", 17, 0, 1756143463, null, "", "dark", null, null, null], ["t3_1mzx6g4", "我的家在哪", "Lost_Chemist_5615", 28, 12, 1756143550, null, "", "dark", null, null, null], ["t3_1mzznox", "谁回来了", "Left_Orchid3813", 12, 3, 1756149073, null, "", "dark", null, null, null], ["t3_1mzzt9y", "这次感觉是真的要散了，每次搬家人都越来越少，很多老面孔基本上都看不到了，真的搬家搬累了感觉，这次真的要散了吗？", "Late_Activity_4244", 13, 9, 1756149416, null, "", "dark", null, null, null], ["t3_1mzzvvz", "什么人种", "Left_Orchid3813", 8, 1, 1756149579, null, "", "dark", null, null, null], ["t3_1mzzzfe", "经典回顾之我那么幽默后面一群傻逼都不笑", "Effective-Dare-7406", 16, 2, 1756149808, null, "", "dark", null, null, null], ["t3_1n005aw", "经典回顾之闪友们搞了个日~本的了吗", "Effective-Dare-7406", 13, 4, 1756150182, null, "", "dark", null, null, null], ["t3_1n00ide", "汉族 废物", "Left_Orchid3813", 25, 4, 1756151029, null, "", "dark", null, null, null], ["t3_1n038qh", "汉族 崛起", "Left_Orchid3813", 10, 0, 1756157243, null, "", "dark", null, null, null], ["t3_1n03jyu", "一位大白老英雄屠了105沪蛆，另一位大白老英雄屠了106沪蛆", "Late_Activity_4244", 14, 2, 1756157969, null, "", "dark", null, null, null], ["t3_1n04g84", "跨栏失败", "Acceptable_Ad7280", 10, 1, 1756160117, "陆地见闻", "#8658a7", "light", null, null, null], ["t3_1n0905h", "诶美支的party真是太多了，对我这个i人来说简直太难受了", "Left_Orchid3813", 5, 4, 1756172130, null, "", "dark", null, null, null], ["t3_1n09gba", "这就是你们这群神蛆反贼的新家吗？", "Zhidihuimieba", 14, 4, 1756173385, null, "", "dark", null, null, null], ["t3_1n0ctsu", "黄种人为什么长的丑 主要就是鼻梁低加咪咪眼", "Left_Orchid3813", 12, 5, 1756183814, null, "", "dark", null, null, null], ["t3_1n0d9hl", "欧猪 幻想", "Left_Orchid3813", 10, 2, 1756185331, null, "", "dark", null, null, null], ["t3_1n0dtgl", "太阳升起", "No-Airline131", 16, 3, 1756187372, null, "", "dark", null, null, null], ["t3_1n0e0rn", "是粤🐒吗", "neko_canyon", 18, 2, 1756188113, null, "", "dark", null, null, null], ["t3_1n0egre", "90年代的日本是不是黄种人真正的巅峰？", "Left_Orchid3813", 18, 7, 1756189782, null, "", "dark", null, null, null], ["t3_1n0evvi", "每次看到支那猪说日本科技落后了就想笑，可能支那猪所谓的高科技就是什么ai新能源汽车之类的，尤其是那个新能源汽车弱智程度不亚于你小时候玩的电动四驱车就跟组装手机一样是毫无技术含量的活，真正工业瑰宝的油车发动机和变速箱支那猪一个都造不出来，日爹一个爱信变速箱就能给支那猪卡脖子了，一断供百分之90的支产燃油车都造不出来。", "Left_Orchid3813", 16, 3, 1756191441, null, "", "dark", null, null, null], ["t3_1n0frwt", "是否变成牛妹是黑丸的唯一出路", "Future_Ask_3034", 1, 0, 1756194942, null, "", "dark", null, null, null], ["t3_1n0g48l", "台巴还能说话吗？", "Remarkable_Score227", 8, 2, 1756196317, null, "", "dark", null, null, null], ["t3_1n0ge0d", "隔壁浪太监真把我给整笑了", "Turbulent_Shop_1987", 21, 6, 1756197408, null, "", "dark", null, null, null], ["t3_1n0gft4", "是晶姐么", "youmo-ebike", 10, 0, 1756197613, null, "", "dark", null, null, null], ["t3_1n0hr7z", "支那猪出来受死！费拉支那猪试图赖蹭欧美大爹秩序，零成本上桌的嘴脸一览无余，你永远都是支那猪。这不排能行吗？别以为在德国就能跑得了，等我入籍就去投AFD。德支管不了你，本满洲大爹管得了你，专业尼堪汉畜屠户多尔衮多铎老英雄归来，", "[deleted]", 1, 0, 1756202704, null, "", "dark", null, "", "dark"], ["t3_1n0iawx", "支那猪出来受死，费拉支那猪试图赖蹭欧美大爹秩序，零成本上桌的费拉嘴脸一览无余，这种的必须拿武士刀砍了", "Acceptable_Ad7280", 24, 10, 1756204654, "しなぶたかたな ", "#ff0000", "light", null, null, null], ["t3_1n0lqxz", "是这样的，感觉穷傻逼跨畜炒作🐶就和喜欢说自己有玉玉症的母畜织女一样弱智", "Late_Activity_4244", 13, 0, 1756214605, null, "", "dark", null, null, null], ["t3_1n0oflx", "为什么民小蛆普遍喜欢吹捧通古斯韩支，如果民小蛆都是人均通古斯爱好者、喜欢吹捧半岛东百🐶的话，那为什么不去吹最纯正的通古斯人种即东百三省东百🐶？可我看平时民小蛆也挺喜欢黑东百地区的，为什么脑残民小蛆能弱智和精神分裂成这样的？", "Late_Activity_4244", 2, 0, 1756220950, null, "", "dark", null, null, null], ["t3_1n0txin", "支是一个形容词，形容那些对“支”字反应很强烈，看到就气急败坏语言混乱，说明这个人很支；如果你毫不在意，说明你不“支”", "MurkyChallenge3788", 1, 0, 1756233255, null, "", "dark", null, null, null], ["t3_1n0u01k", "支是一个形容词，形容那些看到“支”字反应很强烈，看到就气急败坏语言混乱的人，可以说这个人很支；如果你毫不在意，说明你不“支”，君子生于支那，非君子之过也", "MurkyChallenge3788", 31, 5, 1756233415, null, "", "dark", null, null, null], ["t3_1n0vte6", "好揍", "Shinanobuta87", 2, 0, 1756237591, null, "", "dark", null, null, null], ["t3_1n0w1oa", "哪里人", "youmo-ebike", 13, 1, 1756238129, null, "", "dark", null, null, null], ["t3_1n13umm", "父权制房门", "[deleted]", 1, 0, 1756257762, null, "", "dark", null, "", "dark"], ["t3_1n13wa8", "父权制房门", "Hefty_Transition6334", 9, 0, 1756257892, null, "", "dark", null, null, null], ["t3_1n14nkd", "我以为这ebike没人要了呢", "youmo-ebike", 15, 0, 1756260037, null, "", "dark", null, null, null], ["t3_1n19tvj", "經典回顧", "Shinanobuta87", 15, 20, 1756277037, null, "", "dark", null, null, null], ["t3_1n1djbq", "经典回顾之东百🐶嗯造桌饺", "Late_Activity_4244", 6, 0, 1756291201, null, "", "dark", null, null, null], ["t3_1n1eryy", "經典回顧之東北狗跳樓", "Shinanobuta87", 5, 0, 1756295175, null, "", "dark", null, null, null], ["t3_1n1k9vg", "台巴你怎么瞎骂完又删贴了，我说你投票给舔共蓝白党也不丢人吧，你们台湾不是有四成人投蓝白吗", "No-Pitch8412", 1, 0, 1756308734, null, "", "dark", null, null, null], ["t3_1n1lgn9", "哪位KanagawaWave用户", "Acceptable_Ad7280", 18, 1, 1756311416, "划水日常", "#639c65", "light", null, null, null], ["t3_1n1mf7b", "这种的是好女孩吗", "Acceptable_Ad7280", 13, 2, 1756313523, "处女鉴别", "#ab5485", "light", null, null, null], ["t3_1n1mmle", "上帝你炸了台多瑪吧", "Ill-Organization3505", 5, 0, 1756313994, null, "", "dark", null, null, null], ["t3_1n1mzn8", "致浪太监某掌印及诸火者一封信", "Shinanobuta87", 1, 0, 1756314777, null, "", "dark", null, null, null], ["t3_1n1oi3j", "有无新天地", "Worldly-Row-1486", 6, 1, 1756318133, null, "", "dark", null, null, null], ["t3_1n1wyse", "街上如何辨认出好女孩", "youmo-ebike", 13, 1, 1756338171, null, "", "dark", null, null, null], ["t3_1n2e1jm", "China黑也得提高一下姿势水平", "youmo-ebike", 5, 0, 1756391969, null, "", "dark", null, null, null], ["t3_1n2g9lw", "这种的是好女孩吗", "Acceptable_Ad7280", 9, 1, 1756396902, "陆地见闻", "#8658a7", "light", null, null, null], ["t3_1n2h3rs", "不魔怔了", "Acceptable_Ad7280", 6, 0, 1756398783, "水池建设", "#4e90b1", "light", null, null, null], ["t3_1n2h5ht", "日常", "Acceptable_Ad7280", 17, 4, 1756398896, "水池建设", "#4e90b1", "light", null, null, null], ["t3_1n2ua92", "明智光秀率兵攻打本能寺,阵前观火起,对诸将说:“cnm的,燃起来了!”", "youmo-ebike", 2, 1, 1756430844, null, "", "dark", null, null, null], ["t3_1n2um4r", "明智光秀率兵攻打本能寺,阵前观火起,对诸将说:cnm的,燃起来了", "youmo-ebike", 10, 1, 1756431767, null, "", "dark", null, null, null], ["t3_1n35y6y", "我的学校是LJHC", "Acceptable_Ad7280", 10, 1, 1756470156, "陆地见闻", "#8658a7", "light", null, null, null], ["t3_1n3d1pb", "雅", "Aromatic-Chipmunk-80", 1, 0, 1756487079, null, "", "dark", null, null, null], ["t3_1n3f7o1", "幽默手机", "youmo-ebike", 7, 0, 1756491976, null, "", "dark", null, null, null], ["t3_1n3pofe", "智械危机", "Acceptable_Ad7280", 16, 2, 1756519035, "陆地见闻", "#8658a7", "light", null, null, null], ["t3_1n3v1fy", "今日已学习", "Acceptable_Ad7280", 18, 0, 1756537117, "陆地见闻", "#8658a7", "light", null, null, null], ["t3_1n3vf7m", "习近平是你枝建国以来唯一一个北方主席，就开始了你枝的飞速衰退，和传统大枝最后一个王朝清朝一样，一堆野猪皮东北狗鸠占鹊巢，用傲慢自大的天朝上国思维开始飞速被列强暴打。是否证明北方人真的是傻逼？智商落后南方人一个档次？", "Zhidihuimieba", 18, 3, 1756538553, null, "", "dark", null, null, null], ["t3_1n3wysc", "还是处女吗？", "Acceptable_Ad7280", 20, 8, 1756544662, "陆地见闻", "#8658a7", "light", null, null, null], ["t3_1n4c5c1", "回家看到这个什么反应？", "youmo-ebike", 8, 0, 1756586821, null, "", "dark", null, null, null], ["t3_1n69ldd", "为什么总是有蜘蛛在公共场合外放抖音", "Od_zer", 19, 0, 1756785415, null, "", "dark", null, null, null], ["t3_1n6jwyj", "红迪怎么还引入AI查成分了", "Turbulent_Shop_1987", 1, 0, 1756820766, null, "", "dark", null, null, null], ["t3_1n73wcy", "刚刚做了个meme", "youmo-ebike", 8, 1, 1756869078, null, "", "dark", null, null, null], ["t3_1n7g6xj", "盼路易十六归", "Acceptable_Ad7280", 1, 1, 1756909392, "陆地见闻", "#8658a7", "light", null, null, null], ["t3_1n7x9gs", "这种的是好女孩吗", "neko_canyon", 16, 0, 1756949870, null, "", "dark", null, null, null], ["t3_1n8b9ei", "哪位", "Acceptable_Ad7280", 10, 2, 1756995082, "陆地见闻", "#8658a7", "light", null, null, null], ["t3_1n8ljcq", "什么算术教室", "Acceptable_Ad7280", 13, 2, 1757018383, "陆地见闻", "#8658a7", "light", null, null, null], ["t3_1n95n3e", "Google pixel的ai字幕好用吗，Netflix好多片源没有我想要的语种字幕", "One-Mongoose-8138", 3, 7, 1757079783, null, "", "dark", null, null, null], ["t3_1nbjpci", "以前看未闻花名没什么感觉，感谢日漫痴提醒，已列入圣地巡礼清单", "MurkyChallenge3788", 30, 2, 1757325899, null, "", "dark", null, null, null], ["t3_1ndeefh", "新家 后面忘了", "No-Airline131", 1, 0, 1757511362, null, "", "dark", null, null, null]]</script>
         <script>
-            function sortPosts() {{
-                const container = document.getElementById('posts-container');
-                const posts = Array.from(container.getElementsByClassName('post-listing'));
-                const sortBy = document.getElementById('sortOrder').value;
+            const SUBREDDIT_NAME = "CapybaraHome";
+            const BASE_POST_PATH = "./" + SUBREDDIT_NAME + "/";
+            
+            // This MUST match --row-height in CSS
+            const ROW_HEIGHT = 32; 
+            const BUFFER_ROWS = 24;
 
-                // remember user choice
-                sessionStorage.setItem("reddit_archive_sort", sortBy);
+            const rawPosts = JSON.parse(document.getElementById('posts-data').textContent);
+            const posts = rawPosts.map((row) => ({
+                id: row[0], title: row[1], author: row[2],
+                score: row[3] | 0, comments: row[4] | 0, time: row[5] | 0,
+                link_flair_text: row[6], link_flair_bg: row[7], link_flair_color: row[8],
+                author_flair_text: row[9], author_flair_bg: row[10], author_flair_color: row[11],
+            }));
 
-                // Check if we need ascending or descending
-                const isAsc = sortBy.endsWith('-asc');
-                const key = isAsc ? sortBy.replace('-asc', '') : sortBy;
+            const sortSelect = document.getElementById('sortOrder');
+            const searchBox = document.getElementById('searchBox');
+            const summary = document.getElementById('summary');
+            const viewport = document.getElementById('list-viewport');
+            const spacer = document.getElementById('list-spacer');
 
-                posts.sort((a, b) => {{
-                    let valA = parseInt(a.getAttribute('data-' + key));
-                    let valB = parseInt(b.getAttribute('data-' + key));
-                    
-                    // If Ascending: valA - valB (1, 2, 3...)
-                    // If Descending: valB - valA (9, 8, 7...)
-                    return isAsc ? valA - valB : valB - valA;
-                }});
+            let order = posts.map((_, i) => i);
+            let filteredOrder = order.slice();
+            let activeQuery = '';
+            let pendingRaf = 0;
 
-                // Re-insert posts in the new order
-                posts.forEach(post => container.appendChild(post));
-            }}
-            document.addEventListener("DOMContentLoaded", function () {{
-                const savedSort = sessionStorage.getItem("reddit_archive_sort");
+            function escapeHtml(value) {
+                return String(value).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+            }
 
-                if (savedSort) {{
-                    document.getElementById("sortOrder").value = savedSort;
-                }}
+            function renderFlair(text, bg, textColor) {
+                if (!text) return "";
+                const safeBg = (bg && bg.startsWith("#")) ? bg : "#edeff1";
+                const color = textColor === "light" ? "#ffffff" : "#1c1c1c";
+                return `<span class="flair" style="background-color:${safeBg};color:${color};">${escapeHtml(text)}</span>`;
+            }
 
-                sortPosts(); // apply sorting immediately
-            }});
+            function formatDate(ts) {
+                return new Date(ts * 1000).toLocaleDateString(undefined, { year: 'numeric', month: 'short', day: '2-digit' });
+            }
+
+            function render() {
+                const scrollTop = window.scrollY || document.documentElement.scrollTop || 0;
+                const viewportHeight = window.innerHeight || document.documentElement.clientHeight || 800;
+                const start = Math.max(0, Math.floor(scrollTop / ROW_HEIGHT) - BUFFER_ROWS);
+                const end = Math.min(filteredOrder.length, Math.ceil((scrollTop + viewportHeight) / ROW_HEIGHT) + BUFFER_ROWS);
+
+                viewport.style.transform = `translateY(${start * ROW_HEIGHT}px)`;
+                viewport.innerHTML = '';
+                const fragment = document.createDocumentFragment();
+
+                for (let i = start; i < end; i++) {
+                    const post = posts[filteredOrder[i]];
+                    const row = document.createElement('div');
+                    row.className = 'post-listing';
+                    row.style.top = `${(i - start) * ROW_HEIGHT}px`;
+                    const linkFlair = renderFlair(post.link_flair_text, post.link_flair_bg, post.link_flair_color);
+                    const authorFlair = renderFlair(post.author_flair_text, post.author_flair_bg, post.author_flair_color);
+                    row.innerHTML = `
+                        <span class="date">${formatDate(post.time)}:</span>
+                        <div class="content">
+                            <a class="title" href="${BASE_POST_PATH + post.id}.html" target="_blank" rel="noopener noreferrer">
+                                ${escapeHtml(post.title)} ${linkFlair}
+                            </a>
+                            <span class="author">- /u/${escapeHtml(post.author)} ${authorFlair}</span>
+                            <span class="pill">+${post.score.toLocaleString()} points</span>
+                            <span class="pill">${post.comments.toLocaleString()} comments</span>
+                        </div>
+                    `;
+                    fragment.appendChild(row);
+                }
+                viewport.appendChild(fragment);
+            }
+
+            function applyFilterAndRender() {
+                const query = activeQuery.trim().toLowerCase();
+                filteredOrder = query ? order.filter(idx => posts[idx].title.toLowerCase().includes(query) || posts[idx].author.toLowerCase().includes(query)) : order.slice();
+                spacer.style.height = `${filteredOrder.length * ROW_HEIGHT}px`;
+                summary.textContent = `${filteredOrder.length.toLocaleString()} / ${posts.length.toLocaleString()} posts`;
+                render();
+            }
+
+            function applySort() {
+                const sortBy = sortSelect.value;
+                sessionStorage.setItem('reddit_archive_sort', sortBy);
+                if (sortBy === 'time') order.sort((a, b) => posts[b].time - posts[a].time);
+                else if (sortBy === 'time-asc') order.sort((a, b) => posts[a].time - posts[b].time);
+                else if (sortBy === 'score') order.sort((a, b) => posts[b].score - posts[a].score);
+                else if (sortBy === 'comments') order.sort((a, b) => posts[b].comments - posts[a].comments);
+                applyFilterAndRender();
+            }
+
+            sortSelect.addEventListener('change', applySort);
+            searchBox.addEventListener('input', () => { activeQuery = searchBox.value || ''; applyFilterAndRender(); });
+            window.addEventListener('scroll', () => { if (!pendingRaf) pendingRaf = requestAnimationFrame(() => { pendingRaf = 0; render(); }); }, { passive: true });
+            window.addEventListener('resize', render);
+
+            document.addEventListener('DOMContentLoaded', () => {
+                const savedSort = sessionStorage.getItem('reddit_archive_sort');
+                if (savedSort) sortSelect.value = savedSort;
+                applySort();
+            });
         </script>
     </body>
 </html>

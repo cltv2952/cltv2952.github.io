@@ -4,37 +4,12 @@
         <title>我想有个批</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <style>
-            .crosspost {
-                border: 1px solid #888;
-                margin-top: 10px;
-                padding: 10px;
-                background-color: #f6f7f8;
-            }
-            .crosspost-header {
-                font-size: 12px;
-                color: #555;
-                margin-bottom: 6px;
-            }
-            .crosspost-content {
-                padding-left: 5px;
-            }
-            .submission, .comment { padding-left: 20px; padding-right: 4px; font-family: verdana, arial, helvetica, sans-serif; }
-            .comment { margin-top: 4px; margin-bottom: 4px; border: 1px solid black; }
-            .submission { border: 2px solid blue; padding-bottom: 10px; }
-            .hidden { display: none; }
-            .userinfo { font-size: 12px; color: #555; }
-            .flair {
-                padding: 2px 6px; border-radius: 20px; font-size: 10px; font-weight: bold;
-                margin-left: 5px; display: inline-block; vertical-align: middle; line-height: 1.2;
-            }
-        </style>
+        <link rel="stylesheet" href="../../assets/post-style.css">
     </head>
     <body>
-        <a href="../geltopia.html#t3_146ep4b" class="back-link">← Back to Index</a>
             <div class="submission" id="t3_146ep4b">
                 <p class="userinfo">
-                    <a href="https://old.reddit.com/u/Gekklog">Gekklog</a>
+                    <a href="https://old.reddit.com/u/Gekklog">u/Gekklog</a>
                     | <span class="score">3 points</span>
                     | <a class="timestamp" href="https://old.reddit.com/r/geltopia/comments/146ep4b/我想有个批/">Jun 11 2023 07:40:29</a>
                 </p>
@@ -45,7 +20,7 @@
     <div class="comment" id="t1_jnqen3g">
         <p class="userinfo">
             <a class="toggle_hide_button" href="javascript:void(0)" onclick="toggle_collapse(this.parentElement.parentElement)">[-]</a>
-            <a href="https://old.reddit.com/u/Sager_Forever">Sager_Forever</a>
+            <a href="https://old.reddit.com/u/Sager_Forever">u/Sager_Forever</a>
             | <span class="score">3 points</span>
             | <a class="timestamp" href="https://old.reddit.com/r/geltopia/comments/146ep4b/我想有个批/jnqen3g/">Jun 11 2023 10:26:21</a>
         </p>
@@ -54,7 +29,7 @@
     <div class="comment" id="t1_jnvi00r">
         <p class="userinfo">
             <a class="toggle_hide_button" href="javascript:void(0)" onclick="toggle_collapse(this.parentElement.parentElement)">[-]</a>
-            <a href="https://old.reddit.com/u/Rekenqu">Rekenqu</a>
+            <a href="https://old.reddit.com/u/Rekenqu">u/Rekenqu</a>
             | <span class="score">1 points</span>
             | <a class="timestamp" href="https://old.reddit.com/r/geltopia/comments/146ep4b/我想有个批/jnvi00r/">Jun 12 2023 15:27:57</a>
         </p>
@@ -63,24 +38,12 @@
     <div class="comment" id="t1_jokyub9">
         <p class="userinfo">
             <a class="toggle_hide_button" href="javascript:void(0)" onclick="toggle_collapse(this.parentElement.parentElement)">[-]</a>
-            <a href="https://old.reddit.com/u/dayan_gurun">dayan_gurun</a><span class="flair" style="background-color: #5a74cc; color: #ffffff;">紫色</span>
+            <a href="https://old.reddit.com/u/dayan_gurun">u/dayan_gurun</a><span class="flair" style="background-color: #5a74cc; color: #ffffff;">紫色</span>
             | <span class="score">1 points</span>
             | <a class="timestamp" href="https://old.reddit.com/r/geltopia/comments/146ep4b/我想有个批/jokyub9/">Jun 18 2023 21:14:47</a>
         </p>
         <div class="collapsible">
             <p>男人把自己打扮成女人给男人操，屁眼怪真该死。</p></div></div>
     </body>
-    <script>
-        function toggle_collapse(comment_div) {{
-            var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
-            var collapsible = comment_div.getElementsByClassName("collapsible")[0];
-            if (collapsible.classList.contains("hidden")) {{
-                collapsible.classList.remove("hidden");
-                button.innerText = "[-]";
-            }} else {{
-                collapsible.classList.add("hidden");
-                button.innerText = "[+]";
-            }}
-        }}
-    </script>
+    <script src="../../assets/post-script.js"></script>
 </html>

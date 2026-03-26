@@ -4,48 +4,23 @@
         <title>为什么有时候明明有很多赞的回复也会被折叠？Reddit的折叠机制到底是怎样？</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <style>
-            .crosspost {
-                border: 1px solid #888;
-                margin-top: 10px;
-                padding: 10px;
-                background-color: #f6f7f8;
-            }
-            .crosspost-header {
-                font-size: 12px;
-                color: #555;
-                margin-bottom: 6px;
-            }
-            .crosspost-content {
-                padding-left: 5px;
-            }
-            .submission, .comment { padding-left: 20px; padding-right: 4px; font-family: verdana, arial, helvetica, sans-serif; }
-            .comment { margin-top: 4px; margin-bottom: 4px; border: 1px solid black; }
-            .submission { border: 2px solid blue; padding-bottom: 10px; }
-            .hidden { display: none; }
-            .userinfo { font-size: 12px; color: #555; }
-            .flair {
-                padding: 2px 6px; border-radius: 20px; font-size: 10px; font-weight: bold;
-                margin-left: 5px; display: inline-block; vertical-align: middle; line-height: 1.2;
-            }
-        </style>
+        <link rel="stylesheet" href="../../assets/post-style.css">
     </head>
     <body>
-        <a href="../Sina.html#t3_1f53rgs" class="back-link">← Back to Index</a>
             <div class="submission" id="t3_1f53rgs">
                 <p class="userinfo">
-                    <a href="https://old.reddit.com/u/NorthEgg2227">NorthEgg2227</a>
+                    <a href="https://old.reddit.com/u/NorthEgg2227">u/NorthEgg2227</a>
                     | <span class="score">2 points</span>
                     | <a class="timestamp" href="https://old.reddit.com/r/Sina/comments/1f53rgs/为什么有时候明明有很多赞的回复也会被折叠reddit的折叠机制到底是怎样/">Aug 31 2024 03:24:51</a>
                 </p>
                 <strong>为什么有时候明明有很多赞的回复也会被折叠？Reddit的折叠机制到底是怎样？</strong>
-                <p><a href="https://www.reddit.com/gallery/1f53rgs">https://www.reddit.com/gallery/1f53rgs</a></p><p><p>而且根据我观察，假如每个回复串第一层显示x个回复，第二层显示y个回复，第三层显示z个回复……每一层超出一定量的回复被折叠，那么似乎每一个回复串的x,y,z是不同的。那么Reddit的回复串显示回复的顺序和格式到底是什么样的？</p></p>
+                <p><a href="https://www.reddit.com/gallery/1f53rgs">https://www.reddit.com/gallery/1f53rgs</a></p><p>而且根据我观察，假如每个回复串第一层显示x个回复，第二层显示y个回复，第三层显示z个回复……每一层超出一定量的回复被折叠，那么似乎每一个回复串的x,y,z是不同的。那么Reddit的回复串显示回复的顺序和格式到底是什么样的？</p>
                 
             </div>
     <div class="comment" id="t1_lkqm436">
         <p class="userinfo">
             <a class="toggle_hide_button" href="javascript:void(0)" onclick="toggle_collapse(this.parentElement.parentElement)">[-]</a>
-            <a href="https://old.reddit.com/u/qbmy">qbmy</a>
+            <a href="https://old.reddit.com/u/qbmy">u/qbmy</a>
             | <span class="score">2 points</span>
             | <a class="timestamp" href="https://old.reddit.com/r/Sina/comments/1f53rgs/为什么有时候明明有很多赞的回复也会被折叠reddit的折叠机制到底是怎样/lkqm436/">Aug 31 2024 05:36:28</a>
         </p>
@@ -65,30 +40,25 @@
     <div class="comment" id="t1_lkreg01">
         <p class="userinfo">
             <a class="toggle_hide_button" href="javascript:void(0)" onclick="toggle_collapse(this.parentElement.parentElement)">[-]</a>
-            <a href="https://old.reddit.com/u/NorthEgg2227">NorthEgg2227</a>
+            <a href="https://old.reddit.com/u/NorthEgg2227">u/NorthEgg2227</a>
             | <span class="score">1 points</span>
             | <a class="timestamp" href="https://old.reddit.com/r/Sina/comments/1f53rgs/为什么有时候明明有很多赞的回复也会被折叠reddit的折叠机制到底是怎样/lkreg01/">Aug 31 2024 08:30:25</a>
         </p>
         <div class="collapsible">
-            <p>感谢你的回答，你的版本的ui这个帖子并没有我的截图里显示的更多回复，1更多回复，9更多回复吗？ 我猜测Reddit回复串应该对于每一层都有一个数量上限，超出就会主动折叠，可能是再加上你说的那些规则，就导致了每个回复串每一层的未折叠回复数不同</p>
-<p>https://preview.redd.it/vg04yozl9wld1.jpeg?width=1220&amp;format=pjpg&amp;auto=webp&amp;s=09905be62510c7986b6f3728f155d6ec1190744f</p>
+            <p>感谢你的回答，你的版本的ui这个帖子并没有我的截图里显示的更多回复，1更多回复，9更多回复吗？ 我猜测Reddit回复串应该对于每一层都有一个数量上限，超出就会主动折叠，可能是再加上你说的那些规则，就导致了每个回复串每一层的未折叠回复数不同<br><br>https://preview.redd.it/vg04yozl9wld1.jpeg?width=1220&amp;format=pjpg&amp;auto=webp&amp;s=09905be62510c7986b6f3728f155d6ec1190744f</p>
     <div class="comment" id="t1_lkrm393">
         <p class="userinfo">
             <a class="toggle_hide_button" href="javascript:void(0)" onclick="toggle_collapse(this.parentElement.parentElement)">[-]</a>
-            <a href="https://old.reddit.com/u/qbmy">qbmy</a>
+            <a href="https://old.reddit.com/u/qbmy">u/qbmy</a>
             | <span class="score">3 points</span>
             | <a class="timestamp" href="https://old.reddit.com/r/Sina/comments/1f53rgs/为什么有时候明明有很多赞的回复也会被折叠reddit的折叠机制到底是怎样/lkrm393/">Aug 31 2024 09:21:06</a>
         </p>
         <div class="collapsible">
-            <p>我把两个ui都截了个图，给你对比一下，上半部分是旧的ui，下半部分是新的ui，我打开帖子以后什么都没点，完全默认的情况下长这样</p>
-<p>https://preview.redd.it/yadfx7jefwld1.png?width=1920&amp;format=png&amp;auto=webp&amp;s=4232b8745d7f781449db641fe690a4d5900fd77b</p>
-<p>可以看到，哪怕是旧的ui也有展开更多回复的按钮，但是相当少见，绝大多数回复都会默认显示，哪怕很深层的回复也都能看到，而且由于长度限制我这张图还没截完整，实际上你不停往下滚动底下的评论还会不断加载</p>
-<p>而新的ui默认只显示很少的回复，所有第3层回复和绝大部分第2层回复都是折叠的，必须手动展开，而如果你往下滚动很快就到底了，必须再点一次展示更多评论才能继续</p>
-<p>我猜你想说的就是这个，红迪之前有说过这么改动的理由是有很多用户反馈旧ui默认展示太多评论导致手机上加载很卡，所以新ui就以优化加载速度为目标设计的</p></div></div></div></div></div></div>
+            <p>我把两个ui都截了个图，给你对比一下，上半部分是旧的ui，下半部分是新的ui，我打开帖子以后什么都没点，完全默认的情况下长这样<br><br>https://preview.redd.it/yadfx7jefwld1.png?width=1920&amp;format=png&amp;auto=webp&amp;s=4232b8745d7f781449db641fe690a4d5900fd77b<br><br>可以看到，哪怕是旧的ui也有展开更多回复的按钮，但是相当少见，绝大多数回复都会默认显示，哪怕很深层的回复也都能看到，而且由于长度限制我这张图还没截完整，实际上你不停往下滚动底下的评论还会不断加载<br><br>而新的ui默认只显示很少的回复，所有第3层回复和绝大部分第2层回复都是折叠的，必须手动展开，而如果你往下滚动很快就到底了，必须再点一次展示更多评论才能继续<br><br>我猜你想说的就是这个，红迪之前有说过这么改动的理由是有很多用户反馈旧ui默认展示太多评论导致手机上加载很卡，所以新ui就以优化加载速度为目标设计的</p></div></div></div></div></div></div>
     <div class="comment" id="t1_lks5lhf">
         <p class="userinfo">
             <a class="toggle_hide_button" href="javascript:void(0)" onclick="toggle_collapse(this.parentElement.parentElement)">[-]</a>
-            <a href="https://old.reddit.com/u/NorthEgg2227">NorthEgg2227</a>
+            <a href="https://old.reddit.com/u/NorthEgg2227">u/NorthEgg2227</a>
             | <span class="score">1 points</span>
             | <a class="timestamp" href="https://old.reddit.com/r/Sina/comments/1f53rgs/为什么有时候明明有很多赞的回复也会被折叠reddit的折叠机制到底是怎样/lks5lhf/">Aug 31 2024 11:41:16</a>
         </p>
@@ -97,29 +67,12 @@
     <div class="comment" id="t1_lkt0xbf">
         <p class="userinfo">
             <a class="toggle_hide_button" href="javascript:void(0)" onclick="toggle_collapse(this.parentElement.parentElement)">[-]</a>
-            <a href="https://old.reddit.com/u/qbmy">qbmy</a>
+            <a href="https://old.reddit.com/u/qbmy">u/qbmy</a>
             | <span class="score">1 points</span>
             | <a class="timestamp" href="https://old.reddit.com/r/Sina/comments/1f53rgs/为什么有时候明明有很多赞的回复也会被折叠reddit的折叠机制到底是怎样/lkt0xbf/">Aug 31 2024 16:53:58</a>
         </p>
         <div class="collapsible">
-            <p>手机上我不知道，因为我从来不用手机刷红迪</p>
-<p>电脑上有一个临时的方法：自己创建一个sub，当mod，然后访问new. reddit. com可以强制使用旧ui</p>
-<p>这时因为红迪说仍有一些mod工具还没在新ui中搞好，所以mod账户可以暂时继续使用旧ui，但估计最多两个月就结束了</p>
-<p>红迪本就不是为了长篇大论设计的，当时是作为新闻评论区的搞的。所以你可以在主题帖里面发很多内容，但底下的评论相当密集，一条一条紧挨着的，甚至以前评论中都是不可以带图的，直到现在每条评论仍只能发1张图。红迪也没有顶贴，一个帖子再热门2天后就没了，而新闻的热度也是这样的</p>
-<p>而贴吧最初是个游戏论坛，经常会有长期更新的帖子，楼主可以先开个贴，吃个饭睡个觉第二天再来更新，一更新帖子直接回到列表顶部，热度持久性很强。贴吧也没有按热门排序回复的说法，相反每个楼层都有数字编号，点开帖子就从1楼开始看，昨天看到哪一楼今天接着看，永远是连贯且完整的，而只看楼主和精品贴功能也是促进了长篇优质内容的创作</p>
-<p>至于这几个平台谁像谁，我觉得贴吧和推特是独立的，贴吧就是上面说的长篇内容更多，内容连贯，热度持久，而推特独特的点在于，其它平台的帖子都是发布在相应话题之下的，例如红迪的sub，知乎的问题，推特的内容是直接发布于用户自己主页的，因此在红迪我可以不认识你，但只要进了这个sub，我就能看到你的帖子，但在推特上我必须先关注几个大v，然后在某个大v的推下面或许能看到你的评论。除了这两个之外其它的平台不过都是一个评论区，从功能上来讲互相之间差别不大</p></div></div></div></div>
+            <p>手机上我不知道，因为我从来不用手机刷红迪<br><br>电脑上有一个临时的方法：自己创建一个sub，当mod，然后访问new. reddit. com可以强制使用旧ui<br><br>这时因为红迪说仍有一些mod工具还没在新ui中搞好，所以mod账户可以暂时继续使用旧ui，但估计最多两个月就结束了<br><br>红迪本就不是为了长篇大论设计的，当时是作为新闻评论区的搞的。所以你可以在主题帖里面发很多内容，但底下的评论相当密集，一条一条紧挨着的，甚至以前评论中都是不可以带图的，直到现在每条评论仍只能发1张图。红迪也没有顶贴，一个帖子再热门2天后就没了，而新闻的热度也是这样的<br><br>而贴吧最初是个游戏论坛，经常会有长期更新的帖子，楼主可以先开个贴，吃个饭睡个觉第二天再来更新，一更新帖子直接回到列表顶部，热度持久性很强。贴吧也没有按热门排序回复的说法，相反每个楼层都有数字编号，点开帖子就从1楼开始看，昨天看到哪一楼今天接着看，永远是连贯且完整的，而只看楼主和精品贴功能也是促进了长篇优质内容的创作<br><br>至于这几个平台谁像谁，我觉得贴吧和推特是独立的，贴吧就是上面说的长篇内容更多，内容连贯，热度持久，而推特独特的点在于，其它平台的帖子都是发布在相应话题之下的，例如红迪的sub，知乎的问题，推特的内容是直接发布于用户自己主页的，因此在红迪我可以不认识你，但只要进了这个sub，我就能看到你的帖子，但在推特上我必须先关注几个大v，然后在某个大v的推下面或许能看到你的评论。除了这两个之外其它的平台不过都是一个评论区，从功能上来讲互相之间差别不大</p></div></div></div></div>
     </body>
-    <script>
-        function toggle_collapse(comment_div) {{
-            var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
-            var collapsible = comment_div.getElementsByClassName("collapsible")[0];
-            if (collapsible.classList.contains("hidden")) {{
-                collapsible.classList.remove("hidden");
-                button.innerText = "[-]";
-            }} else {{
-                collapsible.classList.add("hidden");
-                button.innerText = "[+]";
-            }}
-        }}
-    </script>
+    <script src="../../assets/post-script.js"></script>
 </html>

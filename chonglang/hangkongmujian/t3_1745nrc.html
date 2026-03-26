@@ -4,42 +4,17 @@
         <title>【通知】automod新功能会导致user flair的背景颜色消失</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <style>
-            .crosspost {
-                border: 1px solid #888;
-                margin-top: 10px;
-                padding: 10px;
-                background-color: #f6f7f8;
-            }
-            .crosspost-header {
-                font-size: 12px;
-                color: #555;
-                margin-bottom: 6px;
-            }
-            .crosspost-content {
-                padding-left: 5px;
-            }
-            .submission, .comment { padding-left: 20px; padding-right: 4px; font-family: verdana, arial, helvetica, sans-serif; }
-            .comment { margin-top: 4px; margin-bottom: 4px; border: 1px solid black; }
-            .submission { border: 2px solid blue; padding-bottom: 10px; }
-            .hidden { display: none; }
-            .userinfo { font-size: 12px; color: #555; }
-            .flair {
-                padding: 2px 6px; border-radius: 20px; font-size: 10px; font-weight: bold;
-                margin-left: 5px; display: inline-block; vertical-align: middle; line-height: 1.2;
-            }
-        </style>
+        <link rel="stylesheet" href="../../assets/post-style.css">
     </head>
     <body>
-        <a href="../hangkongmujian.html#t3_1745nrc" class="back-link">← Back to Index</a>
             <div class="submission" id="t3_1745nrc">
                 <p class="userinfo">
-                    <a href="https://old.reddit.com/u/HaiNengShuoHuaMa8964">HaiNengShuoHuaMa8964</a>
+                    <a href="https://old.reddit.com/u/HaiNengShuoHuaMa8964">u/HaiNengShuoHuaMa8964</a>
                     | <span class="score">1 points</span>
                     | <a class="timestamp" href="https://old.reddit.com/r/hangkongmujian/comments/1745nrc/通知automod新功能会导致user_flair的背景颜色消失/">Oct 10 2023 06:57:09</a>
                 </p>
                 <strong>【通知】automod新功能会导致user flair的背景颜色消失</strong>
-                <p><p>在automod自动忽略举报时，会导致你user flair的背景颜色被重置为默认</p>
+                <p>在automod自动忽略举报时，会导致你user flair的背景颜色被重置为默认</p>
 <p>经过多次测试，这是目前能做到的影响最小的解决方案</p>
 <p>automod源码：</p>
 <pre><code># 以下说明根据reddit源码：/r2/r2/lib/automoderator.py得出
@@ -102,13 +77,13 @@ author:
   set_flair: ['{{author_flair_text}}', '']
 reports: 1
 ---
-</code></pre></p>
+</code></pre>
                 
             </div>
     <div class="comment" id="t1_k47a5hl">
         <p class="userinfo">
             <a class="toggle_hide_button" href="javascript:void(0)" onclick="toggle_collapse(this.parentElement.parentElement)">[-]</a>
-            <a href="https://old.reddit.com/u/Spezr">Spezr</a>
+            <a href="https://old.reddit.com/u/Spezr">u/Spezr</a>
             | <span class="score">5 points</span>
             | <a class="timestamp" href="https://old.reddit.com/r/hangkongmujian/comments/1745nrc/通知automod新功能会导致user_flair的背景颜色消失/k47a5hl/">Oct 10 2023 07:27:35</a>
         </p>
@@ -117,7 +92,7 @@ reports: 1
     <div class="comment" id="t1_k47qfam">
         <p class="userinfo">
             <a class="toggle_hide_button" href="javascript:void(0)" onclick="toggle_collapse(this.parentElement.parentElement)">[-]</a>
-            <a href="https://old.reddit.com/u/zhouzhi_1973">zhouzhi_1973</a>
+            <a href="https://old.reddit.com/u/zhouzhi_1973">u/zhouzhi_1973</a>
             | <span class="score">4 points</span>
             | <a class="timestamp" href="https://old.reddit.com/r/hangkongmujian/comments/1745nrc/通知automod新功能会导致user_flair的背景颜色消失/k47qfam/">Oct 10 2023 09:17:50</a>
         </p>
@@ -126,24 +101,12 @@ reports: 1
     <div class="comment" id="t1_k47txhe">
         <p class="userinfo">
             <a class="toggle_hide_button" href="javascript:void(0)" onclick="toggle_collapse(this.parentElement.parentElement)">[-]</a>
-            <a href="https://old.reddit.com/u/OliveSeed7877">OliveSeed7877</a><span class="flair" style="background-color: #edeff1; color: #1c1c1c;"> </span>
+            <a href="https://old.reddit.com/u/OliveSeed7877">u/OliveSeed7877</a><span class="flair" style="background-color: #edeff1; color: #1c1c1c;"> </span>
             | <span class="score">2 points</span>
             | <a class="timestamp" href="https://old.reddit.com/r/hangkongmujian/comments/1745nrc/通知automod新功能会导致user_flair的背景颜色消失/k47txhe/">Oct 10 2023 09:41:42</a>
         </p>
         <div class="collapsible">
             <p>被人暴踩他还是有一百多万karma</p></div></div></div></div>
     </body>
-    <script>
-        function toggle_collapse(comment_div) {{
-            var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
-            var collapsible = comment_div.getElementsByClassName("collapsible")[0];
-            if (collapsible.classList.contains("hidden")) {{
-                collapsible.classList.remove("hidden");
-                button.innerText = "[-]";
-            }} else {{
-                collapsible.classList.add("hidden");
-                button.innerText = "[+]";
-            }}
-        }}
-    </script>
+    <script src="../../assets/post-script.js"></script>
 </html>

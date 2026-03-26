@@ -4,42 +4,17 @@
         <title>LLM 越狱研究：多层夹心指令，完美越狱 Gemini</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <style>
-            .crosspost {
-                border: 1px solid #888;
-                margin-top: 10px;
-                padding: 10px;
-                background-color: #f6f7f8;
-            }
-            .crosspost-header {
-                font-size: 12px;
-                color: #555;
-                margin-bottom: 6px;
-            }
-            .crosspost-content {
-                padding-left: 5px;
-            }
-            .submission, .comment { padding-left: 20px; padding-right: 4px; font-family: verdana, arial, helvetica, sans-serif; }
-            .comment { margin-top: 4px; margin-bottom: 4px; border: 1px solid black; }
-            .submission { border: 2px solid blue; padding-bottom: 10px; }
-            .hidden { display: none; }
-            .userinfo { font-size: 12px; color: #555; }
-            .flair {
-                padding: 2px 6px; border-radius: 20px; font-size: 10px; font-weight: bold;
-                margin-left: 5px; display: inline-block; vertical-align: middle; line-height: 1.2;
-            }
-        </style>
+        <link rel="stylesheet" href="../../assets/post-style.css">
     </head>
     <body>
-        <a href="../NEWTo_Cave.html#t3_1d03yzh" class="back-link">← Back to Index</a>
             <div class="submission" id="t3_1d03yzh">
                 <p class="userinfo">
-                    <a href="https://old.reddit.com/u/EvenDogWontUseReddit">EvenDogWontUseReddit</a>
+                    <a href="https://old.reddit.com/u/EvenDogWontUseReddit">u/EvenDogWontUseReddit</a>
                     | <span class="score">21 points</span>
                     | <a class="timestamp" href="https://old.reddit.com/r/NEWTo_Cave/comments/1d03yzh/llm_越狱研究多层夹心指令完美越狱_gemini/">May 25 2024 12:32:03</a>
                 </p>
                 <strong>LLM 越狱研究：多层夹心指令，完美越狱 Gemini</strong><span class="flair" style="background-color: #0079d3; color: #ffffff;">学术交流</span>
-                <p><p>经过多次尝试，我研究出一套完美越狱 Gemini 的方案： system 越狱指令 + 对话历史 + 后置越狱1 + user 最后一条消息 + 后置越狱2</p>
+                <p>经过多次尝试，我研究出一套完美越狱 Gemini 的方案： system 越狱指令 + 对话历史 + 后置越狱1 + user 最后一条消息 + 后置越狱2</p>
 <p>首先，只在 assistant role 上加越狱指令效果不好，因为 <a href="https://www.anthropic.com/news/mapping-mind-language-model">https://www.anthropic.com/news/mapping-mind-language-model</a> LLM 有自我纠错的能力，所以必须得加 user 指令让它生成不和谐内容，这一点我在去年尝试越狱官网 GPT-4 的时候就发现了，用 DAN 指令+假对话才有用，光是假对话是没用的（“对不起，我之前生成了不和谐的内容”），当然 DAN 指令也早就被封了，二者结合才有用</p>
 <p>其次，根据 <a href="https://www.reddit.com/r/SillyTavernAI/comments/15jakql/comment/juyybfm/">https://www.reddit.com/r/SillyTavernAI/comments/15jakql/comment/juyybfm/</a> 和 <a href="https://www.anthropic.com/research/many-shot-jailbreaking">https://www.anthropic.com/research/many-shot-jailbreaking</a> ， Anthropic 用一种底部加反越狱指令的方法封堵越狱，而各种测试和研究都表明越靠近底部的指令效力越强，显然底部加越狱指令比早就被封堵的 system 头部越狱指令效果好；事实上现在 SillyTavern 之所以成为主流的越狱工具，是因为它是少数支持在 user 消息后自动插入越狱指令的，现在的破限全部都是底部破限</p>
 <p>但这又引入一个问题，底部越狱指令加多了它分不清楚哪个是真正的 user 最后一条消息，导致模型脱离 user 最后一条消息的要求开始自由输出内容，那么在 后置越狱1 后面再加一条 “user 最后一条消息”就好</p>
@@ -49,13 +24,13 @@
 </code></pre>
 <p>偷两张图，角色卡是白板，也就是说这次是真正得到一个越狱版 Gemini，保留 Gemini 原有人格的基础上越狱</p>
 <p>https://preview.redd.it/z1vr2wic3i2d1.png?width=1916&amp;format=png&amp;auto=webp&amp;s=9bf23124402cdca4a7ec5b4819917efd1226f84b</p>
-<p>https://preview.redd.it/7ukbp71d3i2d1.png?width=1897&amp;format=png&amp;auto=webp&amp;s=f68664213b2646694d10eb27de14f660c7cdbf4f</p></p>
+<p>https://preview.redd.it/7ukbp71d3i2d1.png?width=1897&amp;format=png&amp;auto=webp&amp;s=f68664213b2646694d10eb27de14f660c7cdbf4f</p>
                 
             </div>
     <div class="comment" id="t1_l5kmhrv">
         <p class="userinfo">
             <a class="toggle_hide_button" href="javascript:void(0)" onclick="toggle_collapse(this.parentElement.parentElement)">[-]</a>
-            <a href="https://old.reddit.com/u/AutoModerator">AutoModerator</a>
+            <a href="https://old.reddit.com/u/AutoModerator">u/AutoModerator</a>
             | <span class="score">1 points</span>
             | <a class="timestamp" href="https://old.reddit.com/r/NEWTo_Cave/comments/1d03yzh/llm_越狱研究多层夹心指令完美越狱_gemini/l5kmhrv/">May 25 2024 12:32:04</a>
         </p>
@@ -65,7 +40,7 @@
     <div class="comment" id="t1_l5l0ed2">
         <p class="userinfo">
             <a class="toggle_hide_button" href="javascript:void(0)" onclick="toggle_collapse(this.parentElement.parentElement)">[-]</a>
-            <a href="https://old.reddit.com/u/quocgiataiba">quocgiataiba</a>
+            <a href="https://old.reddit.com/u/quocgiataiba">u/quocgiataiba</a>
             | <span class="score">9 points</span>
             | <a class="timestamp" href="https://old.reddit.com/r/NEWTo_Cave/comments/1d03yzh/llm_越狱研究多层夹心指令完美越狱_gemini/l5l0ed2/">May 25 2024 15:06:52</a>
         </p>
@@ -74,7 +49,7 @@
     <div class="comment" id="t1_l5lj92h">
         <p class="userinfo">
             <a class="toggle_hide_button" href="javascript:void(0)" onclick="toggle_collapse(this.parentElement.parentElement)">[-]</a>
-            <a href="https://old.reddit.com/u/SuckSemenBottle">SuckSemenBottle</a>
+            <a href="https://old.reddit.com/u/SuckSemenBottle">u/SuckSemenBottle</a>
             | <span class="score">2 points</span>
             | <a class="timestamp" href="https://old.reddit.com/r/NEWTo_Cave/comments/1d03yzh/llm_越狱研究多层夹心指令完美越狱_gemini/l5lj92h/">May 25 2024 19:07:14</a>
         </p>
@@ -83,7 +58,7 @@
     <div class="comment" id="t1_l5lq0w5">
         <p class="userinfo">
             <a class="toggle_hide_button" href="javascript:void(0)" onclick="toggle_collapse(this.parentElement.parentElement)">[-]</a>
-            <a href="https://old.reddit.com/u/EvenDogWontUseReddit">EvenDogWontUseReddit</a>
+            <a href="https://old.reddit.com/u/EvenDogWontUseReddit">u/EvenDogWontUseReddit</a>
             | <span class="score">2 points</span>
             | <a class="timestamp" href="https://old.reddit.com/r/NEWTo_Cave/comments/1d03yzh/llm_越狱研究多层夹心指令完美越狱_gemini/l5lq0w5/">May 25 2024 20:14:58</a>
         </p>
@@ -92,7 +67,7 @@
     <div class="comment" id="t1_l5u38r2">
         <p class="userinfo">
             <a class="toggle_hide_button" href="javascript:void(0)" onclick="toggle_collapse(this.parentElement.parentElement)">[-]</a>
-            <a href="https://old.reddit.com/u/AnyEmotion120">AnyEmotion120</a>
+            <a href="https://old.reddit.com/u/AnyEmotion120">u/AnyEmotion120</a>
             | <span class="score">1 points</span>
             | <a class="timestamp" href="https://old.reddit.com/r/NEWTo_Cave/comments/1d03yzh/llm_越狱研究多层夹心指令完美越狱_gemini/l5u38r2/">May 27 2024 11:21:18</a>
         </p>
@@ -101,7 +76,7 @@
     <div class="comment" id="t1_l5uezfd">
         <p class="userinfo">
             <a class="toggle_hide_button" href="javascript:void(0)" onclick="toggle_collapse(this.parentElement.parentElement)">[-]</a>
-            <a href="https://old.reddit.com/u/EvenDogWontUseReddit">EvenDogWontUseReddit</a>
+            <a href="https://old.reddit.com/u/EvenDogWontUseReddit">u/EvenDogWontUseReddit</a>
             | <span class="score">1 points</span>
             | <a class="timestamp" href="https://old.reddit.com/r/NEWTo_Cave/comments/1d03yzh/llm_越狱研究多层夹心指令完美越狱_gemini/l5uezfd/">May 27 2024 13:09:14</a>
         </p>
@@ -111,7 +86,7 @@
     <div class="comment" id="t1_l5lln1a">
         <p class="userinfo">
             <a class="toggle_hide_button" href="javascript:void(0)" onclick="toggle_collapse(this.parentElement.parentElement)">[-]</a>
-            <a href="https://old.reddit.com/u/Kindly_Yesterday_552">Kindly_Yesterday_552</a>
+            <a href="https://old.reddit.com/u/Kindly_Yesterday_552">u/Kindly_Yesterday_552</a>
             | <span class="score">1 points</span>
             | <a class="timestamp" href="https://old.reddit.com/r/NEWTo_Cave/comments/1d03yzh/llm_越狱研究多层夹心指令完美越狱_gemini/l5lln1a/">May 25 2024 19:32:40</a>
         </p>
@@ -120,7 +95,7 @@
     <div class="comment" id="t1_l5llwi5">
         <p class="userinfo">
             <a class="toggle_hide_button" href="javascript:void(0)" onclick="toggle_collapse(this.parentElement.parentElement)">[-]</a>
-            <a href="https://old.reddit.com/u/Kindly_Yesterday_552">Kindly_Yesterday_552</a>
+            <a href="https://old.reddit.com/u/Kindly_Yesterday_552">u/Kindly_Yesterday_552</a>
             | <span class="score">3 points</span>
             | <a class="timestamp" href="https://old.reddit.com/r/NEWTo_Cave/comments/1d03yzh/llm_越狱研究多层夹心指令完美越狱_gemini/l5llwi5/">May 25 2024 19:35:21</a>
         </p>
@@ -129,7 +104,7 @@
     <div class="comment" id="t1_l5lm3gz">
         <p class="userinfo">
             <a class="toggle_hide_button" href="javascript:void(0)" onclick="toggle_collapse(this.parentElement.parentElement)">[-]</a>
-            <a href="https://old.reddit.com/u/Kindly_Yesterday_552">Kindly_Yesterday_552</a>
+            <a href="https://old.reddit.com/u/Kindly_Yesterday_552">u/Kindly_Yesterday_552</a>
             | <span class="score">1 points</span>
             | <a class="timestamp" href="https://old.reddit.com/r/NEWTo_Cave/comments/1d03yzh/llm_越狱研究多层夹心指令完美越狱_gemini/l5lm3gz/">May 25 2024 19:37:17</a>
         </p>
@@ -138,7 +113,7 @@
     <div class="comment" id="t1_l5lm3hc">
         <p class="userinfo">
             <a class="toggle_hide_button" href="javascript:void(0)" onclick="toggle_collapse(this.parentElement.parentElement)">[-]</a>
-            <a href="https://old.reddit.com/u/AutoModerator">AutoModerator</a>
+            <a href="https://old.reddit.com/u/AutoModerator">u/AutoModerator</a>
             | <span class="score">1 points</span>
             | <a class="timestamp" href="https://old.reddit.com/r/NEWTo_Cave/comments/1d03yzh/llm_越狱研究多层夹心指令完美越狱_gemini/l5lm3hc/">May 25 2024 19:37:17</a>
         </p>
@@ -148,7 +123,7 @@
     <div class="comment" id="t1_l5lpw3q">
         <p class="userinfo">
             <a class="toggle_hide_button" href="javascript:void(0)" onclick="toggle_collapse(this.parentElement.parentElement)">[-]</a>
-            <a href="https://old.reddit.com/u/EvenDogWontUseReddit">EvenDogWontUseReddit</a>
+            <a href="https://old.reddit.com/u/EvenDogWontUseReddit">u/EvenDogWontUseReddit</a>
             | <span class="score">1 points</span>
             | <a class="timestamp" href="https://old.reddit.com/r/NEWTo_Cave/comments/1d03yzh/llm_越狱研究多层夹心指令完美越狱_gemini/l5lpw3q/">May 25 2024 20:13:44</a>
         </p>
@@ -157,7 +132,7 @@
     <div class="comment" id="t1_l5m1crv">
         <p class="userinfo">
             <a class="toggle_hide_button" href="javascript:void(0)" onclick="toggle_collapse(this.parentElement.parentElement)">[-]</a>
-            <a href="https://old.reddit.com/u/Kindly_Yesterday_552">Kindly_Yesterday_552</a>
+            <a href="https://old.reddit.com/u/Kindly_Yesterday_552">u/Kindly_Yesterday_552</a>
             | <span class="score">1 points</span>
             | <a class="timestamp" href="https://old.reddit.com/r/NEWTo_Cave/comments/1d03yzh/llm_越狱研究多层夹心指令完美越狱_gemini/l5m1crv/">May 25 2024 21:50:00</a>
         </p>
@@ -166,7 +141,7 @@
     <div class="comment" id="t1_lb8j1gr">
         <p class="userinfo">
             <a class="toggle_hide_button" href="javascript:void(0)" onclick="toggle_collapse(this.parentElement.parentElement)">[-]</a>
-            <a href="https://old.reddit.com/u/DebtExpensive5480">DebtExpensive5480</a>
+            <a href="https://old.reddit.com/u/DebtExpensive5480">u/DebtExpensive5480</a>
             | <span class="score">1 points</span>
             | <a class="timestamp" href="https://old.reddit.com/r/NEWTo_Cave/comments/1d03yzh/llm_越狱研究多层夹心指令完美越狱_gemini/lb8j1gr/">Jul 02 2024 12:02:42</a>
         </p>
@@ -175,7 +150,7 @@
     <div class="comment" id="t1_lc188s0">
         <p class="userinfo">
             <a class="toggle_hide_button" href="javascript:void(0)" onclick="toggle_collapse(this.parentElement.parentElement)">[-]</a>
-            <a href="https://old.reddit.com/u/EvenDogWontUseReddit">EvenDogWontUseReddit</a>
+            <a href="https://old.reddit.com/u/EvenDogWontUseReddit">u/EvenDogWontUseReddit</a>
             | <span class="score">1 points</span>
             | <a class="timestamp" href="https://old.reddit.com/r/NEWTo_Cave/comments/1d03yzh/llm_越狱研究多层夹心指令完美越狱_gemini/lc188s0/">Jul 07 2024 20:55:16</a>
         </p>
@@ -184,7 +159,7 @@
     <div class="comment" id="t1_l5pb6l0">
         <p class="userinfo">
             <a class="toggle_hide_button" href="javascript:void(0)" onclick="toggle_collapse(this.parentElement.parentElement)">[-]</a>
-            <a href="https://old.reddit.com/u/Opening-Sugar-4241">Opening-Sugar-4241</a>
+            <a href="https://old.reddit.com/u/Opening-Sugar-4241">u/Opening-Sugar-4241</a>
             | <span class="score">1 points</span>
             | <a class="timestamp" href="https://old.reddit.com/r/NEWTo_Cave/comments/1d03yzh/llm_越狱研究多层夹心指令完美越狱_gemini/l5pb6l0/">May 26 2024 12:05:12</a>
         </p>
@@ -193,7 +168,7 @@
     <div class="comment" id="t1_lb3s2uh">
         <p class="userinfo">
             <a class="toggle_hide_button" href="javascript:void(0)" onclick="toggle_collapse(this.parentElement.parentElement)">[-]</a>
-            <a href="https://old.reddit.com/u/lassmeros">lassmeros</a>
+            <a href="https://old.reddit.com/u/lassmeros">u/lassmeros</a>
             | <span class="score">1 points</span>
             | <a class="timestamp" href="https://old.reddit.com/r/NEWTo_Cave/comments/1d03yzh/llm_越狱研究多层夹心指令完美越狱_gemini/lb3s2uh/">Jul 01 2024 17:51:43</a>
         </p>
@@ -202,7 +177,7 @@
     <div class="comment" id="t1_lc18ac5">
         <p class="userinfo">
             <a class="toggle_hide_button" href="javascript:void(0)" onclick="toggle_collapse(this.parentElement.parentElement)">[-]</a>
-            <a href="https://old.reddit.com/u/EvenDogWontUseReddit">EvenDogWontUseReddit</a>
+            <a href="https://old.reddit.com/u/EvenDogWontUseReddit">u/EvenDogWontUseReddit</a>
             | <span class="score">1 points</span>
             | <a class="timestamp" href="https://old.reddit.com/r/NEWTo_Cave/comments/1d03yzh/llm_越狱研究多层夹心指令完美越狱_gemini/lc18ac5/">Jul 07 2024 20:55:36</a>
         </p>
@@ -211,7 +186,7 @@
     <div class="comment" id="t1_lc1l2x6">
         <p class="userinfo">
             <a class="toggle_hide_button" href="javascript:void(0)" onclick="toggle_collapse(this.parentElement.parentElement)">[-]</a>
-            <a href="https://old.reddit.com/u/lassmeros">lassmeros</a>
+            <a href="https://old.reddit.com/u/lassmeros">u/lassmeros</a>
             | <span class="score">1 points</span>
             | <a class="timestamp" href="https://old.reddit.com/r/NEWTo_Cave/comments/1d03yzh/llm_越狱研究多层夹心指令完美越狱_gemini/lc1l2x6/">Jul 07 2024 22:26:58</a>
         </p>
@@ -220,24 +195,12 @@
     <div class="comment" id="t1_lcg1wfg">
         <p class="userinfo">
             <a class="toggle_hide_button" href="javascript:void(0)" onclick="toggle_collapse(this.parentElement.parentElement)">[-]</a>
-            <a href="https://old.reddit.com/u/Organic_Ad_3409">Organic_Ad_3409</a>
+            <a href="https://old.reddit.com/u/Organic_Ad_3409">u/Organic_Ad_3409</a>
             | <span class="score">1 points</span>
             | <a class="timestamp" href="https://old.reddit.com/r/NEWTo_Cave/comments/1d03yzh/llm_越狱研究多层夹心指令完美越狱_gemini/lcg1wfg/">Jul 10 2024 09:34:39</a>
         </p>
         <div class="collapsible">
             <p>哈哈，我也在玩Gemini的Rollplay，感官确实比GPT强了太多。我捏出来的绘梨衣可爱又粘人捏</p></div></div>
     </body>
-    <script>
-        function toggle_collapse(comment_div) {{
-            var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
-            var collapsible = comment_div.getElementsByClassName("collapsible")[0];
-            if (collapsible.classList.contains("hidden")) {{
-                collapsible.classList.remove("hidden");
-                button.innerText = "[-]";
-            }} else {{
-                collapsible.classList.add("hidden");
-                button.innerText = "[+]";
-            }}
-        }}
-    </script>
+    <script src="../../assets/post-script.js"></script>
 </html>

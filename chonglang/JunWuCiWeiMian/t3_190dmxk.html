@@ -4,37 +4,12 @@
         <title>automod自动批准功能源码+注释</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <style>
-            .crosspost {
-                border: 1px solid #888;
-                margin-top: 10px;
-                padding: 10px;
-                background-color: #f6f7f8;
-            }
-            .crosspost-header {
-                font-size: 12px;
-                color: #555;
-                margin-bottom: 6px;
-            }
-            .crosspost-content {
-                padding-left: 5px;
-            }
-            .submission, .comment { padding-left: 20px; padding-right: 4px; font-family: verdana, arial, helvetica, sans-serif; }
-            .comment { margin-top: 4px; margin-bottom: 4px; border: 1px solid black; }
-            .submission { border: 2px solid blue; padding-bottom: 10px; }
-            .hidden { display: none; }
-            .userinfo { font-size: 12px; color: #555; }
-            .flair {
-                padding: 2px 6px; border-radius: 20px; font-size: 10px; font-weight: bold;
-                margin-left: 5px; display: inline-block; vertical-align: middle; line-height: 1.2;
-            }
-        </style>
+        <link rel="stylesheet" href="../../assets/post-style.css">
     </head>
     <body>
-        <a href="../JunWuCiWeiMian.html#t3_190dmxk" class="back-link">← Back to Index</a>
             <div class="submission" id="t3_190dmxk">
                 <p class="userinfo">
-                    <a href="https://old.reddit.com/u/HaiNengShuoHuaMa8964">HaiNengShuoHuaMa8964</a>
+                    <a href="https://old.reddit.com/u/HaiNengShuoHuaMa8964">u/HaiNengShuoHuaMa8964</a>
                     | <span class="score">1 points</span>
                     | <a class="timestamp" href="https://old.reddit.com/r/JunWuCiWeiMian/comments/190dmxk/automod自动批准功能源码注释/">Jan 07 2024 07:35:38</a>
                 </p>
@@ -43,14 +18,14 @@
                 
                 <div class="crosspost">
                     <div class="crosspost-header">
-                        Crossposted from <a href="https://old.reddit.com/r/JingYao/comments/190dju5/automod自动批准功能源码注释/">
-                        r/JingYao</a> by /u/HaiNengShuoHuaMa8964
+                        Crossposted from <a href="https://old.reddit.com/r/JingYao/comments/190dju5/automod自动批准功能源码注释/">r/JingYao</a> by 
+                        <a href="https://old.reddit.com/u/HaiNengShuoHuaMa8964">u/HaiNengShuoHuaMa8964</a>
                         | 1 points
                     </div>
                     <div class="crosspost-content">
                         <strong>automod自动批准功能源码+注释</strong>
-                        <p><p><pre><code># reddit源码链接：https://github.com/reddit-archive/reddit/
-# 以下说明根据源码/r2/r2/lib/automoderator.py得出
+                        <h1>reddit源码链接：https://github.com/reddit-archive/reddit/</h1>
+<pre><code># 以下说明根据源码/r2/r2/lib/automoderator.py得出
 # 1. 被shadowban用户的内容，必须检查作者名字才能批准，因此所有规则都有~author: 'spez'，源码976、1260、1244行
 # 2. 带有parent_submission的规则只会对评论生效，因此规则1需要分离，源码1264行
 # 3. 带有comment操作的规则只会执行一次，源码350、1302行
@@ -993,14 +968,14 @@ reports: -2
 # is_edited: true
 # comment: 'edit detected'
 # ---
-</code></pre></p></p>
+</code></pre>
                     </div>
                 </div>
             </div>
     <div class="comment" id="t1_kgnkgb0">
         <p class="userinfo">
             <a class="toggle_hide_button" href="javascript:void(0)" onclick="toggle_collapse(this.parentElement.parentElement)">[-]</a>
-            <a href="https://old.reddit.com/u/AutoModerator">AutoModerator</a>
+            <a href="https://old.reddit.com/u/AutoModerator">u/AutoModerator</a>
             | <span class="score">1 points</span>
             | <a class="timestamp" href="https://old.reddit.com/r/JunWuCiWeiMian/comments/190dmxk/automod自动批准功能源码注释/kgnkgb0/">Jan 07 2024 07:35:38</a>
         </p>
@@ -1010,7 +985,7 @@ reports: -2
     <div class="comment" id="t1_kgsau1m">
         <p class="userinfo">
             <a class="toggle_hide_button" href="javascript:void(0)" onclick="toggle_collapse(this.parentElement.parentElement)">[-]</a>
-            <a href="https://old.reddit.com/u/AutoModerator">AutoModerator</a>
+            <a href="https://old.reddit.com/u/AutoModerator">u/AutoModerator</a>
             | <span class="score">1 points</span>
             | <a class="timestamp" href="https://old.reddit.com/r/JunWuCiWeiMian/comments/190dmxk/automod自动批准功能源码注释/kgsau1m/">Jan 08 2024 05:03:34</a>
         </p>
@@ -1018,17 +993,5 @@ reports: -2
             <p>你被支那猪举报了，幸好本鼠及时赶到帮你自动ignore了举报并将举报蛆的妈妈当场击毙。举报蛆的妈妈现在正在摘器官的救护车里被支那黑警压的浪叫，现在请让我们按照支那传统美德为举报蛆献上最诚挚的祝福，毕竟死者为大（指巨人观</p>
 <p><em>I am a bot, and this action was performed automatically. Please <a href="/message/compose/?to=/r/JunWuCiWeiMian">contact the moderators of this subreddit</a> if you have any questions or concerns.</em></p></div></div>
     </body>
-    <script>
-        function toggle_collapse(comment_div) {{
-            var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
-            var collapsible = comment_div.getElementsByClassName("collapsible")[0];
-            if (collapsible.classList.contains("hidden")) {{
-                collapsible.classList.remove("hidden");
-                button.innerText = "[-]";
-            }} else {{
-                collapsible.classList.add("hidden");
-                button.innerText = "[+]";
-            }}
-        }}
-    </script>
+    <script src="../../assets/post-script.js"></script>
 </html>

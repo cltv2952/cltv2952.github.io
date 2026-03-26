@@ -4,42 +4,17 @@
         <title> 冲浪小本本儿 (七) --- 如何处理dns污染；低延迟但被污染的dns、高延迟但正确的dns怎么选？域名分流；doh本身被封了怎么办</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <style>
-            .crosspost {
-                border: 1px solid #888;
-                margin-top: 10px;
-                padding: 10px;
-                background-color: #f6f7f8;
-            }
-            .crosspost-header {
-                font-size: 12px;
-                color: #555;
-                margin-bottom: 6px;
-            }
-            .crosspost-content {
-                padding-left: 5px;
-            }
-            .submission, .comment { padding-left: 20px; padding-right: 4px; font-family: verdana, arial, helvetica, sans-serif; }
-            .comment { margin-top: 4px; margin-bottom: 4px; border: 1px solid black; }
-            .submission { border: 2px solid blue; padding-bottom: 10px; }
-            .hidden { display: none; }
-            .userinfo { font-size: 12px; color: #555; }
-            .flair {
-                padding: 2px 6px; border-radius: 20px; font-size: 10px; font-weight: bold;
-                margin-left: 5px; display: inline-block; vertical-align: middle; line-height: 1.2;
-            }
-        </style>
+        <link rel="stylesheet" href="../../assets/post-style.css">
     </head>
     <body>
-        <a href="../abstract_garden.html#t3_1fp5o8f" class="back-link">← Back to Index</a>
             <div class="submission" id="t3_1fp5o8f">
                 <p class="userinfo">
-                    <a href="https://old.reddit.com/u/replaceOrgansKingXjp">replaceOrgansKingXjp</a>
+                    <a href="https://old.reddit.com/u/replaceOrgansKingXjp">u/replaceOrgansKingXjp</a>
                     | <span class="score">5 points</span>
                     | <a class="timestamp" href="https://old.reddit.com/r/abstract_garden/comments/1fp5o8f/冲浪小本本儿_七/">Sep 25 2024 22:22:48</a>
                 </p>
                 <strong> 冲浪小本本儿 (七) --- 如何处理dns污染；低延迟但被污染的dns、高延迟但正确的dns怎么选？域名分流；doh本身被封了怎么办</strong>
-                <p><p><strong>什么是dns</strong></p>
+                <p><strong>什么是dns</strong></p>
 <p>通俗来讲就是把域名转换成ip。</p>
 <p>为了给后面DOH、ECH内容做铺垫，特地把DNS在数据包中的构成解读一遍，只想实操可跳过，<strong>直达“如何处理dns污染”</strong>。</p>
 <p>本环节我会结合https://cloud.tencent.com/developer/article/2018599  <a href="https://hpd.gasmi.net">https://hpd.gasmi.net</a> 和wireshark 来解释完整数据包里每一个字段的意思</p>
@@ -278,13 +253,13 @@ client2------------------&gt;<br />
 <p>[6] 冲浪小本本儿 (四) --- 当你通过proxy翻墙时，会在日志里、服务器上留下什么，通过代理连接有哪些风险</p>
 <p>[7] 冲浪小本本儿 (五) --- 被墙的网站有哪些分级，一些简单的dns污染名单，sni阻断名单，直连有哪些风险</p>
 <p>[8] 冲浪小本本儿 (六) --- 如何对网站方隐藏自身，什么是浏览器指纹，怎么改变；分析怎么逃过宏迪追杀</p>
-<p>[9] 冲浪小本本儿 (七) --- 如何处理dns污染；低延迟但被污染的dns、高延迟但正确的dns怎么选？域名分流；doh本身被封了怎么办</p></p>
+<p>[9] 冲浪小本本儿 (七) --- 如何处理dns污染；低延迟但被污染的dns、高延迟但正确的dns怎么选？域名分流；doh本身被封了怎么办</p>
                 
             </div>
     <div class="comment" id="t1_lovbpea">
         <p class="userinfo">
             <a class="toggle_hide_button" href="javascript:void(0)" onclick="toggle_collapse(this.parentElement.parentElement)">[-]</a>
-            <a href="https://old.reddit.com/u/LongBorder2750">LongBorder2750</a><span class="flair" style="background-color: #dadada; color: #1c1c1c;">没有一个是无辜的</span>
+            <a href="https://old.reddit.com/u/LongBorder2750">u/LongBorder2750</a><span class="flair" style="background-color: #dadada; color: #1c1c1c;">没有一个是无辜的</span>
             | <span class="score">2 points</span>
             | <a class="timestamp" href="https://old.reddit.com/r/abstract_garden/comments/1fp5o8f/冲浪小本本儿_七/lovbpea/">Sep 25 2024 23:36:24</a>
         </p>
@@ -293,7 +268,7 @@ client2------------------&gt;<br />
     <div class="comment" id="t1_lovqml2">
         <p class="userinfo">
             <a class="toggle_hide_button" href="javascript:void(0)" onclick="toggle_collapse(this.parentElement.parentElement)">[-]</a>
-            <a href="https://old.reddit.com/u/replaceOrgansKingXjp">replaceOrgansKingXjp</a>
+            <a href="https://old.reddit.com/u/replaceOrgansKingXjp">u/replaceOrgansKingXjp</a>
             | <span class="score">2 points</span>
             | <a class="timestamp" href="https://old.reddit.com/r/abstract_garden/comments/1fp5o8f/冲浪小本本儿_七/lovqml2/">Sep 26 2024 00:54:01</a>
         </p>
@@ -302,7 +277,7 @@ client2------------------&gt;<br />
     <div class="comment" id="t1_lovli59">
         <p class="userinfo">
             <a class="toggle_hide_button" href="javascript:void(0)" onclick="toggle_collapse(this.parentElement.parentElement)">[-]</a>
-            <a href="https://old.reddit.com/u/Chi_na_pig">Chi_na_pig</a><span class="flair" style="background-color: #878a8c; color: #1c1c1c;">支那猪</span>
+            <a href="https://old.reddit.com/u/Chi_na_pig">u/Chi_na_pig</a><span class="flair" style="background-color: #878a8c; color: #1c1c1c;">支那猪</span>
             | <span class="score">2 points</span>
             | <a class="timestamp" href="https://old.reddit.com/r/abstract_garden/comments/1fp5o8f/冲浪小本本儿_七/lovli59/">Sep 26 2024 00:27:28</a>
         </p>
@@ -311,7 +286,7 @@ client2------------------&gt;<br />
     <div class="comment" id="t1_lovrni1">
         <p class="userinfo">
             <a class="toggle_hide_button" href="javascript:void(0)" onclick="toggle_collapse(this.parentElement.parentElement)">[-]</a>
-            <a href="https://old.reddit.com/u/replaceOrgansKingXjp">replaceOrgansKingXjp</a>
+            <a href="https://old.reddit.com/u/replaceOrgansKingXjp">u/replaceOrgansKingXjp</a>
             | <span class="score">1 points</span>
             | <a class="timestamp" href="https://old.reddit.com/r/abstract_garden/comments/1fp5o8f/冲浪小本本儿_七/lovrni1/">Sep 26 2024 00:59:10</a>
         </p>
@@ -320,7 +295,7 @@ client2------------------&gt;<br />
     <div class="comment" id="t1_loy22z7">
         <p class="userinfo">
             <a class="toggle_hide_button" href="javascript:void(0)" onclick="toggle_collapse(this.parentElement.parentElement)">[-]</a>
-            <a href="https://old.reddit.com/u/Status-Tell-2096">Status-Tell-2096</a>
+            <a href="https://old.reddit.com/u/Status-Tell-2096">u/Status-Tell-2096</a>
             | <span class="score">1 points</span>
             | <a class="timestamp" href="https://old.reddit.com/r/abstract_garden/comments/1fp5o8f/冲浪小本本儿_七/loy22z7/">Sep 26 2024 08:30:12</a>
         </p>
@@ -329,7 +304,7 @@ client2------------------&gt;<br />
     <div class="comment" id="t1_lp8jqn0">
         <p class="userinfo">
             <a class="toggle_hide_button" href="javascript:void(0)" onclick="toggle_collapse(this.parentElement.parentElement)">[-]</a>
-            <a href="https://old.reddit.com/u/replaceOrgansKingXjp">replaceOrgansKingXjp</a>
+            <a href="https://old.reddit.com/u/replaceOrgansKingXjp">u/replaceOrgansKingXjp</a>
             | <span class="score">1 points</span>
             | <a class="timestamp" href="https://old.reddit.com/r/abstract_garden/comments/1fp5o8f/冲浪小本本儿_七/lp8jqn0/">Sep 28 2024 04:01:43</a>
         </p>
@@ -338,7 +313,7 @@ client2------------------&gt;<br />
     <div class="comment" id="t1_loy8r8j">
         <p class="userinfo">
             <a class="toggle_hide_button" href="javascript:void(0)" onclick="toggle_collapse(this.parentElement.parentElement)">[-]</a>
-            <a href="https://old.reddit.com/u/CautiousWillow4448">CautiousWillow4448</a>
+            <a href="https://old.reddit.com/u/CautiousWillow4448">u/CautiousWillow4448</a>
             | <span class="score">1 points</span>
             | <a class="timestamp" href="https://old.reddit.com/r/abstract_garden/comments/1fp5o8f/冲浪小本本儿_七/loy8r8j/">Sep 26 2024 09:11:37</a>
         </p>
@@ -347,7 +322,7 @@ client2------------------&gt;<br />
     <div class="comment" id="t1_lp8mc1h">
         <p class="userinfo">
             <a class="toggle_hide_button" href="javascript:void(0)" onclick="toggle_collapse(this.parentElement.parentElement)">[-]</a>
-            <a href="https://old.reddit.com/u/replaceOrgansKingXjp">replaceOrgansKingXjp</a>
+            <a href="https://old.reddit.com/u/replaceOrgansKingXjp">u/replaceOrgansKingXjp</a>
             | <span class="score">2 points</span>
             | <a class="timestamp" href="https://old.reddit.com/r/abstract_garden/comments/1fp5o8f/冲浪小本本儿_七/lp8mc1h/">Sep 28 2024 04:16:05</a>
         </p>
@@ -355,17 +330,5 @@ client2------------------&gt;<br />
             <p>哈哈，谢谢你的追更，创建了一个post作为索引，我会在每篇文章结尾添加索引地址</p>
 <p><a href="https://www.reddit.com/r/abstract_garden/comments/1fqx0gu/%E5%86%B2%E6%B5%AA%E5%B0%8F%E6%9C%AC%E6%9C%AC%E5%84%BF%E7%B3%BB%E5%88%97%E7%B4%A2%E5%BC%95/">https://www.reddit.com/r/abstract_garden/comments/1fqx0gu/%E5%86%B2%E6%B5%AA%E5%B0%8F%E6%9C%AC%E6%9C%AC%E5%84%BF%E7%B3%BB%E5%88%97%E7%B4%A2%E5%BC%95/</a></p></div></div></div></div>
     </body>
-    <script>
-        function toggle_collapse(comment_div) {{
-            var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
-            var collapsible = comment_div.getElementsByClassName("collapsible")[0];
-            if (collapsible.classList.contains("hidden")) {{
-                collapsible.classList.remove("hidden");
-                button.innerText = "[-]";
-            }} else {{
-                collapsible.classList.add("hidden");
-                button.innerText = "[+]";
-            }}
-        }}
-    </script>
+    <script src="../../assets/post-script.js"></script>
 </html>

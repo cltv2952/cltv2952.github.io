@@ -4,99 +4,73 @@
         <title>新家列表，同时用脚本自动获取了每个sub最后10条评论的发布时间，当作活跃度，时间越近越好</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <style>
-            .crosspost {
-                border: 1px solid #888;
-                margin-top: 10px;
-                padding: 10px;
-                background-color: #f6f7f8;
-            }
-            .crosspost-header {
-                font-size: 12px;
-                color: #555;
-                margin-bottom: 6px;
-            }
-            .crosspost-content {
-                padding-left: 5px;
-            }
-            .submission, .comment { padding-left: 20px; padding-right: 4px; font-family: verdana, arial, helvetica, sans-serif; }
-            .comment { margin-top: 4px; margin-bottom: 4px; border: 1px solid black; }
-            .submission { border: 2px solid blue; padding-bottom: 10px; }
-            .hidden { display: none; }
-            .userinfo { font-size: 12px; color: #555; }
-            .flair {
-                padding: 2px 6px; border-radius: 20px; font-size: 10px; font-weight: bold;
-                margin-left: 5px; display: inline-block; vertical-align: middle; line-height: 1.2;
-            }
-        </style>
+        <link rel="stylesheet" href="../../assets/post-style.css">
     </head>
     <body>
-        <a href="../Sina.html#t3_1cyvkit" class="back-link">← Back to Index</a>
             <div class="submission" id="t3_1cyvkit">
                 <p class="userinfo">
-                    <a href="https://old.reddit.com/u/qbmy">qbmy</a>
+                    <a href="https://old.reddit.com/u/qbmy">u/qbmy</a>
                     | <span class="score">7 points</span>
                     | <a class="timestamp" href="https://old.reddit.com/r/Sina/comments/1cyvkit/新家列表同时用脚本自动获取了每个sub最后10条评论的发布时间当作活跃度时间越近越好/">May 23 2024 23:29:02</a>
                 </p>
                 <strong>新家列表，同时用脚本自动获取了每个sub最后10条评论的发布时间，当作活跃度，时间越近越好</strong>
-                <p><pre><code>2952 5 month(s) ago
-anti_china_irl 9 month(s) ago
-antisocialism_sino 27 day(s) ago
-AsianLivesMatter 1 year(s) ago
-bannedfromchonglang 2 year(s) ago
-ChinaJoke 1 year(s) ago
-china_no_censor 10 month(s) ago
-chonglangtv2 2 year(s) ago
-chonglangTV_irl 14 hour(s) ago
-ChonglangZedong 4 month(s) ago
-chyberpunk 15 day(s) ago
-CLTV2 2 year(s) ago
-fake_China_irl 10 month(s) ago
-FreedomCLTV 4 month(s) ago
-fuzhizhantie 22 hour(s) ago
-geltopia private
-GenXianzhong 1 year(s) ago
-GooseGroupTV private
-GTok_CN 7 day(s) ago
-Guanine 3 month(s) ago
-guiwushenyouhui 2 hour(s) ago
-HomeofChonglang 2 month(s) ago
-ILoveHealthCode 1 year(s) ago
-KanagawaWave 4 hour(s) ago
-langrenClub banned
-LOOK_CHINA 40 minute(s) ago
-NewsWithXianZhong 11 month(s) ago
-NEWTo_Cave 8 minute(s) ago
-QiState 3 month(s) ago
-real_youmo_irl 5 month(s) ago
-ridiculous_in_china 11 month(s) ago
-rightkanagawa 1 year(s) ago
-RoninClub 32 minute(s) ago
-RoninDao 4 month(s) ago
-saraba1st 2 month(s) ago
-saraba2nd private
-selfabasement 3 month(s) ago
-shenju 8 month(s) ago
-shennaichuan2952 3 month(s) ago
-Sina 19 minute(s) ago
-SurfTV 1 year(s) ago
-touduTV 24 day(s) ago
-wenyiTV 9 month(s) ago
-XComhghall 2 year(s) ago
-xiaohongshuRED banned
-xiashuidao 5 month(s) ago
-xxxisaman 2 day(s) ago
-youmai 4 hour(s) ago
-youxi 1 day(s) ago
-zhidom 6 month(s) ago
-Zhina 5 year(s) ago
-</code></pre></p>
+                <p>2952 5 month(s) ago<br />
+    anti_china_irl 9 month(s) ago<br />
+    antisocialism_sino 27 day(s) ago<br />
+    AsianLivesMatter 1 year(s) ago<br />
+    bannedfromchonglang 2 year(s) ago<br />
+    ChinaJoke 1 year(s) ago<br />
+    china_no_censor 10 month(s) ago<br />
+    chonglangtv2 2 year(s) ago<br />
+    chonglangTV_irl 14 hour(s) ago<br />
+    ChonglangZedong 4 month(s) ago<br />
+    chyberpunk 15 day(s) ago<br />
+    CLTV2 2 year(s) ago<br />
+    fake_China_irl 10 month(s) ago<br />
+    FreedomCLTV 4 month(s) ago<br />
+    fuzhizhantie 22 hour(s) ago<br />
+    geltopia private<br />
+    GenXianzhong 1 year(s) ago<br />
+    GooseGroupTV private<br />
+    GTok_CN 7 day(s) ago<br />
+    Guanine 3 month(s) ago<br />
+    guiwushenyouhui 2 hour(s) ago<br />
+    HomeofChonglang 2 month(s) ago<br />
+    ILoveHealthCode 1 year(s) ago<br />
+    KanagawaWave 4 hour(s) ago<br />
+    langrenClub banned<br />
+    LOOK_CHINA 40 minute(s) ago<br />
+    NewsWithXianZhong 11 month(s) ago<br />
+    NEWTo_Cave 8 minute(s) ago<br />
+    QiState 3 month(s) ago<br />
+    real_youmo_irl 5 month(s) ago<br />
+    ridiculous_in_china 11 month(s) ago<br />
+    rightkanagawa 1 year(s) ago<br />
+    RoninClub 32 minute(s) ago<br />
+    RoninDao 4 month(s) ago<br />
+    saraba1st 2 month(s) ago<br />
+    saraba2nd private<br />
+    selfabasement 3 month(s) ago<br />
+    shenju 8 month(s) ago<br />
+    shennaichuan2952 3 month(s) ago<br />
+    Sina 19 minute(s) ago<br />
+    SurfTV 1 year(s) ago<br />
+    touduTV 24 day(s) ago<br />
+    wenyiTV 9 month(s) ago<br />
+    XComhghall 2 year(s) ago<br />
+    xiaohongshuRED banned<br />
+    xiashuidao 5 month(s) ago<br />
+    xxxisaman 2 day(s) ago<br />
+    youmai 4 hour(s) ago<br />
+    youxi 1 day(s) ago<br />
+    zhidom 6 month(s) ago<br />
+    Zhina 5 year(s) ago</p>
                 
             </div>
     <div class="comment" id="t1_l5c33tq">
         <p class="userinfo">
             <a class="toggle_hide_button" href="javascript:void(0)" onclick="toggle_collapse(this.parentElement.parentElement)">[-]</a>
-            <a href="https://old.reddit.com/u/AutoModerator">AutoModerator</a>
+            <a href="https://old.reddit.com/u/AutoModerator">u/AutoModerator</a>
             | <span class="score">4 points</span>
             | <a class="timestamp" href="https://old.reddit.com/r/Sina/comments/1cyvkit/新家列表同时用脚本自动获取了每个sub最后10条评论的发布时间当作活跃度时间越近越好/l5c33tq/">May 23 2024 23:29:03</a>
         </p>
@@ -106,24 +80,12 @@ Zhina 5 year(s) ago
     <div class="comment" id="t1_l5d28et">
         <p class="userinfo">
             <a class="toggle_hide_button" href="javascript:void(0)" onclick="toggle_collapse(this.parentElement.parentElement)">[-]</a>
-            <a href="https://old.reddit.com/u/PayJazzlike1090">PayJazzlike1090</a>
+            <a href="https://old.reddit.com/u/PayJazzlike1090">u/PayJazzlike1090</a>
             | <span class="score">2 points</span>
             | <a class="timestamp" href="https://old.reddit.com/r/Sina/comments/1cyvkit/新家列表同时用脚本自动获取了每个sub最后10条评论的发布时间当作活跃度时间越近越好/l5d28et/">May 24 2024 02:49:36</a>
         </p>
         <div class="collapsible">
             <p>把kanagawawave第三太监区和lookchina轮味sub这俩去掉</p></div></div>
     </body>
-    <script>
-        function toggle_collapse(comment_div) {{
-            var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
-            var collapsible = comment_div.getElementsByClassName("collapsible")[0];
-            if (collapsible.classList.contains("hidden")) {{
-                collapsible.classList.remove("hidden");
-                button.innerText = "[-]";
-            }} else {{
-                collapsible.classList.add("hidden");
-                button.innerText = "[+]";
-            }}
-        }}
-    </script>
+    <script src="../../assets/post-script.js"></script>
 </html>

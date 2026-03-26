@@ -3,600 +3,231 @@
     <head>
         <title>KaiFangQu</title>
         <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <style>
+            :root {
+                --row-height: 32px; 
+            }
             body {
-                font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
-                font-size: var(--vscode-markdown-font-size, 14px);
-                padding: 0 26px;
-                line-height: var(--vscode-markdown-line-height, 22px);
-            }
-            a {
-                color: blue; text-decoration: none;
-            }
-            a:hover {
-                color: red;
-            }
-            a:visited {
-                color: rgba(251, 215, 157);
-            }
-            p {
-                scroll-margin-top: 100px; /* Adjust this value based on your header height */
-            }
-            .flair {
-                padding: 2px 6px; border-radius: 20px; font-size: 10px; font-weight: bold;
-                margin-left: 5px; display: inline-block; vertical-align: middle; line-height: 1.2;
-            }
-            .post-listing {
-                margin-bottom: 0px;
-            }
-            .meta-val {
-                color: #888888;
+                font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Ubuntu, "Droid Sans", sans-serif;
                 font-size: 14px;
+                padding: 0 18px;
+                line-height: 20px;
+                margin: 0;
+                background: #fff;
+                max-width: 1100px;
+                margin: 20px auto;
             }
-            .upvote-icon {
-                width: 16px; 
-                height: 16px;
-                color: #888888;
-                vertical-align: middle;
-                display: inline-block;
-                margin-left: 4px;
-                margin-right: -2px;
-            }
-            .comment-icon {
-                width: 16px; 
-                height: 16px;
-                color: #888888;
-                vertical-align: middle;
-                display: inline-block;
-                margin-left: 4px;
-                margin-right: 2px;
-                position: relative;
-                top: 1px;
-            }
-            #note {
-                padding-left: 20px;
-                padding-right: 20px;
-                margin: auto;
-                border: 2px solid rgba(248, 108, 95);
-                background-color: #f3f3f3;
+            a { color: blue; text-decoration: none; }
+            a:hover { color: red; }
+            a:visited { color: rgb(142, 105, 167); }
+            h1 { margin: 16px 0 10px; font-size: 24px; }
+            #sort-controls {
                 position: sticky;
-                top: 8px;
-            }
-            #topspace, #bottomspace {
-                position: fixed;
-                background-color: white;
-                padding: 4px;
-                width: 100%;
-            }
-            #topspace {
                 top: 0;
+                z-index: 10;
+                margin: 0 -18px 0;
+                padding: 10px 18px;
+                background: #f9f9f9;
+                border-bottom: 1px solid #e5e5e5;
+            }
+            #searchBox, #sortOrder {
+                padding: 5px 8px;
+                border-radius: 4px;
+                border: 1px solid #ccc;
+                font: inherit;
+            }
+            #searchBox { width: min(420px, 50vw); margin-right: 8px; }
+            #summary { color: #666; font-size: 12px; margin-left: 10px; }
+            #list-root { position: relative; width: 100%; }
+            #list-spacer { width: 1px; opacity: 0; }
+            #list-viewport { position: absolute; left: 0; right: 0; top: 0; will-change: transform; }
+            .post-listing {
+                position: absolute;
+                left: 0;
+                right: 0;
+                display: flex;
+                align-items: flex-start;
+                min-height: var(--row-height);
+                line-height: var(--row-height);
+                overflow: hidden;
+                border-bottom: 1px solid #f0f0f0;
+            }
+            .post-listing a.title { font-weight: 500; word-break: break-word; }
+            .post-listing:hover {
+                height: auto; 
+                min-height: var(--row-height);
+                z-index: 100;
+                background: #f8fafc;  /* slight tint (very subtle blue-gray) */
+                border: 1px solid #d0d7de;  /* visible but not harsh */
+                box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+                overflow: visible;
+                line-height: 1.6;
+                margin: 0 -8px 0 -8px;
+                padding: 0 7px 0 7px;
+            }
+            .post-listing:hover .content {
+                white-space: normal;
+                overflow: visible;
+                padding-bottom: 6px;
+            }
+            .content {
+                flex: 1;
+                min-width: 0;   /* IMPORTANT: allows wrapping */
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+            }
+            .date {
+                flex: 0 0 auto;
+                color: #555;
+                margin-right: 4px;
+            }
+            .author { color: #444; margin-left: 4px; }
+            .flair {
+                display: inline-block;
+                padding: 2px 6px;
+                border-radius: 20px;
+                font-size: 10px;
+                font-weight: bold;
+                margin-left: 5px;
+                line-height: 1.2;
+                vertical-align: middle;
+            }
+            .pill {
+                display: inline-block;
+                font-size: 11px;
+                padding: 0 6px;
+                margin-left: 6px;
+                border-radius: 999px;
+                background: #efefef;
+                color: #444;
+                vertical-align: middle;
+                line-height: 18px;
             }
         </style>
     </head>
     <body>
         <h1>r/KaiFangQu</h1>
-        <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
-            <symbol id="icon-upvote" viewBox="0 0 20 20">
-                <path d="M10 2l-7 7h4v9h6V9h4z" fill="currentColor"/>
-            </symbol>
-            <symbol id="icon-comment" viewBox="0 0 20 20">
-                <path d="M18 7c0-3-3.6-5-8-5s-8 2-8 5c0 1.8 1.3 3.4 3.2 4.3-.3 1.1-1.2 2.5-1.2 2.5s1.7 0 2.9-1.3c1 .3 2 .5 3.1.5 4.4 0 8-2.5 8-6z" fill="currentColor"/>
-            </symbol>
-        </svg>
-        <div id="sort-controls" style="margin-bottom: 20px; padding: 10px; background: #f9f9f9; border-radius: 8px; border: 1px solid #eee;">
+        <div id="sort-controls">
             <label for="sortOrder" style="font-weight: bold; font-size: 12px;">Sort Archive By: </label>
-            <select id="sortOrder" onchange="sortPosts()" style="padding: 5px; border-radius: 4px;">
+            <select id="sortOrder">
                 <option value="time-asc">Date (Oldest)</option>
                 <option value="time">Date (Newest)</option>
                 <option value="score">Upvotes (Highest)</option>
                 <option value="comments">Comments (Most)</option>
             </select>
+            <input id="searchBox" type="search" placeholder="Filter title / author" spellcheck="false" />
+            <span id="summary"></span>
         </div>
-        <div id="posts-container">
-            <div class="post-listing" id="t3_auvu19" data-time="1551160487" data-score="1" data-comments="0">
-                <p>
-                    2019 Feb 26: <a target="_self" href="./KaiFangQu/t3_auvu19.html">欢迎虎扑JR来这里聊天</a>  - /u/ballpal  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1r33k65" data-time="1770926002" data-score="1" data-comments="11">
-                <p>
-                    2026 Feb 13: <a target="_self" href="./KaiFangQu/t3_1r33k65.html">欢迎回家兄弟们</a>  - /u/hupuuuuu  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">11</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1r34imy" data-time="1770928168" data-score="1" data-comments="2">
-                <p>
-                    2026 Feb 13: <a target="_self" href="./KaiFangQu/t3_1r34imy.html">吐蕃人不是吐人 突厥人不是突人 蒙古人不是蒙人 满洲人不是满人 华夏人不是华人</a>  - /u/IsopodEmotional9409  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">2</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1r34muh" data-time="1770928433" data-score="1" data-comments="2">
-                <p>
-                    2026 Feb 13: <a target="_self" href="./KaiFangQu/t3_1r34muh.html">中国的商业环境文化多元、充满活力，多样背景的融合让市场更具创造力与机遇。</a>  - /u/hupuuuuu  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">2</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1r34t6b" data-time="1770928846" data-score="1" data-comments="5">
-                <p>
-                    2026 Feb 13: <a target="_self" href="./KaiFangQu/t3_1r34t6b.html">这家味儿正吗？</a>  - /u/ART4567782  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">5</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1r36hys" data-time="1770932756" data-score="1" data-comments="13">
-                <p>
-                    2026 Feb 13: <a target="_self" href="./KaiFangQu/t3_1r36hys.html">分析盘点：如何做个优质洼池人，看看你自己中了几条</a>  - /u/AzumaAtago  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">13</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1r36ma5" data-time="1770933052" data-score="1" data-comments="0">
-                <p>
-                    2026 Feb 13: <a target="_self" href="./KaiFangQu/t3_1r36ma5.html">哪位chinairl太监</a>  - /u/InformationNo7587  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1r385hi" data-time="1770936682" data-score="1" data-comments="6">
-                <p>
-                    2026 Feb 13: <a target="_self" href="./KaiFangQu/t3_1r385hi.html">和平时期差不多4, 5个月又要重新回到3周封一次的逃亡生涯了, 举报蛐真是闲的没事干</a>  - /u/Icy_Difficulty_5994  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">6</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1r3bsha" data-time="1770946037" data-score="1" data-comments="0">
-                <p>
-                    2026 Feb 13: <a target="_self" href="./KaiFangQu/t3_1r3bsha.html">这种的跨畜算是第几次觉醒了？</a>  - /u/Large_Flamingo_4106  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1r3buek" data-time="1770946192" data-score="1" data-comments="14">
-                <p>
-                    2026 Feb 13: <a target="_self" href="./KaiFangQu/t3_1r3buek.html">这种的跨畜算是第几次觉醒了？</a>  - /u/InformationNo7587  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">14</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1r3dv3a" data-time="1770951763" data-score="1" data-comments="4">
-                <p>
-                    2026 Feb 13: <a target="_self" href="./KaiFangQu/t3_1r3dv3a.html">怎么回事呢</a>  - /u/YoumoDashi  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">4</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1r3eb1e" data-time="1770953045" data-score="1" data-comments="2">
-                <p>
-                    2026 Feb 13: <a target="_self" href="./KaiFangQu/t3_1r3eb1e.html">浪太监进</a>  - /u/MTFreakVanas  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">2</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1r3ec9j" data-time="1770953146" data-score="1" data-comments="0">
-                <p>
-                    2026 Feb 13: <a target="_self" href="./KaiFangQu/t3_1r3ec9j.html">更适合芝麻猪的“华表”</a>  - /u/Salt-Tap7386  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1r3edxc" data-time="1770953284" data-score="1" data-comments="1">
-                <p>
-                    2026 Feb 13: <a target="_self" href="./KaiFangQu/t3_1r3edxc.html">土耳其主席语录</a>  - /u/Salt-Tap7386  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">1</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1r3et1h" data-time="1770954520" data-score="1" data-comments="0">
-                <p>
-                    2026 Feb 13: <a target="_self" href="./KaiFangQu/t3_1r3et1h.html">何意味？</a>  - /u/Far_Network_855  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1r3eu0q" data-time="1770954598" data-score="1" data-comments="0">
-                <p>
-                    2026 Feb 13: <a target="_self" href="./KaiFangQu/t3_1r3eu0q.html">1895年2月，大日本帝国皇軍占领威海卫，海陆并进全歼了北洋舰队。2月11日，北洋舰队提督丁汝昌服用鸦片并等待死亡。至2月12日，丁汝昌正式死亡。随后北洋舰队向大日本帝国皇軍投降，北洋舰队剩余10艘军舰被编入日本海軍。</a>  - /u/Far_Network_855  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1r3fx00" data-time="1770957864" data-score="1" data-comments="7">
-                <p>
-                    2026 Feb 13: <a target="_self" href="./KaiFangQu/t3_1r3fx00.html">可别把这贱畜放进来了，他在前kfq这么活跃，搞不好就是他举报的</a>  - /u/Vegetable-Finding735  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">7</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1r3g441" data-time="1770958469" data-score="1" data-comments="1">
-                <p>
-                    2026 Feb 13: <a target="_self" href="./KaiFangQu/t3_1r3g441.html">你支和朝棒或成人类历史上第一个全女友好的独裁联盟，可以说相当进步了。</a>  - /u/Ok_Can9585  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">1</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1r3g4so" data-time="1770958530" data-score="1" data-comments="0">
-                <p>
-                    2026 Feb 13: <a target="_self" href="./KaiFangQu/t3_1r3g4so.html">我承认我已经很久没有来过开放区了</a>  - /u/PresentationUsed6313  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1r3gm4h" data-time="1770960031" data-score="1" data-comments="0">
-                <p>
-                    2026 Feb 13: <a target="_self" href="./KaiFangQu/t3_1r3gm4h.html">南方汉族，，，</a>  - /u/UNDEADZodd  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1r3gtg3" data-time="1770960684" data-score="1" data-comments="6">
-                <p>
-                    2026 Feb 13: <a target="_self" href="./KaiFangQu/t3_1r3gtg3.html">是开友们吗</a>  - /u/Sumikaick  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">6</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1r3h8z6" data-time="1770962105" data-score="1" data-comments="0">
-                <p>
-                    2026 Feb 13: <a target="_self" href="./KaiFangQu/t3_1r3h8z6.html">打女拳的都是丑女，真的伙计</a>  - /u/Vegetable-Finding735  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1r3hqhh" data-time="1770963673" data-score="1" data-comments="0">
-                <p>
-                    2026 Feb 13: <a target="_self" href="./KaiFangQu/t3_1r3hqhh.html">防区大太监嘴里的理中客：毛腊肉是否有滴虫？不能听取私人医生李志绥的一面之词。只有为反而反的支黑才会以为毛腊肉有滴虫，这是支性的体现</a>  - /u/Vegetable-Finding735  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1r3hrqz" data-time="1770963791" data-score="1" data-comments="0">
-                <p>
-                    2026 Feb 13: <a target="_self" href="./KaiFangQu/t3_1r3hrqz.html">操你妈你们怎么这么坏啊！</a>  - /u/Ok-Zebra-4755  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1r3k4fz" data-time="1770972306" data-score="1" data-comments="0">
-                <p>
-                    2026 Feb 13: <a target="_self" href="./KaiFangQu/t3_1r3k4fz.html">基础建设之山本一夫</a>  - /u/Own-Arrival7821  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1r3k522" data-time="1770972373" data-score="1" data-comments="5">
-                <p>
-                    2026 Feb 13: <a target="_self" href="./KaiFangQu/t3_1r3k522.html">基础建设之天津完全胜利</a>  - /u/Own-Arrival7821  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">5</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1r3k78m" data-time="1770972608" data-score="1" data-comments="2">
-                <p>
-                    2026 Feb 13: <a target="_self" href="./KaiFangQu/t3_1r3k78m.html">炒作五常，你在哪</a>  - /u/Effective-Dare-7406  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">2</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1r3ka9e" data-time="1770972944" data-score="1" data-comments="0">
-                <p>
-                    2026 Feb 13: <a target="_self" href="./KaiFangQu/t3_1r3ka9e.html">基础建设之支那猪</a>  - /u/Own-Arrival7821  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1r3kafc" data-time="1770972962" data-score="1" data-comments="0">
-                <p>
-                    2026 Feb 13: <a target="_self" href="./KaiFangQu/t3_1r3kafc.html">小小病毒你来侵犯</a>  - /u/Vegetable-Finding735  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1r3kbt0" data-time="1770973127" data-score="1" data-comments="1">
-                <p>
-                    2026 Feb 13: <a target="_self" href="./KaiFangQu/t3_1r3kbt0.html">基础建设之超管结算</a>  - /u/Effective-Dare-7406  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">1</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1r3khnm" data-time="1770973743" data-score="1" data-comments="0">
-                <p>
-                    2026 Feb 13: <a target="_self" href="./KaiFangQu/t3_1r3khnm.html">基础建设之支那人来了</a>  - /u/Own-Arrival7821  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1r3kj30" data-time="1770973895" data-score="1" data-comments="1">
-                <p>
-                    2026 Feb 13: <a target="_self" href="./KaiFangQu/t3_1r3kj30.html">经典回顾：野田毅大佐复活来到2022年的中国</a>  - /u/89invasionshina64  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">1</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1r3knyz" data-time="1770974418" data-score="1" data-comments="1">
-                <p>
-                    2026 Feb 13: <a target="_self" href="./KaiFangQu/t3_1r3knyz.html">哈吉米是有感情的、所以情善待他们</a>  - /u/AzumaAtago  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">1</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1r3kshu" data-time="1770974919" data-score="1" data-comments="6">
-                <p>
-                    2026 Feb 13: <a target="_self" href="./KaiFangQu/t3_1r3kshu.html">眼黑圈开磨皮美白也消不掉 感觉还有些兔牙 看起来嘴凸唉</a>  - /u/AzumaAtago  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">6</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1r3l1f9" data-time="1770975887" data-score="1" data-comments="5">
-                <p>
-                    2026 Feb 13: <a target="_self" href="./KaiFangQu/t3_1r3l1f9.html">谁来了？ 认不认识我</a>  - /u/HonestzPractice  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">5</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1r3l2hm" data-time="1770976000" data-score="1" data-comments="1">
-                <p>
-                    2026 Feb 13: <a target="_self" href="./KaiFangQu/t3_1r3l2hm.html">经典回顾之摇摆大白</a>  - /u/langtaijiansiquanjia  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">1</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1r3l35f" data-time="1770976073" data-score="1" data-comments="0">
-                <p>
-                    2026 Feb 13: <a target="_self" href="./KaiFangQu/t3_1r3l35f.html">基础建设之阿格尼</a>  - /u/langtaijiansiquanjia  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1r3l3ws" data-time="1770976158" data-score="1" data-comments="0">
-                <p>
-                    2026 Feb 13: <a target="_self" href="./KaiFangQu/t3_1r3l3ws.html">基础建设之流浪支球</a>  - /u/langtaijiansiquanjia  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1r3l4jm" data-time="1770976224" data-score="1" data-comments="1">
-                <p>
-                    2026 Feb 13: <a target="_self" href="./KaiFangQu/t3_1r3l4jm.html">经典回顾之东北狗</a>  - /u/langtaijiansiquanjia  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">1</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1r3m4iq" data-time="1770979882" data-score="1" data-comments="4">
-                <p>
-                    2026 Feb 13: <a target="_self" href="./KaiFangQu/t3_1r3m4iq.html">我宣布r/KaiFangQu 同时支持lgbtq+和伊斯兰</a>  - /u/St-Bao  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">4</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1r3nwhr" data-time="1770985792" data-score="1" data-comments="2">
-                <p>
-                    2026 Feb 13: <a target="_self" href="./KaiFangQu/t3_1r3nwhr.html">民小蛆和黄左进步太监算不算是鄙视链最底层的物种之一？仅强于腊畜和苏粉孝子，粉蛆都比前几者要高级的</a>  - /u/InformationNo7587  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">2</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1r3nxod" data-time="1770985881" data-score="1" data-comments="1">
-                <p>
-                    2026 Feb 13: <a target="_self" href="./KaiFangQu/t3_1r3nxod.html">浪公公思考中。。</a>  - /u/InformationNo7587  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">1</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1r3o3o9" data-time="1770986388" data-score="1" data-comments="1">
-                <p>
-                    2026 Feb 13: <a target="_self" href="./KaiFangQu/t3_1r3o3o9.html">只有豉猪里的亩人和同性恋中最下贱的群体才会慕坏，都是民小或黄👈，他们内心深处渴望被肉体破坏，具体表现像是个忠诚的小妾，越坏的人越要给他们护驾</a>  - /u/Vegetable-Finding735  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">1</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1r3o5yb" data-time="1770986579" data-score="1" data-comments="0">
-                <p>
-                    2026 Feb 13: <a target="_self" href="./KaiFangQu/t3_1r3o5yb.html">谁来了</a>  - /u/InformationNo7587  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1r3o9kw" data-time="1770986883" data-score="1" data-comments="2">
-                <p>
-                    2026 Feb 13: <a target="_self" href="./KaiFangQu/t3_1r3o9kw.html">小黄人🤮</a>  - /u/Ok_Can9585  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">2</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1r3od1x" data-time="1770987159" data-score="1" data-comments="2">
-                <p>
-                    2026 Feb 13: <a target="_self" href="./KaiFangQu/t3_1r3od1x.html">很多支那人对爱泼斯特都非常崇拜，并表示出一种惋惜，而支那人又恰恰是爱泼斯坦这种美国权区讨厌的暴发户，单相思了属于是</a>  - /u/Vegetable-Finding735  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">2</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1r3ofke" data-time="1770987361" data-score="1" data-comments="0">
-                <p>
-                    2026 Feb 13: <a target="_self" href="./KaiFangQu/t3_1r3ofke.html">小黄人里这下巴后缩还挺多的</a>  - /u/Vegetable-Finding735  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1r3ogtn" data-time="1770987463" data-score="1" data-comments="1">
-                <p>
-                    2026 Feb 13: <a target="_self" href="./KaiFangQu/t3_1r3ogtn.html">三又支猪的下巴很多后缩</a>  - /u/Vegetable-Finding735  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">1</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1r3oue5" data-time="1770988478" data-score="1" data-comments="3">
-                <p>
-                    2026 Feb 13: <a target="_self" href="./KaiFangQu/t3_1r3oue5.html">善良🌸艺伎妹被港猴黑警打晕</a>  - /u/dont-to-cry  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">3</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1r3pd0c" data-time="1770989854" data-score="1" data-comments="0">
-                <p>
-                    2026 Feb 13: <a target="_self" href="./KaiFangQu/t3_1r3pd0c.html">基础建设之张妈下楼梯</a>  - /u/DemandNo4525  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1r3pnu6" data-time="1770990631" data-score="1" data-comments="1">
-                <p>
-                    2026 Feb 13: <a target="_self" href="./KaiFangQu/t3_1r3pnu6.html">经典回顾之带派星打蜘蛛</a>  - /u/DemandNo4525  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">1</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1r3r7ev" data-time="1770994375" data-score="1" data-comments="11">
-                <p>
-                    2026 Feb 13: <a target="_self" href="./KaiFangQu/t3_1r3r7ev.html">开放区两国分治政策 Açık bölgede iki ülkeyi bölme politikası</a>  - /u/YoumoDadi  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">11</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1r3sgjn" data-time="1770997241" data-score="1" data-comments="0">
-                <p>
-                    2026 Feb 13: <a target="_self" href="./KaiFangQu/t3_1r3sgjn.html">经典回顾之元首你好</a>  - /u/Stoned-Zheng-Li-73i  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1r3splb" data-time="1770997810" data-score="1" data-comments="1">
-                <p>
-                    2026 Feb 13: <a target="_self" href="./KaiFangQu/t3_1r3splb.html">经典回顾之动保女神</a>  - /u/Stoned-Zheng-Li-73i  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">1</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1r3spnn" data-time="1770997814" data-score="1" data-comments="1">
-                <p>
-                    2026 Feb 13: <a target="_self" href="./KaiFangQu/t3_1r3spnn.html">如何评价俺的sub 开友们给点意见 比如多发** , 盘点 ,之类的</a>  - /u/HonestzPractice  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">1</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1r3stut" data-time="1770998078" data-score="1" data-comments="3">
-                <p>
-                    2026 Feb 13: <a target="_self" href="./KaiFangQu/t3_1r3stut.html">既然kfq作为和chinairl同出一脉的兄弟sub，肥猪超管是否也应该连坐一下大太监区</a>  - /u/InformationNo7587  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">3</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1r3szqp" data-time="1770998438" data-score="1" data-comments="0">
-                <p>
-                    2026 Feb 14: <a target="_self" href="./KaiFangQu/t3_1r3szqp.html">经典回顾之理财高手</a>  - /u/YoumoDashi  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1r3tsvx" data-time="1771000190" data-score="1" data-comments="2">
-                <p>
-                    2026 Feb 14: <a target="_self" href="./KaiFangQu/t3_1r3tsvx.html">哪里银</a>  - /u/neko_canyon  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">2</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1r3u98z" data-time="1771001216" data-score="1" data-comments="0">
-                <p>
-                    2026 Feb 14: <a target="_self" href="./KaiFangQu/t3_1r3u98z.html">情人节快乐 ! 穹区们收得到礼物吗？</a>  - /u/Sumikaick  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1r3ucuv" data-time="1771001444" data-score="1" data-comments="0">
-                <p>
-                    2026 Feb 14: <a target="_self" href="./KaiFangQu/t3_1r3ucuv.html">经典回顾之沙东人的疑问</a>  - /u/InformationNo7587  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1r3uhwt" data-time="1771001752" data-score="1" data-comments="3">
-                <p>
-                    2026 Feb 14: <a target="_self" href="./KaiFangQu/t3_1r3uhwt.html">织女思考中</a>  - /u/InformationNo7587  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">3</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1r3vb90" data-time="1771003562" data-score="1" data-comments="0">
-                <p>
-                    2026 Feb 14: <a target="_self" href="./KaiFangQu/t3_1r3vb90.html">🟥 自由不是权利，而是积分足够时的奖励</a>  - /u/hupuuuuu  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1r3vle0" data-time="1771004190" data-score="1" data-comments="0">
-                <p>
-                    2026 Feb 14: <a target="_self" href="./KaiFangQu/t3_1r3vle0.html">經典回顧之幽默死了</a>  - /u/freelancer108119  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1r3wqox" data-time="1771006739" data-score="1" data-comments="0">
-                <p>
-                    2026 Feb 14: <a target="_self" href="./KaiFangQu/t3_1r3wqox.html">我的相册里有奇怪的东西</a>  - /u/[deleted]  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1r3wrpy" data-time="1771006800" data-score="1" data-comments="1">
-                <p>
-                    2026 Feb 14: <a target="_self" href="./KaiFangQu/t3_1r3wrpy.html">我的相册里好像有奇怪的东西...</a>  - /u/Sumikaick  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">1</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1r3xb1k" data-time="1771007973" data-score="1" data-comments="3">
-                <p>
-                    2026 Feb 14: <a target="_self" href="./KaiFangQu/t3_1r3xb1k.html">理性讨论, 26年还在玩OW的是不是都是10和蛋蛋后</a>  - /u/Icy_Difficulty_5994  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">3</span>
-                </p>
-            </div>
-            <div class="post-listing" id="t3_1r3xpm0" data-time="1771008899" data-score="1" data-comments="0">
-                <p>
-                    2026 Feb 14: <a target="_self" href="./KaiFangQu/t3_1r3xpm0.html">这种是处女吗</a>  - /u/MinuteButterfly1073  
-                    <svg class="upvote-icon"><use href="#icon-upvote"/></svg><span class="meta-val">+1</span>
-                    <svg class="comment-icon"><use href="#icon-comment"/></svg><span class="meta-val">0</span>
-                </p>
-            </div>
+        <div id="list-root">
+            <div id="list-spacer"></div>
+            <div id="list-viewport"></div>
         </div>
+        <script id="posts-data" type="application/json">[["t3_auvu19", "欢迎虎扑JR来这里聊天", "ballpal", 1, 0, 1551160487, null, "", "dark", null, null, null], ["t3_1r33k65", "欢迎回家兄弟们", "hupuuuuu", 1, 15, 1770926002, null, "", "dark", null, null, null], ["t3_1r34imy", "吐蕃人不是吐人 突厥人不是突人 蒙古人不是蒙人 满洲人不是满人 华夏人不是华人", "IsopodEmotional9409", 1, 4, 1770928168, null, "", "dark", null, null, null], ["t3_1r34muh", "中国的商业环境文化多元、充满活力，多样背景的融合让市场更具创造力与机遇。", "hupuuuuu", 1, 3, 1770928433, null, "", "dark", null, null, null], ["t3_1r34t6b", "这家味儿正吗？", "ART4567782", 1, 5, 1770928846, null, "", "dark", null, null, null], ["t3_1r36hys", "分析盘点：如何做个优质洼池人，看看你自己中了几条", "AzumaAtago", 1, 25, 1770932756, null, "", "dark", null, null, null], ["t3_1r36ma5", "哪位chinairl太监", "InformationNo7587", 1, 0, 1770933052, null, "", "dark", null, null, null], ["t3_1r385hi", "和平时期差不多4, 5个月又要重新回到3周封一次的逃亡生涯了, 举报蛐真是闲的没事干", "Icy_Difficulty_5994", 1, 6, 1770936682, null, "", "dark", null, null, null], ["t3_1r3bsha", "这种的跨畜算是第几次觉醒了？", "Large_Flamingo_4106", 1, 0, 1770946037, null, "", "dark", null, null, null], ["t3_1r3buek", "这种的跨畜算是第几次觉醒了？", "InformationNo7587", 1, 15, 1770946192, null, "", "dark", null, null, null], ["t3_1r3dv3a", "怎么回事呢", "YoumoDashi", 1, 5, 1770951763, null, "", "dark", null, null, null], ["t3_1r3eb1e", "浪太监进", "MTFreakVanas", 1, 2, 1770953045, null, "", "dark", null, null, null], ["t3_1r3ec9j", "更适合芝麻猪的“华表”", "Salt-Tap7386", 1, 0, 1770953146, null, "", "dark", null, null, null], ["t3_1r3edxc", "土耳其主席语录", "Salt-Tap7386", 1, 1, 1770953284, null, "", "dark", null, null, null], ["t3_1r3et1h", "何意味？", "Far_Network_855", 1, 0, 1770954520, null, "", "dark", null, null, null], ["t3_1r3eu0q", "1895年2月，大日本帝国皇軍占领威海卫，海陆并进全歼了北洋舰队。2月11日，北洋舰队提督丁汝昌服用鸦片并等待死亡。至2月12日，丁汝昌正式死亡。随后北洋舰队向大日本帝国皇軍投降，北洋舰队剩余10艘军舰被编入日本海軍。", "Far_Network_855", 1, 0, 1770954598, null, "", "dark", null, null, null], ["t3_1r3fx00", "可别把这贱畜放进来了，他在前kfq这么活跃，搞不好就是他举报的", "Vegetable-Finding735", 1, 7, 1770957864, null, "", "dark", null, null, null], ["t3_1r3g441", "你支和朝棒或成人类历史上第一个全女友好的独裁联盟，可以说相当进步了。", "Ok_Can9585", 1, 1, 1770958469, null, "", "dark", null, null, null], ["t3_1r3g4so", "我承认我已经很久没有来过开放区了", "PresentationUsed6313", 1, 0, 1770958530, null, "", "dark", null, null, null], ["t3_1r3gm4h", "南方汉族，，，", "UNDEADZodd", 1, 0, 1770960031, null, "", "dark", null, null, null], ["t3_1r3gtg3", "是开友们吗", "Sumikaick", 1, 7, 1770960684, null, "", "dark", null, null, null], ["t3_1r3h8z6", "打女拳的都是丑女，真的伙计", "Vegetable-Finding735", 1, 0, 1770962105, null, "", "dark", null, null, null], ["t3_1r3hqhh", "防区大太监嘴里的理中客：毛腊肉是否有滴虫？不能听取私人医生李志绥的一面之词。只有为反而反的支黑才会以为毛腊肉有滴虫，这是支性的体现", "Vegetable-Finding735", 1, 0, 1770963673, null, "", "dark", null, null, null], ["t3_1r3hrqz", "操你妈你们怎么这么坏啊！", "Ok-Zebra-4755", 1, 0, 1770963791, null, "", "dark", null, null, null], ["t3_1r3k4fz", "基础建设之山本一夫", "Own-Arrival7821", 1, 0, 1770972306, null, "", "dark", null, null, null], ["t3_1r3k522", "基础建设之天津完全胜利", "Own-Arrival7821", 1, 5, 1770972373, null, "", "dark", null, null, null], ["t3_1r3k78m", "炒作五常，你在哪", "Effective-Dare-7406", 1, 3, 1770972608, null, "", "dark", null, null, null], ["t3_1r3ka9e", "基础建设之支那猪", "Own-Arrival7821", 1, 0, 1770972944, null, "", "dark", null, null, null], ["t3_1r3kafc", "小小病毒你来侵犯", "Vegetable-Finding735", 1, 0, 1770972962, null, "", "dark", null, null, null], ["t3_1r3kbt0", "基础建设之超管结算", "Effective-Dare-7406", 1, 1, 1770973127, null, "", "dark", null, null, null], ["t3_1r3khnm", "基础建设之支那人来了", "Own-Arrival7821", 1, 0, 1770973743, null, "", "dark", null, null, null], ["t3_1r3kj30", "经典回顾：野田毅大佐复活来到2022年的中国", "89invasionshina64", 1, 1, 1770973895, null, "", "dark", null, null, null], ["t3_1r3knyz", "哈吉米是有感情的、所以情善待他们", "AzumaAtago", 1, 1, 1770974418, null, "", "dark", null, null, null], ["t3_1r3kshu", "眼黑圈开磨皮美白也消不掉 感觉还有些兔牙 看起来嘴凸唉", "AzumaAtago", 1, 6, 1770974919, null, "", "dark", null, null, null], ["t3_1r3l1f9", "谁来了？ 认不认识我", "HonestzPractice", 1, 5, 1770975887, null, "", "dark", null, null, null], ["t3_1r3l2hm", "经典回顾之摇摆大白", "langtaijiansiquanjia", 1, 1, 1770976000, null, "", "dark", null, null, null], ["t3_1r3l35f", "基础建设之阿格尼", "langtaijiansiquanjia", 1, 0, 1770976073, null, "", "dark", null, null, null], ["t3_1r3l3ws", "基础建设之流浪支球", "langtaijiansiquanjia", 1, 0, 1770976158, null, "", "dark", null, null, null], ["t3_1r3l4jm", "经典回顾之东北狗", "langtaijiansiquanjia", 1, 1, 1770976224, null, "", "dark", null, null, null], ["t3_1r3m4iq", "我宣布r/KaiFangQu 同时支持lgbtq+和伊斯兰", "St-Bao", 1, 4, 1770979882, null, "", "dark", null, null, null], ["t3_1r3nwhr", "民小蛆和黄左进步太监算不算是鄙视链最底层的物种之一？仅强于腊畜和苏粉孝子，粉蛆都比前几者要高级的", "InformationNo7587", 1, 3, 1770985792, null, "", "dark", null, null, null], ["t3_1r3nxod", "浪公公思考中。。", "InformationNo7587", 1, 1, 1770985881, null, "", "dark", null, null, null], ["t3_1r3o3o9", "只有豉猪里的亩人和同性恋中最下贱的群体才会慕坏，都是民小或黄👈，他们内心深处渴望被肉体破坏，具体表现像是个忠诚的小妾，越坏的人越要给他们护驾", "Vegetable-Finding735", 1, 1, 1770986388, null, "", "dark", null, null, null], ["t3_1r3o5yb", "谁来了", "InformationNo7587", 1, 0, 1770986579, null, "", "dark", null, null, null], ["t3_1r3o9kw", "小黄人🤮", "Ok_Can9585", 1, 2, 1770986883, null, "", "dark", null, null, null], ["t3_1r3od1x", "很多支那人对爱泼斯特都非常崇拜，并表示出一种惋惜，而支那人又恰恰是爱泼斯坦这种美国权区讨厌的暴发户，单相思了属于是", "Vegetable-Finding735", 1, 2, 1770987159, null, "", "dark", null, null, null], ["t3_1r3ofke", "小黄人里这下巴后缩还挺多的", "Vegetable-Finding735", 1, 0, 1770987361, null, "", "dark", null, null, null], ["t3_1r3ogtn", "三又支猪的下巴很多后缩", "Vegetable-Finding735", 1, 2, 1770987463, null, "", "dark", null, null, null], ["t3_1r3oue5", "善良🌸艺伎妹被港猴黑警打晕", "dont-to-cry", 1, 3, 1770988478, null, "", "dark", null, null, null], ["t3_1r3pd0c", "基础建设之张妈下楼梯", "DemandNo4525", 1, 0, 1770989854, null, "", "dark", null, null, null], ["t3_1r3pnu6", "经典回顾之带派星打蜘蛛", "DemandNo4525", 1, 1, 1770990631, null, "", "dark", null, null, null], ["t3_1r3r7ev", "开放区两国分治政策 Açık bölgede iki ülkeyi bölme politikası", "YoumoDadi", 1, 13, 1770994375, null, "", "dark", null, null, null], ["t3_1r3sgjn", "经典回顾之元首你好", "Stoned-Zheng-Li-73i", 1, 0, 1770997241, null, "", "dark", null, null, null], ["t3_1r3splb", "经典回顾之动保女神", "Stoned-Zheng-Li-73i", 1, 1, 1770997810, null, "", "dark", null, null, null], ["t3_1r3spnn", "如何评价俺的sub 开友们给点意见 比如多发** , 盘点 ,之类的", "HonestzPractice", 1, 1, 1770997814, null, "", "dark", null, null, null], ["t3_1r3stut", "既然kfq作为和chinairl同出一脉的兄弟sub，肥猪超管是否也应该连坐一下大太监区", "InformationNo7587", 1, 3, 1770998078, null, "", "dark", null, null, null], ["t3_1r3szqp", "经典回顾之理财高手", "YoumoDashi", 1, 0, 1770998438, null, "", "dark", null, null, null], ["t3_1r3tsvx", "哪里银", "neko_canyon", 1, 2, 1771000190, null, "", "dark", null, null, null], ["t3_1r3u98z", "情人节快乐 ! 穹区们收得到礼物吗？", "Sumikaick", 1, 0, 1771001216, null, "", "dark", null, null, null], ["t3_1r3ucuv", "经典回顾之沙东人的疑问", "InformationNo7587", 1, 0, 1771001444, null, "", "dark", null, null, null], ["t3_1r3uhwt", "织女思考中", "InformationNo7587", 1, 3, 1771001752, null, "", "dark", null, null, null], ["t3_1r3vb90", "🟥 自由不是权利，而是积分足够时的奖励", "hupuuuuu", 1, 0, 1771003562, null, "", "dark", null, null, null], ["t3_1r3vle0", "經典回顧之幽默死了", "freelancer108119", 1, 0, 1771004190, null, "", "dark", null, null, null], ["t3_1r3wqox", "我的相册里有奇怪的东西", "[deleted]", 1, 0, 1771006739, null, "", "dark", null, "", "dark"], ["t3_1r3wrpy", "我的相册里好像有奇怪的东西...", "Sumikaick", 1, 1, 1771006800, null, "", "dark", null, null, null], ["t3_1r3xb1k", "理性讨论, 26年还在玩OW的是不是都是10和蛋蛋后", "Icy_Difficulty_5994", 1, 3, 1771007973, null, "", "dark", null, null, null], ["t3_1r3xpm0", "这种是处女吗", "MinuteButterfly1073", 1, 0, 1771008899, null, "", "dark", null, null, null]]</script>
         <script>
-            function sortPosts() {{
-                const container = document.getElementById('posts-container');
-                const posts = Array.from(container.getElementsByClassName('post-listing'));
-                const sortBy = document.getElementById('sortOrder').value;
+            const SUBREDDIT_NAME = "KaiFangQu";
+            const BASE_POST_PATH = "./" + SUBREDDIT_NAME + "/";
+            
+            // This MUST match --row-height in CSS
+            const ROW_HEIGHT = 32; 
+            const BUFFER_ROWS = 24;
 
-                // remember user choice
-                sessionStorage.setItem("reddit_archive_sort", sortBy);
+            const rawPosts = JSON.parse(document.getElementById('posts-data').textContent);
+            const posts = rawPosts.map((row) => ({
+                id: row[0], title: row[1], author: row[2],
+                score: row[3] | 0, comments: row[4] | 0, time: row[5] | 0,
+                link_flair_text: row[6], link_flair_bg: row[7], link_flair_color: row[8],
+                author_flair_text: row[9], author_flair_bg: row[10], author_flair_color: row[11],
+            }));
 
-                // Check if we need ascending or descending
-                const isAsc = sortBy.endsWith('-asc');
-                const key = isAsc ? sortBy.replace('-asc', '') : sortBy;
+            const sortSelect = document.getElementById('sortOrder');
+            const searchBox = document.getElementById('searchBox');
+            const summary = document.getElementById('summary');
+            const viewport = document.getElementById('list-viewport');
+            const spacer = document.getElementById('list-spacer');
 
-                posts.sort((a, b) => {{
-                    let valA = parseInt(a.getAttribute('data-' + key));
-                    let valB = parseInt(b.getAttribute('data-' + key));
-                    
-                    // If Ascending: valA - valB (1, 2, 3...)
-                    // If Descending: valB - valA (9, 8, 7...)
-                    return isAsc ? valA - valB : valB - valA;
-                }});
+            let order = posts.map((_, i) => i);
+            let filteredOrder = order.slice();
+            let activeQuery = '';
+            let pendingRaf = 0;
 
-                // Re-insert posts in the new order
-                posts.forEach(post => container.appendChild(post));
-            }}
-            document.addEventListener("DOMContentLoaded", function () {{
-                const savedSort = sessionStorage.getItem("reddit_archive_sort");
+            function escapeHtml(value) {
+                return String(value).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+            }
 
-                if (savedSort) {{
-                    document.getElementById("sortOrder").value = savedSort;
-                }}
+            function renderFlair(text, bg, textColor) {
+                if (!text) return "";
+                const safeBg = (bg && bg.startsWith("#")) ? bg : "#edeff1";
+                const color = textColor === "light" ? "#ffffff" : "#1c1c1c";
+                return `<span class="flair" style="background-color:${safeBg};color:${color};">${escapeHtml(text)}</span>`;
+            }
 
-                sortPosts(); // apply sorting immediately
-            }});
+            function formatDate(ts) {
+                return new Date(ts * 1000).toLocaleDateString(undefined, { year: 'numeric', month: 'short', day: '2-digit' });
+            }
+
+            function render() {
+                const scrollTop = window.scrollY || document.documentElement.scrollTop || 0;
+                const viewportHeight = window.innerHeight || document.documentElement.clientHeight || 800;
+                const start = Math.max(0, Math.floor(scrollTop / ROW_HEIGHT) - BUFFER_ROWS);
+                const end = Math.min(filteredOrder.length, Math.ceil((scrollTop + viewportHeight) / ROW_HEIGHT) + BUFFER_ROWS);
+
+                viewport.style.transform = `translateY(${start * ROW_HEIGHT}px)`;
+                viewport.innerHTML = '';
+                const fragment = document.createDocumentFragment();
+
+                for (let i = start; i < end; i++) {
+                    const post = posts[filteredOrder[i]];
+                    const row = document.createElement('div');
+                    row.className = 'post-listing';
+                    row.style.top = `${(i - start) * ROW_HEIGHT}px`;
+                    const linkFlair = renderFlair(post.link_flair_text, post.link_flair_bg, post.link_flair_color);
+                    const authorFlair = renderFlair(post.author_flair_text, post.author_flair_bg, post.author_flair_color);
+                    row.innerHTML = `
+                        <span class="date">${formatDate(post.time)}:</span>
+                        <div class="content">
+                            <a class="title" href="${BASE_POST_PATH + post.id}.html" target="_blank" rel="noopener noreferrer">
+                                ${escapeHtml(post.title)} ${linkFlair}
+                            </a>
+                            <span class="author">- /u/${escapeHtml(post.author)} ${authorFlair}</span>
+                            <span class="pill">+${post.score.toLocaleString()} points</span>
+                            <span class="pill">${post.comments.toLocaleString()} comments</span>
+                        </div>
+                    `;
+                    fragment.appendChild(row);
+                }
+                viewport.appendChild(fragment);
+            }
+
+            function applyFilterAndRender() {
+                const query = activeQuery.trim().toLowerCase();
+                filteredOrder = query ? order.filter(idx => posts[idx].title.toLowerCase().includes(query) || posts[idx].author.toLowerCase().includes(query)) : order.slice();
+                spacer.style.height = `${filteredOrder.length * ROW_HEIGHT}px`;
+                summary.textContent = `${filteredOrder.length.toLocaleString()} / ${posts.length.toLocaleString()} posts`;
+                render();
+            }
+
+            function applySort() {
+                const sortBy = sortSelect.value;
+                sessionStorage.setItem('reddit_archive_sort', sortBy);
+                if (sortBy === 'time') order.sort((a, b) => posts[b].time - posts[a].time);
+                else if (sortBy === 'time-asc') order.sort((a, b) => posts[a].time - posts[b].time);
+                else if (sortBy === 'score') order.sort((a, b) => posts[b].score - posts[a].score);
+                else if (sortBy === 'comments') order.sort((a, b) => posts[b].comments - posts[a].comments);
+                applyFilterAndRender();
+            }
+
+            sortSelect.addEventListener('change', applySort);
+            searchBox.addEventListener('input', () => { activeQuery = searchBox.value || ''; applyFilterAndRender(); });
+            window.addEventListener('scroll', () => { if (!pendingRaf) pendingRaf = requestAnimationFrame(() => { pendingRaf = 0; render(); }); }, { passive: true });
+            window.addEventListener('resize', render);
+
+            document.addEventListener('DOMContentLoaded', () => {
+                const savedSort = sessionStorage.getItem('reddit_archive_sort');
+                if (savedSort) sortSelect.value = savedSort;
+                applySort();
+            });
         </script>
     </body>
 </html>
