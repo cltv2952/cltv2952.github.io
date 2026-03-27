@@ -4,37 +4,12 @@
         <title>兴味溢出</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <style>
-            .crosspost {
-                border: 1px solid #888;
-                margin-top: 10px;
-                padding: 10px;
-                background-color: #f6f7f8;
-            }
-            .crosspost-header {
-                font-size: 12px;
-                color: #555;
-                margin-bottom: 6px;
-            }
-            .crosspost-content {
-                padding-left: 5px;
-            }
-            .submission, .comment { padding-left: 20px; padding-right: 4px; font-family: verdana, arial, helvetica, sans-serif; }
-            .comment { margin-top: 4px; margin-bottom: 4px; border: 1px solid black; }
-            .submission { border: 2px solid blue; padding-bottom: 10px; }
-            .hidden { display: none; }
-            .userinfo { font-size: 12px; color: #555; }
-            .flair {
-                padding: 2px 6px; border-radius: 20px; font-size: 10px; font-weight: bold;
-                margin-left: 5px; display: inline-block; vertical-align: middle; line-height: 1.2;
-            }
-        </style>
+        <link rel="stylesheet" href="../../assets/post-style.css">
     </head>
     <body>
-        <a href="../Youmo.html#t3_12x4vky" class="back-link">← Back to Index</a>
             <div class="submission" id="t3_12x4vky">
                 <p class="userinfo">
-                    <a href="https://old.reddit.com/u/jjdejdjek">jjdejdjek</a><span class="flair" style="background-color: #73d3b0; color: #1c1c1c;">Lv.1：翻墙穷蛆</span>
+                    <a href="https://old.reddit.com/u/jjdejdjek">u/jjdejdjek</a><span class="flair" style="background-color: #73d3b0; color: #1c1c1c;">Lv.1：翻墙穷蛆</span>
                     | <span class="score">2 points</span>
                     | <a class="timestamp" href="https://old.reddit.com/r/Youmo/comments/12x4vky/兴味溢出/">Apr 24 2023 13:42:00</a>
                 </p>
@@ -45,7 +20,7 @@
     <div class="comment" id="t1_jhhpy9k">
         <p class="userinfo">
             <a class="toggle_hide_button" href="javascript:void(0)" onclick="toggle_collapse(this.parentElement.parentElement)">[-]</a>
-            <a href="https://old.reddit.com/u/czczczxxx">czczczxxx</a><span class="flair" style="background-color: #ff8a0d; color: #1c1c1c;">Lv.12：幽默老嗨</span>
+            <a href="https://old.reddit.com/u/czczczxxx">u/czczczxxx</a><span class="flair" style="background-color: #ff8a0d; color: #1c1c1c;">Lv.12：幽默老嗨</span>
             | <span class="score">11 points</span>
             | <a class="timestamp" href="https://old.reddit.com/r/Youmo/comments/12x4vky/兴味溢出/jhhpy9k/">Apr 24 2023 15:06:20</a>
         </p>
@@ -54,7 +29,7 @@
     <div class="comment" id="t1_jhhvh3h">
         <p class="userinfo">
             <a class="toggle_hide_button" href="javascript:void(0)" onclick="toggle_collapse(this.parentElement.parentElement)">[-]</a>
-            <a href="https://old.reddit.com/u/Wilhelm_Wang">Wilhelm_Wang</a><span class="flair" style="background-color: #ff8a0d; color: #1c1c1c;">Lv.10：炒作高手</span>
+            <a href="https://old.reddit.com/u/Wilhelm_Wang">u/Wilhelm_Wang</a><span class="flair" style="background-color: #ff8a0d; color: #1c1c1c;">Lv.10：炒作高手</span>
             | <span class="score">16 points</span>
             | <a class="timestamp" href="https://old.reddit.com/r/Youmo/comments/12x4vky/兴味溢出/jhhvh3h/">Apr 24 2023 16:27:18</a>
         </p>
@@ -63,24 +38,12 @@
     <div class="comment" id="t1_jhhzzfj">
         <p class="userinfo">
             <a class="toggle_hide_button" href="javascript:void(0)" onclick="toggle_collapse(this.parentElement.parentElement)">[-]</a>
-            <a href="https://old.reddit.com/u/jiqiren9527">jiqiren9527</a><span class="flair" style="background-color: #edeff1; color: #1c1c1c;">太阳升起，我已归来</span>
+            <a href="https://old.reddit.com/u/jiqiren9527">u/jiqiren9527</a><span class="flair" style="background-color: #edeff1; color: #1c1c1c;">太阳升起，我已归来</span>
             | <span class="score">3 points</span>
             | <a class="timestamp" href="https://old.reddit.com/r/Youmo/comments/12x4vky/兴味溢出/jhhzzfj/">Apr 24 2023 17:35:59</a>
         </p>
         <div class="collapsible">
             <p>魔怔迪友收收味，你现实中没有朋友这么跟你玩吗</p></div></div>
     </body>
-    <script>
-        function toggle_collapse(comment_div) {{
-            var button = comment_div.getElementsByClassName("toggle_hide_button")[0];
-            var collapsible = comment_div.getElementsByClassName("collapsible")[0];
-            if (collapsible.classList.contains("hidden")) {{
-                collapsible.classList.remove("hidden");
-                button.innerText = "[-]";
-            }} else {{
-                collapsible.classList.add("hidden");
-                button.innerText = "[+]";
-            }}
-        }}
-    </script>
+    <script src="../../assets/post-script.js"></script>
 </html>
