@@ -292,11 +292,20 @@ flowchart TB
     KaiFangQu --- KaiFangQu_t@{ shape: text, label: "2026/02/14<br>板块被封" }
 
     %% 其他
+    LTTV["r/LTTV
+    2021/04/30 - 2022/06/18
+    "]
+    Liutiaogou["r/Liutiaogou
+    2021/11/04 - 2022/06/22
+    "]
     chonglanggoosegroup["r/chonglanggoosegroup
     2021/12/05 - 2023/03/08
     "]
     bigpigTV["r/bigpigTV
     2022/05/19 - 2023/12/04
+    "]
+    zhinvIRL["r/zhinvIRL
+    2022/06/13 - 2023/06/19
     "]
     HarukaNaSora["r/HarukaNaSora
     2021/04/19 - 2024/04/22
@@ -309,10 +318,16 @@ flowchart TB
     2023/09/01 - now
     "]
 
+    LTTV --- LTTV_t@{ shape: text, label: "2022/08/08<br>无人管理被封" }
+    LTTV_t ~~~ Liutiaogou
+    Liutiaogou --- Liutiaogou_t@{ shape: text, label: "2022/07/07<br>无人管理被封" }
+    Liutiaogou_t ~~~ chonglanggoosegroup
     chonglanggoosegroup --- chonglanggoosegroup_t@{ shape: text, label: "2023/03/08<br>板块被封" }
     chonglanggoosegroup_t ~~~ bigpigTV
     bigpigTV --- bigpigTV_t@{ shape: text, label: "2023/12/04<br>无人管理被封" }
-    bigpigTV_t ~~~ HarukaNaSora
+    bigpigTV_t ~~~ zhinvIRL
+    zhinvIRL --- zhinvIRL_t@{ shape: text, label: "2023/06/20<br>板块被封" }
+    zhinvIRL_t ~~~ HarukaNaSora
     HarukaNaSora --- HarukaNaSora_t@{ shape: text, label: "2024/04/22<br>板块被封" }
     HarukaNaSora_t ~~~ FakeYoumo
     FakeYoumo --- FakeYoumo_t@{ shape: text, label: "2025/10/08<br>无人管理被封" }
