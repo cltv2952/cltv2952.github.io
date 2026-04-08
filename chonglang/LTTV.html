@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>LTTV</title>
+        <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <style>
+            :root {
+                --row-height: 32px; 
+            }
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Ubuntu, "Droid Sans", sans-serif;
+                font-size: 14px;
+                padding: 0 18px;
+                line-height: 20px;
+                margin: 0;
+                background: #fff;
+                max-width: 1100px;
+                margin: 20px auto;
+            }
+            a { color: blue; text-decoration: none; }
+            a:hover { color: red; }
+            a:visited { color: rgb(142, 105, 167); }
+            h1 { margin: 16px 0 10px; font-size: 24px; }
+            #sort-controls {
+                position: sticky;
+                top: 0;
+                z-index: 10;
+                margin: 0 -18px 0;
+                padding: 10px 18px;
+                background: #f9f9f9;
+                border-bottom: 1px solid #e5e5e5;
+            }
+            #searchBox, #sortOrder {
+                padding: 5px 8px;
+                border-radius: 4px;
+                border: 1px solid #ccc;
+                font: inherit;
+            }
+            #searchBox { width: min(420px, 50vw); margin-right: 8px; }
+            #summary { color: #666; font-size: 12px; margin-left: 10px; }
+            #list-root { position: relative; width: 100%; }
+            #list-spacer { width: 1px; opacity: 0; }
+            #list-viewport { position: absolute; left: 0; right: 0; top: 0; will-change: transform; }
+            .post-listing {
+                position: absolute;
+                left: 0;
+                right: 0;
+                display: flex;
+                align-items: flex-start;
+                min-height: var(--row-height);
+                line-height: var(--row-height);
+                overflow: hidden;
+                border-bottom: 1px solid #f0f0f0;
+            }
+            .post-listing a.title { font-weight: 500; word-break: break-word; }
+            .post-listing:hover {
+                height: auto; 
+                min-height: var(--row-height);
+                z-index: 100;
+                background: #f8fafc;  /* slight tint (very subtle blue-gray) */
+                border: 1px solid #d0d7de;  /* visible but not harsh */
+                box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+                overflow: visible;
+                line-height: 1.6;
+                margin: 0 -8px 0 -8px;
+                padding: 0 7px 0 7px;
+            }
+            .post-listing:hover .content {
+                white-space: normal;
+                overflow: visible;
+                padding-bottom: 6px;
+            }
+            .content {
+                flex: 1;
+                min-width: 0;   /* IMPORTANT: allows wrapping */
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+            }
+            .date {
+                flex: 0 0 auto;
+                color: #555;
+                margin-right: 4px;
+            }
+            .author { color: #444; margin-left: 4px; }
+            .flair {
+                display: inline-block;
+                padding: 2px 6px;
+                border-radius: 20px;
+                font-size: 10px;
+                font-weight: bold;
+                margin-left: 5px;
+                line-height: 1.2;
+                vertical-align: middle;
+            }
+            .pill {
+                display: inline-block;
+                font-size: 11px;
+                padding: 0 6px;
+                margin-left: 6px;
+                border-radius: 999px;
+                background: #efefef;
+                color: #444;
+                vertical-align: middle;
+                line-height: 18px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>r/LTTV</h1>
+        <div id="sort-controls">
+            <label for="sortOrder" style="font-weight: bold; font-size: 12px;">Sort Archive By: </label>
+            <select id="sortOrder">
+                <option value="time-asc">Date (Oldest)</option>
+                <option value="time">Date (Newest)</option>
+                <option value="score">Upvotes (Highest)</option>
+                <option value="comments">Comments (Most)</option>
+            </select>
+            <input id="searchBox" type="search" placeholder="Filter title / author" spellcheck="false" />
+            <span id="summary"></span>
+        </div>
+        <div id="list-root">
+            <div id="list-spacer"></div>
+            <div id="list-viewport"></div>
+        </div>
+        <script id="posts-data" type="application/json">[["t3_n1si8b", "r/LTTV Lounge", "kdkddjxbb619", 1, 2, 1619784687, null, "", "dark", null, null, null], ["t3_n1tpht", "基础建设", "[deleted]", 1, 0, 1619788859, null, "", "dark", null, "", "dark"], ["t3_n1uoss", "Tel还挺大胆的", "kdkddjxbb619", 1, 5, 1619791903, null, "", "dark", null, null, null], ["t3_n1yzgx", "哪位指下路", "[deleted]", 1, 0, 1619804068, null, "", "dark", null, "", "dark"], ["t3_n2ioy7", "哪里能误入歧途的初衷不良少女", "kdkddjxbb619", 1, 0, 1619876924, null, "", "dark", null, null, null], ["t3_n4tia9", "视频找到了", "kdkddjxbb619", 1, 2, 1620147845, null, "", "dark", null, null, null], ["t3_ni8ay6", "上周去了一个辉的电报群", "kdkddjxbb619", 1, 4, 1621648892, null, "", "dark", null, null, null], ["t3_og1p8t", "我有一个朋友想照顾她的生意", "[deleted]", 1, 0, 1625726234, null, "", "dark", null, "", "dark"], ["t3_rsuui9", "还以为密码再也找不到了呢，当初乱打的。老头TV，复活！", "kdkddjxbb619", 8, 0, 1640960269, null, "", "dark", null, null, null], ["t3_sxqews", "聊天TV（ChatTV） Rules", "fengzhibitu", 9, 19, 1645439338, null, "", "dark", null, null, null], ["t3_t4txd1", "反转了，这里是流体TV", "ChungkuoRun", 10, 1, 1646203033, null, "", "dark", null, null, null], ["t3_t5v9bn", "冲浪没有我存的好几个老太的网页全没了", "[deleted]", 2, 7, 1646324484, null, "", "dark", null, "", "dark"], ["t3_t6ul7e", "突发奇想，用qq群老太会不会反而不容易被橄榄？", "[deleted]", 1, 1, 1646432583, null, "", "dark", null, "", "dark"], ["t3_t7zdc8", "在聊天TV可以做什么？", "[deleted]", 1, 0, 1646575353, null, "", "dark", null, "", "dark"], ["t3_taxadh", "刚来，请问这里是理塘tv吗？", "ZhongXun_Xi", 5, 2, 1646914119, null, "", "dark", null, null, null], ["t3_tcey3f", "本SUB成员私我发资源合集", "[deleted]", 1, 3, 1647086352, null, "", "dark", null, "", "dark"], ["t3_thr7xn", "[ Removed by Reddit ]", "[deleted]", 5, 0, 1647680285, null, "", "dark", null, "", "dark"], ["t3_tsw74h", "私我发日本32-39岁不漏点写真网站，能在线看", "[deleted]", 2, 3, 1648719969, null, "", "dark", null, "", "dark"], ["t3_u31g2m", "有聊天tv的 Discord 或其他平台群嗎", "[deleted]", 1, 1, 1649886774, null, "", "dark", null, "", "dark"], ["t3_u43rxn", "什么年龄的女生用钱+心理战术最好攻略？", "[deleted]", 3, 2, 1650012943, null, "", "dark", null, "", "dark"], ["t3_um71hg", "[ Removed by Reddit ]", "[deleted]", 9, 6, 1652146851, null, "", "dark", null, "", "dark"], ["t3_um7n1f", "能看到吗", "[deleted]", 1, 0, 1652148598, null, "", "dark", null, "", "dark"], ["t3_um7zl5", "A畜野妈的五人盒", "[deleted]", 1, 0, 1652149634, null, "", "dark", null, "", "dark"], ["t3_uox1fj", "有一次", "fengzhibitu", 6, 1, 1652463504, null, "", "dark", null, null, null], ["t3_usve9m", "這裏是樂透TV嗎？", "891964", 5, 12, 1652934876, null, "", "dark", null, null, null], ["t3_usxq9y", "进来开炼https://t.me/+0Mh3txS7pow3YjIx", "7071558yxy", 1, 4, 1652944262, null, "", "dark", null, null, null], ["t3_usxtoa", "举报的底线蛆真贱", "fengzhibitu", 6, 1, 1652944647, null, "", "dark", null, null, null], ["t3_uszdf3", "群在这", "[deleted]", 2, 20, 1652951664, null, "", "dark", null, "", "dark"], ["t3_ut1l6j", "溜条狗u/lastname-none", "Gold_Word_4611", 0, 1, 1652960841, null, "", "dark", null, null, null], ["t3_ut6whd", "我早就是炼老嗨了", "wtyliangting", 5, 0, 1652976828, null, "", "dark", null, null, null], ["t3_ut6woy", "四位？", "BernesiaMons", 0, 2, 1652976846, null, "", "dark", null, null, null], ["t3_ut7kxa", "手机里珍藏了一张联通gif，但是苦于一直没找到出处，懂哥来", "Iwillalwaysbewithu", 1, 0, 1652978694, null, "", "dark", null, null, null], ["t3_utxm28", "真的吗", "SomeEdgyCunt_inChina", 3, 1, 1653056804, null, "", "dark", null, null, null], ["t3_uuz3vm", "都说了穷蛆们别在群里发视频，又把我号炸了，第三个号了，这么搞一个群能玩几天？", "7071558yxy", 10, 28, 1653177259, null, "", "dark", null, null, null], ["t3_uv3obn", "收", "goruogorogorou", 3, 0, 1653194466, null, "", "dark", null, null, null], ["t3_uwhyup", "你麻麻的，我家呢", "helmsloli", 1, 0, 1653364045, null, "", "dark", null, null, null], ["t3_uyr83d", "天津大学反对形式主义抗议。", "xijingping1953", 2, 2, 1653630134, null, "", "dark", null, null, null], ["t3_v05zdl", "This is what a real life flashbang looks like outdoors", "xijingping1953", 3, 1, 1653808871, null, "", "dark", null, null, null], ["t3_v1j524", "新家呢", "ImprovementCool2358", 3, 2, 1653975364, null, "", "dark", null, null, null], ["t3_v1qufj", "Kokomi (Genshin Impact) by Aqua 水淼", "xijingping1953", 4, 0, 1654005352, null, "", "dark", null, null, null], ["t3_v225ss", "大逃亡计划？", "7071558yxy", 9, 5, 1654036779, null, "", "dark", null, null, null], ["t3_v23e24", "快来scored新家玩啊，宏迪不是家！", "morengren", 1, 0, 1654040464, null, "", "dark", null, null, null], ["t3_v2ilkd", "干他娘，查理tv把老子屏蔽了。", "[deleted]", 3, 2, 1654094616, null, "", "dark", null, "", "dark"], ["t3_v2lfc0", "辉", "Recent_Ad545", 7, 3, 1654102131, null, "", "dark", null, null, null], ["t3_v2n00y", "简单双飞一波", "Think_Squirrel_367", 9, 7, 1654106168, null, "", "dark", null, null, null], ["t3_v2zbc0", "没有勇士再去哪儿建个群吗", "fengzhibitu", 1, 13, 1654139506, null, "", "dark", null, null, null], ["t3_v3mx1j", "13岁", "[deleted]", 4, 1, 1654215694, null, "", "dark", null, "", "dark"], ["t3_v4hwvn", "15岁中学生", "[deleted]", 12, 3, 1654319997, null, "", "dark", null, "", "dark"], ["t3_v4kx4c", "秘密花园咋不更新了，还有联通群吗，私我私我，给您磕头了砰砰砰", "[deleted]", 2, 14, 1654333103, null, "", "dark", null, "", "dark"], ["t3_v4yg5y", "我就发", "Think_Squirrel_367", 9, 7, 1654377857, null, "", "dark", null, null, null], ["t3_v5n5id", "老图两张", "Think_Squirrel_367", 7, 5, 1654464811, null, "", "dark", null, null, null], ["t3_v6iz00", "[ Removed by Reddit ]", "7071558yxy", 6, 15, 1654564951, null, "", "dark", null, null, null], ["t3_v70bg4", "白丝两张", "Think_Squirrel_367", 14, 7, 1654618950, null, "", "dark", null, null, null], ["t3_v728wi", "大家都自觉些", "fengzhibitu", 12, 15, 1654623082, null, "", "dark", null, null, null], ["t3_v7j4ob", "弄了個群", "[deleted]", 1, 1, 1654671041, null, "", "dark", null, "", "dark"], ["t3_v7j8wj", "tmd剛弄錯群", "dblababy", 8, 1, 1654671515, null, "", "dark", null, null, null], ["t3_v7kb8v", "有人来跟我一起玩魔兽世界吗？", "zhongguonanren", 2, 2, 1654675779, null, "", "dark", null, null, null], ["t3_v8ak7t", "红迪真不能处，我还没来得及删帖就把我永封了", "dhjjDkdkddx", 1, 0, 1654756567, null, "", "dark", null, null, null], ["t3_v9mftv", "简单别个胸针", "Think_Squirrel_367", 8, 2, 1654909991, null, "", "dark", null, null, null], ["t3_vburdz", "跳神咯", "Think_Squirrel_367", 7, 0, 1655179525, null, "", "dark", null, null, null], ["t3_vc19fk", "[ Removed by Reddit ]", "[deleted]", 3, 3, 1655205764, null, "", "dark", null, "", "dark"], ["t3_ver71p", "wtf", "Think_Squirrel_367", 0, 1, 1655503105, null, "", "dark", null, null, null]]</script>
+        <script>
+            const SUBREDDIT_NAME = "LTTV";
+            const BASE_POST_PATH = "./" + SUBREDDIT_NAME + "/";
+            
+            // This MUST match --row-height in CSS
+            const ROW_HEIGHT = 32; 
+            const BUFFER_ROWS = 24;
+
+            const rawPosts = JSON.parse(document.getElementById('posts-data').textContent);
+            const posts = rawPosts.map((row) => ({
+                id: row[0], title: row[1], author: row[2],
+                score: row[3] | 0, comments: row[4] | 0, time: row[5] | 0,
+                link_flair_text: row[6], link_flair_bg: row[7], link_flair_color: row[8],
+                author_flair_text: row[9], author_flair_bg: row[10], author_flair_color: row[11],
+            }));
+
+            const sortSelect = document.getElementById('sortOrder');
+            const searchBox = document.getElementById('searchBox');
+            const summary = document.getElementById('summary');
+            const viewport = document.getElementById('list-viewport');
+            const spacer = document.getElementById('list-spacer');
+
+            let order = posts.map((_, i) => i);
+            let filteredOrder = order.slice();
+            let activeQuery = '';
+            let pendingRaf = 0;
+
+            function escapeHtml(value) {
+                return String(value).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+            }
+
+            function renderFlair(text, bg, textColor) {
+                if (!text) return "";
+                const safeBg = (bg && bg.startsWith("#")) ? bg : "#edeff1";
+                const color = textColor === "light" ? "#ffffff" : "#1c1c1c";
+                return `<span class="flair" style="background-color:${safeBg};color:${color};">${escapeHtml(text)}</span>`;
+            }
+
+            function formatDate(ts) {
+                return new Date(ts * 1000).toLocaleDateString(undefined, { year: 'numeric', month: 'short', day: '2-digit' });
+            }
+
+            function render() {
+                const scrollTop = window.scrollY || document.documentElement.scrollTop || 0;
+                const viewportHeight = window.innerHeight || document.documentElement.clientHeight || 800;
+                const start = Math.max(0, Math.floor(scrollTop / ROW_HEIGHT) - BUFFER_ROWS);
+                const end = Math.min(filteredOrder.length, Math.ceil((scrollTop + viewportHeight) / ROW_HEIGHT) + BUFFER_ROWS);
+
+                viewport.style.transform = `translateY(${start * ROW_HEIGHT}px)`;
+                viewport.innerHTML = '';
+                const fragment = document.createDocumentFragment();
+
+                for (let i = start; i < end; i++) {
+                    const post = posts[filteredOrder[i]];
+                    const row = document.createElement('div');
+                    row.className = 'post-listing';
+                    row.style.top = `${(i - start) * ROW_HEIGHT}px`;
+                    const linkFlair = renderFlair(post.link_flair_text, post.link_flair_bg, post.link_flair_color);
+                    const authorFlair = renderFlair(post.author_flair_text, post.author_flair_bg, post.author_flair_color);
+                    row.innerHTML = `
+                        <span class="date">${formatDate(post.time)}:</span>
+                        <div class="content">
+                            <a class="title" href="${BASE_POST_PATH + post.id}.html" target="_blank" rel="noopener noreferrer">
+                                ${escapeHtml(post.title)} ${linkFlair}
+                            </a>
+                            <span class="author">- /u/${escapeHtml(post.author)} ${authorFlair}</span>
+                            <span class="pill">+${post.score.toLocaleString()} points</span>
+                            <span class="pill">${post.comments.toLocaleString()} comments</span>
+                        </div>
+                    `;
+                    fragment.appendChild(row);
+                }
+                viewport.appendChild(fragment);
+            }
+
+            function applyFilterAndRender() {
+                const query = activeQuery.trim().toLowerCase();
+                filteredOrder = query ? order.filter(idx => posts[idx].title.toLowerCase().includes(query) || posts[idx].author.toLowerCase().includes(query)) : order.slice();
+                spacer.style.height = `${filteredOrder.length * ROW_HEIGHT}px`;
+                summary.textContent = `${filteredOrder.length.toLocaleString()} / ${posts.length.toLocaleString()} posts`;
+                render();
+            }
+
+            function applySort() {
+                const sortBy = sortSelect.value;
+                sessionStorage.setItem('reddit_archive_sort', sortBy);
+                if (sortBy === 'time') order.sort((a, b) => posts[b].time - posts[a].time);
+                else if (sortBy === 'time-asc') order.sort((a, b) => posts[a].time - posts[b].time);
+                else if (sortBy === 'score') order.sort((a, b) => posts[b].score - posts[a].score);
+                else if (sortBy === 'comments') order.sort((a, b) => posts[b].comments - posts[a].comments);
+                applyFilterAndRender();
+            }
+
+            sortSelect.addEventListener('change', applySort);
+            searchBox.addEventListener('input', () => { activeQuery = searchBox.value || ''; applyFilterAndRender(); });
+            window.addEventListener('scroll', () => { if (!pendingRaf) pendingRaf = requestAnimationFrame(() => { pendingRaf = 0; render(); }); }, { passive: true });
+            window.addEventListener('resize', render);
+
+            document.addEventListener('DOMContentLoaded', () => {
+                const savedSort = sessionStorage.getItem('reddit_archive_sort');
+                if (savedSort) sortSelect.value = savedSort;
+                applySort();
+            });
+        </script>
+    </body>
+</html>
